@@ -27,27 +27,27 @@ DEFAULT_FEEDS_BOOKING: list[dict[str, Any]] = [
     {
         "unidad_id": "alpina-1",
         "plataforma": "booking",
-        "url": "https://ical.booking.com/v1/export?t=6368e058-74e7-4c34-b05c-53dcf1fc5232",
+        "url": "https://ical.booking.com/v1/export?t=f96ca3e6-462f-4a7b-a6ac-57b39117e5cb",
     },
     {
         "unidad_id": "alpina-2",
         "plataforma": "booking",
-        "url": "https://ical.booking.com/v1/export?t=a2a5d9e9-09bd-4b34-a8d4-4926654c0ebf",
+        "url": "https://ical.booking.com/v1/export?t=bffd85fb-cb7b-41ee-93bf-686222a645c5",
     },
     {
         "unidad_id": "alpina-3",
         "plataforma": "booking",
-        "url": "https://ical.booking.com/v1/export?t=c67bbf27-9c3d-4995-b54d-c37eaf956754",
+        "url": "https://ical.booking.com/v1/export?t=93fec849-a8e9-45dd-93dc-49f59c64730f",
     },
     {
         "unidad_id": "suite-4",
         "plataforma": "booking",
-        "url": "https://ical.booking.com/v1/export?t=a741cb8f-9675-4a63-ac8d-3c83f3e7b0cc",
+        "url": "https://ical.booking.com/v1/export?t=2d61ac3b-54ec-4761-9295-d89c509d3a2c",
     },
     {
         "unidad_id": "suite-5",
         "plataforma": "booking",
-        "url": "https://ical.booking.com/v1/export?t=16367ff6-614e-4158-823f-128ef1fa8be8",
+        "url": "https://ical.booking.com/v1/export?t=16c2eac4-0303-4e6d-af16-c1c4f2c6a723",
     },
 ]
 

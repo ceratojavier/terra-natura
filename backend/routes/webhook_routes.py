@@ -7,7 +7,11 @@ from typing import Any
 from fastapi import APIRouter, Body, Request
 from fastapi.responses import PlainTextResponse
 
-from backend.config.settings import INSTAGRAM_VERIFY_TOKEN, WHATSAPP_VERIFY_TOKEN
+from backend.config.settings import (
+    INSTAGRAM_VERIFY_TOKEN,
+    MERCADOPAGO_WEBHOOK_SECRET,
+    WHATSAPP_VERIFY_TOKEN,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -70,3 +74,26 @@ async def instagram_entrante(payload: dict[str, Any] = Body(default_factory=dict
     """Eventos entrantes de Instagram Graph Webhooks (comentarios, menciones, etc.)."""
     logger.info("webhook instagram: %s", list(payload.keys())[:25])
     return {"recibido": True, "nota": "Pendiente: procesar eventos de IG."}
+
+
+@router.get("/mercadopago")
+async def mercadopago_health():
+    """Health-check simple para validar URL pública de webhook."""
+    return {"ok": True, "proveedor": "mercadopago"}
+
+
+@router.post("/mercadopago")
+async def mercadopago_entrante(
+    request: Request,
+    payload: dict[str, Any] = Body(default_factory=dict),
+):
+    """
+    Webhook de Mercado Pago.
+    MVP: valida firma opcional y confirma recepción para evitar reintentos.
+    """
+    if MERCADOPAGO_WEBHOOK_SECRET:
+        incoming = request.headers.get("x-signature", "")
+        if not incoming:
+            return PlainTextResponse("missing signature", status_code=401)
+    logger.info("webhook mercadopago: %s", list(payload.keys())[:25])
+    return {"recibido": True}

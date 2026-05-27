@@ -29,6 +29,13 @@ INSTAGRAM_VERIFY_TOKEN = (
 # YouTube Data API v3 — videos turismo (Google Cloud Console)
 YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY", "").strip()
 
+# Mercado Pago
+MERCADOPAGO_ACCESS_TOKEN = os.getenv("MERCADOPAGO_ACCESS_TOKEN", "").strip()
+MERCADOPAGO_PUBLIC_KEY = os.getenv("MERCADOPAGO_PUBLIC_KEY", "").strip()
+MERCADOPAGO_CLIENT_ID = os.getenv("MERCADOPAGO_CLIENT_ID", "").strip()
+MERCADOPAGO_CLIENT_SECRET = os.getenv("MERCADOPAGO_CLIENT_SECRET", "").strip()
+MERCADOPAGO_WEBHOOK_SECRET = os.getenv("MERCADOPAGO_WEBHOOK_SECRET", "").strip()
+
 # Modos de uso de una unidad (configurable por dueño)
 USOS_UNIDAD = (
     "alquiler",
