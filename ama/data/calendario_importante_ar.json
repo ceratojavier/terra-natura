@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "descripcion": "Fechas importantes para marketing Terra Natura — revisar ANTES del calendario 90 días",
+    "rango_usuario": "Desde hoy hasta marzo del año siguiente (ej. may-2026 → mar-2027)",
+    "actualizar": "Confirmar fechas oficiales y eventos confirmados cada trimestre"
+  },
+  "dias_especiales_comerciales": [
+    {"nombre": "Día de la Mujer", "fecha": "2026-03-08", "tipo": "especial", "angulo": "parejas", "nota": "Ya pasó si hoy es después de marzo 2026"},
+    {"nombre": "Día del Amigo", "fecha": "2026-07-20", "tipo": "especial", "angulo": "fidelizacion"},
+    {"nombre": "Día del Padre (AR)", "fecha": "2026-06-21", "tipo": "especial", "angulo": "familia", "nota": "3er domingo de junio 2026"},
+    {"nombre": "Día del Niño (AR)", "fecha": "2026-08-16", "tipo": "especial", "angulo": "familia", "nota": "3er domingo de agosto 2026"},
+    {"nombre": "Día de la Madre (AR)", "fecha": "2026-10-18", "tipo": "especial", "angulo": "familia", "nota": "3er domingo de octubre 2026"},
+    {"nombre": "Halloween / Noche turística", "fecha": "2026-10-31", "tipo": "especial", "angulo": "parejas"},
+    {"nombre": "Día de la Mujer", "fecha": "2027-03-08", "tipo": "especial", "angulo": "parejas"},
+    {"nombre": "Día del Amigo", "fecha": "2027-07-20", "tipo": "especial", "angulo": "fidelizacion", "nota": "Fuera de rango mar-2027 pero referencia"}
+  ],
+  "feriados_nacionales_2027": [
+    {"nombre": "Año Nuevo", "fecha": "2027-01-01"},
+    {"nombre": "Carnaval", "fecha": "2027-02-08"},
+    {"nombre": "Carnaval", "fecha": "2027-02-09"},
+    {"nombre": "Memoria por la Verdad", "fecha": "2027-03-24"}
+  ],
+  "fines_de_semana_largo_2027": [
+    {
+      "nombre": "Carnaval 2027",
+      "fecha_inicio": "2027-02-06",
+      "fecha_fin": "2027-02-09",
+      "noches_sugeridas": 3,
+      "copy_hook": "Puente Carnaval 2027 — reservá Alpinas con anticipación"
+    },
+    {
+      "nombre": "24 de Marzo (Memoria)",
+      "fecha_inicio": "2027-03-22",
+      "fecha_fin": "2027-03-24",
+      "noches_sugeridas": 2,
+      "copy_hook": "Finde reflexivo en Punilla — escapada corta"
+    }
+  ],
+  "eventos_masivos": [
+    {
+      "nombre": "Final Copa Argentina — River vs Belgrano",
+      "fecha_inicio": "2026-05-24",
+      "fecha_fin": "2026-05-25",
+      "localidad": "Córdoba — Estadio Kempes",
+      "categoria": "deporte",
+      "masivo": true,
+      "descripcion": "Final histórica en Kempes. Demanda alojamiento Córdoba y Punilla.",
+      "tags": ["futbol", "kempes", "river", "belgrano"],
+      "prioridad": 1,
+      "estado": "confirmado_pasado"
+    },
+    {
+      "nombre": "Feria de Córdoba — Nuestra Señora de la Salud",
+      "fecha_inicio": "2026-05-23",
+      "fecha_fin": "2026-05-30",
+      "localidad": "Córdoba capital",
+      "categoria": "feria",
+      "masivo": true,
+      "descripcion": "El Arenal, música, fuegos. Excursión desde Bialet.",
+      "prioridad": 2,
+      "estado": "confirmado"
+    },
+    {
+      "nombre": "Festival Nacional de Folklore Cosquín — 67ª edición (estimado)",
+      "fecha_inicio": "2027-01-23",
+      "fecha_fin": "2027-01-31",
+      "localidad": "Cosquín",
+      "categoria": "festival",
+      "masivo": true,
+      "descripcion": "9 lunas enero — tradicionalmente últimas semanas de enero.",
+      "distancia_km_bialet": 12,
+      "prioridad": 1,
+      "estado": "estimado_anual"
+    },
+    {
+      "nombre": "Festival de la Avicultura (estimado)",
+      "fecha_inicio": "2027-01-13",
+      "fecha_fin": "2027-01-21",
+      "localidad": "Santa María de Punilla",
+      "categoria": "festival",
+      "masivo": true,
+      "descripcion": "Recitales masivos en Predio del Paseo — confirmar grilla.",
+      "prioridad": 1,
+      "estado": "estimado_anual"
+    },
+    {
+      "nombre": "Shakira en Argentina (referencia reciente)",
+      "fecha_inicio": "2025-02-15",
+      "fecha_fin": "2025-02-16",
+      "localidad": "Buenos Aires / Rosario",
+      "categoria": "recital",
+      "masivo": true,
+      "descripcion": "Referencia: shows masivos atraen turismo regional. Buscar artistas 2026-27 en Córdoba/Kempes.",
+      "prioridad": 3,
+      "estado": "referencia_historica"
+    },
+    {
+      "nombre": "Cosquín Rock (si confirma edición)",
+      "fecha_inicio": "2027-02-12",
+      "fecha_fin": "2027-02-14",
+      "localidad": "Cosquín / Santa María",
+      "categoria": "festival",
+      "masivo": true,
+      "descripcion": "Verificar si hay edición feb 2027 — alternativa folklore Cosquín.",
+      "prioridad": 2,
+      "estado": "a_confirmar"
+    }
+  ],
+  "eventos_locales_bialet": [
+    {
+      "nombre": "Festival Día de la Bandera",
+      "fecha_inicio": "2026-06-21",
+      "fecha_fin": "2026-06-21",
+      "localidad": "Bialet Massé",
+      "categoria": "fiesta"
+    },
+    {
+      "nombre": "Peatonal del Chocolate",
+      "fecha_inicio": "2026-07-25",
+      "fecha_fin": "2026-07-25",
+      "localidad": "Bialet Massé",
+      "categoria": "gastronomia",
+      "nota": "Último sábado de julio — confirmar municipal"
+    },
+    {
+      "nombre": "Peatonal de la Cerveza Artesanal (edición siguiente)",
+      "fecha_inicio": "2027-01-16",
+      "fecha_fin": "2027-02-12",
+      "localidad": "Bialet Massé",
+      "categoria": "gastronomia",
+      "estado": "estimado"
+    }
+  ],
+  "referencias_monitoreo": [
+    {
+      "nombre": "Rally Argentina / etapas en sierras cordobesas",
+      "localidad": "Córdoba / Punilla",
+      "categoria": "deporte",
+      "mes_tipico": "Abril–mayo (confirmar ACTC)",
+      "nota": "NO se muestra en el calendario hasta tener fecha oficial."
+    },
+    {
+      "nombre": "Pedalea el Mundo / cicloturismo",
+      "localidad": "Valle de Punilla",
+      "categoria": "deporte",
+      "mes_tipico": "Cuando se publique la etapa",
+      "nota": "Solo aparece el día real de la carrera — no todos los días."
+    },
+    {
+      "nombre": "Maratón / media maratón Villa Carlos Paz",
+      "localidad": "Villa Carlos Paz",
+      "categoria": "deporte",
+      "mes_tipico": "Sep–oct (confirmar)",
+      "nota": "Consultar Running Argentina o municipio."
+    },
+    {
+      "nombre": "Recitales Estadio Kempes",
+      "localidad": "Córdoba capital",
+      "categoria": "recital",
+      "mes_tipico": "Según agenda Kempes",
+      "nota": "Cada show se carga cuando hay fecha confirmada."
+    }
+  ]
+}

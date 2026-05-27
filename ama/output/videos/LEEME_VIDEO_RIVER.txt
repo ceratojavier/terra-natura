@@ -1,0 +1,21 @@
+VIDEO RIVER — TUS FOTOS + MOVIMIENTO
+====================================
+
+Carpeta de fotos:
+  ama\output\assets\propias_river\
+
+  01_kempes_hinchada_river.png  → tribuna rojo/blanco (paneo)
+  02_river_celebracion.png      → hinchas River (zoom + drift)
+  03_kempes_final_noche.png     → opcional (final Kempes)
+
+Video generado:
+  kempes_river_TUS_FOTOS_whatsapp.mp4
+
+Texto WhatsApp:
+  TEXTO_WHATSAPP_KEMPES_RIVER.txt
+
+Regenerar: doble clic en local\Generar-video-Kempes-River.bat
+
+IMPORTANTE: Este video es para hinchas de RIVER.
+El de Belgrano (celeste) es otro archivo:
+  kempes_belgrano_TUS_FOTOS_whatsapp.mp4

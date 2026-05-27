@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "descripcion": "Feriados nacionales Argentina + fines de semana largos para campañas Terra Natura",
+    "actualizar": "argentina.gob.ar/jefatura/feriados-nacionales-2026 · Resolución JGM 164/2025",
+    "ultima_revision": "2026-05-26",
+    "zona_horaria": "America/Argentina/Cordoba",
+    "nota_puentes": "Días no laborables turísticos 2026: 23-mar, 10-jul, 7-dic (Ley 27.399 art. 7)"
+  },
+  "dias_no_laborables_turisticos_2026": [
+    {"fecha": "2026-03-23", "nombre": "Puente turístico (pre 24 de Marzo)"},
+    {"fecha": "2026-07-10", "nombre": "Puente turístico (pre 9 de Julio)"},
+    {"fecha": "2026-12-07", "nombre": "Puente turístico (pre 8 de Diciembre)"}
+  ],
+  "feriados_nacionales": [
+    {"nombre": "Año Nuevo", "fecha": "2026-01-01", "dia_semana": "jueves", "tipo": "inamovible"},
+    {"nombre": "Carnaval", "fecha": "2026-02-16", "dia_semana": "lunes", "tipo": "inamovible"},
+    {"nombre": "Carnaval", "fecha": "2026-02-17", "dia_semana": "martes", "tipo": "inamovible"},
+    {"nombre": "Memoria por la Verdad", "fecha": "2026-03-24", "dia_semana": "martes", "tipo": "inamovible"},
+    {"nombre": "Veteranos Malvinas", "fecha": "2026-04-02", "dia_semana": "jueves", "tipo": "inamovible"},
+    {"nombre": "Viernes Santo", "fecha": "2026-04-03", "dia_semana": "viernes", "tipo": "inamovible"},
+    {"nombre": "Día del Trabajador", "fecha": "2026-05-01", "dia_semana": "viernes", "tipo": "inamovible"},
+    {"nombre": "Revolución de Mayo", "fecha": "2026-05-25", "dia_semana": "lunes", "tipo": "inamovible"},
+    {"nombre": "Paso a la Inmortalidad Güemes", "fecha": "2026-06-17", "dia_semana": "miércoles", "tipo": "trasladable"},
+    {"nombre": "Paso a la Inmortalidad San Martín", "fecha": "2026-08-17", "dia_semana": "lunes", "tipo": "trasladable"},
+    {"nombre": "Día de la Raza", "fecha": "2026-10-12", "dia_semana": "lunes", "tipo": "trasladable"},
+    {"nombre": "Día de la Soberanía Nacional", "fecha": "2026-11-20", "dia_semana": "viernes", "tipo": "trasladable"},
+    {"nombre": "Inmaculada Concepción", "fecha": "2026-12-08", "dia_semana": "martes", "tipo": "inamovible"},
+    {"nombre": "Navidad", "fecha": "2026-12-25", "dia_semana": "viernes", "tipo": "inamovible"}
+  ],
+  "fines_de_semana_largo": [
+    {
+      "id": "carnaval-2026",
+      "nombre": "Carnaval",
+      "fecha_inicio": "2026-02-14",
+      "fecha_fin": "2026-02-17",
+      "noches_sugeridas": 3,
+      "tipo": "finde_largo",
+      "audiencias": ["cordobes_finde", "turista_bsas", "familia_ninos"],
+      "angulo_campana": "evento",
+      "copy_hook": "Carnaval en las sierras — pileta, parque y cabañas con dueños en el predio"
+    },
+    {
+      "id": "memoria-marzo-xl-2026",
+      "nombre": "24 de Marzo + puente turístico",
+      "fecha_inicio": "2026-03-21",
+      "fecha_fin": "2026-03-24",
+      "noches_sugeridas": 3,
+      "tipo": "finde_largo",
+      "audiencias": ["pareja_escapada", "cordobes_finde"],
+      "angulo_campana": "parejas",
+      "copy_hook": "Finde XL marzo — escapada corta a Bialet Massé, 600 m del lago"
+    },
+    {
+      "id": "semana-santa-2026",
+      "nombre": "Semana Santa",
+      "fecha_inicio": "2026-04-02",
+      "fecha_fin": "2026-04-05",
+      "noches_sugeridas": 3,
+      "tipo": "finde_largo",
+      "audiencias": ["pareja_escapada", "familia_ninos"],
+      "angulo_campana": "parejas",
+      "copy_hook": "Semana Santa en las sierras — reservá con seña por WhatsApp"
+    },
+    {
+      "id": "1-mayo-2026",
+      "nombre": "Día del Trabajador",
+      "fecha_inicio": "2026-05-01",
+      "fecha_fin": "2026-05-03",
+      "noches_sugeridas": 2,
+      "tipo": "finde_largo",
+      "audiencias": ["familia_ninos", "pareja_escapada"],
+      "angulo_campana": "familia",
+      "copy_hook": "Finde largo 1° de Mayo — familia o pareja en Bialet Massé"
+    },
+    {
+      "id": "25-mayo-2026",
+      "nombre": "25 de Mayo",
+      "fecha_inicio": "2026-05-23",
+      "fecha_fin": "2026-05-25",
+      "noches_sugeridas": 3,
+      "tipo": "finde_largo",
+      "audiencias": ["cordobes_finde", "familia_ninos"],
+      "angulo_campana": "reserva_directa",
+      "copy_hook": "Puente de Mayo en las sierras — reservá directo sin comisión OTA"
+    },
+    {
+      "id": "guemes-2026",
+      "nombre": "Güemes (posible traslado a puente)",
+      "fecha_inicio": "2026-06-15",
+      "fecha_fin": "2026-06-17",
+      "noches_sugeridas": 2,
+      "tipo": "finde_largo",
+      "estado": "a_confirmar_traslado",
+      "audiencias": ["pareja_escapada"],
+      "angulo_campana": "temporada_baja",
+      "copy_hook": "Puente de invierno — tarifas accesibles lun–jue"
+    },
+    {
+      "id": "independencia-xl-2026",
+      "nombre": "9 de Julio + puente turístico",
+      "fecha_inicio": "2026-07-09",
+      "fecha_fin": "2026-07-12",
+      "noches_sugeridas": 3,
+      "tipo": "finde_largo",
+      "audiencias": ["familia_ninos", "turista_bsas"],
+      "angulo_campana": "familia",
+      "copy_hook": "Finde XL julio — vacaciones de invierno en cabañas con abrigo"
+    },
+    {
+      "id": "san-martin-2026",
+      "nombre": "San Martín",
+      "fecha_inicio": "2026-08-15",
+      "fecha_fin": "2026-08-17",
+      "noches_sugeridas": 3,
+      "tipo": "finde_largo",
+      "audiencias": ["familia_ninos"],
+      "angulo_campana": "familia",
+      "copy_hook": "Vacaciones de invierno + feriado — ideal Alpinas con chicos"
+    },
+    {
+      "id": "12-oct-2026",
+      "nombre": "Día de la Raza",
+      "fecha_inicio": "2026-10-10",
+      "fecha_fin": "2026-10-12",
+      "noches_sugeridas": 3,
+      "tipo": "finde_largo",
+      "audiencias": ["deportista_aventura", "pareja_escapada"],
+      "angulo_campana": "parejas",
+      "copy_hook": "Octubre en las sierras — maratones cerca y pileta para recuperar"
+    },
+    {
+      "id": "soberania-2026",
+      "nombre": "Soberanía Nacional",
+      "fecha_inicio": "2026-11-20",
+      "fecha_fin": "2026-11-22",
+      "noches_sugeridas": 2,
+      "tipo": "finde_largo",
+      "audiencias": ["pareja_escapada"],
+      "angulo_campana": "reserva_directa",
+      "copy_hook": "Noviembre — Barrancas Bermejas cerca y suites con vista"
+    },
+    {
+      "id": "inmaculada-xl-2026",
+      "nombre": "Puente turístico + Inmaculada",
+      "fecha_inicio": "2026-12-05",
+      "fecha_fin": "2026-12-08",
+      "noches_sugeridas": 3,
+      "tipo": "finde_largo",
+      "audiencias": ["familia_ninos", "cordobes_finde"],
+      "angulo_campana": "evento",
+      "copy_hook": "Finde XL diciembre — despedí el año en el complejo"
+    },
+    {
+      "id": "navidad-2026",
+      "nombre": "Navidad / fin de año",
+      "fecha_inicio": "2026-12-23",
+      "fecha_fin": "2026-12-28",
+      "noches_sugeridas": 4,
+      "tipo": "finde_largo",
+      "audiencias": ["familia_ninos", "pareja_escapada"],
+      "angulo_campana": "evento",
+      "copy_hook": "Fiestas en el complejo — consultá estadía mínima y disponibilidad"
+    }
+  ],
+  "ventanas_campana_dias_antes": {
+    "puente": [60, 30, 14, 7, 3],
+    "finde_largo_xl": [60, 45, 30, 14, 7],
+    "feriado_simple": [45, 21, 7],
+    "verano_alta": [90, 60, 30]
+  }
+}

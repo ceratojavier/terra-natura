@@ -1,0 +1,470 @@
+{
+
+  "meta": {
+
+    "descripcion": "Eventos confirmados CON potencial de reserva en Terra Natura (Bialet Massé)",
+
+    "criterio": "Fecha oficial + huésped puede alojarse acá (Punilla, Dique/San Roque, excursión Carlos Paz–VGB–Alta Gracia)",
+
+    "zonas": "Bialet · Punilla · Carlos Paz · La Falda · La Cumbre · Capilla · San Roque/La Estación · VGB · Alta Gracia · Córdoba/Kempes"
+
+  },
+
+  "eventos": [
+
+    {
+
+      "nombre": "Peatonal de la Cerveza Artesanal — Bialet Massé",
+
+      "fecha_inicio": "2026-01-17",
+
+      "fecha_fin": "2026-02-13",
+
+      "localidad": "Bialet Massé",
+
+      "distancia_km_bialet": 0,
+
+      "categoria": "gastronomia",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "El evento es en el pueblo — dormí en el complejo y salí a la peatonal.",
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "Festival de la Avicultura 2026",
+
+      "fecha_inicio": "2026-01-14",
+
+      "fecha_fin": "2026-01-22",
+
+      "localidad": "Santa María de Punilla",
+
+      "distancia_km_bialet": 8,
+
+      "categoria": "festival",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Recital masivo a 8 km — base en Bialet con pileta y parque.",
+
+      "masivo": true,
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "Festival Nacional de Folklore Cosquín — 66ª edición",
+
+      "fecha_inicio": "2026-01-24",
+
+      "fecha_fin": "2026-02-01",
+
+      "localidad": "Cosquín",
+
+      "distancia_km_bialet": 12,
+
+      "categoria": "festival",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "9 lunas en Cosquín — volvé a dormir tranquilo en Bialet cada noche.",
+
+      "masivo": true,
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "La Falda Bajo las Estrellas — verano 2026",
+
+      "fecha_inicio": "2026-02-06",
+
+      "fecha_fin": "2026-02-08",
+
+      "localidad": "La Falda",
+
+      "distancia_km_bialet": 28,
+
+      "categoria": "musica",
+
+      "estado": "confirmado",
+
+      "fuente_url": "https://turismolafalda.gob.ar/actividad/1266/VERANO-2026-VIERNES-06-FEB",
+
+      "angulo_comercial": "Shows en Av. Edén — pernoctá en Bialet (más tranquilo) y subí a La Falda de noche.",
+
+      "prioridad": 2
+
+    },
+
+    {
+
+      "nombre": "Festival Alienígena — Capilla del Monte (10ª edición)",
+
+      "fecha_inicio": "2026-02-06",
+
+      "fecha_fin": "2026-02-15",
+
+      "localidad": "Capilla del Monte",
+
+      "distancia_km_bialet": 35,
+
+      "categoria": "festival",
+
+      "estado": "confirmado",
+
+      "fuente_url": "https://cordobaturismo.gov.ar/evento/festival-alienigena-en-capilla-del-monte-2/",
+
+      "angulo_comercial": "10 días en Capilla — base en Bialet: pileta de día, festival y Uritorco de excursión.",
+
+      "masivo": true,
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "37° Encuentro de Colectividades — Alta Gracia",
+
+      "fecha_inicio": "2026-02-04",
+
+      "fecha_fin": "2026-02-08",
+
+      "localidad": "Alta Gracia",
+
+      "distancia_km_bialet": 48,
+
+      "categoria": "festival",
+
+      "estado": "confirmado",
+
+      "fuente_url": "https://altagracia.gob.ar/",
+
+      "angulo_comercial": "Fiesta masiva en Alta Gracia — dormí en sierra (Bialet) y bajá por autopista sin pagar hotel caro en ciudad.",
+
+      "masivo": true,
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "Carnaval Tanti",
+
+      "fecha_inicio": "2026-02-15",
+
+      "fecha_fin": "2026-02-16",
+
+      "localidad": "Tanti",
+
+      "distancia_km_bialet": 25,
+
+      "categoria": "fiesta",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Finde en Punilla — Tanti de día, descanso en Bialet.",
+
+      "prioridad": 2
+
+    },
+
+    {
+
+      "nombre": "Carnaval La Falda",
+
+      "fecha_inicio": "2026-02-15",
+
+      "fecha_fin": "2026-02-17",
+
+      "localidad": "La Falda",
+
+      "distancia_km_bialet": 28,
+
+      "categoria": "fiesta",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Carnaval en La Falda — volvé a Bialet a dormir cerca del lago y el río.",
+
+      "prioridad": 2
+
+    },
+
+    {
+
+      "nombre": "Carnaval La Cumbre",
+
+      "fecha_inicio": "2026-02-15",
+
+      "fecha_fin": "2026-02-17",
+
+      "localidad": "La Cumbre",
+
+      "distancia_km_bialet": 22,
+
+      "categoria": "fiesta",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Carnaval en La Cumbre — estadía en Bialet a minutos por la Punilla.",
+
+      "prioridad": 2
+
+    },
+
+    {
+
+      "nombre": "Carnaval Bialet Massé — 3 noches",
+
+      "fecha_inicio": "2026-02-16",
+
+      "fecha_fin": "2026-02-18",
+
+      "localidad": "Bialet Massé",
+
+      "distancia_km_bialet": 0,
+
+      "categoria": "fiesta",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Carnaval en el pueblo — pileta de día, fiesta de noche, sin manejar de más.",
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "Carnaval Villa Carlos Paz — desfile",
+
+      "fecha_inicio": "2026-02-16",
+
+      "fecha_fin": "2026-02-16",
+
+      "localidad": "Villa Carlos Paz",
+
+      "distancia_km_bialet": 18,
+
+      "categoria": "fiesta",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Desfile en Carlos Paz — escapada en Bialet más tranquila y cerca del río.",
+
+      "prioridad": 2
+
+    },
+
+    {
+
+      "nombre": "La Estación Outdoor — Comuna San Roque (Korolova · Fideles)",
+
+      "fecha_inicio": "2026-04-24",
+
+      "fecha_fin": "2026-04-24",
+
+      "localidad": "Comuna San Roque — Dique San Roque",
+
+      "distancia_km_bialet": 12,
+
+      "categoria": "electronica",
+
+      "estado": "confirmado",
+
+      "fuente_url": "https://laestacioncordoba.com/",
+
+      "angulo_comercial": "Fiesta electrónica a orillas del dique — dormí en Bialet (600 m del lago) y andá al show sin estrés.",
+
+      "masivo": true,
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "Feria de Córdoba — El Arenal",
+
+      "fecha_inicio": "2026-05-23",
+
+      "fecha_fin": "2026-05-30",
+
+      "localidad": "Córdoba capital",
+
+      "distancia_km_bialet": 55,
+
+      "categoria": "feria",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Feria en capital — pernoctá en sierra (Bialet) y subí por autopista sin pagar hotel caro en ciudad.",
+
+      "masivo": true,
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "Final Copa Argentina — River vs Belgrano (Kempes)",
+
+      "fecha_inicio": "2026-05-24",
+
+      "fecha_fin": "2026-05-25",
+
+      "localidad": "Córdoba — Estadio Kempes",
+
+      "distancia_km_bialet": 40,
+
+      "categoria": "deporte",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Partido histórico en Kempes — ~40 min desde Bialet: show + descanso en cabaña con parque.",
+
+      "masivo": true,
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "Festival Día de la Bandera — Bialet Massé",
+
+      "fecha_inicio": "2026-06-21",
+
+      "fecha_fin": "2026-06-21",
+
+      "localidad": "Bialet Massé",
+
+      "distancia_km_bialet": 0,
+
+      "categoria": "fiesta",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Festejo local — ideal familia en el complejo.",
+
+      "prioridad": 2
+
+    },
+
+    {
+
+      "nombre": "Peatonal del Chocolate — Bialet Massé",
+
+      "fecha_inicio": "2026-07-25",
+
+      "fecha_fin": "2026-07-25",
+
+      "localidad": "Bialet Massé",
+
+      "distancia_km_bialet": 0,
+
+      "categoria": "gastronomia",
+
+      "estado": "confirmado",
+
+      "angulo_comercial": "Invierno en el pueblo — cabaña con abrigo y chocolate en la peatonal.",
+
+      "prioridad": 2
+
+    },
+
+    {
+
+      "nombre": "Campeonato Mundial IMAC — Aeroclub Alta Gracia",
+
+      "fecha_inicio": "2026-04-01",
+
+      "fecha_fin": "2026-04-04",
+
+      "localidad": "Alta Gracia",
+
+      "distancia_km_bialet": 48,
+
+      "categoria": "deporte",
+
+      "estado": "confirmado",
+
+      "fuente_url": "https://altagracia.gob.ar/semana-santa-en-alta-gracia-diez-anos-de-festival-peperina-y-el-mundial-de-aeromodelismo-prometen-un-finde-largo-imperdible/",
+
+      "angulo_comercial": "Semana Santa en Alta Gracia — alojate en Bialet y bajá a ver el mundial de aeromodelismo.",
+
+      "masivo": true,
+
+      "prioridad": 2
+
+    },
+
+    {
+
+      "nombre": "Festival Peperina — 10ª edición (Semana Santa)",
+
+      "fecha_inicio": "2026-04-02",
+
+      "fecha_fin": "2026-04-05",
+
+      "localidad": "Alta Gracia",
+
+      "distancia_km_bialet": 48,
+
+      "categoria": "gastronomia",
+
+      "estado": "confirmado",
+
+      "fuente_url": "https://altagracia.gob.ar/semana-santa-en-alta-gracia-diez-anos-de-festival-peperina-y-el-mundial-de-aeromodelismo-prometen-un-finde-largo-imperdible/",
+
+      "angulo_comercial": "El festival gastronómico más grande del país — base en sierra (Bialet) y excursión a Alta Gracia.",
+
+      "masivo": true,
+
+      "prioridad": 1
+
+    },
+
+    {
+
+      "nombre": "Oktoberfest — Fiesta Nacional de la Cerveza (VGB)",
+
+      "fecha_inicio": "2026-10-01",
+
+      "fecha_fin": "2026-10-11",
+
+      "localidad": "Villa General Belgrano",
+
+      "distancia_km_bialet": 72,
+
+      "categoria": "festival",
+
+      "estado": "confirmado",
+
+      "fuente_url": "https://oktoberfestargentina.com.ar/",
+
+      "angulo_comercial": "Oktoberfest en VGB — pernoctá en Bialet (Punilla) y hacé la excursión de día; evitás el caos hotelero en la villa.",
+
+      "masivo": true,
+
+      "prioridad": 1
+
+    }
+
+  ]
+
+}
+

@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "anio_referencia": 2026,
+    "nota": "Fechas orientativas según calendarios escolares habituales. Confirmar con calendario oficial de cada jurisdicción.",
+    "uso_ama": "Campañas CTA cuando familias de esa provincia tienen receso — copy segmentado en stories/ads"
+  },
+  "vacaciones_invierno": [
+    {
+      "jurisdiccion": "Ciudad Autónoma de Buenos Aires",
+      "codigo": "CABA",
+      "fecha_inicio": "2026-07-18",
+      "fecha_fin": "2026-08-01",
+      "publico": "familias_capital_federal",
+      "mensaje_campana": "Salí de la ciudad: 2 h a Bialet, pileta y cabañas Alpinas para los chicos"
+    },
+    {
+      "jurisdiccion": "Provincia de Buenos Aires",
+      "codigo": "PBA",
+      "fecha_inicio": "2026-07-18",
+      "fecha_fin": "2026-08-01",
+      "publico": "familias_gba",
+      "mensaje_campana": "Vacaciones de invierno en Punilla — menos tráfico que Carlos Paz, más tranquilidad"
+    },
+    {
+      "jurisdiccion": "Córdoba",
+      "codigo": "CBA",
+      "fecha_inicio": "2026-07-13",
+      "fecha_fin": "2026-07-31",
+      "publico": "familias_cordobesas",
+      "mensaje_campana": "Invierno en el valle: fogón, parque y Alpinas con espacio para menores"
+    },
+    {
+      "jurisdiccion": "Santa Fe",
+      "codigo": "SF",
+      "fecha_inicio": "2026-07-20",
+      "fecha_fin": "2026-08-03",
+      "publico": "familias_santafesinas",
+      "mensaje_campana": "Escapada corta desde Santa Fe — consultá disponibilidad por WhatsApp"
+    },
+    {
+      "jurisdiccion": "Entre Ríos",
+      "codigo": "ER",
+      "fecha_inicio": "2026-07-20",
+      "fecha_fin": "2026-08-03",
+      "publico": "familias_entrerrianas",
+      "mensaje_campana": "Sierras cordobesas para las vacaciones de invierno de los chicos"
+    },
+    {
+      "jurisdiccion": "Mendoza",
+      "codigo": "MZA",
+      "fecha_inicio": "2026-07-13",
+      "fecha_fin": "2026-07-27",
+      "publico": "familias_mendocinas",
+      "mensaje_campana": "Cambio de paisaje: Valle de Punilla en julio"
+    },
+    {
+      "jurisdiccion": "Neuquén / Patagonia norte",
+      "codigo": "NEU",
+      "fecha_inicio": "2026-07-20",
+      "fecha_fin": "2026-08-07",
+      "publico": "familias_patagonia",
+      "mensaje_campana": "Viaje a Córdoba en invierno — workation o familia en cabaña"
+    }
+  ],
+  "bloques_promo_invierno": [
+    {
+      "nombre": "Preventa julio",
+      "desde": "2026-06-01",
+      "hasta": "2026-06-30",
+      "objetivo": "cta_reserva",
+      "oferta_sugerida": "Lun–jue invierno −15% estadía 3+ noches (definir en REGLAS_NEGOCIO)"
+    },
+    {
+      "nombre": "Pico vacaciones Córdoba",
+      "desde": "2026-07-10",
+      "hasta": "2026-08-05",
+      "objetivo": "cta_reserva",
+      "oferta_sugerida": "Alpinas familia — destacar camas auxiliares para menores"
+    }
+  ]
+}

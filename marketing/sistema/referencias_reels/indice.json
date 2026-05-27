@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "descripcion": "Referencias analizadas — el guionista usa el estilo con mejor score o default preset",
+    "ultima_actualizacion": null,
+    "estilo_activo": "clasico_cabana"
+  },
+  "perfiles_feed": [
+    {
+      "id": "feed_aldea_india",
+      "cuenta": "@aldea_india",
+      "url": "https://www.instagram.com/aldea_india/",
+      "tipo": "perfil_completo",
+      "preset_sugerido": "rapido_trend",
+      "notas": "Reels arriba en grilla; parejas; pocos posts estáticos. Ver FEED_INSTAGRAM_TERRA_NATURA.md"
+    },
+    {
+      "id": "feed_callesdelasierra",
+      "cuenta": "@callesdelasierra",
+      "url": "https://www.instagram.com/callesdelasierra/",
+      "tipo": "perfil_completo",
+      "preset_sugerido": "clasico_cabana",
+      "notas": "Highlights por tema; mezcla reel+carrusel; historias fuertes"
+    }
+  ],
+  "referencias": [],
+  "ejemplo_ficha": {
+    "id": "ref_demo",
+    "cuenta": "@ejemplo",
+    "duracion_total_seg": 24,
+    "cantidad_cortes": 8,
+    "hook_seg": 2,
+    "duracion_plano_promedio": 3.0,
+    "preset_sugerido": "rapido_trend",
+    "notas": "Completar cuando agregues un MP4 real en videos/"
+  }
+}

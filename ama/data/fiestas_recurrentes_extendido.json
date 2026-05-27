@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "descripcion": "Fiestas con fecha exacta o estimada corta — NO rellenar meses enteros",
+    "nota": "Eventos sin día confirmado van a referencias_monitoreo en calendario_importante_ar.json"
+  },
+  "eventos": [
+    {"nombre": "Festival de las Barrancas Bermejas", "localidad": "Bialet Massé", "categoria": "festival", "mes_inicio": 11, "mes_fin": 11, "dia_aprox": "fines de noviembre (2.ª edición)", "masivo": true, "tags": ["bialet", "barrancas", "rio"], "fuente": "investigacion_eventos_dueño.json", "angulo_comercial": "El festival es en el pueblo — dormí en Terra Natura."},
+    {"nombre": "Tanti Solar del Rock", "localidad": "Tanti", "categoria": "festival", "mes_inicio": 1, "mes_fin": 1, "dia_aprox": "enero — festival solidario", "masivo": true, "tags": ["rock", "tanti", "solidario"], "fuente_url": "https://www.tanti.gob.ar/", "notas": "Nombre oficial (ex Tanti Rock) — Córdoba Turismo prensa"},
+    {"nombre": "Desafío al Río Pinto", "localidad": "La Cumbre", "categoria": "deporte", "mes_inicio": 5, "mes_fin": 5, "dia_aprox": "mayo — MTB", "tags": ["mtb", "ciclismo", "rio_pinto"], "angulo_comercial": "Base en Bialet — salís a La Cumbre por autovía."},
+    {"nombre": "Cosquín Rock", "localidad": "Cosquín", "categoria": "festival", "mes_inicio": 2, "mes_fin": 2, "dia_aprox": "feb — 3 días", "masivo": true, "tags": ["rock", "jovenes"], "fuente_url": "https://www.cosquinrock.com/"},
+    {"nombre": "Festival Nacional de Folklore Cosquín — 9 lunas", "localidad": "Cosquín", "categoria": "festival", "mes_inicio": 1, "mes_fin": 2, "dia_aprox": "últimas 3 semanas enero", "masivo": true, "prioridad": 1, "tags": ["folklore", "iconico"]},
+    {"nombre": "Festival de la Avicultura", "localidad": "Santa María de Punilla", "categoria": "festival", "mes_inicio": 1, "mes_fin": 1, "dia_aprox": "mediados enero", "masivo": true, "tags": ["musica", "verano"]},
+    {"nombre": "Peatonal de la Cerveza Artesanal Bialet", "localidad": "Bialet Massé", "categoria": "gastronomia", "mes_inicio": 1, "mes_fin": 2, "dia_aprox": "varios fines de semana verano", "estado": "a_confirmar", "tags": ["cerveza", "parejas"]},
+    {"nombre": "Carnaval Bialet Massé", "localidad": "Bialet Massé", "categoria": "fiesta", "mes_inicio": 2, "mes_fin": 2, "dia_aprox": "carnaval nacional", "tags": ["carnaval", "familia"]},
+    {"nombre": "Carnaval Villa Carlos Paz — desfile", "localidad": "Villa Carlos Paz", "categoria": "fiesta", "mes_inicio": 2, "mes_fin": 2, "dia_aprox": "carnaval nacional", "masivo": true, "tags": ["carnaval"]},
+    {"nombre": "Carnaval Tanti #ViviTanti", "localidad": "Tanti", "categoria": "fiesta", "mes_inicio": 2, "mes_fin": 2, "dia_aprox": "carnaval nacional", "tags": ["carnaval"]},
+    {"nombre": "Carnaval La Falda", "localidad": "La Falda", "categoria": "fiesta", "mes_inicio": 2, "mes_fin": 2, "dia_aprox": "carnaval nacional", "tags": ["carnaval"]},
+    {"nombre": "Carnaval La Cumbre", "localidad": "La Cumbre", "categoria": "fiesta", "mes_inicio": 2, "mes_fin": 2, "dia_aprox": "carnaval nacional", "tags": ["carnaval"]},
+    {"nombre": "Oktoberfest Villa General Belgrano", "localidad": "Villa General Belgrano", "categoria": "festival", "mes_inicio": 10, "mes_fin": 10, "dia_aprox": "octubre", "masivo": true, "estado": "a_confirmar", "tags": ["cerveza"]},
+    {"nombre": "Festival Nacional del Cuarteto — Jesús María", "localidad": "Jesús María", "categoria": "festival", "mes_inicio": 12, "mes_fin": 12, "masivo": true, "estado": "a_confirmar", "tags": ["cuarteto", "musica"], "fuente_url": "https://www.festivaldecuarteto.com/"},
+    {"nombre": "Feria de Córdoba — Nuestra Señora de la Salud", "localidad": "Córdoba capital", "categoria": "feria", "mes_inicio": 5, "mes_fin": 5, "dia_aprox": "última semana mayo", "masivo": true, "tags": ["feria", "excursion"]},
+    {"nombre": "Peatonal del Chocolate Bialet", "localidad": "Bialet Massé", "categoria": "gastronomia", "mes_inicio": 7, "mes_fin": 7, "dia_aprox": "último sábado julio", "tags": ["invierno", "familia"]},
+    {"nombre": "Festival Día de la Bandera Bialet", "localidad": "Bialet Massé", "categoria": "fiesta", "mes_inicio": 6, "mes_fin": 6, "dia_aprox": "21 junio", "tags": ["patrio", "familia"]},
+    {"nombre": "Semana Santa turística Punilla", "localidad": "Valle de Punilla", "categoria": "temporada", "mes_inicio": 3, "mes_fin": 4, "dia_aprox": "Semana Santa", "tags": ["parejas"]},
+    {"nombre": "Cosquín Rock (si confirma edición)", "localidad": "Cosquín", "categoria": "festival", "fecha_inicio": "2027-02-12", "fecha_fin": "2027-02-14", "masivo": true, "estado": "a_confirmar", "tags": ["rock"]}
+  ]
+}

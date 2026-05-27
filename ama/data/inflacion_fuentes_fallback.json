@@ -1,0 +1,11 @@
+{
+  "descripcion": "Valores de respaldo si no se puede descargar el REM del BCRA",
+  "interanual_dic_2026_pct": 30.5,
+  "prox_12_meses_pct": 24.15,
+  "focus_consensus_2026_pct": 24.0,
+  "fuente": "REM abril 2026 + FocusEconomics (referencia)",
+  "urls_referencia": [
+    "https://www.bcra.gob.ar/relevamiento-expectativas-mercado-rem/",
+    "https://eleconomista.com.ar/economia/inflacion-2026-gobierno-promete-10-pero-40-consultoras-preven-mas-doble-n91968"
+  ]
+}

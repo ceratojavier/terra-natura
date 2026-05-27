@@ -1,0 +1,26 @@
+INFORME DE CALIDAD — Terra Natura videos Kempes
+==============================================
+
+FOTOS QUE NO SIRVEN PARA VIDEO PROFESIONAL (descartadas):
+--------------------------------------------------------
+- Poster "River vs Belgrano" del chat: PIXELADO, baja resolución, horizontal.
+  Los escudos y textos se cortan mal en vertical. NO USAR.
+
+- 01_kempes_hinchada_piratas.png (~10-15 KB): MUY CHICA / comprimida.
+- 02_piratas_celestes_grupo.png (~9 KB): PIXELADA.
+- 03_kempes_final_noche.png (~180 KB): horizontal, aceptable solo como referencia.
+- Fotos River tribuna (~15-22 KB): PIXELADAS — NO USAR.
+
+FOTOS / CLIPS QUE SÍ USAR:
+--------------------------
+- Clip YouTube "Belgrano récord de público en el Kempes" (1080p): hinchada REAL en movimiento.
+- Audio "La Fiesta de Belgrano" (1080p): música emotiva de fondo.
+- Fotos cabañas en carpeta "archivos multimedia/fotos terra natura" (alta resolución).
+
+VIDEO PROFESIONAL GENERADO:
+  kempes_belgrano_PRO_whatsapp.mp4
+  (1080x1920 vertical, subtítulos ASS, música, clips reales + cabañas HD)
+
+RECOMENDACIÓN:
+  Para mejor resultado, enviá fotos de hinchada/cancha en JPG de al menos 1200 px
+  de alto, o videos verticales (9:16) de tu celular.

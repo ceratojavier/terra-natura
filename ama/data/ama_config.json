@@ -1,0 +1,10 @@
+{
+  "modo_publicacion": "aprobacion",
+  "modo_publicacion_opciones": {
+    "aprobacion": "Genera borradores; vos aprobás antes de publicar",
+    "automatico": "Publicar solo cuando Meta/Google estén conectados (futuro)"
+  },
+  "canales_activos": ["instagram", "facebook", "whatsapp_status"],
+  "video_habilitado": true,
+  "nota_dueno": "Paso 1 marketing: calendario + textos + video local. Publicación automática en redes cuando conectemos Meta."
+}

@@ -1,0 +1,20 @@
+.env
+apis/
+local/config-dueño.json
+local/setup-uploads/
+local/inflacion_proyeccion_cache.json
+*.db
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+*.pem
+*.log
+# Trabajo temporal AMA — no versionar binarios pesados (quedan en disco local)
+ama/output/reel_work/
+ama/output/assets/
+ama/output/broll_cache/
+ama/output/videos/**/*.mp4
+ama/output/videos/**/*.webm
+ama/assets/music/*.mp3
+archivos multimedia/

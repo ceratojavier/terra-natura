@@ -1,0 +1,42 @@
+{
+  "modo_solo_reserva_directa": false,
+  "booking_habilitado": true,
+  "airbnb_habilitado": false,
+  "feeds_ical": [
+    {
+      "id": "feed-35974c264be6",
+      "unidad_id": "alpina-1",
+      "plataforma": "booking",
+      "url": "https://ical.booking.com/v1/export?t=6368e058-74e7-4c34-b05c-53dcf1fc5232",
+      "notas": ""
+    },
+    {
+      "id": "feed-278daaab75a7",
+      "unidad_id": "alpina-2",
+      "plataforma": "booking",
+      "url": "https://ical.booking.com/v1/export?t=a2a5d9e9-09bd-4b34-a8d4-4926654c0ebf",
+      "notas": ""
+    },
+    {
+      "id": "feed-3b2df3c30b6a",
+      "unidad_id": "alpina-3",
+      "plataforma": "booking",
+      "url": "https://ical.booking.com/v1/export?t=c67bbf27-9c3d-4995-b54d-c37eaf956754",
+      "notas": ""
+    },
+    {
+      "id": "feed-e9bdc0887d56",
+      "unidad_id": "suite-4",
+      "plataforma": "booking",
+      "url": "https://ical.booking.com/v1/export?t=a741cb8f-9675-4a63-ac8d-3c83f3e7b0cc",
+      "notas": ""
+    },
+    {
+      "id": "feed-81326ea28d01",
+      "unidad_id": "suite-5",
+      "plataforma": "booking",
+      "url": "https://ical.booking.com/v1/export?t=16367ff6-614e-4158-823f-128ef1fa8be8",
+      "notas": ""
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# Copiá este archivo como ref_NOMBRE.yaml y completá (o pedile a Cursor que lo llene)
+
+id: ref_ejemplo_01
+fuente:
+  plataforma: instagram
+  cuenta: "@nombre_cabana"
+  url: "https://www.instagram.com/reel/XXXXX/"
+  fecha_visto: 2026-05-20
+
+metricas_visibles:
+  vistas_aprox: ""
+  comentarios: ""
+
+# Lo que COPIAMOS (estructura / edición)
+estilo:
+  duracion_total_seg: 22
+  hook_seg: 2
+  segundos_por_plano_promedio: 3.2
+  cantidad_cortes: 7
+  tiene_voz_humana: false
+  texto_en_pantalla: grande_abajo
+  musica: upbeat_sin_voces
+  transicion: fundido  # corte_seco | fundido | zoom
+
+secuencia_observada:
+  - { orden: 1, tipo: gancho_texto, nota: "¿Finde en las sierras?" }
+  - { orden: 2, tipo: drone_agua, nota: "plano lago" }
+  - { orden: 3, tipo: foto_habitacion, nota: "cama + luz cálida" }
+  - { orden: 4, tipo: foto_pileta, nota: "" }
+  - { orden: 5, tipo: cta_whatsapp, nota: "" }
+
+# Mapeo a Terra Natura
+adaptacion_terra_natura:
+  preset_sugerido: clasico_cabana  # ver ama/data/reel_estilos_preset.json
+  angulo: "Escapada a las sierras — Bialet Massé"
+  notas_dueño: ""

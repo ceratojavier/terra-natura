@@ -1,0 +1,46 @@
+{
+  "horizonte_dias": 90,
+  "publicaciones_por_semana": 7,
+  "mix_objetivos": {
+    "cta_reserva": 0.35,
+    "fidelizacion": 0.25,
+    "utilidad": 0.25,
+    "branding": 0.15
+  },
+  "rotacion_semanal": [
+    {"dia": 0, "canal": "instagram", "formato": "reel", "objetivo_base": "utilidad"},
+    {"dia": 1, "canal": "tiktok", "formato": "reel", "objetivo_base": "branding"},
+    {"dia": 2, "canal": "facebook", "formato": "post", "objetivo_base": "cta_reserva"},
+    {"dia": 3, "canal": "whatsapp_status", "formato": "status", "objetivo_base": "fidelizacion"},
+    {"dia": 4, "canal": "instagram", "formato": "carousel", "objetivo_base": "cta_reserva"},
+    {"dia": 5, "canal": "tiktok", "formato": "reel", "objetivo_base": "utilidad"},
+    {"dia": 6, "canal": "facebook", "formato": "post", "objetivo_base": "fidelizacion"}
+  ],
+  "horarios_sugeridos": {
+    "instagram": "10:00",
+    "facebook": "12:00",
+    "whatsapp_status": "18:00",
+    "tiktok": "20:00"
+  },
+  "prioridad_eventos": {
+    "finde_largo": "cta_reserva",
+    "finde_largo_xl": "cta_reserva",
+    "vacaciones_invierno": "familia",
+    "cosquin_folklore": "evento",
+    "festival_rock": "evento",
+    "deporte": "evento",
+    "evento_local_bialet": "reserva_directa",
+    "temporada_alta_ene_feb": "parejas"
+  },
+  "matriz_publicaciones": "ama/data/matriz_publicaciones_evento_persona.json",
+  "investigacion_dueño": "ama/data/investigacion_eventos_dueño.json",
+  "carpetas_media_por_angulo": {
+    "parejas": "fotos terra natura/CABANA ALPINA 1",
+    "familia": "fotos terra natura/PARQUE",
+    "evento": "fotos terra natura/FESTIVALES",
+    "temporada_baja": "fotos terra natura/exteriores cabanas",
+    "reserva_directa": "fotos terra natura/LOGO",
+    "utilidad": "fotos terra natura/RIO Y BALNEARIOS",
+    "fidelizacion": "fotos terra natura/PISCINA"
+  }
+}

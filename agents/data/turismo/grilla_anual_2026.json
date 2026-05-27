@@ -1,0 +1,813 @@
+{
+  "anio": 2026,
+  "generado": "2026-05-25",
+  "resumen": {
+    "lugares": 10,
+    "eventos": 16,
+    "contenidos": 15,
+    "por_plataforma": {
+      "instagram": 3,
+      "tiktok": 3,
+      "web": 4,
+      "youtube": 5
+    }
+  },
+  "meses": [
+    {
+      "mes": 1,
+      "nombre": "Enero",
+      "eventos": [
+        {
+          "id": "a3477d17-6791-4a8b-bd66-5a932270f1d7",
+          "nombre": "Peatonal de la Cerveza Artesanal",
+          "localidad": "Bialet Massé",
+          "categoria": "gastronomia",
+          "fecha_inicio": "2026-01-17",
+          "fecha_fin": "2026-02-13",
+          "mes_inicio": 1,
+          "dia_aprox": "sáb 17/1, vie 6/2 y vie 13/2",
+          "descripcion": "Cerveza artesanal, música, mercado, turismo local.",
+          "distancia_km_bialet": 0.0,
+          "entrada": "gratis",
+          "tags": "verano,cerveza,parejas",
+          "prioridad": 1,
+          "fuente_url": "https://conexioncentro.com.ar/peatonal-cerveza-artesanal-bialet-masse-verano-2026/",
+          "apto_video": true
+        },
+        {
+          "id": "5733a57b-cdb9-4007-8ad2-9eb9376a320a",
+          "nombre": "Festival Nacional de Folklore de Cosquín — 66ª edición",
+          "localidad": "Cosquín",
+          "categoria": "festival",
+          "fecha_inicio": "2026-01-24",
+          "fecha_fin": "2026-02-01",
+          "mes_inicio": 1,
+          "dia_aprox": null,
+          "descripcion": "9 lunas, Plaza Próspero Molina. Transmisión Canal 10.",
+          "distancia_km_bialet": 12.0,
+          "entrada": "paga",
+          "tags": "folklore,iconico,parejas",
+          "prioridad": 1,
+          "fuente_url": "https://cbahoy.com.ar/grilla-completa-del-festival-de-cosquin-2026-fechas-artistas-y-horarios-de-cada-luna/",
+          "apto_video": true
+        },
+        {
+          "id": "16ea467b-b796-4655-b05c-500c650c61e1",
+          "nombre": "Festival de la Avicultura",
+          "localidad": "Santa María de Punilla",
+          "categoria": "festival",
+          "fecha_inicio": "2026-01-14",
+          "fecha_fin": "2026-01-22",
+          "mes_inicio": 1,
+          "dia_aprox": null,
+          "descripcion": "Q'Lokura, Abel Pintos, Axel, Euge Quevedo. Predio del Paseo.",
+          "distancia_km_bialet": 8.0,
+          "entrada": "paga",
+          "tags": "musica,verano",
+          "prioridad": 1,
+          "fuente_url": "https://www.eldiariodecarlospaz.com.ar/sociedad/2026/1/13/cuenta-regresiva-para-vivir-la-avicultura-2026-quienes-tocaran-252561.html",
+          "apto_video": true
+        },
+        {
+          "id": "fd809564-5393-469c-ba22-3ec6c04632ae",
+          "nombre": "Escenario Callejero Eduardo Falú (marco Cosquín)",
+          "localidad": "Bialet Massé",
+          "categoria": "cultura",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 1,
+          "dia_aprox": null,
+          "descripcion": "Noches festivaleras vinculadas al folklore coscoíno.",
+          "distancia_km_bialet": null,
+          "entrada": null,
+          "tags": "folklore,musica",
+          "prioridad": 2,
+          "fuente_url": null,
+          "apto_video": true
+        },
+        {
+          "id": "b07ac735-6028-4ca6-8310-6739c4c38aac",
+          "nombre": "Domingos en Familia — Barrancas Bermejas",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 1,
+          "dia_aprox": null,
+          "descripcion": "Actividades en balneario verano.",
+          "distancia_km_bialet": null,
+          "entrada": null,
+          "tags": "familia,verano",
+          "prioridad": 3,
+          "fuente_url": null,
+          "apto_video": true
+        }
+      ],
+      "total": 5
+    },
+    {
+      "mes": 2,
+      "nombre": "Febrero",
+      "eventos": [
+        {
+          "id": "a3477d17-6791-4a8b-bd66-5a932270f1d7",
+          "nombre": "Peatonal de la Cerveza Artesanal",
+          "localidad": "Bialet Massé",
+          "categoria": "gastronomia",
+          "fecha_inicio": "2026-01-17",
+          "fecha_fin": "2026-02-13",
+          "mes_inicio": 1,
+          "dia_aprox": "sáb 17/1, vie 6/2 y vie 13/2",
+          "descripcion": "Cerveza artesanal, música, mercado, turismo local.",
+          "distancia_km_bialet": 0.0,
+          "entrada": "gratis",
+          "tags": "verano,cerveza,parejas",
+          "prioridad": 1,
+          "fuente_url": "https://conexioncentro.com.ar/peatonal-cerveza-artesanal-bialet-masse-verano-2026/",
+          "apto_video": true
+        },
+        {
+          "id": "853ae07b-db02-4c49-bb75-1dbd4572b31e",
+          "nombre": "Carnaval Bialet Massé — 3 noches temáticas",
+          "localidad": "Bialet Massé",
+          "categoria": "fiesta",
+          "fecha_inicio": "2026-02-16",
+          "fecha_fin": "2026-02-18",
+          "mes_inicio": 2,
+          "dia_aprox": null,
+          "descripcion": "Norteña, cuarteto y gran cierre. San Martín y Malvinas.",
+          "distancia_km_bialet": 0.0,
+          "entrada": "gratis",
+          "tags": "carnaval,familia",
+          "prioridad": 1,
+          "fuente_url": "https://www.carlospazvivo.com/carlos-paz-y-punilla-se-preparan-para-un-fin-de-semana-a-puro-carnaval/",
+          "apto_video": true
+        },
+        {
+          "id": "5733a57b-cdb9-4007-8ad2-9eb9376a320a",
+          "nombre": "Festival Nacional de Folklore de Cosquín — 66ª edición",
+          "localidad": "Cosquín",
+          "categoria": "festival",
+          "fecha_inicio": "2026-01-24",
+          "fecha_fin": "2026-02-01",
+          "mes_inicio": 1,
+          "dia_aprox": null,
+          "descripcion": "9 lunas, Plaza Próspero Molina. Transmisión Canal 10.",
+          "distancia_km_bialet": 12.0,
+          "entrada": "paga",
+          "tags": "folklore,iconico,parejas",
+          "prioridad": 1,
+          "fuente_url": "https://cbahoy.com.ar/grilla-completa-del-festival-de-cosquin-2026-fechas-artistas-y-horarios-de-cada-luna/",
+          "apto_video": true
+        },
+        {
+          "id": "fd809564-5393-469c-ba22-3ec6c04632ae",
+          "nombre": "Escenario Callejero Eduardo Falú (marco Cosquín)",
+          "localidad": "Bialet Massé",
+          "categoria": "cultura",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 1,
+          "dia_aprox": null,
+          "descripcion": "Noches festivaleras vinculadas al folklore coscoíno.",
+          "distancia_km_bialet": null,
+          "entrada": null,
+          "tags": "folklore,musica",
+          "prioridad": 2,
+          "fuente_url": null,
+          "apto_video": true
+        },
+        {
+          "id": "24fa96d6-53ff-45bf-bfcf-cbdce076b770",
+          "nombre": "Carnaval Villa Carlos Paz — desfile internacional",
+          "localidad": "Villa Carlos Paz",
+          "categoria": "fiesta",
+          "fecha_inicio": "2026-02-16",
+          "fecha_fin": "2026-02-16",
+          "mes_inicio": 2,
+          "dia_aprox": null,
+          "descripcion": "400+ artistas, Reloj Cucú a Puente Centenario.",
+          "distancia_km_bialet": 18.0,
+          "entrada": "gratis",
+          "tags": "carnaval",
+          "prioridad": 2,
+          "fuente_url": null,
+          "apto_video": true
+        },
+        {
+          "id": "b07ac735-6028-4ca6-8310-6739c4c38aac",
+          "nombre": "Domingos en Familia — Barrancas Bermejas",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 1,
+          "dia_aprox": null,
+          "descripcion": "Actividades en balneario verano.",
+          "distancia_km_bialet": null,
+          "entrada": null,
+          "tags": "familia,verano",
+          "prioridad": 3,
+          "fuente_url": null,
+          "apto_video": true
+        },
+        {
+          "id": "b59a053c-55d8-4342-b983-c9629633c894",
+          "nombre": "Carnaval Tanti #ViviTanti",
+          "localidad": "Tanti",
+          "categoria": "fiesta",
+          "fecha_inicio": "2026-02-15",
+          "fecha_fin": "2026-02-16",
+          "mes_inicio": 2,
+          "dia_aprox": null,
+          "descripcion": null,
+          "distancia_km_bialet": 25.0,
+          "entrada": null,
+          "tags": "carnaval",
+          "prioridad": 3,
+          "fuente_url": null,
+          "apto_video": true
+        }
+      ],
+      "total": 7
+    },
+    {
+      "mes": 3,
+      "nombre": "Marzo",
+      "eventos": [
+        {
+          "id": "b07ac735-6028-4ca6-8310-6739c4c38aac",
+          "nombre": "Domingos en Familia — Barrancas Bermejas",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 1,
+          "dia_aprox": null,
+          "descripcion": "Actividades en balneario verano.",
+          "distancia_km_bialet": null,
+          "entrada": null,
+          "tags": "familia,verano",
+          "prioridad": 3,
+          "fuente_url": null,
+          "apto_video": true
+        }
+      ],
+      "total": 1
+    },
+    {
+      "mes": 4,
+      "nombre": "Abril",
+      "eventos": [],
+      "total": 0
+    },
+    {
+      "mes": 5,
+      "nombre": "Mayo",
+      "eventos": [
+        {
+          "id": "73102715-205f-4c63-a467-cc89cdee9cf4",
+          "nombre": "Feriado puente — Revolución de Mayo",
+          "localidad": "Córdoba / Punilla",
+          "categoria": "feriado",
+          "fecha_inicio": "2026-05-25",
+          "fecha_fin": "2026-05-25",
+          "mes_inicio": 5,
+          "dia_aprox": null,
+          "descripcion": "Escapada larga — promover estadía en Bialet.",
+          "distancia_km_bialet": null,
+          "entrada": null,
+          "tags": "puente,marketing",
+          "prioridad": 1,
+          "fuente_url": null,
+          "apto_video": true
+        },
+        {
+          "id": "191640c8-ee37-408f-b209-d4ed2f2f0a05",
+          "nombre": "Final Copa Argentina / eventos Kempes",
+          "localidad": "Córdoba capital",
+          "categoria": "deporte",
+          "fecha_inicio": "2026-05-24",
+          "fecha_fin": "2026-05-24",
+          "mes_inicio": 5,
+          "dia_aprox": null,
+          "descripcion": "River vs Belgrano — demanda alojamiento Punilla/Kempes.",
+          "distancia_km_bialet": 40.0,
+          "entrada": null,
+          "tags": "futbol,kempes",
+          "prioridad": 1,
+          "fuente_url": null,
+          "apto_video": true
+        },
+        {
+          "id": "c03fee08-d680-45aa-81d3-f932101d6873",
+          "nombre": "Feria de Córdoba — Nuestra Señora de la Salud",
+          "localidad": "Córdoba capital",
+          "categoria": "feria",
+          "fecha_inicio": "2026-05-23",
+          "fecha_fin": "2026-05-30",
+          "mes_inicio": 5,
+          "dia_aprox": null,
+          "descripcion": "El Arenal, casetas, música, fuegos artificiales.",
+          "distancia_km_bialet": 55.0,
+          "entrada": "paga",
+          "tags": "feria,excursion",
+          "prioridad": 2,
+          "fuente_url": "https://www.diariocordoba.com/feria-de-cordoba/2026/05/22/agenda-feria-cordoba-2026-tienes-130496219.html",
+          "apto_video": true
+        },
+        {
+          "id": "e4de7765-392d-4b0e-8fe0-fcdd3802ee33",
+          "nombre": "Caminatas guiadas Sendero con Historia",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 5,
+          "dia_aprox": "2 por mes — inscripción municipal",
+          "descripcion": "Patrimonio y naturaleza. Cupos limitados.",
+          "distancia_km_bialet": null,
+          "entrada": "gratis",
+          "tags": "trekking,turismo_eco",
+          "prioridad": 3,
+          "fuente_url": "https://www.eldiariodecarlospaz.com.ar/turismo/2025/5/25/bialet-masse-impulsa-caminatas-guiadas-para-vecinos-turistas-en-temporada-baja-234723.html",
+          "apto_video": true
+        }
+      ],
+      "total": 4
+    },
+    {
+      "mes": 6,
+      "nombre": "Junio",
+      "eventos": [
+        {
+          "id": "cb5615db-04da-4e25-bdc3-64c317388efb",
+          "nombre": "Festival Día de la Bandera",
+          "localidad": "Bialet Massé",
+          "categoria": "fiesta",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 6,
+          "dia_aprox": "21 de junio",
+          "descripcion": "Almuerzo patrio, folklore, emprendedores. Oficina de Turismo.",
+          "distancia_km_bialet": null,
+          "entrada": "gratis",
+          "tags": "invierno,familia",
+          "prioridad": 2,
+          "fuente_url": "https://www.eldiariodecarlospaz.com.ar/provincial/2025/6/18/como-sera-el-festival-de-la-bandera-que-se-hara-en-bialet-masse-236643.html",
+          "apto_video": true
+        },
+        {
+          "id": "e4de7765-392d-4b0e-8fe0-fcdd3802ee33",
+          "nombre": "Caminatas guiadas Sendero con Historia",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 5,
+          "dia_aprox": "2 por mes — inscripción municipal",
+          "descripcion": "Patrimonio y naturaleza. Cupos limitados.",
+          "distancia_km_bialet": null,
+          "entrada": "gratis",
+          "tags": "trekking,turismo_eco",
+          "prioridad": 3,
+          "fuente_url": "https://www.eldiariodecarlospaz.com.ar/turismo/2025/5/25/bialet-masse-impulsa-caminatas-guiadas-para-vecinos-turistas-en-temporada-baja-234723.html",
+          "apto_video": true
+        }
+      ],
+      "total": 2
+    },
+    {
+      "mes": 7,
+      "nombre": "Julio",
+      "eventos": [
+        {
+          "id": "0d0918c0-0c2a-4ddf-8b8a-f07e328fe659",
+          "nombre": "Feriado — Independencia Argentina",
+          "localidad": "Córdoba / Punilla",
+          "categoria": "feriado",
+          "fecha_inicio": "2026-07-09",
+          "fecha_fin": "2026-07-10",
+          "mes_inicio": 7,
+          "dia_aprox": null,
+          "descripcion": "9 y 10 julio (fin de semana largo turístico).",
+          "distancia_km_bialet": null,
+          "entrada": null,
+          "tags": "puente,invierno",
+          "prioridad": 1,
+          "fuente_url": null,
+          "apto_video": true
+        },
+        {
+          "id": "5e542f08-46d1-4b33-9dab-8bcda2ddcd59",
+          "nombre": "Peatonal del Chocolate",
+          "localidad": "Bialet Massé",
+          "categoria": "gastronomia",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 7,
+          "dia_aprox": "último sábado julio",
+          "descripcion": "Invierno, sendero con historia culmina en la peatonal.",
+          "distancia_km_bialet": null,
+          "entrada": "gratis",
+          "tags": "invierno,chocolate",
+          "prioridad": 2,
+          "fuente_url": null,
+          "apto_video": true
+        },
+        {
+          "id": "e4de7765-392d-4b0e-8fe0-fcdd3802ee33",
+          "nombre": "Caminatas guiadas Sendero con Historia",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 5,
+          "dia_aprox": "2 por mes — inscripción municipal",
+          "descripcion": "Patrimonio y naturaleza. Cupos limitados.",
+          "distancia_km_bialet": null,
+          "entrada": "gratis",
+          "tags": "trekking,turismo_eco",
+          "prioridad": 3,
+          "fuente_url": "https://www.eldiariodecarlospaz.com.ar/turismo/2025/5/25/bialet-masse-impulsa-caminatas-guiadas-para-vecinos-turistas-en-temporada-baja-234723.html",
+          "apto_video": true
+        }
+      ],
+      "total": 3
+    },
+    {
+      "mes": 8,
+      "nombre": "Agosto",
+      "eventos": [
+        {
+          "id": "e4de7765-392d-4b0e-8fe0-fcdd3802ee33",
+          "nombre": "Caminatas guiadas Sendero con Historia",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 5,
+          "dia_aprox": "2 por mes — inscripción municipal",
+          "descripcion": "Patrimonio y naturaleza. Cupos limitados.",
+          "distancia_km_bialet": null,
+          "entrada": "gratis",
+          "tags": "trekking,turismo_eco",
+          "prioridad": 3,
+          "fuente_url": "https://www.eldiariodecarlospaz.com.ar/turismo/2025/5/25/bialet-masse-impulsa-caminatas-guiadas-para-vecinos-turistas-en-temporada-baja-234723.html",
+          "apto_video": true
+        }
+      ],
+      "total": 1
+    },
+    {
+      "mes": 9,
+      "nombre": "Septiembre",
+      "eventos": [
+        {
+          "id": "e4de7765-392d-4b0e-8fe0-fcdd3802ee33",
+          "nombre": "Caminatas guiadas Sendero con Historia",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 5,
+          "dia_aprox": "2 por mes — inscripción municipal",
+          "descripcion": "Patrimonio y naturaleza. Cupos limitados.",
+          "distancia_km_bialet": null,
+          "entrada": "gratis",
+          "tags": "trekking,turismo_eco",
+          "prioridad": 3,
+          "fuente_url": "https://www.eldiariodecarlospaz.com.ar/turismo/2025/5/25/bialet-masse-impulsa-caminatas-guiadas-para-vecinos-turistas-en-temporada-baja-234723.html",
+          "apto_video": true
+        }
+      ],
+      "total": 1
+    },
+    {
+      "mes": 10,
+      "nombre": "Octubre",
+      "eventos": [
+        {
+          "id": "e4de7765-392d-4b0e-8fe0-fcdd3802ee33",
+          "nombre": "Caminatas guiadas Sendero con Historia",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 5,
+          "dia_aprox": "2 por mes — inscripción municipal",
+          "descripcion": "Patrimonio y naturaleza. Cupos limitados.",
+          "distancia_km_bialet": null,
+          "entrada": "gratis",
+          "tags": "trekking,turismo_eco",
+          "prioridad": 3,
+          "fuente_url": "https://www.eldiariodecarlospaz.com.ar/turismo/2025/5/25/bialet-masse-impulsa-caminatas-guiadas-para-vecinos-turistas-en-temporada-baja-234723.html",
+          "apto_video": true
+        }
+      ],
+      "total": 1
+    },
+    {
+      "mes": 11,
+      "nombre": "Noviembre",
+      "eventos": [
+        {
+          "id": "e4de7765-392d-4b0e-8fe0-fcdd3802ee33",
+          "nombre": "Caminatas guiadas Sendero con Historia",
+          "localidad": "Bialet Massé",
+          "categoria": "actividad",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 5,
+          "dia_aprox": "2 por mes — inscripción municipal",
+          "descripcion": "Patrimonio y naturaleza. Cupos limitados.",
+          "distancia_km_bialet": null,
+          "entrada": "gratis",
+          "tags": "trekking,turismo_eco",
+          "prioridad": 3,
+          "fuente_url": "https://www.eldiariodecarlospaz.com.ar/turismo/2025/5/25/bialet-masse-impulsa-caminatas-guiadas-para-vecinos-turistas-en-temporada-baja-234723.html",
+          "apto_video": true
+        }
+      ],
+      "total": 1
+    },
+    {
+      "mes": 12,
+      "nombre": "Diciembre",
+      "eventos": [
+        {
+          "id": "525dec10-dc16-46ff-b265-87431d2f0b5f",
+          "nombre": "Festival Nacional del Cuarteto — Jesús María",
+          "localidad": "Jesús María",
+          "categoria": "festival",
+          "fecha_inicio": null,
+          "fecha_fin": null,
+          "mes_inicio": 12,
+          "dia_aprox": "diciembre — Anfiteatro",
+          "descripcion": null,
+          "distancia_km_bialet": 45.0,
+          "entrada": null,
+          "tags": "cuarteto,musica",
+          "prioridad": 2,
+          "fuente_url": null,
+          "apto_video": true
+        }
+      ],
+      "total": 1
+    }
+  ],
+  "lugares_todo_anio": [
+    {
+      "id": "3164ecc5-b569-4d0e-9d9f-d7aa9c9d32ea",
+      "nombre": "Balneario municipal y río Cosquín",
+      "localidad": "Bialet Massé",
+      "categoria": "naturaleza",
+      "descripcion": "Playitas de arena, pileta natural, ideal familias.",
+      "distancia_km_bialet": 0.5,
+      "tags": "rio,verano,familia",
+      "fuente_url": "https://www.eldiariodecarlospaz.com.ar/turismo/2023/12/26/bialet-masse-una-tranquila-localidad-con-paisajes-serranos-imperdibles-191204.html"
+    },
+    {
+      "id": "91c26bff-4d52-4c46-bdc1-a8fd0048117d",
+      "nombre": "Horno histórico La Argentina (cal hidráulica)",
+      "localidad": "Bialet Massé",
+      "categoria": "cultura",
+      "descripcion": "Patrimonio industrial 1884, construcción dique San Roque.",
+      "distancia_km_bialet": 1.5,
+      "tags": "patrimonio",
+      "fuente_url": null
+    },
+    {
+      "id": "77124e46-ba21-44d5-a311-5e753ad58340",
+      "nombre": "Labios del Indio / Barrancas Bermejas",
+      "localidad": "Bialet Massé",
+      "categoria": "naturaleza",
+      "descripcion": "Formación rocosa, pesca, mates, paredones rojizos.",
+      "distancia_km_bialet": 2.0,
+      "tags": "rio,fotos,atardecer",
+      "fuente_url": null
+    },
+    {
+      "id": "523785f4-06c7-4a20-aa6b-d5e1e6740714",
+      "nombre": "Museo y Casa de Cultura Dr. Juan Bialet Massé",
+      "localidad": "Bialet Massé",
+      "categoria": "cultura",
+      "descripcion": "Historia del dique San Roque y del prócer local.",
+      "distancia_km_bialet": 0.3,
+      "tags": "museo,historia",
+      "fuente_url": null
+    },
+    {
+      "id": "2fda8228-f700-44b0-b7d9-bf8fee857fd4",
+      "nombre": "Sendero Buena Vista (Virgen Medalla Milagrosa)",
+      "localidad": "Bialet Massé",
+      "categoria": "trekking",
+      "descripcion": "1,8 km dificultad moderada, vistas al Valle de Punilla.",
+      "distancia_km_bialet": 1.0,
+      "tags": "senderismo,vistas",
+      "fuente_url": "https://cordobaturismo.gov.ar/experiencias/bialet-masse-buena-vista/"
+    },
+    {
+      "id": "dadf26f3-860f-40aa-91dc-10a60fef66ac",
+      "nombre": "Sendero río Mallín — Tobogán del Ailén",
+      "localidad": "Bialet Massé",
+      "categoria": "trekking",
+      "descripcion": "Caminatas guiadas municipales, cascada y pileta natural.",
+      "distancia_km_bialet": 3.0,
+      "tags": "caminata,guidada",
+      "fuente_url": null
+    },
+    {
+      "id": "1c58dcd5-8d67-4fc5-aff4-39cc1b012929",
+      "nombre": "Plaza Próspero Molina — Festival Cosquín",
+      "localidad": "Cosquín",
+      "categoria": "festival",
+      "descripcion": "Festival Nacional de Folklore, 9 lunas enero.",
+      "distancia_km_bialet": 12.0,
+      "tags": "folklore,musica",
+      "fuente_url": null
+    },
+    {
+      "id": "23666d37-f4df-480f-8439-ef3b6353a245",
+      "nombre": "Predio del Paseo — Avicultura",
+      "localidad": "Santa María de Punilla",
+      "categoria": "festival",
+      "descripcion": "Fiesta provincial con artistas de primer nivel.",
+      "distancia_km_bialet": 8.0,
+      "tags": "musica,verano",
+      "fuente_url": null
+    },
+    {
+      "id": "93e6e5b4-2672-4145-91a3-76ce46456279",
+      "nombre": "Centro cívico Villa Carlos Paz",
+      "localidad": "Villa Carlos Paz",
+      "categoria": "ciudad",
+      "descripcion": "Cine, peatonal, gastronomía, lago.",
+      "distancia_km_bialet": 18.0,
+      "tags": "ciudad,shopping",
+      "fuente_url": null
+    },
+    {
+      "id": "14690fcc-6c48-4bb1-9f0f-1b6167387459",
+      "nombre": "Dique San Roque / Lago",
+      "localidad": "Villa Carlos Paz",
+      "categoria": "naturaleza",
+      "descripcion": "Deportes náuticos, vistas, paseos. ~15 km de Bialet.",
+      "distancia_km_bialet": 15.0,
+      "tags": "lago,deportes",
+      "fuente_url": null
+    }
+  ],
+  "banco_contenidos": [
+    {
+      "id": "29d6adfd-b8fb-40e0-b731-da713bdf889f",
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/explore/tags/bialetmasse/",
+      "titulo": "#bialetmasse en Instagram",
+      "localidad": "Bialet Massé",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": "Requiere Meta API para descarga automática"
+    },
+    {
+      "id": "4f55cb55-b142-4e83-b355-cc9a0397cd09",
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/explore/tags/valledepunilla/",
+      "titulo": "#valledepunilla",
+      "localidad": "Valle de Punilla",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": null
+    },
+    {
+      "id": "841b471e-de21-428c-ab93-2505baf38055",
+      "plataforma": "instagram",
+      "url": "https://www.instagram.com/explore/tags/festivaldecosquin/",
+      "titulo": "#festivaldecosquin",
+      "localidad": "Cosquín",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": null
+    },
+    {
+      "id": "4d4184f6-a02f-4f79-9182-7ba19250fc4e",
+      "plataforma": "tiktok",
+      "url": "https://www.tiktok.com/tag/bialetmasse",
+      "titulo": "#bialetmasse TikTok",
+      "localidad": "Bialet Massé",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": null
+    },
+    {
+      "id": "ebe9a18a-cc3b-4e5e-964c-691462da03cd",
+      "plataforma": "tiktok",
+      "url": "https://www.tiktok.com/tag/valledepunilla",
+      "titulo": "#valledepunilla TikTok",
+      "localidad": "Valle de Punilla",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": null
+    },
+    {
+      "id": "36223b3e-4e57-4e3c-8756-315fb0e6e319",
+      "plataforma": "tiktok",
+      "url": "https://www.tiktok.com/tag/cosquin2026",
+      "titulo": "#cosquin2026",
+      "localidad": "Cosquín",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": null
+    },
+    {
+      "id": "4b140e69-4bd7-4382-9e50-61a3f37f59c4",
+      "plataforma": "web",
+      "url": "https://bialetmasse.com.ar/eventos/",
+      "titulo": "Agenda oficial eventos Bialet Massé",
+      "localidad": "Bialet Massé",
+      "calidad": "alta",
+      "verificado": true,
+      "notas": null
+    },
+    {
+      "id": "ad7de3e4-3e33-45e5-bf19-a95aca4f6a50",
+      "plataforma": "web",
+      "url": "https://bialetmasse.com.ar/",
+      "titulo": "Guía turística Bialet Massé",
+      "localidad": "Bialet Massé",
+      "calidad": "alta",
+      "verificado": true,
+      "notas": null
+    },
+    {
+      "id": "3f4cc1fd-9615-476d-a86f-4c0ab68779fe",
+      "plataforma": "web",
+      "url": "https://cordobaturismo.gov.ar/agenda/fiestas-y-festivales-en-cordoba/",
+      "titulo": "Córdoba Turismo — Fiestas y festivales",
+      "localidad": "Córdoba",
+      "calidad": "alta",
+      "verificado": true,
+      "notas": null
+    },
+    {
+      "id": "8a225b7d-4790-4e2c-8300-f7411983eed7",
+      "plataforma": "web",
+      "url": "https://www.eldiariodecarlospaz.com.ar/",
+      "titulo": "El Diario de Carlos Paz — agenda Punilla",
+      "localidad": "Valle de Punilla",
+      "calidad": "alta",
+      "verificado": false,
+      "notas": null
+    },
+    {
+      "id": "251a49b4-3b4a-46dd-9fec-d32e979735fb",
+      "plataforma": "youtube",
+      "url": "https://www.youtube.com/results?search_query=Bialet+Massé+turismo+Valle+de+Punilla",
+      "titulo": "Búsqueda YouTube — Bialet Massé turismo",
+      "localidad": "Bialet Massé",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": "Recolectar manualmente o con YouTube Data API (YOUTUBE_API_KEY)"
+    },
+    {
+      "id": "7a587d6d-0470-44d5-a9a9-17783679c5b4",
+      "plataforma": "youtube",
+      "url": "https://www.youtube.com/results?search_query=qué+hacer+en+Cosquín+2026",
+      "titulo": "Búsqueda YouTube — Cosquín",
+      "localidad": "Cosquín",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": null
+    },
+    {
+      "id": "86091aa8-6f9b-42dd-8c5e-0b63d357b783",
+      "plataforma": "youtube",
+      "url": "https://www.youtube.com/@Canal10Cordoba",
+      "titulo": "Canal 10 Córdoba — transmisión Cosquín y eventos",
+      "localidad": "Córdoba",
+      "calidad": "alta",
+      "verificado": false,
+      "notas": "Clips oficiales festival folklore"
+    },
+    {
+      "id": "b874dca7-cdbd-4820-8f4d-f6a9613a3d1f",
+      "plataforma": "youtube",
+      "url": "https://www.youtube.com/results?search_query=Festival+Cosquín+2026+en+vivo",
+      "titulo": "Festival Cosquín 2026 en YouTube",
+      "localidad": "Cosquín",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": null
+    },
+    {
+      "id": "41e394c6-7147-4da2-b1c2-a19a1b23fbbe",
+      "plataforma": "youtube",
+      "url": "https://www.youtube.com/results?search_query=Valle+de+Punilla+lugares+para+visitar",
+      "titulo": "Valle de Punilla lugares",
+      "localidad": "Valle de Punilla",
+      "calidad": "busqueda",
+      "verificado": false,
+      "notas": null
+    }
+  ]
+}

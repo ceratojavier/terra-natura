@@ -1,0 +1,24 @@
+VIDEO BELGRANO — TUS FOTOS + MOVIMIENTO
+=====================================
+
+Pegá fotos en el chat de Cursor O copiálas a:
+  ama\output\assets\propias\
+
+Al generar, se importan solas desde el chat y entran TODAS con movimiento.
+
+Efectos: zoom, paneo vertical en la tribuna, fundidos entre escenas.
+
+Archivo generado:
+  kempes_belgrano_TUS_FOTOS_whatsapp.mp4
+
+Texto para pegar en WhatsApp:
+  TEXTO_WHATSAPP_KEMPES_BELGRANO.txt
+
+Volver a generar (doble clic):
+  local\Generar-video-Kempes-Belgrano.bat
+
+Si tenés fotos del partido (El Doce, redes, vos en la cancha):
+  Copialas a: ama\output\assets\propias\
+  y avisame — las metemos en el montaje (mejor que cualquier imagen genérica).
+
+Créditos legales: CREDITOS_IMAGENES.txt

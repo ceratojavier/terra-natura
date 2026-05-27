@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "descripcion": "Qué publicar, para quién y cuándo según tipo de evento — Terra Natura",
+    "ventanas_dias_antes": [60, 45, 30, 21, 14, 7, 3, 1],
+    "canales": ["instagram", "facebook", "whatsapp_status", "tiktok"]
+  },
+  "buyer_personas": {
+    "pareja_escapada": {
+      "label": "Pareja sin hijos",
+      "unidad_sugerida": ["alpina-1", "alpina-2", "alpina-3", "suite-5"],
+      "dolor": "Quieren intimidad, vista y cero estrés de check-in",
+      "gancho": "Refugio amplio para dos · balcón · pileta al volver del evento"
+    },
+    "familia_ninos": {
+      "label": "Familia con niños (hasta ~12 años)",
+      "unidad_sugerida": ["alpina-1", "alpina-2", "alpina-3"],
+      "dolor": "Espacio para chicos sin apretar a 4 adultos",
+      "gancho": "Parque, pileta y living amplio — PB cómodo para menores"
+    },
+    "deportista_aventura": {
+      "label": "Runner / MTB / rally",
+      "unidad_sugerida": ["alpina-1", "alpina-2", "suite-4"],
+      "dolor": "Necesitan dormir cerca del circuito y recuperar",
+      "gancho": "Base Bialet — autovía a La Cumbre / Carlos Paz · cocina y descanso"
+    },
+    "fan_festival": {
+      "label": "Público festival / recital",
+      "unidad_sugerida": ["alpina-1", "alpina-2", "suite-5"],
+      "dolor": "Hotel caro o lejos después del show",
+      "gancho": "Tu base después del show — 600 m rotonda · volvé a dormir tranquilo"
+    },
+    "cordobes_finde": {
+      "label": "Córdoba capital — finde largo",
+      "unidad_sugerida": ["alpina-1", "suite-5", "suite-4"],
+      "dolor": "Puente corto, quieren salir sin manejar horas",
+      "gancho": "30 min zona norte · Kempes y ferias — dormís en las sierras"
+    },
+    "turista_bsas": {
+      "label": "Buenos Aires / costa — puente largo",
+      "unidad_sugerida": ["alpina-1", "alpina-2", "alpina-3"],
+      "dolor": "Reservan tarde para puente",
+      "gancho": "Check-in sábado · 3–4 noches · seña por WhatsApp"
+    },
+    "local_bialet": {
+      "label": "Vecino / turista regional — evento en Bialet",
+      "unidad_sugerida": ["alpina-1", "suite-4"],
+      "dolor": "Evento en el pueblo, no quieren manejar de noche",
+      "gancho": "A pie del festival — pileta y asador en el complejo"
+    }
+  },
+  "tipos_evento": {
+    "finde_largo_puente": {
+      "detectar": ["tipo:puente", "tipo:finde_largo", "categoria:puente"],
+      "personas": ["pareja_escapada", "familia_ninos", "cordobes_finde", "turista_bsas"],
+      "publicaciones": [
+        {"dias_antes": 60, "formato": "carousel", "canal": "instagram", "objetivo": "cta_reserva", "angulo_tpl": "reserva_directa", "tema": "feriado_puente", "copy_focus": "Anticipá el puente — fechas y seña 50%"},
+        {"dias_antes": 30, "formato": "reel", "canal": "instagram", "objetivo": "utilidad", "angulo_tpl": "parejas", "tema": "feriado_puente", "copy_focus": "Cuántas noches conviene + qué unidad"},
+        {"dias_antes": 14, "formato": "post", "canal": "facebook", "objetivo": "cta_reserva", "angulo_tpl": "familia", "tema": "feriado_puente", "copy_focus": "Últimas fechas — Alpinas con chicos"},
+        {"dias_antes": 7, "formato": "status", "canal": "whatsapp_status", "objetivo": "fidelizacion", "angulo_tpl": "reserva_directa", "tema": "feriado_puente", "copy_focus": "Consultá por WA — respuesta dueños"},
+        {"dias_antes": 3, "formato": "reel", "canal": "tiktok", "objetivo": "cta_reserva", "angulo_tpl": "parejas", "tema": "feriado_puente", "copy_focus": "Urgencia suave — quedan pocas noches"}
+      ]
+    },
+    "festival_musica_folklore": {
+      "detectar": ["categoria:festival", "folklore", "cosquin", "nueve lunas", "avicultura"],
+      "personas": ["fan_festival", "pareja_escapada", "turista_bsas"],
+      "publicaciones": [
+        {"dias_antes": 60, "formato": "carousel", "canal": "instagram", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Grilla confirmada — dormí en Bialet, no en el ruido"},
+        {"dias_antes": 45, "formato": "post", "canal": "facebook", "objetivo": "utilidad", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Distancia Cosquín / SM Punilla — mapa mental"},
+        {"dias_antes": 21, "formato": "reel", "canal": "instagram", "objetivo": "branding", "angulo_tpl": "parejas", "tema": "verano", "copy_focus": "Vista balcón + volver del show"},
+        {"dias_antes": 7, "formato": "status", "canal": "whatsapp_status", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Última semana — consultá Alpina vs Suite"},
+        {"dias_antes": 1, "formato": "status", "canal": "whatsapp_status", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Hoy arranca — últimas consultas"}
+      ]
+    },
+    "festival_rock": {
+      "detectar": ["rock", "cosquin rock", "tanti solar", "tanti rock"],
+      "personas": ["fan_festival", "pareja_escapada"],
+      "publicaciones": [
+        {"dias_antes": 45, "formato": "reel", "canal": "instagram", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Después del rock — pileta y silencio en Bialet"},
+        {"dias_antes": 14, "formato": "carousel", "canal": "instagram", "objetivo": "utilidad", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Tanti / Cosquín — cuánto manejar"},
+        {"dias_antes": 3, "formato": "status", "canal": "whatsapp_status", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Finde del festival — últimas unidades"}
+      ]
+    },
+    "evento_local_bialet": {
+      "detectar": ["bialet", "barrancas bermejas", "peatonal", "cerveza artesanal", "chocolate"],
+      "personas": ["local_bialet", "pareja_escapada", "familia_ninos"],
+      "publicaciones": [
+        {"dias_antes": 30, "formato": "reel", "canal": "instagram", "objetivo": "branding", "angulo_tpl": "parejas", "tema": "verano", "copy_focus": "El evento es acá — dormí en el complejo"},
+        {"dias_antes": 14, "formato": "post", "canal": "facebook", "objetivo": "cta_reserva", "angulo_tpl": "reserva_directa", "tema": "verano", "copy_focus": "Sin manejar de noche — Los Talas 759"},
+        {"dias_antes": 7, "formato": "status", "canal": "whatsapp_status", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Peatonal / festival — consultá noches"}
+      ]
+    },
+    "deporte_running_trail": {
+      "detectar": ["maraton", "trail", "running", "corrida", "codigo aventura"],
+      "personas": ["deportista_aventura", "pareja_escapada"],
+      "publicaciones": [
+        {"dias_antes": 45, "formato": "carousel", "canal": "instagram", "objetivo": "utilidad", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Base para la carrera — cocina y descanso"},
+        {"dias_antes": 21, "formato": "reel", "canal": "tiktok", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Carlos Paz octubre — recuperación pileta"},
+        {"dias_antes": 7, "formato": "status", "canal": "whatsapp_status", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Semana de la carrera — últimas cabañas"}
+      ]
+    },
+    "deporte_mtb_rally": {
+      "detectar": ["mtb", "mountain bike", "rio pinto", "rally", "actc", "ciclismo"],
+      "personas": ["deportista_aventura"],
+      "publicaciones": [
+        {"dias_antes": 60, "formato": "post", "canal": "facebook", "objetivo": "utilidad", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Desafío Río Pinto — salís de La Cumbre, dormís en Bialet"},
+        {"dias_antes": 30, "formato": "reel", "canal": "instagram", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Mayo MTB — estacionamiento y heladera con freezer"},
+        {"dias_antes": 7, "formato": "status", "canal": "whatsapp_status", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Fin de semana de carrera — consultá Suite PB sin escaleras"}
+      ]
+    },
+    "recital_masivo_kempes": {
+      "detectar": ["kempes", "recital", "estadio", "polideportivo", "feria cordoba"],
+      "personas": ["fan_festival", "cordobes_finde", "pareja_escapada"],
+      "publicaciones": [
+        {"dias_antes": 30, "formato": "reel", "canal": "instagram", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Show en Kempes — dormís en sierras, no en el centro"},
+        {"dias_antes": 14, "formato": "carousel", "canal": "instagram", "objetivo": "utilidad", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "30 min zona norte + regreso tranquilo"},
+        {"dias_antes": 3, "formato": "status", "canal": "whatsapp_status", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Finde del recital — últimas consultas"}
+      ]
+    },
+    "temporada_alta_verano": {
+      "detectar": ["categoria:temporada", "verano", "vacaciones"],
+      "personas": ["familia_ninos", "pareja_escapada"],
+      "publicaciones": [
+        {"dias_antes": 90, "formato": "carousel", "canal": "instagram", "objetivo": "branding", "angulo_tpl": "familia", "tema": "verano", "copy_focus": "Verano en Bialet — pileta y parque"},
+        {"dias_antes": 30, "formato": "reel", "canal": "tiktok", "objetivo": "cta_reserva", "angulo_tpl": "parejas", "tema": "verano", "copy_focus": "Enero–febrero — reservá directo"}
+      ]
+    }
+  },
+  "fallback": {
+    "tipo": "generico_evento",
+    "personas": ["pareja_escapada"],
+    "publicaciones": [
+      {"dias_antes": 30, "formato": "post", "canal": "instagram", "objetivo": "cta_reserva", "angulo_tpl": "evento", "tema": "verano", "copy_focus": "Hay evento cerca — consultá disponibilidad"}
+    ]
+  }
+}

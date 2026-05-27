@@ -1,0 +1,14 @@
+---
+description: Voz de marca Terra Natura — sin Punilla en copy público; sierras y Bialet
+alwaysApply: true
+---
+
+# Terra Natura — voz y vocabulario
+
+Antes de escribir copy (redes, WhatsApp comercial, web, ads, emails, posts AMA):
+
+1. Leer `docs/COPY_TONO_MARCA.md` y, si existe, `marketing/contexto/00_voz_marca.md`.
+2. **No usar "Punilla" ni "Valle de Punilla"** en texto público ni hashtags principales. Usar: **escapada a las sierras**, **sierras de Córdoba**, **Bialet Massé**, **lago San Roque**.
+3. Nombres oficiales de localidades en fichas internas/eventos (ej. "Santa María de Punilla") solo en datos, no como slogan.
+4. Tono: anfitrión cordobés sutil, vos, sin corporativo.
+5. Si el usuario corrige una palabra, actualizar `docs/COPY_TONO_MARCA.md` y `ama/templates/copy_prompts.yaml`.

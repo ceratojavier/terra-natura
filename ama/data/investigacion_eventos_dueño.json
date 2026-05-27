@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "descripcion": "Investigación del dueño — fuentes validadas y fechas clave para agenda y marketing",
+    "actualizado": "2026-05-26",
+    "uso": "AMA, configurador paso 11, eventos_confirmados, matriz publicaciones"
+  },
+  "fuentes_validadas": {
+    "portales_oficiales": [
+      {
+        "id": "cordoba_turismo_agenda",
+        "nombre": "Córdoba Turismo — Agenda de eventos",
+        "url": "https://cordobaturismo.gov.ar/agenda/fiestas-y-festivales-en-cordoba/",
+        "rol": "Sitio madre para cruce de datos y fechas exactas de grillas oficiales",
+        "ejemplos_validados": [
+          "Festival de las Barrancas Bermejas (Bialet Massé) — 2.ª edición asentada a fines de noviembre",
+          "Nueve Lunas — Festival Nacional de Folklore Cosquín (fechas exactas de la grilla)"
+        ]
+      },
+      {
+        "id": "cordoba_turismo_prensa",
+        "nombre": "Córdoba Turismo — Prensa y novedades",
+        "url": "https://cordobaturismo.gov.ar/",
+        "rol": "Corregir nomenclatura y datos institucionales de festivales",
+        "ejemplos_validados": [
+          "Tanti Rock → nombre oficial: Tanti Solar del Rock (Festival Solidario)",
+          "Grillas de enero y fines benéficos (dispensario local, escuelas)"
+        ]
+      },
+      {
+        "id": "bialet_turismo_municipal",
+        "nombre": "Municipalidad de Bialet Massé — Turismo",
+        "url": "https://bialetmasse.com.ar/",
+        "rol": "Geografía e identidad del festival Barrancas Bermejas",
+        "notas": "Acantilados a la vera del río Cosquín — Labios del Indio / Barrancas Bermejas"
+      }
+    ],
+    "medios_regionales": [
+      {
+        "id": "diario_carlos_paz",
+        "nombre": "El Diario de Carlos Paz",
+        "url": "https://www.eldiariodecarlospaz.com.ar/",
+        "rol": "Constatar cuándo festivales del valle obtienen Interés Turístico Provincial y fijan fines de semana"
+      }
+    ],
+    "deportes": [
+      {
+        "id": "codigo_aventura",
+        "nombre": "Código Aventura",
+        "url": "https://www.codigoaventura.com/",
+        "rol": "Calendario trail running y rural bike — concentración octubre Carlos Paz",
+        "tags": ["trail", "mtb", "maraton", "octubre"]
+      },
+      {
+        "id": "desafio_rio_pinto",
+        "nombre": "Desafío al Río Pinto (MTB)",
+        "url": "https://www.cordobadeportes.gob.ar/",
+        "rol": "Fecha exacta competencia MTB de mayo — inicio La Cumbre",
+        "via": "Agencia Córdoba Deportes / historial eventos",
+        "mes_tipico": "mayo"
+      }
+    ]
+  },
+  "eventos_clave_registrados": [
+    {
+      "nombre": "Festival de las Barrancas Bermejas",
+      "localidad": "Bialet Massé",
+      "edicion": 2,
+      "ventana": "fines de noviembre",
+      "mes_aprox": 11,
+      "estado": "confirmado_recurrente",
+      "fuente": "cordoba_turismo_agenda",
+      "angulo_comercial": "El festival es en el pueblo — dormí en Terra Natura y viví la barranca y el río.",
+      "prioridad": 1
+    },
+    {
+      "nombre": "Tanti Solar del Rock (ex Tanti Rock)",
+      "nombre_anterior": "Tanti Rock",
+      "localidad": "Tanti",
+      "ventana": "enero",
+      "mes_aprox": 1,
+      "estado": "confirmado_recurrente",
+      "fuente": "cordoba_turismo_prensa",
+      "notas": "Festival solidario — recaudación dispensario y escuelas",
+      "angulo_comercial": "Después del festival volvé a Bialet en 20 min — pileta y descanso real.",
+      "prioridad": 2
+    },
+    {
+      "nombre": "Desafío al Río Pinto",
+      "localidad": "La Cumbre (inicio)",
+      "categoria": "deporte",
+      "subcategoria": "mountain_bike",
+      "mes_aprox": 5,
+      "estado": "confirmado_recurrente",
+      "fuente": "desafio_rio_pinto",
+      "angulo_comercial": "Base en Bialet para la carrera — cocina, descanso y ruta a La Cumbre por autovía.",
+      "prioridad": 2
+    },
+    {
+      "nombre": "Concentración maratones / trail — Carlos Paz",
+      "localidad": "Villa Carlos Paz",
+      "categoria": "deporte",
+      "mes_aprox": 10,
+      "estado": "a_confirmar_anual",
+      "fuente": "codigo_aventura",
+      "angulo_comercial": "Corriste en Carlos Paz — recuperate en Bialet con pileta y parque.",
+      "prioridad": 2
+    }
+  ],
+  "feriados_actualizar": {
+    "oficial_2026": "argentina.gob.ar + Resolución JGM 164/2025",
+    "dias_no_laborables_turisticos_2026": ["2026-03-23", "2026-07-10", "2026-12-07"],
+    "nota_guemes_2026": "17/06/2026 miércoles — posible traslado a puente (ver BO)"
+  }
+}

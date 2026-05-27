@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "actualizado": "2026-03-20",
+    "doc_detalle": "marketing/contexto/FEED_INSTAGRAM_TERRA_NATURA.md"
+  },
+  "perfiles_referencia": [
+    {
+      "cuenta": "@aldea_india",
+      "url": "https://www.instagram.com/aldea_india/",
+      "seguidores_aprox": 64400,
+      "posts_aprox": 124,
+      "posicionamiento": "Cabañas para dos · El Durazno · Sierras de Córdoba",
+      "patrones_feed": [
+        "reels dominan filas superiores de la grilla",
+        "estética pareja + naturaleza",
+        "pocas publicaciones sin video"
+      ],
+      "aplicar_a_terra_natura": [
+        "priorizar reels sobre carruseles",
+        "gancho emocional pareja",
+        "fotos living/dormitorio despejados"
+      ]
+    },
+    {
+      "cuenta": "@callesdelasierra",
+      "url": "https://www.instagram.com/callesdelasierra/",
+      "seguidores_aprox": 73300,
+      "posts_aprox": 484,
+      "posicionamiento": "Cabañas parejas · Las Calles · Traslasierra",
+      "patrones_feed": [
+        "muchos highlights por tema (11+)",
+        "mezcla reel y post/carrusel",
+        "alta frecuencia histórica",
+        "bio clara con ubicación y para quién"
+      ],
+      "aplicar_a_terra_natura": [
+        "armar highlights Reservá, Unidades, Pileta, Ubicación",
+        "1 carrusel semanal informativo",
+        "historias diarias con disponibilidad"
+      ]
+    }
+  ],
+  "terra_natura": {
+    "usuario_sugerido": "@terranaturabialet o @cabanas_terranatura",
+    "bio_lineas": [
+      "Cabañas Alpinas Terra Natura",
+      "Escapada a las sierras · Bialet Massé",
+      "Parejas (ideal) · Familia · 5 unidades",
+      "600 m lago San Roque · pileta y parque",
+      "Reservá directo 👇 WhatsApp"
+    ],
+    "highlights_obligatorios": [
+      "Reservá",
+      "Alpinas",
+      "Suites",
+      "Pileta y parque",
+      "Ubicación",
+      "Huéspedes"
+    ],
+    "ratio_feed": { "reels": 0.7, "carruseles_posts": 0.3 },
+    "publicaciones_por_semana": {
+      "reels": 4,
+      "carruseles": 1,
+      "posts_utiles": 1,
+      "historias": 7
+    },
+    "pilares_porcentaje": {
+      "pareja_sensacion": 35,
+      "pileta_parque": 25,
+      "unidad": 20,
+      "ubicacion": 10,
+      "reserva_directa": 10
+    },
+    "estilo_reel_preset": "clasico_cabana"
+  }
+}

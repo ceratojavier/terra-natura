@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "descripcion": "Recetas de montaje inspiradas en reels que funcionan — material siempre Terra Natura",
+    "default": "clasico_cabana"
+  },
+  "estilos": {
+    "clasico_cabana": {
+      "nombre": "Clásico cabaña (equilibrado)",
+      "hook_seg": 2.2,
+      "duracion_plano_promedio": 3.8,
+      "xfade_seg": 0.45,
+      "secuencia_objetivo": "cta_reserva",
+      "notas": "Gancho texto → YT agua → foto → YT lago → foto → CTA"
+    },
+    "rapido_trend": {
+      "nombre": "Rápido tipo trend",
+      "hook_seg": 1.5,
+      "duracion_plano_promedio": 2.8,
+      "xfade_seg": 0.3,
+      "secuencia_objetivo": "branding",
+      "notas": "Más cortes, texto corto, energía alta"
+    },
+    "lento_emocional": {
+      "nombre": "Lento emocional",
+      "hook_seg": 3.0,
+      "duracion_plano_promedio": 4.8,
+      "xfade_seg": 0.55,
+      "secuencia_objetivo": "fidelizacion",
+      "notas": "Menos planos, Ken Burns suave"
+    },
+    "antes_despues": {
+      "nombre": "Pregunta + reveal",
+      "hook_seg": 2.5,
+      "duracion_plano_promedio": 3.4,
+      "xfade_seg": 0.4,
+      "secuencia_objetivo": "utilidad",
+      "hook_plantilla": "¿Buscás desconectar sin irte al caos del centro?",
+      "notas": "Hook pregunta → interior → exterior pileta"
+    }
+  }
+}

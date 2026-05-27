@@ -1,0 +1,143 @@
+{
+  "intentos": {
+    "Oktoberfest|2026-10-01|VGB": {
+      "fecha": "2026-05-25",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Feria de Córdoba — El Arenal|2026-05-23|Córdoba capital": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Final Copa Argentina — River vs Belgrano (Kempes)|2026-05-24|Córdoba — Estadio Kempes": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Festival Día de la Bandera — Bialet Massé|2026-06-21|Bialet Massé": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Peatonal del Chocolate — Bialet Massé|2026-07-25|Bialet Massé": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Oktoberfest — Fiesta Nacional de la Cerveza (VGB)|2026-10-01|Villa General Belgrano": {
+      "fecha": "2026-05-26",
+      "ok": true,
+      "origen": "og:image",
+      "url": "https://oktoberfestargentina.com.ar/wp-content/uploads/2022/10/Sabado-08-01-86.jpg"
+    },
+    "Feria de Córdoba — Nuestra Señora de la Salud|2026-05-23|Córdoba capital": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "17° edición del Festival “Sabores y Saberes» en Las Higueras|2026-05-25|Córdoba capital": {
+      "fecha": "2026-05-25",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Festival del Locro Serrano en Embalse|2026-05-25|Córdoba capital": {
+      "fecha": "2026-05-25",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Mes del Bienestar: Festival Bienestar en la naturaleza en San Javier y Yacanto|2026-05-30|Córdoba capital": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "5º Feria Nacional de Diseñadores y Emprendedores en San Francisco|2026-06-05|Córdoba capital": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Fiesta zonal del Salame en Cintra|2026-06-06|Córdoba capital": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Fiesta Fa! en Plaza de la Música|2026-08-20|Córdoba capital": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Festival de la Avicultura 2026|2026-01-14|Santa María de Punilla": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "La Falda Bajo las Estrellas — verano 2026|2026-02-06|La Falda": {
+      "fecha": "2026-05-26",
+      "ok": true,
+      "origen": "og:image",
+      "url": "http://www.turismolafalda.gob.ar/img/noticias/th_2026-2-24-17.52.9.546_NoticiaFoto.jpeg"
+    },
+    "Festival Alienígena — Capilla del Monte (10ª edición)|2026-02-06|Capilla del Monte": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "37° Encuentro de Colectividades — Alta Gracia|2026-02-04|Alta Gracia": {
+      "fecha": "2026-05-26",
+      "ok": true,
+      "origen": "og:image",
+      "url": "https://altagracia.gob.ar//wp-content/uploads/2022/10/ico_area_ambiente.png"
+    },
+    "Carnaval Tanti|2026-02-15|Tanti": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Carnaval La Falda|2026-02-15|La Falda": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Carnaval La Cumbre|2026-02-15|La Cumbre": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Carnaval Bialet Massé — 3 noches|2026-02-16|Bialet Massé": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "Carnaval Villa Carlos Paz — desfile|2026-02-16|Villa Carlos Paz": {
+      "fecha": "2026-05-26",
+      "ok": false,
+      "error": "sin_imagen_en_web"
+    },
+    "La Estación Outdoor — Comuna San Roque (Korolova · Fideles)|2026-04-24|Comuna San Roque — Dique San Roque": {
+      "fecha": "2026-05-26",
+      "ok": true,
+      "origen": "og:image",
+      "url": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LA%20ESTACION%20-%202026-02-CRHyZQ3HilKhLruRWSaZDJA1gURIGP.png"
+    },
+    "Campeonato Mundial IMAC — Aeroclub Alta Gracia|2026-04-01|Alta Gracia": {
+      "fecha": "2026-05-26",
+      "ok": true,
+      "origen": "og:image",
+      "url": "https://altagracia.gob.ar//wp-content/uploads/2022/10/ico_area_ambiente.png"
+    },
+    "Festival Peperina — 10ª edición (Semana Santa)|2026-04-02|Alta Gracia": {
+      "fecha": "2026-05-26",
+      "ok": true,
+      "origen": "og:image",
+      "url": "https://altagracia.gob.ar//wp-content/uploads/2022/10/ico_area_ambiente.png"
+    }
+  },
+  "archivos": {
+    "Oktoberfest — Fiesta Nacional de la Cerveza (VGB)|2026-10-01|Villa General Belgrano": "FESTIVALES/FESTIVALES_oktoberfest_fiesta_nacional_de_la_cerveza_vgb.jpg",
+    "La Falda Bajo las Estrellas — verano 2026|2026-02-06|La Falda": "FESTIVALES/FESTIVALES_la_falda_bajo_las_estrellas_verano_2026.jpg",
+    "37° Encuentro de Colectividades — Alta Gracia|2026-02-04|Alta Gracia": "FESTIVALES/FESTIVALES_37_encuentro_de_colectividades_alta_gracia.png",
+    "La Estación Outdoor — Comuna San Roque (Korolova · Fideles)|2026-04-24|Comuna San Roque — Dique San Roque": "FESTIVALES/FESTIVALES_la_estaci_n_outdoor_comuna_san_roque_korolova_fideles.png",
+    "Campeonato Mundial IMAC — Aeroclub Alta Gracia|2026-04-01|Alta Gracia": "FESTIVALES/FESTIVALES_campeonato_mundial_imac_aeroclub_alta_gracia.png",
+    "Festival Peperina — 10ª edición (Semana Santa)|2026-04-02|Alta Gracia": "FESTIVALES/FESTIVALES_festival_peperina_10_edici_n_semana_santa.png"
+  }
+}

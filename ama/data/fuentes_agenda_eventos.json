@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "descripcion": "Fuentes que usa Terra Natura para armar la agenda de eventos (actualización semanal)",
+    "actualizar_semanal": true,
+    "zona": "Córdoba · sierras · Bialet Massé",
+    "version": 2
+  },
+  "datos_internos": [
+    {
+      "id": "confirmados_manuales",
+      "nombre": "Eventos confirmados (vos / Cursor)",
+      "archivo": "ama/data/eventos_confirmados_ar.json",
+      "cubre": ["confirmado", "manual"],
+      "estado_scraper": "activo",
+      "nota": "Fechas oficiales que cargás a mano"
+    },
+    {
+      "id": "calendario_importante",
+      "nombre": "Calendario importante (Kempes, Cosquín, ferias…)",
+      "archivo": "ama/data/calendario_importante_ar.json",
+      "cubre": ["masivo", "festival", "kempes", "cosquin", "feria", "bialet"],
+      "estado_scraper": "activo"
+    },
+    {
+      "id": "fiestas_recurrentes",
+      "nombre": "Fiestas recurrentes Punilla / Córdoba",
+      "archivo": "ama/data/fiestas_recurrentes_extendido.json",
+      "cubre": ["carnaval", "rock", "folklore", "bialet", "carlos_paz", "la_falda"],
+      "estado_scraper": "activo"
+    },
+    {
+      "id": "turismo_seed",
+      "nombre": "Seed turismo Terra Natura",
+      "archivo": "backend/services/turismo_seed_data.py",
+      "cubre": ["turismo", "punilla"],
+      "estado_scraper": "activo"
+    },
+    {
+      "id": "feriados_argentina",
+      "nombre": "Feriados y puentes Argentina",
+      "archivo": "ama/data/feriados_puentes_ar.json",
+      "cubre": ["feriados", "puentes"],
+      "estado_scraper": "activo"
+    }
+  ],
+  "fuentes_oficiales": [
+    {
+      "id": "cordoba_turismo",
+      "nombre": "Córdoba Turismo — Agenda fiestas y festivales",
+      "url": "https://cordobaturismo.gov.ar/agenda/fiestas-y-festivales-en-cordoba/",
+      "cubre": ["festivales", "ferias", "provincia", "cordoba"],
+      "estado_scraper": "activo",
+      "scraper": "ama.scrapers.sources_cordoba_turismo"
+    },
+    {
+      "id": "cordoba_turismo_prensa",
+      "nombre": "Córdoba Turismo — Prensa y novedades",
+      "url": "https://cordobaturismo.gov.ar/",
+      "cubre": ["prensa", "novedades", "grillas", "festivales"],
+      "estado_scraper": "referencia",
+      "nota": "Nomenclatura oficial (ej. Tanti Solar del Rock)"
+    },
+    {
+      "id": "argentina_feriados",
+      "nombre": "Feriados nacionales (gob.ar)",
+      "url": "https://www.argentina.gob.ar/jefatura/feriados-nacionales-2026",
+      "cubre": ["feriados", "puentes"],
+      "estado_scraper": "referencia",
+      "tipo": "json_local",
+      "archivo": "ama/data/feriados_puentes_ar.json"
+    }
+  ],
+  "fuentes_locales": [
+    {
+      "id": "bialet_oficial",
+      "nombre": "Bialet Massé — Eventos municipales",
+      "url": "https://bialetmasse.com.ar/eventos/",
+      "cubre": ["bialet", "peatonales", "carnaval", "municipal"],
+      "estado_scraper": "referencia",
+      "nota": "Revisar manual o agregar fechas a confirmados"
+    },
+    {
+      "id": "turismo_punilla",
+      "nombre": "Turismo Punilla / municipios vecinos",
+      "url": "https://www.turismopunilla.gob.ar/",
+      "cubre": ["punilla", "carlos_paz", "cosquin", "la_falda", "la_cumbre"],
+      "estado_scraper": "referencia"
+    }
+  ],
+  "medios_regionales": [
+    {
+      "id": "diario_carlos_paz",
+      "nombre": "El Diario de Carlos Paz",
+      "url": "https://www.eldiariodecarlospaz.com.ar/",
+      "cubre": ["punilla", "carlos_paz", "cosquin", "deportes", "recitales"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    },
+    {
+      "id": "carlos_paz_vivo",
+      "nombre": "Carlos Paz Vivo",
+      "url": "https://www.carlospazvivo.com/",
+      "cubre": ["punilla", "carnaval", "eventos", "carlos_paz"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    },
+    {
+      "id": "diario_cordoba",
+      "nombre": "Diario Córdoba",
+      "url": "https://www.diariocordoba.com/",
+      "cubre": ["cordoba_capital", "feria", "kempes", "recitales"],
+      "estado_scraper": "referencia"
+    },
+    {
+      "id": "la_voz",
+      "nombre": "La Voz del Interior",
+      "url": "https://www.lavoz.com.ar/",
+      "cubre": ["cordoba", "agenda_cultural", "carlos_paz"],
+      "estado_scraper": "referencia"
+    },
+    {
+      "id": "cbahoy",
+      "nombre": "CBA Hoy",
+      "url": "https://cbahoy.com.ar/",
+      "cubre": ["cosquin", "folklore", "grillas", "punilla"],
+      "estado_scraper": "referencia"
+    }
+  ],
+  "deportes": [
+    {
+      "id": "codigo_aventura",
+      "nombre": "Código Aventura — trail y rural bike",
+      "url": "https://www.codigoaventura.com/",
+      "cubre": ["trail", "mtb", "maraton", "octubre", "carlos_paz"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    },
+    {
+      "id": "cordoba_deportes",
+      "nombre": "Agencia Córdoba Deportes",
+      "url": "https://www.cordobadeportes.gob.ar/",
+      "cubre": ["mtb", "rio_pinto", "deporte", "la_cumbre"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    },
+    {
+      "id": "running_argentina",
+      "nombre": "Running Argentina — calendario carreras",
+      "url": "https://www.runningargentina.com/calendario",
+      "cubre": ["maratones", "medias", "trail", "running", "corrida"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    },
+    {
+      "id": "world_triathlon",
+      "nombre": "World Triathlon — calendario",
+      "url": "https://www.triathlon.org/events",
+      "cubre": ["triatlon", "triathlon"],
+      "estado_scraper": "referencia"
+    },
+    {
+      "id": "rally_argentina",
+      "nombre": "ACTC / Rally Argentina",
+      "url": "https://www.actc.org.ar/",
+      "cubre": ["rally", "automovilismo", "actc"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    },
+    {
+      "id": "uci_ciclismo",
+      "nombre": "Federación ciclismo (FECO)",
+      "url": "https://www.feveciclismo.com.ar/",
+      "cubre": ["ciclismo", "bici_ruta", "ciclista"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    }
+  ],
+  "musica_recitales": [
+    {
+      "id": "estadio_kempes",
+      "nombre": "Estadio Kempes / Polideportivo — shows",
+      "url": "https://www.estadiokempes.com/",
+      "cubre": ["recitales", "futbol", "masivos_cordoba", "kempes"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    },
+    {
+      "id": "cosquin_festival",
+      "nombre": "Festival Nacional de Folklore Cosquín",
+      "url": "https://www.festivaldecosquin.org/",
+      "cubre": ["folklore", "enero", "cosquin"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    },
+    {
+      "id": "cosquin_rock",
+      "nombre": "Cosquín Rock",
+      "url": "https://www.cosquinrock.com/",
+      "cubre": ["rock", "febrero", "cosquin"],
+      "estado_scraper": "referencia",
+      "habilitada_default": true
+    },
+    {
+      "id": "jesus_maria_cuarteto",
+      "nombre": "Festival Nacional del Cuarteto — Jesús María",
+      "url": "https://www.festivaldecuarteto.com/",
+      "cubre": ["cuarteto", "diciembre", "jesus_maria"],
+      "estado_scraper": "referencia"
+    },
+    {
+      "id": "plaza_prospero",
+      "nombre": "Plaza Próspero Molina (Cosquín) — recitales",
+      "url": "https://www.cosquin.gob.ar/",
+      "cubre": ["cosquin", "musica", "recital"],
+      "estado_scraper": "referencia"
+    }
+  ],
+  "localidades_prioridad": {
+    "valle_punilla": [
+      "Bialet Massé",
+      "Cosquín",
+      "Villa Carlos Paz",
+      "Tanti",
+      "La Cumbre",
+      "La Falda",
+      "Valle Hermoso",
+      "Capilla del Monte",
+      "Villa Giardino",
+      "Santa María de Punilla",
+      "Casa Grande",
+      "Los Cocos",
+      "Huerta Grande"
+    ],
+    "cordoba_turistica": [
+      "Córdoba capital",
+      "Villa General Belgrano",
+      "Jesús María",
+      "Mina Clavero",
+      "Villa Dolores",
+      "Alta Gracia",
+      "Río Ceballos",
+      "Unquillo",
+      "Salsipuedes",
+      "Villa María",
+      "Marcos Juárez"
+    ]
+  }
+}

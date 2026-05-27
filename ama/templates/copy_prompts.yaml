@@ -1,0 +1,57 @@
+# Plantillas copy Terra Natura — ES-AR (ver docs/COPY_TONO_MARCA.md — sin Punilla en público)
+whatsapp_link: "https://wa.me/5493541571190"
+
+angulos:
+  parejas:
+    titulo: "Refugio para dos — escapada a las sierras"
+    hashtags: ["#TerraNatura", "#BialetMasse", "#EscapadaALasSierras", "#EscapadaDePareja"]
+  familia:
+    titulo: "Familia, pileta y parque en Bialet Massé"
+    hashtags: ["#TerraNatura", "#BialetMasse", "#CabañasCordoba", "#VacacionesEnFamilia"]
+  evento:
+    titulo: "Tu base después del evento — cerca del lago"
+    hashtags: ["#TerraNatura", "#SierrasDeCordoba", "#BialetMasse", "#LagoSanRoque"]
+  deporte_activo:
+    titulo: "Base para tu carrera — descansá en Bialet"
+    hashtags: ["#TerraNatura", "#BialetMasse", "#EscapadaALasSierras", "#TurismoActivo"]
+  temporada_baja:
+    titulo: "Escapada de semana con mejor precio"
+    hashtags: ["#TerraNatura", "#BialetMasse", "#TemporadaBaja"]
+  reserva_directa:
+    titulo: "Reservá directo — atención de los dueños en el predio"
+    hashtags: ["#TerraNatura", "#ReservaDirecta", "#BialetMasse"]
+
+cuerpos:
+  instagram: |
+    {titulo} 🏔️
+
+    {cuerpo_extra}
+
+    Alpinas con vista al valle · Suites loft · pileta y parque.
+    Los Talas 759, Bialet Massé — a 600 m del lago.
+
+    Escribinos por WhatsApp 👇
+    {cta_linea}
+
+    {hashtags_linea}
+  facebook: |
+    {titulo}
+
+    {cuerpo_extra}
+
+    Cabañas Alpinas Terra Natura — escapada a las sierras en Bialet Massé.
+    Consultá disponibilidad: {cta_linea}
+  whatsapp_status: |
+    {titulo} · Terra Natura 🌿
+    {cuerpo_extra}
+    Consultá: wa.me/5493541571190
+  tiktok: |
+    {titulo} 🏔️
+    {cuerpo_extra}
+    WhatsApp en bio · Los Talas 759 Bialet Massé
+    {hashtags_linea}
+
+extras_por_tema:
+  feriado_puente: "Puente ideal: 3 noches, desconexión y pileta hasta las 20 h."
+  verano: "Verano en Punilla: living amplio, balcón con vista y dueños en el lugar."
+  promo_baja: "Temporada baja — preguntanos por packs 3×2 / 4×3 y lun–jue con mejor tarifa."

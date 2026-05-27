@@ -1,0 +1,7 @@
+musica_fondo.mp3 — SoundHelix Song 8
+Fuente: https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3
+Licencia: uso libre según SoundHelix (ver soundhelix.com).
+
+Para reels comerciales Terra Natura. Podés reemplazar este archivo por otro MP3
+libre de derechos (Pixabay, YouTube Audio Library, etc.) manteniendo el nombre
+musica_fondo.mp3 o configurando musica_fondo_ruta en AMA.

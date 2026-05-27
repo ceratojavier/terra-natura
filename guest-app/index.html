@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3" />
+  <title>Terra Natura · Guía del huésped</title>
+  <style>
+    :root {
+      --bg: #0f1a14;
+      --card: #1a2e22;
+      --accent: #6bbf8a;
+      --text: #e8f0eb;
+      --muted: #9cb0a5;
+      --warn: #d4a017;
+      font-size: clamp(14px, 1.8vw, 26px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 20% 20%, #254030 0%, var(--bg) 55%);
+      color: var(--text);
+      font-family: system-ui, "Segoe UI", sans-serif;
+      line-height: 1.45;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 2px solid var(--accent);
+      background: rgba(0, 0, 0, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 0.35rem;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.85rem 1rem;
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    nav a {
+      padding: 0.5rem 0.95rem;
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--accent);
+      text-decoration: none;
+      border: 2px solid transparent;
+      outline-offset: 3px;
+    }
+
+    nav a:focus,
+    nav a:hover {
+      border-color: var(--accent);
+    }
+
+    main {
+      padding: 1rem 1.25rem 3rem;
+      max-width: 58rem;
+      margin: 0 auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      color: var(--accent);
+      font-size: 1.05rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 0.95rem 1.1rem;
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    .card h3 {
+      margin: 0 0 0.35rem 0;
+      font-size: 1rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .cta {
+      display: inline-flex;
+      margin-top: 0.6rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #082010;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--warn);
+      color: #1a1400;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    button.tag {
+      font: inherit;
+      cursor: pointer;
+      padding: 0.55rem 0.95rem;
+      border-radius: 999px;
+      border: 2px solid var(--muted);
+      background: transparent;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    button.tag.active {
+      border-color: var(--accent);
+      background: rgba(107, 191, 138, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.72rem;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 id="titulo">Terra Natura · Guía</h1>
+    <p class="sub" id="subtitulo"></p>
+  </header>
+
+  <nav aria-label="Secciones">
+    <a href="#pileta">Pileta</a>
+    <a href="#comer">Dónde comer</a>
+    <a href="#super">Almacenes</a>
+    <a href="#cerca">Cerca</a>
+    <a href="#dia">Todo el día</a>
+    <a href="#gustos">Tus gustos</a>
+    <a href="#lluvia">Lluvia</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main id="main"></main>
+
+  <footer>
+    Recomendaciones orientativas. Horarios y negocios: verificar en Google Maps antes de salir · Bialet Massé · Córdoba
+  </footer>
+
+  <script>
+    async function cargarDatos() {
+      const nochesParam = Number(new URLSearchParams(location.search).get("noches") || "");
+      let noches = Number.isFinite(nochesParam) && nochesParam > 0 ? nochesParam : null;
+
+      const res = await fetch("data.json", { cache: "no-store" });
+      const data = await res.json();
+      render(data, noches);
+    }
+
+    function render(data, noches) {
+      const subtituloEl = document.getElementById("subtitulo");
+      subtituloEl.textContent = noches
+        ? `Ideas pensadas para estadías desde ${noches} ${noches === 1 ? "noche" : "noches"}`
+        : "Escribí noches en la URL: ·index.html?noches=5·";
+
+      document.getElementById("main").innerHTML = "";
+
+      pileta(document.getElementById("main"), data);
+      seccionLista(document.getElementById("main"), "comer", "🍽 Dónde comer", data.comer);
+      seccionLista(document.getElementById("main"), "super", "🛒 Almacenes cercanos", data.almacenes);
+      filtrosPorNoche(document.getElementById("main"), data.paseos_cerca, noches || 999, "#cerca", "📍 Recorrer cerca del complejo");
+      filtrosPorNoche(document.getElementById("main"), data.paseos_dia_completo, noches || 999, "#dia", "🚙 Salidas día completo");
+      gustos(document.getElementById("main"), data.gustos_tags);
+      lluvia(document.getElementById("main"), data.mal_tiempo);
+      contacto(document.getElementById("main"), data.complejo);
+    }
+
+    function pileta(main, data) {
+      const h = `
+        <section id="pileta">
+          <h2>Pileta y parque</h2>
+          <div class="card">
+            <span class="badge">Horario</span>
+            <h3>Pileta</h3>
+            <p>De ${data.complejo.pileta_horario}. Niños con adulto siempre · respetá silencio de vecinos.</p>
+          </div>
+        </section>`;
+      main.insertAdjacentHTML("beforeend", h);
+    }
+
+    function seccionLista(main, id, titulo, items) {
+      let html = `<section id="${id}"><h2>${titulo}</h2>`;
+      for (const it of items || []) {
+        const link = it.maps ? `<a class="cta" href="${it.maps}" target="_blank" rel="noopener">Maps</a>` : "";
+        html += `
+          <div class="card">
+            <h3>${it.nombre || it.titulo}</h3>
+            ${it.telefono ? `<p>${it.telefono}</p>` : ""}
+            <p>${it.tipo || it.desc || ""} ${it.tips || ""}</p>
+            ${link}
+          </div>`;
+      }
+      html += `</section>`;
+      main.insertAdjacentHTML("beforeend", html);
+    }
+
+    function filtrosPorNoche(main, items, nochesLimite, anchor, titulo) {
+      let html = `<section id="${anchor.replace("#", "")}"><h2>${titulo}</h2>`;
+      for (const it of items || []) {
+        if ((it.min_noches || 1) > nochesLimite && nochesLimite !== 999) continue;
+        html += `
+          <div class="card">
+            <h3>${it.titulo}</h3>
+            <p>${it.desc}${it.min_noches ? ` · ideal desde ${it.min_noches} noches.` : ""}</p>
+          </div>`;
+      }
+      html += `</section>`;
+      main.insertAdjacentHTML("beforeend", html);
+    }
+
+    function gustos(main, gustos_arr) {
+      let html = `<section id="gustos"><h2>Elegí un estilo · ideas rápidas</h2>`;
+      html += `<div class="tags" id="tagRow">`;
+      gustos_arr.forEach((g, idx) => {
+        html += `<button type="button" class="tag" data-i="${idx}">#${g.tag}</button>`;
+      });
+      html += `</div><div class="card" id="tagResult" hidden><p id="tagText"></p></div>`;
+      html += `</section>`;
+      main.insertAdjacentHTML("beforeend", html);
+      const row = main.querySelector("#gustos #tagRow");
+      row.addEventListener("click", (e) => {
+        const btn = e.target.closest("button.tag");
+        if (!btn) return;
+        row.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        const g = gustos_arr[Number(btn.dataset.i)];
+        const res = document.getElementById("tagResult");
+        document.getElementById("tagText").textContent = g.texto;
+        res.hidden = false;
+      });
+    }
+
+    function lluvia(main, items) {
+      let html = `<section id="lluvia"><h2>Si llueve · plan B</h2>`;
+      for (const it of items || []) {
+        html += `<div class="card"><p>· ${it.titulo}</p></div>`;
+      }
+      html += `</section>`;
+      main.insertAdjacentHTML("beforeend", html);
+    }
+
+    function contacto(main, c) {
+      const html = `
+        <section id="contacto">
+          <h2>Anfitriones</h2>
+          <div class="card">
+            <h3>${c.nombre}</h3>
+            <p>WhatsApp reservas y consultas</p>
+            <a class="cta" href="${c.whatsapp}" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          </div>
+        </section>`;
+      main.insertAdjacentHTML("beforeend", html);
+    }
+
+    cargarDatos().catch(() => {
+      document.getElementById("main").innerHTML =
+        "<p>No se pudo cargar data.json. Revisá que el archivo esté en la misma carpeta.</p>";
+    });
+  </script>
+</body>
+
+</html>
