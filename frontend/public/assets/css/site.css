@@ -197,10 +197,79 @@ a {
 
 .hero-grid {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
   position: relative;
   z-index: 3;
   align-items: end;
+}
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr minmax(300px, 400px);
+    align-items: center;
+  }
+}
+
+.hero-card--glass {
+  background: rgba(18, 32, 26, 0.42);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem 1.25rem;
+  color: #f8f4ec;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.hero-card--glass h2 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-title);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #fffdfa;
+  line-height: 1.2;
+}
+
+.hero-card--glass p {
+  margin: 0 0 0.85rem;
+  font-size: 0.92rem;
+  color: #ebe4d8;
+  line-height: 1.45;
+}
+
+.hero-card-note {
+  margin: 0.65rem 0 0 !important;
+  font-size: 0.8rem !important;
+  color: #d8cfc0 !important;
+}
+
+.hero-booking-form {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.hero-booking-form label {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #e8dfd2;
+}
+
+.hero-booking-form input,
+.hero-booking-form select {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text);
+}
+
+.hero-booking-form .btn {
+  width: 100%;
+  margin-top: 0.25rem;
 }
 
 .hero-copy {

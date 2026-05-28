@@ -46,18 +46,39 @@
       <div class="hero-copy">
         <p class="eyebrow">Bialet Massé · Sierras de Córdoba</p>
         <h1>Escapada con pileta y parque propio</h1>
-        <p class="lead">Cinco unidades, anfitriones en el predio y a 600 m del lago San Roque.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="./reservar.html">Cotizar y pagar online</a>
-          <a class="btn btn-outline btn-on-dark" href="#unidades">Ver cabañas</a>
-          <a class="btn btn-outline btn-on-dark" href="https://wa.me/5493541571190?text=Hola%2C%20quiero%20consultar%20disponibilidad%20en%20Terra%20Natura" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
+        <p class="lead">Somos una familia que vive en el predio: te recibimos cerca, con calma, a 600 m del lago San Roque.</p>
         <div class="proof-strip">
           <span><strong>5</strong> unidades</span>
           <span><strong>Pileta</strong> + parque</span>
           <span><strong>Seña</strong> 50%</span>
         </div>
       </div>
+      <aside class="hero-card hero-card--glass" aria-labelledby="hero-reserva-titulo">
+        <h2 id="hero-reserva-titulo">Reservar y cotizar online</h2>
+        <p>Elegí fechas y unidad: te mostramos si hay lugar y cuánto sale la estadía. Después podés pagar la seña o escribirnos con tranquilidad.</p>
+        <form class="hero-booking-form" id="hero-cotiza" action="./reservar.html" method="get">
+          <label>Unidad
+            <select name="unidad" required>
+              <option value="alpina-1">Alpina 1</option>
+              <option value="alpina-2">Alpina 2</option>
+              <option value="alpina-3">Alpina 3</option>
+              <option value="suite-4">Suite PB</option>
+              <option value="suite-5">Suite PA</option>
+            </select>
+          </label>
+          <label>Check-in
+            <input type="date" name="checkin" required />
+          </label>
+          <label>Check-out
+            <input type="date" name="checkout" required />
+          </label>
+          <label>Personas
+            <input type="number" name="personas" min="1" max="6" value="2" required />
+          </label>
+          <button class="btn btn-primary" type="submit">Consultar disponibilidad y precio</button>
+        </form>
+        <p class="hero-card-note">Sin compromiso: primero ves el precio, después decidís.</p>
+      </aside>
     </div>
   </section>
 

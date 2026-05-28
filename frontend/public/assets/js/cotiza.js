@@ -22,11 +22,17 @@
 
   const urlParams = new URLSearchParams(location.search);
   const unidadParam = urlParams.get("unidad");
+  const checkInParam = urlParams.get("checkin") || urlParams.get("check_in");
+  const checkOutParam = urlParams.get("checkout") || urlParams.get("check_out");
+  const personasParam = urlParams.get("personas");
   if (unidadParam) {
     try {
       unidad.value = unidadParam;
     } catch (_) {}
   }
+  if (checkInParam && checkIn) checkIn.value = checkInParam;
+  if (checkOutParam && checkOut) checkOut.value = checkOutParam;
+  if (personasParam && personas) personas.value = personasParam;
 
   let siteConfig = { apiBase: "", bookingUrl: BOOKING_URL, whatsapp: "5493541571190" };
   let motorConfig = null;
@@ -243,26 +249,35 @@
 
     resultado.innerHTML = html;
 
+    const quien = nombre && nombre.value.trim() ? nombre.value.trim() : "te escribo";
+    const fechasTxt = `del ${checkIn.value} al ${checkOut.value}`;
+    let disponibilidadTxt = "¿Me confirmás si hay lugar para esas fechas?";
+    if (disponible === true) {
+      disponibilidadTxt = "Vi que habría lugar para esas fechas.";
+    } else if (disponible === false) {
+      disponibilidadTxt = "Para esas fechas no vi lugar libre; ¿tenés otra opción cercana?";
+    }
+    const precioTxt =
+      total > 0
+        ? ` En la web me figuró alrededor de ${fmt(total)}` +
+          (fuente === "pms" ? " (consultado en el sistema)." : " (estimado).")
+        : "";
+
     const msg =
-      "Hola, quiero reservar en Terra Natura.\n\n" +
-      `Unidad: ${unitLabel}\n` +
-      `Fechas: ${checkIn.value} al ${checkOut.value}\n` +
-      `Personas: ${personasNum}\n` +
-      (nombre && nombre.value ? `Nombre: ${nombre.value}\n` : "") +
-      (canal && canal.value ? `Canal: ${canal.value}\n` : "") +
-      (disponible === true ? "Disponibilidad PMS: sí\n" : disponible === false ? "Disponibilidad PMS: no\n" : "") +
-      `Total ${fuente === "pms" ? "PMS" : "estimado"}: ${fmt(total)}\n` +
-      `Seña referencia: ${fmt(senia)}\n` +
-      (email && email.value ? `Email: ${email.value}\n` : "") +
-      (nota && nota.value ? `Comentario: ${nota.value}\n` : "") +
-      "\n¿Confirmamos seña y datos de ingreso?";
+      `Hola, ¿cómo están? Soy ${quien}.\n\n` +
+      `Estuve mirando Terra Natura y nos gustaría ir ${fechasTxt}, ` +
+      `somos ${personasNum} en ${unitLabel}.\n` +
+      disponibilidadTxt +
+      precioTxt +
+      (nota && nota.value ? `\n\nAlgo para tener en cuenta: ${nota.value}` : "") +
+      "\n\n¿Me ayudás a coordinar la reserva? Gracias.";
 
     const wa = document.createElement("a");
     wa.className = "btn btn-primary";
     wa.href = `${WA_BASE}?text=${encodeURIComponent(msg)}`;
     wa.target = "_blank";
     wa.rel = "noopener noreferrer";
-    wa.textContent = "Consultar por WhatsApp";
+    wa.textContent = "Escribirnos por WhatsApp";
     acciones.appendChild(wa);
 
     if (base && disponible === true && nombre && nombre.value.trim()) {
