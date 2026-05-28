@@ -238,13 +238,15 @@
       resultado.className = "result ok";
       html =
         `<strong>Disponible</strong> · ${fmt(total)} por ${noches} noche(s).<br>` +
-        `Seña (50%): <strong>${fmt(senia)}</strong>.`;
+        `Seña (50%): <strong>${fmt(senia)}</strong>.<br>` +
+        `<small>Fuente de precio: ${fuente === "pms" ? "PMS online (tarifa real)" : "estimado local de referencia"}.</small>`;
     } else {
       resultado.className = "result";
       html =
         `<strong>Estimado:</strong> ${fmt(total)} por ${noches} noche(s).<br>` +
         `Seña de referencia (50%): <strong>${fmt(senia)}</strong>.` +
-        (fuente === "estimado_local" ? "<br><small>Conectá el servidor PMS para confirmar ocupación real.</small>" : "");
+        `<br><small>Fuente de precio: ${fuente === "pms" ? "PMS online (tarifa real)" : "estimado local de referencia"}.</small>` +
+        (fuente === "estimado_local" ? "<br><small>Para precio final exacto, conectá el servidor PMS por apiBase.</small>" : "");
     }
 
     resultado.innerHTML = html;
