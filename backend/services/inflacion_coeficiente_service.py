@@ -73,6 +73,25 @@ def _mes_siguiente(y: int, m: int) -> tuple[int, int]:
     return y, m + 1
 
 
+def _acumular_periodo(
+    y0: int, m0: int, y1: int, m1: int, cache: dict[str, Any]
+) -> tuple[float, list[dict[str, Any]]]:
+    """Acumula inflación mensual desde (y0,m0) hasta (y1,m1), ambos inclusive."""
+    mult = 1.0
+    meses_detalle: list[dict[str, Any]] = []
+    cy, cm = y0, m0
+    while True:
+        tasa = _tasa_mensual(cy, cm, cache)
+        mult *= 1.0 + tasa / 100.0
+        meses_detalle.append(
+            {"periodo": f"{cy}-{cm:02d}", "tasa_mensual_pct": round(tasa, 2)}
+        )
+        if (cy, cm) == (y1, m1):
+            break
+        cy, cm = _mes_siguiente(cy, cm)
+    return mult, meses_detalle
+
+
 def _descubrir_xlsx_rem() -> tuple[str, str] | None:
     html = _fetch_url(_BCRA_REM).decode("utf-8", "ignore")
     matches = re.findall(
@@ -219,17 +238,7 @@ def coeficiente_interanual_mismo_mes(fecha: date, cache: dict[str, Any] | None =
 
     y, m = fecha.year, fecha.month
     y0, m0 = y - 1, m
-    mult = 1.0
-    meses_detalle: list[dict[str, Any]] = []
-
-    cy, cm = y0, m0
-    while True:
-        tasa = _tasa_mensual(cy, cm, cache)
-        mult *= 1.0 + tasa / 100.0
-        meses_detalle.append({"periodo": f"{cy}-{cm:02d}", "tasa_mensual_pct": round(tasa, 2)})
-        if (cy, cm) == (y, m):
-            break
-        cy, cm = _mes_siguiente(cy, cm)
+    mult, meses_detalle = _acumular_periodo(y0, m0, y, m, cache)
 
     return {
         "fecha": fecha.isoformat(),
@@ -240,6 +249,51 @@ def coeficiente_interanual_mismo_mes(fecha: date, cache: dict[str, Any] | None =
         "hasta_periodo": f"{y}-{m:02d}",
         "meses": meses_detalle,
         "fuente": cache.get("fuente", "REM BCRA"),
+    }
+
+
+def coeficiente_anual_acumulado(fecha: date, cache: dict[str, Any] | None = None) -> dict[str, Any]:
+    """
+    Acumulado anual desde enero del año en curso hasta el mes de `fecha` (inclusive).
+    """
+    if cache is None:
+        cache = _leer_cache() or actualizar_serie_rem()
+    y, m = fecha.year, fecha.month
+    mult, meses_detalle = _acumular_periodo(y, 1, y, m, cache)
+    return {
+        "fecha": fecha.isoformat(),
+        "multiplicador": round(mult, 6),
+        "coeficiente_pct": round((mult - 1.0) * 100.0, 2),
+        "metodo": "anual_acumulado_enero_a_mes",
+        "desde_periodo": f"{y}-01",
+        "hasta_periodo": f"{y}-{m:02d}",
+        "meses": meses_detalle,
+        "fuente": cache.get("fuente", "REM BCRA"),
+    }
+
+
+def coeficiente_mayor_interanual_o_anual_acumulado(
+    fecha: date, cache: dict[str, Any] | None = None
+) -> dict[str, Any]:
+    """
+    Regla comercial Terra Natura:
+    tomar el mayor coeficiente entre interanual mismo mes y anual acumulado.
+    """
+    if cache is None:
+        cache = _leer_cache() or actualizar_serie_rem()
+    inter = coeficiente_interanual_mismo_mes(fecha, cache)
+    anual = coeficiente_anual_acumulado(fecha, cache)
+    mejor = inter if inter["multiplicador"] >= anual["multiplicador"] else anual
+    return {
+        **mejor,
+        "metodo": "max(interanual_mismo_mes, anual_acumulado)",
+        "comparativa": {
+            "interanual_coeficiente_pct": inter["coeficiente_pct"],
+            "interanual_multiplicador": inter["multiplicador"],
+            "anual_acumulado_coeficiente_pct": anual["coeficiente_pct"],
+            "anual_acumulado_multiplicador": anual["multiplicador"],
+            "elegido": "interanual" if mejor is inter else "anual_acumulado",
+        },
     }
 
 

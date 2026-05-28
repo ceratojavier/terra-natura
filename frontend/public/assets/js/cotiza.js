@@ -110,11 +110,11 @@
 
   function estimadoLocal(unitId, noches, inDate) {
     const base = {
-      "alpina-1": 125000,
-      "alpina-2": 125000,
-      "alpina-3": 125000,
-      "suite-4": 100000,
-      "suite-5": 100000,
+      "alpina-1": 120000,
+      "alpina-2": 120000,
+      "alpina-3": 120000,
+      "suite-4": 90000,
+      "suite-5": 90000,
     };
     const b = base[unitId] || 110000;
     const total = Math.round(b * temporadaFactor(inDate) * noches);

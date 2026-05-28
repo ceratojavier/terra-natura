@@ -12,7 +12,9 @@ from sqlalchemy.orm import Session
 from backend.models.unidad import Unidad
 from backend.schemas.reserva import CotizarResponse, NochePrecio
 from backend.services import config_service
-from backend.services.inflacion_coeficiente_service import coeficiente_interanual_mismo_mes
+from backend.services.inflacion_coeficiente_service import (
+    coeficiente_mayor_interanual_o_anual_acumulado,
+)
 
 TemporadaNoche = Literal["verano_alta", "invierno_alta", "media_baja"]
 
@@ -109,7 +111,7 @@ def cotizar(
         if temp_n == "media_baja" and _es_finde_semana(d):
             es_finde_flag = True
 
-        coef = coeficiente_interanual_mismo_mes(d)
+        coef = coeficiente_mayor_interanual_o_anual_acumulado(d)
         mult = coef["multiplicador"]
         precio_ajustado = base_verano * mult
 
