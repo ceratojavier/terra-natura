@@ -239,6 +239,14 @@ body:not(.page-home) {
     min-height: auto;
   }
 
+  .hero-slide {
+    /* En móvil priorizamos mostrar foto completa, no recortes agresivos */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #121b17;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 0.9rem;
@@ -283,6 +291,7 @@ body:not(.page-home) {
 
   .gallery-track {
     aspect-ratio: 4 / 3;
+    background: #121b17;
   }
 
   .gallery-nav {
@@ -326,6 +335,8 @@ body:not(.page-home) {
   .cabana-gallery-item--main img {
     min-height: 170px;
     max-height: none;
+    object-fit: contain;
+    background: #121b17;
   }
 
   #cabana-root p,
@@ -337,6 +348,19 @@ body:not(.page-home) {
   .footer-grid {
     flex-direction: column;
     gap: 0.35rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery-slide img {
+    /* Misma lógica: foto completa > recorte sin sentido */
+    object-fit: contain;
+    background: #121b17;
+  }
+
+  .card-img {
+    object-fit: contain;
+    background: #121b17;
   }
 }
 
