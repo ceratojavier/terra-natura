@@ -25,6 +25,7 @@
   const checkInParam = urlParams.get("checkin") || urlParams.get("check_in");
   const checkOutParam = urlParams.get("checkout") || urlParams.get("check_out");
   const personasParam = urlParams.get("personas");
+  const autoCotizar = urlParams.get("cotizar") === "1";
   if (unidadParam) {
     try {
       unidad.value = unidadParam;
@@ -367,4 +368,13 @@
   });
 
   cargarConfig();
+
+  // Si llega desde el hero con datos, cotiza automáticamente para dar precio inmediato.
+  if (autoCotizar && checkInParam && checkOutParam) {
+    setTimeout(function () {
+      try {
+        form.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
+      } catch (_) {}
+    }, 220);
+  }
 })();

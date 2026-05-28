@@ -18,18 +18,18 @@
   <script defer src="./assets/js/cotiza.js"></script>
   <script defer src="./assets/js/site-ux.js"></script>
 </head>
-<body>
+<body class="page-home">
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="./index.html">Terra Natura</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-primary">Menú</button>
       <nav class="nav-links" id="nav-primary" aria-label="Principal">
         <a href="#unidades">Cabañas</a>
-        <a href="#galeria">Fotos</a>
+        <a href="#galeria" class="nav-optional">Fotos</a>
         <a href="./reservar.html">Reservar online</a>
-        <a href="#nosotros">Quiénes somos</a>
-        <a href="#atracciones">Atracciones</a>
-        <a href="#ubicacion">Ubicación</a>
+        <a href="#nosotros" class="nav-optional">Quiénes somos</a>
+        <a href="#atracciones" class="nav-optional">Atracciones</a>
+        <a href="#ubicacion" class="nav-optional">Ubicación</a>
         <a class="nav-cta" href="https://wa.me/5493541571190" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
     </div>
@@ -57,6 +57,7 @@
         <h2 id="hero-reserva-titulo">Reservar y cotizar online</h2>
         <p>Elegí fechas y unidad: te mostramos si hay lugar y cuánto sale la estadía. Después podés pagar la seña o escribirnos con tranquilidad.</p>
         <form class="hero-booking-form" id="hero-cotiza" action="./reservar.html" method="get">
+          <input type="hidden" name="cotizar" value="1" />
           <label>Unidad
             <select name="unidad" required>
               <option value="alpina-1">Alpina 1</option>

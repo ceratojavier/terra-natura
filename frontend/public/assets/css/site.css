@@ -40,12 +40,14 @@ a {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
+  left: 0;
+  right: 0;
   top: 0;
   z-index: 60;
-  background: rgba(249, 246, 240, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+  background: rgba(12, 20, 17, 0.42);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .header-inner {
@@ -59,7 +61,7 @@ a {
 
 .brand {
   text-decoration: none;
-  color: #132018;
+  color: #fff8ed;
   font-weight: 700;
   font-size: 1.05rem;
   font-family: var(--font-title);
@@ -70,9 +72,9 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--line);
-  background: #fff;
-  color: #2e3a34;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.12);
+  color: #f8efe1;
   border-radius: 10px;
   padding: 0.45rem 0.75rem;
   font-size: 0.82rem;
@@ -97,9 +99,10 @@ body.nav-open::before {
 .nav-links {
   display: none;
   position: fixed;
-  top: 4rem;
+  top: 4.05rem;
   right: 0.75rem;
-  left: 0.75rem;
+  left: auto;
+  width: min(72vw, 260px);
   flex-direction: column;
   gap: 0.45rem;
   background: rgba(19, 32, 27, 0.82);
@@ -177,7 +180,7 @@ body.nav-open::before {
   }
 
   .nav-links a {
-    color: #2e3a34;
+    color: #f8efe1;
     border: none;
     background: transparent;
     text-align: left;
@@ -187,12 +190,22 @@ body.nav-open::before {
   }
 
   .nav-links a:hover {
-    background: #ebe4d9;
+    background: rgba(255, 255, 255, 0.15);
   }
 
   .nav-links .nav-cta {
     margin-left: 0.25rem;
     color: #fff;
+  }
+}
+
+body:not(.page-home) {
+  padding-top: 4.2rem;
+}
+
+@media (max-width: 859px) {
+  .nav-links .nav-optional {
+    display: none;
   }
 }
 
