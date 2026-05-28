@@ -28,6 +28,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 a {
@@ -37,6 +38,12 @@ a {
 .wrap {
   width: min(1100px, 100% - 2rem);
   margin: 0 auto;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 .site-header {
@@ -206,6 +213,130 @@ body:not(.page-home) {
 @media (max-width: 859px) {
   .nav-links .nav-optional {
     display: none;
+  }
+
+  .wrap {
+    width: min(1100px, 100% - 1rem);
+  }
+
+  .section {
+    padding: 2.4rem 0;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.65rem);
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 7vw, 2.05rem);
+    line-height: 1.2;
+  }
+
+  .hero {
+    padding-top: 4.25rem;
+    padding-bottom: 1.7rem;
+    min-height: auto;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero-card--glass {
+    width: 100%;
+    padding: 0.9rem 0.85rem 0.95rem;
+    border-radius: 14px;
+  }
+
+  .hero-card--glass h2 {
+    font-size: 1.35rem;
+  }
+
+  .proof-strip {
+    gap: 0.55rem;
+    font-size: 0.84rem;
+  }
+
+  .cards,
+  .cards--units,
+  .attractions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-img {
+    height: 190px;
+  }
+
+  .gallery-carousel {
+    border-radius: 12px;
+  }
+
+  .gallery-track {
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-nav {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.35rem;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.8rem;
+  }
+
+  .booking-span-2 {
+    grid-column: auto !important;
+  }
+
+  .booking-form--compact,
+  .result,
+  .cta-row--compact,
+  .pago-ayuda {
+    max-width: 100%;
+  }
+
+  .cta-row--compact .btn,
+  .cta-row .btn {
+    width: 100%;
+  }
+
+  .cabana-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .cabana-gallery-item--main {
+    grid-column: auto;
+  }
+
+  .cabana-gallery-item img,
+  .cabana-gallery-item--main img {
+    min-height: 170px;
+    max-height: none;
+  }
+
+  #cabana-root p,
+  #cabana-root .muted,
+  .amenities-list {
+    font-size: 1rem;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    gap: 0.35rem;
   }
 }
 
