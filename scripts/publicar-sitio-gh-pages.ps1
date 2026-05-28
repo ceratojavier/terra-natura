@@ -15,6 +15,7 @@ Write-Host "Copiando sitio desde frontend\public ..."
 if (Test-Path $tmp) { Remove-Item $tmp -Recurse -Force }
 New-Item -ItemType Directory -Path $tmp | Out-Null
 Copy-Item -Path (Join-Path $src "*") -Destination $tmp -Recurse -Force
+Get-ChildItem $tmp -Recurse -Include *.db | Remove-Item -Force
 
 Push-Location $repoRoot
 try {
