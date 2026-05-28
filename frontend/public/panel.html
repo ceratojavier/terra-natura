@@ -55,6 +55,11 @@
         Cotizar
         <small>Precio y cupo desde el sistema</small>
       </a>
+      <button type="button" class="app-tile" data-show-pane="calendario">
+        <span class="emoji" aria-hidden="true">🗓️</span>
+        Calendario
+        <small>Ocupación por cabaña (dueño)</small>
+      </button>
       <button type="button" class="app-tile" data-show-pane="reservas">
         <span class="emoji" aria-hidden="true">📋</span>
         Reservas
@@ -94,6 +99,20 @@
       En esta versión todavía <strong>no hay contraseña</strong>; usalo en tu Wi‑Fi confiable hasta que definamos seguridad para el equipo.
       Los cambios graves de reserva los hace el servidor; si algo falla, contactá a quien mantiene el sistema.
     </p>
+  </section>
+
+  <section class="wrap panel-pane" data-pane="calendario" hidden>
+    <header>
+      <button type="button" class="btn btn-outline" data-show-pane="menu">← Volver al menú</button>
+      <h2 style="margin: 1rem 0 0.35rem; font-size:1.25rem;">Calendario de ocupación</h2>
+      <p class="panel-sub" style="margin:0;">Verde = libre esa noche · Rojo = ocupado (web, Booking, bloqueo).</p>
+    </header>
+    <div class="btn-row" style="margin:1rem 0;">
+      <button type="button" class="btn btn-primary" id="btn-sync-booking">Sincronizar Booking ahora</button>
+      <button type="button" class="btn btn-outline" id="btn-recargar-cal">Actualizar vista</button>
+    </div>
+    <p id="msg-calendario" class="cotiza-muted" role="status"></p>
+    <div id="calendario-grid" class="calendario-grid" aria-live="polite"></div>
   </section>
 
   <section class="wrap panel-pane" data-pane="reservas" hidden>
@@ -142,6 +161,10 @@
         Cada botón «Copiar enlace» te deja pegar una dirección donde las plataformas piden una URL para importar ocupación.<br />Si Airbnb u otro te pide también una contraseña en el mismo paso, quien programa el servidor te la pasa cuando haga falta; no tenés que entender cómo está armado el vínculo.
       </p>
     </header>
+    <div class="btn-row" style="margin:1rem 0;">
+      <button type="button" class="btn btn-primary" id="btn-sync-booking-ical">Sincronizar Booking ahora</button>
+    </div>
+    <p id="msg-sync-ical" class="cotiza-muted" role="status"></p>
     <div id="lista-ical" style="margin-top:1.25rem;"></div>
   </section>
 </body>

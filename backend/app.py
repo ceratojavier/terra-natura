@@ -140,6 +140,38 @@ async def web_panel():
     return FileResponse(path)
 
 
+def _public_html(name: str) -> FileResponse:
+    path = WEB_ROOT / f"{name}.html"
+    if not path.is_file():
+        raise HTTPException(status_code=404)
+    return FileResponse(path)
+
+
+@app.get("/reservar", include_in_schema=False)
+async def web_reservar():
+    return _public_html("reservar")
+
+
+@app.get("/cabana", include_in_schema=False)
+async def web_cabana():
+    return _public_html("cabana")
+
+
+@app.get("/reserva-exito", include_in_schema=False)
+async def web_reserva_exito():
+    return _public_html("reserva-exito")
+
+
+@app.get("/reserva-fallo", include_in_schema=False)
+async def web_reserva_fallo():
+    return _public_html("reserva-fallo")
+
+
+@app.get("/reserva-pendiente", include_in_schema=False)
+async def web_reserva_pendiente():
+    return _public_html("reserva-pendiente")
+
+
 @app.get("/manifest.webmanifest", include_in_schema=False)
 async def web_manifest():
     path = WEB_ROOT / "manifest.webmanifest"

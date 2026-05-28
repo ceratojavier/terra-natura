@@ -39,6 +39,45 @@
   color: var(--muted);
 }
 
+.calendario-grid {
+  overflow-x: auto;
+  margin-top: 0.75rem;
+}
+
+.calendario-table {
+  border-collapse: collapse;
+  font-size: 0.72rem;
+  min-width: 100%;
+}
+
+.calendario-table th,
+.calendario-table td {
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.25rem;
+  text-align: center;
+}
+
+.calendario-table thead th {
+  background: #eef5f0;
+  font-weight: 600;
+}
+
+.calendario-table tbody th {
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+  padding-left: 0.5rem;
+  background: #faf8f4;
+}
+
+.cal-libre {
+  background: #d4ead9;
+}
+
+.cal-ocupado {
+  background: #e8b4b4;
+}
+
 .launcher-grid {
   display: grid;
   gap: 1rem;

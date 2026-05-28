@@ -8,6 +8,21 @@ from backend.models.reserva import ESTADOS_RESERVA
 _ESTADOS_SET = frozenset(ESTADOS_RESERVA)
 
 
+class PagarPreferenciaRequest(BaseModel):
+    unidad_id: str
+    check_in: date
+    check_out: date
+    huesped_nombre: str = Field(min_length=2, max_length=80)
+    huesped_email: str = Field(min_length=5, max_length=120)
+    personas: int = Field(default=2, ge=1, le=6)
+
+    @model_validator(mode="after")
+    def fechas_validas(self):
+        if self.check_out <= self.check_in:
+            raise ValueError("check_out debe ser posterior a check_in")
+        return self
+
+
 class CotizarRequest(BaseModel):
     unidad_id: str
     check_in: date

@@ -11,12 +11,21 @@
   const canal = document.getElementById("reserva-canal");
   const nota = document.getElementById("reserva-nota");
   const nombre = document.getElementById("reserva-nombre");
+  const email = document.getElementById("reserva-email");
   const resultado = document.getElementById("reserva-resultado");
   const acciones = document.getElementById("reserva-acciones");
   const estadoApi = document.getElementById("reserva-api-estado");
 
-  if (!form || !unidad || !checkIn || !checkOut || !personas || !canal || !nota || !resultado || !acciones) {
+  if (!form || !unidad || !checkIn || !checkOut || !personas || !resultado || !acciones) {
     return;
+  }
+
+  const urlParams = new URLSearchParams(location.search);
+  const unidadParam = urlParams.get("unidad");
+  if (unidadParam) {
+    try {
+      unidad.value = unidadParam;
+    } catch (_) {}
   }
 
   let siteConfig = { apiBase: "", bookingUrl: BOOKING_URL, whatsapp: "5493541571190" };
@@ -240,11 +249,12 @@
       `Fechas: ${checkIn.value} al ${checkOut.value}\n` +
       `Personas: ${personasNum}\n` +
       (nombre && nombre.value ? `Nombre: ${nombre.value}\n` : "") +
-      `Canal: ${canal.value}\n` +
+      (canal && canal.value ? `Canal: ${canal.value}\n` : "") +
       (disponible === true ? "Disponibilidad PMS: sí\n" : disponible === false ? "Disponibilidad PMS: no\n" : "") +
       `Total ${fuente === "pms" ? "PMS" : "estimado"}: ${fmt(total)}\n` +
       `Seña referencia: ${fmt(senia)}\n` +
-      (nota.value ? `Comentario: ${nota.value}\n` : "") +
+      (email && email.value ? `Email: ${email.value}\n` : "") +
+      (nota && nota.value ? `Comentario: ${nota.value}\n` : "") +
       "\n¿Confirmamos seña y datos de ingreso?";
 
     const wa = document.createElement("a");
@@ -252,10 +262,57 @@
     wa.href = `${WA_BASE}?text=${encodeURIComponent(msg)}`;
     wa.target = "_blank";
     wa.rel = "noopener noreferrer";
-    wa.textContent = "Enviar solicitud por WhatsApp";
+    wa.textContent = "Consultar por WhatsApp";
     acciones.appendChild(wa);
 
-    if (base && disponible === true && canal.value === "web_directa" && nombre && nombre.value.trim()) {
+    if (base && disponible === true && nombre && nombre.value.trim()) {
+      const btnMp = document.createElement("button");
+      btnMp.type = "button";
+      btnMp.className = "btn btn-primary";
+      btnMp.textContent = "2 · Pagar seña con Mercado Pago";
+      btnMp.addEventListener("click", async function () {
+        if (!email || !email.value.trim()) {
+          alert("Ingresá tu email para recibir la confirmación y pagar online.");
+          email && email.focus();
+          return;
+        }
+        btnMp.disabled = true;
+        btnMp.textContent = "Redirigiendo a Mercado Pago…";
+        try {
+          const pay = await apiFetch("/api/public/pagar-preferencia", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              unidad_id: unitId,
+              check_in: checkIn.value,
+              check_out: checkOut.value,
+              huesped_nombre: nombre.value.trim(),
+              huesped_email: email.value.trim(),
+              personas: personasNum,
+            }),
+          });
+          if (pay && pay.init_point) {
+            window.location.href = pay.init_point;
+            return;
+          }
+          alert("No se pudo abrir el pago. Probá WhatsApp.");
+        } catch (err) {
+          alert((err.body && err.body.detail) || err.message || "Error al iniciar pago");
+        }
+        btnMp.disabled = false;
+        btnMp.textContent = "2 · Pagar seña con Mercado Pago";
+      });
+      acciones.insertBefore(btnMp, wa);
+    } else if (disponible === true && !base) {
+      const info = document.createElement("p");
+      info.className = "muted";
+      info.style.marginTop = "0.5rem";
+      info.textContent =
+        "Para pagar online: activá el servidor PMS (apiBase en site-config.json) o usá la app en Vercel.";
+      acciones.appendChild(info);
+    }
+
+    if (base && disponible === true && canal && canal.value === "web_directa" && nombre && nombre.value.trim()) {
       const pre = document.createElement("button");
       pre.type = "button";
       pre.className = "btn btn-outline";
@@ -290,13 +347,6 @@
       acciones.appendChild(pre);
     }
 
-    const booking = document.createElement("a");
-    booking.className = "btn btn-outline";
-    booking.href = siteConfig.bookingUrl || BOOKING_URL;
-    booking.target = "_blank";
-    booking.rel = "noopener noreferrer";
-    booking.textContent = "Ver en Booking";
-    acciones.appendChild(booking);
   });
 
   cargarConfig();

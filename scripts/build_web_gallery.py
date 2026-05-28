@@ -18,7 +18,7 @@ JPEG_QUALITY = 85
 # Curado editorial — (slug, ruta relativa dentro de fotos terra natura, rol)
 CURATED: list[tuple[str, str, str]] = [
     ("hero", "PARQUE/FOTO PANORAMICA DE NUESTRAS CABANAS.jpg", "hero"),
-    ("01-complejo-panoramica", "exteriores cabanas/VISTA PANORAMICA DEL COMPLEJO.jpg", "complejo"),
+    ("01-complejo-panoramica", "exteriores cabanas/FRENTE DEL COMPLEJO.jpg", "complejo"),
     ("02-piscina", "PISCINA/NUESTRA PISCINA.jpg", "amenity"),
     ("03-pileta-alpina", "exteriores cabanas/reposera pileta y alpina.jpeg", "lifestyle"),
     (

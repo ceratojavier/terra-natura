@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reservar online | Terra Natura</title>
+  <meta name="description" content="Cotizá tu estadía y pagá la seña con Mercado Pago en Cabañas Alpinas Terra Natura." />
+  <link rel="stylesheet" href="./assets/css/site.css" />
+  <script defer src="./assets/js/site-nav.js"></script>
+  <script defer src="./assets/js/cotiza.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./index.html">Terra Natura</a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-primary">Menú</button>
+      <nav class="nav-links" id="nav-primary">
+        <a href="./index.html#unidades">Cabañas</a>
+        <a href="./reservar.html">Reservar</a>
+        <a href="./index.html#nosotros">Quiénes somos</a>
+        <a href="./index.html#atracciones">Atracciones</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section section-alt">
+    <div class="wrap">
+      <h1>Reserva online</h1>
+      <p class="muted">
+        <strong>Paso 1:</strong> cotizá disponibilidad y precio.
+        <strong>Paso 2:</strong> pagá la seña del 50% con Mercado Pago (cuando el servidor PMS está activo).
+        También podés consultar por WhatsApp.
+      </p>
+      <p id="reserva-api-estado" class="muted" hidden></p>
+
+      <form id="form-reserva" class="booking-form booking-form--compact">
+        <label>Nombre completo *
+          <input id="reserva-nombre" type="text" maxlength="80" required autocomplete="name" />
+        </label>
+        <label>Email *
+          <input id="reserva-email" type="email" maxlength="120" required autocomplete="email" placeholder="para confirmación y pago" />
+        </label>
+        <label>Unidad
+          <select id="reserva-unidad" required>
+            <option value="alpina-1">Alpina 1</option>
+            <option value="alpina-2">Alpina 2</option>
+            <option value="alpina-3">Alpina 3</option>
+            <option value="suite-4">Suite PB</option>
+            <option value="suite-5">Suite PA</option>
+          </select>
+        </label>
+        <label>Check-in
+          <input id="reserva-in" type="date" required />
+        </label>
+        <label>Check-out
+          <input id="reserva-out" type="date" required />
+        </label>
+        <label>Personas
+          <input id="reserva-personas" type="number" min="1" max="6" value="2" required />
+        </label>
+        <label class="booking-span-2">Comentario
+          <input id="reserva-nota" type="text" maxlength="120" placeholder="Opcional" />
+        </label>
+        <input id="reserva-canal" type="hidden" value="web_directa" />
+        <button class="btn btn-primary booking-span-2" type="submit">1 · Cotizar disponibilidad</button>
+      </form>
+
+      <div id="reserva-resultado" class="result result--compact" hidden></div>
+      <div id="reserva-acciones" class="cta-row cta-row--compact"></div>
+
+      <p class="muted pago-ayuda">
+        El botón de Mercado Pago aparece después de cotizar, si hay lugar y el sistema está conectado.
+        En GitHub Pages solo: configurá <code>apiBase</code> en <code>assets/data/site-config.json</code>
+        apuntando a tu servidor (mismo dominio con FastAPI o Vercel).
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div><strong>Terra Natura</strong></div>
+      <div><a href="./index.html">← Volver al inicio</a></div>
+    </div>
+  </footer>
+</body>
+</html>
