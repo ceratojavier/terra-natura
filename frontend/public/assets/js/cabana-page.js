@@ -59,7 +59,7 @@
         fotos +
         "</div>" +
         "<p class='cabana-hint'>Tocá una foto para verla en grande</p>" +
-        "<p>" +
+        "<p class='cabana-description'>" +
         u.descripcion +
         "</p>" +
         "<ul class='amenities-list'>" +

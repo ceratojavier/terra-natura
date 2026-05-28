@@ -86,25 +86,27 @@
     <div class="wrap">
       <h2>Galería resumida</h2>
       <p class="muted">Solo las fotos clave del complejo. Para ver más, entrá a cada cabaña.</p>
-      <div class="gallery-grid">
-        <figure class="gallery-item gallery-item--wide">
-          <img src="./media/galeria/01-complejo-panoramica.jpg" alt="Vista del complejo" loading="lazy" width="1400" height="933" />
-        </figure>
-        <figure class="gallery-item">
-          <img src="./media/galeria/02-piscina.jpg" alt="Pileta" loading="lazy" />
-        </figure>
-        <figure class="gallery-item">
-          <img src="./media/galeria/05-alpina-living.jpg" alt="Living cabaña alpina" loading="lazy" />
-        </figure>
-        <figure class="gallery-item">
-          <img src="./media/galeria/06-suite5-ventanal.jpg" alt="Suite planta alta" loading="lazy" />
-        </figure>
-        <figure class="gallery-item">
-          <img src="./media/galeria/10-parque-mate.jpg" alt="Parque del complejo" loading="lazy" />
-        </figure>
-        <figure class="gallery-item">
-          <img src="./media/galeria/11-lago-plaza.jpg" alt="Lago San Roque cercano" loading="lazy" />
-        </figure>
+      <div class="gallery-carousel" data-gallery-carousel>
+        <button class="gallery-nav gallery-nav--prev" type="button" aria-label="Foto anterior">‹</button>
+        <div class="gallery-track">
+          <figure class="gallery-slide is-active">
+            <img src="./media/galeria/01-complejo-panoramica.jpg" alt="Vista del complejo" loading="lazy" width="1400" height="933" />
+          </figure>
+          <figure class="gallery-slide">
+            <img src="./media/galeria/02-piscina.jpg" alt="Pileta del complejo" loading="lazy" />
+          </figure>
+          <figure class="gallery-slide">
+            <img src="./media/galeria/03-pileta-alpina.jpg" alt="Cabañas junto a la pileta" loading="lazy" />
+          </figure>
+          <figure class="gallery-slide">
+            <img src="./media/galeria/08-suites-exterior.jpg" alt="Exterior de suites" loading="lazy" />
+          </figure>
+          <figure class="gallery-slide">
+            <img src="./media/galeria/11-lago-plaza.jpg" alt="Lago San Roque cercano" loading="lazy" />
+          </figure>
+        </div>
+        <button class="gallery-nav gallery-nav--next" type="button" aria-label="Foto siguiente">›</button>
+        <div class="gallery-dots" aria-label="Seleccionar foto"></div>
       </div>
     </div>
   </section>
@@ -291,7 +293,12 @@
     </div>
   </section>
 
-  <a class="wa-float" href="https://wa.me/5493541571190" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+  <a class="wa-float" href="https://wa.me/5493541571190" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M19.11 17.21c-.25-.13-1.48-.73-1.71-.81-.23-.09-.4-.13-.56.13-.17.25-.65.8-.8.97-.15.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.39.11-.52.12-.12.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.84-.2-.49-.4-.42-.56-.43-.15-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.02 2.6.13.17 1.76 2.68 4.26 3.76.6.26 1.07.41 1.44.53.61.19 1.16.16 1.6.1.49-.07 1.48-.6 1.69-1.17.21-.57.21-1.06.15-1.17-.06-.1-.23-.17-.48-.29z"/>
+      <path fill="currentColor" d="M16.02 3.2c-7.07 0-12.79 5.72-12.79 12.78 0 2.25.59 4.45 1.71 6.38L3 29l6.83-1.79a12.78 12.78 0 0 0 6.19 1.58h.01c7.06 0 12.79-5.73 12.79-12.79 0-3.42-1.33-6.63-3.75-9.05a12.7 12.7 0 0 0-9.05-3.75zm0 23.42h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.05 1.06 1.08-3.95-.25-.41a10.57 10.57 0 0 1-1.62-5.63c0-5.84 4.75-10.59 10.6-10.59 2.83 0 5.49 1.1 7.49 3.1a10.53 10.53 0 0 1 3.1 7.49c0 5.84-4.75 10.59-10.6 10.59z"/>
+    </svg>
+  </a>
 
   <footer class="site-footer">
     <div class="wrap footer-grid">
