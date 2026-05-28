@@ -176,10 +176,10 @@ body.nav-open::before {
 }
 
 .hero {
-  padding: 4.5rem 0 3rem;
+  padding: 4.2rem 0 2.6rem;
   position: relative;
   overflow: hidden;
-  min-height: min(78vh, 520px);
+  min-height: min(64vh, 520px);
 }
 
 .hero::after {
@@ -199,7 +199,7 @@ body.nav-open::before {
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center;
+  background-position: center 42%;
   opacity: 0;
   transform: scale(1.03);
   transition: opacity 1200ms ease, transform 7000ms ease;
@@ -686,6 +686,17 @@ select:focus-visible {
   }
 }
 
+@media (max-width: 700px) {
+  .hero {
+    min-height: 60vh;
+    padding-top: 3.6rem;
+  }
+
+  .hero-slide {
+    background-position: center 38%;
+  }
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 1.5rem 0 2.2rem;
@@ -762,7 +773,12 @@ select:focus-visible {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center;
   display: block;
+}
+
+.attraction-card img.attraction-img--top {
+  object-position: center top;
 }
 
 .attraction-card h3 {
