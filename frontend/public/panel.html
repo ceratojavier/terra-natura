@@ -57,8 +57,13 @@
       </a>
       <button type="button" class="app-tile" data-show-pane="calendario">
         <span class="emoji" aria-hidden="true">🗓️</span>
-        Calendario
-        <small>Ocupación por cabaña (dueño)</small>
+        Calendario ocupación
+        <small>Disponibilidad real (web + Booking)</small>
+      </button>
+      <button type="button" class="app-tile" data-show-pane="tarifas">
+        <span class="emoji" aria-hidden="true">💵</span>
+        Calendario tarifas
+        <small>Precio por día y edición manual</small>
       </button>
       <button type="button" class="app-tile" data-show-pane="reservas">
         <span class="emoji" aria-hidden="true">📋</span>
@@ -67,8 +72,8 @@
       </button>
       <button type="button" class="app-tile" data-show-pane="ical">
         <span class="emoji" aria-hidden="true">📅</span>
-        Calendarios
-        <small>Enlaces para Airbnb / Booking</small>
+        Conexión Booking
+        <small>Sync + enlaces iCal de canales</small>
       </button>
       <a class="app-tile" href="/guia/" target="_blank" rel="noopener">
         <span class="emoji" aria-hidden="true">📺</span>
@@ -113,6 +118,26 @@
     </div>
     <p id="msg-calendario" class="cotiza-muted" role="status"></p>
     <div id="calendario-grid" class="calendario-grid" aria-live="polite"></div>
+  </section>
+
+  <section class="wrap panel-pane" data-pane="tarifas" hidden>
+    <header>
+      <button type="button" class="btn btn-outline" data-show-pane="menu">← Volver al menú</button>
+      <h2 style="margin: 1rem 0 0.35rem; font-size:1.25rem;">Calendario de tarifas (tipo Booking)</h2>
+      <p class="panel-sub" style="margin:0; max-width:44rem;">
+        <strong>Qué muestra:</strong> precio por noche para cada cabaña en cada fecha del mes.
+        <strong>Cómo usar:</strong> elegí mes, cambiá un valor y guardá. Si dejás vacío un precio editado, vuelve al cálculo automático del PMS.
+      </p>
+    </header>
+    <div class="btn-row" style="margin:1rem 0;">
+      <label style="color:var(--muted);font-size:0.85rem;">Mes
+        <input id="tarifas-mes" type="month" />
+      </label>
+      <button type="button" class="btn btn-primary" id="btn-cargar-tarifas">Cargar calendario</button>
+      <button type="button" class="btn btn-outline" id="btn-guardar-tarifas">Guardar cambios</button>
+    </div>
+    <p id="msg-tarifas" class="cotiza-muted" role="status"></p>
+    <div id="tarifas-grid" class="calendario-grid" aria-live="polite"></div>
   </section>
 
   <section class="wrap panel-pane" data-pane="reservas" hidden>

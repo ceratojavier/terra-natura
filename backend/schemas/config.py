@@ -27,3 +27,15 @@ class CanalesUpdate(BaseModel):
 
 class Suite4ReglasUpdate(BaseModel):
     modo: Literal["independiente", "hibrido", "solo_salon"] | None = None
+
+
+class TarifaOverrideUpsert(BaseModel):
+    """
+    Override manual de tarifa por unidad y fecha.
+    Si `precio_noche_ars` es None, se elimina el override para esa fecha.
+    """
+
+    unidad_id: str
+    fecha: str  # YYYY-MM-DD
+    precio_noche_ars: float | None = None
+    motivo: str | None = None

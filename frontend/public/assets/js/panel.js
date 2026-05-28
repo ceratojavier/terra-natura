@@ -66,6 +66,9 @@
       if (target === "calendario") {
         cargarCalendario();
       }
+      if (target === "tarifas") {
+        cargarTarifasCalendario();
+      }
       if (target === "reservas") {
         cargarReservas();
       }
@@ -85,6 +88,9 @@
   if (window.location.hash === "#/reservas") {
     showPane("reservas");
     cargarReservas();
+  }
+  if (window.location.hash === "#/tarifas") {
+    showPane("tarifas");
   }
 
   function ymdISO(d) {
@@ -355,6 +361,145 @@
       });
   }
 
+  // --- Calendario de tarifas (lectura/edición manual por fecha) ---
+  var tarifasMes = document.getElementById("tarifas-mes");
+  var tarifasGrid = document.getElementById("tarifas-grid");
+  var msgTarifas = document.getElementById("msg-tarifas");
+  var btnCargarTarifas = document.getElementById("btn-cargar-tarifas");
+  var btnGuardarTarifas = document.getElementById("btn-guardar-tarifas");
+
+  if (tarifasMes && !tarifasMes.value) {
+    var hoyTar = new Date();
+    tarifasMes.value = hoyTar.toISOString().slice(0, 7);
+  }
+
+  function mesRango(ym) {
+    var p = (ym || "").split("-");
+    var y = Number(p[0] || 0);
+    var m = Number(p[1] || 0);
+    if (!y || !m) return null;
+    var desde = new Date(y, m - 1, 1);
+    var hasta = new Date(y, m, 0);
+    return { desde: ymdISO(desde), hasta: ymdISO(hasta) };
+  }
+
+  function cargarTarifasCalendario() {
+    if (!tarifasMes || !tarifasGrid || !msgTarifas) return;
+    tarifasGrid.innerHTML = "";
+    var r = mesRango(tarifasMes.value);
+    if (!r) {
+      msgTarifas.textContent = "Elegí un mes válido.";
+      return;
+    }
+    msgTarifas.textContent = "Cargando precios del mes…";
+    apiFetch(
+      "/api/config/tarifas/calendario?desde=" +
+        encodeURIComponent(r.desde) +
+        "&hasta=" +
+        encodeURIComponent(r.hasta)
+    )
+      .then(function (j) {
+        var units = j.unidades || [];
+        if (!units.length) {
+          msgTarifas.textContent = "No hay unidades disponibles.";
+          return;
+        }
+        var fechas = units[0].dias.map(function (d) {
+          return d.fecha;
+        });
+
+        var table = document.createElement("table");
+        table.className = "calendario-table tarifas-table";
+
+        var thead = document.createElement("thead");
+        var trh = document.createElement("tr");
+        var th0 = document.createElement("th");
+        th0.textContent = "Unidad";
+        trh.appendChild(th0);
+        fechas.forEach(function (f) {
+          var th = document.createElement("th");
+          th.textContent = f.slice(8, 10);
+          th.title = f;
+          trh.appendChild(th);
+        });
+        thead.appendChild(trh);
+        table.appendChild(thead);
+
+        var tbody = document.createElement("tbody");
+        units.forEach(function (u) {
+          var tr = document.createElement("tr");
+          var thn = document.createElement("th");
+          thn.textContent = u.unidad_nombre;
+          tr.appendChild(thn);
+          (u.dias || []).forEach(function (d) {
+            var td = document.createElement("td");
+            td.className = d.disponible ? "cal-libre" : "cal-ocupado";
+            var inp = document.createElement("input");
+            inp.type = "number";
+            inp.min = "1";
+            inp.step = "1";
+            inp.value = String(Math.round(d.precio_noche_ars || 0));
+            inp.className = "tarifa-input";
+            inp.setAttribute("data-unidad", u.unidad_id);
+            inp.setAttribute("data-fecha", d.fecha);
+            inp.title =
+              (d.disponible ? "Libre" : "Ocupado") +
+              " · " +
+              (d.temporada || "") +
+              " · infl. " +
+              (d.coeficiente_inflacion_pct || 0) +
+              "%";
+            td.appendChild(inp);
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+        table.appendChild(tbody);
+        tarifasGrid.appendChild(table);
+        msgTarifas.textContent =
+          "Editá un precio y tocá Guardar cambios. Si querés volver al automático, borrá el valor y guardá.";
+      })
+      .catch(function (err) {
+        if (err && err.message === "sin_api") mensajeSinServidor(msgTarifas);
+        else msgTarifas.textContent = "No se pudo cargar el calendario de tarifas.";
+      });
+  }
+
+  function guardarTarifasCambios() {
+    if (!tarifasGrid || !msgTarifas) return;
+    var inputs = Array.from(tarifasGrid.querySelectorAll(".tarifa-input"));
+    if (!inputs.length) {
+      msgTarifas.textContent = "Primero cargá el calendario del mes.";
+      return;
+    }
+    msgTarifas.textContent = "Guardando cambios…";
+    var reqs = inputs.map(function (inp) {
+      var val = inp.value.trim();
+      return apiFetch("/api/config/tarifas/override", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          unidad_id: inp.getAttribute("data-unidad"),
+          fecha: inp.getAttribute("data-fecha"),
+          precio_noche_ars: val ? Number(val) : null,
+          motivo: "Ajuste manual desde panel dueño",
+        }),
+      });
+    });
+    Promise.all(reqs)
+      .then(function () {
+        msgTarifas.textContent = "Tarifas guardadas. Refrescando calendario…";
+        cargarTarifasCalendario();
+      })
+      .catch(function (err) {
+        if (err && err.message === "sin_api") mensajeSinServidor(msgTarifas);
+        else msgTarifas.textContent = "No se pudieron guardar algunos cambios.";
+      });
+  }
+
+  if (btnCargarTarifas) btnCargarTarifas.addEventListener("click", cargarTarifasCalendario);
+  if (btnGuardarTarifas) btnGuardarTarifas.addEventListener("click", guardarTarifasCambios);
+
   var listaIcal = document.getElementById("lista-ical");
 
   window.copiadoHint = "";
@@ -451,6 +596,10 @@
     if (window.location.hash === "#/calendario") {
       showPane("calendario");
       cargarCalendario();
+    }
+    if (window.location.hash === "#/tarifas") {
+      showPane("tarifas");
+      cargarTarifasCalendario();
     }
   });
 

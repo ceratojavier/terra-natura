@@ -71,6 +71,36 @@ def _base_precio_unidad(tp: dict, u: Unidad) -> float:
     return _verano_midpoint(u)
 
 
+def _override_manual_por_fecha(
+    raw_cfg: dict | None, unidad_id: str, fecha_iso: str
+) -> float | None:
+    """
+    Busca override manual en config `tarifas_overrides`.
+    Estructura:
+    {
+      "alpina-1": {
+         "2026-07-10": {"precio_noche_ars": 150000, "motivo": "..."}
+      }
+    }
+    """
+    if not isinstance(raw_cfg, dict):
+        return None
+    by_unit = raw_cfg.get(unidad_id)
+    if not isinstance(by_unit, dict):
+        return None
+    raw = by_unit.get(fecha_iso)
+    if isinstance(raw, dict):
+        p = raw.get("precio_noche_ars")
+        return float(p) if p is not None else None
+    if raw is None:
+        return None
+    # Compat: si quedó guardado como número directo
+    try:
+        return float(raw)
+    except (TypeError, ValueError):
+        return None
+
+
 def cotizar(
     db: Session,
     u: Unidad,
@@ -95,6 +125,8 @@ def cotizar(
         temporada_baja_cfg.get("descuento_lunes_jueves_sobre_finde_baja", 0.15)
     )
     pct_efectivo = float(tp.get("descuento_efectivo_sobre_total") or 0.10)
+    overrides_row = config_service.get_config(db, "tarifas_overrides")
+    overrides_cfg = overrides_row["valor"] if overrides_row else {}
 
     base_verano = _base_precio_unidad(tp, u)
     pct_baja = _pct_baja_unidad(tp, u)
@@ -123,6 +155,11 @@ def cotizar(
                 precio_noche = base_finde
             else:
                 precio_noche = base_finde * (1.0 - desc_lun_jue)
+
+        # Override manual por fecha (si existe) pisa el cálculo automático.
+        manual = _override_manual_por_fecha(overrides_cfg, u.id, d.isoformat())
+        if manual is not None and manual > 0:
+            precio_noche = manual
 
         desglose.append(
             NochePrecio(

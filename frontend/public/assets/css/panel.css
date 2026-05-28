@@ -57,6 +57,20 @@
   text-align: center;
 }
 
+.tarifas-table th {
+  min-width: 2.25rem;
+}
+
+.tarifa-input {
+  width: 4.6rem;
+  padding: 0.2rem 0.25rem;
+  border: 1px solid rgba(36, 58, 48, 0.35);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1e2622;
+  font-size: 0.75rem;
+}
+
 .calendario-table thead th {
   background: #eef5f0;
   font-weight: 600;
