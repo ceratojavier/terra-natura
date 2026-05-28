@@ -944,9 +944,9 @@ select:focus-visible {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 580ms ease, transform 580ms ease;
+  opacity: 1;
+  transform: none;
+  transition: opacity 420ms ease, transform 420ms ease;
 }
 
 .reveal.is-visible {
