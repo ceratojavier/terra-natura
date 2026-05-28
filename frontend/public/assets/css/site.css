@@ -52,9 +52,8 @@ video {
   right: 0;
   top: 0;
   z-index: 60;
-  background: rgba(12, 20, 17, 0.42);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  border-bottom: none;
 }
 
 .header-inner {
@@ -62,8 +61,15 @@ video {
   justify-content: space-between;
   gap: 0.75rem;
   align-items: center;
-  padding: 0.55rem 0;
+  padding: 0.46rem 0.62rem;
+  margin-top: 0.45rem;
   position: relative;
+  background: rgba(15, 26, 22, 0.56);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 22px rgba(9, 16, 14, 0.28);
 }
 
 .brand {
@@ -204,6 +210,11 @@ body.nav-open::before {
     margin-left: 0.25rem;
     color: #fff;
   }
+
+  .header-inner {
+    border-radius: 999px;
+    padding: 0.34rem 0.45rem 0.34rem 0.85rem;
+  }
 }
 
 body:not(.page-home) {
@@ -290,8 +301,9 @@ body:not(.page-home) {
   }
 
   .gallery-track {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
     background: #121b17;
+    max-width: 100%;
   }
 
   .gallery-nav {
@@ -642,7 +654,9 @@ h3 {
 
 .gallery-track {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 .gallery-slide {
