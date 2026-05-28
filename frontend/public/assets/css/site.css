@@ -42,7 +42,7 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 60;
   background: rgba(249, 246, 240, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
@@ -81,20 +81,36 @@ a {
   z-index: 2;
 }
 
+body.nav-open {
+  overflow: hidden;
+}
+
+body.nav-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  background: rgba(13, 20, 17, 0.5);
+  backdrop-filter: blur(1px);
+}
+
 .nav-links {
   display: none;
-  position: absolute;
-  top: calc(100% + 0.35rem);
-  left: 0;
+  position: fixed;
+  top: 0;
   right: 0;
+  bottom: 0;
+  left: auto;
+  width: min(84vw, 340px);
   flex-direction: column;
-  gap: 0.15rem;
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 0.5rem;
-  box-shadow: 0 16px 40px rgba(20, 28, 24, 0.12);
-  z-index: 30;
+  gap: 0.25rem;
+  background: #f9f5ee;
+  border-left: 1px solid var(--line);
+  border-radius: 0;
+  padding: 4.25rem 0.8rem 1rem;
+  box-shadow: -16px 0 40px rgba(20, 28, 24, 0.18);
+  z-index: 50;
+  overflow-y: auto;
 }
 
 .nav-links.is-open {
@@ -103,9 +119,10 @@ a {
 
 .nav-links a {
   text-decoration: none;
-  padding: 0.65rem 0.85rem;
+  padding: 0.75rem 0.85rem;
   border-radius: 10px;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: #2e3a34;
 }
 
@@ -125,6 +142,14 @@ a {
 }
 
 @media (min-width: 860px) {
+  body.nav-open {
+    overflow: auto;
+  }
+
+  body.nav-open::before {
+    content: none;
+  }
+
   .nav-toggle {
     display: none;
   }
@@ -132,14 +157,17 @@ a {
   .nav-links {
     display: flex;
     position: static;
+    width: auto;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     background: transparent;
+    border-left: none;
     border: none;
     box-shadow: none;
     padding: 0;
     gap: 0.25rem;
+    overflow: visible;
   }
 
   .nav-links .nav-cta {
@@ -416,8 +444,8 @@ h3 {
 
 .gallery-grid {
   display: grid;
-  gap: 1.15rem;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 @media (min-width: 700px) {
@@ -434,11 +462,11 @@ h3 {
 
 .gallery-item {
   margin: 0;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--card);
-  box-shadow: 0 8px 18px rgba(22, 30, 26, 0.07);
+  box-shadow: 0 6px 14px rgba(22, 30, 26, 0.06);
   transition: transform 320ms ease, box-shadow 320ms ease;
 }
 
@@ -465,7 +493,7 @@ h3 {
 }
 
 .gallery-item--wide {
-  grid-column: span 1;
+  grid-column: span 2;
 }
 
 @media (min-width: 700px) {
