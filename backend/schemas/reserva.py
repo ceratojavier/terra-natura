@@ -91,6 +91,32 @@ class ReservaOut(BaseModel):
     moneda: str
 
 
+class ReservaOperacionCreate(BaseModel):
+    """Alta manual desde panel operación (presencial, WhatsApp, teléfono)."""
+
+    unidad_id: str
+    check_in: date
+    check_out: date
+    origen: Literal["presencial", "whatsapp", "telefono", "otro"] = "presencial"
+    huesped_nombre: str = Field(min_length=2, max_length=80)
+    huesped_telefono: str | None = Field(default=None, max_length=40)
+    personas: int = Field(default=2, ge=1, le=12)
+    notas_internas: str | None = Field(default=None, max_length=8000)
+    promo: Literal["ninguna", "3x2", "4x3", "5mas1", "4paga5", "auto"] = "auto"
+    aplicar_precio_efectivo: bool = False
+
+    @model_validator(mode="after")
+    def fechas_operacion(self):
+        if self.check_out <= self.check_in:
+            raise ValueError("check_out debe ser posterior a check_in")
+        return self
+
+
+class ReservaOperacionOut(ReservaOut):
+    codigo_reserva: str
+    mensaje_huesped: str | None = None
+
+
 class ReservaPatch(BaseModel):
     estado: str | None = Field(default=None)
     notas_internas: str | None = Field(default=None, max_length=8000)

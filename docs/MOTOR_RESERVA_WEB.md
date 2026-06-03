@@ -12,6 +12,7 @@
 |--------|------|-----|
 | GET | `/api/public/motor-reserva` | Config para el JS (unidades, reglas, URLs) |
 | POST | `/api/cotizar` | Precio + flag `disponible` |
+| POST | `/api/reservas/operacion` | Alta manual confirmada (panel móvil) |
 | POST | `/api/reservas` | Pre-reserva web (`origen=web_directa`) |
 | POST | `/api/canales/sync-ical` | Sincronizar feeds Booking (cron o agente Channel) |
 | GET | `/api/canales/estado` | Diagnóstico feeds |

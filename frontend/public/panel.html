@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="Terra Natura" />
   <meta name="application-name" content="Terra Natura" />
-  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="manifest" href="/manifest-panel.webmanifest" />
   <link rel="icon" type="image/svg+xml" href="/assets/icons/app-icon.svg" />
   <link rel="apple-touch-icon" href="/assets/icons/app-icon.svg" />
   <link rel="stylesheet" href="/assets/css/site.css" />
@@ -22,8 +22,8 @@
   <div class="panel-top">
     <div class="wrap panel-top-inner">
       <div>
-        <p class="panel-sub">Complejo Terra Natura</p>
-        <h1 class="panel-title">Entrada rápida</h1>
+        <p class="panel-sub">Complejo Terra Natura · Operación</p>
+        <h1 class="panel-title">Panel móvil</h1>
       </div>
       <a class="btn btn-outline" href="/">Ir al sitio público</a>
     </div>
@@ -32,29 +32,15 @@
   <!-- Menú principal: tocás un dibujo y vas a esa parte -->
   <section class="wrap panel-pane" data-pane="menu">
     <p class="panel-intro">
-      <strong>Uso solo del equipo del complejo.</strong> Ves opciones grandes: tocás y abrís. En el celular podés usar
-      <strong>“Agregar a pantalla de inicio”</strong> desde el navegador y te queda como un ícono de app que te trae siempre acá.
+      <strong>Uso solo del equipo del complejo.</strong> Agendá reservas desde el celular, mirá el calendario y sincronizá Booking. En el navegador: <strong>Agregar a pantalla de inicio</strong> y te queda como app de operación.
     </p>
 
-    <div id="ama-caja" class="panel-help" style="margin-top:0; margin-bottom:1rem;">
-      <strong>Agente de marketing (AMA) + WhatsApp automático</strong> — fase: <span id="ama-fase">…</span>
-      <p id="ama-detalle" style="margin:0.5rem 0 0; font-size:0.88rem;"></p>
-      <p style="margin:0.6rem 0 0; font-size:0.8rem;">
-        En la carpeta del proyecto hay una nota para el dueño: <code>docs/QUE_SIGUE_AMA_Y_AUTOMATIZACION.md</code> (te la puede abrir quien te ayuda con la PC).
-      </p>
-    </div>
-
     <div class="launcher-grid">
-      <a class="app-tile" href="/marketing" style="border-color: rgba(201, 169, 98, 0.5);">
-        <span class="emoji" aria-hidden="true">📣</span>
-        Marketing y redes
-        <small>Calendario · textos · video · WhatsApp</small>
-      </a>
-      <a class="app-tile" href="/#cotiza">
-        <span class="emoji" aria-hidden="true">💰</span>
-        Cotizar
-        <small>Precio y cupo desde el sistema</small>
-      </a>
+      <button type="button" class="app-tile app-tile--primary" data-show-pane="nueva-reserva">
+        <span class="emoji" aria-hidden="true">➕</span>
+        Nueva reserva
+        <small>Presencial · WhatsApp · teléfono</small>
+      </button>
       <button type="button" class="app-tile" data-show-pane="calendario">
         <span class="emoji" aria-hidden="true">🗓️</span>
         Calendario ocupación
@@ -68,8 +54,13 @@
       <button type="button" class="app-tile" data-show-pane="reservas">
         <span class="emoji" aria-hidden="true">📋</span>
         Reservas
-        <small>Lista del calendario PMS</small>
+        <small>Lista y códigos TN</small>
       </button>
+      <a class="app-tile" href="/app/hoy" style="border-color: rgba(201, 169, 98, 0.45);">
+        <span class="emoji" aria-hidden="true">📣</span>
+        Marketing (PC)
+        <small>Director · publicaciones</small>
+      </a>
       <button type="button" class="app-tile" data-show-pane="ical">
         <span class="emoji" aria-hidden="true">📅</span>
         Conexión Booking
@@ -140,12 +131,74 @@
     <div id="tarifas-grid" class="calendario-grid" aria-live="polite"></div>
   </section>
 
+  <section class="wrap panel-pane" data-pane="nueva-reserva" hidden>
+    <header>
+      <button type="button" class="btn btn-outline" data-show-pane="menu">← Volver al menú</button>
+      <h2 style="margin: 1rem 0 0.35rem; font-size:1.25rem;">Nueva reserva</h2>
+      <p class="panel-sub" style="margin:0;">Confirmada al guardar — bloquea el calendario y sale en iCal para Booking.</p>
+    </header>
+    <form id="form-nueva-reserva" class="panel-form" autocomplete="off">
+      <label>Unidad
+        <select id="nr-unidad" required></select>
+      </label>
+      <div class="panel-form-row">
+        <label>Entrada (check-in)
+          <input id="nr-checkin" type="date" required />
+        </label>
+        <label>Salida (check-out)
+          <input id="nr-checkout" type="date" required />
+        </label>
+      </div>
+      <label>Nombre del huésped
+        <input id="nr-nombre" type="text" required maxlength="80" placeholder="Apellido y nombre" />
+      </label>
+      <label>Teléfono <span class="panel-sub">(opcional)</span>
+        <input id="nr-telefono" type="tel" maxlength="40" placeholder="+549…" />
+      </label>
+      <div class="panel-form-row">
+        <label>Personas
+          <input id="nr-personas" type="number" min="1" max="12" value="2" required />
+        </label>
+        <label>Origen
+          <select id="nr-origen">
+            <option value="presencial">Presencial</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="telefono">Teléfono</option>
+            <option value="otro">Otro</option>
+          </select>
+        </label>
+      </div>
+      <label>Notas internas <span class="panel-sub">(opcional)</span>
+        <textarea id="nr-notas" rows="2" maxlength="500" placeholder="Seña en mano, mascota, etc."></textarea>
+      </label>
+      <p id="nr-cotizacion" class="panel-cotizacion" role="status" hidden></p>
+      <div class="btn-row">
+        <button type="button" class="btn btn-outline" id="btn-nr-cotizar">Ver precio</button>
+        <button type="submit" class="btn btn-primary" id="btn-nr-guardar">Confirmar reserva</button>
+      </div>
+    </form>
+    <div id="nr-exito" class="panel-exito" hidden>
+      <p class="panel-exito-titulo">Reserva confirmada</p>
+      <p id="nr-codigo" class="panel-exito-codigo"></p>
+      <p id="nr-resumen" class="panel-sub"></p>
+      <label>Mensaje para el huésped
+        <textarea id="nr-mensaje-huesped" rows="6" readonly></textarea>
+      </label>
+      <div class="btn-row">
+        <button type="button" class="btn btn-primary" id="btn-nr-copiar-msg">Copiar mensaje</button>
+        <a class="btn btn-outline" id="btn-nr-whatsapp" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        <button type="button" class="btn btn-outline" id="btn-nr-otra">Otra reserva</button>
+      </div>
+    </div>
+    <p id="msg-nueva-reserva" class="cotiza-muted" role="status"></p>
+  </section>
+
   <section class="wrap panel-pane" data-pane="reservas" hidden>
     <header>
       <button type="button" class="btn btn-outline" data-show-pane="menu">← Volver al menú</button>
       <h2 style="margin: 1rem 0 0.35rem; font-size:1.25rem;">Reservas cargadas</h2>
       <p class="panel-sub" style="margin:0;">
-        Solo lectura desde la base del PMS.
+        Todas las reservas del PMS. Para agendar: <button type="button" class="btn-link" data-show-pane="nueva-reserva">Nueva reserva</button>.
       </p>
     </header>
     <div class="btn-row" style="margin:1rem 0;">
@@ -164,6 +217,7 @@
       <table class="panel-table">
         <thead>
           <tr>
+            <th>Código</th>
             <th>Entrada</th>
             <th>Salida</th>
             <th>Unidad</th>

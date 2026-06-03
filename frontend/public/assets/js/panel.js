@@ -72,6 +72,9 @@
       if (target === "reservas") {
         cargarReservas();
       }
+      if (target === "nueva-reserva") {
+        initNuevaReserva();
+      }
       if (target === "ical") {
         cargarEnlacesIcal();
       }
@@ -83,6 +86,10 @@
       showPane("reservas");
       cargarReservas();
     }
+    if (window.location.hash === "#/nueva-reserva") {
+      showPane("nueva-reserva");
+      initNuevaReserva();
+    }
   });
 
   if (window.location.hash === "#/reservas") {
@@ -91,6 +98,17 @@
   }
   if (window.location.hash === "#/tarifas") {
     showPane("tarifas");
+  }
+  if (window.location.hash === "#/ical") {
+    showPane("ical");
+    cargarEnlacesIcal();
+  }
+  if (window.location.hash === "#/calendario") {
+    showPane("calendario");
+    cargarCalendario();
+  }
+  if (window.location.hash === "#/nueva-reserva") {
+    showPane("nueva-reserva");
   }
 
   function ymdISO(d) {
@@ -113,6 +131,11 @@
       currency: code,
       maximumFractionDigits: 0,
     }).format(n || 0);
+  }
+
+  function codigoReserva(id) {
+    if (!id) return "—";
+    return "TN-" + String(id).replace(/-/g, "").slice(0, 8).toUpperCase();
   }
 
   var tb = document.getElementById("tabla-reservas-body");
@@ -172,6 +195,7 @@
               pair.unitNames[r.unidad_id] || r.unidad_id;
 
             [
+              codigoReserva(r.id),
               fmtFechaISO(r.check_in),
               fmtFechaISO(r.check_out),
               un,
@@ -500,6 +524,204 @@
   if (btnCargarTarifas) btnCargarTarifas.addEventListener("click", cargarTarifasCalendario);
   if (btnGuardarTarifas) btnGuardarTarifas.addEventListener("click", guardarTarifasCambios);
 
+  // --- Nueva reserva (operación móvil) ---
+  var nrForm = document.getElementById("form-nueva-reserva");
+  var nrExito = document.getElementById("nr-exito");
+  var nrUnidad = document.getElementById("nr-unidad");
+  var nrCheckin = document.getElementById("nr-checkin");
+  var nrCheckout = document.getElementById("nr-checkout");
+  var nrCotizacion = document.getElementById("nr-cotizacion");
+  var msgNueva = document.getElementById("msg-nueva-reserva");
+  var nrUnidadesCargadas = false;
+
+  function resetNuevaReserva() {
+    if (nrForm) nrForm.hidden = false;
+    if (nrExito) nrExito.hidden = true;
+    if (msgNueva) msgNueva.textContent = "";
+    if (nrCotizacion) {
+      nrCotizacion.hidden = true;
+      nrCotizacion.textContent = "";
+    }
+  }
+
+  function initNuevaReserva() {
+    resetNuevaReserva();
+    if (!nrUnidad || !nrCheckin || !nrCheckout) return;
+
+    var hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+    if (!nrCheckin.value) {
+      nrCheckin.value = ymdISO(hoy);
+      var out = new Date(hoy.getTime());
+      out.setDate(out.getDate() + 2);
+      nrCheckout.value = ymdISO(out);
+    }
+
+    if (nrUnidadesCargadas) return;
+
+    if (!apiBase()) {
+      mensajeSinServidor(msgNueva);
+      return;
+    }
+
+    apiFetch("/api/unidades?solo_alquilables=true")
+      .then(function (json) {
+        nrUnidad.innerHTML = "";
+        (json.unidades || []).forEach(function (u) {
+          var opt = document.createElement("option");
+          opt.value = u.id;
+          opt.textContent = u.nombre;
+          nrUnidad.appendChild(opt);
+        });
+        nrUnidadesCargadas = true;
+      })
+      .catch(function (err) {
+        if (err && err.message === "sin_api") mensajeSinServidor(msgNueva);
+        else if (msgNueva) msgNueva.textContent = "No pude cargar las unidades.";
+      });
+  }
+
+  function payloadNuevaReserva() {
+    return {
+      unidad_id: nrUnidad.value,
+      check_in: nrCheckin.value,
+      check_out: nrCheckout.value,
+      huesped_nombre: document.getElementById("nr-nombre").value.trim(),
+      huesped_telefono: document.getElementById("nr-telefono").value.trim() || null,
+      personas: Number(document.getElementById("nr-personas").value) || 2,
+      origen: document.getElementById("nr-origen").value,
+      notas_internas: document.getElementById("nr-notas").value.trim() || null,
+      promo: "auto",
+    };
+  }
+
+  var btnNrCotizar = document.getElementById("btn-nr-cotizar");
+  if (btnNrCotizar) {
+    btnNrCotizar.addEventListener("click", function () {
+      if (!apiBase()) {
+        mensajeSinServidor(msgNueva);
+        return;
+      }
+      var p = payloadNuevaReserva();
+      if (!p.unidad_id || !p.check_in || !p.check_out) {
+        if (msgNueva) msgNueva.textContent = "Completá unidad y fechas.";
+        return;
+      }
+      if (msgNueva) msgNueva.textContent = "Cotizando…";
+      apiFetch("/api/cotizar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(p),
+      })
+        .then(function (j) {
+          var cot = j.cotizacion || {};
+          var disp = j.disponible ? "Hay lugar" : "Sin lugar (solape)";
+          if (nrCotizacion) {
+            nrCotizacion.hidden = false;
+            nrCotizacion.textContent =
+              disp +
+              " · " +
+              (cot.noches || "?") +
+              " noche(s) · total " +
+              fmtMoney(cot.total, "ARS");
+          }
+          if (msgNueva) msgNueva.textContent = "";
+        })
+        .catch(function (err) {
+          var t = "No pude cotizar.";
+          if (err && err.body && err.body.detail) t = String(err.body.detail);
+          if (msgNueva) msgNueva.textContent = t;
+        });
+    });
+  }
+
+  if (nrForm) {
+    nrForm.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (!apiBase()) {
+        mensajeSinServidor(msgNueva);
+        return;
+      }
+      var btn = document.getElementById("btn-nr-guardar");
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Guardando…";
+      }
+      if (msgNueva) msgNueva.textContent = "";
+
+      apiFetch("/api/reservas/operacion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payloadNuevaReserva()),
+      })
+        .then(function (j) {
+          nrForm.hidden = true;
+          if (nrExito) nrExito.hidden = false;
+          var codigoEl = document.getElementById("nr-codigo");
+          var resumenEl = document.getElementById("nr-resumen");
+          var msgEl = document.getElementById("nr-mensaje-huesped");
+          if (codigoEl) codigoEl.textContent = j.codigo_reserva || codigoReserva(j.id);
+          if (resumenEl) {
+            resumenEl.textContent =
+              (j.huesped_nombre || "") +
+              " · " +
+              fmtFechaISO(j.check_in) +
+              " → " +
+              fmtFechaISO(j.check_out) +
+              " · " +
+              fmtMoney(j.precio_total, j.moneda);
+          }
+          if (msgEl) msgEl.value = j.mensaje_huesped || "";
+          var wa = document.getElementById("btn-nr-whatsapp");
+          if (wa) {
+            var tel = document.getElementById("nr-telefono").value.replace(/\D/g, "");
+            var text = encodeURIComponent(j.mensaje_huesped || "");
+            wa.href = tel
+              ? "https://wa.me/" + tel + "?text=" + text
+              : "https://wa.me/5493541571190?text=" + text;
+          }
+        })
+        .catch(function (err) {
+          var t = "No se pudo guardar la reserva.";
+          if (err && err.body && err.body.detail) t = String(err.body.detail);
+          if (msgNueva) msgNueva.textContent = t;
+        })
+        .finally(function () {
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = "Confirmar reserva";
+          }
+        });
+    });
+  }
+
+  var btnNrCopiar = document.getElementById("btn-nr-copiar-msg");
+  if (btnNrCopiar) {
+    btnNrCopiar.addEventListener("click", function () {
+      var msgEl = document.getElementById("nr-mensaje-huesped");
+      if (!msgEl) return;
+      navigator.clipboard.writeText(msgEl.value).then(
+        function () {
+          btnNrCopiar.textContent = "¡Copiado!";
+          window.setTimeout(function () {
+            btnNrCopiar.textContent = "Copiar mensaje";
+          }, 1600);
+        },
+        function () {
+          msgEl.select();
+        }
+      );
+    });
+  }
+
+  var btnNrOtra = document.getElementById("btn-nr-otra");
+  if (btnNrOtra) {
+    btnNrOtra.addEventListener("click", function () {
+      if (nrForm) nrForm.reset();
+      initNuevaReserva();
+    });
+  }
+
   var listaIcal = document.getElementById("lista-ical");
 
   window.copiadoHint = "";
@@ -600,6 +822,10 @@
     if (window.location.hash === "#/tarifas") {
       showPane("tarifas");
       cargarTarifasCalendario();
+    }
+    if (window.location.hash === "#/nueva-reserva") {
+      showPane("nueva-reserva");
+      initNuevaReserva();
     }
   });
 

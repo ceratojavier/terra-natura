@@ -2,12 +2,15 @@ import { NavLink, Outlet } from "react-router-dom";
 import {
   CalendarDays,
   CalendarRange,
+  CalendarPlus,
   Film,
   Home,
+  MessageCircle,
   Mountain,
   Send,
   Settings,
   Camera,
+  Radar,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -35,6 +38,12 @@ const nav = [
     label: "Publicaciones",
     hint: "Revisar y subir a Instagram",
     icon: Send,
+  },
+  {
+    to: "/radar-eventos",
+    label: "Radar eventos",
+    hint: "Novedades y avisos tuyos",
+    icon: Radar,
   },
   {
     to: "/instagram-perfil",
@@ -96,6 +105,52 @@ export function AppShell() {
             </div>
             <p className="mt-0.5 hidden text-xs text-[#7a8f80] md:block">
               Crear vídeo con IA
+            </p>
+          </a>
+          <div className="my-2 hidden border-t border-[#e8efe5] md:block" />
+          <p className="hidden px-3 text-[10px] font-semibold uppercase tracking-wide text-[#9aab9e] md:block">
+            Operación (móvil)
+          </p>
+          <a
+            href="/panel.html#/nueva-reserva"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-w-[7rem] shrink-0 rounded-xl px-3 py-2.5 text-[#2d5a3d] transition-colors hover:bg-[#e3efe0] md:min-w-0"
+          >
+            <div className="flex items-center gap-2">
+              <CalendarPlus className="h-4 w-4 shrink-0" />
+              <span className="text-sm font-semibold">Nueva reserva</span>
+            </div>
+            <p className="mt-0.5 hidden text-xs text-[#7a8f80] md:block">
+              Panel PMS en el celular
+            </p>
+          </a>
+          <a
+            href="/panel.html#/calendario"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-w-[7rem] shrink-0 rounded-xl px-3 py-2.5 text-[#5c6f63] transition-colors hover:bg-[#f0f5ee] md:min-w-0"
+          >
+            <div className="flex items-center gap-2">
+              <CalendarDays className="h-4 w-4 shrink-0" />
+              <span className="text-sm font-semibold">Calendario PMS</span>
+            </div>
+            <p className="mt-0.5 hidden text-xs text-[#7a8f80] md:block">
+              Ocupación y Booking
+            </p>
+          </a>
+          <a
+            href="https://wa.me/5493541571190"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="min-w-[7rem] shrink-0 rounded-xl px-3 py-2.5 text-[#5c6f63] transition-colors hover:bg-[#f0f5ee] md:min-w-0"
+          >
+            <div className="flex items-center gap-2">
+              <MessageCircle className="h-4 w-4 shrink-0" />
+              <span className="text-sm font-semibold">WhatsApp</span>
+            </div>
+            <p className="mt-0.5 hidden text-xs text-[#7a8f80] md:block">
+              Consultas y cierre
             </p>
           </a>
         </nav>

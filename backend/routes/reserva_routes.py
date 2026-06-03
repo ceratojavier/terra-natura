@@ -8,6 +8,8 @@ from backend.models.unidad import Unidad
 from backend.schemas.reserva import (
     CotizarRequest,
     ReservaCreate,
+    ReservaOperacionCreate,
+    ReservaOperacionOut,
     ReservaOut,
     ReservaPatch,
 )
@@ -59,6 +61,19 @@ def disponibilidad(
         raise HTTPException(404, "Unidad no encontrada")
     dias = disponibilidad_service.vista_disponibilidad(db, desde, hasta, unidad_id)
     return {"desde": desde.isoformat(), "hasta": hasta.isoformat(), "dias": dias}
+
+
+@router.post("/reservas/operacion", response_model=ReservaOperacionOut)
+def crear_reserva_operacion(body: ReservaOperacionCreate, db: Session = Depends(get_db)):
+    """Alta manual confirmada — panel móvil / operación del complejo."""
+    try:
+        r, codigo, mensaje = reserva_service.crear_operacion(db, body)
+    except ValueError as e:
+        raise HTTPException(409 if "solape" in str(e).lower() else 400, str(e)) from e
+    out = reserva_service.obtener(db, r.id)
+    if not out:
+        raise HTTPException(500, "Reserva creada pero no recuperable")
+    return ReservaOperacionOut(**out, codigo_reserva=codigo, mensaje_huesped=mensaje)
 
 
 @router.post("/reservas", response_model=ReservaOut)
