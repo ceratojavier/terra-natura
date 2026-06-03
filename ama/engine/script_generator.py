@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from ama.engine.broll_queries import BROLL_POR_TIPO, SECUENCIA_POR_OBJETIVO
+from ama.engine.broll_queries import BROLL_POR_TIPO, SECUENCIA_POR_OBJETIVO, SECUENCIA_PROFESIONAL
 
 
 def generar_guion(
@@ -27,13 +27,18 @@ def generar_guion(
     hook_evento = (evento or {}).get("copy_hook") or (evento or {}).get("mensaje_campana") or ""
 
     estilo = get_estilo(estilo_reel or assets.get("estilo_reel"))
-    seq_key = estilo.get("secuencia_objetivo") or objetivo
-    secuencia = SECUENCIA_POR_OBJETIVO.get(seq_key, SECUENCIA_POR_OBJETIVO.get(objetivo, SECUENCIA_POR_OBJETIVO["branding"]))
+    if estilo.get("id") == "cinematico_profesional" or estilo_reel == "cinematico_profesional":
+        secuencia = list(SECUENCIA_PROFESIONAL)
+    else:
+        seq_key = estilo.get("secuencia_objetivo") or objetivo
+        secuencia = SECUENCIA_POR_OBJETIVO.get(
+            seq_key, SECUENCIA_POR_OBJETIVO.get(objetivo, SECUENCIA_POR_OBJETIVO["branding"])
+        )
     secuencia = aplicar_duraciones_a_secuencia(secuencia, estilo)
 
     hooks = {
         "cta_reserva": "¿Listo para una escapada a las sierras?",
-        "fidelizacion": "Hay lugares que te esperan de vuelta. Este es uno.",
+        "fidelizacion": "¿Cuándo fue tu último finde sin agenda en las sierras?",
         "utilidad": "Un finde en Bialet puede cambiar tu semana.",
         "branding": "Así se siente Terra Natura al atardecer.",
     }
@@ -76,7 +81,7 @@ def generar_guion(
                     "fuente": foto,
                     "duracion_seg": step.get("duracion_seg", 3.6),
                     "lineas": emotion_lines[len(escenas) % len(emotion_lines)],
-                    "effect": step.get("effect", "zoom_in"),
+                    "effect": step.get("effect", "drift"),
                     "transicion": "fade",
                 }
             )
@@ -127,23 +132,23 @@ def _lineas_emocion(objetivo: str, angulo: str, evento: dict | None) -> list[lis
     if evento and evento.get("tipo") == "finde_largo":
         return [
             ["El valle", "te espera"],
-            ["Tu refugio", "en Punilla"],
+            ["Tu refugio", "en las sierras"],
             ["Agua y montaña", "cerca tuyo"],
             ["Reservá", "tu escapada"],
         ]
     if objetivo == "cta_reserva":
         return [
-            ["Desconectá", "en Punilla"],
+            ["Desconectá", "en las sierras"],
             ["600 m del lago", "Bialet Massé"],
             ["Tu cabaña", "con vista al valle"],
             ["Escribinos", "por WhatsApp"],
         ]
     if objetivo == "fidelizacion":
         return [
-            ["Volver acá", "es volver a casa"],
-            ["Gracias por", "elegirnos"],
-            ["Naturaleza", "y tranquilidad"],
-            ["Te esperamos", "de nuevo"],
+            ["Finde", "en las sierras"],
+            ["Río y lago", "cerca"],
+            ["Pileta y parque", "al atardecer"],
+            ["Reservá", "cuando quieras"],
         ]
     if objetivo == "utilidad":
         return [
@@ -153,7 +158,7 @@ def _lineas_emocion(objetivo: str, angulo: str, evento: dict | None) -> list[lis
             ["Guardá", "este lugar"],
         ]
     return [
-        ["Terra Natura", "Valle de Punilla"],
+        ["Terra Natura", "Sierras de Córdoba"],
         ["Amanecer", "en el parque"],
         ["Escapada", "real"],
         ["Bialet Massé", "Córdoba"],
@@ -173,7 +178,8 @@ def _voz_off(objetivo: str, angulo: str, hook: str, evento: dict | None) -> str:
     if objetivo == "fidelizacion":
         return (
             f"{hook} "
-            "Si ya nos visitaste, conocés esta calma. Guardá el video y volvé cuando puedas."
+            "Imaginá dos noches con el arroyo de fondo, la pileta al sol y el lago a 600 m. "
+            "Guardá el video para cuando quieras escapar de la ciudad."
         )
     if objetivo == "utilidad":
         return (
@@ -182,5 +188,5 @@ def _voz_off(objetivo: str, angulo: str, hook: str, evento: dict | None) -> str:
         )
     return (
         f"{hook} "
-        "Alpinas, suites, pileta y parque. Bialet Massé es tu base en Punilla."
+        "Alpinas, suites, pileta y parque. Bialet Massé es tu base en las sierras."
     )

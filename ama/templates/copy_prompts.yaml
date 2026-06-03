@@ -3,7 +3,7 @@ whatsapp_link: "https://wa.me/5493541571190"
 
 angulos:
   parejas:
-    titulo: "Refugio para dos — escapada a las sierras"
+    titulo: "Escapada de pareja — sierras de Córdoba"
     hashtags: ["#TerraNatura", "#BialetMasse", "#EscapadaALasSierras", "#EscapadaDePareja"]
   familia:
     titulo: "Familia, pileta y parque en Bialet Massé"
@@ -52,6 +52,9 @@ cuerpos:
     {hashtags_linea}
 
 extras_por_tema:
-  feriado_puente: "Puente ideal: 3 noches, desconexión y pileta hasta las 20 h."
-  verano: "Verano en Punilla: living amplio, balcón con vista y dueños en el lugar."
-  promo_baja: "Temporada baja — preguntanos por packs 3×2 / 4×3 y lun–jue con mejor tarifa."
+  feriado_puente: "Puente ideal: 3 noches en las sierras — desconexión y pileta hasta las 20 h."
+  verano: "Verano en las sierras: living amplio, balcón con vista y dueños en el lugar."
+  promo_baja: "Temporada baja — pagás 4 noches y te quedás 5 (lun–sáb AM). Consultá beneficios."
+  invierno_2026: "Vacaciones de invierno: mientras más descansás, más te conviene — 5 noches y la 6.ª bonificada."
+  finde_largo_alta: "Los findes largos suelen reservarse con anticipación — consultanos disponibilidad."
+  carnaval: "Carnaval en las sierras: base tranquila cerca del lago; ideal después de recitales en la zona."

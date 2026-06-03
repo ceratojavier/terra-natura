@@ -70,7 +70,7 @@ def listar_piezas_editoriales(desde: date, hasta: date) -> list[dict]:
             {
                 "pieza_id": f"editorial|{d.isoformat()}",
                 "hito_id": "editorial-evergreen",
-                "hito_nombre": "Marca y fidelización",
+                "hito_nombre": "Calendario editorial",
                 "tipo_pieza": tipo,
                 "titulo": _titulo(tipo, d),
                 "fecha": d.isoformat(),

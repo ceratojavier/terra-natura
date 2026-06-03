@@ -24,16 +24,17 @@ def generar_copy(
     canal: str = "instagram",
     tema_extra: str = "",
     cuerpo_extra: str | None = None,
+    titulo: str | None = None,
 ) -> dict:
     tpl = _load_templates()
     angulos = tpl.get("angulos") or {}
     meta = angulos.get(angulo) or angulos.get("parejas") or {}
-    titulo = meta.get("titulo", "Terra Natura — Bialet Massé")
+    titulo = (titulo or "").strip() or meta.get("titulo", "Terra Natura — Bialet Massé")
     hashtags = list(meta.get("hashtags") or [])
 
     extras = (tpl.get("extras_por_tema") or {}).get(tema_extra, "")
     if cuerpo_extra is None:
-        cuerpo_extra = extras or "Consultá disponibilidad para tu escapada en Punilla."
+        cuerpo_extra = extras or "Consultá disponibilidad para tu escapada a las sierras en Bialet Massé."
 
     wa = tpl.get("whatsapp_link") or "https://wa.me/5493541571190"
     cta_linea = wa
@@ -57,5 +58,5 @@ def generar_copy(
         "copy": copy,
         "hashtags": hashtags,
         "whatsapp_url": wa_url,
-        "brief_canva": f"Imagen: paisaje Punilla o {angulo}. Texto overlay: {titulo[:50]}. Logo Terra Natura.",
+        "brief_canva": f"Imagen: sierras / parque / {angulo}. Texto overlay: {titulo[:50]}. Logo Terra Natura.",
     }

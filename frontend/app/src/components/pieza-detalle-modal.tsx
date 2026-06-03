@@ -12,6 +12,7 @@ import {
 
 export interface PiezaDetalle {
   id: string;
+  objetivo_editorial_label?: string;
   titulo_publicacion?: string;
   fecha_legible?: string;
   ventana_label?: string;
@@ -88,6 +89,9 @@ export function PiezaDetalleModal({
               </Dialog.Title>
               <Dialog.Description className="text-sm text-[#6b7f72]">
                 {data?.fecha_legible} · {data?.ventana_label} · {data?.tipo_pieza_label}
+                {data?.objetivo_editorial_label && (
+                  <> · Objetivo: {data.objetivo_editorial_label}</>
+                )}
               </Dialog.Description>
             </div>
             <Dialog.Close asChild>

@@ -53,6 +53,17 @@ La gente **no busca “Punilla”** en Google/redes. Busca: **sierras, escapada,
 - “Barato”, “low cost”, “todo incluido” (no aplica)
 - Prometer eventos sin fecha oficial
 - Lenguaje corporativo (“estimado cliente”, “su solicitud fue procesada”)
+- **Metadatos internos en el post:** “Marca y fidelización”, “objetivo editorial”, nombres de campaña del panel — eso va solo en título del panel o brief, no en copy para IG
+- Frases tipo chocolatería / rehabilitación: “conectá con quien querés cuidar”, “refugio de abrigo”, “te esperan de vuelta como en casa”
+- **Inventar servicios:** pileta climatizada, spa, todo incluido, “refugio de inundados”
+- “Abrigo” solo en copy de **ropa de cama** (sábanas/toallas de abrigo en ficha técnica), no como “vení con abrigo porque somos un refugio”
+
+### Por qué venís (copy honesto — rotar)
+
+- Finde **sin ruido de ciudad**, a 600 m del lago San Roque  
+- **Pareja:** dormitorio arriba con vista, living despejado, parque y pileta  
+- **Familia chica:** espacio, hamacas, casita de chicos en el parque  
+- **Reserva directa:** hablás con los dueños en el predio (mismo lote, no call center)
 
 ---
 

@@ -298,7 +298,7 @@ def resolver_pieza_calendario(
                 "formato": ep.get("formato", "reel"),
             }
             item = {
-                "nombre": ep.get("hito_nombre", "Marca y fidelización"),
+                "nombre": ep.get("hito_nombre", "Calendario editorial"),
                 "tipo": "editorial",
                 "fecha_inicio": fecha_s,
             }
