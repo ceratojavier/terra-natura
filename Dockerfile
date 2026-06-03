@@ -34,7 +34,6 @@ RUN pip install --no-cache-dir -r /app/backend/requirements.txt
 COPY backend /app/backend
 COPY ama /app/ama
 COPY agents /app/agents
-COPY database /app/database
 COPY video_pro /app/video_pro
 
 COPY --from=frontend /build/frontend/app/dist /app/frontend/app/dist
