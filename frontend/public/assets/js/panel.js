@@ -118,6 +118,30 @@
     return y + "-" + m + "-" + day;
   }
 
+  function mesRango(ym) {
+    var p = (ym || "").split("-");
+    var y = Number(p[0] || 0);
+    var m = Number(p[1] || 0);
+    if (!y || !m) return null;
+    var desde = new Date(y, m - 1, 1);
+    var hasta = new Date(y, m, 0);
+    return { desde: ymdISO(desde), hasta: ymdISO(hasta), ym: y + "-" + String(m).padStart(2, "0") };
+  }
+
+  function fmtMesLabel(ym) {
+    var r = mesRango(ym);
+    if (!r) return ym || "";
+    var d = new Date(r.desde + "T12:00:00");
+    var s = d.toLocaleDateString("es-AR", { month: "long", year: "numeric" });
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+
+  function shiftMes(ym, delta) {
+    var p = (ym || "").split("-");
+    var d = new Date(Number(p[0]), Number(p[1] || 1) - 1 + delta, 1);
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0");
+  }
+
   function fmtFechaISO(s) {
     if (!s) return "";
     var d = new Date(s + "T12:00:00");
@@ -223,10 +247,34 @@
 
   var msgCal = document.getElementById("msg-calendario");
   var calGrid = document.getElementById("calendario-grid");
+  var calOcupacionMes = document.getElementById("cal-ocupacion-mes");
+  var calMesPrev = document.getElementById("cal-mes-prev");
+  var calMesNext = document.getElementById("cal-mes-next");
   var btnSyncBooking = document.getElementById("btn-sync-booking");
   var btnSyncBookingIcal = document.getElementById("btn-sync-booking-ical");
   var btnRecargarCal = document.getElementById("btn-recargar-cal");
   var msgSyncIcal = document.getElementById("msg-sync-ical");
+
+  if (calOcupacionMes && !calOcupacionMes.value) {
+    calOcupacionMes.value = new Date().toISOString().slice(0, 7);
+  }
+  if (calOcupacionMes) {
+    calOcupacionMes.addEventListener("change", cargarCalendario);
+  }
+  if (calMesPrev) {
+    calMesPrev.addEventListener("click", function () {
+      if (!calOcupacionMes) return;
+      calOcupacionMes.value = shiftMes(calOcupacionMes.value, -1);
+      cargarCalendario();
+    });
+  }
+  if (calMesNext) {
+    calMesNext.addEventListener("click", function () {
+      if (!calOcupacionMes) return;
+      calOcupacionMes.value = shiftMes(calOcupacionMes.value, 1);
+      cargarCalendario();
+    });
+  }
 
   function sincronizarBooking(btn, msgEl) {
     if (!apiBase()) {
@@ -303,12 +351,18 @@
       return;
     }
 
-    var hoy = new Date();
-    hoy.setHours(0, 0, 0, 0);
-    var fin = new Date(hoy.getTime());
-    fin.setDate(fin.getDate() + 27);
-    var desde = ymdISO(hoy);
-    var hasta = ymdISO(fin);
+    var ym = calOcupacionMes && calOcupacionMes.value;
+    if (!ym) {
+      ym = new Date().toISOString().slice(0, 7);
+      if (calOcupacionMes) calOcupacionMes.value = ym;
+    }
+    var rango = mesRango(ym);
+    if (!rango) {
+      msgCal.textContent = "Elegí un mes válido.";
+      return;
+    }
+    var desde = rango.desde;
+    var hasta = rango.hasta;
 
     apiFetch("/api/unidades?solo_alquilables=true")
       .then(function (json) {
@@ -335,7 +389,8 @@
       })
       .then(function (rows) {
         if (!rows) return;
-        msgCal.textContent = "Próximas 4 semanas · " + rows[0].dias.length + " noches";
+        msgCal.textContent =
+          fmtMesLabel(ym) + " · " + rows[0].dias.length + " noches · deslizá → si no ves todo el mes";
 
         var fechas = rows[0].dias.map(function (d) {
           return d.fecha;
@@ -399,16 +454,6 @@
   if (tarifasMes && !tarifasMes.value) {
     var hoyTar = new Date();
     tarifasMes.value = hoyTar.toISOString().slice(0, 7);
-  }
-
-  function mesRango(ym) {
-    var p = (ym || "").split("-");
-    var y = Number(p[0] || 0);
-    var m = Number(p[1] || 0);
-    if (!y || !m) return null;
-    var desde = new Date(y, m - 1, 1);
-    var hasta = new Date(y, m, 0);
-    return { desde: ymdISO(desde), hasta: ymdISO(hasta) };
   }
 
   function cargarTarifasCalendario() {
