@@ -1,20 +1,5 @@
-# Terra Natura — API + apps internas (/app, /video-pro)
-FROM node:20-alpine AS frontend
-
-WORKDIR /build
-
-# App operativa (panel dueño)
-COPY frontend/app/package.json frontend/app/package-lock.json frontend/app/
-RUN cd frontend/app && npm ci
-COPY frontend/app frontend/app
-RUN cd frontend/app && npm run build
-
-# Video Pro Creator
-COPY frontend/video-pro-creator/package.json frontend/video-pro-creator/package-lock.json frontend/video-pro-creator/
-RUN cd frontend/video-pro-creator && npm ci
-COPY frontend/video-pro-creator frontend/video-pro-creator
-RUN cd frontend/video-pro-creator && npm run build
-
+# Terra Natura — API en Render (Python only).
+# Panel web: GitHub Pages · Marketing /app: PC local o build aparte.
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -36,15 +21,13 @@ COPY ama /app/ama
 COPY agents /app/agents
 COPY video_pro /app/video_pro
 
-COPY --from=frontend /build/frontend/app/dist /app/frontend/app/dist
-COPY --from=frontend /build/frontend/video-pro-creator/dist /app/frontend/video-pro-creator/dist
-
 RUN mkdir -p /app/data /app/video_pro/uploads /app/video_pro/output
+
 ENV DATABASE_URL=sqlite:////app/data/terra_natura.db
 
 EXPOSE 8000
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=5s --start-period=90s --retries=3 \
   CMD curl -f http://127.0.0.1:8000/health || exit 1
 
 CMD ["sh", "-c", "uvicorn backend.app:app --host 0.0.0.0 --port ${PORT:-8000}"]
