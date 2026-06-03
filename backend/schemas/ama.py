@@ -84,6 +84,38 @@ class VideoDesdeGuionIn(BaseModel):
     assets: dict | None = None
 
 
+class GuionProduccionPiezaIn(BaseModel):
+    hito_id: str
+    pieza_id: str
+
+
+class PiezaEnviarPublicacionesIn(BaseModel):
+    hito_id: str
+    pieza_id: str
+    video_ruta: str | None = Field(
+        None,
+        description="Ruta relativa al MP4; si falta, se busca el último render de la pieza",
+    )
+
+
+class GuionProduccionEscenaIn(BaseModel):
+    hito_id: str
+    pieza_id: str
+    numero: int = Field(..., ge=1, le=30)
+    youtube_id: str | None = None
+    youtube_url: str | None = None
+    youtube_inicio_seg: float | None = Field(None, ge=0)
+    youtube_fin_seg: float | None = Field(None, ge=0)
+    foto_ruta: str | None = None
+
+
 class VideoLoteCalendarioIn(BaseModel):
     dias: int = Field(default=14, ge=1, le=90)
     max_videos: int = Field(default=5, ge=1, le=20)
+
+
+class PipelineDiaIn(BaseModel):
+    fecha: date | None = None
+    render_video: bool = True
+    guardar_calendario: bool = True
+    carpeta_media: str | None = "Parque"

@@ -1,0 +1,31 @@
+---
+description: Calendario comercial y ventas 2026 Terra Natura (tarifas, findes largos, promos, WhatsApp)
+globs:
+  - docs/CALENDARIO_COMERCIAL_2026.md
+  - docs/ESTRATEGIA_COMERCIAL_2026.md
+  - docs/WHATSAPP_IA_PROMPT_MAESTRO.md
+  - docs/BIBLIOTECA_MENSAJES_WHATSAPP.md
+  - ama/data/calendario_comercial_2026.json
+  - ama/engine/comercial_2026.py
+  - ama/chat/**
+  - backend/services/pricing_engine.py
+---
+
+# Comercial 2026 — Terra Natura
+
+Antes de cotizar, campañas, copy de venta o respuestas WhatsApp:
+
+1. Leer `docs/CALENDARIO_COMERCIAL_2026.md` y `docs/ESTRATEGIA_COMERCIAL_2026.md`.
+2. Usar `ama/engine/comercial_2026.py` / `ama/data/calendario_comercial_2026.json` para fechas y promos.
+3. WhatsApp: `docs/WHATSAPP_IA_PROMPT_MAESTRO.md` + `docs/BIBLIOTECA_MENSAJES_WHATSAPP.md`.
+
+## Reglas rápidas
+
+- Finde largo = feriado **viernes o lunes** (o puente): objetivo **3–4 noches**, no 2.
+- **Alta demanda:** no descuento agresivo (Carnaval, Semana Santa, julio, oct/nov).
+- **Invierno:** 5 noches + 6.ª bonificada; frase *«mientras más descansás, más te conviene»*.
+- **Baja:** 4 paga 5 (lun–sáb AM); mayo = escapada romántica + detalle bienvenida.
+- **Nunca** responder solo precio; valor → fechas/personas → tarifa.
+- Copy **público IG/web:** sin Punilla como gancho (`docs/COPY_TONO_MARCA.md`).
+
+Tarifas orientativas 2026: Alpina $120k alta / $100k resto · Suite $100k alta / $85k resto (ver JSON).

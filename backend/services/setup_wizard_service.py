@@ -856,6 +856,9 @@ def _sync_precios_db(precios: dict[str, Any]) -> None:
                 pct_baja_su if pct_baja_su > 0 else None
             )
             raw["modelo_inflacion"] = "coeficiente_interanual_mismo_mes"
+            raw["usar_calendario_comercial_2026"] = True
+            raw["auto_promos_comercial_2026"] = True
+            raw["modelo_tarifas"] = "calendario_comercial_2026"
 
             config_service.set_config(db, "tarifas_promociones", raw, merge=False)
         finally:

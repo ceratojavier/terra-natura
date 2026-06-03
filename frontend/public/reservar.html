@@ -9,10 +9,10 @@
   <script defer src="./assets/js/site-nav.js"></script>
   <script defer src="./assets/js/cotiza.js"></script>
 </head>
-<body>
+<body class="page-reserva">
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="./index.html">Terra Natura</a>
+      <a class="brand" href="./index.html"><span class="brand-kicker">Cabañas</span> Terra Natura</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-primary">Menú</button>
       <nav class="nav-links" id="nav-primary">
         <a href="./index.html#unidades">Cabañas</a>
@@ -25,13 +25,11 @@
 
   <main class="section section-alt">
     <div class="wrap">
-      <h1>Reserva online</h1>
-      <p class="muted">
-        Elegí fechas y unidad: te mostramos si hay lugar y cuánto sale.
-        Si te cierra, podés pagar la seña online o escribirnos por WhatsApp con calma.
+      <h1>Reservá tu estadía</h1>
+      <p class="muted reserva-lead">
+        <span class="reserva-lead-full">Elegí fechas y cabaña: en segundos ves disponibilidad y precio. Pagá la seña con Mercado Pago o escribinos por WhatsApp.</span>
+        <span class="reserva-lead-short">Fechas, precio y reserva en un paso.</span>
       </p>
-      <p id="reserva-api-estado" class="muted" hidden></p>
-
       <form id="form-reserva" class="booking-form booking-form--compact">
         <label>Nombre completo *
           <input id="reserva-nombre" type="text" maxlength="80" required autocomplete="name" />
@@ -61,23 +59,21 @@
           <input id="reserva-nota" type="text" maxlength="120" placeholder="Opcional" />
         </label>
         <input id="reserva-canal" type="hidden" value="web_directa" />
-        <button class="btn btn-primary booking-span-2" type="submit">1 · Cotizar disponibilidad</button>
+        <button class="btn btn-primary booking-span-2" type="submit">Ver precio y disponibilidad</button>
       </form>
 
       <div id="reserva-resultado" class="result result--compact" hidden></div>
       <div id="reserva-acciones" class="cta-row cta-row--compact"></div>
 
       <p class="muted pago-ayuda">
-        El botón de Mercado Pago aparece después de cotizar, si hay lugar y el sistema está conectado.
-        En GitHub Pages solo: configurá <code>apiBase</code> en <code>assets/data/site-config.json</code>
-        apuntando a tu servidor (mismo dominio con FastAPI o Vercel).
+        Después de cotizar podés pagar la seña con Mercado Pago o escribirnos por WhatsApp para confirmar fechas y datos.
       </p>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="wrap footer-grid">
-      <div><strong>Terra Natura</strong></div>
+      <div><strong>Cabañas Terra Natura</strong></div>
       <div><a href="./index.html">← Volver al inicio</a></div>
     </div>
   </footer>

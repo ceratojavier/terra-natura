@@ -10,3 +10,4 @@ httpx>=0.27.0
 Pillow>=10.0.0
 yt-dlp>=2024.1.0
 # Opcional slideshow: pip install moviepy
+# Video Pro Creator + Veo: pip install google-genai

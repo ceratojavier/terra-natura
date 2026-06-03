@@ -1,7 +1,12 @@
 # Tarifas, promos y equivalencias — Terra Natura
 
 Referencia oficial de negocio: `docs/REGLAS_NEGOCIO.md`.  
+Calendario comercial 2026 (tarifas publicadas y promos por fecha): **`docs/CALENDARIO_COMERCIAL_2026.md`**.  
 Este archivo explica **cómo calcula el motor** equivalencias por noche y descuentos.
+
+**Promo invierno 2026 (calendario comercial):** 5 noches pagadas + 6.ª bonificada — el motor aplica sola con `promo=auto` (o `5mas1`) si hay **6+ noches** en ventana julio 2026.
+
+**Motor actualizado:** `pricing_engine` con `usar_calendario_comercial_2026` (default) toma tarifas de `ama/engine/comercial_2026.py` ($120k/$100k alta, $100k/$85k resto) y promos **5+1** / **4 paga 5** automáticas.
 
 ---
 

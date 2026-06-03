@@ -6,12 +6,25 @@
       "tipo": "alpina",
       "capacidad": 4,
       "recomendado": 2,
-      "descripcion": "Dos plantas con living-comedor amplio, cocina equipada y dormitorio matrimonial arriba con aire acondicionado y balcón.",
-      "amenities": ["WiFi", "Smart TV", "Aire acondicionado (PA)", "Parrilla", "Cocina completa", "Ropa blanca"],
+      "tagline": "Living amplio abajo, balcón a las sierras arriba",
+      "descripcion": "Subís al dormitorio matrimonial con aire frío-calor y balcón abierto al paisaje. Abajo, un living de 33 m² con cocina completa: ideal para pareja que quiere espacio, o familia con chicos en las camas auxiliares. Parrilla propia y pileta del complejo a unos pasos.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Aire acondicionado (PA)",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
       "fotos": [
-        "media/galeria/04-alpina-vista-puerta.jpg",
-        "media/galeria/05-alpina-living.jpg",
-        "media/galeria/09-alpina-frente-pileta.jpg"
+        "media/unidades/alpina-1/01.jpg",
+        "media/unidades/alpina-1/02.jpg",
+        "media/unidades/alpina-1/03.jpg",
+        "media/unidades/alpina-1/04.jpg",
+        "media/unidades/alpina-1/05.jpg",
+        "media/unidades/alpina-1/06.jpg",
+        "media/unidades/alpina-1/07.jpg",
+        "media/unidades/alpina-1/08.jpg"
       ]
     },
     {
@@ -20,12 +33,24 @@
       "tipo": "alpina",
       "capacidad": 4,
       "recomendado": 2,
-      "descripcion": "Misma distribución alpina en el corazón del parque: privacidad, pileta a pasos y asador propio.",
-      "amenities": ["WiFi", "Smart TV", "Aire acondicionado (PA)", "Parrilla", "Cocina completa", "Ropa blanca"],
+      "tagline": "En el centro del parque, pileta cerca",
+      "descripcion": "La misma comodidad alpina de dos plantas, ubicada donde el parque y la pileta te quedan al alcance de la mano. Perfecta si querés alternar siesta en reposera, mate bajo los árboles y una tarde en el lago sin manejar mucho.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Aire acondicionado (PA)",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
       "fotos": [
-        "media/galeria/10-parque-mate.jpg",
-        "media/galeria/05-alpina-living.jpg",
-        "media/galeria/02-piscina.jpg"
+        "media/unidades/alpina-2/01.jpg",
+        "media/unidades/alpina-2/02.jpg",
+        "media/unidades/alpina-2/03.jpg",
+        "media/unidades/alpina-2/04.jpg",
+        "media/unidades/alpina-2/05.jpg",
+        "media/unidades/alpina-2/06.jpg",
+        "media/unidades/alpina-2/07.jpg"
       ]
     },
     {
@@ -34,12 +59,25 @@
       "tipo": "alpina",
       "capacidad": 4,
       "recomendado": 2,
-      "descripcion": "Ideal para desconectar con vista abierta. Espacio flexible para pareja o familia con chicos.",
-      "amenities": ["WiFi", "Smart TV", "Aire acondicionado (PA)", "Parrilla", "Cocina completa", "Ropa blanca"],
+      "tagline": "Rodeada de verde, para bajar el ritmo",
+      "descripcion": "Un refugio con vista al parque y mucha tranquilidad. Misma distribución: living generoso abajo, dormitorio arriba con balcón. Te sirve para desconectar en pareja o traer a los chicos sin sentirte apretado.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Aire acondicionado (PA)",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
       "fotos": [
-        "media/galeria/13-parque-relax.jpg",
-        "media/galeria/04-alpina-vista-puerta.jpg",
-        "media/galeria/11-lago-plaza.jpg"
+        "media/unidades/alpina-3/01.jpg",
+        "media/unidades/alpina-3/02.jpg",
+        "media/unidades/alpina-3/03.jpg",
+        "media/unidades/alpina-3/04.jpg",
+        "media/unidades/alpina-3/05.jpg",
+        "media/unidades/alpina-3/06.jpg",
+        "media/unidades/alpina-3/07.jpg",
+        "media/unidades/alpina-3/08.jpg"
       ]
     },
     {
@@ -48,12 +86,22 @@
       "tipo": "suite",
       "capacidad": 3,
       "recomendado": 2,
-      "descripcion": "Loft con entrada independiente, sin escaleras. Matrimonial + cama simple, ventilador de techo.",
-      "amenities": ["WiFi", "Smart TV", "Parrilla", "Cocina completa", "Ropa blanca"],
+      "tagline": "Loft sin escaleras, entrada propia",
+      "descripcion": "Todo en un ambiente, con entrada independiente: matrimonial, cama simple y cocina equipada. Ventilador de techo para los días de calor. Ideal si preferís no subir escaleras o venís en pareja con un niño.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
       "fotos": [
-        "media/galeria/07-suite4-interior.jpg",
-        "media/galeria/08-suites-exterior.jpg",
-        "media/galeria/01-complejo-panoramica.jpg"
+        "media/unidades/suite-4/01.jpg",
+        "media/unidades/suite-4/02.jpg",
+        "media/unidades/suite-4/03.jpg",
+        "media/unidades/suite-4/04.jpg",
+        "media/unidades/suite-4/05.jpg",
+        "media/unidades/suite-4/06.jpg"
       ]
     },
     {
@@ -62,12 +110,23 @@
       "tipo": "suite",
       "capacidad": 3,
       "recomendado": 2,
-      "descripcion": "Loft en planta alta con aire frío/calor y ventanal con vista a las sierras. Perfecta para pareja.",
-      "amenities": ["WiFi", "Smart TV", "Aire acondicionado", "Parrilla", "Cocina completa", "Ropa blanca"],
+      "tagline": "Arriba del dúplex, aire y vista a las sierras",
+      "descripcion": "Loft en planta alta con aire frío-calor y un ventanal que abre el paisaje serrano. Entrada propia, ambiente íntimo para dos (o pareja con un niño). La opción más pedida cuando buscás climatización y vistas.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Aire acondicionado",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
       "fotos": [
-        "media/galeria/06-suite5-ventanal.jpg",
-        "media/galeria/08-suites-exterior.jpg",
-        "media/galeria/hero.jpg"
+        "media/unidades/suite-5/01.jpg",
+        "media/unidades/suite-5/02.jpg",
+        "media/unidades/suite-5/03.jpg",
+        "media/unidades/suite-5/04.jpg",
+        "media/unidades/suite-5/05.jpg",
+        "media/unidades/suite-5/06.jpg"
       ]
     }
   ]

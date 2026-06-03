@@ -16,9 +16,13 @@ from backend.schemas.ama import (
     GenerarSemanaIn,
     PublicacionCreate,
     PublicacionPatch,
+    PipelineDiaIn,
     VideoDesdeGuionIn,
     VideoLoteCalendarioIn,
     VideoSlideshowIn,
+    GuionProduccionPiezaIn,
+    GuionProduccionEscenaIn,
+    PiezaEnviarPublicacionesIn,
 )
 from pathlib import Path
 
@@ -28,6 +32,155 @@ from ama.storage import calendar_store
 router = APIRouter(prefix="/api/ama", tags=["AMA Marketing"])
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+
+
+@router.get("/hoy")
+def api_pantalla_hoy(db: Session = Depends(get_db)):
+    """Pantalla principal del dueño — lenguaje simple."""
+    return ama_service.pantalla_hoy_api(db=db)
+
+
+@router.get("/plan-marketing")
+def api_plan_marketing(
+    anio: int | None = Query(None, ge=2024, le=2030),
+    mes: int | None = Query(None, ge=1, le=12),
+    desarrollar_completo: bool = Query(False, description="Genera guion+copy de todas las piezas del año (lento)"),
+    db: Session = Depends(get_db),
+):
+    return ama_service.plan_marketing_api(
+        db=db,
+        anio=anio,
+        mes=mes,
+        desarrollar_completo=desarrollar_completo,
+    )
+
+
+@router.get("/plan-marketing/hito/{hito_id}")
+def api_plan_hito(hito_id: str, db: Session = Depends(get_db)):
+    try:
+        return ama_service.plan_hito_api(hito_id, db=db)
+    except ValueError as e:
+        raise HTTPException(404, str(e)) from e
+
+
+@router.get("/plan-marketing/pieza/{hito_id}/{pieza_id}")
+def api_plan_pieza(hito_id: str, pieza_id: str, db: Session = Depends(get_db)):
+    try:
+        return ama_service.plan_pieza_api(hito_id, pieza_id, db=db)
+    except ValueError as e:
+        raise HTTPException(404, str(e)) from e
+
+
+@router.post("/guion-produccion/generar")
+def api_guion_produccion_generar(body: GuionProduccionPiezaIn, db: Session = Depends(get_db)):
+    """Escenas detalladas + títulos para buscar en YouTube + fotos justificadas."""
+    try:
+        return ama_service.guion_produccion_generar_api(body.hito_id, body.pieza_id, db=db)
+    except ValueError as e:
+        raise HTTPException(404, str(e)) from e
+
+
+@router.patch("/guion-produccion/escena")
+def api_guion_produccion_escena(body: GuionProduccionEscenaIn, db: Session = Depends(get_db)):
+    """Guardá ID YouTube y segundo inicio/fin que marcás en el video."""
+    try:
+        return ama_service.guion_produccion_escena_api(
+            body.hito_id,
+            body.pieza_id,
+            body.numero,
+            youtube_id=body.youtube_id,
+            youtube_url=body.youtube_url,
+            youtube_inicio_seg=body.youtube_inicio_seg,
+            youtube_fin_seg=body.youtube_fin_seg,
+            foto_ruta=body.foto_ruta,
+            db=db,
+        )
+    except ValueError as e:
+        raise HTTPException(404, str(e)) from e
+
+
+@router.post("/guion-produccion/render")
+def api_guion_produccion_render(body: GuionProduccionPiezaIn, db: Session = Depends(get_db)):
+    """Arma el MP4 cuando todas las escenas YouTube están marcadas."""
+    result = ama_service.guion_produccion_render_api(body.hito_id, body.pieza_id, db=db)
+    if not result.get("ok"):
+        raise HTTPException(400, result.get("error") or "No se pudo generar el video")
+    return result
+
+
+@router.post("/pieza/enviar-publicaciones")
+def api_pieza_enviar_publicaciones(
+    body: PiezaEnviarPublicacionesIn, db: Session = Depends(get_db)
+):
+    """Calendario/plan → cola Publicaciones (mismo copy y video del guion)."""
+    try:
+        return ama_service.pieza_enviar_publicaciones_api(
+            body.hito_id,
+            body.pieza_id,
+            video_ruta=body.video_ruta,
+            db=db,
+        )
+    except ValueError as e:
+        raise HTTPException(400, str(e)) from e
+
+
+@router.get("/instagram-feed")
+def api_instagram_feed(mes: str | None = Query(None, description="Ej. 2026-06")):
+    """Grilla de feed IG (pilares, hooks, captions) — `ama/data/instagram_feed_grilla_junio_2026.json`."""
+    from ama.engine.instagram_feed import cargar_grilla, listar_publicaciones
+
+    data = cargar_grilla()
+    pubs = listar_publicaciones(mes=mes)
+    return {"pilares": data.get("pilares"), "highlights": data.get("highlights"), "publicaciones": pubs}
+
+
+@router.get("/instagram-perfil")
+def api_instagram_perfil():
+    """Kit perfil profesional: bio, checklist, highlights, grilla de posts."""
+    from ama.engine.instagram_feed import kit_perfil_instagram
+
+    return kit_perfil_instagram()
+
+
+@router.get("/calendario-visual")
+def api_calendario_visual(
+    anio: int | None = Query(None, ge=2024, le=2030),
+    mes: int | None = Query(None, ge=1, le=12),
+    db: Session = Depends(get_db),
+):
+    """Grilla mensual: hitos en rango + publicaciones por día (IG/WA)."""
+    return ama_service.calendario_visual_api(anio=anio, mes=mes, db=db)
+
+
+@router.post("/plan-marketing/sincronizar")
+def api_plan_sincronizar(db: Session = Depends(get_db)):
+    from ama.engine.plan_marketing_unificado import sincronizar_plan_cache
+
+    return sincronizar_plan_cache(db=db)
+
+
+@router.post("/preparar-contenido-hoy")
+def api_preparar_hoy(db: Session = Depends(get_db)):
+    return ama_service.preparar_contenido_hoy_api(db=db)
+
+
+@router.post("/publicar/{pub_id}")
+def api_publicar(pub_id: str):
+    try:
+        return ama_service.publicar_en_instagram_api(pub_id)
+    except ValueError as e:
+        raise HTTPException(404, str(e)) from e
+
+
+@router.get("/conexiones")
+def api_conexiones():
+    from ama.publishers.meta_publisher import estado_conexion_meta
+    from ama.video.toolkit.connectors.registry import estado_todos
+
+    return {
+        "instagram": estado_conexion_meta(),
+        "video_ia": estado_todos(),
+    }
 
 
 @router.get("/dashboard")
@@ -45,7 +198,9 @@ def ama_estado():
         "modulos": {
             "calendario_publicaciones": {"estado": "activo"},
             "generador_copy": {"estado": "activo"},
-            "generador_video": {"estado": "activo", "nota": "MoviePy opcional"},
+            "generador_video": {"estado": "activo", "nota": "MoviePy + FFmpeg + CapCut brief"},
+            "pipeline_diario": {"estado": "activo", "nota": "Estratega → guion → video → cola"},
+            "herramientas_video_ia": {"estado": "activo", "nota": "Catálogo gratis en /api/ama/video/herramientas"},
             "publicador_meta": {"estado": "pendiente", "nota": "Requiere tokens Meta"},
             "whatsapp_api": {"estado": "pendiente"},
         },
@@ -174,6 +329,70 @@ def api_video_editorial(body: VideoDesdeGuionIn, db: Session = Depends(get_db)):
 def api_video_lote(body: VideoLoteCalendarioIn, db: Session = Depends(get_db)):
     """Genera videos para próximos posts reel sin video (máx N por llamada)."""
     return ama_service.video_lote_calendario_api(body.dias, body.max_videos, db=db)
+
+
+@router.post("/video/pipeline/dia")
+def api_pipeline_dia(body: PipelineDiaIn, db: Session = Depends(get_db)):
+    """Pipeline: plan editorial → guion → video local → brief CapCut → cola publicación."""
+    return ama_service.pipeline_dia_api(
+        body.fecha,
+        render_video=body.render_video,
+        guardar_calendario=body.guardar_calendario,
+        carpeta_media=body.carpeta_media,
+        db=db,
+    )
+
+
+@router.get("/video/herramientas")
+def api_video_herramientas():
+    from ama.video.toolkit.ai_video_catalog import listar_herramientas, listar_por_region, recomendar_stack
+
+    return {
+        "herramientas": listar_herramientas(),
+        "por_region": listar_por_region(),
+        "stack_recomendado": recomendar_stack("reel_hospitality"),
+    }
+
+
+@router.get("/video/ia/catalogo")
+def api_ia_catalogo():
+    from ama.video.toolkit.ai_video_catalog import listar_herramientas, listar_por_region
+
+    return {"total": len(listar_herramientas()), "por_region": listar_por_region()}
+
+
+@router.get("/video/ia/conectores")
+def api_ia_conectores():
+    from ama.video.toolkit.connectors.registry import estado_todos
+
+    return {"conectores": estado_todos()}
+
+
+@router.get("/director/plan-mes")
+def api_director_plan_mes(db: Session = Depends(get_db)):
+    from ama.engine.plan_mensual_director import plan_mes_actual
+
+    return plan_mes_actual(db=db)
+
+
+@router.get("/publish/cola")
+def api_publish_cola(estado: str | None = Query(None)):
+    from ama.publishers.publish_queue import listar_cola
+
+    return {"items": listar_cola(estado)}
+
+
+@router.get("/estratega/plan")
+def api_estratega_plan(fecha: date | None = Query(None), db: Session = Depends(get_db)):
+    return ama_service.estratega_plan_api(fecha, db=db)
+
+
+@router.post("/publish/aprobar/{pub_id}")
+def api_aprobar_publicacion(pub_id: str):
+    try:
+        return ama_service.aprobar_publicacion_api(pub_id)
+    except ValueError as e:
+        raise HTTPException(404, str(e)) from e
 
 
 @router.get("/video/archivo")

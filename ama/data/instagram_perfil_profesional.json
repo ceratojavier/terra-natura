@@ -1,0 +1,80 @@
+{
+  "version": "2026-06-02",
+  "marca": "Cabañas Alpinas Terra Natura",
+  "usuario_sugerido": "alpinasterranatura",
+  "nombre_perfil": "Cabañas Alpinas Terra Natura",
+  "categoria": "Cabaña de alquiler vacacional",
+  "bio": "Escapada a las sierras 🏔️\n5 cabañas · pileta y parque\nBialet Massé · 600 m lago San Roque\nReservá directo 👇",
+  "link_bio": "https://alpinasterranatura.com.ar",
+  "whatsapp_bio_opcional": "https://wa.me/5493541571190",
+  "email_contacto": "reservas@alpinasterranatura.com.ar",
+  "ubicacion_maps": "Los Talas 759, Bialet Massé, Córdoba",
+  "highlights": [
+    {
+      "nombre": "Cabañas",
+      "emoji": "🏡",
+      "que_subir": "3 Reels cortos: Alpina living, dormitorio PA, Suite loft. 15–30 s cada uno.",
+      "orden": 1
+    },
+    {
+      "nombre": "Ubicación",
+      "emoji": "📍",
+      "que_subir": "Cómo llegar por autovía, pin Maps, texto «600 m lago San Roque».",
+      "orden": 2
+    },
+    {
+      "nombre": "Reservas",
+      "emoji": "📲",
+      "que_subir": "Pantalla web de reservas o sticker «Escribinos INFO» + link WhatsApp.",
+      "orden": 3
+    },
+    {
+      "nombre": "Experiencias",
+      "emoji": "⭐",
+      "que_subir": "Capturas reales de Google Maps / Booking con buenas reseñas.",
+      "orden": 4
+    }
+  ],
+  "checklist_perfil": [
+    {
+      "paso": 1,
+      "titulo": "Foto de perfil",
+      "descripcion": "Logo Terra Natura o foto del parque de día (cuadrada, legible en chico)."
+    },
+    {
+      "paso": 2,
+      "titulo": "Nombre y categoría",
+      "descripcion": "Nombre comercial completo. Categoría: alquiler vacacional / lodge."
+    },
+    {
+      "paso": 3,
+      "titulo": "Biografía",
+      "descripcion": "Copiá el texto sugerido (abajo). Sin «Punilla» como slogan."
+    },
+    {
+      "paso": 4,
+      "titulo": "Link en bio",
+      "descripcion": "Web con reservas o WhatsApp Business. Un solo link principal."
+    },
+    {
+      "paso": 5,
+      "titulo": "Historias destacadas",
+      "descripcion": "Creá las 4 highlights fijas (Cabañas, Ubicación, Reservas, Experiencias)."
+    },
+    {
+      "paso": 6,
+      "titulo": "Primeros posts del feed",
+      "descripcion": "Seguí la grilla del mes (Experiencia → Guía → Infra). Empezá por el Reel del arroyo si es hoy."
+    },
+    {
+      "paso": 7,
+      "titulo": "ManyChat (opcional)",
+      "descripcion": "Palabras INFO y PRECIO en comentarios → DM → WhatsApp. Ver guía en docs."
+    }
+  ],
+  "tips": [
+    "Misma estética en portadas de highlights (color #4a7c59 o foto parque).",
+    "Respondé comentarios en las primeras 2 h del post.",
+    "En Reels: gancho en los primeros 3 segundos (sonido, pregunta, imagen fuerte)."
+  ]
+}

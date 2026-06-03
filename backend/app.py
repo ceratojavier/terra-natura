@@ -22,17 +22,24 @@ from backend.routes import (
     setup_routes,
     turismo_routes,
     unidad_routes,
+    video_pro_routes,
     webhook_routes,
 )
 from backend.services.seed_service import seed_database
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 WEB_ROOT = BASE_DIR / "frontend" / "public"
+APP_DIST = BASE_DIR / "frontend" / "app" / "dist"
+VIDEO_PRO_DIST = BASE_DIR / "frontend" / "video-pro-creator" / "dist"
 GUEST_ROOT = BASE_DIR / "guest-app"
 ASSETS_DIR = WEB_ROOT / "assets"
 MEDIA_DIR = WEB_ROOT / "media"
 
 LANDING_SLUGS = frozenset({"parejas", "familia", "reserva-directa", "punilla"})
+
+
+def _app_dist_ready() -> bool:
+    return (APP_DIST / "index.html").is_file()
 
 
 @asynccontextmanager
@@ -76,6 +83,7 @@ app.include_router(agents_routes.router)
 app.include_router(turismo_routes.router)
 app.include_router(webhook_routes.router)
 app.include_router(setup_routes.router)
+app.include_router(video_pro_routes.router)
 
 if ASSETS_DIR.is_dir():
     app.mount("/assets", StaticFiles(directory=str(ASSETS_DIR)), name="assets")
@@ -89,7 +97,9 @@ if GUEST_ROOT.is_dir():
 
 @app.get("/entrar", include_in_schema=False)
 async def web_entrada():
-    return RedirectResponse(url="/configurador", status_code=302)
+    if _app_dist_ready():
+        return RedirectResponse(url="/app/hoy", status_code=302)
+    return RedirectResponse(url="/programa", status_code=302)
 
 
 @app.get("/configurador", include_in_schema=False)
@@ -102,6 +112,8 @@ async def web_configurador():
 
 @app.get("/programa", include_in_schema=False)
 async def web_programa():
+    if _app_dist_ready():
+        return RedirectResponse(url="/app/hoy", status_code=302)
     path = WEB_ROOT / "programa.html"
     if not path.is_file():
         raise HTTPException(status_code=404)
@@ -118,6 +130,8 @@ async def web_turismo():
 
 @app.get("/agentes", include_in_schema=False)
 async def web_agentes():
+    if _app_dist_ready():
+        return RedirectResponse(url="/app/agentes", status_code=302)
     path = WEB_ROOT / "agentes.html"
     if not path.is_file():
         raise HTTPException(status_code=404)
@@ -126,6 +140,8 @@ async def web_agentes():
 
 @app.get("/marketing", include_in_schema=False)
 async def web_marketing():
+    if _app_dist_ready():
+        return RedirectResponse(url="/app/marketing", status_code=302)
     path = WEB_ROOT / "marketing.html"
     if not path.is_file():
         raise HTTPException(status_code=404)
@@ -201,6 +217,72 @@ async def web_landing(slug: str):
 @app.get("/health", tags=["Health"])
 async def health():
     return {"status": "healthy", "version": API_VERSION}
+
+
+def _register_react_app() -> None:
+    """SPA React en /app — fallback a index.html (StaticFiles solo no alcanza /app/programa)."""
+    assets_dir = APP_DIST / "assets"
+    if assets_dir.is_dir():
+        app.mount(
+            "/app/assets",
+            StaticFiles(directory=str(assets_dir)),
+            name="tn-app-assets",
+        )
+
+    index = APP_DIST / "index.html"
+
+    @app.get("/app", include_in_schema=False)
+    async def spa_app_root():
+        return FileResponse(index)
+
+    @app.get("/app/{spa_path:path}", include_in_schema=False)
+    async def spa_app_paths(spa_path: str):
+        if spa_path.startswith("assets/"):
+            raise HTTPException(status_code=404)
+        if ".." in spa_path.split("/"):
+            raise HTTPException(status_code=400, detail="Ruta inválida")
+        candidate = APP_DIST / spa_path
+        if candidate.is_file():
+            return FileResponse(candidate)
+        return FileResponse(index)
+
+
+if _app_dist_ready():
+    _register_react_app()
+
+
+def _video_pro_ready() -> bool:
+    return (VIDEO_PRO_DIST / "index.html").is_file()
+
+
+def _register_video_pro_app() -> None:
+    assets_dir = VIDEO_PRO_DIST / "assets"
+    if assets_dir.is_dir():
+        app.mount(
+            "/video-pro/assets",
+            StaticFiles(directory=str(assets_dir)),
+            name="video-pro-assets",
+        )
+    index = VIDEO_PRO_DIST / "index.html"
+
+    @app.get("/video-pro", include_in_schema=False)
+    async def spa_video_pro_root():
+        return FileResponse(index)
+
+    @app.get("/video-pro/{spa_path:path}", include_in_schema=False)
+    async def spa_video_pro_paths(spa_path: str):
+        if spa_path.startswith("assets/"):
+            raise HTTPException(status_code=404)
+        if ".." in spa_path.split("/"):
+            raise HTTPException(status_code=400, detail="Ruta inválida")
+        candidate = VIDEO_PRO_DIST / spa_path
+        if candidate.is_file():
+            return FileResponse(candidate)
+        return FileResponse(index)
+
+
+if _video_pro_ready():
+    _register_video_pro_app()
 
 
 if __name__ == "__main__":

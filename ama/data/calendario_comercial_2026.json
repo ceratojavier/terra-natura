@@ -1,0 +1,213 @@
+{
+  "version": "2026-06-02",
+  "fuente": "Calendario comercial dueño — jun 2026 — Terra Natura",
+  "reglas_finde_largo": {
+    "feriado_lunes": {
+      "ingreso_tipico": "viernes_post_trabajo",
+      "noches": ["viernes", "sabado", "domingo"],
+      "retiro": "lunes",
+      "noches_objetivo": 3,
+      "etiqueta": "finde_largo_3_noches"
+    },
+    "feriado_viernes": {
+      "ingreso_tipico": "jueves_tarde_noche",
+      "noches": ["jueves", "viernes", "sabado"],
+      "retiro": "domingo",
+      "noches_objetivo": 3,
+      "etiqueta": "finde_largo_3_noches"
+    },
+    "puente_turistico": {
+      "noches_objetivo": 4,
+      "etiqueta": "finde_largo_4_noches"
+    },
+    "feriado_martes_miercoles_jueves_sin_puente": {
+      "ocupacion_fuerte": false,
+      "etiqueta": "feriado_suelto",
+      "nota": "Movimiento secundario; no usar promo principal de 3 noches finde largo"
+    }
+  },
+  "temporadas": {
+    "alta": {
+      "meses": [1, 2, 4, 7, 10, 11, 12],
+      "eventos": ["carnaval", "semana_santa", "vacaciones_invierno", "findes_largos"],
+      "estrategia": "precio_pleno_sin_descuento_agresivo",
+      "beneficios": ["urgencia", "escasez", "check_out_extendido", "detalle_bienvenida"]
+    },
+    "media": {
+      "meses": [3, 8, 9],
+      "estrategia": "valor_percibido_sin_rebaja_grande",
+      "beneficios": ["check_out_extendido", "detalle_bienvenida", "promo_por_estadia"]
+    },
+    "baja": {
+      "meses": [5, 6],
+      "meses_parciales": ["agosto_parcial", "noviembre_semanas_flojas"],
+      "estrategia": "llenar_ocupacion_mas_noches",
+      "beneficios": ["promo_4_paga_5", "escapada_romantica", "home_office"]
+    }
+  },
+  "tarifas_ars_noche": {
+    "alta_y_finde_largo_e_invierno": {
+      "alpina_4_5": 120000,
+      "suite_2_3": 100000
+    },
+    "resto_ano": {
+      "alpina_4_5": 100000,
+      "suite_2_3": 85000
+    }
+  },
+  "findes_largos_2026": [
+    {
+      "id": "carnaval-2026",
+      "nombre": "Carnaval",
+      "fecha_feriado_inicio": "2026-02-14",
+      "fecha_feriado_fin": "2026-02-17",
+      "ingreso_recomendado": "2026-02-13",
+      "salida_recomendada": "2026-02-17",
+      "noches_objetivo": 4,
+      "potencial": 5,
+      "descontar": false,
+      "promo": "4 noches + check-out extendido sujeto a disponibilidad",
+      "copy_angulo": "urgencia_reserva_anticipada"
+    },
+    {
+      "id": "semana-santa-2026",
+      "nombre": "Semana Santa",
+      "fecha_feriado_inicio": "2026-04-02",
+      "fecha_feriado_fin": "2026-04-05",
+      "ingreso_recomendado": "2026-04-02",
+      "salida_recomendada": "2026-04-05",
+      "noches_objetivo": 3,
+      "potencial": 5,
+      "descontar": false,
+      "promo": "Late check-out cortesía 3+ noches",
+      "copy_angulo": "tranquilidad_descanso"
+    },
+    {
+      "id": "mayo-1-2026",
+      "nombre": "1° de Mayo",
+      "fecha_feriado_inicio": "2026-05-01",
+      "fecha_feriado_fin": "2026-05-03",
+      "ingreso_recomendado": "2026-04-30",
+      "salida_recomendada": "2026-05-03",
+      "noches_objetivo": 3,
+      "potencial": 4,
+      "promo": "Detalle regional bienvenida (alfajores, café, vino chico)"
+    },
+    {
+      "id": "revolucion-mayo-2026",
+      "nombre": "Revolución de Mayo",
+      "fecha_feriado": "2026-05-25",
+      "ingreso_recomendado": "2026-05-22",
+      "salida_recomendada": "2026-05-25",
+      "noches_objetivo": 3,
+      "potencial": 4,
+      "promo": "3 noches + beneficio reserva anticipada"
+    },
+    {
+      "id": "bandera-junio-2026",
+      "nombre": "Día de la Bandera",
+      "fecha_feriado": "2026-06-22",
+      "ingreso_recomendado": "2026-06-19",
+      "salida_recomendada": "2026-06-22",
+      "noches_objetivo": 3,
+      "potencial": 4,
+      "promo": "Escapada de invierno — 3 noches con beneficio especial",
+      "copy_angulo": "empujar_3_noches_no_2"
+    },
+    {
+      "id": "san-martin-agosto-2026",
+      "nombre": "Paso a la Inmortalidad San Martín",
+      "fecha_feriado": "2026-08-17",
+      "ingreso_recomendado": "2026-08-14",
+      "salida_recomendada": "2026-08-17",
+      "noches_objetivo": 3,
+      "potencial": 3,
+      "promo": "Escapada serrana de invierno"
+    },
+    {
+      "id": "diversidad-octubre-2026",
+      "nombre": "Diversidad cultural",
+      "fecha_feriado": "2026-10-12",
+      "ingreso_recomendado": "2026-10-09",
+      "salida_recomendada": "2026-10-12",
+      "noches_objetivo": 3,
+      "potencial": 5,
+      "descontar": false,
+      "promo": "Urgencia — últimas cabañas finde largo",
+      "copy_angulo": "primavera_pileta_aire_libre"
+    },
+    {
+      "id": "soberania-noviembre-2026",
+      "nombre": "Soberanía + puente",
+      "fecha_feriado_inicio": "2026-11-20",
+      "ingreso_recomendado": "2026-11-19",
+      "salida_recomendada": "2026-11-23",
+      "noches_objetivo": 4,
+      "potencial": 5,
+      "descontar": false,
+      "promo": "4 noches + beneficio reserva anticipada"
+    }
+  ],
+  "vacaciones_invierno_2026": {
+    "ventana_general": ["2026-07-06", "2026-07-31"],
+    "olas": [
+      {
+        "id": "ola_1_temprana",
+        "fechas": ["2026-07-06", "2026-07-17"],
+        "provincias": ["Córdoba", "Mendoza", "Neuquén", "Río Negro", "Chubut"],
+        "dias_antes_campana": 20
+      },
+      {
+        "id": "ola_2_gran_ola",
+        "fechas": ["2026-07-13", "2026-07-24"],
+        "provincias": ["Buenos Aires", "CABA"],
+        "dias_antes_campana": 45,
+        "prioridad": "maxima"
+      },
+      {
+        "id": "ola_3_santa_fe_entre_rios",
+        "fechas": ["2026-07-13", "2026-07-24"],
+        "provincias": ["Santa Fe", "Entre Ríos"],
+        "dias_antes_campana": 30
+      },
+      {
+        "id": "ola_4_tardia",
+        "fechas": ["2026-07-20", "2026-07-31"],
+        "dias_antes_campana": 20
+      }
+    ],
+    "promo_oficial": {
+      "codigo": "invierno_5_mas_1",
+      "texto_publico": "Te hospedás 5 noches y la 6.ª es bonificada",
+      "frase_vendedor": "Mientras más descansás, más te conviene",
+      "aplica": ["alpina", "suite"],
+      "tarifa_noche_alpina": 120000,
+      "tarifa_noche_suite": 100000,
+      "no_descontar_precio": true
+    }
+  },
+  "efemerides_comerciales": {
+    "dia_padre": { "promo": "2_noches_mas_1_gratis" },
+    "dia_madre": { "promo": "2_noches_mas_1_gratis" },
+    "dia_nino": { "promo": "2_noches_mas_1_gratis" }
+  },
+  "promociones_fijas": {
+    "temporada_baja_4_paga_5": {
+      "codigo": "baja_4_paga_5",
+      "vigencia": "lunes_a_sabado_manana",
+      "texto": "Pagás 4 noches y te quedás 5",
+      "segmentos": ["parejas", "home_office", "jubilados", "familias_chicas"]
+    },
+    "gap_filler_72h": {
+      "descuento_max_pct": 10,
+      "condicion": "menos_72h_y_vacio",
+      "nota": "Nunca 20-30% — protege posicionamiento"
+    }
+  },
+  "regla_venta": {
+    "nunca_solo_precio": true,
+    "objetivo_noches_promedio": { "desde": 2, "hacia": "3-5" },
+    "alta_demanda": ["no_descuento_agresivo", "urgencia_suave", "beneficio_barato"],
+    "baja_demanda": ["mas_noches", "promo_estadia"]
+  }
+}

@@ -1,0 +1,27 @@
+---
+description: Publicar siempre cambios del sitio en alpinasterranatura.com.ar
+alwaysApply: true
+---
+
+# Terra Natura — publicación obligatoria del sitio web
+
+Cuando modifiques archivos en `frontend/public/` (HTML, CSS, JS, `media/`, `assets/data/` del sitio):
+
+1. **Al terminar**, publicar en **https://alpinasterranatura.com.ar** sin que el dueño tenga que pedirlo de nuevo.
+2. Flujo:
+   - `git add` solo lo del sitio (y docs/scripts si van en el mismo commit).
+   - `git commit` con mensaje claro.
+   - `git push origin main` (si falla por memoria, usar `scripts/publicar-sitio-gh-pages.ps1` igualmente).
+   - `powershell -ExecutionPolicy Bypass -File scripts/publicar-sitio-gh-pages.ps1` → rama `gh-pages`.
+3. Confirmar al usuario que en 1–3 minutos debería verse en el dominio (recarga forzada en el celular si hace falta).
+
+## Páginas públicas (huéspedes)
+
+- **Nunca** mostrar mensajes de desarrollo: `apiBase`, GitHub Pages, “configurá el servidor”, PMS, Vercel, rutas de archivos.
+- Reserva online: copy para **clientes**; WhatsApp y Mercado Pago sin jerga técnica.
+- Si falta backend en producción, resolver en servidor/config (no instrucciones en la web).
+
+## No tocar sin pedido explícito
+
+- `archivos multimedia/` (gitignore).
+- Commits que solo sean panel interno / AMA, salvo que el usuario pida publicar eso también.

@@ -95,11 +95,8 @@
     return res.json();
   }
 
-  function setApiEstado(text, ok) {
-    if (!estadoApi) return;
-    estadoApi.hidden = false;
-    estadoApi.textContent = text;
-    estadoApi.className = ok ? "muted api-ok" : "muted api-off";
+  function setApiEstado() {
+    if (estadoApi) estadoApi.hidden = true;
   }
 
   function temporadaFactor(inDate) {
@@ -129,10 +126,8 @@
     } catch (_) {}
 
     const base = apiBase();
-    if (!base) {
-      setApiEstado("Modo estimado — configurá apiBase en site-config.json para calendario PMS.", false);
-      return;
-    }
+    setApiEstado();
+    if (!base) return;
 
     try {
       motorConfig = await apiFetch("/api/public/motor-reserva");
@@ -148,10 +143,7 @@
           unidad.appendChild(opt);
         });
       }
-      setApiEstado("Conectado al PMS — precios y disponibilidad alineados con Booking.", true);
-    } catch (e) {
-      setApiEstado("API no disponible — usando tarifa estimada local.", false);
-    }
+    } catch (_) {}
   }
 
   const hoy = new Date();
@@ -195,7 +187,7 @@
 
     resultado.hidden = false;
     resultado.className = "result";
-    resultado.textContent = "Consultando disponibilidad y tarifas…";
+    resultado.textContent = "Estamos consultando disponibilidad y precio…";
 
     const base = apiBase();
     if (base) {
@@ -238,16 +230,15 @@
     } else if (disponible === true) {
       resultado.className = "result ok";
       html =
-        `<strong>Disponible</strong> · ${fmt(total)} por ${noches} noche(s).<br>` +
-        `Seña (50%): <strong>${fmt(senia)}</strong>.<br>` +
-        `<small>Fuente de precio: ${fuente === "pms" ? "PMS online (tarifa real)" : "estimado local de referencia"}.</small>`;
+        `<strong>Hay lugar</strong> para esas fechas.<br>` +
+        `Total estimado: <strong>${fmt(total)}</strong> (${noches} noche${noches === 1 ? "" : "s"}).<br>` +
+        `Seña para confirmar (50%): <strong>${fmt(senia)}</strong>.`;
     } else {
       resultado.className = "result";
       html =
-        `<strong>Estimado:</strong> ${fmt(total)} por ${noches} noche(s).<br>` +
-        `Seña de referencia (50%): <strong>${fmt(senia)}</strong>.` +
-        `<br><small>Fuente de precio: ${fuente === "pms" ? "PMS online (tarifa real)" : "estimado local de referencia"}.</small>` +
-        (fuente === "estimado_local" ? "<br><small>Para precio final exacto, conectá el servidor PMS por apiBase.</small>" : "");
+        `<strong>Precio orientativo:</strong> ${fmt(total)} por ${noches} noche${noches === 1 ? "" : "s"}.<br>` +
+        `Seña de referencia (50%): <strong>${fmt(senia)}</strong>.<br>` +
+        `<small>Te confirmamos el monto final al reservar.</small>`;
     }
 
     resultado.innerHTML = html;
@@ -260,11 +251,7 @@
     } else if (disponible === false) {
       disponibilidadTxt = "Para esas fechas no vi lugar libre; ¿tenés otra opción cercana?";
     }
-    const precioTxt =
-      total > 0
-        ? ` En la web me figuró alrededor de ${fmt(total)}` +
-          (fuente === "pms" ? " (consultado en el sistema)." : " (estimado).")
-        : "";
+    const precioTxt = total > 0 ? ` En la web me figuró alrededor de ${fmt(total)}.` : "";
 
     const msg =
       `Hola, ¿cómo están? Soy ${quien}.\n\n` +
@@ -287,7 +274,7 @@
       const btnMp = document.createElement("button");
       btnMp.type = "button";
       btnMp.className = "btn btn-primary";
-      btnMp.textContent = "2 · Pagar seña con Mercado Pago";
+      btnMp.textContent = "Pagar seña con Mercado Pago";
       btnMp.addEventListener("click", async function () {
         if (!email || !email.value.trim()) {
           alert("Ingresá tu email para recibir la confirmación y pagar online.");
@@ -313,56 +300,14 @@
             window.location.href = pay.init_point;
             return;
           }
-          alert("No se pudo abrir el pago. Probá WhatsApp.");
+          alert("No pudimos abrir el pago en este momento. Escribinos por WhatsApp y te pasamos el link.");
         } catch (err) {
-          alert((err.body && err.body.detail) || err.message || "Error al iniciar pago");
+          alert("No pudimos iniciar el pago online. Escribinos por WhatsApp y te ayudamos.");
         }
         btnMp.disabled = false;
-        btnMp.textContent = "2 · Pagar seña con Mercado Pago";
+        btnMp.textContent = "Pagar seña con Mercado Pago";
       });
       acciones.insertBefore(btnMp, wa);
-    } else if (disponible === true && !base) {
-      const info = document.createElement("p");
-      info.className = "muted";
-      info.style.marginTop = "0.5rem";
-      info.textContent =
-        "Para pagar online: activá el servidor PMS (apiBase en site-config.json) o usá la app en Vercel.";
-      acciones.appendChild(info);
-    }
-
-    if (base && disponible === true && canal && canal.value === "web_directa" && nombre && nombre.value.trim()) {
-      const pre = document.createElement("button");
-      pre.type = "button";
-      pre.className = "btn btn-outline";
-      pre.textContent = "Guardar pre-reserva en PMS";
-      pre.addEventListener("click", async function () {
-        pre.disabled = true;
-        pre.textContent = "Guardando…";
-        try {
-          const r = await apiFetch("/api/reservas", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              unidad_id: unitId,
-              check_in: checkIn.value,
-              check_out: checkOut.value,
-              origen: "web_directa",
-              huesped_nombre: nombre.value.trim(),
-              personas: personasNum,
-              estado: "pre_reserva",
-              notas_internas: nota.value ? nota.value.slice(0, 500) : null,
-            }),
-          });
-          reservaId = r.id;
-          pre.textContent = `Pre-reserva ${r.id.slice(0, 8)}… creada`;
-          resultado.innerHTML += `<br><small>ID reserva: ${r.id} — te contactamos para la seña.</small>`;
-        } catch (err) {
-          pre.disabled = false;
-          pre.textContent = "No se pudo guardar (reintentar)";
-          alert((err.body && err.body.detail) || err.message || "Error al crear reserva");
-        }
-      });
-      acciones.appendChild(pre);
     }
 
   });

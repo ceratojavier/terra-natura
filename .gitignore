@@ -18,3 +18,11 @@ ama/output/videos/**/*.mp4
 ama/output/videos/**/*.webm
 ama/assets/music/*.mp3
 archivos multimedia/
+video_pro/uploads/*
+!video_pro/uploads/.gitkeep
+video_pro/output/*
+!video_pro/output/.gitkeep
+# Clones locales de repos de prompts (ver marketing/referencias/github/README.md)
+marketing/referencias/github/marketing-prompts/
+marketing/referencias/github/prompts/
+marketing/referencias/github/agent-skills/

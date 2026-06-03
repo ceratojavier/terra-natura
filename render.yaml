@@ -1,0 +1,19 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Conectar repo GitHub → New Blueprint → este archivo crea el servicio API.
+services:
+  - type: web
+    name: terra-natura-api
+    runtime: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /health
+    envVars:
+      - key: DEBUG
+        value: "false"
+      - key: PUBLIC_SITE_URL
+        value: https://alpinasterranatura.com.ar
+      - key: DATABASE_URL
+        value: sqlite:////app/data/terra_natura.db
+      - key: SECRET_KEY
+        generateValue: true
+    # Disco persistente (plan de pago en Render). Sin disco, la DB se inicializa con seed al arrancar.

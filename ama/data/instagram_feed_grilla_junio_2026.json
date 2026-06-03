@@ -1,0 +1,150 @@
+{
+  "version": "2026-06-02",
+  "marca": "Cabañas Alpinas Terra Natura",
+  "ubicacion_copy": "Bialet Massé, sierras de Córdoba — 600 m lago San Roque",
+  "pilares": {
+    "experiencia": "Vender el deseo — sensaciones, no metros cuadrados",
+    "infraestructura": "Transparencia — confort real, objeciones",
+    "guia_local": "Autoridad — qué hacer, comer, pasear cerca"
+  },
+  "highlights": [
+    { "nombre": "Cabañas", "contenido": "Tour corto Alpinas + Suites" },
+    { "nombre": "Ubicación", "contenido": "Cómo llegar + mapa" },
+    { "nombre": "Reservas", "contenido": "WhatsApp + web directa" },
+    { "nombre": "Experiencias", "contenido": "Reseñas Google/Booking" }
+  ],
+  "publicaciones": [
+    {
+      "orden": 1,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-03",
+      "pilar": "experiencia",
+      "formato": "reel",
+      "titulo": "El sonido del arroyo cuando bajás un cambio",
+      "hook_3s": "¿Escuchaste alguna vez el arroyo desde la ventana?",
+      "caption_aida": "Atención: el primer minuto en la cabaña no es la valija — es el ruido del agua.\n\nInterés: en Terra Natura estás a 600 m del lago San Roque, con parque y pileta, y dueños en el predio si necesitás algo.\n\nDeseo: imaginate desayunar con esa calma, sin apuro de ciudad.\n\nAcción: escribinos por WhatsApp «INFO» o reservá en la web — te cotizamos fechas y unidad.",
+      "historias_3": ["Encuesta: ¿Preferís pileta de día o fogón de noche?", "Pregunta: ¿Primera vez en las sierras?", "Sticker link reservas"]
+    },
+    {
+      "orden": 2,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-06",
+      "pilar": "infraestructura",
+      "formato": "reel",
+      "titulo": "Tour express — Alpina 2 en 30 segundos",
+      "hook_3s": "Así se ve una Alpina lista para recibirte.",
+      "caption_aida": "Atención: living amplio, cocina completa, dormitorio arriba con balcón.\n\nInterés: diseñada para parejas; con chicos, camas auxiliares en planta baja.\n\nDeseo: espacio real, no fotos de catálogo genérico.\n\nAcción: comentá TOUR y te mandamos disponibilidad por DM.",
+      "historias_3": ["Quiz: ¿Cuántas personas viajan?", "Detalle cocina + horno", "CTA WhatsApp"]
+    },
+    {
+      "orden": 3,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-09",
+      "pilar": "guia_local",
+      "formato": "carrusel",
+      "titulo": "3 planes para un día de lluvia cerca de Bialet",
+      "hook_3s": "¿Llovió y no sabés qué hacer?",
+      "caption_aida": "Atención: lluvia en las sierras no arruina el viaje.\n\nInterés: café en el centro, paseo cubierto al lago cuando abre, o quedarte con libro y WiFi en la cabaña.\n\nDeseo: tu refugio sigue siendo el parque cuando escampa.\n\nAcción: guardá el post y pedinos la guía QR al reservar.",
+      "historias_3": ["Votá: ¿Café o siesta?", "Mapa pin Bialet", "Link guía huésped"]
+    },
+    {
+      "orden": 4,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-12",
+      "pilar": "experiencia",
+      "formato": "reel",
+      "titulo": "Fogón + cielo — noche en el parque",
+      "hook_3s": "Esta es la hora en que la ciudad desaparece.",
+      "caption_aida": "Atención: el fuego supervisado en el parque es ritual acá.\n\nInterés: hamacas, pileta de día, silencio de noche con reglas claras para todos.\n\nDeseo: compartir mate bajo las estrellas sin ruido de boliche.\n\nAcción: reservá finde largo — te decimos si hay promo por estadía.",
+      "historias_3": ["Encuesta: ¿Fogón sí o no?", "Reglas fogón resumidas", "WhatsApp PRECIO"]
+    },
+    {
+      "orden": 5,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-15",
+      "pilar": "infraestructura",
+      "formato": "carrusel",
+      "titulo": "Suite 5 — A/A y loft arriba",
+      "hook_3s": "¿Querés aire acondicionado y vista?",
+      "caption_aida": "Atención: Suite 5 en planta alta, ideal verano.\n\nInterés: matrimonial + una plaza, cocina y pérgola como las alpinas.\n\nDeseo: confort sin escaleras largas desde la calle — entrada independiente.\n\nAcción: DM «PAREJA» para cotización orientativa.",
+      "historias_3": ["Suite 4 vs 5 — diferencias", "Foto matrimonial", "CTA reserva"]
+    },
+    {
+      "orden": 6,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-18",
+      "pilar": "guia_local",
+      "formato": "reel",
+      "titulo": "Lago San Roque a 600 m — cómo aprovecharlo",
+      "hook_3s": "El lago está más cerca de lo que pensás.",
+      "caption_aida": "Atención: salís de la cabaña y en minutos estás en el dique.\n\nInterés: caminata, atardecer, deportes según temporada.\n\nDeseo: base fija en Bialet sin manejar horas a Carlos Paz.\n\nAcción: comentá LAGO y te pasamos tips del finde.",
+      "historias_3": ["Foto aérea/lago", "Horarios sugeridos", "Enlace Maps"]
+    },
+    {
+      "orden": 7,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-21",
+      "pilar": "experiencia",
+      "formato": "foto",
+      "titulo": "Mañana de neblina en el parque",
+      "hook_3s": "Cuando la sierra se cubre de niebla…",
+      "caption_aida": "Atención: junio en las sierras tiene estos amaneceres.\n\nInterés: pileta climatizada por sol después, desayuno en la pérgola.\n\nDeseo: foto que no necesita filtro para transmitir calma.\n\nAcción: reservá escapada 3 noches — consultá promo en WhatsApp.",
+      "historias_3": ["Time-lapse neblina", "Café en mano", "Encuesta: ¿Junio o julio?"]
+    },
+    {
+      "orden": 8,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-22",
+      "pilar": "guia_local",
+      "formato": "reel",
+      "titulo": "Finde del 22 de junio — escapada Bandera",
+      "hook_3s": "Feriado largo = 3 noches, no 2.",
+      "caption_aida": "Atención: finde del Día de la Bandera — movimiento en sierras.\n\nInterés: Terra Natura: parque, pileta, dueños en el predio.\n\nDeseo: desconectar sin irte lejos de Córdoba.\n\nAcción: escribí PRECIO con fechas y cantidad de personas.",
+      "historias_3": ["Countdown feriado", "Disponibilidad", "Botón WhatsApp"]
+    },
+    {
+      "orden": 9,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-24",
+      "pilar": "infraestructura",
+      "formato": "reel",
+      "titulo": "WiFi + silencio — workation 5 días",
+      "hook_3s": "¿Home office con vista a las sierras?",
+      "caption_aida": "Atención: WiFi en todas las unidades, mesa en living.\n\nInterés: temporada baja con promo 4 paga 5 (consultá fechas).\n\nDeseo: trabajar de día, parque de tarde.\n\nAcción: DM WORKATION.",
+      "historias_3": ["Test velocidad WiFi (captura)", "Mesa setup", "CTA"]
+    },
+    {
+      "orden": 10,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-26",
+      "pilar": "experiencia",
+      "formato": "carrusel",
+      "titulo": "Detalle de bienvenida regional",
+      "hook_3s": "Lo primero que ves al entrar.",
+      "caption_aida": "Atención: no empezás con check-in frío.\n\nInterés: detalle regional según temporada (consultá al reservar).\n\nDeseo: sentir que te estaban esperando.\n\nAcción: reservá directo — mejor precio que OTA.",
+      "historias_3": ["Unboxing detalle", "Agradecimiento huésped", "Reseña highlight"]
+    },
+    {
+      "orden": 11,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-28",
+      "pilar": "guia_local",
+      "formato": "reel",
+      "titulo": "Top 3 para comer en Bialet (actualizable)",
+      "hook_3s": "¿Dónde cenamos hoy?",
+      "caption_aida": "Atención: Bialet tiene opciones cercanas sin ir a la ciudad grande.\n\nInterés: lista curada por quien vive acá — actualizamos con input de huéspedes.\n\nDeseo: no perder tiempo googlando con hambre.\n\nAcción: al reservar pedí la guía QR completa.",
+      "historias_3": ["Votá favorito", "Pedido recomendación", "Maps"]
+    },
+    {
+      "orden": 12,
+      "mes": "2026-06",
+      "fecha_sugerida": "2026-06-30",
+      "pilar": "experiencia",
+      "formato": "reel",
+      "titulo": "Resumen del mes — por qué elegir las sierras",
+      "hook_3s": "Junio en Terra Natura en 15 segundos.",
+      "caption_aida": "Atención: arroyo, pileta, lago, fogón.\n\nInterés: 5 cabañas, trato directo con dueños.\n\nDeseo: tu próxima escapada ya tiene fecha.\n\nAcción: comentá INFO — ManyChat te califica y te lleva a WhatsApp.",
+      "historias_3": ["Recap clips", "Próximo mes preview", "CTA INFO"]
+    }
+  ]
+}

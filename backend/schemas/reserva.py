@@ -27,7 +27,7 @@ class CotizarRequest(BaseModel):
     unidad_id: str
     check_in: date
     check_out: date
-    promo: Literal["ninguna", "3x2", "4x3"] = "ninguna"
+    promo: Literal["ninguna", "3x2", "4x3", "5mas1", "4paga5", "auto"] = "auto"
     aplicar_precio_efectivo: bool = False
 
     @model_validator(mode="after")
@@ -67,7 +67,7 @@ class ReservaCreate(BaseModel):
     huesped_email: str | None = None
     personas: int = Field(ge=1, le=12, default=2)
     estado: str = Field(default="pre_reserva")
-    promo: Literal["ninguna", "3x2", "4x3"] = "ninguna"
+    promo: Literal["ninguna", "3x2", "4x3", "5mas1", "4paga5", "auto"] = "auto"
     aplicar_precio_efectivo: bool = False
     notas_internas: str | None = None
 

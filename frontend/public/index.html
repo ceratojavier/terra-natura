@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <title>Cabañas Alpinas Terra Natura | Bialet Massé</title>
-  <meta name="description" content="Cabañas y suites en Bialet Massé, sierras de Córdoba. Reserva directa, pileta y parque." />
-  <meta property="og:title" content="Cabañas Alpinas Terra Natura" />
+  <title>Cabañas Terra Natura | Bialet Massé · Sierras de Córdoba</title>
+  <meta name="description" content="Cabañas y suites en Bialet Massé, a 600 m del lago San Roque. Cotizá online, pileta y parque propio. Reservá directo." />
+  <meta property="og:title" content="Cabañas Terra Natura" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
   <meta name="theme-color" content="#0f1f18" />
@@ -21,7 +21,7 @@
 <body class="page-home">
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="./index.html">Terra Natura</a>
+      <a class="brand" href="./index.html"><span class="brand-kicker">Cabañas</span> Terra Natura</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-primary">Menú</button>
       <nav class="nav-links" id="nav-primary" aria-label="Principal">
         <a href="#unidades">Cabañas</a>
@@ -37,28 +37,30 @@
 
   <section class="hero reveal">
     <div class="hero-slides" aria-hidden="true">
-      <span class="hero-slide is-active" style="background-image:url('./media/galeria/01-complejo-panoramica.jpg')"></span>
-      <span class="hero-slide" style="background-image:url('./media/galeria/09-alpina-frente-pileta.jpg')"></span>
-      <span class="hero-slide" style="background-image:url('./media/galeria/08-suites-exterior.jpg')"></span>
+      <span class="hero-slide hero-slide--frutillas is-active" style="background-image:url('./media/galeria/15-pileta-frutillas.jpg')"></span>
+      <span class="hero-slide hero-slide--pileta" style="background-image:url('./media/galeria/03-pileta-alpina.jpg')"></span>
+      <span class="hero-slide hero-slide--piscina" style="background-image:url('./media/galeria/02-piscina.jpg')"></span>
     </div>
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Bialet Massé · Sierras de Córdoba</p>
-        <h1>Escapada con pileta y parque propio</h1>
-        <p class="lead">Somos una familia que vive en el predio: te recibimos cerca, con calma, a 600 m del lago San Roque.</p>
-        <div class="proof-strip">
+        <h1>
+          <span class="h1-desktop">Tu refugio en las sierras, a pasos del lago</span>
+          <span class="h1-mobile">Tu refugio en las sierras</span>
+        </h1>
+        <p class="lead lead--desktop">Cinco cabañas con pileta, parque y anfitriones en el lugar. Cotizá y reservá directo.</p>
+        <div class="proof-strip proof-strip--desktop">
           <span><strong>5</strong> unidades</span>
           <span><strong>Pileta</strong> + parque</span>
-          <span><strong>Seña</strong> 50%</span>
+          <span><strong>600 m</strong> del lago</span>
         </div>
       </div>
-      <aside class="hero-card hero-card--glass" aria-labelledby="hero-reserva-titulo">
-        <h2 id="hero-reserva-titulo">Reservar y cotizar online</h2>
-        <p>Elegí fechas y unidad: te mostramos si hay lugar y cuánto sale la estadía. Después podés pagar la seña o escribirnos con tranquilidad.</p>
+      <aside class="hero-card hero-card--glass hero-card--compact" aria-labelledby="hero-reserva-titulo">
+        <h2 id="hero-reserva-titulo"><span class="hero-reserva-title-full">Cotizá tu estadía</span><span class="hero-reserva-title-short">Reservá</span></h2>
         <form class="hero-booking-form" id="hero-cotiza" action="./reservar.html" method="get">
           <input type="hidden" name="cotizar" value="1" />
-          <label>Unidad
+          <label class="hero-field hero-field--full">Unidad
             <select name="unidad" required>
               <option value="alpina-1">Alpina 1</option>
               <option value="alpina-2">Alpina 2</option>
@@ -67,43 +69,46 @@
               <option value="suite-5">Suite PA</option>
             </select>
           </label>
-          <label>Check-in
+          <label class="hero-field hero-field--half">Check-in
             <input type="date" name="checkin" required />
           </label>
-          <label>Check-out
+          <label class="hero-field hero-field--half">Check-out
             <input type="date" name="checkout" required />
           </label>
-          <label>Personas
+          <label class="hero-field hero-field--full">Personas
             <input type="number" name="personas" min="1" max="6" value="2" required />
           </label>
-          <button class="btn btn-primary" type="submit">Consultar disponibilidad y precio</button>
+          <button class="btn btn-primary hero-field--full" type="submit">Cotizar</button>
         </form>
-        <p class="hero-card-note">Sin compromiso: primero ves el precio, después decidís.</p>
+        <p class="hero-card-note hero-card-note--desktop">Sin compromiso: primero ves el precio, después decidís.</p>
       </aside>
     </div>
   </section>
 
   <section class="section section-alt reveal" id="galeria">
     <div class="wrap">
-      <h2>Postales del complejo</h2>
-      <p class="muted">Una vista rápida del lugar. Para ver cada unidad completa, entrá en “Ver fotos y detalle”.</p>
+      <h2>Así se vive acá</h2>
+      <p class="muted section-lead-short">Pileta, parque y cabañas.</p>
       <div class="gallery-carousel" data-gallery-carousel>
         <button class="gallery-nav gallery-nav--prev" type="button" aria-label="Foto anterior">‹</button>
         <div class="gallery-track">
           <figure class="gallery-slide is-active">
-            <img src="./media/galeria/01-complejo-panoramica.jpg" alt="Vista del complejo" loading="lazy" width="1400" height="933" />
+            <img src="./media/galeria/15-pileta-frutillas.jpg" alt="Relax en la pileta" loading="lazy" width="1400" height="933" />
+          </figure>
+          <figure class="gallery-slide">
+            <img src="./media/galeria/02-piscina.jpg" alt="Nuestra pileta" loading="lazy" />
+          </figure>
+          <figure class="gallery-slide">
+            <img src="./media/galeria/13-parque-relax.jpg" alt="Reposeras y sol en la pileta" loading="lazy" />
+          </figure>
+          <figure class="gallery-slide">
+            <img src="./media/galeria/03-pileta-alpina.jpg" alt="Cabaña frente a la pileta" loading="lazy" />
+          </figure>
+          <figure class="gallery-slide">
+            <img src="./media/galeria/01-complejo-panoramica.jpg" alt="Vista del complejo" loading="lazy" />
           </figure>
           <figure class="gallery-slide">
             <img src="./media/galeria/05-alpina-living.jpg" alt="Interior cabaña alpina" loading="lazy" />
-          </figure>
-          <figure class="gallery-slide">
-            <img src="./media/galeria/07-suite4-interior.jpg" alt="Interior suite" loading="lazy" />
-          </figure>
-          <figure class="gallery-slide">
-            <img src="./media/galeria/08-suites-exterior.jpg" alt="Exterior de suites" loading="lazy" />
-          </figure>
-          <figure class="gallery-slide">
-            <img src="./media/galeria/11-lago-plaza.jpg" alt="Lago San Roque cercano" loading="lazy" />
           </figure>
         </div>
         <button class="gallery-nav gallery-nav--next" type="button" aria-label="Foto siguiente">›</button>
@@ -114,41 +119,41 @@
 
   <section class="section reveal" id="unidades">
     <div class="wrap">
-      <h2>Cabañas y suites</h2>
-      <p class="muted">Elegí la unidad, mirá más fotos y después cotizá con Mercado Pago o por WhatsApp.</p>
+      <h2>Elegí tu cabaña</h2>
+      <p class="muted">Alpinas de dos plantas o suites loft. Entrá, recorré las fotos y reservá directo cuando quieras.</p>
       <div class="cards cards--units">
         <article class="card">
-          <a href="./cabana.html?id=alpina-1"><img class="card-img" src="./media/galeria/04-alpina-vista-puerta.jpg" alt="Cabaña Alpina 1" loading="lazy" /></a>
+          <a href="./cabana.html?id=alpina-1"><img class="card-img" src="./media/unidades/alpina-1/01.jpg" alt="Cabaña Alpina 1" loading="lazy" /></a>
           <h3><a href="./cabana.html?id=alpina-1">Cabaña Alpina 1</a></h3>
-          <p>Dos plantas, living amplio y dormitorio matrimonial arriba con balcón.</p>
+          <p>Living de 33 m² abajo, dormitorio con balcón arriba. La favorita de parejas que buscan espacio.</p>
           <ul><li>Hasta 4 · ideal 2 + chicos</li><li>Aire en dormitorio PA</li></ul>
           <a class="card-link" href="./cabana.html?id=alpina-1">Ver fotos y detalle →</a>
         </article>
         <article class="card">
-          <a href="./cabana.html?id=alpina-2"><img class="card-img" src="./media/galeria/10-parque-mate.jpg" alt="Cabaña Alpina 2" loading="lazy" /></a>
+          <a href="./cabana.html?id=alpina-2"><img class="card-img" src="./media/unidades/alpina-2/01.jpg" alt="Cabaña Alpina 2" loading="lazy" /></a>
           <h3><a href="./cabana.html?id=alpina-2">Cabaña Alpina 2</a></h3>
-          <p>En el corazón del parque, pileta a pasos y asador propio.</p>
+          <p>En el centro del parque: pileta y hamacas a dos pasos de tu puerta.</p>
           <ul><li>Hasta 4 · ideal pareja o familia</li></ul>
           <a class="card-link" href="./cabana.html?id=alpina-2">Ver fotos y detalle →</a>
         </article>
         <article class="card">
-          <a href="./cabana.html?id=alpina-3"><img class="card-img" src="./media/galeria/13-parque-relax.jpg" alt="Cabaña Alpina 3" loading="lazy" /></a>
+          <a href="./cabana.html?id=alpina-3"><img class="card-img" src="./media/unidades/alpina-3/01.jpg" alt="Cabaña Alpina 3" loading="lazy" /></a>
           <h3><a href="./cabana.html?id=alpina-3">Cabaña Alpina 3</a></h3>
-          <p>Vista abierta al parque, espacio flexible para desconectar.</p>
+          <p>Rodeada de verde, para bajar el ritmo sin perderte el confort.</p>
           <ul><li>Hasta 4 · ideal 2 + chicos</li></ul>
           <a class="card-link" href="./cabana.html?id=alpina-3">Ver fotos y detalle →</a>
         </article>
         <article class="card">
-          <a href="./cabana.html?id=suite-4"><img class="card-img" src="./media/galeria/07-suite4-interior.jpg" alt="Suite planta baja" loading="lazy" /></a>
+          <a href="./cabana.html?id=suite-4"><img class="card-img" src="./media/unidades/suite-4/01.jpg" alt="Suite planta baja" loading="lazy" /></a>
           <h3><a href="./cabana.html?id=suite-4">Suite Planta Baja</a></h3>
-          <p>Loft sin escaleras, entrada independiente.</p>
+          <p>Loft con entrada propia: todo en un ambiente, sin subir escaleras.</p>
           <ul><li>Hasta 3 · ventilador de techo</li></ul>
           <a class="card-link" href="./cabana.html?id=suite-4">Ver fotos y detalle →</a>
         </article>
         <article class="card">
-          <a href="./cabana.html?id=suite-5"><img class="card-img" src="./media/galeria/06-suite5-ventanal.jpg" alt="Suite planta alta" loading="lazy" /></a>
+          <a href="./cabana.html?id=suite-5"><img class="card-img" src="./media/unidades/suite-5/01.jpg" alt="Suite planta alta" loading="lazy" /></a>
           <h3><a href="./cabana.html?id=suite-5">Suite Planta Alta</a></h3>
-          <p>Aire frío/calor y ventanal a las sierras. Ideal pareja.</p>
+          <p>Arriba del dúplex, con aire y ventanal abierto al paisaje serrano.</p>
           <ul><li>Hasta 3 · aire acondicionado</li></ul>
           <a class="card-link" href="./cabana.html?id=suite-5">Ver fotos y detalle →</a>
         </article>
@@ -158,14 +163,12 @@
 
   <section class="section section-alt reveal" id="reserva">
     <div class="wrap">
-      <h2>Reservá tu estadía</h2>
+      <h2>Tu estadía, en pocos pasos</h2>
       <p class="muted">
-        Cotizá acá o en la página completa de reserva:
-        <a href="./reservar.html"><strong>reservar online con Mercado Pago</strong></a>
-        (seña 50%).
+        Cotizá acá o en
+        <a href="./reservar.html"><strong>reserva online con Mercado Pago</strong></a>:
+        ves el precio, confirmás con seña del 50% y listo.
       </p>
-      <p id="reserva-api-estado" class="muted" hidden></p>
-
       <form id="form-reserva" class="booking-form booking-form--compact">
         <label>Nombre
           <input id="reserva-nombre" type="text" maxlength="80" placeholder="Tu nombre" autocomplete="name" />
@@ -195,12 +198,12 @@
           <input id="reserva-nota" type="text" maxlength="120" placeholder="Ej: pareja, horario de llegada" />
         </label>
         <input id="reserva-canal" type="hidden" value="web_directa" />
-        <button class="btn btn-primary booking-span-2" type="submit">1 · Cotizar disponibilidad</button>
+        <button class="btn btn-primary booking-span-2" type="submit">Ver precio y disponibilidad</button>
       </form>
 
       <div id="reserva-resultado" class="result result--compact" hidden></div>
       <div id="reserva-acciones" class="cta-row cta-row--compact"></div>
-      <p class="muted pago-ayuda">Después de cotizar aparece <strong>Pagar seña con Mercado Pago</strong> si hay lugar y el servidor está conectado.</p>
+      <p class="muted pago-ayuda">Después de cotizar podés <strong>pagar la seña con Mercado Pago</strong> o confirmar por WhatsApp.</p>
     </div>
   </section>
 
@@ -209,22 +212,21 @@
       <div>
         <h2>Quiénes somos</h2>
         <p>
-          Somos una familia de Bialet Massé que vive en el mismo predio de las cabañas.
-          Eso significa recepción cercana, respuesta rápida si necesitás algo y un parque cuidado todos los días.
+          Somos Javier y el equipo de <strong>Cabañas Terra Natura</strong>: los anfitriones del complejo en Bialet Massé.
+          Te recibimos en persona, cuidamos el parque cada día y estamos cerca si surge algo durante la estadía.
         </p>
         <p>
-          <strong>Cabañas Alpinas Terra Natura</strong> son cinco unidades en ~2.000 m² con pileta,
-          solarium, hamacas y casita para chicos. Tres cabañas alpinas de dos plantas y dos suites loft
-          con entrada independiente.
+          Cinco unidades en un predio de ~2.000 m²: pileta, solarium, hamacas y rincón para chicos.
+          Tres alpinas de dos plantas y dos suites loft con entrada independiente.
         </p>
       </div>
       <div>
         <h2>Por qué reservar directo</h2>
         <ul>
-          <li>Mejor trato y comunicación directa con los anfitriones</li>
-          <li>Cotización y seña online cuando el sistema está activo</li>
-          <li>Ubicación privilegiada: 600 m del lago San Roque</li>
-          <li>Los Talas 759 — a ~2 km del centro y del balneario</li>
+          <li>Hablás con quienes están en el lugar, sin intermediarios</li>
+          <li>Precio y seña online cuando el sistema está activo</li>
+          <li>600 m del lago San Roque · Los Talas 759</li>
+          <li>A ~2 km del centro y del balneario Barrancas Bermejas</li>
         </ul>
         <a class="btn btn-outline" href="./reservar.html">Ir a reserva online</a>
       </div>
@@ -233,33 +235,42 @@
 
   <section class="section section-alt reveal" id="atracciones">
     <div class="wrap">
-      <h2>Atracciones cercanas</h2>
-      <p class="muted">Todo esto está a pocos minutos en auto o a pie desde el complejo.</p>
+      <h2>Qué hacer cerca</h2>
+      <p class="muted">Salidas cortas desde el complejo: naturaleza, paseos y planes para combinar con tu estadía.</p>
       <div class="attractions-grid">
         <article class="attraction-card">
-          <img src="./media/galeria/01-complejo-panoramica.jpg" alt="Labios del Indio en Bialet Massé" loading="lazy" />
+          <img src="./media/atracciones/labios-del-indio-v2.png" alt="Labios del Indio en Bialet Massé" loading="lazy" />
           <h3>Labios del Indio</h3>
-          <p>Ícono natural de Bialet Massé, ideal para una salida corta con vista a las sierras.</p>
+          <p>Formación emblemática de Bialet: caminata corta y vistas que valen la foto.</p>
         </article>
         <article class="attraction-card">
-          <img class="attraction-img--top" src="./media/galeria/11-lago-plaza.jpg" alt="Teatro en Villa Carlos Paz" loading="lazy" />
+          <img class="attraction-img--top" src="./media/atracciones/teatros-carlos-paz-v2.png" alt="Teatro en Carlos Paz" loading="lazy" />
           <h3>Teatro en Carlos Paz</h3>
-          <p>Cartelera teatral y salida nocturna para combinar con tu estadía en las sierras.</p>
+          <p>Teatro y vida nocturna a pocos minutos en auto — ideal para una noche distinta.</p>
         </article>
         <article class="attraction-card">
-          <img src="./media/galeria/10-parque-mate.jpg" alt="Hotel Edén en La Falda" loading="lazy" />
+          <img src="./media/atracciones/eden-hotel-v2.png" alt="Hotel Edén en La Falda" loading="lazy" />
           <h3>Hotel Edén (La Falda)</h3>
-          <p>Historia y visitas guiadas en uno de los puntos clásicos de la región.</p>
+          <p>Patrimonio e historia en La Falda: visita guiada para sumar cultura al viaje.</p>
         </article>
         <article class="attraction-card">
-          <img src="./media/galeria/09-alpina-frente-pileta.jpg" alt="Lago San Roque" loading="lazy" />
-          <h3>Lago San Roque</h3>
-          <p>A ~600 m: paseos, costanera y vistas al dique para cortar la tarde.</p>
+          <img src="./media/atracciones/peatonal-carlos-paz-v2.png" alt="Peatonal de Carlos Paz" loading="lazy" />
+          <h3>Peatonal de Carlos Paz</h3>
+          <p>Paseo nocturno, gastronomía y movimiento para combinar relax con salida urbana.</p>
+        </article>
+        <article class="attraction-card">
+          <img src="./media/atracciones/puente-carlos-paz-noche-v2.png" alt="Puente de Carlos Paz de noche" loading="lazy" />
+          <h3>Puente de noche (Carlos Paz)</h3>
+          <p>Postales iluminadas sobre el agua para cerrar el día con una salida diferente.</p>
+        </article>
+        <article class="attraction-card">
+          <img src="./media/galeria/12-arroyo-cercano.jpg" alt="Balneario y arroyo en Bialet Massé" loading="lazy" />
+          <h3>Balnearios de Bialet Massé</h3>
+          <p>Arroyo y costa natural muy cerca del complejo para una tarde fresca y tranquila.</p>
         </article>
       </div>
       <p class="muted attractions-more">
-        También podés sumar Cosquín, La Falda, trekking y cabalgatas en la zona.
-        Te pasamos recomendaciones al confirmar la reserva.
+        También: Cosquín, trekking, cabalgatas y más. Al confirmar, te mandamos nuestras recomendaciones de confianza.
       </p>
     </div>
   </section>
@@ -267,7 +278,7 @@
   <section class="section reveal" id="experiencia">
     <div class="wrap two-col">
       <div>
-        <h2>Qué incluye</h2>
+        <h2>Lo que vas a tener</h2>
         <ul>
           <li>WiFi y Smart TV</li>
           <li>Cocina con horno y freezer</li>
@@ -276,7 +287,7 @@
         </ul>
       </div>
       <div>
-        <h2>Reglas rápidas</h2>
+        <h2>Antes de llegar, sabé esto</h2>
         <ul>
           <li>Seña 50% · check-in 11:30</li>
           <li>Pileta 10:00 a 20:00</li>
@@ -288,8 +299,8 @@
 
   <section class="section section-alt reveal" id="ubicacion">
     <div class="wrap">
-      <h2>Ubicación</h2>
-      <p class="muted">Los Talas 759, Bialet Massé — cerca del lago y del centro.</p>
+      <h2>Cómo llegar</h2>
+      <p class="muted">Los Talas 759, Bialet Massé — entre el lago San Roque y el centro del pueblo.</p>
       <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Caba%C3%B1as+Alpinas+Terra+Natura+Bialet+Mass%C3%A9">Abrir en Google Maps</a>
     </div>
   </section>
