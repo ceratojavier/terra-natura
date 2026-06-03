@@ -34,9 +34,30 @@
 }
 
 .panel-intro {
+  margin: 0 0 1rem;
   max-width: 36rem;
+  color: var(--muted, #9aab9e);
   font-size: 0.93rem;
-  color: var(--muted);
+  line-height: 1.45;
+}
+
+.panel-alertas {
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(201, 169, 98, 0.45);
+  background: rgba(201, 169, 98, 0.12);
+  font-size: 0.88rem;
+}
+
+.panel-alertas ul {
+  margin: 0.5rem 0;
+  padding-left: 1.1rem;
+}
+
+.panel-alerta-tipo {
+  font-weight: 700;
+  color: #e8d5a8;
 }
 
 .calendario-grid {

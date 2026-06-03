@@ -5,7 +5,7 @@ Requiere YOUTUBE_API_KEY en .env (Google Cloud Console, gratis con cuota diaria)
 from __future__ import annotations
 
 import re
-from datetime import datetime, timezone
+from datetime import datetime
 
 import httpx
 from sqlalchemy.orm import Session
@@ -63,70 +63,16 @@ def _api_key_ok() -> bool:
 
 
 def buscar_youtube(api_key: str, query: str, max_results: int) -> list[dict]:
-    params = {
-        "part": "snippet",
-        "q": query,
-        "type": "video",
-        "maxResults": max_results,
-        "regionCode": "AR",
-        "relevanceLanguage": "es",
-        "safeSearch": "moderate",
-        "key": api_key,
-    }
-    with httpx.Client(timeout=30.0) as client:
-        r = client.get(f"{API}/search", params=params)
-        r.raise_for_status()
-        items = r.json().get("items", [])
-    ids = [it["id"]["videoId"] for it in items if it.get("id", {}).get("videoId")]
-    if not ids:
-        return []
-    detail_params = {
-        "part": "contentDetails,statistics,snippet",
-        "id": ",".join(ids),
-        "key": api_key,
-    }
-    with httpx.Client(timeout=30.0) as client:
-        r = client.get(f"{API}/videos", params=detail_params)
-        r.raise_for_status()
-        details = {d["id"]: d for d in r.json().get("items", [])}
+    """Compatibilidad — delega en búsqueda cinematográfica HD."""
+    from video_pro.youtube_cinematic import buscar_videos_cinematicos
 
-    out = []
-    for vid in ids:
-        d = details.get(vid)
-        if not d:
-            continue
-        dur = _parse_iso8601_duration(d.get("contentDetails", {}).get("duration", ""))
-        if dur < MIN_DURATION_SEC or dur > MAX_DURATION_SEC:
-            continue
-        sn = d.get("snippet", {})
-        stats = d.get("statistics", {})
-        thumbs = sn.get("thumbnails", {})
-        thumb = (
-            thumbs.get("high", {}).get("url")
-            or thumbs.get("medium", {}).get("url")
-            or thumbs.get("default", {}).get("url")
-        )
-        pub = sn.get("publishedAt")
-        publicado = None
-        if pub:
-            try:
-                publicado = datetime.fromisoformat(pub.replace("Z", "+00:00"))
-            except ValueError:
-                pass
-        out.append(
-            {
-                "youtube_id": vid,
-                "url": f"https://www.youtube.com/watch?v={vid}",
-                "titulo": sn.get("title", "")[:300],
-                "canal_autor": sn.get("channelTitle", "")[:200],
-                "thumbnail_url": thumb,
-                "duracion_segundos": dur,
-                "vistas": int(stats.get("viewCount", 0) or 0),
-                "publicado_en": publicado,
-                "descripcion": (sn.get("description") or "")[:500],
-            }
-        )
-    return out
+    return buscar_videos_cinematicos(api_key, query, max_results=max_results)
+
+
+def _queries_cinematicas() -> list[tuple[str, str]]:
+    from video_pro.youtube_cinematic import NICHOS
+
+    return [(n["query"], n["localidad"]) for n in NICHOS]
 
 
 def recolectar_videos(db: Session, *, max_por_query: int | None = None) -> dict:
@@ -156,7 +102,7 @@ def recolectar_videos(db: Session, *, max_por_query: int | None = None) -> dict:
     errores: list[str] = []
     vistos_globales: set[str] = set(existentes)
 
-    for query, localidad in QUERIES:
+    for query, localidad in _queries_cinematicas():
         try:
             videos = buscar_youtube(YOUTUBE_API_KEY, query, max_r)
         except httpx.HTTPStatusError as e:
@@ -181,6 +127,17 @@ def recolectar_videos(db: Session, *, max_por_query: int | None = None) -> dict:
             if v.get("descripcion"):
                 notas += f"\n{v['descripcion'][:400]}"
 
+            pub = v.get("publicado_en")
+            publicado = None
+            if pub:
+                try:
+                    if isinstance(pub, str):
+                        publicado = datetime.fromisoformat(pub.replace("Z", "+00:00"))
+                    else:
+                        publicado = pub
+                except ValueError:
+                    pass
+
             row = TurismoContenido(
                 plataforma="youtube",
                 url=v["url"],
@@ -194,7 +151,7 @@ def recolectar_videos(db: Session, *, max_por_query: int | None = None) -> dict:
                 thumbnail_url=v["thumbnail_url"],
                 duracion_segundos=v["duracion_segundos"],
                 vistas=v["vistas"],
-                publicado_en=v["publicado_en"],
+                publicado_en=publicado,
             )
             db.add(row)
             nuevos += 1
@@ -210,6 +167,6 @@ def recolectar_videos(db: Session, *, max_por_query: int | None = None) -> dict:
         "ok": True,
         "nuevos": nuevos,
         "total_youtube": total,
-        "consultas": len(QUERIES),
+        "consultas": len(_queries_cinematicas()),
         "errores": errores,
     }

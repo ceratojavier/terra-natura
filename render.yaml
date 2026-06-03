@@ -1,5 +1,4 @@
 # Render Blueprint — https://render.com/docs/blueprint-spec
-# Conectar repo GitHub → New Blueprint → este archivo crea el servicio API.
 services:
   - type: web
     name: terra-natura-api
@@ -16,4 +15,11 @@ services:
         value: sqlite:////app/data/terra_natura.db
       - key: SECRET_KEY
         generateValue: true
-    # Disco persistente (plan de pago en Render). Sin disco, la DB se inicializa con seed al arrancar.
+      - key: ICAL_SYNC_INTERVAL_MIN
+        value: "15"
+      - key: ICAL_SYNC_ON_STARTUP
+        value: "true"
+      - key: WHATSAPP_OWNER_PHONE
+        value: "5493541571190"
+      # Configurar en Render Dashboard (Environment):
+      # WHATSAPP_VERIFY_TOKEN, WHATSAPP_CLOUD_TOKEN, WHATSAPP_PHONE_NUMBER_ID

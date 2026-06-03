@@ -251,16 +251,20 @@
         });
         var txt =
           (j.mensaje ? j.mensaje + " — " : "Booking sincronizado. ") +
-          "Creadas: " +
-          c +
+          "Nuevas: " +
+          (j.nuevas_total || c) +
           " · Actualizadas: " +
           a +
           " · Omitidas: " +
           o;
+        if (j.nuevas_total > 0) {
+          txt += " — Revisá alertas arriba.";
+        }
         if (msgEl) msgEl.textContent = txt;
         if (msgCal) msgCal.textContent = txt;
         cargarCalendario();
         if (tb) cargarReservas();
+        cargarAlertas();
       })
       .catch(function (err) {
         var t = "Error al sincronizar.";
@@ -814,7 +818,48 @@
       });
   })();
 
+  function cargarAlertas() {
+    var box = document.getElementById("panel-alertas");
+    if (!box || !apiBase()) return;
+    apiFetch("/api/canales/alertas?solo_no_leidas=true&limite=5")
+      .then(function (j) {
+        var items = j.alertas || [];
+        if (!items.length) {
+          box.hidden = true;
+          box.innerHTML = "";
+          return;
+        }
+        box.hidden = false;
+        box.innerHTML =
+          "<strong>Alertas</strong><ul>" +
+          items
+            .map(function (a) {
+              return (
+                "<li><span class=\"panel-alerta-tipo\">" +
+                (a.titulo || "Aviso") +
+                "</span> " +
+                (a.mensaje || "").replace(/\n/g, " · ") +
+                "</li>"
+              );
+            })
+            .join("") +
+          "</ul><button type=\"button\" class=\"btn btn-outline btn-sm\" id=\"btn-alertas-leidas\">Marcar leídas</button>";
+        var btn = document.getElementById("btn-alertas-leidas");
+        if (btn) {
+          btn.addEventListener("click", function () {
+            apiFetch("/api/canales/alertas/leer", { method: "POST" }).then(function () {
+              cargarAlertas();
+            });
+          });
+        }
+      })
+      .catch(function () {
+        box.hidden = true;
+      });
+  }
+
   cargarSiteConfig().then(function () {
+    cargarAlertas();
     if (window.location.hash === "#/calendario") {
       showPane("calendario");
       cargarCalendario();

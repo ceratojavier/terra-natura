@@ -12,6 +12,7 @@ from typing import Any
 _DATA = Path(__file__).resolve().parent.parent.parent / "ama" / "data"
 _FERIADOS_PUENTES = _DATA / "feriados_puentes_ar.json"
 _VACACIONES = _DATA / "vacaciones_invierno_provincias.json"
+_VACACIONES_VERANO = _DATA / "vacaciones_verano_ar.json"
 _IMPORTANTE = _DATA / "calendario_importante_ar.json"
 
 
@@ -80,6 +81,18 @@ def listar_importantes(
 
     vistos_add: set[str] = set()
 
+    def _es_finde_largo_real(raw: dict, ini: date | None, fin: date | None) -> bool:
+        """
+        Reglas mínimas para clasificar como finde largo:
+        - tipo debe ser `finde_largo`
+        - duración >= 2 días
+        """
+        if not ini or not fin:
+            return False
+        if str(raw.get("tipo", "")).strip().lower() != "finde_largo":
+            return False
+        return (fin - ini).days >= 1
+
     def add(item: dict) -> None:
         key = f"{item.get('nombre','')}|{item.get('fecha_inicio')}|{item.get('fecha')}|{item.get('tipo')}"
         if key in vistos_add:
@@ -122,7 +135,7 @@ def listar_importantes(
 
     for pu in fp.get("fines_de_semana_largo", []):
         ini, fin = _parse(pu.get("fecha_inicio")), _parse(pu.get("fecha_fin"))
-        if _en_rango(ini, fin, inicio, hasta):
+        if _en_rango(ini, fin, inicio, hasta) and _es_finde_largo_real(pu, ini, fin):
             base = {
                 "tipo": "finde_largo",
                 "nombre": pu.get("nombre"),
@@ -139,7 +152,7 @@ def listar_importantes(
 
     for pu in imp_pre.get("fines_de_semana_largo_2027", []):
         ini, fin = _parse(pu.get("fecha_inicio")), _parse(pu.get("fecha_fin"))
-        if _en_rango(ini, fin, inicio, hasta):
+        if _en_rango(ini, fin, inicio, hasta) and _es_finde_largo_real(pu, ini, fin):
             base = {
                 "tipo": "finde_largo",
                 "nombre": pu.get("nombre"),
@@ -165,8 +178,41 @@ def listar_importantes(
                     "fecha_inicio": ini.isoformat() if ini else None,
                     "fecha_fin": fin.isoformat() if fin else None,
                     "mensaje_campana": v.get("mensaje_campana"),
+                    "semanas_calendario_escolar": v.get("semanas_calendario_escolar"),
                     "categoria": "vacaciones",
                     "fuente": "vacaciones_invierno_provincias.json",
+                }
+            )
+
+    ver = _load(_VACACIONES_VERANO)
+    for v in ver.get("vacaciones_verano", []):
+        ini, fin = _parse(v.get("fecha_inicio")), _parse(v.get("fecha_fin"))
+        if _en_rango(ini, fin, inicio, hasta):
+            add(
+                {
+                    "tipo": "vacaciones_verano",
+                    "nombre": v.get("nombre") or "Vacaciones de verano",
+                    "fecha_inicio": ini.isoformat() if ini else None,
+                    "fecha_fin": fin.isoformat() if fin else None,
+                    "duracion_aprox_dias": v.get("duracion_aprox_dias"),
+                    "mensaje_campana": v.get("mensaje_campana"),
+                    "categoria": "vacaciones",
+                    "fuente": "vacaciones_verano_ar.json",
+                }
+            )
+
+    for blo in ver.get("bloques_promo_verano", []):
+        ini, fin = _parse(blo.get("desde")), _parse(blo.get("hasta"))
+        if _en_rango(ini, fin, inicio, hasta):
+            add(
+                {
+                    "tipo": "promo_verano",
+                    "nombre": blo.get("nombre"),
+                    "fecha_inicio": ini.isoformat() if ini else None,
+                    "fecha_fin": fin.isoformat() if fin else None,
+                    "oferta_sugerida": blo.get("oferta_sugerida"),
+                    "categoria": "promo",
+                    "fuente": "vacaciones_verano_ar.json",
                 }
             )
 

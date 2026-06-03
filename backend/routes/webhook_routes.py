@@ -4,14 +4,17 @@ Webhooks externos (WhatsApp Cloud API, etc.).
 import logging
 from typing import Any
 
-from fastapi import APIRouter, Body, Request
+from fastapi import APIRouter, Body, Depends, Request
 from fastapi.responses import PlainTextResponse
+from sqlalchemy.orm import Session
 
+from backend.config.database import get_db
 from backend.config.settings import (
     INSTAGRAM_VERIFY_TOKEN,
     MERCADOPAGO_WEBHOOK_SECRET,
     WHATSAPP_VERIFY_TOKEN,
 )
+from backend.services import whatsapp_inbound_service
 
 logger = logging.getLogger(__name__)
 
@@ -22,6 +25,7 @@ router = APIRouter(prefix="/api/webhooks", tags=["Webhooks"])
 async def whatsapp_verify(request: Request):
     """
     Meta envía GET con hub.mode, hub.verify_token, hub.challenge al suscribir el webhook.
+    URL en Meta: https://terra-natura-api.onrender.com/api/webhooks/whatsapp
     """
     q = request.query_params
     mode = q.get("hub.mode")
@@ -40,10 +44,17 @@ async def whatsapp_verify(request: Request):
 
 
 @router.post("/whatsapp")
-async def whatsapp_entrante(payload: dict[str, Any] = Body(default_factory=dict)):
-    """Mensajes entrantes de Meta. Siguiente: parser + ama.chat.responder + PMS."""
-    logger.info("webhook whatsapp: %s", list(payload.keys())[:25])
-    return {"recibido": True, "nota": "Próximo: cotizar con el mismo motor que la web."}
+async def whatsapp_entrante(
+    payload: dict[str, Any] = Body(default_factory=dict),
+    db: Session = Depends(get_db),
+):
+    """Mensajes entrantes: cotiza con el motor PMS y responde por Cloud API."""
+    try:
+        resultado = whatsapp_inbound_service.procesar_webhook(db, payload)
+        return {"recibido": True, **resultado}
+    except Exception as e:
+        logger.exception("webhook whatsapp: %s", e)
+        return {"recibido": True, "error": str(e)}
 
 
 @router.get("/instagram")

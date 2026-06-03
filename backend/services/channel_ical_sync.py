@@ -11,9 +11,11 @@ from typing import Any
 import httpx
 from sqlalchemy.orm import Session
 
-from backend.models.reserva import Reserva
-from backend.services import disponibilidad_service, ical_feeds_service
+from backend.models.reserva import ESTADOS_BLOQUEANTES, Reserva
+from backend.services import disponibilidad_service, ical_feeds_service, notificacion_operacion_service
 from backend.services.config_service import get_config
+from backend.services.reserva_service import codigo_reserva_amigable
+from backend.services import unidad_service
 
 _DATE_RE = re.compile(r"^(\d{8})")
 _UID_DOMAIN = "@pms.terra-natura.local"
@@ -124,6 +126,41 @@ def _buscar_por_uid(db: Session, unidad_id: str, uid: str) -> Reserva | None:
     )
 
 
+def _cancelar_ausentes(
+    db: Session,
+    *,
+    unidad_id: str,
+    origen: str,
+    uids_activos: set[str],
+    dry_run: bool,
+) -> tuple[int, list[str]]:
+    """Marca cancelada reservas OTA que ya no vienen en el feed (cancelación en Booking)."""
+    canceladas = 0
+    errores: list[str] = []
+    rows = (
+        db.query(Reserva)
+        .filter(
+            Reserva.unidad_id == unidad_id,
+            Reserva.origen == origen,
+            Reserva.id_externo_ota.isnot(None),
+            Reserva.estado.in_(ESTADOS_BLOQUEANTES),
+        )
+        .all()
+    )
+    for r in rows:
+        uid = str(r.id_externo_ota or "")
+        if uid and uid not in uids_activos:
+            if dry_run:
+                canceladas += 1
+            else:
+                r.estado = "cancelada"
+                r.actualizado_en = datetime.now(timezone.utc)
+                nota = f"Cancelada por sync iCal {datetime.now(timezone.utc).isoformat()}"
+                r.notas_internas = (r.notas_internas or "") + "\n" + nota
+                canceladas += 1
+    return canceladas, errores
+
+
 def sync_feed(
     db: Session,
     *,
@@ -131,6 +168,7 @@ def sync_feed(
     url: str,
     plataforma: str = "booking",
     dry_run: bool = False,
+    notificar: bool = True,
 ) -> dict[str, Any]:
     """Importa un feed iCal a reservas confirmadas bloqueantes."""
     if not unidad_id:
@@ -146,8 +184,12 @@ def sync_feed(
 
     eventos = parse_ical_events(ics)
     origen = _origen_desde_plataforma(plataforma)
-    creadas = actualizadas = omitidas = 0
+    creadas = actualizadas = omitidas = canceladas = 0
     errores: list[str] = []
+    nuevas_reservas: list[dict[str, Any]] = []
+    uids_activos = {str(ev["uid"]) for ev in eventos}
+    unidad_info = unidad_service.get_unidad(db, unidad_id) or {}
+    unidad_nombre = unidad_info.get("nombre") or unidad_id
 
     for ev in eventos:
         uid = str(ev["uid"])
@@ -175,14 +217,33 @@ def sync_feed(
 
         if not disponibilidad_service.estadia_libre(db, unidad_id, ci, co):
             errores.append(f"Sin lugar {ci}–{co} ({uid[:20]}…)")
+            if not dry_run:
+                notificacion_operacion_service.registrar_alerta(
+                    db,
+                    tipo="solape_ota",
+                    titulo=f"Booking sin importar — {unidad_nombre}",
+                    mensaje=f"No hay lugar {ci.strftime('%d/%m/%Y')}–{co.strftime('%d/%m/%Y')}. Revisá overbooking.",
+                    unidad_id=unidad_id,
+                    origen=origen,
+                    enviar_whatsapp=True,
+                )
             continue
 
         if dry_run:
             creadas += 1
+            nuevas_reservas.append(
+                {
+                    "unidad_id": unidad_id,
+                    "unidad_nombre": unidad_nombre,
+                    "check_in": ci.isoformat(),
+                    "check_out": co.isoformat(),
+                    "huesped_nombre": ev.get("summary") or f"Import {plataforma}",
+                }
+            )
             continue
 
         nombre = ev.get("summary") or f"Import {plataforma}"
-        r = Reserva(
+        res = Reserva(
             unidad_id=unidad_id,
             check_in=ci,
             check_out=co,
@@ -194,12 +255,36 @@ def sync_feed(
             id_externo_ota=uid,
             notas_internas=f"Sync iCal {plataforma} {datetime.now(timezone.utc).isoformat()}",
         )
-        db.add(r)
+        db.add(res)
         db.flush()
         creadas += 1
+        nuevas_reservas.append(
+            {
+                "reserva_id": res.id,
+                "unidad_id": unidad_id,
+                "unidad_nombre": unidad_nombre,
+                "check_in": ci.strftime("%d/%m/%Y"),
+                "check_out": co.strftime("%d/%m/%Y"),
+                "huesped_nombre": nombre[:160],
+                "codigo": codigo_reserva_amigable(res.id),
+            }
+        )
 
-    if not dry_run and (creadas or actualizadas):
+    canceladas, _ = _cancelar_ausentes(
+        db,
+        unidad_id=unidad_id,
+        origen=origen,
+        uids_activos=uids_activos,
+        dry_run=dry_run,
+    )
+
+    if not dry_run and (creadas or actualizadas or canceladas):
         db.commit()
+
+    if not dry_run and notificar and nuevas_reservas:
+        notificacion_operacion_service.notificar_reservas_nuevas(
+            db, nuevas_reservas, plataforma=plataforma
+        )
 
     return {
         "ok": len(errores) == 0,
@@ -209,11 +294,18 @@ def sync_feed(
         "creadas": creadas,
         "actualizadas": actualizadas,
         "omitidas": omitidas,
+        "canceladas": canceladas,
+        "nuevas_reservas": nuevas_reservas,
         "errores": errores[:15],
     }
 
 
-def sync_todos_los_feeds(db: Session, *, dry_run: bool = False) -> dict[str, Any]:
+def sync_todos_los_feeds(
+    db: Session,
+    *,
+    dry_run: bool = False,
+    notificar: bool = True,
+) -> dict[str, Any]:
     """Sincroniza todos los feeds configurados (o defaults Booking por unidad)."""
     cfg_row = get_config(db, "config_canales") or get_config(db, "canales")
     modo_directo = False
@@ -225,29 +317,33 @@ def sync_todos_los_feeds(db: Session, *, dry_run: bool = False) -> dict[str, Any
             "ok": True,
             "mensaje": "Modo solo reserva directa — import OTA omitido",
             "feeds": [],
+            "nuevas_total": 0,
         }
 
     feeds = _feeds_desde_config(db)
     resultados: list[dict] = []
+    nuevas_total = 0
     for f in feeds:
         uid = f.get("unidad_id") or ""
         url = f.get("url") or ""
         if not uid or not url:
             continue
-        resultados.append(
-            sync_feed(
-                db,
-                unidad_id=uid,
-                url=url,
-                plataforma=str(f.get("plataforma") or "booking"),
-                dry_run=dry_run,
-            )
+        r = sync_feed(
+            db,
+            unidad_id=uid,
+            url=url,
+            plataforma=str(f.get("plataforma") or "booking"),
+            dry_run=dry_run,
+            notificar=notificar,
         )
+        resultados.append(r)
+        nuevas_total += r.get("creadas") or 0
 
     ok = all(r.get("ok", False) for r in resultados) if resultados else True
     return {
         "ok": ok,
         "feeds_procesados": len(resultados),
+        "nuevas_total": nuevas_total,
         "detalle": resultados,
         "sync_en": datetime.now(timezone.utc).isoformat(),
     }

@@ -13,17 +13,22 @@ from backend.services import reserva_service
 
 
 def hub_dashboard(db: Session) -> dict:
+    from backend.services import ama_service
+
     meta = list_agents_meta()
     ultimo = ultimo_ciclo()
     leads = store.list_leads()
     reservas = reserva_service.listar(db, None, None, None)
     activas = [r for r in reservas if r.get("estado") not in ("cerrada", "cancelada")]
+    cola = ama_service.cola_publicacion_resumen()
     return {
         "agentes": meta,
         "ultimo_ciclo": ultimo,
         "leads_total": len(leads),
         "reservas_activas": len(activas),
-        "mensaje": "Ejecutá el ciclo diario o cada agente desde este panel.",
+        "cola_pendientes": cola["pendientes"],
+        "cola_aprobados": cola["aprobados"],
+        "mensaje": "Pipeline de hoy o ciclo diario de 8 agentes.",
     }
 
 

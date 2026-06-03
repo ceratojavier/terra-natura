@@ -7,7 +7,6 @@ from datetime import date, timedelta
 from typing import Any
 
 from ama.engine.content_strategist import generar_copy
-from ama.engine.season_planner import aplicar_sugerencias_a_calendario, sugerir_semana
 from ama.storage import calendar_store
 from ama.video.slideshow_builder import crear_slideshow
 
@@ -58,7 +57,7 @@ def vista_hoy_y_proximas(*, dias_proximos: int = 7) -> dict:
         "proximas": proximas,
         "pendientes_aprobacion": len(pendientes),
         "mensaje": (
-            "Hoy no hay piezas en el calendario. Generá en Marketing o revisá fechas."
+            "Hoy no hay piezas en Publicaciones. Ejecutá el plan del Director desde la pantalla Hoy."
             if not hoy_list
             else f"{len(hoy_list)} pieza(s) programada(s) para hoy."
         ),
@@ -90,15 +89,9 @@ def generar_copy_api(**kwargs) -> dict:
 
 
 def generar_semana_api(desde: date | None, dias: int, guardar: bool) -> dict:
-    if guardar:
-        creadas = aplicar_sugerencias_a_calendario(desde, dias)
-        return {"guardadas": len(creadas), "items": creadas}
-    return {"guardadas": 0, "items": sugerir_semana(desde, dias)}
+    from ama.engine.ejecutar_director import mensaje_legacy_deprecado
 
-
-def _rango_hasta_marzo(inicio: date) -> date:
-    anio_marzo = inicio.year + 1 if inicio.month > 3 else inicio.year
-    return date(anio_marzo, 3, 31)
+    return mensaje_legacy_deprecado("POST /api/ama/director/semana/ejecutar")
 
 
 def generar_calendario_editorial_api(
@@ -110,46 +103,10 @@ def generar_calendario_editorial_api(
     reemplazar_borradores: bool = False,
     db: Any | None = None,
 ) -> dict:
-    from ama.engine.calendar_90_planner import (
-        aplicar_a_calendario,
-        exportar_preview,
-        planificar_rango,
-        resumen_plan,
-    )
+    from ama.engine.ejecutar_director import mensaje_legacy_deprecado
 
-    start = desde or date.today()
-    end = hasta or (start + timedelta(days=(dias or 90) - 1))
-    if end < start:
-        end = start
-    max_dias = 366
-    if (end - start).days + 1 > max_dias:
-        end = start + timedelta(days=max_dias - 1)
-
-    items = planificar_rango(desde=start, hasta=end, db=db)
-    resumen = resumen_plan(items)
-    export_path = exportar_preview(items)
-    dias_total = (end - start).days + 1
-    out = {
-        "ok": True,
-        "desde": start.isoformat(),
-        "hasta": end.isoformat(),
-        "dias": dias_total,
-        "resumen": resumen,
-        "export_json": str(export_path.name),
-        "items_muestra": items[:5],
-    }
-    if guardar:
-        creadas = aplicar_a_calendario(
-            items,
-            reemplazar_borrador_en_rango=reemplazar_borradores,
-            desde=start,
-            hasta=end,
-        )
-        out["guardadas"] = len(creadas)
-    else:
-        out["guardadas"] = 0
-        out["items"] = items
-    return out
+    _ = (desde, hasta, dias, guardar, reemplazar_borradores, db)
+    return mensaje_legacy_deprecado("POST /api/ama/director/semana/ejecutar")
 
 
 def generar_calendario_90_api(
@@ -225,7 +182,8 @@ def estratega_plan_api(fecha: date | None = None, *, db: Any | None = None) -> d
     from ama.engine.estratega_dia import planificar_dia
 
     d = fecha or date.today()
-    return {"fecha": d.isoformat(), "plan": planificar_dia(d, db=db)}
+    plan = planificar_dia(d, db=db)
+    return {"fecha": d.isoformat(), "plan": plan, "delegado_director": True}
 
 
 def aprobar_publicacion_api(pub_id: str) -> dict:
@@ -255,17 +213,28 @@ def pantalla_hoy_api(*, db: Any | None = None) -> dict:
     from ama.engine.plan_marketing_unificado import construir_plan_marketing
     from ama.publishers.meta_publisher import estado_conexion_meta
 
+    from ama.engine.director_semanal import planificar_semana
+    from ama.engine.scanner_eventos import resumen_para_hoy
+
     vh = vista_hoy_y_proximas()
     plan = construir_plan_marketing(db=db, dias=120)
+    director = planificar_semana(db=db)
+    radar = resumen_para_hoy()
     meta = estado_conexion_meta()
     cfg = calendar_store.get_config()
 
     pendientes = vh.get("pendientes_aprobacion", 0)
     sin_hoy = vh.get("sin_publicaciones_hoy", True)
 
-    if sin_hoy and pendientes == 0:
-        frase = "Hoy todavía no preparé el contenido. Tocá el botón de abajo."
-        estado = "accion_requerida"
+    if sin_hoy and pendientes == 0 and director.get("total_piezas", 0) > 0:
+        frase = (
+            f"Esta semana planifiqué {director['total_piezas']} publicación(es). "
+            "Tocá «Ejecutar plan del Director» para armar copy y mandarlo a Publicaciones."
+        )
+        estado = "plan_semanal"
+    elif sin_hoy and pendientes == 0:
+        frase = "Revisá el plan del Director abajo. Si hay piezas, ejecutalas cuando quieras."
+        estado = "plan_semanal"
     elif pendientes > 0:
         frase = f"Tenés {pendientes} publicación(es) para revisar antes de Instagram."
         estado = "revisar"
@@ -278,10 +247,10 @@ def pantalla_hoy_api(*, db: Any | None = None) -> dict:
 
     acciones = [
         {
-            "id": "preparar",
-            "titulo": "Preparar publicación de hoy",
-            "explicacion": "Armo texto, ideas de video y reel con tus fotos. No publica solo salvo que Instagram esté conectado y lo apruebes.",
-            "api": "POST /api/ama/preparar-contenido-hoy",
+            "id": "ejecutar_director",
+            "titulo": "Ejecutar plan del Director",
+            "explicacion": "Armo copy y guion de la semana, encolo en Publicaciones y genero video del reel de hoy si corresponde.",
+            "api": "POST /api/ama/director/semana/ejecutar",
         },
         {
             "id": "revisar",
@@ -290,9 +259,15 @@ def pantalla_hoy_api(*, db: Any | None = None) -> dict:
             "ruta": "/publicaciones",
         },
         {
+            "id": "radar",
+            "titulo": "Revisar eventos nuevos",
+            "explicacion": "Incorporá o descartá novedades antes de que entren al plan.",
+            "ruta": "/radar-eventos",
+        },
+        {
             "id": "plan",
             "titulo": "Ver plan de marketing",
-            "explicacion": "Feriados, Día del Padre, findes largos: qué campaña corresponde y cuándo.",
+            "explicacion": "Feriados, campañas y calendario anual.",
             "ruta": "/plan",
         },
     ]
@@ -306,10 +281,85 @@ def pantalla_hoy_api(*, db: Any | None = None) -> dict:
         "pendientes_aprobacion": pendientes,
         "campaña_activa": plan.get("campaña_activa"),
         "plan_editorial_hoy": plan.get("plan_editorial_hoy"),
+        "director_semanal": director,
+        "radar_eventos": radar,
         "instagram": meta,
         "modo_publicacion": cfg.get("modo_publicacion", "aprobacion"),
         "acciones": acciones,
     }
+
+
+def estrategia_anual_api() -> dict:
+    from ama.engine.estrategia_marketing_anual import resumen_plan_anual
+
+    return resumen_plan_anual()
+
+
+def director_semanal_api(*, ref: date | None = None, db: Any | None = None) -> dict:
+    from ama.engine.director_semanal import planificar_semana
+
+    return planificar_semana(ref, db=db)
+
+
+def director_semanal_producir_api(*, ref: date | None = None, db: Any | None = None) -> dict:
+    from ama.engine.director_semanal import desarrollar_semana
+
+    return desarrollar_semana(ref, db=db)
+
+
+def director_ejecutar_plan_api(
+    *,
+    ref: date | None = None,
+    db: Any | None = None,
+    render_video_hoy: bool = True,
+    solo_hoy: bool = False,
+) -> dict:
+    """Produce copy/guion, encola Publicaciones y renderiza reel de hoy si aplica."""
+    from ama.engine.ejecutar_director import ejecutar_plan_director
+
+    return ejecutar_plan_director(
+        ref,
+        db=db,
+        render_video_hoy=render_video_hoy,
+        enviar_publicaciones=True,
+        solo_hoy=solo_hoy,
+    )
+
+
+def scanner_bandeja_api() -> dict:
+    from ama.engine.scanner_eventos import listar_bandeja
+
+    return listar_bandeja(solo_pendientes=True)
+
+
+def scanner_escanear_api(*, db: Any | None = None, actualizar_fuentes: bool = False) -> dict:
+    from ama.engine.scanner_eventos import escanear_novedades
+
+    return escanear_novedades(db=db, actualizar_fuentes=actualizar_fuentes)
+
+
+def scanner_analizar_api(texto: str, *, guardar: bool = False) -> dict:
+    from ama.engine.scanner_eventos import analizar_texto_dueño
+
+    return analizar_texto_dueño(texto, guardar=guardar)
+
+
+def scanner_aviso_api(texto: str) -> dict:
+    from ama.engine.scanner_eventos import registrar_aviso
+
+    return registrar_aviso(texto)
+
+
+def scanner_incorporar_api(item_id: str) -> dict:
+    from ama.engine.scanner_eventos import incorporar_evento
+
+    return incorporar_evento(item_id)
+
+
+def scanner_descartar_api(item_id: str, *, motivo: str = "") -> dict:
+    from ama.engine.scanner_eventos import descartar_evento
+
+    return descartar_evento(item_id, motivo=motivo)
 
 
 def plan_marketing_api(
@@ -488,13 +538,8 @@ def calendario_visual_api(
 
 
 def preparar_contenido_hoy_api(*, db: Any | None = None) -> dict:
-    return pipeline_dia_api(
-        date.today(),
-        render_video=True,
-        guardar_calendario=True,
-        carpeta_media="Parque",
-        db=db,
-    )
+    """Legacy — redirige al Director Semanal (solo piezas de hoy)."""
+    return director_ejecutar_plan_api(db=db, render_video_hoy=True, solo_hoy=True)
 
 
 def publicar_en_instagram_api(pub_id: str) -> dict:

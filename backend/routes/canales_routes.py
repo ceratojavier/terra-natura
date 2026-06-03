@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
 from backend.config.database import get_db
-from backend.services import channel_ical_sync, ical_feeds_service
+from backend.services import channel_ical_sync, ical_feeds_service, notificacion_operacion_service
 from backend.services.config_service import get_config
 
 router = APIRouter(prefix="/api/canales", tags=["Channel manager"])
@@ -18,17 +18,43 @@ def estado_canales(db: Session = Depends(get_db)):
         valor = {}
     norm = ical_feeds_service.normalize_canales(valor)
     check = ical_feeds_service.check_canales(norm)
+    from backend.jobs.ical_sync_scheduler import get_ultimo_sync
+
+    ultimo = get_ultimo_sync()
     return {
         "modo_solo_reserva_directa": bool(norm.get("modo_solo_reserva_directa")),
         "booking_habilitado": norm.get("booking_habilitado", True),
         "airbnb_habilitado": norm.get("airbnb_habilitado", False),
         "feeds_ical": norm.get("feeds_ical", []),
         "resumen": check,
+        "ultimo_sync": ultimo,
         "export_por_unidad": [
             {"unidad_id": u["id"], "url": f"/api/unidades/{u['id']}/ical"}
             for u in ical_feeds_service.UNIDADES_ICAL
         ],
     }
+
+
+@router.get("/alertas")
+def listar_alertas(
+    solo_no_leidas: bool = Query(True),
+    limite: int = Query(30, ge=1, le=100),
+    db: Session = Depends(get_db),
+):
+    """Alertas operativas — reservas Booking nuevas, solapes, etc."""
+    items = notificacion_operacion_service.listar_alertas(
+        db, solo_no_leidas=solo_no_leidas, limite=limite
+    )
+    return {"total": len(items), "alertas": items}
+
+
+@router.post("/alertas/leer")
+def marcar_alertas_leidas(
+    ids: list[str] | None = None,
+    db: Session = Depends(get_db),
+):
+    n = notificacion_operacion_service.marcar_leidas(db, ids)
+    return {"marcadas": n}
 
 
 @router.post("/sync-ical")
@@ -40,4 +66,4 @@ def sincronizar_ical(
     Descarga calendarios Booking/Airbnb configurados y crea/actualiza reservas bloqueantes.
     La web y el motor de cotización usan la misma ocupación.
     """
-    return channel_ical_sync.sync_todos_los_feeds(db, dry_run=dry_run)
+    return channel_ical_sync.sync_todos_los_feeds(db, dry_run=dry_run, notificar=not dry_run)

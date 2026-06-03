@@ -71,6 +71,15 @@ class GenerarCalendarioEditorialIn(BaseModel):
     reemplazar_borradores_en_rango: bool = False
 
 
+class ScannerAvisoIn(BaseModel):
+    texto: str = Field(..., min_length=3, max_length=4000)
+    guardar: bool = False
+
+
+class ScannerDescartarIn(BaseModel):
+    motivo: str = ""
+
+
 class GenerarCalendario90In(BaseModel):
     desde: date | None = None
     dias: int = Field(default=90, ge=14, le=120)

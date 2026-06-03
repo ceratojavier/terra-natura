@@ -20,6 +20,14 @@ _MEDIA_FOTOS = _REPO / "archivos multimedia" / "fotos terra natura"
 _MEDIA_ASSETS = _REPO / "ama" / "output" / "assets"
 
 
+@router.get("/hoy")
+def publicaciones_hoy():
+    """Qué publicar hoy en cada red — vista diaria del dueño."""
+    from backend.services.ama_service import vista_hoy_y_proximas
+
+    return vista_hoy_y_proximas()
+
+
 @router.get("/estado")
 def estado_programa(db: Session = Depends(get_db)):
     dash = ama_service.dashboard()
@@ -38,6 +46,8 @@ def estado_programa(db: Session = Depends(get_db)):
     except Exception:
         pass
 
+    cola = ama_service.cola_publicacion_resumen()
+
     return {
         "nombre": "Terra Natura — Programa",
         "herramientas": {
@@ -46,6 +56,7 @@ def estado_programa(db: Session = Depends(get_db)):
             "yt_dlp": bool(shutil.which("yt-dlp")),
         },
         "youtube_biblioteca": youtube_total,
+        "cola_pendientes": cola.get("pendientes", 0),
         "calendario": {
             "total": dash.get("total_calendario", 0),
             "pendientes": dash.get("pendientes_aprobacion", 0),

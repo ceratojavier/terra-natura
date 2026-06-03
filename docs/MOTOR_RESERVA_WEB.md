@@ -1,10 +1,12 @@
 # Motor de reserva web ↔ PMS ↔ Booking
 
-## Flujo
+## Flujo central
 
-1. **Booking** exporta iCal por unidad → `POST /api/canales/sync-ical` importa bloqueos como reservas `confirmada` con `origen=booking`.
-2. **Web** cotiza con `POST /api/cotizar` → `disponibilidad_service` ve las mismas noches ocupadas.
-3. **Booking/Airbnb** importan ocupación del PMS → `GET /api/unidades/{id}/ical?token=…`.
+1. **Booking** exporta iCal por unidad → el PMS importa cada **15 min** (job en Render) o manual `POST /api/canales/sync-ical`.
+2. Reserva nueva → estado `confirmada`, `origen=booking`, alerta en panel + WhatsApp al dueño (si Cloud API configurada).
+3. Cancelación en Booking → desaparece del iCal → PMS marca `cancelada`.
+4. **Export** PMS → Booking importa ocupación (web + manual + Booking) → anti overbooking.
+5. **Web** cotiza con `POST /api/cotizar` → `disponibilidad_service` ve las mismas noches ocupadas.
 
 ## Endpoints
 
@@ -14,8 +16,12 @@
 | POST | `/api/cotizar` | Precio + flag `disponible` |
 | POST | `/api/reservas/operacion` | Alta manual confirmada (panel móvil) |
 | POST | `/api/reservas` | Pre-reserva web (`origen=web_directa`) |
-| POST | `/api/canales/sync-ical` | Sincronizar feeds Booking (cron o agente Channel) |
-| GET | `/api/canales/estado` | Diagnóstico feeds |
+| POST | `/api/canales/sync-ical` | Import manual Booking |
+| GET | `/api/canales/alertas` | Avisos reservas Booking / solapes |
+| POST | `/api/canales/alertas/leer` | Marcar alertas leídas |
+| GET | `/api/canales/estado` | Feeds iCal + último sync |
+| POST | `/api/webhooks/whatsapp` | Consultas clientes (cotiza + responde) |
+| GET | `/api/unidades/{id}/ical` | Export ocupación hacia Booking |
 
 ## GitHub Pages + API en VM
 

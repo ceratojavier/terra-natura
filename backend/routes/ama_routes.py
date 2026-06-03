@@ -23,6 +23,8 @@ from backend.schemas.ama import (
     GuionProduccionPiezaIn,
     GuionProduccionEscenaIn,
     PiezaEnviarPublicacionesIn,
+    ScannerAvisoIn,
+    ScannerDescartarIn,
 )
 from pathlib import Path
 
@@ -38,6 +40,103 @@ _REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 def api_pantalla_hoy(db: Session = Depends(get_db)):
     """Pantalla principal del dueño — lenguaje simple."""
     return ama_service.pantalla_hoy_api(db=db)
+
+
+@router.get("/estrategia-anual")
+def api_estrategia_anual():
+    """Programa 2026, efemérides, campañas pago, reglas editoriales."""
+    return ama_service.estrategia_anual_api()
+
+
+@router.get("/director/semana")
+def api_director_semana(
+    ref: date | None = Query(None, description="Fecha de referencia (default: hoy)"),
+    db: Session = Depends(get_db),
+):
+    """Plan semanal del Director — qué publicar y por qué (sin copy hasta producir)."""
+    return ama_service.director_semanal_api(ref=ref, db=db)
+
+
+@router.post("/director/semana/producir")
+def api_director_semana_producir(
+    ref: date | None = Query(None),
+    db: Session = Depends(get_db),
+):
+    """Genera copy/guion solo para las piezas de la semana planificada (sin encolar)."""
+    return ama_service.director_semanal_producir_api(ref=ref, db=db)
+
+
+@router.post("/director/semana/ejecutar")
+def api_director_semana_ejecutar(
+    ref: date | None = Query(None),
+    solo_hoy: bool = Query(False, description="Solo piezas de hoy (legacy preparar-contenido-hoy)"),
+    render_video: bool = Query(True),
+    db: Session = Depends(get_db),
+):
+    """Único flujo operativo: produce, encola Publicaciones y video del reel de hoy."""
+    return ama_service.director_ejecutar_plan_api(
+        ref=ref,
+        db=db,
+        render_video_hoy=render_video,
+        solo_hoy=solo_hoy,
+    )
+
+
+@router.get("/director/contexto-pms")
+def api_director_contexto_pms(
+    ref: date | None = Query(None),
+    db: Session = Depends(get_db),
+):
+    """Ocupación y huecos de la semana — insumo del Director."""
+    from ama.engine.director_semanal import fin_semana, inicio_semana
+    from ama.engine.pms_contexto import analizar_semana_pms
+
+    d = ref or date.today()
+    return analizar_semana_pms(inicio_semana(d), fin_semana(d), db=db, hoy=date.today())
+
+
+@router.get("/scanner/bandeja")
+def api_scanner_bandeja():
+    """Eventos detectados o avisados — pendientes de incorporar al radar."""
+    return ama_service.scanner_bandeja_api()
+
+
+@router.post("/scanner/escanear")
+def api_scanner_escanear(
+    actualizar_fuentes: bool = Query(False),
+    db: Session = Depends(get_db),
+):
+    """Busca novedades en la agenda vs confirmados (no produce copy)."""
+    return ama_service.scanner_escanear_api(db=db, actualizar_fuentes=actualizar_fuentes)
+
+
+@router.post("/scanner/analizar")
+def api_scanner_analizar(body: ScannerAvisoIn):
+    """Analiza texto pegado por el dueño antes de incorporar."""
+    return ama_service.scanner_analizar_api(body.texto, guardar=body.guardar)
+
+
+@router.post("/scanner/aviso")
+def api_scanner_aviso(body: ScannerAvisoIn):
+    """Registra aviso manual en la bandeja (si conviene)."""
+    return ama_service.scanner_aviso_api(body.texto)
+
+
+@router.post("/scanner/incorporar/{item_id}")
+def api_scanner_incorporar(item_id: str):
+    """Pasa evento a confirmados — el Director Semanal decide cuándo producir."""
+    result = ama_service.scanner_incorporar_api(item_id)
+    if not result.get("ok"):
+        raise HTTPException(400, result.get("mensaje") or result.get("error"))
+    return result
+
+
+@router.post("/scanner/descartar/{item_id}")
+def api_scanner_descartar(item_id: str, body: ScannerDescartarIn | None = None):
+    result = ama_service.scanner_descartar_api(item_id, motivo=(body.motivo if body else ""))
+    if not result.get("ok"):
+        raise HTTPException(404, "Evento no encontrado")
+    return result
 
 
 @router.get("/plan-marketing")
@@ -161,6 +260,7 @@ def api_plan_sincronizar(db: Session = Depends(get_db)):
 
 @router.post("/preparar-contenido-hoy")
 def api_preparar_hoy(db: Session = Depends(get_db)):
+    """Deprecated — usa POST /api/ama/director/semana/ejecutar?solo_hoy=true."""
     return ama_service.preparar_contenido_hoy_api(db=db)
 
 
@@ -199,7 +299,10 @@ def ama_estado():
             "calendario_publicaciones": {"estado": "activo"},
             "generador_copy": {"estado": "activo"},
             "generador_video": {"estado": "activo", "nota": "MoviePy + FFmpeg + CapCut brief"},
-            "pipeline_diario": {"estado": "activo", "nota": "Estratega → guion → video → cola"},
+            "pipeline_diario": {
+                "estado": "delegado",
+                "nota": "Redirige al Director Semanal — POST /api/ama/director/semana/ejecutar",
+            },
             "herramientas_video_ia": {"estado": "activo", "nota": "Catálogo gratis en /api/ama/video/herramientas"},
             "publicador_meta": {"estado": "pendiente", "nota": "Requiere tokens Meta"},
             "whatsapp_api": {"estado": "pendiente"},

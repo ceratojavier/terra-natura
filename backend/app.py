@@ -53,7 +53,12 @@ async def lifespan(app: FastAPI):
         turismo_service.seed_database(db, force=False)
     finally:
         db.close()
+
+    from backend.jobs.ical_sync_scheduler import detener_scheduler, iniciar_scheduler
+
+    iniciar_scheduler()
     yield
+    detener_scheduler()
 
 
 app = FastAPI(
@@ -251,10 +256,6 @@ if _app_dist_ready():
     _register_react_app()
 
 
-def _video_pro_ready() -> bool:
-    return (VIDEO_PRO_DIST / "index.html").is_file()
-
-
 def _register_video_pro_app() -> None:
     assets_dir = VIDEO_PRO_DIST / "assets"
     if assets_dir.is_dir():
@@ -266,11 +267,22 @@ def _register_video_pro_app() -> None:
     index = VIDEO_PRO_DIST / "index.html"
 
     @app.get("/video-pro", include_in_schema=False)
+    @app.get("/video-pro/", include_in_schema=False)
     async def spa_video_pro_root():
+        if not index.is_file():
+            raise HTTPException(
+                status_code=503,
+                detail="Video Pro no compilado. Ejecutá local\\Compilar-video-pro.bat y reiniciá el servidor.",
+            )
         return FileResponse(index)
 
     @app.get("/video-pro/{spa_path:path}", include_in_schema=False)
     async def spa_video_pro_paths(spa_path: str):
+        if not index.is_file():
+            raise HTTPException(
+                status_code=503,
+                detail="Video Pro no compilado. Ejecutá local\\Compilar-video-pro.bat y reiniciá el servidor.",
+            )
         if spa_path.startswith("assets/"):
             raise HTTPException(status_code=404)
         if ".." in spa_path.split("/"):
@@ -281,8 +293,7 @@ def _register_video_pro_app() -> None:
         return FileResponse(index)
 
 
-if _video_pro_ready():
-    _register_video_pro_app()
+_register_video_pro_app()
 
 
 if __name__ == "__main__":
