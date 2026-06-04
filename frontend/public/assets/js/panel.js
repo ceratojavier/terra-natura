@@ -250,6 +250,7 @@
   var calOcupacionMes = document.getElementById("cal-ocupacion-mes");
   var calMesPrev = document.getElementById("cal-mes-prev");
   var calMesNext = document.getElementById("cal-mes-next");
+  var btnVerMesCal = document.getElementById("btn-ver-mes-cal");
   var btnSyncBooking = document.getElementById("btn-sync-booking");
   var btnSyncBookingIcal = document.getElementById("btn-sync-booking-ical");
   var btnRecargarCal = document.getElementById("btn-recargar-cal");
@@ -260,6 +261,10 @@
   }
   if (calOcupacionMes) {
     calOcupacionMes.addEventListener("change", cargarCalendario);
+    calOcupacionMes.addEventListener("input", cargarCalendario);
+  }
+  if (btnVerMesCal) {
+    btnVerMesCal.addEventListener("click", cargarCalendario);
   }
   if (calMesPrev) {
     calMesPrev.addEventListener("click", function () {
@@ -322,7 +327,7 @@
       .finally(function () {
         if (btn) {
           btn.disabled = false;
-          btn.textContent = "Sincronizar Booking ahora";
+          btn.textContent = "Sincronizar Booking";
         }
       });
   }

@@ -35,6 +35,20 @@ Webhook WhatsApp en Meta Developers:
 
 Panel móvil: alertas en `/panel.html` · sync manual en Calendario / Conexión Booking.
 
+### Base de datos en Render (importante)
+
+**Plan free de Render:** el disco del contenedor es **efímero**. Cada redeploy o reinicio puede **borrar** `terra_natura.db` y la API vuelve a arrancar con el **seed** (unidades + reglas, sin tus reservas manuales ni sync Booking previo).
+
+**Proyecto Don Bosco / fútbol:** no usa Render free para producción. Corre en una **VM Oracle** con archivos en disco fijo (`/opt/gestion-partidos/`). Ahí la SQLite **sí persiste** entre actualizaciones de código.
+
+**Opciones para Terra Natura (cuando haya reservas reales en prod):**
+
+1. **Misma VM Oracle** que Don Bosco (recomendado si ya la tenés) — patrón `local/publicar-desde-config.ps1`.
+2. **Render + disco persistente** (plan de pago, montar volumen en `/app/data`).
+3. **PostgreSQL** (Neon/Render/Superbase) — cambiar `DATABASE_URL`; datos sobreviven redeploys.
+
+Hasta migrar: las reservas “oficiales” siguen en **Booking**; después de cada redeploy conviene **Sincronizar Booking** en el panel para reimportar iCal.
+
 ### Subir tu base local (tarifas reales del panel)
 
 En Render → Shell, o copiá `terra_natura.db` al disco persistente si activás disco de pago.  
