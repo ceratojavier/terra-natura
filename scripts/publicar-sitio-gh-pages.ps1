@@ -17,33 +17,48 @@ New-Item -ItemType Directory -Path $tmp | Out-Null
 Copy-Item -Path (Join-Path $src "*") -Destination $tmp -Recurse -Force
 Get-ChildItem $tmp -Recurse -Include *.db | Remove-Item -Force
 
-Push-Location $repoRoot
+$deploy = Join-Path $env:TEMP "terra-natura-ghpages-deploy"
+if (Test-Path $deploy) { Remove-Item $deploy -Recurse -Force }
+New-Item -ItemType Directory -Path $deploy | Out-Null
+Copy-Item -Path (Join-Path $tmp "*") -Destination $deploy -Recurse -Force
+
+Push-Location $deploy
 try {
-  $current = git rev-parse --abbrev-ref HEAD
-  git fetch origin $branch 2>$null
+  $env:GIT_AUTHOR_NAME = "Terra Natura Deploy"
+  $env:GIT_AUTHOR_EMAIL = "alpinasterranatura@gmail.com"
+  $env:GIT_COMMITTER_NAME = $env:GIT_AUTHOR_NAME
+  $env:GIT_COMMITTER_EMAIL = $env:GIT_AUTHOR_EMAIL
 
-  if (git show-ref --verify --quiet "refs/heads/$branch") {
-    git branch -D $branch 2>$null
-  }
+  $prevEap = $ErrorActionPreference
+  $ErrorActionPreference = "Continue"
 
-  git checkout --orphan $branch
-  git rm -rf . 2>$null | Out-Null
-
-  Copy-Item -Path (Join-Path $tmp "*") -Destination $repoRoot -Recurse -Force
-  if (-not (Test-Path (Join-Path $repoRoot "CNAME"))) {
-    Set-Content -Path (Join-Path $repoRoot "CNAME") -Value "alpinasterranatura.com.ar" -NoNewline
-  }
-
+  git init | Out-Null
+  git checkout -B $branch | Out-Null
   git add -A
-  git commit -m "Publicar sitio web Terra Natura (frontend/public)"
+  git diff --cached --quiet
+  $needCommit = $LASTEXITCODE -ne 0
+  if ($needCommit) {
+    git commit -m "Publicar sitio web Terra Natura (cotizador + cache tarifas)"
+  }
+  $commitOk = $LASTEXITCODE -eq 0
+  $hasOrigin = $false
+  git remote get-url origin 2>$null | Out-Null
+  if ($LASTEXITCODE -eq 0) {
+    $hasOrigin = $true
+    git remote remove origin | Out-Null
+  }
+  git remote add origin "https://github.com/ceratojavier/terra-natura.git"
   git push -f origin $branch
+  $pushOk = $LASTEXITCODE -eq 0
+
+  $ErrorActionPreference = $prevEap
+  if ($needCommit -and -not $commitOk) { throw "git commit failed" }
+  if (-not $pushOk) { throw "git push failed - check GitHub access" }
 
   Write-Host ""
   Write-Host "Listo. En 1-3 minutos debería actualizarse https://alpinasterranatura.com.ar"
 }
 finally {
-  git checkout $current 2>$null
-  if (-not $?) { git checkout main }
   Pop-Location
   if (Test-Path $tmp) { Remove-Item $tmp -Recurse -Force }
 }
