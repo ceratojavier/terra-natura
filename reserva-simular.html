@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simular pago | Terra Natura</title>
+  <link rel="stylesheet" href="./assets/css/site.css?v=20260606" />
+  <link rel="stylesheet" href="./assets/css/site-responsive.css?v=20260606" />
+  <script defer src="./assets/js/reserva-simular.js?v=20260606"></script>
+</head>
+<body>
+  <main class="section">
+    <div class="wrap">
+      <h1>Modo prueba — simular pago</h1>
+      <p class="muted">Esta pantalla solo aparece cuando Mercado Pago no está activo y el simulador está encendido en el servidor. Sirve para probar el flujo completo sin cobrar.</p>
+      <div id="sim-resumen" class="result" hidden></div>
+      <div class="cta-row">
+        <button type="button" class="btn btn-primary" id="sim-btn-pagar" disabled>Simular seña pagada</button>
+        <a class="btn btn-outline" href="./reservar.html">Volver a reservar</a>
+      </div>
+      <p id="sim-msg" class="muted" hidden></p>
+    </div>
+  </main>
+</body>
+</html>

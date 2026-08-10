@@ -1,0 +1,100 @@
+{
+  "version": 2,
+  "items": [
+    {
+      "id": "hero",
+      "archivo": "media/galeria/hero.jpg",
+      "rol": "hero",
+      "origen": "PISCINA/PARQUE Y PISCINA.jpg"
+    },
+    {
+      "id": "01-complejo-panoramica",
+      "archivo": "media/galeria/01-complejo-panoramica.jpg",
+      "rol": "complejo",
+      "origen": "PARQUE/vista panoramica desde el complejo.jpg"
+    },
+    {
+      "id": "02-piscina",
+      "archivo": "media/galeria/02-piscina.jpg",
+      "rol": "amenity",
+      "origen": "PISCINA/NUESTRA PISCINA.jpg"
+    },
+    {
+      "id": "03-pileta-alpina",
+      "archivo": "media/galeria/03-pileta-alpina.jpg",
+      "rol": "lifestyle",
+      "origen": "CABAÑA ALPINA 3/VISTA ALPINA FRENTE A PISCINA.jpg"
+    },
+    {
+      "id": "04-alpina-vista-puerta",
+      "archivo": "media/galeria/04-alpina-vista-puerta.jpg",
+      "rol": "alpina",
+      "origen": "CABANA ALPINA 1/VISTA PANORAMICA DESDE LA PUERTA DE LA CABAÑA.jpg"
+    },
+    {
+      "id": "05-alpina-living",
+      "archivo": "media/galeria/05-alpina-living.jpg",
+      "rol": "alpina",
+      "origen": "CABANA ALPINA 1/LIVING COMEDOR CABAÑA ALPINA CON 2 CAMAS DE 1 PLAZA.jpeg"
+    },
+    {
+      "id": "06-suite5-ventanal",
+      "archivo": "media/galeria/06-suite5-ventanal.jpg",
+      "rol": "suite-5",
+      "origen": "CABAÑA SUITE 5/HERMOSO VENTANAL CON VISTA A LAS SIERRAS DE CABAÑA SUITE PLANTA ALTA.jpg"
+    },
+    {
+      "id": "07-suite4-interior",
+      "archivo": "media/galeria/07-suite4-interior.jpg",
+      "rol": "suite-4",
+      "origen": "CABAÑA SUITE 4/INTERIOR CABAÑA SUITE PB.jpg"
+    },
+    {
+      "id": "08-suites-exterior",
+      "archivo": "media/galeria/08-suites-exterior.jpg",
+      "rol": "suites",
+      "origen": "CABAÑA SUITE 4/VISTA EXTERIOR CABAÑA SUITE.jpg"
+    },
+    {
+      "id": "09-alpina-frente-pileta",
+      "archivo": "media/galeria/09-alpina-frente-pileta.jpg",
+      "rol": "alpina",
+      "origen": "CABAÑA ALPINA 3/VISTA ALPINA FRENTE A PISCINA.jpg"
+    },
+    {
+      "id": "10-parque-mate",
+      "archivo": "media/galeria/10-parque-mate.jpg",
+      "rol": "parque",
+      "origen": "CABAÑA ALPINA 2/PERGOLA CON ASADOR EN EL PARQUE.jpg"
+    },
+    {
+      "id": "11-lago-plaza",
+      "archivo": "media/galeria/11-lago-plaza.jpg",
+      "rol": "entorno",
+      "origen": "paseos/Foto atardecer en plaza federal junto al lago san roque vista increible.jpg"
+    },
+    {
+      "id": "13-parque-relax",
+      "archivo": "media/galeria/13-parque-relax.jpg",
+      "rol": "parque",
+      "origen": "PISCINA/REPOSERAS SOL Y PILE.jpg"
+    },
+    {
+      "id": "14-pileta-relax",
+      "archivo": "media/galeria/14-pileta-relax.jpg",
+      "rol": "pileta",
+      "origen": "PISCINA/RELAX EN LA PISCINA.jpg"
+    },
+    {
+      "id": "15-pileta-frutillas",
+      "archivo": "media/galeria/15-pileta-frutillas.jpg",
+      "rol": "pileta",
+      "origen": "PISCINA/RELAX EN LA PISCINA.jpg"
+    }
+  ],
+  "unidades": {
+    "alpina": "04-alpina-vista-puerta.jpg",
+    "suite-4": "07-suite4-interior.jpg",
+    "suite-5": "06-suite5-ventanal.jpg"
+  }
+}
