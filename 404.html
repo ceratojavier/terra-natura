@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Terra Natura</title>
+  <script>
+    (function () {
+      var path = window.location.pathname || "";
+      var search = window.location.search || "";
+      var hash = window.location.hash || "";
+      if (path.indexOf("/app") === 0) {
+        var sub = path.replace(/^\/app\/?/, "") || "hoy";
+        if (sub && sub.indexOf(".") === -1) {
+          window.location.replace(
+            "/app/index.html?_r=" + encodeURIComponent("/" + sub) + search + hash
+          );
+          return;
+        }
+        window.location.replace("/app/");
+        return;
+      }
+      if (path === "/entrar" || path === "/programa") {
+        window.location.replace("/app/");
+        return;
+      }
+      window.location.replace("/");
+    })();
+  </script>
+</head>
+<body>
+  <p style="font-family: system-ui, sans-serif; padding: 2rem">Redirigiendo…</p>
+</body>
+</html>

@@ -1,0 +1,280 @@
+/* Circuitos — pantalla principal /programa */
+.programa-lead {
+  margin-bottom: 1.25rem;
+}
+
+.circuito-map {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 720px) {
+  .circuito-map {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.circuito-card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(124, 185, 140, 0.35);
+  background: rgba(0, 0, 0, 0.2);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.circuito-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.circuito-card strong {
+  display: block;
+  font-size: 1.05rem;
+  margin: 0.35rem 0 0.25rem;
+}
+
+.circuito-card small {
+  display: block;
+  opacity: 0.85;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.circuito-num {
+  display: inline-flex;
+  width: 1.75rem;
+  height: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.circuito-card--hoy {
+  border-color: rgba(201, 169, 98, 0.55);
+  background: rgba(201, 169, 98, 0.1);
+}
+.circuito-card--hoy .circuito-num {
+  background: var(--gold);
+  color: #1a1a1a;
+}
+
+.circuito-card--ops .circuito-num {
+  background: rgba(80, 140, 200, 0.5);
+  color: #fff;
+}
+
+.circuito-card--cal .circuito-num {
+  background: rgba(124, 185, 140, 0.45);
+  color: #fff;
+}
+
+.programa-bloque {
+  margin: 2rem 0;
+  padding-top: 0.5rem;
+}
+
+.programa-bloque--destacado {
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(201, 169, 98, 0.4);
+  background: rgba(201, 169, 98, 0.06);
+}
+
+.programa-bloque-header h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.programa-bloque-sub {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  opacity: 0.92;
+  line-height: 1.45;
+}
+
+.programa-subtitulo {
+  font-size: 0.95rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.programa-ayuda-inline {
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+  opacity: 0.9;
+}
+
+.pasos-operacion {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+  line-height: 1.55;
+}
+
+.pasos-operacion li {
+  margin-bottom: 0.85rem;
+}
+
+.pasos-operacion .btn-sm {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.app-tile-wide {
+  grid-column: 1 / -1;
+}
+
+.panel-hoy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.hoy-vacio {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.hoy-card {
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(124, 185, 140, 0.3);
+}
+
+.hoy-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.hoy-canal {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.hoy-hora {
+  font-size: 0.88rem;
+  opacity: 0.9;
+}
+
+.hoy-estado {
+  margin-left: auto;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  background: rgba(200, 160, 80, 0.25);
+}
+
+.hoy-estado.estado-aprobado {
+  background: rgba(80, 160, 100, 0.35);
+}
+
+.hoy-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.hoy-copy {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.5rem 0;
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid rgba(124, 185, 140, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+  color: #e8f0ea;
+  font-family: inherit;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+.hoy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lista-hoy {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-hoy li {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(124, 185, 140, 0.15);
+  font-size: 0.88rem;
+}
+
+.programa-fold {
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(124, 185, 140, 0.35);
+}
+
+.programa-fold summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.agenda-fechas--mes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.field-mes input[type="month"] {
+  min-width: 10rem;
+}
+
+.cal-celda.es-vacaciones-verano {
+  background: rgba(220, 140, 60, 0.18);
+  border-color: rgba(220, 140, 60, 0.45);
+}
+
+.cal-celda.es-vacaciones-invierno {
+  background: rgba(140, 100, 200, 0.15);
+  border-color: rgba(140, 100, 200, 0.4);
+}
+
+.cal-banda-etiqueta {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-top: 0.15rem;
+  line-height: 1.2;
+}
+
+.cal-banda-verano {
+  color: #ffc88a;
+}
+
+.cal-banda-invierno {
+  color: #d4b8ff;
+}
+
+.agenda-leyenda .lg-verano {
+  color: #ffc88a;
+}
+.agenda-leyenda .lg-invierno {
+  color: #d4b8ff;
+}
+
+.programa-grid-secundario {
+  margin-top: 1rem;
+}

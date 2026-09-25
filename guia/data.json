@@ -1,0 +1,43 @@
+{
+  "complejo": {
+    "nombre": "Cabañas Alpinas Terra Natura",
+    "pileta_horario": "10:00 a 20:00",
+    "whatsapp": "https://wa.me/5493541571190",
+    "wifi_placeholder": "Contraseña en cartel de la unidad"
+  },
+  "comer": [
+    {"nombre": "Carrito Abilú", "tipo": "Opción rápida / calle — ver ubicación actual en Maps", "maps": "https://www.google.com/maps/search/?api=1&query=Carrito+Abilu+Bialet+Mas%C3%A9"},
+    {"nombre": "Rancho Stone", "tipo": "Pizza · pub · Ruta 38 zona Bialet (buenas reseñas en carteles locales)", "telefono": "+54 3541 441559", "maps": "https://www.google.com/maps/search/?api=1&query=Rancho+Stone+Bialet+Mas%C3%A9"},
+    {"nombre": "Veneto Village — restaurante", "tipo": "Polo gastronómico / resto zona Veneto Carlos Paz — ideal cena especial (en auto)", "maps": "https://www.google.com/maps/search/?api=1&query=Veneto+Village+Carlos+Paz"},
+    {"nombre": "La Parrilla de Bialet", "tipo": "Parrilla / regional — confirmá horarios en Maps", "maps": "https://www.google.com/maps/search/?api=1&query=La+Parrilla+de+Bialet+Mas%C3%A9"},
+    {"nombre": "Alaska", "tipo": "Pedir ubicación vigente — suele aparecer como bar/resto zona Punilla/Bialet", "maps": "https://www.google.com/maps/search/?api=1&query=Alaska+restaurant+Bialet+Mas%C3%A9"},
+    {"nombre": "Más opciones clasificadas", "tipo": "Exploración por valoraciones", "maps": "https://es.restaurantguru.com/Bialet-Masse"},
+    {"nombre": "Cosquín / Carlos Paz", "tipo": "Mucha oferta gastronómica a minutos por autovía Valle de Punilla", "maps": "https://www.google.com/maps/search/?api=1&query=restaurantes+Cosqu%C3%ADn+C%C3%B3rdoba"}
+  ],
+  "almacenes": [
+    {"nombre": "Supermercados en Bialet Massé", "maps": "https://www.google.com/maps/search/?api=1&query=supermercado+Bialet+Mas%C3%A9"},
+    {"nombre": "Día / La Anónima / chinos (consultar cercanos)", "tips": "Buscá por reviews de estacionamiento; volvé con lugar en heladera (freezer en cabaña)"}
+  ],
+  "paseos_cerca": [
+    {"titulo": "Lago San Roque y Mojarras", "desc": "~600 m del complejo. Paseos, fotos atardecer, caminatas.", "min_noches": 1},
+    {"titulo": "Balneario Barrancas Bermejas", "desc": "~2 km. Río Cosquín.", "min_noches": 1},
+    {"titulo": "Cosquín pueblo + festival agenda", "desc": "Museo, peatonal, cercanía Valle.", "min_noches": 1},
+    {"titulo": "La Bolsa · San Antonio de Arredondo · Diquecito", "desc": "Circuito Corto Valle.", "min_noches": 2}
+  ],
+  "paseos_dia_completo": [
+    {"titulo": "Carlos Paz ciudad + costanera + Veneto Village", "desc": "Día armado gastronomía + paseos. ~30–40 min en auto desde Bialet.", "min_noches": 2},
+    {"titulo": "La Cumbrecita · Villa General Belgrano (circuito pueblos)", "desc": "Día intensivo montaña y arquitectura.", "min_noches": 3},
+    {"titulo": "Villa María / recitales grandes (consultar temporada)", "desc": "Eventos grandes; planificá estacionamiento y regreso tardío.", "min_noches": 3}
+  ],
+  "mal_tiempo": [
+    {"titulo": "Cine / shopping Carlos Paz"},
+    {"titulo": "Museos y casas históricas Cosquín"},
+    {"titulo": "Relax en cabaña Smart TV · mate en pergola"}
+  ],
+  "gustos_tags": [
+    {"tag": "pareja", "texto": "Atardecer lago · cena zona Veneto o Cosquín · desayuno lento."},
+    {"tag": "familia", "texto": "Balneario + pileta propia · casita del parque."},
+    {"tag": "deporte", "texto": "Caminatas arroyos · zonas trekking Punilla · consultar corridas/eventos temporada."},
+    {"tag": "tranqui", "texto": "Lectura pergola · siesta casa · pocas rutas cortas por día."}
+  ]
+}
