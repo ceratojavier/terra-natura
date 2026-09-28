@@ -1,0 +1,142 @@
+{
+  "unidades": [
+    {
+      "id": "alpina-1",
+      "nombre": "Cabaña Alpina 1",
+      "tipo": "alpina",
+      "capacidad": 4,
+      "recomendado": 2,
+      "tagline": "Living amplio abajo, balcón a las sierras arriba",
+      "descripcion": "Subís al dormitorio matrimonial con aire frío-calor y balcón abierto al paisaje. Abajo, un living de 33 m² con cocina completa: ideal para pareja que quiere espacio, o familia con chicos en las camas auxiliares. Parrilla propia y pileta del complejo a unos pasos.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Aire acondicionado (PA)",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
+      "foto_portada": "media/galeria/09-alpina-frente-pileta.jpg",
+      "fotos": [
+        "media/galeria/09-alpina-frente-pileta.jpg",
+        "media/galeria/04-alpina-vista-puerta.jpg",
+        "media/unidades/alpina-1/06.jpg",
+        "media/unidades/alpina-1/05.jpg",
+        "media/unidades/alpina-1/02.jpg",
+        "media/unidades/alpina-1/03.jpg",
+        "media/unidades/alpina-1/04.jpg",
+        "media/unidades/alpina-1/07.jpg",
+        "media/unidades/alpina-1/08.jpg",
+        "media/unidades/alpina-1/01.jpg"
+      ]
+    },
+    {
+      "id": "alpina-2",
+      "nombre": "Cabaña Alpina 2",
+      "tipo": "alpina",
+      "capacidad": 4,
+      "recomendado": 2,
+      "tagline": "En el centro del parque, pileta cerca",
+      "descripcion": "La misma comodidad alpina de dos plantas, ubicada donde el parque y la pileta te quedan al alcance de la mano. Perfecta si querés alternar siesta en reposera, mate bajo los árboles y una tarde en el lago sin manejar mucho.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Aire acondicionado (PA)",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
+      "foto_portada": "media/unidades/alpina-2/04.jpg",
+      "fotos": [
+        "media/unidades/alpina-2/04.jpg",
+        "media/unidades/alpina-2/05.jpg",
+        "media/unidades/alpina-2/02.jpg",
+        "media/unidades/alpina-2/03.jpg",
+        "media/unidades/alpina-2/06.jpg",
+        "media/unidades/alpina-2/07.jpg",
+        "media/unidades/alpina-2/01.jpg"
+      ]
+    },
+    {
+      "id": "alpina-3",
+      "nombre": "Cabaña Alpina 3",
+      "tipo": "alpina",
+      "capacidad": 4,
+      "recomendado": 2,
+      "tagline": "Rodeada de verde, para bajar el ritmo",
+      "descripcion": "Un refugio con vista al parque y mucha tranquilidad. Misma distribución: living generoso abajo, dormitorio arriba con balcón. Te sirve para desconectar en pareja o traer a los chicos sin sentirte apretado.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Aire acondicionado (PA)",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
+      "foto_portada": "media/galeria/05-alpina-living.jpg",
+      "fotos": [
+        "media/galeria/05-alpina-living.jpg",
+        "media/unidades/alpina-3/02.jpg",
+        "media/unidades/alpina-3/05.jpg",
+        "media/unidades/alpina-3/04.jpg",
+        "media/unidades/alpina-3/03.jpg",
+        "media/unidades/alpina-3/06.jpg",
+        "media/unidades/alpina-3/07.jpg",
+        "media/unidades/alpina-3/08.jpg",
+        "media/unidades/alpina-3/01.jpg"
+      ]
+    },
+    {
+      "id": "suite-4",
+      "nombre": "Suite Planta Baja",
+      "tipo": "suite",
+      "capacidad": 3,
+      "recomendado": 2,
+      "tagline": "Loft sin escaleras, entrada propia",
+      "descripcion": "Loft en planta baja con entrada propia: matrimonial, cama simple y cocina equipada. Todo en un piso, sin escaleras — ideal pareja con un niño o quien busca practicidad.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
+      "foto_portada": "media/unidades/suite-4/04.jpg",
+      "fotos": [
+        "media/unidades/suite-4/04.jpg",
+        "media/unidades/suite-4/02.jpg",
+        "media/unidades/suite-4/05.jpg",
+        "media/unidades/suite-4/06.jpg",
+        "media/unidades/suite-4/03.jpg",
+        "media/unidades/suite-4/01.jpg"
+      ]
+    },
+    {
+      "id": "suite-5",
+      "nombre": "Suite Planta Alta",
+      "tipo": "suite",
+      "capacidad": 3,
+      "recomendado": 2,
+      "tagline": "Arriba del dúplex, aire y vista a las sierras",
+      "descripcion": "Loft en planta alta con aire frío-calor y un ventanal que abre el paisaje serrano. Entrada propia, ambiente íntimo para dos (o pareja con un niño). La opción más pedida cuando buscás climatización y vistas.",
+      "amenities": [
+        "WiFi",
+        "Smart TV",
+        "Aire acondicionado",
+        "Parrilla",
+        "Cocina completa",
+        "Ropa blanca"
+      ],
+      "foto_portada": "media/unidades/suite-5/05.jpg",
+      "fotos": [
+        "media/unidades/suite-5/05.jpg",
+        "media/unidades/suite-5/06.jpg",
+        "media/galeria/06-suite5-ventanal.jpg",
+        "media/unidades/suite-5/04.jpg",
+        "media/unidades/suite-5/02.jpg",
+        "media/unidades/suite-5/03.jpg",
+        "media/unidades/suite-5/01.jpg"
+      ]
+    }
+  ]
+}

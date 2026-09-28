@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Terra Natura · Reservas</title>
+  <meta name="description" content="Reservas, calendario y ocupación del complejo." />
+  <meta name="theme-color" content="#0f1f18" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Terra Natura" />
+  <link rel="manifest" href="/manifest-panel.webmanifest" />
+  <link rel="icon" type="image/png" href="/assets/branding/logo-terra-natura.png" />
+  <link rel="apple-touch-icon" href="/assets/branding/logo-terra-natura.png" />
+  <script>
+    (function () {
+      var hash = (window.location.hash || "").toLowerCase();
+      var vista = "resumen";
+      if (hash.indexOf("calendario") !== -1 || hash.indexOf("tarifas") !== -1 || hash.indexOf("ical") !== -1 || hash.indexOf("nueva-reserva") !== -1) {
+        vista = "calendario";
+      } else if (hash.indexOf("reservas") !== -1) {
+        vista = "reservas";
+      } else if (hash.indexOf("recaudacion") !== -1) {
+        vista = "recaudacion";
+      }
+      window.location.replace("/app/operacion?vista=" + encodeURIComponent(vista));
+    })();
+  </script>
+</head>
+<body style="margin:0;font-family:system-ui,sans-serif;background:#0f1f18;color:#f8fafc;display:grid;min-height:100vh;place-items:center;">
+  <p style="opacity:.85;">Abriendo reservas… <a href="/app/operacion" style="color:#d8b85a;">Entrar</a></p>
+</body>
+</html>
