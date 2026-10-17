@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-AR" class="panel-app agentes-app">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Terra Natura · Centro de Agentes</title>
+  <meta name="theme-color" content="#0c1224" />
+  <link rel="stylesheet" href="/assets/css/panel.css" />
+  <link rel="stylesheet" href="/assets/css/programa-software.css?v=2" />
+  <link rel="stylesheet" href="/assets/css/agentes.css?v=2" />
+  <script defer src="/assets/js/agentes.js?v=2"></script>
+</head>
+<body class="panel-app-body agentes-page">
+  <div class="tn-app-shell">
+    <header class="tn-topbar">
+      <div class="tn-brand">
+        <p class="tn-kicker">AMA · Terra Natura</p>
+        <h1 class="tn-title">Centro de Agentes</h1>
+      </div>
+      <div class="tn-topbar-right">
+        <span id="agentes-estado" class="modo-pill">Conectando…</span>
+        <a class="btn btn-outline btn-sm" href="/programa">Programa</a>
+        <a class="btn btn-outline btn-sm" href="/marketing">Marketing</a>
+        <a class="btn btn-outline btn-sm" href="/panel">PMS</a>
+      </div>
+    </header>
+
+    <div class="tn-layout wrap agentes-layout">
+      <aside class="tn-sidebar agentes-sidebar">
+        <section class="tn-nav-card">
+          <h2>Acciones rápidas</h2>
+          <button type="button" class="btn btn-primary btn-block" id="btn-pipeline-agentes">
+            Pipeline de hoy
+          </button>
+          <button type="button" class="btn btn-outline btn-block" id="btn-ciclo">
+            Ciclo diario (10 agentes)
+          </button>
+          <a class="btn btn-outline btn-block" href="/programa#seccion-cola">Ver cola de aprobación</a>
+        </section>
+        <section class="tn-tools-card">
+          <h2>Resumen</h2>
+          <div id="hub-stats" class="hub-stats-compact"></div>
+        </section>
+      </aside>
+
+      <main class="tn-main">
+        <section class="programa-bloque">
+          <header class="programa-bloque-header tn-block-head-row">
+            <div>
+              <h2>Agentes del ecosistema</h2>
+              <p class="programa-bloque-sub">Canales → scout → director → estratega → guionista → productor → distribuidor → calendario → CRM → contenido.</p>
+            </div>
+            <span id="ciclo-status" class="tn-pill badge-muted"></span>
+          </header>
+          <main id="agentes-grid" class="agentes-grid"></main>
+        </section>
+
+        <section class="programa-bloque" id="seccion-cola-agentes">
+          <header class="programa-bloque-header tn-block-head-row">
+            <div>
+              <h2>Cola de publicación</h2>
+              <p class="programa-bloque-sub">Piezas pendientes de tu OK antes de publicar.</p>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-refrescar-cola-agentes">Actualizar</button>
+          </header>
+          <div class="tn-table-wrap">
+            <table class="tn-data-table">
+              <thead>
+                <tr>
+                  <th>Canal</th>
+                  <th>Estado</th>
+                  <th>Vista previa</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="tabla-cola-agentes"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="ultimo-ciclo" class="programa-bloque hidden">
+          <h2 class="programa-subtitulo">Último ciclo diario</h2>
+          <pre id="ciclo-json" class="tn-pipeline-log-pre"></pre>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

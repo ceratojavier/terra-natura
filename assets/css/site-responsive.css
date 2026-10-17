@@ -1,0 +1,365 @@
+/**
+ * Terra Natura — responsive (v20260604)
+ * Móvil/tablet: foto arriba, cotizador abajo (sin display:contents — compatible iPhone).
+ */
+
+.brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  line-height: 0;
+}
+
+.brand-logo-img {
+  height: clamp(3.35rem, 11vw, 5.25rem);
+  width: auto;
+  max-width: min(300px, 78vw);
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.35));
+}
+
+/* —— PC (1024px+) —— */
+@media (min-width: 1024px) {
+  .header-inner {
+    padding: 0.5rem 0.55rem 0.5rem 1rem;
+    margin-top: 0.65rem;
+  }
+
+  .brand-logo-img {
+    height: 5.5rem;
+    max-width: 360px;
+  }
+
+  .header-inner {
+    padding-left: 0.9rem;
+  }
+
+  .page-home .hero {
+    min-height: min(78vh, 680px) !important;
+    padding: 8.85rem 0 3.75rem !important;
+    display: block !important;
+  }
+
+  .page-home .hero-grid {
+    padding-top: 0.35rem;
+  }
+
+  .page-home .hero-slides {
+    position: absolute !important;
+    inset: 0 !important;
+    height: auto !important;
+  }
+
+  .page-home .hero::after {
+    display: block !important;
+  }
+
+  .page-home .hero-grid {
+    display: grid !important;
+    grid-template-columns: 1.05fr minmax(320px, 420px) !important;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    padding: 0;
+    margin: 0 auto;
+    width: min(1100px, 100% - 2rem);
+  }
+
+  .page-home .hero-copy {
+    position: static !important;
+    height: auto !important;
+    padding: 0 !important;
+    pointer-events: auto;
+  }
+
+  .page-home .hero-card--glass {
+    width: auto !important;
+    margin: 0 !important;
+    background: rgba(18, 32, 26, 0.42) !important;
+    color: #f8f4ec !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .page-home .hero-card--glass h2 {
+    color: #fffdfa !important;
+  }
+
+  .page-home .hero-booking-form label {
+    color: #e8dfd2 !important;
+  }
+
+  .page-home h1,
+  .page-home .h1-desktop {
+    font-size: clamp(2.75rem, 4.2vw, 4.35rem);
+  }
+
+  .page-home .eyebrow {
+    font-size: 1.05rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .page-home .lead.lead--desktop {
+    font-size: 1.2rem;
+  }
+
+  .page-home .hero-card--glass {
+    padding: 1.35rem 1.4rem 1.45rem;
+  }
+
+  .page-home .h1-mobile {
+    display: none !important;
+  }
+
+  .page-home .h1-desktop,
+  .page-home .lead--desktop,
+  .page-home .proof-strip--desktop {
+    display: block !important;
+  }
+
+  /* Opiniones: 3 columnas → 3 arriba + 3 abajo (parejo) */
+  .resenas-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* 5 cabañas en una sola fila en PC */
+  .cards--units {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.85rem;
+  }
+
+  .cards--units .card {
+    padding: 0.75rem;
+  }
+
+  .cards--units .card-img {
+    width: calc(100% + 1.5rem);
+    margin: -0.75rem -0.75rem 0.65rem;
+    height: 140px;
+  }
+
+  .cards--units .card h3 {
+    font-size: 0.98rem;
+    line-height: 1.25;
+  }
+
+  .cards--units .card p {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .cards--units .card-link {
+    font-size: 0.82rem;
+  }
+}
+
+/* —— Móvil y tablet (hasta 899px): columna —— */
+@media (max-width: 899px) {
+  .header-inner {
+    padding: 0.4rem 0.5rem;
+    margin-top: 0.35rem;
+    border-radius: 12px;
+  }
+
+  .brand-logo-img {
+    height: clamp(3.5rem, 12vw, 4.25rem);
+    max-width: min(280px, 82vw);
+  }
+
+  .nav-links {
+    top: 5rem;
+    width: min(88vw, 300px);
+  }
+
+  .page-home .hero {
+    position: relative;
+    overflow: visible;
+    min-height: 0 !important;
+    padding: 3.85rem 0 0.5rem !important;
+    display: block !important;
+    justify-content: flex-start !important;
+  }
+
+  .page-home .hero::after {
+    display: none !important;
+  }
+
+  .page-home .hero-glow {
+    display: none;
+  }
+
+  .page-home .hero-slides {
+    position: relative !important;
+    inset: auto !important;
+    height: clamp(220px, 42vh, 380px);
+    width: 100%;
+  }
+
+  .page-home .hero-slides::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(21, 31, 27, 0.1) 0%,
+      rgba(21, 31, 27, 0.4) 50%,
+      rgba(21, 31, 27, 0.78) 100%
+    );
+  }
+
+  .page-home .hero-slide {
+    background-position: center 42%;
+  }
+
+  .page-home .hero-slide--frutillas {
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .page-home .hero .wrap.hero-grid,
+  .page-home .hero-grid {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 0.625rem 1rem;
+    margin: 0;
+    z-index: 5;
+  }
+
+  .page-home .hero-copy {
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    top: 3.85rem;
+    height: clamp(220px, 42vh, 380px);
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  .page-home .hero-copy .eyebrow {
+    display: block;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    margin: 0 0 0.5rem;
+    padding: 0.25rem 0.5rem;
+    width: fit-content;
+    max-width: calc(100% - 0.5rem);
+    background: rgba(15, 26, 22, 0.5);
+    border-radius: 6px;
+    color: #fff8ed;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .page-home .hero-copy h1 {
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-home .h1-mobile {
+    display: block !important;
+    font-size: clamp(1.5rem, 7.2vw, 2.05rem) !important;
+    line-height: 1.15 !important;
+    margin: 0 !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  }
+
+  .page-home .h1-desktop,
+  .page-home .lead--desktop,
+  .page-home .proof-strip--desktop {
+    display: none !important;
+  }
+
+  .page-home .hero-card--glass {
+    position: relative;
+    z-index: 6;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.75rem 0 0.5rem;
+    padding: 1rem 1rem 1.1rem;
+    border-radius: 16px;
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--line) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  }
+
+  .page-home .hero-card--glass h2 {
+    color: var(--accent-dark) !important;
+    font-size: 1.3rem;
+    margin-bottom: 0.65rem;
+    text-align: left;
+    font-family: var(--font-title);
+  }
+
+  .page-home .hero-reserva-title-full {
+    display: inline !important;
+  }
+
+  .page-home .hero-reserva-title-short {
+    display: none !important;
+  }
+
+  .page-home .hero-booking-form {
+    display: grid;
+    gap: 0.65rem;
+    grid-template-columns: 1fr;
+  }
+
+  .page-home .hero-booking-form label {
+    font-size: 0.85rem;
+    color: var(--text) !important;
+    gap: 0.25rem;
+  }
+
+  .page-home .hero-booking-form input,
+  .page-home .hero-booking-form select {
+    padding: 0.68rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+
+  .page-home .hero-booking-form .btn {
+    padding: 0.88rem 1rem;
+    font-size: 1.05rem;
+    margin-top: 0.15rem;
+  }
+
+  .page-home .hero-card-note--desktop {
+    display: block !important;
+    color: var(--muted) !important;
+    font-size: 0.84rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .section-lead-short {
+    display: block;
+  }
+
+  body:not(.page-home) {
+    padding-top: 4.85rem;
+  }
+
+  body:not(.page-home) .header-inner {
+    border-radius: 12px;
+  }
+}
