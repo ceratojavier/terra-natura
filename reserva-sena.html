@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Confirmá tu seña | Terra Natura</title>
+  <link rel="stylesheet" href="./assets/css/site.css?v=20261031" />
+  <link rel="stylesheet" href="./assets/css/site-responsive.css?v=20261031" />
+</head>
+<body class="page-reserva">
+  <main class="section">
+    <div class="wrap" style="max-width: 36rem">
+      <h1>Tu reserva está bloqueada</h1>
+      <p class="muted">Tenés 48 horas para abonar la seña. Después liberamos las fechas.</p>
+      <div id="senia-resumen" class="result ok" hidden></div>
+      <div id="senia-pago" hidden>
+        <h2>Pagá la seña (50 %)</h2>
+        <p id="senia-alias"></p>
+        <p id="senia-mp" hidden></p>
+        <h2>Subí el comprobante</h2>
+        <p class="muted">Foto o PDF de la transferencia. Revisamos el banco y te confirmamos por WhatsApp.</p>
+        <form id="form-comprobante">
+          <label>Archivo (JPG, PNG o PDF)
+            <input type="file" id="archivo" accept="image/*,.pdf" required />
+          </label>
+          <button type="submit" class="btn btn-primary">Enviar comprobante</button>
+        </form>
+        <p id="senia-msg" class="result" hidden></p>
+      </div>
+      <p id="senia-error" class="result err" hidden></p>
+      <a class="btn btn-outline" href="./reservar.html">Volver a reservar</a>
+    </div>
+  </main>
+  <script defer src="./assets/js/reserva-sena.js?v=20261031"></script>
+</body>
+</html>

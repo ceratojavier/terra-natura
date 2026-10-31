@@ -1,0 +1,195 @@
+{
+  "unidades": [
+    {
+      "id": "alpina-1",
+      "nombre": "Cabaña Alpina 1",
+      "tipo": "alpina",
+      "capacidad": 4,
+      "capacidad_flexible": 5,
+      "recomendado": 2,
+      "tagline": "Living amplio abajo, balcón a las sierras arriba",
+      "descripcion": "Cabaña de dos plantas pensada para 4 personas, con cálidos detalles. Arriba, dormitorio matrimonial con aire frío-calor y balcón con vista a las sierras. Abajo, living-comedor con 2 camas de una plaza (sirven para adultos), carrito cama opcional para una quinta plaza, estufa a gas y panel eléctrico, cocina con horno y heladera con freezer. Estacionamiento y pérgola con asador propios. En el parque: pileta, juegos y canchas.",
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Aire acondicionado (PA)",
+        "Estufa a gas + panel eléctrico (PB)",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual"
+      ],
+      "foto_portada": "media/galeria/09-alpina-frente-pileta.jpg",
+      "fotos": [
+        "media/galeria/09-alpina-frente-pileta.jpg",
+        "media/galeria/04-alpina-vista-puerta.jpg",
+        "media/unidades/alpina-1/06.jpg",
+        "media/unidades/alpina-1/05.jpg",
+        "media/unidades/alpina-1/02.jpg",
+        "media/unidades/alpina-1/03.jpg",
+        "media/unidades/alpina-1/04.jpg",
+        "media/unidades/alpina-1/07.jpg",
+        "media/unidades/alpina-1/08.jpg",
+        "media/unidades/alpina-1/01.jpg"
+      ]
+    },
+    {
+      "id": "alpina-2",
+      "nombre": "Cabaña Alpina 2",
+      "tipo": "alpina",
+      "capacidad": 4,
+      "capacidad_flexible": 5,
+      "recomendado": 2,
+      "tagline": "En el centro del parque, pileta cerca",
+      "descripcion": "Misma comodidad alpina de dos plantas, en el corazón del parque. Pensada para 4 (quinta plaza en carrito cama con honestidad). Aire arriba, estufa y panel abajo, cocina completa, Smart TV, WiFi, estacionamiento y pérgola con asador propios.",
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Aire acondicionado (PA)",
+        "Estufa a gas + panel eléctrico (PB)",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual"
+      ],
+      "foto_portada": "media/unidades/alpina-2/04.jpg",
+      "fotos": [
+        "media/unidades/alpina-2/04.jpg",
+        "media/unidades/alpina-2/05.jpg",
+        "media/unidades/alpina-2/02.jpg",
+        "media/unidades/alpina-2/03.jpg",
+        "media/unidades/alpina-2/06.jpg",
+        "media/unidades/alpina-2/07.jpg",
+        "media/unidades/alpina-2/01.jpg"
+      ]
+    },
+    {
+      "id": "alpina-3",
+      "nombre": "Cabaña Alpina 3",
+      "tipo": "alpina",
+      "capacidad": 4,
+      "capacidad_flexible": 5,
+      "recomendado": 2,
+      "tagline": "Rodeada de verde, para bajar el ritmo",
+      "descripcion": "Refugio con vista al parque. Misma distribución: living generoso abajo (2 camas de una plaza + carrito cama), dormitorio arriba con balcón y aire. Ideal para desconectar en pareja o en cuatro, sin sorpresas.",
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Aire acondicionado (PA)",
+        "Estufa a gas + panel eléctrico (PB)",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual"
+      ],
+      "foto_portada": "media/galeria/05-alpina-living.jpg",
+      "fotos": [
+        "media/galeria/05-alpina-living.jpg",
+        "media/unidades/alpina-3/02.jpg",
+        "media/unidades/alpina-3/05.jpg",
+        "media/unidades/alpina-3/04.jpg",
+        "media/unidades/alpina-3/03.jpg",
+        "media/unidades/alpina-3/06.jpg",
+        "media/unidades/alpina-3/07.jpg",
+        "media/unidades/alpina-3/08.jpg",
+        "media/unidades/alpina-3/01.jpg"
+      ]
+    },
+    {
+      "id": "suite-4",
+      "nombre": "Suite Planta Baja",
+      "tipo": "suite",
+      "capacidad": 3,
+      "recomendado": 2,
+      "tagline": "Loft sin escaleras, entrada propia",
+      "descripcion": "Loft monoambiente en planta baja del dúplex, con entrada independiente. Cama matrimonial y una de una plaza (hasta 3). Ventilador de techo, estufa a gas, Smart TV con apps, cocina con horno, heladera con freezer, WiFi y ropa blanca. Sin balcón. Estacionamiento y pérgola con bancos, mesa y asador propios.",
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Ventilador de techo",
+        "Estufa a gas",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual",
+        "Sin escaleras"
+      ],
+      "foto_portada": "media/unidades/suite-4/04.jpg",
+      "fotos": [
+        "media/unidades/suite-4/04.jpg",
+        "media/unidades/suite-4/02.jpg",
+        "media/unidades/suite-4/05.jpg",
+        "media/unidades/suite-4/06.jpg",
+        "media/unidades/suite-4/03.jpg",
+        "media/unidades/suite-4/01.jpg"
+      ]
+    },
+    {
+      "id": "suite-5",
+      "nombre": "Suite Planta Alta",
+      "tipo": "suite",
+      "capacidad": 3,
+      "recomendado": 2,
+      "tagline": "Arriba del dúplex, aire y vista a las sierras",
+      "descripcion": "Loft monoambiente en planta alta con entrada independiente. Cama matrimonial y una de una plaza (hasta 3). Aire frío-calor, estufa eléctrica, balcón con vista a las sierras, Smart TV con apps, cocina con horno, heladera con freezer, WiFi y ropa blanca. Estacionamiento y pérgola con bancos, mesa y asador propios.",
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Aire acondicionado frío-calor",
+        "Estufa eléctrica",
+        "Balcón con vista a las sierras",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual"
+      ],
+      "foto_portada": "media/unidades/suite-5/05.jpg",
+      "fotos": [
+        "media/unidades/suite-5/05.jpg",
+        "media/unidades/suite-5/06.jpg",
+        "media/galeria/06-suite5-ventanal.jpg",
+        "media/unidades/suite-5/04.jpg",
+        "media/unidades/suite-5/02.jpg",
+        "media/unidades/suite-5/03.jpg",
+        "media/unidades/suite-5/01.jpg"
+      ]
+    }
+  ],
+  "complejo": {
+    "nombre": "Cabañas Alpinas Terra Natura",
+    "direccion": "Los Talas 759, barrio Mirador del Lago, Bialet Massé, Córdoba",
+    "coordenadas": { "lat": -31.331626, "lon": -64.478455 },
+    "maps": "https://maps.app.goo.gl/enAUK1opv8mQmuYq9",
+    "amenities_comunes": [
+      "Pileta",
+      "Parque",
+      "Juegos para niños",
+      "Cancha de fútbol",
+      "Cancha de vóley",
+      "Cancha de tejo"
+    ],
+    "distancias": {
+      "lago_san_roque_m": 600,
+      "autovia_rotonda_m": 600,
+      "centro_bialet_km": 2,
+      "arroyos_m": 800,
+      "rio_km": 2,
+      "cascadas_km": 3,
+      "carlos_paz_min": 10,
+      "cosquin_km": 9,
+      "cosquin_min": 10,
+      "la_falda_km": 27,
+      "la_falda_min": 30,
+      "cordoba_min": 30
+    }
+  },
+  "tarifas_extra": {
+    "plaza_extra_alpina_ars": 15000,
+    "nota": "Alpina pensada para 4; 5ta plaza en carrito cama con aviso honesto. Configurable en calendario de tarifas."
+  }
+}

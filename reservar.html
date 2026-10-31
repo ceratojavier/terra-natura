@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Reservar online | Cabañas Alpinas Terra Natura · Bialet Massé</title>
+  <meta name="description" content="Cotizá tu estadía y pagá la seña con Mercado Pago en Cabañas Alpinas Terra Natura, Bialet Massé." />
+  <meta property="og:title" content="Reservar online | Cabañas Alpinas Terra Natura" />
+  <meta property="og:description" content="Cotizá fechas, ves el precio y pagá la seña del 50 % online o por WhatsApp." />
+  <meta property="og:image" content="https://alpinasterranatura.com.ar/media/galeria/02-piscina.jpg" />
+  <link rel="canonical" href="https://alpinasterranatura.com.ar/reservar.html" />
+  <link rel="stylesheet" href="./assets/css/site.css?v=20261027" />
+  <link rel="stylesheet" href="./assets/css/site-responsive.css?v=20260606" />
+  <link rel="stylesheet" href="./assets/css/site-seo.css?v=20261026" />
+  <script defer src="./assets/js/site-nav.js"></script>
+  <script defer src="./assets/js/cotiza.js?v=20261102"></script>
+  <script defer src="./assets/js/utm.js?v=20261026"></script>
+  <script defer src="./assets/js/reputacion.js?v=20261027"></script>
+</head>
+<body class="page-reserva">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./index.html" aria-label="Cabañas Alpinas Terra Natura — inicio">
+        <span class="brand-logo-wrap">
+          <img class="brand-logo-img" src="./assets/branding/logo-terra-natura.png" width="240" height="96" alt="Cabañas Alpinas Terra Natura" decoding="async" />
+        </span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-primary">Menú</button>
+      <nav class="nav-links" id="nav-primary">
+        <a href="./index.html#unidades">Cabañas</a>
+        <a href="./reservar.html">Reservar</a>
+        <a href="./index.html#nosotros">Quiénes somos</a>
+        <a href="./index.html#atracciones">Atracciones</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section section-alt">
+    <div class="wrap">
+      <h1>Reservá tu estadía</h1>
+      <p class="muted reserva-lead">
+        <span class="reserva-lead-full">Elegí fechas y cabaña: en segundos ves disponibilidad y precio. Pagá la seña con Mercado Pago o escribinos por WhatsApp.</span>
+        <span class="reserva-lead-short">Fechas, precio y reserva en un paso.</span>
+      </p>
+      <form id="form-reserva" class="booking-form booking-form--compact">
+        <label>Nombre completo *
+          <input id="reserva-nombre" type="text" maxlength="80" required autocomplete="name" />
+        </label>
+        <label>Email <span class="muted">(solo si pagás la seña online)</span>
+          <input id="reserva-email" type="email" maxlength="120" autocomplete="email" placeholder="tu@email.com" />
+        </label>
+        <label>Tipo de cabaña
+          <select id="reserva-unidad" required>
+            <option value="todas">Ver las 3 opciones de cabaña</option>
+            <option value="grupo-alpinas">Cabañas Alpinas</option>
+            <option value="suite-4">Cabaña Suite planta baja</option>
+            <option value="suite-5">Cabaña Suite planta alta</option>
+          </select>
+        </label>
+        <label>Entrada
+          <input id="reserva-in" type="date" required />
+        </label>
+        <label>Salida
+          <input id="reserva-out" type="date" required />
+        </label>
+        <label>Adultos
+          <input id="reserva-adultos" type="number" min="1" max="6" value="2" required />
+        </label>
+        <label>Niños
+          <input id="reserva-ninos" type="number" min="0" max="4" value="0" />
+        </label>
+        <input id="reserva-personas" type="hidden" value="2" />
+        <label class="booking-span-2">Comentario
+          <input id="reserva-nota" type="text" maxlength="120" placeholder="Opcional" />
+        </label>
+        <input id="reserva-telefono" type="hidden" value="" />
+        <input id="reserva-canal" type="hidden" value="web_directa" />
+        <button class="btn btn-primary booking-span-2" type="submit">Cotizar disponibilidad y precio</button>
+      </form>
+
+      <div id="reserva-resultado" class="result result--compact" hidden></div>
+      <div id="reserva-acciones" class="cta-row cta-row--compact"></div>
+
+      <p class="muted pago-ayuda">
+        Después de cotizar podés pagar la seña con Mercado Pago o escribirnos por WhatsApp para confirmar fechas y datos.
+      </p>
+
+      <div class="reservar-resenas-wrap">
+        <h2 class="reservar-resenas-title">Opiniones de huéspedes</h2>
+        <div class="resenas-resumen">
+          <div class="resenas-score-card" data-rep="booking">
+            <span class="resenas-score-num">8,9</span>
+            <span class="resenas-score-meta"><strong data-rep-etiqueta>Fabuloso</strong> en Booking.com<br /><span class="muted" data-rep-cantidad>23 opiniones</span></span>
+          </div>
+          <div class="resenas-score-card resenas-score-card--google" data-rep="google">
+            <span class="resenas-score-num resenas-score-num--google">4,1</span>
+            <span class="resenas-score-meta"><strong data-rep-etiqueta>Muy bueno</strong> en Google Maps<br /><span class="resenas-stars" aria-hidden="true">★★★★☆</span> <span class="muted" data-rep-cantidad>124 opiniones</span></span>
+          </div>
+        </div>
+        <div class="resenas-grid">
+          <article class="resena-card">
+            <div class="resena-card-head">
+              <span class="resena-score" aria-label="Puntuación 10 de 10">10</span>
+              <div><p class="resena-label">Excepcional</p><p class="resena-fuente">Booking.com</p></div>
+            </div>
+            <h3 class="resena-titulo">Hermoso lugar</h3>
+            <div class="resena-tags"><span class="resena-tag">Viaje en pareja</span><span class="resena-tag">3 noches</span></div>
+            <blockquote class="resena-texto">“El complejo es hermoso: pileta, parque muy cuidado y cabañas cómodas. Javier y Patricia siempre cerca, sin invadir.”</blockquote>
+            <footer class="resena-pie">Huésped verificado · Argentina</footer>
+          </article>
+          <article class="resena-card">
+            <div class="resena-card-head">
+              <span class="resena-score" aria-label="Puntuación 10 de 10">10</span>
+              <div><p class="resena-label">Excepcional</p><p class="resena-fuente">Booking.com</p></div>
+            </div>
+            <h3 class="resena-titulo">Tranquilidad y buen trato</h3>
+            <div class="resena-tags"><span class="resena-tag">Viaje en familia</span><span class="resena-tag">2 noches</span></div>
+            <blockquote class="resena-texto">“Muy limpio, ordenado y tranquilo. Los dueños están en el predio y eso se nota. La pileta y el parque son un plus enorme.”</blockquote>
+            <footer class="resena-pie">Huésped verificado · Argentina</footer>
+          </article>
+          <article class="resena-card">
+            <div class="resena-card-head">
+              <span class="resena-score" aria-label="Puntuación 5 de 5">5</span>
+              <div><p class="resena-label">5 estrellas</p><p class="resena-fuente">Google Maps</p></div>
+            </div>
+            <h3 class="resena-titulo">Escapada perfecta</h3>
+            <div class="resena-tags"><span class="resena-tag">Fin de semana</span></div>
+            <blockquote class="resena-texto">“Pileta, silencio y dueños en el lugar. A minutos del lago San Roque. Reservamos directo y la experiencia fue mucho mejor.”</blockquote>
+            <footer class="resena-pie">Huésped en Google · Córdoba</footer>
+          </article>
+        </div>
+        <p class="resenas-links">
+          <a href="https://www.booking.com/reviews/ar/hotel/cabanas-alpinas-terra-natura-bialet-masse.es-ar.html" target="_blank" rel="noopener noreferrer">Ver todas en Booking</a>
+          ·
+          <a href="https://www.google.com/maps/search/?api=1&query=Caba%C3%B1as+Alpinas+Terra+Natura+Bialet+Mass%C3%A9" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <a class="wa-float" href="https://wa.me/5493541571190?text=Hola%2C%20estoy%20en%20la%20p%C3%A1gina%20de%20reservas%20y%20quiero%20consultar.%20%28TN-RESERVAR%29" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.11 17.21c-.25-.13-1.48-.73-1.71-.81-.23-.09-.4-.13-.56.13-.17.25-.65.8-.8.97-.15.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.39.11-.52.12-.12.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.84-.2-.49-.4-.42-.56-.43-.15-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.43 1.02 2.6.13.17 1.76 2.68 4.26 3.76.6.26 1.07.41 1.44.53.61.19 1.16.16 1.6.1.49-.07 1.48-.6 1.69-1.17.21-.57.21-1.06.15-1.17-.06-.1-.23-.17-.48-.29z"/><path fill="currentColor" d="M16.02 3.2c-7.07 0-12.79 5.72-12.79 12.78 0 2.25.59 4.45 1.71 6.38L3 29l6.83-1.79a12.78 12.78 0 0 0 6.19 1.58h.01c7.06 0 12.79-5.73 12.79-12.79 0-3.42-1.33-6.63-3.75-9.05a12.7 12.7 0 0 0-9.05-3.75zm0 23.42h-.01a10.6 10.6 0 0 1-5.4-1.48l-.39-.23-4.05 1.06 1.08-3.95-.25-.41a10.57 10.57 0 0 1-1.62-5.63c0-5.84 4.75-10.59 10.6-10.59 2.83 0 5.49 1.1 7.49 3.1a10.53 10.53 0 0 1 3.1 7.49c0 5.84-4.75 10.59-10.6 10.59z"/></svg>
+  </a>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <strong>Cabañas Alpinas Terra Natura</strong>
+        <p>Los Talas 759, Barrio Mirador del Lago, Bialet Massé, Córdoba (CP X5158)</p>
+        <p><a href="tel:+5493541571190">+54 9 3541 57-1190</a></p>
+      </div>
+      <div><a href="./index.html">← Volver al inicio</a><br /><a href="./privacidad.html">Política de privacidad</a></div>
+    </div>
+  </footer>
+</body>
+</html>
