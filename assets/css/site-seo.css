@@ -1,0 +1,180 @@
+/* Complemento de site.css para fichas estáticas, páginas de búsqueda y landings. */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.tn-pic {
+  display: contents;
+}
+
+.h1-eyebrow {
+  display: block;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.page-home .hero-copy h1 .h1-eyebrow {
+  margin: 0 0 0.5rem;
+}
+
+.page-static main.section {
+  padding-top: 6.25rem;
+}
+
+main.section h1,
+.page-static main h1,
+#cabana-root h1 {
+  color: var(--accent-dark);
+}
+
+.page-static main h1 {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.page-static main h2 {
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  margin: 2rem 0 0.6rem;
+  color: var(--accent-dark);
+}
+
+.seo-article {
+  max-width: 780px;
+}
+
+.seo-article p,
+.seo-article li {
+  font-size: 1.05rem;
+  line-height: 1.72;
+}
+
+.seo-lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin: 0.25rem 0 1rem;
+}
+
+.seo-hero-img {
+  margin: 1rem 0 1.25rem;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  max-width: 780px;
+}
+
+.seo-hero-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.seo-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0.75rem 0 1.25rem;
+  list-style: none;
+}
+
+.seo-facts li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.92rem !important;
+  line-height: 1.4 !important;
+}
+
+.seo-units {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.seo-units a {
+  display: block;
+  padding: 0.85rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.seo-units a strong {
+  display: block;
+  color: var(--accent-dark);
+}
+
+.seo-units a span {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.seo-units a:hover {
+  border-color: var(--accent);
+}
+
+.page-static .faq-list {
+  max-width: 780px;
+}
+
+.footer-grid p {
+  margin: 0.25rem 0;
+}
+
+.footer-interes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.35rem 0 0;
+}
+
+.footer-interes li {
+  margin: 0.15rem 0;
+}
+
+.landing-header-cta {
+  padding: 0.45rem 0.95rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.landing-focused .landing-hero-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.landing-focused .landing-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.landing-focused .hero .wrap {
+  position: relative;
+  z-index: 3;
+  padding-top: 4rem;
+}
+
+.landing-focused .landing-section h2 {
+  font-family: var(--font-title);
+  color: var(--accent-dark);
+}

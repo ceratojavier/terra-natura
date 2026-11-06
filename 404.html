@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabañas Alpinas Terra Natura — Programa</title>
+  <script>
+    (function () {
+      var ORIGIN = "https://alpinasterranatura.com.ar";
+      function isAppPath(path) {
+        return path === "/app" || path.indexOf("/app/") === 0;
+      }
+      var path = window.location.pathname || "";
+      var search = window.location.search || "";
+      var hash = window.location.hash || "";
+      if (isAppPath(path)) {
+        var sub = path.replace(/^\/app\/?/, "") || "hoy";
+        if (sub && sub !== "index.html" && sub.indexOf(".") === -1) {
+          var dest =
+            ORIGIN +
+            "/app/index.html?_r=" +
+            encodeURIComponent(sub.charAt(0) === "/" ? sub : "/" + sub) +
+            search +
+            hash;
+          window.location.replace(dest);
+          return;
+        }
+        window.location.replace(ORIGIN + "/app/");
+        return;
+      }
+      if (path === "/entrar" || path === "/programa" || path === "/entrar.html") {
+        window.location.replace(ORIGIN + "/app/");
+        return;
+      }
+      window.location.replace(ORIGIN + "/");
+    })();
+  </script>
+</head>
+<body>
+  <p style="font-family: system-ui, sans-serif; padding: 2rem">
+    Abriendo el programa… Si no pasa nada,
+    <a href="/app/">entrá por acá</a>.
+  </p>
+  <script defer src="./assets/js/utm.js?v=20261106"></script>
+</body>
+</html>

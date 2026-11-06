@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "sections": [
+    {
+      "section_key": "hero",
+      "title": "Las sierras",
+      "subtitle": "a tu manera.",
+      "intro": "Todo lo que necesitás para disfrutar Bialet Massé y las sierras de Córdoba. Recomendaciones verificables, mapas y planes para cada día.",
+      "body": "",
+      "image_url": "https://alpinasterranatura.com.ar/media/galeria/hero.webp"
+    },
+    {
+      "section_key": "welcome",
+      "title": "¡Qué alegría recibirte!",
+      "subtitle": "",
+      "intro": "Preparamos esta guía para que aproveches cada momento en Terra Natura.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "explore_heading",
+      "title": "¿Qué te gustaría",
+      "subtitle": "hacer hoy?",
+      "intro": "Desde un paseo espontáneo hasta una escapada de día completo. Elegí tu plan y dejate llevar.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "featured",
+      "title": "Los mejores recuerdos",
+      "subtitle": "no siempre se planean.",
+      "intro": "Explorá recomendaciones locales y guardá favoritos en tu celular.",
+      "body": "",
+      "image_url": "https://alpinasterranatura.com.ar/media/galeria/11-lago-plaza.webp"
+    },
+    {
+      "section_key": "stay_heading",
+      "title": "Tu estadía en",
+      "subtitle": "Terra Natura.",
+      "intro": "Pequeños detalles para que te sientas cómodo desde el primer momento.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "category_cerca",
+      "title": "Todo cerca",
+      "subtitle": "",
+      "intro": "Comercios y servicios para resolver lo cotidiano.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "category_naturaleza",
+      "title": "Naturaleza y paseos",
+      "subtitle": "",
+      "intro": "Rutas, paisajes, pueblos y rincones serranos.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "category_balnearios",
+      "title": "Ríos y balnearios",
+      "subtitle": "",
+      "intro": "Ideas para disfrutar el agua y los días de sol.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "category_gastronomia",
+      "title": "Sabores locales",
+      "subtitle": "",
+      "intro": "Restaurantes, cafeterías y lugares para comer.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "category_noche",
+      "title": "Cuando cae el sol",
+      "subtitle": "",
+      "intro": "Paseos, espectáculos y propuestas nocturnas.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "category_familia",
+      "title": "Planes con chicos",
+      "subtitle": "",
+      "intro": "Actividades para compartir en familia.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "category_lluvia",
+      "title": "¿Y si llueve?",
+      "subtitle": "",
+      "intro": "Alternativas bajo techo para cualquier edad.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "category_servicios",
+      "title": "Información útil",
+      "subtitle": "",
+      "intro": "Datos importantes para una estadía tranquila.",
+      "body": "",
+      "image_url": ""
+    }
+  ],
+  "stay": {
+    "bubble_title": "Antes de salir de la cabaña",
+    "bubble_intro": "Un repaso rápido de lo que incluye tu estadía y un par de tips de anfitriones.",
+    "water_notice": "El agua del alojamiento no es potable. Traé agua mineral para tomar y cocinar, o comprala en el almacén de la esquina.",
+    "wifi_ssid": "",
+    "wifi_password": "",
+    "wifi_note": "Escaneá el QR o copiá la clave. Si tenés dudas, escribinos por WhatsApp.",
+    "show_wifi": true,
+    "amenities": [
+      "Sábanas, toallas y ropa de cama de abrigo",
+      "WiFi en la cabaña",
+      "Smart TV (Netflix, YouTube y similares)",
+      "Cocina equipada con heladera y freezer",
+      "Pérgola con mesa, bancos y asador",
+      "Estacionamiento techado en el complejo",
+      "Pileta y parque compartidos (horarios de temporada)"
+    ],
+    "tips": [
+      "Check-in desde las 11:30 · check-out hasta las 10:00",
+      "Almacén de cercanía a ~media cuadra por agua mineral y lo de última hora",
+      "Respetá el silencio a partir de las 22:00",
+      "Fogón y asador: usalos con cuidado y apagá bien las brasas",
+      "Cualquier urgencia en el predio: avisanos por WhatsApp"
+    ],
+    "welcome_title": "¡Qué alegría recibirte!",
+    "welcome_text": "Preparamos esta guía para que aproveches cada momento en Terra Natura."
+  }
+}

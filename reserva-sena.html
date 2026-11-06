@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Confirmá tu seña | Terra Natura</title>
+  <link rel="stylesheet" href="./assets/css/site.css?v=20261031" />
+  <link rel="stylesheet" href="./assets/css/site-responsive.css?v=20261031" />
+  <link rel="stylesheet" href="./assets/css/site-cotiza.css?v=20261102" />
+  <link rel="stylesheet" href="assets/css/site-modern.css?v=20261106" />
+</head>
+<body class="page-reserva">
+  <main class="section">
+    <div class="wrap" style="max-width: 36rem">
+      <h1>¡Excelente elección! Tu estadía está pre-reservada</h1>
+      <p class="muted" id="senia-plazo">Para congelar la tarifa, transferí la seña del 50 % dentro del plazo indicado.</p>
+      <div id="senia-resumen" class="senia-exito-box" hidden></div>
+      <div id="senia-pago" class="senia-exito-box" hidden>
+        <a id="senia-mp-btn" class="btn btn-primary" href="#" rel="noopener noreferrer" hidden>Pagar la seña con Mercado Pago</a>
+        <p id="senia-mp-info" class="muted" hidden>Cuando Mercado Pago confirme el pago, registramos la reserva y te enviamos la confirmación por WhatsApp.</p>
+        <details id="transferencia-alternativa" open>
+          <summary>Prefiero transferir y enviar el comprobante</summary>
+          <h2>Datos para la transferencia</h2>
+          <div id="senia-datos-banco"></div>
+          <p class="muted" style="margin-top:0.75rem">El comprobante queda pendiente de revisión. La reserva se confirma cuando verifiquemos que el pago ingresó.</p>
+          <a id="senia-wa-btn" class="btn-wa-principal" href="#" target="_blank" rel="noopener noreferrer" hidden>Enviar comprobante por WhatsApp</a>
+          <h2 style="margin-top:1.25rem">Subir comprobante en la web</h2>
+          <form id="form-comprobante">
+            <label>Archivo (JPG, PNG o PDF)
+              <input type="file" id="archivo" accept="image/*,.pdf" required />
+            </label>
+            <button type="submit" class="btn btn-primary">Enviar comprobante</button>
+          </form>
+        </details>
+        <p id="senia-msg" class="result" hidden></p>
+      </div>
+      <p id="senia-error" class="result err" hidden></p>
+      <a class="btn btn-outline" href="./reservar.html">Volver a cotizar</a>
+    </div>
+  </main>
+  <script defer src="./assets/js/reserva-sena.js?v=20261102"></script>
+  <script defer src="./assets/js/utm.js?v=20261106"></script>
+</body>
+</html>

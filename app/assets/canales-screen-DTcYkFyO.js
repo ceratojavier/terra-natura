@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-D8nDyRPw.js";import{i as t}from"./chunk-62JRHF6Z-C-n4ezVd.js";var n=e();function r(){return(0,n.jsx)(t,{to:`/configuracion#reservas-canales`,replace:!0})}export{r as CanalesScreen};

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fotos — Terra Natura</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        background: #0f172a;
+        color: #e2e8f0;
+      }
+      header {
+        padding: 1rem 1.25rem;
+        background: #1e293b;
+        border-bottom: 1px solid #334155;
+      }
+      h1 {
+        font-size: 1.25rem;
+        margin: 0;
+      }
+      p {
+        margin: 0.35rem 0 0;
+        font-size: 0.9rem;
+        color: #94a3b8;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0.75rem;
+        padding: 1rem;
+      }
+      .grid img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid #334155;
+      }
+      .err {
+        padding: 2rem;
+        text-align: center;
+        color: #fca5a5;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 id="titulo">Fotos Terra Natura</h1>
+      <p id="sub">Cargando álbum…</p>
+    </header>
+    <div id="grid" class="grid"></div>
+    <p id="err" class="err" hidden></p>
+    <script>
+      (function () {
+        const params = new URLSearchParams(location.search);
+        const s = (params.get("s") || "alpina").toLowerCase();
+        const API =
+          location.hostname === "alpinasterranatura.com.ar" || location.hostname === "www.alpinasterranatura.com.ar"
+            ? "https://api.alpinasterranatura.com.ar"
+            : location.origin;
+        fetch(API + "/api/public/coleccion-consulta/" + encodeURIComponent(s))
+          .then(function (r) {
+            if (!r.ok) throw new Error("No se pudo cargar el álbum");
+            return r.json();
+          })
+          .then(function (data) {
+            document.getElementById("titulo").textContent = data.titulo || "Fotos Terra Natura";
+            document.getElementById("sub").textContent =
+              (data.fotos && data.fotos.length) + " foto" + (data.fotos.length === 1 ? "" : "s");
+            const grid = document.getElementById("grid");
+            (data.fotos || []).forEach(function (f) {
+              const img = document.createElement("img");
+              img.src = f.url;
+              img.alt = f.nombre || "Foto";
+              img.loading = "lazy";
+              grid.appendChild(img);
+            });
+            if (!data.fotos || !data.fotos.length) {
+              document.getElementById("err").hidden = false;
+              document.getElementById("err").textContent = "Todavía no hay fotos configuradas para esta colección.";
+            }
+          })
+          .catch(function (e) {
+            document.getElementById("err").hidden = false;
+            document.getElementById("err").textContent = e.message || "Error al cargar";
+          });
+      })();
+    </script>
+    <script defer src="./assets/js/utm.js?v=20261106"></script>
+</body>
+</html>

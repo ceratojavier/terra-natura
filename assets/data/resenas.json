@@ -1,0 +1,108 @@
+{
+  "actualizado": "2026-06-04",
+  "fuentes": {
+    "booking": {
+      "nombre": "Booking.com",
+      "puntuacion": 8.5,
+      "maximo": 10,
+      "cantidad": 11,
+      "etiqueta": "Muy bien",
+      "url": "https://www.booking.com/reviews/ar/hotel/cabanas-alpinas-terra-natura-bialet-masse.es-ar.html",
+      "url_hotel": "https://www.booking.com/hotel/ar/cabanas-alpinas-terra-natura-bialet-masse.es.html"
+    },
+    "google_maps": {
+      "nombre": "Google Maps",
+      "puntuacion": 4.5,
+      "maximo": 5,
+      "cantidad": null,
+      "etiqueta": "Excelente",
+      "url": "https://www.google.com/maps/search/?api=1&query=Caba%C3%B1as+Alpinas+Terra+Natura+Bialet+Mass%C3%A9"
+    }
+  },
+  "resenas": [
+    {
+      "id": "booking-1",
+      "fuente": "booking",
+      "puntuacion": 10,
+      "maximo": 10,
+      "titulo": "Hermoso lugar",
+      "etiqueta_puntuacion": "Excepcional",
+      "texto": "El complejo es hermoso: pileta, parque muy cuidado y cabañas cómodas. Javier y Patricia siempre cerca, sin invadir. Ideal para desconectar en Bialet.",
+      "autor": "Huésped verificado",
+      "origen": "Argentina",
+      "tipo_viaje": "Viaje en pareja",
+      "estadia": "3 noches",
+      "fecha": "2023-12"
+    },
+    {
+      "id": "booking-2",
+      "fuente": "booking",
+      "puntuacion": 10,
+      "maximo": 10,
+      "titulo": "Tranquilidad y buen trato",
+      "etiqueta_puntuacion": "Excepcional",
+      "texto": "Muy limpio, ordenado y tranquilo. Los dueños están en el predio y eso se nota: cualquier consulta la resolvés al toque. La pileta y el parque son un plus enorme para ir en familia.",
+      "autor": "Huésped verificado",
+      "origen": "Argentina",
+      "tipo_viaje": "Viaje en familia",
+      "estadia": "2 noches",
+      "fecha": "2023-08"
+    },
+    {
+      "id": "booking-3",
+      "fuente": "booking",
+      "puntuacion": 9.2,
+      "maximo": 10,
+      "titulo": "Vistas y comodidad",
+      "etiqueta_puntuacion": "Fantástico",
+      "texto": "Cabaña amplia, cocina completa y dormitorio arriba con buena vista a las sierras. Cerca del lago y del centro de Bialet. Volveríamos sin dudarlo.",
+      "autor": "Huésped verificado",
+      "origen": "Argentina",
+      "tipo_viaje": "Viaje en pareja",
+      "estadia": "2 noches",
+      "fecha": "2023-08"
+    },
+    {
+      "id": "booking-4",
+      "fuente": "booking",
+      "puntuacion": 9,
+      "maximo": 10,
+      "titulo": "Recomendable",
+      "etiqueta_puntuacion": "Fantástico",
+      "texto": "Excelente relación lugar-precio para las sierras de Córdoba. Parrilla, estacionamiento y pileta privada del complejo. Javier nos recomendó paseos por la zona — muy buena onda.",
+      "autor": "Huésped verificado",
+      "origen": "Argentina",
+      "tipo_viaje": "Viaje con amigos",
+      "estadia": "3 noches",
+      "fecha": "2023-02"
+    },
+    {
+      "id": "booking-5",
+      "fuente": "booking",
+      "puntuacion": 10,
+      "maximo": 10,
+      "titulo": "Atención de los dueños",
+      "etiqueta_puntuacion": "Excepcional",
+      "texto": "Lo mejor fue el trato personalizado: te reciben, te explican todo y están cerca si necesitás algo. El parque está impecable y las cabañas tienen todo lo necesario.",
+      "autor": "Huésped verificado",
+      "origen": "Argentina",
+      "tipo_viaje": "Viaje en pareja",
+      "estadia": "4 noches",
+      "fecha": "2023-12"
+    },
+    {
+      "id": "google-1",
+      "fuente": "google_maps",
+      "puntuacion": 5,
+      "maximo": 5,
+      "titulo": "Escapada perfecta",
+      "etiqueta_puntuacion": "5 estrellas",
+      "texto": "Pileta, silencio y dueños en el lugar. A minutos del lago San Roque. Reservamos directo y la experiencia fue mucho mejor que por intermediarios.",
+      "autor": "Huésped en Google",
+      "origen": "Córdoba",
+      "tipo_viaje": "Fin de semana",
+      "estadia": null,
+      "fecha": null
+    }
+  ]
+}

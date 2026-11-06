@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /panel.html
+Disallow: /gestor/
+Disallow: /dueno/
+
+Sitemap: https://alpinasterranatura.com.ar/sitemap.xml

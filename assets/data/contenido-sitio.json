@@ -1,0 +1,546 @@
+{
+  "version": 1,
+  "actualizado": "2026-11-01",
+  "unidades": [
+    {
+      "id": "alpina-1",
+      "nombre": "Cabaña Alpina 1",
+      "tagline": "Living amplio abajo, balcón a las sierras arriba",
+      "descripcion": "Cabaña de dos plantas pensada para 4 personas, con cálidos detalles. Arriba, dormitorio matrimonial con aire frío-calor y balcón con vista a las sierras. Abajo, living-comedor con 2 camas de una plaza (sirven para adultos), carrito cama opcional para una quinta plaza, estufa a gas y panel eléctrico, cocina con horno y heladera con freezer. Estacionamiento y pérgola con asador propios. En el parque: pileta, juegos y canchas.",
+      "capacidad": "Hasta 4 personas · ideal 2 + chicos",
+      "servicios": [
+        "Aire en dormitorio de planta alta",
+        "Pérgola con asador"
+      ],
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Aire acondicionado (PA)",
+        "Estufa a gas + panel eléctrico (PB)",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual"
+      ],
+      "foto_portada": "media/galeria/09-alpina-frente-pileta.jpg",
+      "fotos": [
+        "media/galeria/09-alpina-frente-pileta.jpg",
+        "media/galeria/04-alpina-vista-puerta.jpg",
+        "media/unidades/alpina-1/06.jpg",
+        "media/unidades/alpina-1/05.jpg",
+        "media/unidades/alpina-1/02.jpg",
+        "media/unidades/alpina-1/03.jpg",
+        "media/unidades/alpina-1/04.jpg",
+        "media/unidades/alpina-1/07.jpg",
+        "media/unidades/alpina-1/08.jpg",
+        "media/unidades/alpina-1/01.jpg"
+      ]
+    },
+    {
+      "id": "alpina-2",
+      "nombre": "Cabaña Alpina 2",
+      "tagline": "En el centro del parque, pileta cerca",
+      "descripcion": "Misma comodidad alpina de dos plantas, en el corazón del parque. Pensada para 4 (quinta plaza en carrito cama con honestidad). Aire arriba, estufa y panel abajo, cocina completa, Smart TV, WiFi, estacionamiento y pérgola con asador propios.",
+      "capacidad": "Hasta 4 personas · ideal pareja o familia",
+      "servicios": [
+        "Aire en dormitorio de planta alta",
+        "Pérgola con asador"
+      ],
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Aire acondicionado (PA)",
+        "Estufa a gas + panel eléctrico (PB)",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual"
+      ],
+      "foto_portada": "media/unidades/alpina-2/04.jpg",
+      "fotos": [
+        "media/unidades/alpina-2/04.jpg",
+        "media/unidades/alpina-2/05.jpg",
+        "media/unidades/alpina-2/02.jpg",
+        "media/unidades/alpina-2/03.jpg",
+        "media/unidades/alpina-2/06.jpg",
+        "media/unidades/alpina-2/07.jpg",
+        "media/unidades/alpina-2/01.jpg"
+      ]
+    },
+    {
+      "id": "alpina-3",
+      "nombre": "Cabaña Alpina 3",
+      "tagline": "Rodeada de verde, para bajar el ritmo",
+      "descripcion": "Refugio con vista al parque. Misma distribución: living generoso abajo (2 camas de una plaza + carrito cama), dormitorio arriba con balcón y aire. Ideal para desconectar en pareja o en cuatro, sin sorpresas.",
+      "capacidad": "Hasta 4 personas · ideal 2 + chicos",
+      "servicios": [
+        "Aire en dormitorio de planta alta",
+        "Pérgola con asador"
+      ],
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Aire acondicionado (PA)",
+        "Estufa a gas + panel eléctrico (PB)",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual"
+      ],
+      "foto_portada": "media/galeria/05-alpina-living.jpg",
+      "fotos": [
+        "media/galeria/05-alpina-living.jpg",
+        "media/unidades/alpina-3/02.jpg",
+        "media/unidades/alpina-3/05.jpg",
+        "media/unidades/alpina-3/04.jpg",
+        "media/unidades/alpina-3/03.jpg",
+        "media/unidades/alpina-3/06.jpg",
+        "media/unidades/alpina-3/07.jpg",
+        "media/unidades/alpina-3/08.jpg",
+        "media/unidades/alpina-3/01.jpg"
+      ]
+    },
+    {
+      "id": "suite-4",
+      "nombre": "Suite Planta Baja",
+      "tagline": "Loft sin escaleras, entrada propia",
+      "descripcion": "Loft monoambiente en planta baja del dúplex, con entrada independiente. Cama matrimonial y una de una plaza (hasta 3). Ventilador de techo, estufa a gas, Smart TV con apps, cocina con horno, heladera con freezer, WiFi y ropa blanca. Sin balcón. Estacionamiento y pérgola con bancos, mesa y asador propios.",
+      "capacidad": "Hasta 3 personas · pareja + un niño",
+      "servicios": [
+        "Ventilador de techo",
+        "Cocina completa"
+      ],
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Ventilador de techo",
+        "Estufa a gas",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual",
+        "Sin escaleras"
+      ],
+      "foto_portada": "media/unidades/suite-4/04.jpg",
+      "fotos": [
+        "media/unidades/suite-4/04.jpg",
+        "media/unidades/suite-4/02.jpg",
+        "media/unidades/suite-4/05.jpg",
+        "media/unidades/suite-4/06.jpg",
+        "media/unidades/suite-4/03.jpg",
+        "media/unidades/suite-4/01.jpg"
+      ]
+    },
+    {
+      "id": "suite-5",
+      "nombre": "Suite Planta Alta",
+      "tagline": "Arriba del dúplex, aire y vista a las sierras",
+      "descripcion": "Loft monoambiente en planta alta con entrada independiente. Cama matrimonial y una de una plaza (hasta 3). Aire frío-calor, estufa eléctrica, balcón con vista a las sierras, Smart TV con apps, cocina con horno, heladera con freezer, WiFi y ropa blanca. Estacionamiento y pérgola con bancos, mesa y asador propios.",
+      "capacidad": "Hasta 3 personas · pareja + un niño",
+      "servicios": [
+        "Aire acondicionado",
+        "Balcón con vista a las sierras"
+      ],
+      "amenities": [
+        "WiFi",
+        "Smart TV con apps",
+        "Aire acondicionado frío-calor",
+        "Estufa eléctrica",
+        "Balcón con vista a las sierras",
+        "Pérgola con asador",
+        "Cocina con horno",
+        "Heladera con freezer",
+        "Ropa blanca",
+        "Estacionamiento individual"
+      ],
+      "foto_portada": "media/unidades/suite-5/05.jpg",
+      "fotos": [
+        "media/unidades/suite-5/05.jpg",
+        "media/unidades/suite-5/06.jpg",
+        "media/galeria/06-suite5-ventanal.jpg",
+        "media/unidades/suite-5/04.jpg",
+        "media/unidades/suite-5/02.jpg",
+        "media/unidades/suite-5/03.jpg",
+        "media/unidades/suite-5/01.jpg"
+      ]
+    }
+  ],
+  "home": {
+    "hero_slides": [
+      {
+        "imagen": "media/galeria/02-piscina.jpg",
+        "alt": "Pileta y parque del complejo"
+      },
+      {
+        "imagen": "media/galeria/03-pileta-alpina.jpg",
+        "alt": "Cabaña alpina frente a la pileta"
+      },
+      {
+        "imagen": "media/galeria/13-parque-relax.jpg",
+        "alt": "Pileta y reposeras en el parque"
+      }
+    ],
+    "galeria": {
+      "titulo": "Así se vive acá",
+      "lead": "Pileta, parque, cabañas y lo que hay cerca.",
+      "fotos": [
+        {
+          "imagen": "media/galeria/03-pileta-alpina.jpg",
+          "alt": "Cabaña alpina junto a la pileta"
+        },
+        {
+          "imagen": "media/galeria/02-piscina.jpg",
+          "alt": "Nuestra pileta"
+        },
+        {
+          "imagen": "media/galeria/13-parque-relax.jpg",
+          "alt": "Reposeras y sol en la pileta"
+        },
+        {
+          "imagen": "media/galeria/10-parque-mate.jpg",
+          "alt": "Pérgola y parque del complejo"
+        },
+        {
+          "imagen": "media/galeria/01-complejo-panoramica.jpg",
+          "alt": "Vista del complejo"
+        },
+        {
+          "imagen": "media/galeria/05-alpina-living.jpg",
+          "alt": "Interior cabaña alpina"
+        },
+        {
+          "imagen": "media/galeria/06-suite5-ventanal.jpg",
+          "alt": "Ventanal con vista a las sierras en Suite planta alta"
+        },
+        {
+          "imagen": "media/galeria/07-suite4-interior.jpg",
+          "alt": "Interior Suite planta baja"
+        },
+        {
+          "imagen": "media/galeria/08-suites-exterior.jpg",
+          "alt": "Exterior de las suites"
+        },
+        {
+          "imagen": "media/galeria/09-alpina-frente-pileta.jpg",
+          "alt": "Cabaña alpina frente a la pileta"
+        },
+        {
+          "imagen": "media/galeria/10-parque-mate.jpg",
+          "alt": "Pérgola y parque del complejo"
+        },
+        {
+          "imagen": "media/galeria/14-pileta-relax.jpg",
+          "alt": "Tomando sol en la pileta"
+        },
+        {
+          "imagen": "media/galeria/11-lago-plaza.jpg",
+          "alt": "Atardecer en Plaza Federal junto al lago San Roque"
+        }
+      ]
+    },
+    "unidades": {
+      "titulo": "Elegí tu refugio",
+      "lead": "Tres cabañas alpinas en el parque y dos suites loft con entrada propia. Mismo parque, pileta y anfitriones en el lugar.",
+      "cards": [
+        {
+          "id": "alpinas",
+          "titulo": "Cabañas Alpinas",
+          "badge": "3 cabañas",
+          "texto": "Mismo diseño en todo el complejo: living amplio abajo, dormitorio matrimonial arriba con balcón a las sierras. Ideal pareja o familia con chicos — no hace falta elegir número: al reservar te asignamos la alpina libre.",
+          "bullets": [
+            "Hasta 4 personas · recomendado 2 + menores",
+            "Aire frío-calor en dormitorio PA",
+            "Pérgola con asador y estacionamiento propio"
+          ],
+          "imagen": "media/galeria/09-alpina-frente-pileta.jpg",
+          "enlace": "./reservar.html?grupo=grupo-alpinas",
+          "enlace_texto": "Cotizar cabañas alpinas →"
+        },
+        {
+          "id": "suite-4",
+          "titulo": "Cabaña Suite planta baja",
+          "badge": "Sin escaleras",
+          "texto": "Loft con entrada independiente en planta baja del dúplex. Todo en un ambiente cómodo, perfecto si preferís no subir escaleras.",
+          "bullets": [
+            "Hasta 3 · pareja + un niño",
+            "Ventilador de techo · cocina completa"
+          ],
+          "imagen": "media/unidades/suite-4/04.jpg",
+          "enlace": "./cabanas/suite-4.html",
+          "enlace_texto": "Ver fotos y detalle →"
+        },
+        {
+          "id": "suite-5",
+          "titulo": "Cabaña Suite planta alta",
+          "badge": "Aire acondicionado",
+          "texto": "Arriba del dúplex, con ventanal al paisaje serrano y aire frío-calor. Entrada propia por escalera exterior.",
+          "bullets": [
+            "Hasta 3 · pareja + un niño",
+            "Aire acondicionado · Smart TV"
+          ],
+          "imagen": "media/unidades/suite-5/05.jpg",
+          "enlace": "./cabanas/suite-5.html",
+          "enlace_texto": "Ver fotos y detalle →"
+        }
+      ]
+    },
+    "hero": {
+      "lead": "Cinco cabañas con pileta, parque y anfitriones en el lugar. Cotizá y reservá directo.",
+      "beneficio_destacado": "10 % off reservando en la web oficial · Mejor precio que Booking",
+      "video_mobile": "media/hero/hero-vertical-inicial.mp4"
+    },
+    "textos": {
+      "cotizador_titulo": "Consultá tu estadía",
+      "cotizador_titulo_corto": "Cotizá",
+      "cotizador_bajada": "Elegí tus fechas y descubrí las opciones disponibles en Terra Natura.",
+      "cotizador_aclaracion": "Sin compromiso: primero ves el precio, después decidís.",
+      "resenas_bajada": "Opiniones reales en Booking y Google Maps — parejas y familias que valoraron la pileta, el parque y el trato de los dueños.",
+      "unidades_bajada": "Alpinas de dos plantas o suites loft. Entrá, recorré las fotos y reservá directo cuando quieras.",
+      "reserva_bajada": "Cotizá acá o en",
+      "atracciones_bajada": "Primero lo cercano a Bialet y el lago; después, salidas de día a la sierra.",
+      "atracciones_cierre": "También: Cosquín, trekking, cabalgatas y más. Cuando confirmés la estadía, te pasamos nuestras recomendaciones de confianza.",
+      "ubicacion_bajada": "Los Talas 759, Barrio Mirador del Lago, Bialet Massé, Córdoba — entre el lago San Roque y el centro del pueblo."
+    },
+    "atracciones": [
+      {
+        "id": "plaza-federal",
+        "titulo": "Plaza Federal",
+        "descripcion": "Caminata de unos 25 minutos desde el complejo, cruzando el puente del lago. Llegás a un lugar ideal para fotos y atardeceres.",
+        "fotos": [
+          "media/atracciones/plaza-federal-atardecer.jpg",
+          "media/atracciones/lago-san-roque-atardecer.jpg"
+        ]
+      },
+      {
+        "id": "labios-del-indio",
+        "titulo": "Labios del Indio",
+        "descripcion": "Balneario en Bialet Massé: baño en el río, pesca, aves que anidan en las formaciones rojizas y asadores para pasar el día.",
+        "fotos": [
+          "media/atracciones/labios-del-indio-v2.png"
+        ]
+      },
+      {
+        "id": "lago-san-roque",
+        "titulo": "Lago San Roque",
+        "descripcion": "A 600 m del complejo: paseos, atardeceres y actividades acuáticas según temporada.",
+        "fotos": [
+          "media/atracciones/lago-san-roque-atardecer.jpg"
+        ]
+      },
+      {
+        "id": "san-placido",
+        "titulo": "San Plácido y la Virgen",
+        "descripcion": "Visitá la iglesia de San Plácido en plena sierra de Bialet Massé y seguí la caminata hasta la Virgen — silencio, sendero y vistas que valen el esfuerzo.",
+        "fotos": [
+          "media/atracciones/san-placido-iglesia.jpg"
+        ]
+      },
+      {
+        "id": "cerro-blanco",
+        "titulo": "Cerro Blanco",
+        "descripcion": "Salida de unos 25 minutos en auto: subís al cerro y tenés una vista increíble del campo serrano, en pleno paisaje cordobés.",
+        "fotos": [
+          "media/galeria/04-alpina-vista-puerta.jpg"
+        ]
+      },
+      {
+        "id": "pekos",
+        "titulo": "Pekos",
+        "descripcion": "A ~5 km del complejo: espacio pensado para los más chicos — ideal para combinar con un día en familia.",
+        "fotos": [
+          "media/atracciones/pekos-vuelta.jpg"
+        ]
+      },
+      {
+        "id": "tanti",
+        "titulo": "Tanti",
+        "descripcion": "Pueblo serrano a pocos minutos: paseo, gastronomía local y aire de sierra para una tarde distinta.",
+        "fotos": [
+          "media/atracciones/tanti-cascada.jpg"
+        ]
+      },
+      {
+        "id": "cabalango",
+        "titulo": "Cabalango",
+        "descripcion": "Otra escapada corta por las sierras: naturaleza, senderos y el ritmo lento del valle.",
+        "fotos": [
+          "media/atracciones/cabalango-rio.jpg"
+        ]
+      },
+      {
+        "id": "hotel-eden",
+        "titulo": "Hotel Edén (La Falda)",
+        "descripcion": "Patrimonio e historia en La Falda: visita guiada para sumar cultura al viaje.",
+        "fotos": [
+          "media/atracciones/eden-hotel-v2.png"
+        ]
+      },
+      {
+        "id": "carlos-paz",
+        "titulo": "Peatonal de Carlos Paz",
+        "descripcion": "Paseo nocturno y gastronomía — salida opcional si querés movimiento un rato.",
+        "fotos": [
+          "media/atracciones/peatonal-carlos-paz-v2.png"
+        ]
+      }
+    ],
+    "preguntas_frecuentes": [
+      {
+        "pregunta": "¿Cómo reservo y cuánto es la seña?",
+        "respuesta": "Cotizá en la web o por WhatsApp. La seña es del 50 %; el saldo antes del check-in. Podés pagar la seña con Mercado Pago o por transferencia, y no pedimos depósito en garantía."
+      },
+      {
+        "pregunta": "¿Aceptan mascotas?",
+        "respuesta": "Mascotas chicas, con consulta previa. Te confirmamos según la unidad y las fechas."
+      },
+      {
+        "pregunta": "¿Horario de pileta y check-in?",
+        "respuesta": "Pileta de 10:00 a 20:00. Check-in desde las 11:30 y check-out hasta las 10:00; si necesitás otro horario, lo coordinamos por WhatsApp según el día."
+      },
+      {
+        "pregunta": "¿Por qué reservar directo y no solo por Booking?",
+        "respuesta": "Reservando directo hablás con quienes están en el predio, sin intermediarios. Mismo complejo, mejor trato y precio sin comisión de plataforma cuando reservás por web o WhatsApp."
+      },
+      {
+        "pregunta": "¿Dónde queda el complejo?",
+        "respuesta": "Los Talas 759, Bialet Massé — a 600 m del lago San Roque y ~2 km del centro y a 4 km del balneario Labios del Indio."
+      }
+    ],
+    "secciones": {
+      "resenas": "Lo que dicen quienes se quedaron",
+      "unidades": "Elegí tu cabaña",
+      "reserva": "Tu estadía, en pocos pasos",
+      "nosotros": "Quiénes somos",
+      "atracciones": "Qué hacer cerca",
+      "experiencia": "Lo que vas a tener",
+      "faq": "Preguntas frecuentes",
+      "ubicacion": "Cómo llegar"
+    },
+    "resenas": [
+      {
+        "puntaje": "10",
+        "etiqueta": "Excepcional",
+        "fuente": "Booking.com",
+        "titulo": "Hermoso lugar",
+        "etiquetas": [
+          "Viaje en pareja",
+          "3 noches"
+        ],
+        "texto": "El complejo es hermoso: pileta, parque muy cuidado y cabañas cómodas. Javier y Patricia siempre cerca, sin invadir. Ideal para desconectar en Bialet.",
+        "pie": "Huésped verificado · Argentina"
+      },
+      {
+        "puntaje": "10",
+        "etiqueta": "Excepcional",
+        "fuente": "Booking.com",
+        "titulo": "Tranquilidad y buen trato",
+        "etiquetas": [
+          "Viaje en familia",
+          "2 noches"
+        ],
+        "texto": "Muy limpio, ordenado y tranquilo. Los dueños están en el predio y eso se nota: cualquier consulta la resolvés al toque. La pileta y el parque son un plus enorme para ir en familia.",
+        "pie": "Huésped verificado · Argentina"
+      },
+      {
+        "puntaje": "9.2",
+        "etiqueta": "Fantástico",
+        "fuente": "Booking.com",
+        "titulo": "Vistas y comodidad",
+        "etiquetas": [
+          "Viaje en pareja",
+          "2 noches"
+        ],
+        "texto": "Cabaña amplia, cocina completa y dormitorio arriba con buena vista a las sierras. Cerca del lago y del centro de Bialet. Volveríamos sin dudarlo.",
+        "pie": "Huésped verificado · Argentina"
+      },
+      {
+        "puntaje": "9",
+        "etiqueta": "Fantástico",
+        "fuente": "Booking.com",
+        "titulo": "Recomendable",
+        "etiquetas": [
+          "Viaje con amigos",
+          "3 noches"
+        ],
+        "texto": "Excelente relación lugar-precio para las sierras de Córdoba. Parrilla, estacionamiento y pileta privada del complejo. Javier nos recomendó paseos por la zona — muy buena onda.",
+        "pie": "Huésped verificado · Argentina"
+      },
+      {
+        "puntaje": "10",
+        "etiqueta": "Excepcional",
+        "fuente": "Booking.com",
+        "titulo": "Atención de los dueños",
+        "etiquetas": [
+          "Viaje en pareja",
+          "4 noches"
+        ],
+        "texto": "Lo mejor fue el trato personalizado: te reciben, te explican todo y están cerca si necesitás algo. El parque está impecable y las cabañas tienen todo lo necesario.",
+        "pie": "Huésped verificado · Argentina"
+      },
+      {
+        "puntaje": "5",
+        "etiqueta": "5 estrellas",
+        "fuente": "Google Maps",
+        "titulo": "Escapada perfecta",
+        "etiquetas": [
+          "Fin de semana"
+        ],
+        "texto": "Pileta, silencio y dueños en el lugar. A minutos del lago San Roque. Reservamos directo y la experiencia fue mucho mejor que por intermediarios.",
+        "pie": "Huésped en Google · Córdoba"
+      }
+    ],
+    "seo": {
+      "title": "Cabañas en Bialet Massé con pileta | Cabañas Alpinas Terra Natura",
+      "description": "Cabañas y suites en Bialet Massé, a 600 m del lago San Roque. Cotizá online, pileta y parque propio. Reservá directo.",
+      "og_title": "Cabañas Alpinas Terra Natura · Bialet Massé",
+      "og_description": "Cabañas y suites en Bialet Massé, a 600 m del lago San Roque. Pileta, parque y anfitriones en el lugar. Reservá directo.",
+      "twitter_title": "Cabañas Alpinas Terra Natura · Bialet Massé",
+      "twitter_description": "Cinco cabañas con pileta a pasos del lago. Reservá directo con seña online."
+    }
+  },
+  "reserva_web": {
+    "descuento_pct": 10,
+    "beneficio_badge": "🎁 Beneficio web: 10 % de descuento reservando directo",
+    "beneficio_extra": "Cancelación flexible según política web · Anfitriones en el predio",
+    "plazo_horas": 2,
+    "texto_plazo": "Para congelar la tarifa, transferí la seña del 50 % dentro de las próximas 2 horas. Pasado ese plazo liberamos las fechas automáticamente.",
+    "datos_pago": {
+      "titular": "Cerato Carlos Javier",
+      "cuil": "20-28421347-6",
+      "alias": "terra.natura",
+      "medio": "Mercado Pago (alias)",
+      "concepto": "Seña reserva web + tu código de reserva"
+    },
+    "grupos_cotizador": {
+      "grupo-alpinas": {
+        "features": "Ideal parejas o familia · 2 plantas · Balcón a las sierras · A/A en dormitorio",
+        "fotos": [
+          "media/galeria/09-alpina-frente-pileta.jpg",
+          "media/galeria/05-alpina-living.jpg",
+          "media/unidades/alpina-1/03.jpg",
+          "media/unidades/alpina-2/05.jpg"
+        ]
+      },
+      "suite-4": {
+        "features": "Planta baja · Sin escaleras · Pareja + un niño · Ventilador de techo",
+        "fotos": [
+          "media/unidades/suite-4/01.jpg",
+          "media/unidades/suite-4/03.jpg",
+          "media/unidades/suite-4/04.jpg"
+        ]
+      },
+      "suite-5": {
+        "features": "Planta alta · Aire acondicionado · Vista serrana · Entrada independiente",
+        "fotos": [
+          "media/unidades/suite-5/01.jpg",
+          "media/unidades/suite-5/02.jpg",
+          "media/unidades/suite-5/05.jpg"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,857 @@
+{
+  "generated": "2026-11-01T23:08:03.795180+00:00",
+  "items": [
+    {
+      "ruta": "media/atracciones/cabalango-rio.jpg",
+      "nombre": "cabalango-rio.jpg",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/cabalango-rio.webp",
+      "nombre": "cabalango-rio.webp",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/eden-hotel-v2.png",
+      "nombre": "eden-hotel-v2.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/eden-hotel.png",
+      "nombre": "eden-hotel.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/labios-del-indio-v2.png",
+      "nombre": "labios-del-indio-v2.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/labios-del-indio.png",
+      "nombre": "labios-del-indio.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/lago-san-roque-atardecer.jpg",
+      "nombre": "lago-san-roque-atardecer.jpg",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/lago-san-roque-atardecer.webp",
+      "nombre": "lago-san-roque-atardecer.webp",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/peatonal-carlos-paz-v2.png",
+      "nombre": "peatonal-carlos-paz-v2.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/peatonal-carlos-paz.png",
+      "nombre": "peatonal-carlos-paz.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/pekos-vuelta.jpg",
+      "nombre": "pekos-vuelta.jpg",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/pekos-vuelta.webp",
+      "nombre": "pekos-vuelta.webp",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/plaza-federal-atardecer.jpg",
+      "nombre": "plaza-federal-atardecer.jpg",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/plaza-federal-atardecer.webp",
+      "nombre": "plaza-federal-atardecer.webp",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/puente-carlos-paz-noche-v2.png",
+      "nombre": "puente-carlos-paz-noche-v2.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/puente-carlos-paz-noche-v2.webp",
+      "nombre": "puente-carlos-paz-noche-v2.webp",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/puente-carlos-paz-noche.png",
+      "nombre": "puente-carlos-paz-noche.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/puente-carlos-paz-noche.webp",
+      "nombre": "puente-carlos-paz-noche.webp",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/san-placido-iglesia.jpg",
+      "nombre": "san-placido-iglesia.jpg",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/san-placido-iglesia.webp",
+      "nombre": "san-placido-iglesia.webp",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/tanti-cascada.jpg",
+      "nombre": "tanti-cascada.jpg",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/tanti-cascada.webp",
+      "nombre": "tanti-cascada.webp",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/teatros-carlos-paz-v2.png",
+      "nombre": "teatros-carlos-paz-v2.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/atracciones/teatros-carlos-paz.png",
+      "nombre": "teatros-carlos-paz.png",
+      "carpeta": "atracciones",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b/kb_01-complejo-panoramica.mp4",
+      "nombre": "kb_01-complejo-panoramica.mp4",
+      "carpeta": "cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b",
+      "tipo": "video"
+    },
+    {
+      "ruta": "media/cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b/kb_05-alpina-living.mp4",
+      "nombre": "kb_05-alpina-living.mp4",
+      "carpeta": "cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b",
+      "tipo": "video"
+    },
+    {
+      "ruta": "media/cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b/kb_06-suite5-ventanal.mp4",
+      "nombre": "kb_06-suite5-ventanal.mp4",
+      "carpeta": "cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b",
+      "tipo": "video"
+    },
+    {
+      "ruta": "media/cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b/kb_10-parque-mate.mp4",
+      "nombre": "kb_10-parque-mate.mp4",
+      "carpeta": "cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b",
+      "tipo": "video"
+    },
+    {
+      "ruta": "media/cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b/reel.mp4",
+      "nombre": "reel.mp4",
+      "carpeta": "cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b",
+      "tipo": "video"
+    },
+    {
+      "ruta": "media/cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b/scene_1_final.mp4",
+      "nombre": "scene_1_final.mp4",
+      "carpeta": "cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b",
+      "tipo": "video"
+    },
+    {
+      "ruta": "media/cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b/scene_2_final.mp4",
+      "nombre": "scene_2_final.mp4",
+      "carpeta": "cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b",
+      "tipo": "video"
+    },
+    {
+      "ruta": "media/cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b/scene_3_final.mp4",
+      "nombre": "scene_3_final.mp4",
+      "carpeta": "cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b",
+      "tipo": "video"
+    },
+    {
+      "ruta": "media/cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b/scene_4_final.mp4",
+      "nombre": "scene_4_final.mp4",
+      "carpeta": "cerebro/8c4fc27c-777e-4238-a3a5-4597bb43517b",
+      "tipo": "video"
+    },
+    {
+      "ruta": "media/cerebro/flyers/_cache/ev_hero_babas-nicos-en-c-rdoba.jpg",
+      "nombre": "ev_hero_babas-nicos-en-c-rdoba.jpg",
+      "carpeta": "cerebro/flyers/_cache",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/cerebro/flyers/_cache/ev_hero_d-a-de-la-madre-en-las-sierras.jpg",
+      "nombre": "ev_hero_d-a-de-la-madre-en-las-sierras.jpg",
+      "carpeta": "cerebro/flyers/_cache",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/cerebro/flyers/_cache/ev_hero_la-renga-plaza-pr-spero-molina-cosqu-n.jpg",
+      "nombre": "ev_hero_la-renga-plaza-pr-spero-molina-cosqu-n.jpg",
+      "carpeta": "cerebro/flyers/_cache",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/cerebro/flyers/flyer_babas-nicos-en-c-rdoba_9a3ab8.jpg",
+      "nombre": "flyer_babas-nicos-en-c-rdoba_9a3ab8.jpg",
+      "carpeta": "cerebro/flyers",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/cerebro/flyers/flyer_d-a-de-la-madre-en-las-sierras_22ae09.jpg",
+      "nombre": "flyer_d-a-de-la-madre-en-las-sierras_22ae09.jpg",
+      "carpeta": "cerebro/flyers",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/cerebro/flyers/flyer_gran-fondo-carlos-paz-ciclismo-108-km_a78cbe.jpg",
+      "nombre": "flyer_gran-fondo-carlos-paz-ciclismo-108-km_a78cbe.jpg",
+      "carpeta": "cerebro/flyers",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/cerebro/flyers/flyer_la-renga-plaza-pr-spero-molina-cosqu-n_3bef3c.jpg",
+      "nombre": "flyer_la-renga-plaza-pr-spero-molina-cosqu-n_3bef3c.jpg",
+      "carpeta": "cerebro/flyers",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/01-complejo-panoramica.jpg",
+      "nombre": "01-complejo-panoramica.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/01-complejo-panoramica.webp",
+      "nombre": "01-complejo-panoramica.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/02-piscina.jpg",
+      "nombre": "02-piscina.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/02-piscina.webp",
+      "nombre": "02-piscina.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/03-pileta-alpina.jpg",
+      "nombre": "03-pileta-alpina.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/03-pileta-alpina.webp",
+      "nombre": "03-pileta-alpina.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/04-alpina-vista-puerta.jpg",
+      "nombre": "04-alpina-vista-puerta.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/04-alpina-vista-puerta.webp",
+      "nombre": "04-alpina-vista-puerta.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/05-alpina-living.jpg",
+      "nombre": "05-alpina-living.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/05-alpina-living.webp",
+      "nombre": "05-alpina-living.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/06-suite5-ventanal.jpg",
+      "nombre": "06-suite5-ventanal.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/06-suite5-ventanal.webp",
+      "nombre": "06-suite5-ventanal.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/07-suite4-interior.jpg",
+      "nombre": "07-suite4-interior.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/07-suite4-interior.webp",
+      "nombre": "07-suite4-interior.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/08-suites-exterior.jpg",
+      "nombre": "08-suites-exterior.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/08-suites-exterior.webp",
+      "nombre": "08-suites-exterior.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/09-alpina-frente-pileta.jpg",
+      "nombre": "09-alpina-frente-pileta.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/09-alpina-frente-pileta.webp",
+      "nombre": "09-alpina-frente-pileta.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/10-parque-mate.jpg",
+      "nombre": "10-parque-mate.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/10-parque-mate.webp",
+      "nombre": "10-parque-mate.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/11-lago-plaza.jpg",
+      "nombre": "11-lago-plaza.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/11-lago-plaza.webp",
+      "nombre": "11-lago-plaza.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/12-arroyo-cercano.jpg",
+      "nombre": "12-arroyo-cercano.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/12-arroyo-cercano.webp",
+      "nombre": "12-arroyo-cercano.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/13-parque-relax.jpg",
+      "nombre": "13-parque-relax.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/13-parque-relax.webp",
+      "nombre": "13-parque-relax.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/14-pileta-relax.jpg",
+      "nombre": "14-pileta-relax.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/14-pileta-relax.webp",
+      "nombre": "14-pileta-relax.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/15-pileta-frutillas.jpg",
+      "nombre": "15-pileta-frutillas.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/15-pileta-frutillas.webp",
+      "nombre": "15-pileta-frutillas.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/hero.jpg",
+      "nombre": "hero.jpg",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/galeria/hero.webp",
+      "nombre": "hero.webp",
+      "carpeta": "galeria",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/01.jpg",
+      "nombre": "01.jpg",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/01.webp",
+      "nombre": "01.webp",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/02.jpg",
+      "nombre": "02.jpg",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/02.webp",
+      "nombre": "02.webp",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/03.jpg",
+      "nombre": "03.jpg",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/03.webp",
+      "nombre": "03.webp",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/04.jpg",
+      "nombre": "04.jpg",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/04.webp",
+      "nombre": "04.webp",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/05.jpg",
+      "nombre": "05.jpg",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/05.webp",
+      "nombre": "05.webp",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/06.jpg",
+      "nombre": "06.jpg",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/06.webp",
+      "nombre": "06.webp",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/07.jpg",
+      "nombre": "07.jpg",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/07.webp",
+      "nombre": "07.webp",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/08.jpg",
+      "nombre": "08.jpg",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-1/08.webp",
+      "nombre": "08.webp",
+      "carpeta": "unidades/alpina-1",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/01.jpg",
+      "nombre": "01.jpg",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/01.webp",
+      "nombre": "01.webp",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/02.jpg",
+      "nombre": "02.jpg",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/02.webp",
+      "nombre": "02.webp",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/03.jpg",
+      "nombre": "03.jpg",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/03.webp",
+      "nombre": "03.webp",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/04.jpg",
+      "nombre": "04.jpg",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/04.webp",
+      "nombre": "04.webp",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/05.jpg",
+      "nombre": "05.jpg",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/05.webp",
+      "nombre": "05.webp",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/06.jpg",
+      "nombre": "06.jpg",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/06.webp",
+      "nombre": "06.webp",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/07.jpg",
+      "nombre": "07.jpg",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-2/07.webp",
+      "nombre": "07.webp",
+      "carpeta": "unidades/alpina-2",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/01.jpg",
+      "nombre": "01.jpg",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/01.webp",
+      "nombre": "01.webp",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/02.jpg",
+      "nombre": "02.jpg",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/02.webp",
+      "nombre": "02.webp",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/03.jpg",
+      "nombre": "03.jpg",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/03.webp",
+      "nombre": "03.webp",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/04.jpg",
+      "nombre": "04.jpg",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/04.webp",
+      "nombre": "04.webp",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/05.jpg",
+      "nombre": "05.jpg",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/05.webp",
+      "nombre": "05.webp",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/06.jpg",
+      "nombre": "06.jpg",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/06.webp",
+      "nombre": "06.webp",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/07.jpg",
+      "nombre": "07.jpg",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/07.webp",
+      "nombre": "07.webp",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/08.jpg",
+      "nombre": "08.jpg",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/alpina-3/08.webp",
+      "nombre": "08.webp",
+      "carpeta": "unidades/alpina-3",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/01.jpg",
+      "nombre": "01.jpg",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/01.webp",
+      "nombre": "01.webp",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/02.jpg",
+      "nombre": "02.jpg",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/02.webp",
+      "nombre": "02.webp",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/03.jpg",
+      "nombre": "03.jpg",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/03.webp",
+      "nombre": "03.webp",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/04.jpg",
+      "nombre": "04.jpg",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/04.webp",
+      "nombre": "04.webp",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/05.jpg",
+      "nombre": "05.jpg",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/05.webp",
+      "nombre": "05.webp",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/06.jpg",
+      "nombre": "06.jpg",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-4/06.webp",
+      "nombre": "06.webp",
+      "carpeta": "unidades/suite-4",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/01.jpg",
+      "nombre": "01.jpg",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/01.webp",
+      "nombre": "01.webp",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/02.jpg",
+      "nombre": "02.jpg",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/02.webp",
+      "nombre": "02.webp",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/03.jpg",
+      "nombre": "03.jpg",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/03.webp",
+      "nombre": "03.webp",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/04.jpg",
+      "nombre": "04.jpg",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/04.webp",
+      "nombre": "04.webp",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/05.jpg",
+      "nombre": "05.jpg",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/05.webp",
+      "nombre": "05.webp",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/06.jpg",
+      "nombre": "06.jpg",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    },
+    {
+      "ruta": "media/unidades/suite-5/06.webp",
+      "nombre": "06.webp",
+      "carpeta": "unidades/suite-5",
+      "tipo": "foto"
+    }
+  ]
+}
