@@ -210,9 +210,9 @@
     if (!root) return [];
     const box = root.querySelector("[data-edades-ninos]");
     if (!box) return [];
-    return [...box.querySelectorAll("input[type='number']")]
+    return [...box.querySelectorAll("select[name='edad_nino'], input[type='number']")]
       .map(function (inp) {
-        return Number(inp.value);
+        return inp.value === "" ? NaN : Number(inp.value);
       })
       .filter(function (n) {
         return Number.isFinite(n) && n >= 0 && n <= 17;
@@ -236,14 +236,24 @@
     box.hidden = false;
     for (let i = 0; i < n; i++) {
       const lab = document.createElement("label");
-      lab.className = "hero-field hero-field--half";
-      lab.innerHTML =
-        "Edad niño " +
-        (i + 1) +
-        '<input type="number" min="0" max="17" value="8" aria-label="Edad niño ' +
-        (i + 1) +
-        '" />';
+      lab.className = "hero-field hero-field--half child-age-field";
+      lab.append("Edad " + (i + 1));
+      const select = document.createElement("select");
+      select.name = "edad_nino";
+      select.required = true;
+      select.setAttribute("aria-label", "Edad niño " + (i + 1));
+      select.add(new Option("Elegí edad", ""));
+      for (let edad = 0; edad <= 17; edad++) {
+        select.add(new Option(edad + " años", String(edad)));
+      }
+      lab.appendChild(select);
       box.appendChild(lab);
+    }
+    if (root.id === "hero-cotiza" && window.matchMedia("(min-width: 981px)").matches) {
+      const cols = ["minmax(95px,1.2fr)", "minmax(95px,1.2fr)", "50px", "50px"];
+      for (let i = 0; i < n; i++) cols.push("minmax(48px,.55fr)");
+      cols.push("minmax(112px,auto)");
+      root.style.gridTemplateColumns = cols.join(" ");
     }
   }
 
