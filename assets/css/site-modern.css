@@ -468,3 +468,6 @@ body { background: #f5f4ee; color: #202b24; font-family: "Inter", "Segoe UI", sy
   .page-home .hero-booking-form input { min-height:2.45rem; padding:.35rem .5rem; font-size:.82rem; }
   .page-home .hero-cotiza-result { max-height:26vh; overflow:auto; }
 }
+
+@media (min-width: 860px) { .page-home .hero-copy .lead--desktop, .page-home .hero-beneficio-linea, .page-home .proof-strip--desktop, .page-home .hero-mobile-cta { display:none !important; } }
+
