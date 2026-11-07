@@ -1,0 +1,54 @@
+/* Fechas legibles en el historial del cliente sobre el fondo claro. */
+.tn-crm-guestfolio-table--dark tbody td:nth-child(2) { color: #111 !important; }
+
+@media (max-width: 767px) {
+  .tn-admin-bottom-nav[aria-label="PMS móvil"] {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    gap: 2px;
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+  }
+  .tn-admin-bottom-nav[aria-label="PMS móvil"] > :is(a, button) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    width: 100%;
+    min-height: 44px;
+    padding: 4px 0;
+    font-size: clamp(8px, 2.3vw, 10px);
+    line-height: 1.2;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+}
+.tn-conversation-insight-tabs { position: sticky; top: 0; z-index: 4; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: .2rem; margin: -.65rem -.65rem .7rem; padding: .35rem; border-bottom: 1px solid #e5ebe6; background: #fff; }
+.tn-conversation-insight-tabs button { display: flex; min-width: 0; min-height: 2.5rem; align-items: center; justify-content: center; gap: .35rem; padding: .3rem; border-bottom: 2px solid transparent; color: #526157; font-size: .68rem; font-weight: 700; white-space: nowrap; }
+.tn-conversation-insight-tabs button.is-active { border-color: #087c4a; border-radius: .65rem .65rem 0 0; color: #075f39; background: #eff8f1; }
+.tn-conversation-history-item { position: relative; padding: .5rem .6rem .55rem .8rem; border-left: 2px solid #d7e7db; border-radius: 0 .55rem .55rem 0; background: #f7faf7; }
+.tn-conversation-history-item > span { color: #17613b; font-size: .68rem; font-weight: 800; }
+.tn-conversation-history-item p { margin-top: .2rem; color: #344239; font-size: .74rem; line-height: 1.45; }
+.tn-conversation-history-item time { display: block; margin-top: .22rem; color: #7a867d; font-size: .62rem; }
+.tn-conversation-task { display: flex; align-items: flex-start; gap: .55rem; padding: .65rem; border: 1px solid #e4ebe5; border-radius: .65rem; color: #344239; background: #fbfdfb; font-size: .72rem; }
+.tn-conversation-task input { margin-top: .12rem; accent-color: #087c4a; }
+.tn-conversation-task span { display: grid; gap: .2rem; }
+.tn-conversation-task small { color: #b45309; font-size: .62rem; font-weight: 700; }
+.tn-verified-deposit { display: grid; gap: .45rem; margin-top: .75rem; padding: .8rem; border: 1px solid #b9dfc4; border-radius: .8rem; background: #f1faf3; }
+.tn-verified-deposit > strong { color: #17613b; font-size: .76rem; }
+.tn-verified-deposit > p, .tn-verified-deposit form > p { margin: 0; color: #53645a; font-size: .68rem; line-height: 1.45; }
+.tn-verified-deposit > button, .tn-verified-deposit form button[type="submit"] { min-height: 2.25rem; padding: .5rem .7rem; border: 1px solid #0a7948; border-radius: .6rem; color: #fff; background: #087c4a; font-size: .69rem; font-weight: 800; }
+.tn-verified-deposit form { display: grid; gap: .55rem; }
+.tn-verified-deposit form > label, .tn-verified-deposit-row label { display: grid; gap: .2rem; color: #43574a; font-size: .65rem; font-weight: 700; }
+.tn-verified-deposit input:not([type="checkbox"]), .tn-verified-deposit select { min-height: 2.1rem; width: 100%; padding: .35rem .5rem; border: 1px solid #d4e1d7; border-radius: .5rem; color: #24342a; background: #fff; font-size: .7rem; }
+.tn-verified-deposit-row { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem; }
+.tn-verified-deposit .tn-verified-deposit-confirm { display: flex; align-items: flex-start; gap: .45rem; color: #314d3b; font-size: .68rem; line-height: 1.4; }
+.tn-verified-deposit-confirm input { margin-top: .12rem; accent-color: #087c4a; }
+.tn-verified-deposit form > div:last-child { display: flex; gap: .4rem; }
+.tn-verified-deposit form button[type="button"] { min-height: 2.25rem; padding: .4rem .55rem; border: 1px solid #d2ddd5; border-radius: .6rem; color: #43574a; background: #fff; font-size: .68rem; font-weight: 700; }
+.tn-verified-deposit form button:disabled { opacity: .5; }
+@media (max-width: 520px) { .tn-conversations-icon-link { width: 2.15rem; height: 2.15rem; } }
+@media (max-width: 520px) { .tn-conversation-insight-tabs button { gap: .2rem; font-size: .59rem; } .tn-conversation-insight-tabs button svg { width: .78rem; height: .78rem; } }
