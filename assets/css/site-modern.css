@@ -471,3 +471,11 @@ body { background: #f5f4ee; color: #202b24; font-family: "Inter", "Segoe UI", sy
 
 @media (min-width: 860px) { .page-home .hero-copy .lead--desktop, .page-home .hero-beneficio-linea, .page-home .proof-strip--desktop, .page-home .hero-mobile-cta { display:none !important; } }
 
+
+/* El cotizador permanece dentro del primer plano del hero, al pie del video. */
+@media (min-width: 860px) {
+  .page-home .hero { min-height:100svh; padding:7.3rem 0 1rem; }
+  .page-home .hero-grid { position:relative; width:min(1280px,100% - 3rem); min-height:calc(100svh - 8.3rem); flex:1; justify-content:center; padding:0 0 5.6rem; }
+  .page-home .hero-copy { transform:translateY(-1.5rem); }
+  .page-home .hero-card--compact { position:absolute; right:0; bottom:.75rem; left:0; width:100%; max-width:none; margin:0 auto; padding:.5rem .75rem; background:rgba(8,31,23,.22); border-color:rgba(255,255,255,.24); border-radius:.7rem; box-shadow:0 8px 28px rgba(0,0,0,.08); backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px); }
+}
