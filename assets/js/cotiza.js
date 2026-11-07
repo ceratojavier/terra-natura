@@ -155,6 +155,11 @@
 
   function poblarSelectGrupos(selectEl) {
     if (!selectEl) return;
+    // Formularios compactos: el grupo puede ser un input oculto.
+    if (selectEl.tagName !== "SELECT") {
+      if (grupoParam) selectEl.value = grupoParam.startsWith("alpina") ? "grupo-alpinas" : grupoParam;
+      return;
+    }
     const prev = selectEl.value;
     selectEl.innerHTML = "";
     GRUPOS_SELECT.forEach(function (g) {
