@@ -2,6 +2,9 @@
 .tn-crm-guestfolio-table--dark tbody td { color: #111 !important; }
 .tn-crm-guestfolio-table--dark tbody td:nth-child(4) a { color: #065f46 !important; }
 
+.tn-crm-guestfolio-table--dark thead th { color: #334155 !important; background: #f5f8f5 !important; }
+.tn-crm-guestfolio-table--dark tbody tr:hover td { background: #f1f5f2 !important; }
+
 @media (max-width: 767px) {
   .tn-admin-bottom-nav[aria-label="PMS móvil"] {
     display: grid !important;
