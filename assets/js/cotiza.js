@@ -632,6 +632,8 @@
         adultos,
         ninos,
         grupo_filtro: grupoFiltro,
+        codigo_promocional: codigoPromo || null,
+        atribucion: payloadAtribucion(),
       });
     } catch (_) {
       if (targetResult) {
