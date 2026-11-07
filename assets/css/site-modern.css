@@ -479,3 +479,14 @@ body { background: #f5f4ee; color: #202b24; font-family: "Inter", "Segoe UI", sy
   .page-home .hero-copy { transform:translateY(-1.5rem); }
   .page-home .hero-card--compact { position:absolute; right:0; bottom:.75rem; left:0; width:100%; max-width:none; margin:0 auto; padding:.5rem .75rem; background:rgba(8,31,23,.22); border-color:rgba(255,255,255,.24); border-radius:.7rem; box-shadow:0 8px 28px rgba(0,0,0,.08); backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px); }
 }
+
+/* Composición comprobada: título arriba y cotizador debajo, nunca superpuestos. */
+@media (min-width: 860px) {
+  .page-home .hero { position:relative; height:100svh!important; min-height:720px!important; padding:0!important; box-sizing:border-box; }
+  .page-home .hero-grid { position:absolute!important; inset:0!important; z-index:3!important; display:flex!important; width:min(1280px,100% - 3rem)!important; min-height:0!important; height:100%!important; flex:initial!important; flex-direction:column!important; justify-content:flex-start!important; align-items:center!important; gap:1.25rem!important; padding:clamp(9rem,17vh,11rem) 0 1rem!important; margin:0 auto!important; }
+  .page-home .hero-copy { position:relative!important; inset:auto!important; flex:none!important; width:100%!important; max-width:100%!important; transform:none!important; text-align:center!important; }
+  .page-home .hero-copy h1 { align-items:center!important; }
+  .page-home .hero .h1-desktop { font-size:clamp(2.1rem,3.1vw,3rem)!important; }
+  .page-home .hero .h1-eyebrow { margin-top:.2rem!important; }
+  .page-home .hero-card--compact { position:relative!important; inset:auto!important; flex:none!important; width:min(100%,1120px)!important; max-width:1120px!important; margin:0 auto!important; transform:none!important; }
+}
