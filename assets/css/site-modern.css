@@ -393,3 +393,31 @@ body { background: #f5f4ee; color: #202b24; font-family: "Inter", "Segoe UI", sy
   .page-home .hero-grid { padding-inline: 1.1rem; }
   .page-home .hero .h1-mobile { font-size: clamp(3rem,13.5vw,4.45rem) !important; }
 }
+
+/* Cotizador compacto y transparente visible también en móviles. */
+@media (max-width: 859px) {
+  .page-home .hero-card--compact {
+    display: block !important;
+    position: relative;
+    z-index: 4;
+    width: min(100% - 2rem, 34rem);
+    max-width: 34rem;
+    justify-self: center;
+    margin: .75rem auto 1.25rem;
+    padding: .9rem;
+    color: #fff;
+    background: rgba(8, 31, 23, .62);
+    border: 1px solid rgba(255,255,255,.38);
+    border-radius: 1rem;
+    box-shadow: 0 12px 34px rgba(0,0,0,.2);
+    backdrop-filter: blur(12px);
+  }
+  .page-home .hero-card--compact h2 { margin: 0 0 .55rem; color: #fff; font-size: 1.25rem; }
+  .page-home .hero-card--compact .hero-cotiza-sub { display: none; }
+  .page-home .hero-card--compact .hero-booking-form { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .55rem; }
+  .page-home .hero-card--compact .hero-booking-form label { color: rgba(255,255,255,.9); font-size: .68rem; }
+  .page-home .hero-card--compact .hero-booking-form input { min-height: 2.45rem; padding: .4rem .55rem; font-size: .86rem; }
+  .page-home .hero-card--compact .hero-booking-form button,
+  .page-home .hero-card--compact .hero-booking-form [type="submit"] { grid-column: 1 / -1; min-height: 2.65rem; }
+  .page-home .hero-card--compact .hero-cotiza-result { max-height: 30vh; overflow: auto; }
+}
