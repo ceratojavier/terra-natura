@@ -429,7 +429,12 @@
       html += `<div class="lista-tachada">Precio lista: ${fmt(lista)}</div>`;
       html += `<div class="total-web">Total web (−${descPct}%): ${fmt(total)}</div>`;
     } else {
-      html += `<div class="total-web">Total (${ctx.noches} noche${ctx.noches === 1 ? "" : "s"}): ${fmt(total)}</div>`;
+      html += `<div class="total-web">Total estadía: ${fmt(total)}</div>`;
+    }
+    const noches = Number(ctx.noches) || 0;
+    if (noches > 0) {
+      const nochesTexto = `${noches} noche${noches === 1 ? "" : "s"}`;
+      html += `<div class="cotiza-noches-precio"><span>${nochesTexto}</span><span>Precio por noche: <strong>${fmt(total / noches)}</strong></span></div>`;
     }
     html += `<div>Seña 50 %: <strong>${fmt(senia)}</strong></div>`;
     html += `</div>`;
