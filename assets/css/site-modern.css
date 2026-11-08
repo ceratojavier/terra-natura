@@ -603,3 +603,30 @@ body { background: #f5f4ee; color: #202b24; font-family: "Inter", "Segoe UI", sy
  .site-header .header-booking > .header-ages select { min-width:0; }
 }
 .site-header .header-booking { row-gap:10px; }
+
+/* Ajustes finos solicitados para la cabecera. */
+@media(min-width:981px) {
+ .site-header .header-inner { grid-template-columns:70px 225px minmax(330px,1fr) minmax(460px,500px); gap:10px; }
+ .site-header .header-brand-copy span { padding-left:5px; }
+ .site-header .nav-links { gap:8px; }
+ .site-header .nav-links a { position:relative; padding:.35rem .2rem .55rem; font-size:10px; }
+ .site-header .nav-links a:not(.nav-cta-reservar)::after { position:absolute; right:50%; bottom:.15rem; width:14px; height:1px; background:rgba(231,210,168,.72); content:""; transform:translateX(50%); transition:width .2s ease,background-color .2s ease; }
+ .site-header .nav-links a:not(.nav-cta-reservar):hover::after,
+ .site-header .nav-links a:not(.nav-cta-reservar):focus-visible::after { width:calc(100% - 8px); background:#e7d2a8; }
+ .site-header .header-booking { justify-self:end; width:max-content; max-width:100%; grid-template-columns:minmax(70px,130px) minmax(70px,130px) 48px 48px 78px; }
+ .site-header .header-booking button[type="submit"] { width:78px; min-width:78px; }
+}
+@media(min-width:981px) and (max-width:1360px) {
+ .site-header .header-inner { grid-template-columns:70px 220px minmax(320px,1fr) minmax(460px,500px); gap:8px; }
+ .site-header .nav-links { gap:5px; }
+ .site-header .nav-links a { padding-inline:.12rem; font-size:9px; }
+}
+@media(max-width:980px) {
+ .site-header .header-brand-copy span { padding-left:5px; }
+}
+@media(max-width:560px) {
+ .site-header .header-booking { grid-template-columns:minmax(70px,1.25fr) minmax(70px,1.25fr) 48px 40px 54px; }
+ .site-header .header-booking button[type="submit"] { min-width:54px; width:54px; }
+}
+.site-header .header-brand-copy span { padding-left:12px!important; }
+@media(max-width:980px) { .site-header .header-brand-copy span { padding-left:10px!important; } }
