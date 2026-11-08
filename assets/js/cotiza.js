@@ -19,6 +19,11 @@
   const resultado = document.getElementById("reserva-resultado");
   const acciones = document.getElementById("reserva-acciones");
   const heroResultado = document.getElementById("hero-cotiza-resultado");
+  const heroCerrarResultados = heroForm?.querySelector("[data-cerrar-cotizacion]");
+  if (heroResultado && heroForm) {
+    document.body.appendChild(heroResultado);
+    if (heroCerrarResultados) document.body.appendChild(heroCerrarResultados);
+  }
 
   const urlParams = new URLSearchParams(location.search);
   const checkInParam = urlParams.get("checkin") || urlParams.get("check_in");
@@ -29,6 +34,28 @@
   const grupoParam = urlParams.get("grupo") || urlParams.get("unidad");
   const nombreParam = urlParams.get("nombre");
   const autoCotizar = urlParams.get("cotizar") === "1";
+  function abrirResultadosHero() {
+    if (!heroResultado) return;
+    heroResultado.hidden = false;
+    heroCerrarResultados && (heroCerrarResultados.hidden = false);
+    document.body.classList.add("cotiza-results-open");
+    heroResultado.focus({ preventScroll: true });
+  }
+
+  function cerrarResultadosHero() {
+    if (!heroResultado) return;
+    heroResultado.hidden = true;
+    heroCerrarResultados && (heroCerrarResultados.hidden = true);
+    document.body.classList.remove("cotiza-results-open");
+    heroForm?.querySelector('button[type="submit"]')?.focus({ preventScroll: true });
+  }
+
+  heroCerrarResultados?.addEventListener("click", cerrarResultadosHero);
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && heroResultado && !heroResultado.hidden && !document.querySelector(".cotiza-modal:not([hidden])")) {
+      cerrarResultadosHero();
+    }
+  });
 
   const GRUPOS_SELECT = [
     { value: "todas", label: "Ver las 3 opciones de cabaña" },
@@ -230,6 +257,7 @@
     if (!box || !ninosInp) return;
     const n = Math.max(0, Math.min(4, Number(ninosInp.value) || 0));
     box.innerHTML = "";
+    if (fromHero) heroForm.classList.toggle("header-booking--with-children", n > 0);
     if (n === 0) {
       box.hidden = true;
       return;
@@ -609,6 +637,7 @@
         heroResultado.hidden = false;
         heroResultado.className = "hero-cotiza-result err";
         heroResultado.textContent = err;
+        abrirResultadosHero();
       } else if (resultado) {
         resultado.hidden = false;
         resultado.className = "result err";
@@ -631,6 +660,7 @@
       targetResult.hidden = false;
       targetResult.className = fromHero ? "hero-cotiza-result" : "result";
       targetResult.textContent = "Consultando calendario y tarifas…";
+      if (fromHero) abrirResultadosHero();
     }
     if (targetAcciones) targetAcciones.innerHTML = "";
 
@@ -671,6 +701,11 @@
     lastContext = ctx;
 
     let html = "";
+    if (fromHero) {
+      const huespedes = adultos + ninos;
+      const detalleGrupo = `${huespedes} ${huespedes === 1 ? "persona" : "personas"}`;
+      html += `<p class="cotiza-results-context"><strong>Tu estadía</strong><span>${fmtFechaAr(ctx.check_in)} → ${fmtFechaAr(ctx.check_out)} · ${ctx.noches} noches · ${detalleGrupo}</span></p>`;
+    }
     if (data.propuesta_estadia_minima && !data.disponible_alguna) {
       const p = data.propuesta_estadia_minima;
       html += `<div class="cotiza-min-global" role="alert">`;

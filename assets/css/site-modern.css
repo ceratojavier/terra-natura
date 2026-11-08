@@ -553,7 +553,7 @@ body { background: #f5f4ee; color: #202b24; font-family: "Inter", "Segoe UI", sy
 .site-header .header-booking > .header-ages[hidden] { display:none!important; }
 .site-header .header-booking > .header-ages .child-age-field { display:grid; grid-template-rows:auto 27px; gap:2px; min-width:0; margin:0; color:rgba(255,255,255,.9); font-size:7px; }
 .site-header .header-booking > .header-ages select { width:100%; height:27px; margin:0; padding:0 3px; border-radius:5px; font-size:8px; }
-.site-header .header-booking .hero-cotiza-result { position:absolute; top:calc(100% + .4rem); right:0; z-index:10; width:min(740px,90vw); max-height:45vh; overflow:auto; padding:.8rem; border:1px solid rgba(255,255,255,.3); border-radius:12px; background:rgba(8,31,23,.94); }
+.hero-cotiza-result { position:absolute; top:calc(100% + .4rem); right:0; z-index:10; width:min(740px,90vw); max-height:45vh; overflow:auto; padding:.8rem; border:1px solid rgba(255,255,255,.3); border-radius:12px; background:rgba(8,31,23,.94); }
 .page-home .hero-copy { display:none!important; }
 @media(max-width:1360px) and (min-width:981px) {
  .site-header .header-inner { grid-template-columns:58px 205px minmax(245px,1fr) minmax(530px,560px); gap:7px; }
@@ -630,3 +630,96 @@ body { background: #f5f4ee; color: #202b24; font-family: "Inter", "Segoe UI", sy
 }
 .site-header .header-brand-copy span { padding-left:12px!important; }
 @media(max-width:980px) { .site-header .header-brand-copy span { padding-left:10px!important; } }
+
+/* Cotización de portada en vista completa: fichas amplias, legibles y sin recorte. */
+body.cotiza-results-open { overflow:hidden; }
+.hero-cotiza-result:not([hidden]) {
+  position:fixed!important; inset:0!important; z-index:1000; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr)); grid-auto-flow:row; align-content:start; align-items:start; gap:1rem;
+  width:100vw!important; height:100vh; height:100dvh; max-height:none!important; overflow-x:hidden; overflow-y:auto; margin:0; padding:clamp(5.25rem,9vh,7rem) clamp(1rem,4vw,4rem) 2rem;
+  border:0; border-radius:0; background:#f5f4ee; color:#202b24; box-shadow:none; overscroll-behavior:contain;
+}
+.hero-cotiza-result[hidden] { display:none!important; }
+.hero-cotiza-result > .cotiza-results-context,
+.hero-cotiza-result > .cotiza-beneficio-banner,
+.hero-cotiza-result > .cotiza-lead,
+.hero-cotiza-result > .cotiza-min-global,
+.hero-cotiza-result > .cotiza-alternativa,
+.hero-cotiza-result > .cotiza-btn-alt,
+.hero-cotiza-result > strong { grid-column:1/-1; width:min(100%,1280px); justify-self:center; }
+.hero-cotiza-result > .cotiza-results-context { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:.35rem 1rem; margin:0; padding:0 0 .75rem; border-bottom:1px solid #d9ddd5; color:#435349; font-size:clamp(.95rem,1.4vw,1.15rem); }
+.hero-cotiza-result > .cotiza-results-context strong { color:#1d3528; font:500 clamp(1.5rem,2.5vw,2.2rem)/1.1 "Cormorant Garamond",Georgia,serif; }
+.hero-cotiza-result > .cotiza-beneficio-banner { margin:0; font-size:.9rem; }
+.hero-cotiza-result > .cotiza-lead { margin:.15rem auto; font-size:1.1rem; }
+.hero-cotiza-result > .cotiza-card { width:100%; max-width:620px; justify-self:center; margin:0; border-radius:16px; }
+.hero-cotiza-result .cotiza-card-carousel { aspect-ratio:16/9; }
+.hero-cotiza-result .cotiza-card-body { padding:1rem 1.1rem 1.15rem; }
+.hero-cotiza-result .cotiza-card-title { font-size:1.35rem; }
+.hero-cotiza-result .cotiza-card-features { font-size:.9rem; }
+.hero-cotiza-result .cotiza-precios { font-size:1rem; }
+.hero-cotiza-result .cotiza-precios .total-web { font-size:1.25rem; }
+.cotiza-results-close { position:fixed; top:1rem; right:clamp(1rem,3vw,2.5rem); z-index:1010; min-width:104px; min-height:42px; padding:.55rem .9rem; border:1px solid #c9d0c9; border-radius:999px; background:#fff; color:#243b2e; font-weight:700; box-shadow:0 4px 18px rgba(20,35,25,.12); cursor:pointer; }
+.cotiza-results-close[hidden] { display:none!important; }
+.cotiza-results-close:hover,.cotiza-results-close:focus-visible { background:#e8f0e9; }
+.cotiza-modal { z-index:1100; }
+@media(max-width:700px) {
+ .hero-cotiza-result:not([hidden]) { grid-template-columns:minmax(0,1fr); padding:4.5rem .85rem 1.25rem; gap:.75rem; }
+ .hero-cotiza-result > .cotiza-card { max-width:560px; }
+ .hero-cotiza-result .cotiza-card-carousel { aspect-ratio:16/10; }
+ .cotiza-results-close { top:.65rem; right:.75rem; min-height:38px; }
+}
+
+/* Llamado a la acción bajo el buscador y resultados de cotización en pantalla completa. */
+.site-header .header-booking { grid-template-rows:auto auto auto; row-gap:8px; }
+.site-header .header-booking > .booking-cta-prompt { grid-column:1/-1; grid-row:2; justify-self:center; align-self:center; margin:0; color:rgba(255,250,239,.92); font-size:clamp(7px,.68vw,9px); font-weight:600; letter-spacing:.035em; line-height:1.25; text-align:center; text-wrap:balance; }
+.site-header .header-booking.header-booking--with-children > .booking-cta-prompt { grid-row:3; }
+.site-header .header-booking > .header-ages:not([hidden]) { grid-row:2; }
+.site-header .header-booking > .header-ages:not([hidden]) ~ .booking-cta-prompt { grid-row:3; }
+.site-header .header-booking button[type="submit"] { grid-column:5; grid-row:1; }
+.site-header .booking-submit-mobile { display:none; }
+@media(max-width:980px) {
+ .site-header .header-booking { grid-template-rows:auto auto auto; }
+ .site-header .header-booking > .booking-cta-prompt { grid-row:2; font-size:7px; }
+ .site-header .header-booking > .header-ages:not([hidden]) { grid-row:2; }
+ .site-header .header-booking > .header-ages:not([hidden]) ~ .booking-cta-prompt,
+ .site-header .header-booking.header-booking--with-children > .booking-cta-prompt { grid-row:3; }
+}
+@media(max-width:560px) {
+ .site-header .header-booking { grid-template-rows:auto auto auto auto; }
+ .site-header .header-booking button[type="submit"] { grid-column:5; grid-row:1; }
+ .site-header .header-booking > .booking-cta-prompt { grid-row:2; padding:.2rem 0; }
+ .site-header .header-booking > .header-ages:not([hidden]) { grid-row:2; }
+ .site-header .header-booking > .header-ages:not([hidden]) ~ .booking-cta-prompt,
+ .site-header .header-booking.header-booking--with-children > .booking-cta-prompt { grid-row:3; }
+ .site-header .booking-submit-desktop { display:none; }
+ .site-header .booking-submit-mobile { display:inline; }
+}
+
+/* Con niños, el CTA comparte la fila de selectores de edad; sin niños queda junto a los campos. */
+@media(min-width:981px) {
+ .site-header .header-inner { grid-template-columns:70px 225px minmax(330px,1fr) minmax(530px,570px); }
+ .site-header .header-booking.header-booking--with-children { width:max-content; grid-template-columns:105px 105px 40px 40px 150px 76px; }
+ .site-header .header-booking.header-booking--with-children > .header-ages:not([hidden]) { grid-column:4/6; grid-row:2; grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .site-header .header-booking.header-booking--with-children button[type="submit"] { grid-column:6; grid-row:2; align-self:center; width:76px; min-width:76px; }
+ .site-header .header-booking.header-booking--with-children > .booking-cta-prompt { grid-row:3; }
+}
+@media(min-width:981px) and (max-width:1360px) {
+ .site-header .header-inner { grid-template-columns:70px 220px minmax(320px,1fr) minmax(520px,560px); }
+ .site-header .header-booking.header-booking--with-children { grid-template-columns:100px 100px 40px 40px 145px 74px; }
+ .site-header .header-booking.header-booking--with-children button[type="submit"] { width:74px; min-width:74px; }
+}
+@media(max-width:980px) {
+ .site-header .header-booking.header-booking--with-children { grid-template-columns:minmax(74px,1fr) minmax(74px,1fr) 44px 42px minmax(100px,1.4fr) 72px; }
+ .site-header .header-booking.header-booking--with-children > .header-ages:not([hidden]) { grid-column:4/6; grid-row:2; grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .site-header .header-booking.header-booking--with-children button[type="submit"] { grid-column:6; grid-row:2; align-self:center; width:72px; min-width:72px; }
+ .site-header .header-booking.header-booking--with-children > .booking-cta-prompt { grid-row:3; }
+}
+@media(max-width:560px) {
+ .site-header .header-booking.header-booking--with-children { grid-template-columns:minmax(70px,1.2fr) minmax(70px,1.2fr) minmax(44px,.8fr) 40px 54px; }
+ .site-header .header-booking.header-booking--with-children > .header-ages:not([hidden]) { grid-column:3/5; grid-row:2; grid-template-columns:minmax(0,1fr); }
+ .site-header .header-booking.header-booking--with-children button[type="submit"] { grid-column:5; grid-row:2; align-self:center; width:54px; min-width:54px; }
+ .site-header .header-booking.header-booking--with-children > .booking-cta-prompt { grid-row:3; }
+}
+@media(max-width:700px) {
+ .hero-cotiza-result:not([hidden]) { display:block!important; }
+ .hero-cotiza-result > .cotiza-card { margin:0 auto .85rem; }
+}
