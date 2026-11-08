@@ -257,6 +257,7 @@
         }
       }
       const video = document.querySelector("[data-site-hero-video]");
+      const videoBackdrop = document.querySelector("[data-site-hero-video-backdrop]");
       const hero = data.home?.hero || {};
       if (video) {
         const mobile = matchMedia("(max-width: 859px)").matches;
@@ -265,9 +266,17 @@
           video.poster = mediaUrl(hero.video_poster || "./media/galeria/02-piscina.webp");
           video.src = mediaUrl(src);
           video.hidden = false;
+          if (videoBackdrop && mobile) {
+            videoBackdrop.src = mediaUrl(src);
+            videoBackdrop.hidden = false;
+            videoBackdrop.play().catch(() => {});
+          }
           const slides = document.querySelector(".hero-slides");
           if (slides) slides.hidden = true;
-          if (matchMedia("(prefers-reduced-motion: reduce)").matches || navigator.connection?.saveData) video.pause();
+          if (matchMedia("(prefers-reduced-motion: reduce)").matches || navigator.connection?.saveData) {
+            video.pause();
+            videoBackdrop?.pause();
+          }
           else video.play().catch(() => {});
           const toggle = document.querySelector("[data-site-video-sound]");
           if (toggle) {

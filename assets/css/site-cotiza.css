@@ -337,5 +337,14 @@
   font-weight: 600;
 }
 
-.cotiza-precios .cotiza-noches-precio { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:.15rem .75rem; margin:.1rem 0 .25rem; color:#56645b; font-size:.76rem; }
-.cotiza-precios .cotiza-noches-precio strong { color:#243b2e; font-weight:750; }
+.cotiza-precios .cotiza-noches-precio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .15rem .75rem;
+  margin: .1rem 0 .25rem;
+  color: #56645b;
+  font-size: .76rem;
+}
+.cotiza-precios .cotiza-noches-precio strong { color: #243b2e; font-weight: 750; }

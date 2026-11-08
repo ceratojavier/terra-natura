@@ -12,7 +12,7 @@
   <meta name="theme-color" content="#0f1f18" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="./media/galeria/02-piscina.webp" type="image/webp" fetchpriority="high" />
   <link rel="stylesheet" href="./assets/css/site.css?v=20261027" />
   <link rel="stylesheet" href="./assets/css/site-responsive.css?v=20260917" />
@@ -147,19 +147,23 @@
   </script>
   <script defer src="./assets/js/site-nav.js"></script>
   <script defer src="./assets/js/tn-atribucion.js?v=20261105"></script>
-  <script defer src="./assets/js/cotiza.js?v=20261107-edades-dinamicas"></script>
+  <script defer src="./assets/js/cotiza.js?v=20261107-noches-precio"></script>
   <script defer src="./assets/js/site-ux.js"></script>
   <script defer src="./assets/js/site-content.js?v=20261106"></script>
   <script defer src="./assets/js/site-unidades-home.js?v=20261026"></script>
   <script defer src="./assets/js/utm.js?v=20261026"></script>
   <script defer src="./assets/js/reputacion.js?v=20261027"></script>
-  <link rel="stylesheet" href="assets/css/site-modern.css?v=20261107-cotizador-en-header" />
+  <link rel="stylesheet" href="assets/css/site-modern.css?v=20261107-hero-minimal" />
+  <link rel="stylesheet" href="assets/css/site-experience.css?v=20261106" />
 </head>
 <body class="page-home">
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="./index.html" aria-label="Terra Natura — inicio"><svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Terra Natura"><path d="M6 43 22 23l9 10 9-13 18 23M17 43l10-13 5 6 7-9 12 16M10 48h45" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="14" r="2" fill="currentColor"/><text x="32" y="58" text-anchor="middle">TERRA NATURA</text></svg></a>
-      <div class="header-brand-copy"><span>Bialet Massé · Sierras de Córdoba</span><strong>Tu refugio en las Sierras</strong></div>
+      <a class="brand" href="./index.html" aria-label="Cabañas Alpinas Terra Natura — inicio">
+        <span class="brand-logo-wrap">
+          <img class="brand-logo-img" src="./assets/branding/logo-terra-natura.png" width="240" height="96" alt="Cabañas Alpinas Terra Natura" decoding="async" />
+        </span>
+      </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-primary">Menú</button>
       <nav class="nav-links" id="nav-primary" aria-label="Principal">
         <a href="#unidades">Cabañas</a>
@@ -169,28 +173,8 @@
         <a href="#nosotros" class="nav-optional">Quiénes somos</a>
         <a href="#atracciones" class="nav-optional">Atracciones</a>
         <a href="#ubicacion" class="nav-optional">Ubicación</a>
+        <a class="nav-cta-reservar" href="./reservar.html">Reservar directo</a>
       </nav>
-      <form class="hero-booking-form header-booking" id="hero-cotiza" action="#" method="get">
-          <input type="hidden" name="grupo" value="todas" />
-          <label class="hero-field hero-field--half">Fecha de ingreso
-            <input type="date" name="checkin" required />
-          </label>
-          <label class="hero-field hero-field--half">Fecha de salida
-            <input type="date" name="checkout" required />
-          </label>
-          <label class="hero-field hero-field--half">Adultos
-            <input type="number" name="adultos" min="1" max="6" value="2" required />
-          </label>
-          <label class="hero-field hero-field--half">Niños
-            <input type="number" name="ninos" min="0" max="4" value="0" />
-          </label>
-          <div class="hero-field hero-field--full" data-edades-ninos hidden></div>
-          <label class="hero-field hero-field--full">¿Tenés un código promocional?
-            <input type="text" name="codigo_promo" maxlength="40" autocomplete="off" placeholder="Código opcional" />
-          </label>
-          <button class="btn btn-primary hero-field--full" type="submit">Buscar</button>
-          <div id="hero-cotiza-resultado" class="hero-cotiza-result" hidden></div>
-        </form>
     </div>
   </header>
 
@@ -202,24 +186,16 @@
       <span class="hero-slide hero-slide--frutillas" style="background-image:url('./media/galeria/13-parque-relax.jpg');background-image:image-set(url('./media/galeria/13-parque-relax.webp') type('image/webp'), url('./media/galeria/13-parque-relax.jpg') type('image/jpeg'))"></span>
     </div>
     <video class="hero-video" data-site-hero-video muted autoplay loop playsinline preload="metadata" poster="./media/galeria/02-piscina.webp" aria-hidden="true" tabindex="-1" hidden></video>
+    <video class="hero-video-backdrop" data-site-hero-video-backdrop muted autoplay loop playsinline preload="metadata" aria-hidden="true" tabindex="-1" hidden></video>
     <button class="hero-sound-toggle" type="button" data-site-video-sound aria-pressed="false" aria-label="Activar el sonido del video" hidden>Sonido apagado</button>
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <h1>
-          <span class="h1-desktop">Tu refugio en las sierras</span>
-          <span class="eyebrow h1-eyebrow">Bialet Massé · Córdoba</span>
-          <span class="h1-mobile" data-site-text="home.hero.title_mobile">Tu refugio en las sierras</span>
-        </h1>
-        <p class="lead lead--desktop" data-site-text="home.hero.lead">Cinco cabañas con pileta, parque y anfitriones en el lugar. Cotizá y reservá directo.</p>
-        <p class="hero-beneficio-linea"><strong data-site-text="home.hero.beneficio_destacado">10 % off reservando en la web oficial · Mejor precio que Booking</strong></p>
-        <div class="proof-strip proof-strip--desktop">
-          <span><strong>5</strong> unidades</span>
-          <span><strong>Pileta</strong> + parque</span>
-          <span><strong>600 m</strong> del lago</span>
-        </div>
-        <a class="btn btn-primary hero-mobile-cta" href="#reserva" data-site-text="home.hero.cta">Consultar fechas</a>
-        <p class="hero-scroll-note">Bialet Massé · Valle de Punilla · Córdoba</p>
+        <img class="hero-brand-mark" src="./assets/branding/logo-terra-natura.png" width="240" height="96" alt="" decoding="async" fetchpriority="high" />
+        <p class="hero-location">Bialet Massé · Sierras de Córdoba</p>
+        <h1 class="hero-title">Tu refugio en las sierras</h1>
+        <p class="hero-subtitle">Cinco cabañas con pileta y parque, a pasos del lago.</p>
+        <a class="btn btn-primary hero-primary-cta" href="#reserva">Consultar disponibilidad</a>
       </div>
     </div>
   </section>
