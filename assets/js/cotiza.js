@@ -237,13 +237,17 @@
     box.hidden = false;
     for (let i = 0; i < n; i++) {
       const lab = document.createElement("label");
-      lab.className = "hero-field hero-field--half";
-      lab.innerHTML =
-        "Edad niño " +
-        (i + 1) +
-        '<input type="number" min="0" max="17" value="8" aria-label="Edad niño ' +
-        (i + 1) +
-        '" />';
+      lab.className = "hero-field hero-field--half child-age-field";
+      lab.append("Edad " + (i + 1));
+      const select = document.createElement("select");
+      select.name = "edad_nino";
+      select.required = true;
+      select.setAttribute("aria-label", "Edad niño " + (i + 1));
+      select.add(new Option("Elegí edad", ""));
+      for (let edad = 0; edad <= 17; edad++) {
+        select.add(new Option(edad + " años", String(edad)));
+      }
+      lab.appendChild(select);
       box.appendChild(lab);
     }
   }
