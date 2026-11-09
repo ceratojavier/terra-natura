@@ -228,7 +228,10 @@
       : ninosEl;
     const box = root.querySelector("[data-edades-ninos]");
     if (!box || !ninosInp) return;
-    const n = Math.max(0, Math.min(20, Number(ninosInp.value) || 0));
+    // El campo de niños no tiene un máximo comercial. Solo se muestran edades
+    // hasta la capacidad física del complejo; la consulta valida el total real.
+    const cantidadNinos = Math.max(0, Math.trunc(Number(ninosInp.value) || 0));
+    const n = Math.min(cantidadNinos, 20);
     box.innerHTML = "";
     if (n === 0) {
       box.hidden = true;

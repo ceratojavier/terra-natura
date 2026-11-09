@@ -147,7 +147,7 @@
   </script>
   <script defer src="./assets/js/site-nav.js"></script>
   <script defer src="./assets/js/tn-atribucion.js?v=20261105"></script>
-  <script defer src="./assets/js/cotiza.js?v=20261108-cotizacion-completa"></script>
+  <script defer src="./assets/js/cotiza.js?v=20261108-grupo-sin-limite"></script>
   <script defer src="./assets/js/site-ux.js"></script>
   <script defer src="./assets/js/site-content.js?v=20261106"></script>
   <script defer src="./assets/js/site-unidades-home.js?v=20261026"></script>
@@ -181,8 +181,8 @@
         <input type="hidden" name="grupo" value="todas" />
         <label class="booking-field"><span>Ingreso</span><input type="date" name="checkin" required /></label>
         <label class="booking-field"><span>Salida</span><input type="date" name="checkout" required /></label>
-        <label class="booking-field"><span>Adultos</span><input type="number" name="adultos" min="1" max="6" value="2" required /></label>
-        <label class="booking-field header-kids-field"><span>Niños</span><input type="number" name="ninos" min="0" max="4" value="0" /></label>
+        <label class="booking-field"><span>Adultos</span><input type="number" name="adultos" min="1" step="1" value="2" required /></label>
+        <label class="booking-field header-kids-field"><span>Niños</span><input type="number" name="ninos" min="0" step="1" value="0" /></label>
         <div class="header-ages" data-edades-ninos hidden></div>
         <input type="hidden" name="codigo_promo" value="" />
         <button class="btn btn-primary" type="submit"><span class="booking-submit-desktop">Ver disponibilidad</span><span class="booking-submit-mobile">Ver precio</span></button>
