@@ -167,7 +167,7 @@
 }
 
 /* La portada de escritorio llega al borde inferior del viewport visible. */
-@media (min-width: 981px) {
+@media (min-width: 860px) {
   .page-home,
   .page-home #contenido {
     margin: 0 !important;
@@ -178,8 +178,10 @@
     display: flex !important;
     box-sizing: border-box !important;
     height: 100vh !important;
+    height: 100svh !important;
     height: 100dvh !important;
     min-height: 100vh !important;
+    min-height: 100svh !important;
     min-height: 100dvh !important;
     max-height: none !important;
     margin: 0 !important;
