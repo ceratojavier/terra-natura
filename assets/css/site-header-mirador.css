@@ -1,4 +1,27 @@
 /* Cabecera ligera de inspiración editorial: navegación sin panel y cotizador debajo. */
+/* La portada ocupa todo el alto útil del navegador; WhatsApp queda fijo sobre ella. */
+.page-home .hero {
+  box-sizing: border-box;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+  margin-block: 0 !important;
+}
+
+@supports (height: 100svh) {
+  .page-home .hero {
+    height: 100svh !important;
+    min-height: 100svh !important;
+  }
+}
+
+@supports (height: 100dvh) {
+  .page-home .hero {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+  }
+}
+
 .page-home .site-header {
   position: absolute;
   inset: 0 0 auto;
