@@ -375,9 +375,20 @@
   function waMsgOpcion(ctx, o) {
     const fechasTxt = `del ${fmtFechaAr(ctx.check_in)} al ${fmtFechaAr(ctx.check_out)}`;
     return (
-      `Hola, soy ${ctx.nombre}. Quiero reservar ${o.etiqueta} en Terra Natura ${fechasTxt}.\n` +
+      `Hola, soy ${ctx.nombre}. Quiero reservar ${etiquetaOpcion(o)} en Terra Natura ${fechasTxt}.\n` +
       `Total web: ${fmt(Number(o.cotizacion.total))}. ¿Me confirmás? (TN-WEB)`
     );
+  }
+
+  function etiquetaOpcion(o) {
+    const ids = Array.isArray(o.unidad_ids) ? o.unidad_ids : [];
+    if (ids.length > 1 && ids.every((id) => String(id).startsWith("alpina-"))) {
+      return `Estadía en ${ids.length} Cabañas Alpinas`;
+    }
+    if (ids.length > 1 && ids.every((id) => String(id).startsWith("suite-"))) {
+      return `Estadía en ${ids.length} Suites`;
+    }
+    return o.etiqueta || "Alojamiento";
   }
 
   function renderTarjeta(o, ctx, senaPct, cardIdx) {
@@ -419,7 +430,7 @@
     let html = `<article class="cotiza-card">`;
     html += carouselHtml(o.grupo_id, cardId);
     html += `<div class="cotiza-card-body">`;
-    html += `<h3 class="cotiza-card-title">${escapeHtml(o.etiqueta)}</h3>`;
+    html += `<h3 class="cotiza-card-title">${escapeHtml(etiquetaOpcion(o))}</h3>`;
     html += `<p class="cotiza-estadia-fechas"><span>Ingreso <strong>${fmtFechaAr(ctx.check_in)}</strong></span><span>Salida <strong>${fmtFechaAr(ctx.check_out)}</strong></span></p>`;
     if (o.capacidad_max) {
       html += `<p class="muted" style="font-size:0.78rem;margin:0 0 0.35rem">Capacidad máxima: ${o.capacidad_max} personas</p>`;
@@ -720,8 +731,13 @@
     html += `<p class="cotiza-beneficio-banner">${escapeHtml(cfg.beneficio_badge)}</p>`;
 
     if (data.disponible_alguna) {
-      html += `<p class="cotiza-lead"><strong>Estos son los alojamientos disponibles para tu estadía</strong></p>`;
-      (data.opciones || []).forEach(function (o, i) {
+      const disponibles = (data.opciones || []).filter((o) => o.disponible && o.cotizacion);
+      const opcionesMulticabana = disponibles.filter((o) => String(o.grupo_id || "").startsWith("grupo-multicabana-"));
+      const opcionesAMostrar = opcionesMulticabana.length ? opcionesMulticabana : disponibles;
+      if (!opcionesMulticabana.length && opcionesAMostrar.length > 1) {
+        html += `<p class="cotiza-lead"><strong>Estos son los alojamientos disponibles para tu estadía</strong></p>`;
+      }
+      opcionesAMostrar.forEach(function (o, i) {
         html += renderTarjeta(o, ctx, senaPct, i);
       });
       if (targetResult) targetResult.className = fromHero ? "hero-cotiza-result ok" : "result ok";

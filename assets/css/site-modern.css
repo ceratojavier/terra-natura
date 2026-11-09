@@ -636,7 +636,7 @@ body.cotiza-results-open { overflow:hidden; }
 .hero-cotiza-result:not([hidden]) {
   position:fixed!important; inset:0!important; z-index:1000; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr)); grid-auto-flow:row; align-content:start; align-items:start; gap:1rem;
   width:100vw!important; height:100vh; height:100dvh; max-height:none!important; overflow-x:hidden; overflow-y:auto; margin:0; padding:clamp(5.25rem,9vh,7rem) clamp(1rem,4vw,4rem) 2rem;
-  border:0; border-radius:0; background:#f5f4ee; color:#202b24; box-shadow:none; overscroll-behavior:contain;
+  border:0; border-radius:0; background-color:#09271b; background-image:linear-gradient(125deg,rgba(5,27,18,.52),rgba(7,30,20,.34) 52%,rgba(4,20,14,.58)),url("/media/galeria/02-piscina.webp"); background-position:center; background-size:cover; background-attachment:fixed; color:#202b24; box-shadow:none; overscroll-behavior:contain;
 }
 .hero-cotiza-result[hidden] { display:none!important; }
 .hero-cotiza-result > .cotiza-results-context,
@@ -649,7 +649,7 @@ body.cotiza-results-open { overflow:hidden; }
 .hero-cotiza-result > .cotiza-results-context { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:.35rem 1rem; margin:0; padding:0 0 .75rem; border-bottom:1px solid #d9ddd5; color:#435349; font-size:clamp(.95rem,1.4vw,1.15rem); }
 .hero-cotiza-result > .cotiza-results-context strong { color:#1d3528; font:500 clamp(1.5rem,2.5vw,2.2rem)/1.1 "Cormorant Garamond",Georgia,serif; }
 .hero-cotiza-result > .cotiza-beneficio-banner { margin:0; font-size:.9rem; }
-.hero-cotiza-result > .cotiza-lead { margin:.15rem auto; font-size:1.1rem; }
+.hero-cotiza-result > .cotiza-lead { margin:.15rem auto; color:#fffdf5; font-size:1.1rem; text-shadow:0 2px 12px rgba(0,0,0,.5); }
 .hero-cotiza-result > .cotiza-card { width:100%; max-width:620px; justify-self:center; margin:0; border-radius:16px; }
 .hero-cotiza-result .cotiza-card-carousel { aspect-ratio:16/9; }
 .hero-cotiza-result .cotiza-card-body { padding:1rem 1.1rem 1.15rem; }
