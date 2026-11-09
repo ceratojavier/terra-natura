@@ -165,3 +165,23 @@
   .page-home .site-header .header-ages .hero-field { grid-template-columns: 30px minmax(0,1fr); font-size: 7px; }
   .page-home .site-header .booking-cta-prompt { font-size: 7px; }
 }
+
+/* La portada de escritorio llega al borde inferior del viewport visible. */
+@media (min-width: 981px) {
+  .page-home main#contenido > .hero {
+    height: 100vh !important;
+    height: 100svh !important;
+    height: 100dvh !important;
+    min-height: 100vh !important;
+    min-height: 100svh !important;
+    min-height: 100dvh !important;
+    max-height: none !important;
+    margin: 0 !important;
+  }
+
+  .page-home main#contenido > .hero .hero-slides,
+  .page-home main#contenido > .hero .hero-video,
+  .page-home main#contenido > .hero .hero-video-backdrop {
+    height: 100% !important;
+  }
+}
