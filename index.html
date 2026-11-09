@@ -147,23 +147,26 @@
   </script>
   <script defer src="./assets/js/site-nav.js"></script>
   <script defer src="./assets/js/tn-atribucion.js?v=20261105"></script>
-  <script defer src="./assets/js/cotiza.js?v=20261107-noches-precio"></script>
+  <script defer src="./assets/js/cotiza.js?v=20261108-cotizacion-completa"></script>
   <script defer src="./assets/js/site-ux.js"></script>
   <script defer src="./assets/js/site-content.js?v=20261106"></script>
   <script defer src="./assets/js/site-unidades-home.js?v=20261026"></script>
   <script defer src="./assets/js/utm.js?v=20261026"></script>
   <script defer src="./assets/js/reputacion.js?v=20261027"></script>
-  <link rel="stylesheet" href="assets/css/site-modern.css?v=20261107-hero-minimal" />
+  <link rel="stylesheet" href="assets/css/site-modern.css?v=20261108-cotizacion-completa" />
   <link rel="stylesheet" href="assets/css/site-experience.css?v=20261106" />
 </head>
 <body class="page-home">
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="./index.html" aria-label="Cabañas Alpinas Terra Natura — inicio">
-        <span class="brand-logo-wrap">
-          <img class="brand-logo-img" src="./assets/branding/logo-terra-natura.png" width="240" height="96" alt="Cabañas Alpinas Terra Natura" decoding="async" />
-        </span>
+      <a class="brand" href="./index.html" aria-label="Terra Natura — inicio">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Terra Natura">
+          <path d="M6 43 22 23l9 10 9-13 18 23M17 43l10-13 5 6 7-9 12 16M10 48h45" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="48" cy="14" r="2" fill="currentColor" />
+          <text x="32" y="58" text-anchor="middle">TERRA NATURA</text>
+        </svg>
       </a>
+      <div class="header-brand-copy"><strong>Tu refugio en las Sierras</strong><span>Bialet Massé · Sierras de Cba</span></div>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-primary">Menú</button>
       <nav class="nav-links" id="nav-primary" aria-label="Principal">
         <a href="#unidades">Cabañas</a>
@@ -173,8 +176,20 @@
         <a href="#nosotros" class="nav-optional">Quiénes somos</a>
         <a href="#atracciones" class="nav-optional">Atracciones</a>
         <a href="#ubicacion" class="nav-optional">Ubicación</a>
-        <a class="nav-cta-reservar" href="./reservar.html">Reservar directo</a>
       </nav>
+      <form class="hero-booking-form header-booking" id="hero-cotiza" action="#" method="get">
+        <input type="hidden" name="grupo" value="todas" />
+        <label class="booking-field"><span>Ingreso</span><input type="date" name="checkin" required /></label>
+        <label class="booking-field"><span>Salida</span><input type="date" name="checkout" required /></label>
+        <label class="booking-field"><span>Adultos</span><input type="number" name="adultos" min="1" max="6" value="2" required /></label>
+        <label class="booking-field header-kids-field"><span>Niños</span><input type="number" name="ninos" min="0" max="4" value="0" /></label>
+        <div class="header-ages" data-edades-ninos hidden></div>
+        <input type="hidden" name="codigo_promo" value="" />
+        <button class="btn btn-primary" type="submit"><span class="booking-submit-desktop">Ver disponibilidad</span><span class="booking-submit-mobile">Ver precio</span></button>
+        <p class="booking-cta-prompt">Conocé disponibilidad y precio · Reservá directo en 2 pasos</p>
+        <button class="cotiza-results-close" type="button" data-cerrar-cotizacion hidden aria-label="Cerrar resultados">Cerrar ×</button>
+        <div id="hero-cotiza-resultado" class="hero-cotiza-result" role="dialog" aria-modal="true" aria-label="Resultados de disponibilidad" aria-live="polite" tabindex="-1" hidden></div>
+      </form>
     </div>
   </header>
 
@@ -413,10 +428,10 @@
           <input id="reserva-out" type="date" required />
         </label>
         <label>Adultos
-          <input id="reserva-adultos" type="number" min="1" max="6" value="2" required />
+          <input id="reserva-adultos" type="number" min="1" value="2" required />
         </label>
         <label>Niños
-          <input id="reserva-ninos" type="number" min="0" max="4" value="0" />
+          <input id="reserva-ninos" type="number" min="0" value="0" />
         </label>
         <div class="booking-span-2" data-edades-ninos hidden></div>
         <label class="booking-span-2">Código promocional
