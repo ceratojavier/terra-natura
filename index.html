@@ -147,44 +147,55 @@
   </script>
   <script defer src="./assets/js/site-nav.js"></script>
   <script defer src="./assets/js/tn-atribucion.js?v=20261105"></script>
-  <script defer src="./assets/js/cotiza.js?v=20261109-header-cotizador"></script>
+  <script defer src="./assets/js/cotiza.js?v=20261108-cabecera-hoy"></script>
   <script defer src="./assets/js/site-ux.js"></script>
   <script defer src="./assets/js/site-content.js?v=20261106"></script>
   <script defer src="./assets/js/site-unidades-home.js?v=20261026"></script>
   <script defer src="./assets/js/utm.js?v=20261026"></script>
   <script defer src="./assets/js/reputacion.js?v=20261027"></script>
-  <link rel="stylesheet" href="assets/css/site-modern.css?v=20261107-hero-minimal" />
+  <link rel="stylesheet" href="assets/css/site-modern.css?v=20261108-cotizacion-completa" />
   <link rel="stylesheet" href="assets/css/site-experience.css?v=20261106" />
-  <link rel="stylesheet" href="assets/css/site-home-header.css?v=20261109g" />
+  <link rel="stylesheet" href="assets/css/site-header-mirador.css?v=20261108-2" />
 </head>
 <body class="page-home">
-  <header class="site-header site-header--home">
-    <div class="wrap header-inner header-inner--home">
-      <a class="brand" href="./index.html" aria-label="Cabañas Alpinas Terra Natura — inicio">
-        <span class="brand-logo-wrap">
-          <img class="brand-logo-img" src="./assets/branding/terra-natura-mark.svg" width="96" height="64" alt="" decoding="async" />
-        </span>
-        <span class="brand-caption"><strong>Tu refugio en las Sierras</strong><small>Bialet Massé · Sierras de Córdoba</small></span>
-      </a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="header-identity">
+        <a class="brand" href="./index.html" aria-label="Terra Natura — inicio">
+          <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="Terra Natura">
+            <path d="M6 43 22 23l9 10 9-13 18 23M17 43l10-13 5 6 7-9 12 16M10 48h45" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="48" cy="14" r="2" fill="currentColor" />
+            <text x="32" y="58" text-anchor="middle">TERRA NATURA</text>
+          </svg>
+        </a>
+        <div class="header-brand-copy"><strong>Tu refugio en las Sierras</strong><span>Bialet Massé · Sierras de Cba</span></div>
+      </div>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-primary">Menú</button>
       <nav class="nav-links" id="nav-primary" aria-label="Principal">
-        <a href="#unidades">Cabañas</a>
-        <a href="#galeria" class="nav-optional">Fotos</a>
-        <a href="#resenas" class="nav-optional">Opiniones</a>
-        <a href="./reservar.html">Reservar online</a>
-        <a href="#nosotros" class="nav-optional">Quiénes somos</a>
-        <a href="#atracciones" class="nav-optional">Atracciones</a>
-        <a href="#ubicacion" class="nav-optional">Ubicación</a>
+        <div class="nav-group nav-group--left">
+          <a href="#unidades">Cabañas</a>
+          <a href="#galeria" class="nav-optional">Fotos</a>
+          <a href="#resenas" class="nav-optional">Opiniones</a>
+        </div>
+        <div class="nav-group nav-group--right">
+          <a href="./reservar.html">Reservar online</a>
+          <a href="#nosotros" class="nav-optional">Quiénes somos</a>
+          <a href="#atracciones" class="nav-optional">Atracciones</a>
+          <a href="#ubicacion" class="nav-optional">Ubicación</a>
+        </div>
       </nav>
-      <form class="header-cotizador" id="hero-cotiza" aria-label="Consultar disponibilidad">
-        <label>Ingreso<input name="checkin" type="date" required /></label>
-        <label>Salida<input name="checkout" type="date" required /></label>
-        <label>Adultos<input name="adultos" type="number" min="1" max="6" value="2" required /></label>
-        <label>Niños<input name="ninos" type="number" min="0" max="4" value="0" /></label>
-        <button class="btn btn-primary" type="submit">Ver disponibilidad</button>
-        <div class="header-cotizador-ages" data-edades-ninos hidden></div>
+      <form class="hero-booking-form header-booking" id="hero-cotiza" action="#" method="get">
         <input type="hidden" name="grupo" value="todas" />
-        <p class="header-cotizador-help">Conocé disponibilidad y precio · Reserva directa en 2 pasos</p>
+        <label class="booking-field"><span>Ingreso</span><input type="date" name="checkin" required /></label>
+        <label class="booking-field"><span>Salida</span><input type="date" name="checkout" required /></label>
+        <label class="booking-field"><span>Adultos</span><input type="number" name="adultos" min="1" step="1" value="2" required /></label>
+        <label class="booking-field header-kids-field"><span>Niños</span><input type="number" name="ninos" min="0" step="1" value="0" /></label>
+        <div class="header-ages" data-edades-ninos hidden></div>
+        <input type="hidden" name="codigo_promo" value="" />
+        <button class="btn btn-primary" type="submit"><span class="booking-submit-desktop">Ver disponibilidad</span><span class="booking-submit-mobile">Ver precio</span></button>
+        <p class="booking-cta-prompt">Conocé disponibilidad y precio · Reservá directo en 2 pasos</p>
+        <button class="cotiza-results-close" type="button" data-cerrar-cotizacion hidden aria-label="Cerrar resultados">Cerrar ×</button>
+        <div id="hero-cotiza-resultado" class="hero-cotiza-result" role="dialog" aria-modal="true" aria-label="Resultados de disponibilidad" aria-live="polite" tabindex="-1" hidden></div>
       </form>
     </div>
   </header>
@@ -200,10 +211,16 @@
     <video class="hero-video-backdrop" data-site-hero-video-backdrop muted autoplay loop playsinline preload="metadata" aria-hidden="true" tabindex="-1" hidden></video>
     <button class="hero-sound-toggle" type="button" data-site-video-sound aria-pressed="false" aria-label="Activar el sonido del video" hidden>Sonido apagado</button>
     <div class="hero-glow" aria-hidden="true"></div>
-    <h1 class="hero-seo-title">Tu refugio en las sierras</h1>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <img class="hero-brand-mark" src="./assets/branding/logo-terra-natura.png" width="240" height="96" alt="" decoding="async" fetchpriority="high" />
+        <p class="hero-location">Bialet Massé · Sierras de Córdoba</p>
+        <h1 class="hero-title">Tu refugio en las sierras</h1>
+        <p class="hero-subtitle">Cinco cabañas con pileta y parque, a pasos del lago.</p>
+        <a class="btn btn-primary hero-primary-cta" href="#reserva">Consultar disponibilidad</a>
+      </div>
+    </div>
   </section>
-
-  <div class="wrap hero-cotiza-result" id="hero-cotiza-resultado" aria-live="polite" hidden></div>
 
   <section class="section section-alt reveal" id="galeria">
     <div class="wrap">
@@ -418,10 +435,10 @@
           <input id="reserva-out" type="date" required />
         </label>
         <label>Adultos
-          <input id="reserva-adultos" type="number" min="1" max="6" value="2" required />
+          <input id="reserva-adultos" type="number" min="1" value="2" required />
         </label>
         <label>Niños
-          <input id="reserva-ninos" type="number" min="0" max="4" value="0" />
+          <input id="reserva-ninos" type="number" min="0" value="0" />
         </label>
         <div class="booking-span-2" data-edades-ninos hidden></div>
         <label class="booking-span-2">Código promocional
