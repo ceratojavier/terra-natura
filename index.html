@@ -146,6 +146,7 @@
   }
   </script>
   <script defer src="./assets/js/site-nav.js"></script>
+  <script defer src="./assets/js/site-home-gallery.js?v=20261109"></script>
   <script defer src="./assets/js/tn-atribucion.js?v=20261105"></script>
   <script defer src="./assets/js/cotiza.js?v=20261109-cotizacion-grupos-fondo"></script>
   <script defer src="./assets/js/site-ux.js"></script>
@@ -156,6 +157,7 @@
   <link rel="stylesheet" href="assets/css/site-modern.css?v=20261109-cotizacion-fondo" />
   <link rel="stylesheet" href="assets/css/site-experience.css?v=20261106" />
   <link rel="stylesheet" href="assets/css/site-header-mirador.css?v=20261109-full-height-4" />
+  <link rel="stylesheet" href="assets/css/site-editorial-sections.css?v=20261109" />
 </head>
 <body class="page-home">
   <header class="site-header">
@@ -174,7 +176,7 @@
       <nav class="nav-links" id="nav-primary" aria-label="Principal">
         <div class="nav-group nav-group--left">
           <a href="#unidades">Cabañas</a>
-          <a href="#galeria" class="nav-optional">Fotos</a>
+          <a href="#fotos" class="nav-optional">Fotos</a>
           <a href="#resenas" class="nav-optional">Opiniones</a>
         </div>
         <div class="nav-group nav-group--right">
@@ -222,69 +224,13 @@
     </div>
   </section>
 
-  <section class="section section-alt reveal" id="galeria">
-    <div class="wrap">
-      <h2 data-site-text="home.galeria.titulo">Así se vive acá</h2>
-      <p class="muted section-lead-short" data-site-text="home.galeria.lead">Pileta, parque, cabañas y lo que hay cerca.</p>
-      <div class="gallery-carousel" data-gallery-carousel>
-        <button class="gallery-nav gallery-nav--prev" type="button" aria-label="Foto anterior">‹</button>
-        <div class="gallery-track">
-          <figure class="gallery-slide is-active">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/03-pileta-alpina.webp" /><img src="./media/galeria/03-pileta-alpina.jpg" alt="Cabaña alpina junto a la pileta" width="1920" height="1434" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/02-piscina.webp" /><img src="./media/galeria/02-piscina.jpg" alt="Nuestra pileta" width="1920" height="1440" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/13-parque-relax.webp" /><img src="./media/galeria/13-parque-relax.jpg" alt="Reposeras y sol en la pileta" width="1296" height="972" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/10-parque-mate.webp" /><img src="./media/galeria/10-parque-mate.jpg" alt="Pérgola y parque del complejo" width="1920" height="1440" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/01-complejo-panoramica.webp" /><img src="./media/galeria/01-complejo-panoramica.jpg" alt="Vista del complejo" width="1920" height="1079" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/05-alpina-living.webp" /><img src="./media/galeria/05-alpina-living.jpg" alt="Interior cabaña alpina" width="1920" height="1440" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/06-suite5-ventanal.webp" /><img src="./media/galeria/06-suite5-ventanal.jpg" alt="Ventanal con vista a las sierras en Suite planta alta" width="1920" height="1440" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/07-suite4-interior.webp" /><img src="./media/galeria/07-suite4-interior.jpg" alt="Interior Suite planta baja" width="1920" height="1920" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/08-suites-exterior.webp" /><img src="./media/galeria/08-suites-exterior.jpg" alt="Exterior de las suites" width="1920" height="1440" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/09-alpina-frente-pileta.webp" /><img src="./media/galeria/09-alpina-frente-pileta.jpg" alt="Cabaña alpina frente a la pileta" width="1920" height="1434" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/10-parque-mate.webp" /><img src="./media/galeria/10-parque-mate.jpg" alt="Pérgola y parque del complejo" width="1920" height="1440" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/14-pileta-relax.webp" /><img src="./media/galeria/14-pileta-relax.jpg" alt="Tomando sol en la pileta" width="1200" height="1600" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/11-lago-plaza.webp" /><img src="./media/galeria/11-lago-plaza.jpg" alt="Atardecer en Plaza Federal junto al lago San Roque" width="640" height="936" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/atracciones/san-placido-iglesia.webp" /><img src="./media/atracciones/san-placido-iglesia.jpg" alt="Iglesia de San Plácido en Bialet Massé" width="201" height="251" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/atracciones/tanti-cascada.webp" /><img src="./media/atracciones/tanti-cascada.jpg" alt="Cascada cerca de Tanti" width="202" height="250" loading="lazy" decoding="async" /></picture>
-          </figure>
-          <figure class="gallery-slide">
-            <picture class="tn-pic"><source type="image/webp" srcset="./media/atracciones/lago-san-roque-atardecer.webp" /><img src="./media/atracciones/lago-san-roque-atardecer.jpg" alt="Atardecer en el lago San Roque" width="225" height="224" loading="lazy" decoding="async" /></picture>
-          </figure>
-        </div>
-        <button class="gallery-nav gallery-nav--next" type="button" aria-label="Foto siguiente">›</button>
-        <div class="gallery-dots" aria-label="Seleccionar foto"></div>
-      </div>
-    </div>
-  </section>
+<section class="section tn-stays-section" id="unidades"><div class="wrap"><header class="tn-editorial-heading"><span class="tn-eyebrow">Terra Natura · Bialet Massé</span><h2>Cabañas alpinas y cabañas suites</h2><p>Tres cabañas alpinas y dos suites, con entrada independiente, parque y pileta. Elegí el estilo de estadía que mejor se adapte a tu viaje.</p></header><div class="tn-stays-list"><article class="tn-stay-row" id="cabanas-alpinas"><div class="tn-stay-copy"><span class="tn-stay-kicker">Tres unidades · hasta 4 personas</span><h3>Cabañas Alpinas</h3><p>Dos plantas para disfrutar con espacio: dormitorio matrimonial con aire acondicionado y balcón en planta alta, más living comedor y cocina en planta baja.</p><ul class="tn-feature-list"><li>Ideales para parejas</li><li>Capacidad flexible para familias con chicos</li><li>Parrilla y estacionamiento individual</li></ul><a class="tn-text-link" href="#reserva">Consultar fechas y precio <span aria-hidden="true">↗</span></a></div><figure class="tn-stay-visual"><img src="./media/unidades/alpina-1/01.webp" alt="Las Cabañas Alpinas" loading="lazy" decoding="async"/><button class="tn-gallery-trigger" type="button" data-open-photo-gallery="alpinas" aria-label="Abrir galería de fotos de Cabañas Alpinas"><span class="tn-pulse-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M7 45 22 26l9 10 10-15 16 24M17 45l9-12 5 6 9-12 10 18M10 51h45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="49" cy="14" r="2" fill="currentColor"/></svg></span><span>Ver galería</span></button><figcaption>Las Cabañas Alpinas</figcaption></figure></article><article class="tn-stay-row tn-stay-row--reverse" id="suite-planta-alta"><div class="tn-stay-copy"><span class="tn-stay-kicker">Suite 5 · planta alta</span><h3>Cabaña Suite Planta Alta</h3><p>Un loft íntimo en dúplex, con cama matrimonial, una plaza adicional, aire acondicionado y balcón con vista a las sierras.</p><ul class="tn-feature-list"><li>Hasta 3 personas</li><li>Aire frío-calor</li><li>Entrada y pérgola independientes</li></ul><a class="tn-text-link" href="#reserva">Consultar fechas y precio <span aria-hidden="true">↗</span></a></div><figure class="tn-stay-visual"><img src="./media/unidades/suite-5/01.webp" alt="Suite · planta alta" loading="lazy" decoding="async"/><button class="tn-gallery-trigger" type="button" data-open-photo-gallery="suite-alta" aria-label="Abrir galería de fotos de Cabaña Suite Planta Alta"><span class="tn-pulse-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M7 45 22 26l9 10 10-15 16 24M17 45l9-12 5 6 9-12 10 18M10 51h45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="49" cy="14" r="2" fill="currentColor"/></svg></span><span>Ver galería</span></button><figcaption>Suite · planta alta</figcaption></figure></article><article class="tn-stay-row" id="suite-planta-baja"><div class="tn-stay-copy"><span class="tn-stay-kicker">Suite 4 · planta baja</span><h3>Cabaña Suite Planta Baja</h3><p>Un loft práctico y luminoso, con cama matrimonial, una plaza adicional, ventilador de techo y acceso en planta baja.</p><ul class="tn-feature-list"><li>Hasta 3 personas</li><li>Sin escaleras para acceder</li><li>Entrada y pérgola independientes</li></ul><a class="tn-text-link" href="#reserva">Consultar fechas y precio <span aria-hidden="true">↗</span></a></div><figure class="tn-stay-visual"><img src="./media/unidades/suite-4/01.webp" alt="Suite · planta baja" loading="lazy" decoding="async"/><button class="tn-gallery-trigger" type="button" data-open-photo-gallery="suite-baja" aria-label="Abrir galería de fotos de Cabaña Suite Planta Baja"><span class="tn-pulse-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M7 45 22 26l9 10 10-15 16 24M17 45l9-12 5 6 9-12 10 18M10 51h45" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="49" cy="14" r="2" fill="currentColor"/></svg></span><span>Ver galería</span></button><figcaption>Suite · planta baja</figcaption></figure></article></div></div><div class="tn-photo-source" hidden data-photo-set="alpinas"><img src="./media/unidades/alpina-1/01.webp" alt="Cabaña Alpina · vista 1"/><img src="./media/unidades/alpina-1/02.webp" alt="Cabaña Alpina · vista 2"/><img src="./media/unidades/alpina-1/03.webp" alt="Cabaña Alpina · vista 3"/><img src="./media/unidades/alpina-1/04.webp" alt="Cabaña Alpina · vista 4"/><img src="./media/unidades/alpina-2/01.webp" alt="Cabaña Alpina · vista 5"/><img src="./media/unidades/alpina-2/03.webp" alt="Cabaña Alpina · vista 6"/><img src="./media/unidades/alpina-3/01.webp" alt="Cabaña Alpina · vista 7"/><img src="./media/unidades/alpina-3/04.webp" alt="Cabaña Alpina · vista 8"/></div><div class="tn-photo-source" hidden data-photo-set="suite-alta"><img src="./media/unidades/suite-5/01.webp" alt="Cabaña Suite Planta Alta · vista 1"/><img src="./media/unidades/suite-5/02.webp" alt="Cabaña Suite Planta Alta · vista 2"/><img src="./media/unidades/suite-5/03.webp" alt="Cabaña Suite Planta Alta · vista 3"/><img src="./media/unidades/suite-5/04.webp" alt="Cabaña Suite Planta Alta · vista 4"/><img src="./media/unidades/suite-5/05.webp" alt="Cabaña Suite Planta Alta · vista 5"/><img src="./media/unidades/suite-5/06.webp" alt="Cabaña Suite Planta Alta · vista 6"/></div><div class="tn-photo-source" hidden data-photo-set="suite-baja"><img src="./media/unidades/suite-4/01.webp" alt="Cabaña Suite Planta Baja · vista 1"/><img src="./media/unidades/suite-4/02.webp" alt="Cabaña Suite Planta Baja · vista 2"/><img src="./media/unidades/suite-4/03.webp" alt="Cabaña Suite Planta Baja · vista 3"/><img src="./media/unidades/suite-4/04.webp" alt="Cabaña Suite Planta Baja · vista 4"/><img src="./media/unidades/suite-4/05.webp" alt="Cabaña Suite Planta Baja · vista 5"/><img src="./media/unidades/suite-4/06.webp" alt="Cabaña Suite Planta Baja · vista 6"/></div></section>
 
-  <section class="section reveal" id="resenas">
+<section class="section tn-gallery-section" id="fotos"><div class="wrap"><header class="tn-editorial-heading tn-editorial-heading--center"><span class="tn-eyebrow">Una recorrida por Terra Natura</span><h2>Fotos y videos</h2><p>Conocé las cabañas, el parque, la pileta y los espacios para disfrutar la estadía.</p></header><div class="tn-photo-grid" data-photo-set="complejo"><button type="button" class="tn-photo-tile tn-photo-tile--wide" data-photo-index="0"><img src="./media/galeria/01-complejo-panoramica.webp" alt="Vista panorámica del complejo" loading="lazy" decoding="async"/><span>El complejo</span></button><button type="button" class="tn-photo-tile tn-photo-tile--tall" data-photo-index="1"><img src="./media/galeria/02-piscina.webp" alt="Pileta de Terra Natura" loading="lazy" decoding="async"/><span>Pileta</span></button><button type="button" class="tn-photo-tile" data-photo-index="2"><img src="./media/galeria/03-pileta-alpina.webp" alt="Cabaña Alpina junto a la pileta" loading="lazy" decoding="async"/><span>Alpinas</span></button><button type="button" class="tn-photo-tile" data-photo-index="3"><img src="./media/galeria/05-alpina-living.webp" alt="Living de Cabaña Alpina" loading="lazy" decoding="async"/><span>Interiores</span></button><button type="button" class="tn-photo-tile tn-photo-tile--wide" data-photo-index="4"><img src="./media/galeria/06-suite5-ventanal.webp" alt="Ventanal de Suite Planta Alta" loading="lazy" decoding="async"/><span>Suites</span></button><button type="button" class="tn-photo-tile" data-photo-index="5"><img src="./media/galeria/07-suite4-interior.webp" alt="Interior Suite Planta Baja" loading="lazy" decoding="async"/><span>Suite Planta Baja</span></button><button type="button" class="tn-photo-tile" data-photo-index="6"><img src="./media/galeria/08-suites-exterior.webp" alt="Exterior de las suites" loading="lazy" decoding="async"/><span>Suites</span></button><button type="button" class="tn-photo-tile" data-photo-index="7"><img src="./media/galeria/09-alpina-frente-pileta.webp" alt="Cabaña Alpina frente a la pileta" loading="lazy" decoding="async"/><span>Alpinas</span></button><button type="button" class="tn-photo-tile tn-photo-tile--tall" data-photo-index="8"><img src="./media/galeria/10-parque-mate.webp" alt="Pérgola y parque" loading="lazy" decoding="async"/><span>Parque</span></button><button type="button" class="tn-photo-tile" data-photo-index="9"><img src="./media/galeria/13-parque-relax.webp" alt="Reposeras en el parque" loading="lazy" decoding="async"/><span>Descanso</span></button><button type="button" class="tn-photo-tile" data-photo-index="10"><img src="./media/galeria/14-pileta-relax.webp" alt="Solarium y pileta" loading="lazy" decoding="async"/><span>Solarium</span></button><button type="button" class="tn-photo-tile" data-photo-index="11"><img src="./media/galeria/12-arroyo-cercano.webp" alt="Paisaje serrano cercano al complejo" loading="lazy" decoding="async"/><span>Entorno</span></button></div><div class="tn-gallery-footer"><span>Seleccioná una imagen para verla en grande.</span><a class="tn-text-link" href="#reserva">Consultar estadía <span aria-hidden="true">↗</span></a></div><div class="tn-photo-source" hidden data-photo-set="complejo"><img src="./media/galeria/01-complejo-panoramica.webp" alt="Vista panorámica del complejo"/><img src="./media/galeria/02-piscina.webp" alt="Pileta de Terra Natura"/><img src="./media/galeria/03-pileta-alpina.webp" alt="Cabaña Alpina junto a la pileta"/><img src="./media/galeria/05-alpina-living.webp" alt="Living de Cabaña Alpina"/><img src="./media/galeria/06-suite5-ventanal.webp" alt="Ventanal de Suite Planta Alta"/><img src="./media/galeria/07-suite4-interior.webp" alt="Interior Suite Planta Baja"/><img src="./media/galeria/08-suites-exterior.webp" alt="Exterior de las suites"/><img src="./media/galeria/09-alpina-frente-pileta.webp" alt="Cabaña Alpina frente a la pileta"/><img src="./media/galeria/10-parque-mate.webp" alt="Pérgola y parque"/><img src="./media/galeria/13-parque-relax.webp" alt="Reposeras en el parque"/><img src="./media/galeria/14-pileta-relax.webp" alt="Solarium y pileta"/><img src="./media/galeria/12-arroyo-cercano.webp" alt="Paisaje serrano cercano al complejo"/></div></div></section>
+
+<section class="section tn-about-section" id="nosotros"><div class="wrap tn-about-layout"><div class="tn-about-copy"><span class="tn-eyebrow">Anfitriones en el predio</span><h2>Una estadía cercana, a tu ritmo</h2><p>Somos <strong>Javier y Patricia</strong>, y vivimos con nuestra familia en el mismo predio de Terra Natura. Estamos cerca para recibirte y ayudarte durante la estadía, con la tranquilidad de que cada grupo tiene su propio espacio.</p><p>El complejo reúne cinco alojamientos, parque, pileta y pérgolas con asador, en Bialet Massé, a unos 600 metros del lago San Roque.</p><a class="tn-text-link" href="#ubicacion">Conocer cómo llegar <span aria-hidden="true">↗</span></a></div><figure class="tn-about-video"><img src="./media/galeria/01-complejo-panoramica.webp" alt="Vista del complejo Terra Natura" loading="lazy"/><button type="button" class="tn-video-trigger" data-open-video aria-label="Reproducir video de Terra Natura"><span aria-hidden="true">▶</span><small>Conocé Terra Natura</small></button></figure></div></section><section class="tn-guide-film" id="guia-huesped" aria-label="Guía para disfrutar tu estadía"><video class="tn-guide-film__video" autoplay muted loop playsinline preload="metadata" poster="./media/galeria/02-piscina.webp" aria-hidden="true"><source src="./media/hero/hero-vertical-inicial.mp4" type="video/mp4"/></video><div class="tn-guide-film__shade"></div><div class="tn-guide-film__content"><span class="tn-eyebrow">Tu experiencia empieza antes de llegar</span><h2>Disfrutá las sierras. Nosotros te acompañamos.</h2><p>Encontrá información útil para preparar tu llegada y aprovechar Bialet Massé y el entorno.</p><a class="tn-film-link" href="./guia/">Explorar la guía del huésped <span aria-hidden="true">↗</span></a></div></section>
+
+<section class="section reveal" id="resenas">
     <div class="wrap">
       <h2 data-site-text="home.secciones.resenas">Lo que dicen quienes se quedaron</h2>
       <p class="muted section-lead-short" data-site-text="home.textos.resenas_bajada">Opiniones reales en Booking y Google Maps — parejas y familias que valoraron la pileta, el parque y el trato de los dueños.</p>
@@ -371,51 +317,7 @@
     </div>
   </section>
 
-  <section class="section reveal" id="unidades">
-    <div class="wrap">
-      <h2 data-site-text="home.secciones.unidades">Elegí tu cabaña</h2>
-      <p class="muted" data-site-text="home.textos.unidades_bajada">Alpinas de dos plantas o suites loft. Entrá, recorré las fotos y reservá directo cuando quieras.</p>
-      <div class="cards cards--units">
-        <article class="card">
-          <a href="./cabanas/alpina-1.html"><picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/09-alpina-frente-pileta.webp" /><img class="card-img" src="./media/galeria/09-alpina-frente-pileta.jpg" alt="Cabaña Alpina 1" width="1920" height="1434" loading="lazy" decoding="async" /></picture></a>
-          <h3><a href="./cabanas/alpina-1.html">Cabaña Alpina 1</a></h3>
-          <p>Living de 33 m² abajo, dormitorio con balcón arriba. La favorita de parejas que buscan espacio.</p>
-          <ul><li>Hasta 4 · ideal 2 + chicos</li><li>Aire en dormitorio PA</li></ul>
-          <a class="card-link" href="./cabanas/alpina-1.html">Ver fotos y detalle →</a>
-        </article>
-        <article class="card">
-          <a href="./cabanas/alpina-2.html"><picture class="tn-pic"><source type="image/webp" srcset="./media/unidades/alpina-2/04.webp" /><img class="card-img" src="./media/unidades/alpina-2/04.jpg" alt="Cabaña Alpina 2" width="1024" height="768" loading="lazy" decoding="async" /></picture></a>
-          <h3><a href="./cabanas/alpina-2.html">Cabaña Alpina 2</a></h3>
-          <p>En el centro del parque: pileta y hamacas a dos pasos de tu puerta.</p>
-          <ul><li>Hasta 4 · ideal pareja o familia</li></ul>
-          <a class="card-link" href="./cabanas/alpina-2.html">Ver fotos y detalle →</a>
-        </article>
-        <article class="card">
-          <a href="./cabanas/alpina-3.html"><picture class="tn-pic"><source type="image/webp" srcset="./media/galeria/05-alpina-living.webp" /><img class="card-img" src="./media/galeria/05-alpina-living.jpg" alt="Cabaña Alpina 3" width="1920" height="1440" loading="lazy" decoding="async" /></picture></a>
-          <h3><a href="./cabanas/alpina-3.html">Cabaña Alpina 3</a></h3>
-          <p>Rodeada de verde, para bajar el ritmo sin perderte el confort.</p>
-          <ul><li>Hasta 4 · ideal 2 + chicos</li></ul>
-          <a class="card-link" href="./cabanas/alpina-3.html">Ver fotos y detalle →</a>
-        </article>
-        <article class="card">
-          <a href="./cabanas/suite-4.html"><picture class="tn-pic"><source type="image/webp" srcset="./media/unidades/suite-4/04.webp" /><img class="card-img" src="./media/unidades/suite-4/04.jpg" alt="Suite planta baja" width="640" height="480" loading="lazy" decoding="async" /></picture></a>
-          <h3><a href="./cabanas/suite-4.html">Suite Planta Baja</a></h3>
-          <p>Loft con entrada propia: todo en un ambiente, sin subir escaleras.</p>
-          <ul><li>Hasta 3 · pareja + chico · sin escaleras</li></ul>
-          <a class="card-link" href="./cabanas/suite-4.html">Ver fotos y detalle →</a>
-        </article>
-        <article class="card">
-          <a href="./cabanas/suite-5.html"><picture class="tn-pic"><source type="image/webp" srcset="./media/unidades/suite-5/05.webp" /><img class="card-img" src="./media/unidades/suite-5/05.jpg" alt="Suite planta alta" width="1600" height="1201" loading="lazy" decoding="async" /></picture></a>
-          <h3><a href="./cabanas/suite-5.html">Suite Planta Alta</a></h3>
-          <p>Arriba del dúplex, con aire y ventanal abierto al paisaje serrano.</p>
-          <ul><li>Hasta 3 · aire acondicionado</li></ul>
-          <a class="card-link" href="./cabanas/suite-5.html">Ver fotos y detalle →</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt reveal" id="reserva">
+<section class="section section-alt reveal" id="reserva">
     <div class="wrap">
       <h2 data-site-text="home.secciones.reserva">Tu estadía, en pocos pasos</h2>
       <p class="muted">
@@ -456,33 +358,7 @@
     </div>
   </section>
 
-  <section class="section reveal" id="nosotros">
-    <div class="wrap two-col">
-      <div>
-        <h2 data-site-text="home.secciones.nosotros">Quiénes somos</h2>
-        <p>
-          Somos <strong>Javier y Patricia</strong>, con nuestras hijas <strong>Morena y Delfina</strong>.
-          Vivimos en el mismo predio que las cabañas — no somos una empresa lejana: somos la familia que te abre la puerta.
-        </p>
-        <p>
-          Armamos este lugar en Bialet Massé con cariño: pileta, parque, hamacas y un rincón para los chicos.
-          Tres alpinas de dos plantas y dos suites loft, cada una con su entrada. Si necesitás algo, estamos acá.
-        </p>
-      </div>
-      <div>
-        <h2>Así te recibimos</h2>
-        <ul>
-          <li>Nos encontrás en el complejo — te orientamos como anfitriones, no como call center</li>
-          <li>Cotizás y reservás desde la web cuando te quede cómodo</li>
-          <li>Los Talas 759 · a 600 m del lago San Roque</li>
-          <li>A ~2 km del centro de Bialet y a 4 km del balneario Labios del Indio</li>
-        </ul>
-        <a class="btn btn-outline" href="./reservar.html">Ver fechas y precio</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt reveal" id="atracciones">
+<section class="section section-alt reveal" id="atracciones">
     <div class="wrap">
       <h2 data-site-text="home.secciones.atracciones">Qué hacer cerca</h2>
       <p class="muted" data-site-text="home.textos.atracciones_bajada">Primero lo cercano a Bialet y el lago; después, salidas de día a la sierra.</p>
@@ -547,7 +423,7 @@
     </div>
   </section>
 
-  <section class="section reveal" id="experiencia">
+<section class="section reveal" id="experiencia">
     <div class="wrap two-col">
       <div>
         <h2 data-site-text="home.secciones.experiencia">Lo que vas a tener</h2>
@@ -569,7 +445,7 @@
     </div>
   </section>
 
-  <section class="section section-alt reveal" id="faq">
+<section class="section section-alt reveal" id="faq">
     <div class="wrap">
       <h2 data-site-text="home.secciones.faq">Preguntas frecuentes</h2>
       <div class="faq-list">
@@ -596,6 +472,31 @@
       </div>
     </div>
   </section>
+
+<section class="section reveal" id="ubicacion">
+    <div class="wrap">
+      <h2 data-site-text="home.secciones.ubicacion">Cómo llegar</h2>
+      <p class="muted" data-site-text="home.textos.ubicacion_bajada">Los Talas 759, Barrio Mirador del Lago, Bialet Massé, Córdoba — entre el lago San Roque y el centro del pueblo.</p>
+      <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Caba%C3%B1as+Alpinas+Terra+Natura+Bialet+Mass%C3%A9">Abrir en Google Maps</a>
+    </div>
+  </section>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
   <script type="application/ld+json" data-site-faq-schema>
   {
     "@context": "https://schema.org",
@@ -630,14 +531,9 @@
   }
   </script>
 
-  <section class="section reveal" id="ubicacion">
-    <div class="wrap">
-      <h2 data-site-text="home.secciones.ubicacion">Cómo llegar</h2>
-      <p class="muted" data-site-text="home.textos.ubicacion_bajada">Los Talas 759, Barrio Mirador del Lago, Bialet Massé, Córdoba — entre el lago San Roque y el centro del pueblo.</p>
-      <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Caba%C3%B1as+Alpinas+Terra+Natura+Bialet+Mass%C3%A9">Abrir en Google Maps</a>
-    </div>
-  </section>
+  
   </main>
+  <dialog class="tn-media-dialog tn-photo-dialog" id="tn-photo-dialog" aria-label="Galería de fotos"><button type="button" class="tn-dialog-close" data-close-photo aria-label="Cerrar galería">×</button><button type="button" class="tn-dialog-arrow tn-dialog-arrow--prev" data-photo-prev aria-label="Foto anterior">‹</button><figure><img data-photo-current alt=""/><figcaption data-photo-caption></figcaption></figure><button type="button" class="tn-dialog-arrow tn-dialog-arrow--next" data-photo-next aria-label="Foto siguiente">›</button></dialog><dialog class="tn-media-dialog tn-video-dialog" id="tn-video-dialog" aria-label="Video de Terra Natura"><button type="button" class="tn-dialog-close" data-close-video aria-label="Cerrar video">×</button><video controls playsinline preload="none" poster="./media/galeria/02-piscina.webp"><source src="./media/hero/hero-vertical-inicial.mp4" type="video/mp4"/></video></dialog>
   <div class="mobile-booking-bar" aria-label="Acceso rápido a reservas">
     <a class="btn btn-primary" href="#reserva" data-site-text="home.hero.cta">Consultar fechas</a>
   </div>
