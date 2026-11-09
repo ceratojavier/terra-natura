@@ -228,10 +228,7 @@
       : ninosEl;
     const box = root.querySelector("[data-edades-ninos]");
     if (!box || !ninosInp) return;
-    // El campo de niños no tiene un máximo comercial. Solo se muestran edades
-    // hasta la capacidad física del complejo; la consulta valida el total real.
-    const cantidadNinos = Math.max(0, Math.trunc(Number(ninosInp.value) || 0));
-    const n = Math.min(cantidadNinos, 20);
+    const n = Math.max(0, Math.min(4, Number(ninosInp.value) || 0));
     box.innerHTML = "";
     if (n === 0) {
       box.hidden = true;
@@ -466,7 +463,6 @@
       '<label>Tu nombre<input type="text" name="nombre" required minlength="2" autocomplete="given-name" placeholder="¿Cómo te llamás?" /></label>' +
       '<label>WhatsApp para enviarte la confirmación<input type="tel" name="telefono" required minlength="8" autocomplete="tel" inputmode="tel" /></label>' +
       '<label>Email <span class="muted">(opcional)</span><input type="email" name="email" autocomplete="email" /></label>' +
-      '<div id="cotiza-modal-titulares"></div>' +
       '<button type="submit" class="btn-reservar-web">Confirmar reserva y ver datos de transferencia</button>' +
       "</form>" +
       '<p class="cotiza-modal-err" hidden></p>' +
@@ -499,18 +495,6 @@
     f.nombre.value = ctx.nombre || "";
     f.email.value = ctx.email || "";
     f.telefono.value = ctx.telefono || "";
-    const holders = f.querySelector("#cotiza-modal-titulares");
-    const multi = Array.isArray(opcion.unidad_ids) && opcion.unidad_ids.length > 1;
-    holders.innerHTML = multi
-      ? '<p class="muted">Titular por cabaña (si es la misma persona, dejá el mismo nombre):</p>' +
-        opcion.asignaciones.map((a, i) =>
-          `<label>${escapeHtml(a.unidad_nombre)}<input type="text" data-holder-index="${i}" maxlength="80" required /></label>`
-        ).join("")
-      : "";
-    holders.querySelectorAll("[data-holder-index]").forEach((input) => { input.value = f.nombre.value; });
-    f.querySelector('button[type="submit"]').textContent = multi
-      ? "Confirmar reserva y ver señas por cabaña"
-      : "Confirmar reserva y ver datos de transferencia";
     modal.hidden = false;
     const errEl = modal.querySelector(".cotiza-modal-err");
     errEl.hidden = true;
@@ -536,23 +520,6 @@
           codigo_promocional: ctx.codigo_promo || null,
           atribucion: payloadAtribucion(),
         };
-        if (multi) {
-          const edades = (ctx.edades_menores || []).map(Number);
-          let edadIndex = 0;
-          const titulares = [...holders.querySelectorAll("[data-holder-index]")];
-          payload.unidad_ids = opcion.unidad_ids;
-          payload.asignaciones = opcion.asignaciones.map((a, i) => {
-            const edadesUnidad = edades.slice(edadIndex, edadIndex + a.ninos);
-            edadIndex += a.ninos;
-            return {
-              unidad_id: a.unidad_id,
-              adultos: a.adultos,
-              ninos: a.ninos,
-              edades_menores: edadesUnidad,
-              titular: titulares[i]?.value.trim() || f.nombre.value.trim(),
-            };
-          });
-        }
         const res = await apiFetch("/api/public/reservar-senia", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -561,8 +528,7 @@
         reservaWebCreada = true;
         formularioReservaAbierto = false;
         try {
-          if (res.grupo_estadia_id) sessionStorage.setItem("tn_reserva_grupo", JSON.stringify(res));
-          else sessionStorage.setItem("tn_reserva_ok", JSON.stringify(res));
+          sessionStorage.setItem("tn_reserva_ok", JSON.stringify(res));
         } catch (_) {}
         location.href = res.pagina_seña || "./reserva-sena.html?id=" + encodeURIComponent(res.reserva_id) + "&codigo=" + encodeURIComponent(res.codigo);
       } catch (ex) {
@@ -571,7 +537,7 @@
           (ex.body && ex.body.detail) ||
           "No pudimos bloquear esas fechas. Probá de nuevo o escribinos por WhatsApp.";
         btn.disabled = false;
-        btn.textContent = multi ? "Confirmar reserva y ver señas por cabaña" : "Confirmar reserva y ver datos de transferencia";
+        btn.textContent = "Confirmar reserva y ver datos de transferencia";
       }
     };
   }
@@ -639,6 +605,7 @@
         heroResultado.hidden = false;
         heroResultado.className = "hero-cotiza-result err";
         heroResultado.textContent = err;
+        heroResultado.scrollIntoView({ behavior: "smooth", block: "start" });
       } else if (resultado) {
         resultado.hidden = false;
         resultado.className = "result err";
@@ -680,6 +647,7 @@
         targetResult.className = (fromHero ? "hero-cotiza-result " : "result ") + "err";
         targetResult.innerHTML =
           "<strong>No pudimos consultar el calendario.</strong> Probá de nuevo en un minuto o escribinos por WhatsApp.";
+        if (fromHero) targetResult.scrollIntoView({ behavior: "smooth", block: "start" });
       }
       return;
     }
@@ -745,6 +713,7 @@
           void ejecutarCotizacion({ fromHero: fromHero });
         });
       });
+      if (fromHero) targetResult.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }
 
