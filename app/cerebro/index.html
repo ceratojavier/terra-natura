@@ -10,7 +10,10 @@
     var params = new URLSearchParams(location.search);
     params.set("_r", "/cerebro");
     params.set("_tn_refresh", String(Date.now()));
-    location.replace("/app/index.html?" + params.toString() + location.hash);
+    // El shell normal puede quedar cacheado hasta 10 minutos en el CDN.
+    // Usamos una ruta inmutable por versión para que los accesos directos
+    // siempre arranquen el bundle recién publicado, incluso con la URL normal.
+    location.replace("/app/releases/DgVnoaak/index.html?" + params.toString() + location.hash);
   </script>
 </head>
 <body>
