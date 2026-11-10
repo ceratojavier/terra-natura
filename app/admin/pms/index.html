@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cabañas Alpinas Terra Natura — Programa</title>
   <script>
-    location.replace("/app/index.html?_r=" + encodeURIComponent("/admin/pms") + location.search + location.hash);
+    // GitHub Pages entrega los HTML con max-age=600. Agregamos una clave única
+    // al shell para que una ruta profunda no vuelva a abrir un index.html viejo.
+    var params = new URLSearchParams(location.search);
+    params.set("_r", "/admin/pms");
+    params.set("_tn_refresh", String(Date.now()));
+    location.replace("/app/index.html?" + params.toString() + location.hash);
   </script>
 </head>
 <body>
