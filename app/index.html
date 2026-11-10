@@ -11,10 +11,14 @@
       (function () {
         var params = new URLSearchParams(window.location.search);
         var r = params.get("_r");
-        if (!r) return;
+        var forceRefresh = params.has("_tn_refresh");
+        if (!r && !forceRefresh) return;
         params.delete("_r");
+        params.delete("_tn_refresh");
         var rest = params.toString();
-        var path = "/app" + (r.charAt(0) === "/" ? r : "/" + r);
+        var path = r
+          ? "/app" + (r.charAt(0) === "/" ? r : "/" + r)
+          : window.location.pathname;
         window.history.replaceState(
           null,
           "",
@@ -28,7 +32,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/app/assets/index-BLSdDtez.js"></script>
+    <script type="module" crossorigin src="/app/assets/index-BZ4cHJ8d.js"></script>
     <link rel="modulepreload" crossorigin href="/app/assets/jsx-runtime-D8nDyRPw.js">
     <link rel="modulepreload" crossorigin href="/app/assets/useQuery-OFjrLxyp.js">
     <link rel="modulepreload" crossorigin href="/app/assets/useMutation-3D5PuaxD.js">
