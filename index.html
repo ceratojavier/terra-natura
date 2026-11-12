@@ -150,7 +150,7 @@
   <script defer src="./assets/js/tn-atribucion.js?v=20261105"></script>
   <script defer src="./assets/js/cotiza.js?v=20261109-cotizacion-grupos-fondo"></script>
   <script defer src="./assets/js/site-ux.js"></script>
-  <script defer src="./assets/js/site-content.js?v=20261106"></script>
+  <script defer src="./assets/js/site-content.js?v=20261112-editor-select"></script>
   <script defer src="./assets/js/site-unidades-home.js?v=20261026"></script>
   <script defer src="./assets/js/utm.js?v=20261026"></script>
   <script defer src="./assets/js/reputacion.js?v=20261027"></script>
@@ -205,21 +205,21 @@
   <main id="contenido">
   <section class="hero reveal">
     <div class="hero-slides" aria-hidden="true">
-      <span class="hero-slide hero-slide--piscina is-active" style="background-image:url('./media/galeria/02-piscina.jpg');background-image:image-set(url('./media/galeria/02-piscina.webp') type('image/webp'), url('./media/galeria/02-piscina.jpg') type('image/jpeg'))"></span>
+      <span class="hero-slide hero-slide--piscina is-active" data-site-editor-key="home.hero_slides.0.imagen" style="background-image:url('./media/galeria/02-piscina.jpg');background-image:image-set(url('./media/galeria/02-piscina.webp') type('image/webp'), url('./media/galeria/02-piscina.jpg') type('image/jpeg'))"></span>
       <span class="hero-slide hero-slide--pileta" style="background-image:url('./media/galeria/03-pileta-alpina.jpg');background-image:image-set(url('./media/galeria/03-pileta-alpina.webp') type('image/webp'), url('./media/galeria/03-pileta-alpina.jpg') type('image/jpeg'))"></span>
       <span class="hero-slide hero-slide--frutillas" style="background-image:url('./media/galeria/13-parque-relax.jpg');background-image:image-set(url('./media/galeria/13-parque-relax.webp') type('image/webp'), url('./media/galeria/13-parque-relax.jpg') type('image/jpeg'))"></span>
     </div>
-    <video class="hero-video" data-site-hero-video muted autoplay loop playsinline preload="metadata" poster="./media/galeria/02-piscina.webp" aria-hidden="true" tabindex="-1" hidden></video>
+    <video class="hero-video" data-site-hero-video data-site-editor-key="home.hero.video_desktop" muted autoplay loop playsinline preload="metadata" poster="./media/galeria/02-piscina.webp" aria-hidden="true" tabindex="-1" hidden></video>
     <video class="hero-video-backdrop" data-site-hero-video-backdrop muted autoplay loop playsinline preload="metadata" aria-hidden="true" tabindex="-1" hidden></video>
     <button class="hero-sound-toggle" type="button" data-site-video-sound aria-pressed="false" aria-label="Activar el sonido del video" hidden>Sonido apagado</button>
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <img class="hero-brand-mark" src="./assets/branding/logo-terra-natura.png" width="240" height="96" alt="" decoding="async" fetchpriority="high" />
-        <p class="hero-location">Bialet Massé · Sierras de Córdoba</p>
-        <h1 class="hero-title">Tu refugio en las sierras</h1>
-        <p class="hero-subtitle">Cinco cabañas con pileta y parque, a pasos del lago.</p>
-        <a class="btn btn-primary hero-primary-cta" href="#reserva">Consultar disponibilidad</a>
+        <p class="hero-location" data-site-editor-key="home.hero.eyebrow">Bialet Massé · Sierras de Córdoba</p>
+        <h1 class="hero-title" data-site-editor-key="home.hero.title_desktop">Tu refugio en las sierras</h1>
+        <p class="hero-subtitle" data-site-editor-key="home.hero.lead">Cinco cabañas con pileta y parque, a pasos del lago.</p>
+        <a class="btn btn-primary hero-primary-cta" data-site-editor-key="home.hero.cta" href="#reserva">Consultar disponibilidad</a>
       </div>
     </div>
   </section>

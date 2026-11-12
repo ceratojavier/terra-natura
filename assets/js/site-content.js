@@ -32,12 +32,26 @@
         const value = read(data, node.dataset.siteText);
         if (typeof value === "string" && value.trim()) node.textContent = value;
       });
+      const hero = data.home?.hero || {};
+      const mobileHero = matchMedia("(max-width: 859px)").matches;
+      const heroValues = {
+        "home.hero.eyebrow": hero.eyebrow,
+        "home.hero.title_desktop": mobileHero ? (hero.title_mobile || hero.title_desktop) : hero.title_desktop,
+        "home.hero.title_mobile": mobileHero ? (hero.title_mobile || hero.title_desktop) : hero.title_mobile,
+        "home.hero.lead": hero.lead,
+        "home.hero.cta": hero.cta,
+      };
+      document.querySelectorAll("[data-site-editor-key]").forEach((node) => {
+        if (node.matches(".hero-title")) node.dataset.siteEditorKey = mobileHero ? "home.hero.title_mobile" : "home.hero.title_desktop";
+        const value = heroValues[node.dataset.siteEditorKey];
+        if (typeof value === "string" && value.trim()) node.textContent = value;
+      });
       const gallery = data.home?.galeria;
       if (gallery) {
         const title = document.querySelector("#galeria h2");
         const lead = document.querySelector("#galeria .section-lead-short");
-        if (title && gallery.titulo) title.textContent = gallery.titulo;
-        if (lead && gallery.lead) lead.textContent = gallery.lead;
+        if (title) { title.dataset.siteEditorKey = "home.galeria.titulo"; if (gallery.titulo) title.textContent = gallery.titulo; }
+        if (lead) { lead.dataset.siteEditorKey = "home.galeria.lead"; if (gallery.lead) lead.textContent = gallery.lead; }
         const track = document.querySelector("#galeria .gallery-track");
         const fotosPresentables = Array.isArray(gallery?.fotos) ? gallery.fotos.filter((photo) => !esFotoNoRepresentativa(photo?.imagen)) : [];
         if (track && fotosPresentables.length) {
@@ -47,6 +61,7 @@
             const figure = document.createElement("figure");
             figure.className = "gallery-slide" + (index === 0 ? " is-active" : "");
             const image = document.createElement("img");
+            image.dataset.siteEditorKey = `home.galeria.fotos.${index}.imagen`;
             image.src = mediaUrl(photo.imagen.trim());
             image.alt = typeof photo.alt === "string" ? photo.alt : "Foto de Terra Natura";
             image.loading = index === 0 ? "eager" : "lazy";
@@ -73,6 +88,7 @@
             if (typeof item?.imagen !== "string" || !item.imagen.trim()) return;
             const slide = document.createElement("span");
             slide.className = "hero-slide" + (index === 0 ? " is-active" : "");
+            slide.dataset.siteEditorKey = `home.hero_slides.${index}.imagen`;
             slide.setAttribute("role", "img");
             slide.setAttribute("aria-label", typeof item.alt === "string" ? item.alt : "Cabañas Alpinas Terra Natura");
             slide.style.backgroundImage = `url("${mediaUrl(item.imagen.trim())}")`;
@@ -98,6 +114,7 @@
             imageLink.href = href;
             const image = document.createElement("img");
             image.className = "card-img";
+            image.dataset.siteEditorKey = `unidades.${unit.id}.foto_portada`;
             image.src = mediaUrl(typeof unit.foto_portada === "string" ? unit.foto_portada : "");
             image.alt = unit.nombre;
             image.loading = "lazy";
@@ -106,11 +123,13 @@
             card.appendChild(imageLink);
             const heading = document.createElement("h3");
             const titleLink = document.createElement("a");
+            titleLink.dataset.siteEditorKey = `unidades.${unit.id}.nombre`;
             titleLink.href = href;
             titleLink.textContent = unit.nombre;
             heading.appendChild(titleLink);
             card.appendChild(heading);
             const description = document.createElement("p");
+            description.dataset.siteEditorKey = `unidades.${unit.id}.descripcion`;
             description.textContent = typeof unit.descripcion === "string" ? unit.descripcion : "";
             card.appendChild(description);
             const list = document.createElement("ul");
@@ -146,6 +165,7 @@
             const fotos = Array.isArray(place.fotos) ? place.fotos.filter((src) => typeof src === "string" && src.trim()) : [];
             if (fotos.length === 1) {
               const image = document.createElement("img");
+              image.dataset.siteEditorKey = `home.atracciones.${place.id}.foto`;
               image.src = mediaUrl(fotos[0]);
               image.alt = place.titulo;
               image.loading = "lazy";
@@ -156,6 +176,7 @@
               photos.className = "attraction-card__photos";
               fotos.forEach((src) => {
                 const image = document.createElement("img");
+                image.dataset.siteEditorKey = `home.atracciones.${place.id}.foto`;
                 image.src = mediaUrl(src);
                 image.alt = place.titulo;
                 image.loading = "lazy";
@@ -165,9 +186,11 @@
               card.appendChild(photos);
             }
             const title = document.createElement("h3");
+            title.dataset.siteEditorKey = `home.atracciones.${place.id}.titulo`;
             title.textContent = place.titulo;
             card.appendChild(title);
             const description = document.createElement("p");
+            description.dataset.siteEditorKey = `home.atracciones.${place.id}.descripcion`;
             description.textContent = typeof place.descripcion === "string" ? place.descripcion : "";
             card.appendChild(description);
             fragment.appendChild(card);
@@ -180,12 +203,14 @@
         const faqs = data.home.preguntas_frecuentes.filter((item) => typeof item?.pregunta === "string" && typeof item?.respuesta === "string");
         if (list && faqs.length) {
           const fragment = document.createDocumentFragment();
-          faqs.forEach((item) => {
+          faqs.forEach((item, index) => {
             const details = document.createElement("details");
             details.className = "faq-item";
             const question = document.createElement("summary");
+            question.dataset.siteEditorKey = `home.preguntas_frecuentes.${index}.pregunta`;
             question.textContent = item.pregunta;
             const answer = document.createElement("p");
+            answer.dataset.siteEditorKey = `home.preguntas_frecuentes.${index}.respuesta`;
             answer.textContent = item.respuesta;
             details.append(question, answer);
             fragment.appendChild(details);
@@ -207,7 +232,7 @@
         const grid = document.querySelector("#resenas .resenas-grid");
         if (grid) {
           const fragment = document.createDocumentFragment();
-          data.home.resenas.forEach((item) => {
+          data.home.resenas.forEach((item, index) => {
             if (!item || typeof item.texto !== "string" || typeof item.titulo !== "string") return;
             const card = document.createElement("article");
             card.className = "resena-card";
@@ -228,6 +253,7 @@
             head.append(score, meta);
             card.appendChild(head);
             const title = document.createElement("h3");
+            title.dataset.siteEditorKey = `home.resenas.${index}.titulo`;
             title.className = "resena-titulo";
             title.textContent = item.titulo;
             card.appendChild(title);
@@ -244,6 +270,7 @@
               card.appendChild(tagList);
             }
             const quote = document.createElement("blockquote");
+            quote.dataset.siteEditorKey = `home.resenas.${index}.texto`;
             quote.className = "resena-texto";
             quote.textContent = `“${item.texto}”`;
             card.appendChild(quote);
@@ -258,7 +285,6 @@
       }
       const video = document.querySelector("[data-site-hero-video]");
       const videoBackdrop = document.querySelector("[data-site-hero-video-backdrop]");
-      const hero = data.home?.hero || {};
       if (video) {
         const mobile = matchMedia("(max-width: 859px)").matches;
         const src = mobile ? hero.video_mobile : hero.video_desktop;
@@ -288,6 +314,23 @@
             });
           }
         }
+      }
+      if (params.get("tn-editor-preview") === "1") {
+        document.documentElement.classList.add("tn-site-editor-preview");
+        const style = document.createElement("style");
+        style.textContent = `.tn-site-editor-preview [data-site-editor-key],.tn-site-editor-preview [data-site-text]{cursor:pointer!important;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px}.tn-site-editor-preview [data-site-editor-key]:hover,.tn-site-editor-preview [data-site-text]:hover{outline:2px solid #f2c879!important;outline-offset:3px;filter:brightness(1.08)}`;
+        document.head.appendChild(style);
+        document.addEventListener("click", (event) => {
+          const target = event.target instanceof Element
+            ? event.target.closest("[data-site-editor-key], [data-site-text]")
+            : null;
+          if (!target) return;
+          const field = target.dataset.siteEditorKey || target.dataset.siteText;
+          if (!field) return;
+          event.preventDefault();
+          event.stopPropagation();
+          window.parent.postMessage({ type: "tn-site-editor-select", field }, "*");
+        }, true);
       }
       document.documentElement.dataset.siteContentLoaded = "true";
       if (preview && !key) document.documentElement.dataset.sitePreviewUnavailable = "true";
