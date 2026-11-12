@@ -315,6 +315,16 @@
           }
         }
       }
+      const editorStyles = data.home?.editor_styles || {};
+      Object.entries(editorStyles).forEach(([field, style]) => {
+        if (!style || typeof style !== "object") return;
+        document.querySelectorAll("[data-site-editor-key], [data-site-text]").forEach((node) => {
+          const nodeField = node.dataset.siteEditorKey || node.dataset.siteText;
+          if (nodeField !== field) return;
+          if (["left", "center", "right", "justify"].includes(style.align)) node.style.textAlign = style.align;
+          if (typeof style.font === "string" && style.font.length < 100) node.style.fontFamily = style.font;
+        });
+      });
       if (params.has("tn-editor-preview")) {
         document.documentElement.classList.add("tn-site-editor-preview");
         const style = document.createElement("style");
