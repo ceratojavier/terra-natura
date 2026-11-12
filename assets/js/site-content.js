@@ -16,11 +16,21 @@
     const style = document.createElement("style");
     style.textContent = `.tn-site-editor-preview [data-site-editor-key],.tn-site-editor-preview [data-site-text]{cursor:pointer!important;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px;-webkit-user-select:none;user-select:none}.tn-site-editor-preview [data-site-editor-key]:hover,.tn-site-editor-preview [data-site-text]:hover{outline:2px solid #f2c879!important;outline-offset:3px;filter:brightness(1.08)}`;
     document.head.appendChild(style);
-    document.addEventListener("click", (event) => {
+    window.addEventListener("click", (event) => {
       const target = event.target instanceof Element
         ? event.target.closest("[data-site-editor-key], [data-site-text]")
         : null;
-      if (!target) return;
+      if (!target) {
+        // En modo edición ningún enlace del sitio debe sacar al operador del
+        // editor ni navegar el frame hacia la URL del administrador.
+        const link = event.target instanceof Element ? event.target.closest("a") : null;
+        if (link) {
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+        }
+        return;
+      }
       const field = target.dataset.siteEditorKey || target.dataset.siteText;
       if (!field) return;
       event.preventDefault();
@@ -30,7 +40,7 @@
       // resolver el origen canónico con otro protocolo/host durante redirects;
       // el padre valida event.origin y el mensaje no navega el iframe.
       window.parent.postMessage({ type: "tn-site-editor-select", field }, "*");
-    }, true);
+    }, { capture: true });
   }
 
   async function loadContent() {
