@@ -1,7 +1,7 @@
 (() => {
   const params = new URLSearchParams(location.search);
   const editorPreview = params.get("tn-editor-preview") === "1";
-  const API = "https://api.alpinasterranatura.com.ar/api/sitio/guia-experiencia";
+  const API = "https://api.alpinasterranatura.com.ar/api/public/guia-experiencia";
   const groups = ["category_cerca", "category_naturaleza", "category_balnearios", "category_gastronomia", "category_noche", "category_familia", "category_lluvia", "category_servicios"];
   const bindings = [];
   const bind = (selector, sectionKey, field) => {
