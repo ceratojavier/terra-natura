@@ -10,6 +10,48 @@
   const esFotoNoRepresentativa = (value) => /(?:^|\/)15-pileta-frutillas\.(?:jpe?g|webp)$/i.test(String(value || "").split("?")[0]);
   const read = (obj, path) => path.split(".").reduce((v, k) => v && v[k], obj);
 
+  // Estos campos se marcan desde el HTML, antes de consultar la API. Así el
+  // editor sigue abriendo los títulos aunque el CMS del servidor todavía no
+  // conozca la estructura editorial nueva.
+  const editorialRows = [
+    ["alpinas", "cabanas-alpinas"],
+    ["suite-5", "suite-planta-alta"],
+    ["suite-4", "suite-planta-baja"],
+  ];
+  const bindEditorialFields = (editorial) => {
+    const heading = document.querySelector("#unidades .tn-editorial-heading h2");
+    const lead = document.querySelector("#unidades .tn-editorial-heading p");
+    if (heading) heading.dataset.siteEditorKey = "home.unidades_editoriales.titulo";
+    if (lead) lead.dataset.siteEditorKey = "home.unidades_editoriales.lead";
+    editorialRows.forEach(([id, htmlId], index) => {
+      const row = document.getElementById(htmlId);
+      if (!row) return;
+      const card = editorial?.cards?.find?.((item) => item?.id === id) || editorial?.cards?.[index];
+      const key = `home.unidades_editoriales.cards.${index}`;
+      const eyebrow = row.querySelector(".tn-stay-kicker");
+      const title = row.querySelector("h3");
+      const description = row.querySelector(".tn-stay-copy > p");
+      const image = row.querySelector(".tn-stay-visual img");
+      if (eyebrow) eyebrow.dataset.siteEditorKey = `${key}.eyebrow`;
+      if (title) title.dataset.siteEditorKey = `${key}.titulo`;
+      if (description) description.dataset.siteEditorKey = `${key}.texto`;
+      if (image) image.dataset.siteEditorKey = `${key}.imagen`;
+      const list = row.querySelector(".tn-feature-list");
+      if (list) [...list.children].forEach((item, bulletIndex) => {
+        item.dataset.siteEditorKey = `${key}.bullets.${bulletIndex}`;
+      });
+      if (!card) return;
+      if (eyebrow && typeof card.eyebrow === "string") eyebrow.textContent = card.eyebrow;
+      if (title && typeof card.titulo === "string") title.textContent = card.titulo;
+      if (description && typeof card.texto === "string") description.textContent = card.texto;
+      if (list && Array.isArray(card.bullets)) [...list.children].forEach((item, bulletIndex) => {
+        if (typeof card.bullets[bulletIndex] === "string") item.textContent = card.bullets[bulletIndex];
+      });
+      if (image && typeof card.imagen === "string" && card.imagen.trim()) image.src = mediaUrl(card.imagen.trim());
+    });
+  };
+  bindEditorialFields();
+
   if (params.has("tn-editor-preview")) {
     // Activar interacción antes de cargar datos para permitir editar incluso si la API demora/falla.
     document.documentElement.classList.add("tn-site-editor-preview");
@@ -81,45 +123,7 @@
       });
       // La sección editorial de alojamientos estaba escrita directamente en el
       // HTML y no tenía campos CMS; por eso sus títulos no abrían el editor.
-      const editorial = data.home?.unidades_editoriales;
-      if (editorial) {
-        const heading = document.querySelector("#unidades .tn-editorial-heading h2");
-        const lead = document.querySelector("#unidades .tn-editorial-heading p");
-        if (heading) {
-          heading.dataset.siteEditorKey = "home.unidades_editoriales.titulo";
-          if (typeof editorial.titulo === "string") heading.textContent = editorial.titulo;
-        }
-        if (lead) {
-          lead.dataset.siteEditorKey = "home.unidades_editoriales.lead";
-          if (typeof editorial.lead === "string") lead.textContent = editorial.lead;
-        }
-        const rows = { alpinas: "cabanas-alpinas", "suite-5": "suite-planta-alta", "suite-4": "suite-planta-baja" };
-        (Array.isArray(editorial.cards) ? editorial.cards : []).forEach((card, index) => {
-          const row = document.getElementById(rows[card?.id]);
-          if (!row) return;
-          const key = `home.unidades_editoriales.cards.${index}`;
-          const eyebrow = row.querySelector(".tn-stay-kicker");
-          const title = row.querySelector("h3");
-          const description = row.querySelector(".tn-stay-copy > p");
-          const list = row.querySelector(".tn-feature-list");
-          const image = row.querySelector(".tn-stay-visual img");
-          if (eyebrow) { eyebrow.dataset.siteEditorKey = `${key}.eyebrow`; if (typeof card.eyebrow === "string") eyebrow.textContent = card.eyebrow; }
-          if (title) { title.dataset.siteEditorKey = `${key}.titulo`; if (typeof card.titulo === "string") title.textContent = card.titulo; }
-          if (description) { description.dataset.siteEditorKey = `${key}.texto`; if (typeof card.texto === "string") description.textContent = card.texto; }
-          if (list && Array.isArray(card.bullets)) {
-            list.replaceChildren(...card.bullets.map((text, bulletIndex) => {
-              const item = document.createElement("li");
-              item.dataset.siteEditorKey = `${key}.bullets.${bulletIndex}`;
-              item.textContent = String(text);
-              return item;
-            }));
-          }
-          if (image) {
-            image.dataset.siteEditorKey = `${key}.imagen`;
-            if (typeof card.imagen === "string" && card.imagen.trim()) image.src = mediaUrl(card.imagen.trim());
-          }
-        });
-      }
+      bindEditorialFields(data.home?.unidades_editoriales);
       const gallery = data.home?.galeria;
       if (gallery) {
         const title = document.querySelector("#galeria h2");
