@@ -170,6 +170,36 @@
     }
   ],
   "home": {
+    "unidades_editoriales": {
+      "titulo": "Cabañas alpinas y cabañas suites",
+      "lead": "Tres cabañas alpinas y dos suites, con entrada independiente, parque y pileta. Elegí el estilo de estadía que mejor se adapte a tu viaje.",
+      "cards": [
+        {
+          "id": "alpinas",
+          "eyebrow": "Tres unidades · hasta 4 personas",
+          "titulo": "Cabañas Alpinas",
+          "texto": "Dos plantas para disfrutar con espacio: dormitorio matrimonial con aire acondicionado y balcón en planta alta, más living comedor y cocina en planta baja.",
+          "bullets": ["Ideales para parejas", "Capacidad flexible para familias con chicos", "Parrilla y estacionamiento individual"],
+          "imagen": "media/unidades/alpina-1/01.webp"
+        },
+        {
+          "id": "suite-5",
+          "eyebrow": "Suite 5 · planta alta",
+          "titulo": "Cabaña Suite Planta Alta",
+          "texto": "Un loft íntimo en dúplex, con cama matrimonial, una plaza adicional, aire acondicionado y balcón con vista a las sierras.",
+          "bullets": ["Hasta 3 personas", "Aire frío-calor", "Entrada y pérgola independientes"],
+          "imagen": "media/unidades/suite-5/01.webp"
+        },
+        {
+          "id": "suite-4",
+          "eyebrow": "Suite 4 · planta baja",
+          "titulo": "Cabaña Suite Planta Baja",
+          "texto": "Un loft práctico y luminoso, con cama matrimonial, una plaza adicional, ventilador de techo y acceso en planta baja.",
+          "bullets": ["Hasta 3 personas", "Sin escaleras para acceder", "Entrada y pérgola independientes"],
+          "imagen": "media/unidades/suite-4/01.webp"
+        }
+      ]
+    },
     "hero_slides": [
       {
         "imagen": "media/galeria/02-piscina.jpg",

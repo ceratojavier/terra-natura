@@ -79,6 +79,47 @@
         const value = heroValues[node.dataset.siteEditorKey];
         if (typeof value === "string" && value.trim()) node.textContent = value;
       });
+      // La sección editorial de alojamientos estaba escrita directamente en el
+      // HTML y no tenía campos CMS; por eso sus títulos no abrían el editor.
+      const editorial = data.home?.unidades_editoriales;
+      if (editorial) {
+        const heading = document.querySelector("#unidades .tn-editorial-heading h2");
+        const lead = document.querySelector("#unidades .tn-editorial-heading p");
+        if (heading) {
+          heading.dataset.siteEditorKey = "home.unidades_editoriales.titulo";
+          if (typeof editorial.titulo === "string") heading.textContent = editorial.titulo;
+        }
+        if (lead) {
+          lead.dataset.siteEditorKey = "home.unidades_editoriales.lead";
+          if (typeof editorial.lead === "string") lead.textContent = editorial.lead;
+        }
+        const rows = { alpinas: "cabanas-alpinas", "suite-5": "suite-planta-alta", "suite-4": "suite-planta-baja" };
+        (Array.isArray(editorial.cards) ? editorial.cards : []).forEach((card, index) => {
+          const row = document.getElementById(rows[card?.id]);
+          if (!row) return;
+          const key = `home.unidades_editoriales.cards.${index}`;
+          const eyebrow = row.querySelector(".tn-stay-kicker");
+          const title = row.querySelector("h3");
+          const description = row.querySelector(".tn-stay-copy > p");
+          const list = row.querySelector(".tn-feature-list");
+          const image = row.querySelector(".tn-stay-visual img");
+          if (eyebrow) { eyebrow.dataset.siteEditorKey = `${key}.eyebrow`; if (typeof card.eyebrow === "string") eyebrow.textContent = card.eyebrow; }
+          if (title) { title.dataset.siteEditorKey = `${key}.titulo`; if (typeof card.titulo === "string") title.textContent = card.titulo; }
+          if (description) { description.dataset.siteEditorKey = `${key}.texto`; if (typeof card.texto === "string") description.textContent = card.texto; }
+          if (list && Array.isArray(card.bullets)) {
+            list.replaceChildren(...card.bullets.map((text, bulletIndex) => {
+              const item = document.createElement("li");
+              item.dataset.siteEditorKey = `${key}.bullets.${bulletIndex}`;
+              item.textContent = String(text);
+              return item;
+            }));
+          }
+          if (image) {
+            image.dataset.siteEditorKey = `${key}.imagen`;
+            if (typeof card.imagen === "string" && card.imagen.trim()) image.src = mediaUrl(card.imagen.trim());
+          }
+        });
+      }
       const gallery = data.home?.galeria;
       if (gallery) {
         const title = document.querySelector("#galeria h2");
