@@ -315,7 +315,7 @@
           }
         }
       }
-      if (params.get("tn-editor-preview") === "1") {
+      if (params.has("tn-editor-preview")) {
         document.documentElement.classList.add("tn-site-editor-preview");
         const style = document.createElement("style");
         style.textContent = `.tn-site-editor-preview [data-site-editor-key],.tn-site-editor-preview [data-site-text]{cursor:pointer!important;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px}.tn-site-editor-preview [data-site-editor-key]:hover,.tn-site-editor-preview [data-site-text]:hover{outline:2px solid #f2c879!important;outline-offset:3px;filter:brightness(1.08)}`;
