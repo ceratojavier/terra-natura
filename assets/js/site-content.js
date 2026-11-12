@@ -26,7 +26,10 @@
       event.preventDefault();
       event.stopPropagation();
       event.stopImmediatePropagation();
-      window.parent.postMessage({ type: "tn-site-editor-select", field }, location.origin);
+      // El editor corre en /app y esta vista en el sitio público. Edge puede
+      // resolver el origen canónico con otro protocolo/host durante redirects;
+      // el padre valida event.origin y el mensaje no navega el iframe.
+      window.parent.postMessage({ type: "tn-site-editor-select", field }, "*");
     }, true);
   }
 
