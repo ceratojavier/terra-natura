@@ -61,10 +61,12 @@
       const title = row.querySelector("h3");
       const description = row.querySelector(".tn-stay-copy > p");
       const image = row.querySelector(".tn-stay-visual img");
+      const galleryTrigger = row.querySelector("[data-open-photo-gallery]");
       if (eyebrow) eyebrow.dataset.siteEditorKey = `${key}.eyebrow`;
       if (title) title.dataset.siteEditorKey = `${key}.titulo`;
       if (description) description.dataset.siteEditorKey = `${key}.texto`;
       if (image) image.dataset.siteEditorKey = `${key}.imagen`;
+      if (galleryTrigger && editorPreview) galleryTrigger.dataset.siteEditorKey = `${key}.fotos.0`;
       const list = row.querySelector(".tn-feature-list");
       if (list) [...list.children].forEach((item, bulletIndex) => {
         item.dataset.siteEditorKey = `${key}.bullets.${bulletIndex}`;
@@ -120,7 +122,7 @@
     // Activar interacción antes de cargar datos para permitir editar incluso si la API demora/falla.
     document.documentElement.classList.add("tn-site-editor-preview");
     const style = document.createElement("style");
-    style.textContent = `.tn-site-editor-preview [data-site-editor-key],.tn-site-editor-preview [data-site-text]{cursor:pointer!important;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px;-webkit-user-select:none;user-select:none}.tn-site-editor-preview #unidades .tn-editorial-heading{resize:horizontal;overflow:auto;max-width:100%;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px}.tn-site-editor-preview [data-site-editor-key]:hover,.tn-site-editor-preview [data-site-text]:hover{outline:2px solid #f2c879!important;outline-offset:3px;filter:brightness(1.08)}`;
+    style.textContent = `.tn-site-editor-preview [data-site-editor-key],.tn-site-editor-preview [data-site-text]{cursor:pointer!important;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px;-webkit-user-select:none;user-select:none;white-space:pre-wrap}.tn-site-editor-preview #unidades .tn-editorial-heading{resize:horizontal;overflow:auto;min-width:0;max-width:100%;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px}.tn-site-editor-preview [data-site-editor-key]:hover,.tn-site-editor-preview [data-site-text]:hover{outline:2px solid #f2c879!important;outline-offset:3px;filter:brightness(1.08)}`;
     document.head.appendChild(style);
     let resizeStart = null;
     window.addEventListener("pointerdown", (event) => {
@@ -213,6 +215,22 @@
       // La sección editorial de alojamientos estaba escrita directamente en el
       // HTML y no tenía campos CMS; por eso sus títulos no abrían el editor.
       bindEditorialFields(data.home?.unidades_editoriales);
+      const unidadGallerySets = ["alpinas", "suite-alta", "suite-baja"];
+      const editorialCards = data.home?.unidades_editoriales?.cards;
+      (Array.isArray(editorialCards) ? editorialCards : []).forEach((card, index) => {
+        const source = document.querySelector(`.tn-photo-source[data-photo-set="${unidadGallerySets[index]}"]`);
+        if (!source || !Array.isArray(card?.fotos) || !card.fotos.length) return;
+        const fragment = document.createDocumentFragment();
+        card.fotos.forEach((photo, photoIndex) => {
+          const path = typeof photo === "string" ? photo : photo?.imagen;
+          if (typeof path !== "string" || !path.trim()) return;
+          const image = document.createElement("img");
+          image.src = mediaUrl(path.trim());
+          image.alt = typeof photo?.alt === "string" ? photo.alt : `${card.titulo || "Alojamiento"} · vista ${photoIndex + 1}`;
+          fragment.appendChild(image);
+        });
+        source.replaceChildren(fragment);
+      });
       const gallery = data.home?.galeria;
       const galleryHeading = document.querySelector("#fotos .tn-editorial-heading h2");
       const galleryLead = document.querySelector("#fotos .tn-editorial-heading p");
@@ -521,8 +539,11 @@
           if (nodeField !== field) return;
           if (["left", "center", "right", "justify"].includes(style.align)) node.style.textAlign = style.align;
           if (typeof style.font === "string" && style.font.length < 100) node.style.fontFamily = style.font;
+          if (/^\d{1,3}px$/.test(style.font_size || "")) node.style.fontSize = style.font_size;
+          if (["400", "500", "600", "700", "800", "900"].includes(style.font_weight)) node.style.fontWeight = style.font_weight;
+          if (["normal", "italic"].includes(style.font_style)) node.style.fontStyle = style.font_style;
           const box = node.closest(".tn-editorial-heading") || node;
-          if (/^(25|33|50|66|75|90|100)%$/.test(style.box_width || "")) {
+          if (/^(2[5-9]|[3-9]\d|100)%$/.test(style.box_width || "")) {
             box.style.width = style.box_width;
             box.style.maxWidth = "100%";
           }
