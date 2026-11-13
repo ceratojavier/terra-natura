@@ -102,6 +102,11 @@
     }
     const galleryHeader = document.querySelector("#fotos .tn-editorial-heading");
     addEditorAction(galleryHeader, "home.galeria.fotos.13.imagen", "＋ Agregar recuadro de foto");
+    document.querySelectorAll("[data-open-video]").forEach((button) => {
+      button.dataset.siteEditorKey = "home.video_galeria";
+      button.setAttribute("aria-label", "Editar video de la galería");
+    });
+    addEditorAction(document.querySelector(".tn-guide-film"), "home.video_guia", "🎬 Cambiar video de esta sección");
   }
 
   if (params.has("tn-editor-preview")) {
