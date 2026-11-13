@@ -48,10 +48,13 @@
     ["suite-4", "suite-planta-baja"],
   ];
   const bindEditorialFields = (editorial) => {
+    const eyebrow = document.querySelector("#unidades .tn-editorial-heading > .tn-eyebrow");
     const heading = document.querySelector("#unidades .tn-editorial-heading h2");
     const lead = document.querySelector("#unidades .tn-editorial-heading p");
+    if (eyebrow) eyebrow.dataset.siteEditorKey = "home.unidades_editoriales.eyebrow";
     if (heading) heading.dataset.siteEditorKey = "home.unidades_editoriales.titulo";
     if (lead) lead.dataset.siteEditorKey = "home.unidades_editoriales.lead";
+    if (eyebrow && typeof editorial?.eyebrow === "string") eyebrow.textContent = editorial.eyebrow;
     editorialRows.forEach(([id, htmlId], index) => {
       const row = document.getElementById(htmlId);
       if (!row) return;
