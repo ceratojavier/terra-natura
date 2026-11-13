@@ -2,6 +2,7 @@
   const API = "https://api.alpinasterranatura.com.ar";
   const params = new URLSearchParams(location.search);
   const preview = params.get("tn-preview") === "1";
+  const editorPreview = params.has("tn-editor-preview");
   const key = (() => { try { return localStorage.getItem("tn_clave") || ""; } catch { return ""; } })();
   const headers = key ? { "X-Clave": key } : {};
   const mediaUrl = (value) => String(value || "").startsWith("media/cms/") ? `${API}/api/sitio/archivo-media?ruta=${encodeURIComponent(value)}` : value;
@@ -80,7 +81,7 @@
   };
   bindEditorialFields();
 
-  if (params.has("tn-editor-preview")) {
+  if (editorPreview) {
     const hero = document.querySelector(".hero");
     if (hero) {
       const toolbar = document.createElement("div");
@@ -109,7 +110,7 @@
     addEditorAction(document.querySelector(".tn-guide-film"), "home.video_guia", "🎬 Cambiar video de esta sección");
   }
 
-  if (params.has("tn-editor-preview")) {
+  if (editorPreview) {
     // Activar interacción antes de cargar datos para permitir editar incluso si la API demora/falla.
     document.documentElement.classList.add("tn-site-editor-preview");
     const style = document.createElement("style");
