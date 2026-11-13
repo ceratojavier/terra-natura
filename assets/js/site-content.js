@@ -82,6 +82,12 @@
   bindEditorialFields();
 
   if (editorPreview) {
+    // Los videos no siempre están dentro de un botón. Marcarlos directamente
+    // permite abrir el selector al tocar el video en la vista previa.
+    document.querySelector(".hero-video")?.setAttribute("data-site-editor-key", "home.hero.video_desktop");
+    document.querySelector(".hero-video-backdrop")?.setAttribute("data-site-editor-key", "home.hero.video_mobile");
+    document.querySelector("#tn-video-dialog video")?.setAttribute("data-site-editor-key", "home.video_galeria");
+    document.querySelector(".tn-guide-film__video")?.setAttribute("data-site-editor-key", "home.video_guia");
     const hero = document.querySelector(".hero");
     if (hero) {
       const toolbar = document.createElement("div");
@@ -472,6 +478,7 @@
       const galleryVideo = data.home?.video_galeria;
       const dialogVideo = document.querySelector("#tn-video-dialog video");
       if (dialogVideo && typeof galleryVideo === "string") {
+        if (editorPreview) dialogVideo.dataset.siteEditorKey = "home.video_galeria";
         const source = dialogVideo.querySelector("source");
         if (source && galleryVideo.trim()) {
           source.src = mediaUrl(galleryVideo.trim());
@@ -481,6 +488,7 @@
       const guideVideo = data.home?.video_guia;
       const guideElement = document.querySelector(".tn-guide-film__video");
       if (guideElement && typeof guideVideo === "string") {
+        if (editorPreview) guideElement.dataset.siteEditorKey = "home.video_guia";
         const source = guideElement.querySelector("source");
         if (source && guideVideo.trim()) {
           source.src = mediaUrl(guideVideo.trim());
