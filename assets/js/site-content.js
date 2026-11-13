@@ -120,8 +120,23 @@
     // Activar interacción antes de cargar datos para permitir editar incluso si la API demora/falla.
     document.documentElement.classList.add("tn-site-editor-preview");
     const style = document.createElement("style");
-    style.textContent = `.tn-site-editor-preview [data-site-editor-key],.tn-site-editor-preview [data-site-text]{cursor:pointer!important;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px;-webkit-user-select:none;user-select:none}.tn-site-editor-preview [data-site-editor-key]:hover,.tn-site-editor-preview [data-site-text]:hover{outline:2px solid #f2c879!important;outline-offset:3px;filter:brightness(1.08)}`;
+    style.textContent = `.tn-site-editor-preview [data-site-editor-key],.tn-site-editor-preview [data-site-text]{cursor:pointer!important;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px;-webkit-user-select:none;user-select:none;resize:horizontal;overflow:auto}.tn-site-editor-preview [data-site-editor-key]:hover,.tn-site-editor-preview [data-site-text]:hover{outline:2px solid #f2c879!important;outline-offset:3px;filter:brightness(1.08)}`;
     document.head.appendChild(style);
+    let resizeStart = null;
+    window.addEventListener("pointerdown", (event) => {
+      const node = event.target instanceof Element ? event.target.closest("[data-site-editor-key], [data-site-text]") : null;
+      if (node) resizeStart = { node, width: node.getBoundingClientRect().width };
+    }, true);
+    window.addEventListener("pointerup", () => {
+      if (!resizeStart) return;
+      const { node, width } = resizeStart;
+      resizeStart = null;
+      const parentWidth = node.parentElement?.getBoundingClientRect().width || 0;
+      const nextWidth = node.getBoundingClientRect().width;
+      if (!parentWidth || Math.abs(nextWidth - width) < 6) return;
+      const field = node.dataset.siteEditorKey || node.dataset.siteText;
+      if (field) window.parent.postMessage({ type: "tn-site-editor-style-change", field, box_width: `${Math.max(25, Math.min(100, Math.round(nextWidth / parentWidth * 100)))}%` }, "*");
+    }, true);
     window.addEventListener("click", (event) => {
       const target = event.target instanceof Element
         ? event.target.closest("[data-site-editor-key], [data-site-text]")
@@ -503,6 +518,15 @@
           if (nodeField !== field) return;
           if (["left", "center", "right", "justify"].includes(style.align)) node.style.textAlign = style.align;
           if (typeof style.font === "string" && style.font.length < 100) node.style.fontFamily = style.font;
+          if (/^(25|33|50|66|75|90|100)%$/.test(style.box_width || "")) {
+            node.style.width = style.box_width;
+            node.style.maxWidth = "100%";
+          }
+          if (["left", "center", "right"].includes(style.box_align)) {
+            node.style.marginLeft = style.box_align === "right" || style.box_align === "center" ? "auto" : "0";
+            node.style.marginRight = style.box_align === "left" || style.box_align === "center" ? "auto" : "0";
+            node.style.display = "block";
+          }
         });
       });
       document.documentElement.dataset.siteContentLoaded = "true";
