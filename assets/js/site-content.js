@@ -96,7 +96,7 @@
     if (hero) {
       const toolbar = document.createElement("div");
       toolbar.dataset.tnPreviewControl = "hero-media-toolbar";
-      toolbar.style.cssText = "position:absolute;z-index:80;top:82px;right:14px;display:flex;flex-wrap:wrap;gap:7px;max-width:min(94vw,620px);justify-content:flex-end";
+      toolbar.style.cssText = "position:absolute;z-index:2147483000;top:82px;right:14px;display:flex;flex-wrap:wrap;gap:7px;max-width:min(94vw,620px);justify-content:flex-end;pointer-events:auto";
       hero.appendChild(toolbar);
       [
         ["home.hero.video_desktop", "🎬 Cambiar video PC"],
@@ -107,7 +107,8 @@
         button.type = "button";
         button.textContent = label;
         button.dataset.siteEditorKey = field;
-        button.style.cssText = "border:1px solid #0b764a;border-radius:999px;background:#fff;color:#0b3c29;padding:7px 11px;font:600 12px system-ui;box-shadow:0 4px 16px #0003;cursor:pointer";
+        button.dataset.tnPreviewControl = "true";
+        button.style.cssText = "position:relative;z-index:2147483000;pointer-events:auto;border:1px solid #0b764a;border-radius:999px;background:#fff;color:#0b3c29;padding:9px 13px;font:700 13px system-ui;box-shadow:0 4px 16px #0003;cursor:pointer";
         toolbar.appendChild(button);
       });
     }
@@ -116,7 +117,13 @@
     document.querySelectorAll("[data-open-video]").forEach((button) => {
       button.dataset.siteEditorKey = "home.video_galeria";
       button.setAttribute("aria-label", "Editar video de la galería");
+      button.setAttribute("title", "Tocá para cambiar el video del complejo");
+      const label = button.querySelector("small, span:last-child");
+      if (label) label.textContent = "Cambiar video del complejo";
     });
+    // El recuadro de presentación también ofrece un acceso visible al selector;
+    // así no depende de que el clic llegue al video de fondo del lightbox.
+    addEditorAction(document.querySelector(".tn-about-video"), "home.video_galeria", "🎬 Cambiar video del complejo");
     addEditorAction(document.querySelector(".tn-guide-film"), "home.video_guia", "🎬 Cambiar video de esta sección");
   }
 
