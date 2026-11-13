@@ -42,6 +42,38 @@
       "image_url": ""
     },
     {
+      "section_key": "planner",
+      "title": "Armá tu propia",
+      "subtitle": "aventura.",
+      "intro": "Elegí cuántos días tenés, sumá lugares o usá una propuesta lista. Todo queda en este celular.",
+      "body": "Mi viaje por las sierras",
+      "image_url": ""
+    },
+    {
+      "section_key": "closing",
+      "title": "Las sierras te esperan.",
+      "subtitle": "",
+      "intro": "Que tu estadía esté llena de buenos paseos, sabores y momentos para recordar.",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "footer_location",
+      "title": "Bialet Massé · Córdoba, Argentina",
+      "subtitle": "",
+      "intro": "",
+      "body": "",
+      "image_url": ""
+    },
+    {
+      "section_key": "footer_note",
+      "title": "Una guía creada para disfrutar más.",
+      "subtitle": "",
+      "intro": "",
+      "body": "",
+      "image_url": ""
+    },
+    {
       "section_key": "category_cerca",
       "title": "Todo cerca",
       "subtitle": "",

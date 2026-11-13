@@ -4,11 +4,39 @@
   const preview = params.get("tn-preview") === "1";
   const key = (() => { try { return localStorage.getItem("tn_clave") || ""; } catch { return ""; } })();
   const headers = key ? { "X-Clave": key } : {};
-  const mediaUrl = (value) => value.startsWith("media/cms/") ? `${API}/api/sitio/archivo-media?ruta=${encodeURIComponent(value)}` : value;
+  const mediaUrl = (value) => String(value || "").startsWith("media/cms/") ? `${API}/api/sitio/archivo-media?ruta=${encodeURIComponent(value)}` : value;
   // La foto de frutillas es un detalle de mesa, no una foto de la pileta. Se conserva en el banco de medios,
   // pero no se presenta como foto destacada mientras el dueño elige un reemplazo desde el editor del sitio.
   const esFotoNoRepresentativa = (value) => /(?:^|\/)15-pileta-frutillas\.(?:jpe?g|webp)$/i.test(String(value || "").split("?")[0]);
   const read = (obj, path) => path.split(".").reduce((v, k) => v && v[k], obj);
+  const mergeContent = (base, override) => {
+    if (!base || typeof base !== "object" || Array.isArray(base) || !override || typeof override !== "object" || Array.isArray(override)) {
+      return override === undefined ? base : override;
+    }
+    const merged = { ...base };
+    Object.entries(override).forEach(([name, value]) => {
+      merged[name] = value && typeof value === "object" && !Array.isArray(value)
+        ? mergeContent(base[name], value)
+        : value;
+    });
+    return merged;
+  };
+  const addEditorAction = (container, field, label, className = "tn-editor-action") => {
+    if (!editorPreview || !container) return null;
+    const existing = container.querySelector(`[data-tn-editor-action="${field}"]`);
+    if (existing) return existing;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = className;
+    button.textContent = label;
+    button.dataset.siteEditorKey = field;
+    button.dataset.tnEditorAction = field;
+    button.setAttribute("data-tn-preview-control", "true");
+    button.style.cssText = "position:absolute;z-index:80;top:12px;right:12px;border:1px solid #0b764a;border-radius:999px;background:#fff;color:#0b3c29;padding:7px 11px;font:600 12px system-ui;box-shadow:0 4px 16px #0003;cursor:pointer";
+    container.appendChild(button);
+    if (getComputedStyle(container).position === "static") container.style.position = "relative";
+    return button;
+  };
 
   // Estos campos se marcan desde el HTML, antes de consultar la API. Así el
   // editor sigue abriendo los títulos aunque el CMS del servidor todavía no
@@ -53,6 +81,30 @@
   bindEditorialFields();
 
   if (params.has("tn-editor-preview")) {
+    const hero = document.querySelector(".hero");
+    if (hero) {
+      const toolbar = document.createElement("div");
+      toolbar.dataset.tnPreviewControl = "hero-media-toolbar";
+      toolbar.style.cssText = "position:absolute;z-index:80;top:82px;right:14px;display:flex;flex-wrap:wrap;gap:7px;max-width:min(94vw,620px);justify-content:flex-end";
+      hero.appendChild(toolbar);
+      [
+        ["home.hero.video_desktop", "🎬 Cambiar video PC"],
+        ["home.hero.video_mobile", "📱 Cambiar video celular"],
+        ["home.hero_slides.3.imagen", "＋ Agregar foto de portada"],
+      ].forEach(([field, label]) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = label;
+        button.dataset.siteEditorKey = field;
+        button.style.cssText = "border:1px solid #0b764a;border-radius:999px;background:#fff;color:#0b3c29;padding:7px 11px;font:600 12px system-ui;box-shadow:0 4px 16px #0003;cursor:pointer";
+        toolbar.appendChild(button);
+      });
+    }
+    const galleryHeader = document.querySelector("#fotos .tn-editorial-heading");
+    addEditorAction(galleryHeader, "home.galeria.fotos.13.imagen", "＋ Agregar recuadro de foto");
+  }
+
+  if (params.has("tn-editor-preview")) {
     // Activar interacción antes de cargar datos para permitir editar incluso si la API demora/falla.
     document.documentElement.classList.add("tn-site-editor-preview");
     const style = document.createElement("style");
@@ -87,10 +139,17 @@
 
   async function loadContent() {
     try {
+      let data = {};
+      try {
+        const defaultsResponse = await fetch(new URL("./assets/data/contenido-sitio.json", location.href), { cache: "no-store" });
+        if (defaultsResponse.ok) data = await defaultsResponse.json();
+      } catch { /* La API conserva su propio contenido si los defaults no cargan. */ }
       const endpoint = preview && key ? "/api/sitio/contenido" : "/api/sitio/contenido-publico";
-      const response = await fetch(`${API}${endpoint}`, { headers, cache: "no-store" });
-      if (!response.ok) return;
-      const data = await response.json();
+      try {
+        const response = await fetch(`${API}${endpoint}`, { headers, cache: "no-store" });
+        if (response.ok) data = mergeContent(data, await response.json());
+      } catch { /* El sitio conserva el contenido público local como respaldo. */ }
+      if (!Object.keys(data).length) return;
       const seo = data.home?.seo || {};
       const setMeta = (selector, value) => {
         if (typeof value !== "string" || !value.trim()) return;
@@ -125,39 +184,50 @@
       // HTML y no tenía campos CMS; por eso sus títulos no abrían el editor.
       bindEditorialFields(data.home?.unidades_editoriales);
       const gallery = data.home?.galeria;
+      const galleryHeading = document.querySelector("#fotos .tn-editorial-heading h2");
+      const galleryLead = document.querySelector("#fotos .tn-editorial-heading p");
+      if (galleryHeading) {
+        galleryHeading.dataset.siteEditorKey = "home.galeria.titulo";
+        if (typeof gallery?.titulo === "string") galleryHeading.textContent = gallery.titulo;
+      }
+      if (galleryLead) {
+        galleryLead.dataset.siteEditorKey = "home.galeria.lead";
+        if (typeof gallery?.lead === "string") galleryLead.textContent = gallery.lead;
+      }
       if (gallery) {
-        const title = document.querySelector("#galeria h2");
-        const lead = document.querySelector("#galeria .section-lead-short");
-        if (title) { title.dataset.siteEditorKey = "home.galeria.titulo"; if (gallery.titulo) title.textContent = gallery.titulo; }
-        if (lead) { lead.dataset.siteEditorKey = "home.galeria.lead"; if (gallery.lead) lead.textContent = gallery.lead; }
-        const track = document.querySelector("#galeria .gallery-track");
-        const fotosPresentables = Array.isArray(gallery?.fotos) ? gallery.fotos.filter((photo) => !esFotoNoRepresentativa(photo?.imagen)) : [];
+        const track = document.querySelector("#fotos .tn-photo-grid");
+        const fotosPresentables = Array.isArray(gallery?.fotos) ? gallery.fotos.map((photo, originalIndex) => ({ photo, originalIndex })).filter(({ photo }) => !esFotoNoRepresentativa(photo?.imagen)) : [];
         if (track && fotosPresentables.length) {
           const fragment = document.createDocumentFragment();
-          fotosPresentables.forEach((photo, index) => {
+          fotosPresentables.forEach(({ photo, originalIndex }, index) => {
             if (!photo || typeof photo.imagen !== "string" || !photo.imagen.trim()) return;
-            const figure = document.createElement("figure");
-            figure.className = "gallery-slide" + (index === 0 ? " is-active" : "");
+            const figure = document.createElement("button");
+            figure.type = "button";
+            figure.className = "tn-photo-tile";
+            figure.dataset.siteEditorKey = `home.galeria.fotos.${originalIndex}.imagen`;
             const image = document.createElement("img");
-            image.dataset.siteEditorKey = `home.galeria.fotos.${index}.imagen`;
             image.src = mediaUrl(photo.imagen.trim());
             image.alt = typeof photo.alt === "string" ? photo.alt : "Foto de Terra Natura";
             image.loading = index === 0 ? "eager" : "lazy";
             image.decoding = "async";
-            const picture = document.createElement("picture");
-            picture.className = "tn-pic";
-            picture.appendChild(image);
-            figure.appendChild(picture);
+            figure.appendChild(image);
+            const caption = document.createElement("span");
+            caption.textContent = photo.alt || "Ver foto";
+            figure.appendChild(caption);
             fragment.appendChild(figure);
           });
-          if (fragment.childNodes.length) {
-            track.replaceChildren(fragment);
-            window.TN_refreshGalleryCarousels?.();
-          }
+          const videoTile = track.querySelector("[data-open-video]");
+          if (videoTile) fragment.appendChild(videoTile.cloneNode(true));
+          track.replaceChildren(fragment);
+          const addPhoto = document.querySelector("#fotos .tn-editorial-heading [data-tn-editor-action]")
+            || addEditorAction(document.querySelector("#fotos .tn-editorial-heading"), `home.galeria.fotos.${gallery.fotos.length}.imagen`, "＋ Agregar recuadro de foto");
+          if (addPhoto) addPhoto.dataset.siteEditorKey = `home.galeria.fotos.${gallery.fotos.length}.imagen`;
         }
       }
       const configuredSlides = data.home?.hero_slides;
       const slidesPresentables = Array.isArray(configuredSlides) ? configuredSlides.filter((item) => !esFotoNoRepresentativa(item?.imagen)) : [];
+      const addCover = document.querySelector('[data-site-editor-key="home.hero_slides.add"]');
+      if (addCover) addCover.dataset.siteEditorKey = `home.hero_slides.${configuredSlides?.length || 0}.imagen`;
       if (slidesPresentables.length) {
         const container = document.querySelector(".hero-slides");
         if (container) {
@@ -391,6 +461,24 @@
               toggle.textContent = video.muted ? "Sonido apagado" : "Sonido activado";
             });
           }
+        }
+      }
+      const galleryVideo = data.home?.video_galeria;
+      const dialogVideo = document.querySelector("#tn-video-dialog video");
+      if (dialogVideo && typeof galleryVideo === "string") {
+        const source = dialogVideo.querySelector("source");
+        if (source && galleryVideo.trim()) {
+          source.src = mediaUrl(galleryVideo.trim());
+          dialogVideo.load();
+        }
+      }
+      const guideVideo = data.home?.video_guia;
+      const guideElement = document.querySelector(".tn-guide-film__video");
+      if (guideElement && typeof guideVideo === "string") {
+        const source = guideElement.querySelector("source");
+        if (source && guideVideo.trim()) {
+          source.src = mediaUrl(guideVideo.trim());
+          guideElement.load();
         }
       }
       const editorStyles = data.home?.editor_styles || {};

@@ -179,7 +179,11 @@
           "eyebrow": "Tres unidades · hasta 4 personas",
           "titulo": "Cabañas Alpinas",
           "texto": "Dos plantas para disfrutar con espacio: dormitorio matrimonial con aire acondicionado y balcón en planta alta, más living comedor y cocina en planta baja.",
-          "bullets": ["Ideales para parejas", "Capacidad flexible para familias con chicos", "Parrilla y estacionamiento individual"],
+          "bullets": [
+            "Ideales para parejas",
+            "Capacidad flexible para familias con chicos",
+            "Parrilla y estacionamiento individual"
+          ],
           "imagen": "media/unidades/alpina-1/01.webp"
         },
         {
@@ -187,7 +191,11 @@
           "eyebrow": "Suite 5 · planta alta",
           "titulo": "Cabaña Suite Planta Alta",
           "texto": "Un loft íntimo en dúplex, con cama matrimonial, una plaza adicional, aire acondicionado y balcón con vista a las sierras.",
-          "bullets": ["Hasta 3 personas", "Aire frío-calor", "Entrada y pérgola independientes"],
+          "bullets": [
+            "Hasta 3 personas",
+            "Aire frío-calor",
+            "Entrada y pérgola independientes"
+          ],
           "imagen": "media/unidades/suite-5/01.webp"
         },
         {
@@ -195,7 +203,11 @@
           "eyebrow": "Suite 4 · planta baja",
           "titulo": "Cabaña Suite Planta Baja",
           "texto": "Un loft práctico y luminoso, con cama matrimonial, una plaza adicional, ventilador de techo y acceso en planta baja.",
-          "bullets": ["Hasta 3 personas", "Sin escaleras para acceder", "Entrada y pérgola independientes"],
+          "bullets": [
+            "Hasta 3 personas",
+            "Sin escaleras para acceder",
+            "Entrada y pérgola independientes"
+          ],
           "imagen": "media/unidades/suite-4/01.webp"
         }
       ]
@@ -530,7 +542,9 @@
       "og_description": "Cabañas y suites en Bialet Massé, a 600 m del lago San Roque. Pileta, parque y anfitriones en el lugar. Reservá directo.",
       "twitter_title": "Cabañas Alpinas Terra Natura · Bialet Massé",
       "twitter_description": "Cinco cabañas con pileta a pasos del lago. Reservá directo con seña online."
-    }
+    },
+    "video_galeria": "media/hero/hero-vertical-inicial.mp4",
+    "video_guia": "media/hero/hero-vertical-inicial.mp4"
   },
   "reserva_web": {
     "descuento_pct": 10,
