@@ -65,7 +65,9 @@
       if (eyebrow) eyebrow.dataset.siteEditorKey = `${key}.eyebrow`;
       if (title) title.dataset.siteEditorKey = `${key}.titulo`;
       if (description) description.dataset.siteEditorKey = `${key}.texto`;
-      if (image) image.dataset.siteEditorKey = `${key}.imagen`;
+      // En edición, tocar la foto grande abre el organizador de la galería
+      // completa de esa unidad, no el selector aislado de portada.
+      if (image) image.dataset.siteEditorKey = editorPreview ? `${key}.fotos.0` : `${key}.imagen`;
       if (galleryTrigger && editorPreview) galleryTrigger.dataset.siteEditorKey = `${key}.fotos.0`;
       const list = row.querySelector(".tn-feature-list");
       if (list) [...list.children].forEach((item, bulletIndex) => {
@@ -122,9 +124,10 @@
     // Activar interacción antes de cargar datos para permitir editar incluso si la API demora/falla.
     document.documentElement.classList.add("tn-site-editor-preview");
     const style = document.createElement("style");
-    style.textContent = `.tn-site-editor-preview [data-site-editor-key],.tn-site-editor-preview [data-site-text]{cursor:pointer!important;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px;-webkit-user-select:none;user-select:none;white-space:pre-wrap}.tn-site-editor-preview #unidades .tn-editorial-heading{resize:horizontal;overflow:auto;min-width:0;max-width:100%;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px}.tn-site-editor-preview [data-site-editor-key]:hover,.tn-site-editor-preview [data-site-text]:hover{outline:2px solid #f2c879!important;outline-offset:3px;filter:brightness(1.08)}`;
+    style.textContent = `.tn-site-editor-preview [data-site-editor-key]:not(img):not(video):not(button):not([data-tn-editor-action]),.tn-site-editor-preview [data-site-text]{cursor:pointer!important;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px;-webkit-user-select:none;user-select:none;white-space:pre-wrap;resize:horizontal;overflow:auto;max-width:100%;box-sizing:border-box}.tn-site-editor-preview #unidades .tn-editorial-heading{resize:horizontal;overflow:auto;min-width:0;max-width:100%;outline:1px dashed rgba(255,214,133,.82);outline-offset:3px;box-sizing:border-box}.tn-site-editor-preview [data-site-editor-key]:hover,.tn-site-editor-preview [data-site-text]:hover{outline:2px solid #f2c879!important;outline-offset:3px;filter:brightness(1.08)}`;
     document.head.appendChild(style);
     let resizeStart = null;
+    let resizedDuringPointer = false;
     window.addEventListener("pointerdown", (event) => {
       const node = event.target instanceof Element ? event.target.closest("[data-site-editor-key], [data-site-text]") : null;
       if (node) {
@@ -139,10 +142,19 @@
       const parentWidth = box.parentElement?.getBoundingClientRect().width || 0;
       const nextWidth = box.getBoundingClientRect().width;
       if (!parentWidth || Math.abs(nextWidth - width) < 6) return;
+      resizedDuringPointer = true;
+      setTimeout(() => { resizedDuringPointer = false; }, 0);
       const field = node.dataset.siteEditorKey || node.dataset.siteText;
-      if (field) window.parent.postMessage({ type: "tn-site-editor-style-change", field, box_width: `${Math.max(25, Math.min(100, Math.round(nextWidth / parentWidth * 100)))}%` }, "*");
+      if (field) window.parent.postMessage({ type: "tn-site-editor-style-change", field, box_width: `${Math.max(5, Math.min(100, Math.round(nextWidth / parentWidth * 100)))}%` }, "*");
     }, true);
     window.addEventListener("click", (event) => {
+      if (resizedDuringPointer) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        resizedDuringPointer = false;
+        return;
+      }
       const target = event.target instanceof Element
         ? event.target.closest("[data-site-editor-key], [data-site-text]")
         : null;
@@ -543,7 +555,7 @@
           if (["400", "500", "600", "700", "800", "900"].includes(style.font_weight)) node.style.fontWeight = style.font_weight;
           if (["normal", "italic"].includes(style.font_style)) node.style.fontStyle = style.font_style;
           const box = node.closest(".tn-editorial-heading") || node;
-          if (/^(2[5-9]|[3-9]\d|100)%$/.test(style.box_width || "")) {
+          if (/^(?:[5-9]|[1-9]\d|100)%$/.test(style.box_width || "")) {
             box.style.width = style.box_width;
             box.style.maxWidth = "100%";
           }
