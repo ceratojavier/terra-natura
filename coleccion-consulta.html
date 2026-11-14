@@ -48,10 +48,10 @@
       .subtitle { margin: .8rem auto 0; color: var(--muted); font-size: .95rem; line-height: 1.6; }
       .gallery-card { overflow: hidden; border: 1px solid rgba(28, 48, 39, .12); border-radius: 22px; background: var(--white); box-shadow: 0 22px 60px rgba(33, 48, 39, .12); }
       .hero { position: relative; display: grid; min-height: 280px; place-items: center; overflow: hidden; background: #d9d7ce; }
-      .hero img { display: block; width: 100%; height: min(68vh, 690px); min-height: 280px; object-fit: contain; }
+      .hero img { display: block; width: 100%; height: min(68vh, 690px); min-height: 280px; object-fit: cover; object-position: center 50%; }
       .hero::after { display: none; }
       .fit-toggle { position: absolute; z-index: 3; top: .85rem; left: .85rem; min-height: 40px; padding: .55rem .85rem; border: 1px solid rgba(255,255,255,.75); border-radius: 999px; color: #20372b; background: rgba(255,254,250,.94); box-shadow: 0 4px 16px rgba(0,0,0,.12); font: 650 .74rem "Inter", sans-serif; cursor: pointer; }
-      .hero.is-cropped img { object-fit: cover; }
+      .hero.is-full img { object-fit: contain; }
       .hero.is-cropped::after { display: block; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(13, 27, 22, .36)); content: ""; pointer-events: none; }
       .nav-btn { position: absolute; z-index: 2; top: 50%; display: grid; width: 48px; height: 48px; place-items: center; transform: translateY(-50%); border: 1px solid rgba(255,255,255,.65); border-radius: 50%; color: white; background: rgba(21, 55, 44, .68); box-shadow: 0 4px 20px rgba(0,0,0,.2); cursor: pointer; transition: background .2s, transform .2s; }
       .nav-btn:hover { transform: translateY(-50%) scale(1.06); background: var(--forest-deep); }
@@ -153,12 +153,13 @@
         const counter = document.getElementById("counter");
         const thumbs = document.getElementById("thumbs");
         let photos = [];
+        let sourcePhotos = [];
         let current = 0;
 
         fitToggle.addEventListener("click", function () {
-          const cropped = hero.classList.toggle("is-cropped");
-          fitToggle.setAttribute("aria-pressed", String(cropped));
-          fitToggle.textContent = cropped ? "Ver foto completa" : "Ver recorte";
+          const full = hero.classList.toggle("is-full");
+          fitToggle.setAttribute("aria-pressed", String(full));
+          fitToggle.textContent = full ? "Ver recorte" : "Ver foto completa";
         });
 
         function show(index) {
@@ -166,6 +167,8 @@
           current = (index + photos.length) % photos.length;
           const photo = photos[current];
           heroImage.src = photo.url;
+          const encuadre = photo.presentacion ? (window.matchMedia("(max-width: 640px)").matches ? photo.presentacion.posicion_celular : photo.presentacion.posicion_pc) : null;
+          heroImage.style.objectPosition = "center " + (encuadre == null ? 50 : encuadre) + "%";
           heroImage.alt = "Foto " + (current + 1) + " de " + (document.getElementById("seccion").textContent || "Terra Natura");
           caption.textContent = "Terra Natura · Valle de Punilla";
           counter.textContent = (current + 1) + " / " + photos.length;
@@ -182,35 +185,36 @@
           document.getElementById("seccion").textContent = sectionName + " · Bialet Massé";
           document.getElementById("titulo").textContent = title;
           document.title = title + " — Terra Natura";
-          photos = data.fotos || [];
-          document.getElementById("anterior").hidden = photos.length < 2;
-          document.getElementById("siguiente").hidden = photos.length < 2;
-          document.getElementById("cantidad").textContent = photos.length + (photos.length === 1 ? " foto seleccionada" : " fotos seleccionadas") + " para este álbum";
-          if (!photos.length) {
+          sourcePhotos = data.fotos || [];
+          function aplicarVista() {
+            const indiceRuta = photos[current] && photos[current].ruta;
+            photos = sourcePhotos.filter(function (photo) { return window.matchMedia("(max-width: 640px)").matches || !(photo.presentacion && photo.presentacion.solo_celular); });
+            current = Math.max(0, photos.findIndex(function (photo) { return photo.ruta === indiceRuta; }));
+            thumbs.replaceChildren();
+            photos.forEach(function (photo, index) {
+              const button = document.createElement("button");
+              const image = document.createElement("img");
+              button.type = "button"; button.className = "thumb"; button.setAttribute("aria-label", "Ver foto " + (index + 1)); button.setAttribute("aria-current", "false");
+              image.src = photo.url; image.alt = ""; image.loading = "lazy"; button.appendChild(image);
+              button.addEventListener("click", function () { show(index); }); thumbs.appendChild(button);
+            });
+            document.getElementById("cantidad").textContent = photos.length + (photos.length === 1 ? " foto seleccionada" : " fotos seleccionadas") + " para este álbum";
+            document.getElementById("anterior").hidden = photos.length < 2;
+            document.getElementById("siguiente").hidden = photos.length < 2;
+            if (photos.length) show(current);
+          }
+          if (!sourcePhotos.length) {
             loading.hidden = true;
             message.hidden = false;
             message.textContent = "Estamos preparando las fotos de esta sección. Consultanos por WhatsApp y te ayudamos con las fechas.";
             return;
           }
-          photos.forEach(function (photo, index) {
-            const button = document.createElement("button");
-            const image = document.createElement("img");
-            button.type = "button";
-            button.className = "thumb";
-            button.setAttribute("aria-label", "Ver foto " + (index + 1));
-            button.setAttribute("aria-current", "false");
-            image.src = photo.url;
-            image.alt = "";
-            image.loading = "lazy";
-            button.appendChild(image);
-            button.addEventListener("click", function () { show(index); });
-            thumbs.appendChild(button);
-          });
           const text = "Hola, vi el álbum de " + sectionName + " de Terra Natura y quisiera consultar disponibilidad.";
           document.getElementById("whatsapp").href = "https://wa.me/5493541571190?text=" + encodeURIComponent(text);
           loading.hidden = true;
           gallery.hidden = false;
-          show(0);
+          aplicarVista();
+          window.addEventListener("resize", function () { aplicarVista(); });
         }
 
         document.getElementById("anterior").addEventListener("click", function () { show(current - 1); });
