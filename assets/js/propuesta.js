@@ -18,8 +18,10 @@
       publicType: "alpina",
       whatsappName: "la Cabaña Alpina",
       services: [
+        ["stairs", "Dos plantas", "Dormitorio privado arriba y living-comedor en planta baja."],
         ["bed", "Dormitorio matrimonial", "En planta alta, para descansar con privacidad."],
         ["snow", "Aire frío-calor", "En el dormitorio matrimonial."],
+        ["fire", "Estufa a gas y panel", "Calor de hogar para las noches serranas."],
         ["mountain", "Balcón con vistas", "Vista a las sierras del Valle de Punilla."],
         ["family", "Living amplio", "Living-comedor con dos camas auxiliares de una plaza."],
         ["kitchen", "Cocina equipada", "Horno y heladera con freezer."],
@@ -39,6 +41,7 @@
         ["bed", "Cama matrimonial", "Más una cama de una plaza en el mismo loft."],
         ["stairs", "Todo en planta baja", "Acceso cómodo, sin subir escaleras."],
         ["fan", "Ventilador de techo", "Esta suite no cuenta con aire acondicionado."],
+        ["fire", "Estufa a gas", "Un ambiente cálido para los días frescos."],
         ["door", "Entrada independiente", "Acceso propio a la unidad."],
         ["kitchen", "Cocina equipada", "Horno y heladera con freezer."],
         ["wifi", "WiFi y Smart TV", "Conectividad y entretenimiento durante la estadía."],
@@ -56,6 +59,7 @@
       services: [
         ["bed", "Cama matrimonial", "Más una cama de una plaza en el mismo loft."],
         ["snow", "Aire frío-calor", "Confort durante todo el año."],
+        ["fire", "Estufa eléctrica", "Un ambiente cálido para disfrutar las noches serranas."],
         ["mountain", "Balcón con vistas", "Un rincón propio para disfrutar las sierras."],
         ["door", "Entrada independiente", "Acceso propio a la unidad."],
         ["kitchen", "Cocina equipada", "Horno y heladera con freezer."],
@@ -84,6 +88,7 @@
     door: '<path d="M5 21V4l14-2v19M5 21h16M15 12h.01"/>',
     pin: '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>',
+    fire: '<path d="M12 22c4.2 0 7-2.9 7-6.7 0-2.5-1.2-4.4-3.5-6.3.2 2-1 3-1.8 3.4C13.7 8.8 11.8 5.8 8.4 3 9 7.5 6 9.3 5.2 12.1 4.2 15.7 6.5 22 12 22Z"/><path d="M12 22c-2.1-1.1-2.8-3.1-1.8-5.1.5-1 1.3-1.6 1.8-2.9 1.5 1.6 2.3 3.1 2.1 4.7-.1 1.5-.8 2.6-2.1 3.3Z"/>',
   };
   const icon = (name) => `<svg viewBox="0 0 24 24" aria-hidden="true">${icons[name] || icons.sun}</svg>`;
   const title = (id) => units[id]?.title || "Cabaña Alpina";
@@ -114,7 +119,8 @@
     const url = quoteUrl(ci, co, adults, children, group);
     const text = `Hola, vi la propuesta de ${units[group].whatsappName} en Terra Natura para el ${fmtDate(ci)} al ${fmtDate(co)}. Somos ${adults + children}. ${total ? `La cotización que vi es ${fmtMoney(total)}. ` : ""}¿Me ayudás a avanzar?`;
     const wa = `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
-    for (const id of ["reserve-link", "final-reserve-link"]) document.getElementById(id).href = url;
+    for (const id of ["reserve-link", "final-reserve-link", "sticky-reserve-link"]) document.getElementById(id).href = url;
+    document.getElementById("sticky-reserve-link").textContent = total ? "Reservar" : "Ver cotización";
     for (const id of ["whatsapp-link", "header-whatsapp"]) document.getElementById(id).href = wa;
     const next = new URL(location.href);
     next.search = new URLSearchParams({ checkin: ci, checkout: co, adultos: String(adults), ninos: String(children), grupo: group }).toString();
@@ -134,11 +140,13 @@
     ].join("");
     document.getElementById("price-nights").textContent = `${nights} ${nights === 1 ? "noche" : "noches"} · ${fmtDate(ci)} al ${fmtDate(co)}`;
     document.getElementById("price-night").textContent = people > 0 ? `${pax}` : "";
+    document.getElementById("sticky-stay").textContent = `${nights} ${nights === 1 ? "noche" : "noches"} · ${pax}`;
     updateLinks(null);
   }
 
   function configureUnit() {
     const item = units[group];
+    document.getElementById("hero-title").textContent = group === "grupo-alpinas" ? "Tu cabaña alpina en Terra Natura" : `Tu ${item.title.toLowerCase()} en Terra Natura`;
     document.getElementById("offer-title").textContent = item.title;
     document.getElementById("offer-label").textContent = "Tu propuesta personalizada · Terra Natura";
     document.getElementById("offer-tagline").textContent = item.tagline;
@@ -174,6 +182,32 @@
     img.style.objectPosition = positionFor(photo);
     document.getElementById("photo-counter").textContent = `${String(photoIndex + 1).padStart(2, "0")} / ${String(photos.length).padStart(2, "0")}`;
     Array.from(document.getElementById("photo-thumbs").children).forEach((el, i) => el.setAttribute("aria-current", String(i === photoIndex)));
+    if (document.getElementById("photo-lightbox").open) syncLightboxPhoto();
+  }
+
+  function syncLightboxPhoto() {
+    if (!photos.length) return;
+    const photo = photos[photoIndex];
+    const image = document.getElementById("lightbox-photo");
+    image.src = photo.url;
+    image.alt = `${units[group].title}, foto ${photoIndex + 1} de ${photos.length}`;
+    image.style.objectPosition = positionFor(photo);
+    document.getElementById("lightbox-caption").textContent = `${units[group].title} · Terra Natura · Bialet Massé`;
+    document.getElementById("lightbox-counter").textContent = `${String(photoIndex + 1).padStart(2, "0")} / ${String(photos.length).padStart(2, "0")}`;
+  }
+
+  function openLightbox() {
+    if (!photos.length) return;
+    const lightbox = document.getElementById("photo-lightbox");
+    syncLightboxPhoto();
+    if (!lightbox.open) lightbox.showModal();
+    document.documentElement.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("photo-lightbox");
+    if (lightbox.open) lightbox.close();
+    document.documentElement.style.overflow = "";
   }
 
   function renderPhotos(data) {
@@ -188,7 +222,7 @@
       const button = document.createElement("button");
       const image = document.createElement("img");
       button.type = "button"; button.className = "tn-gallery__thumb"; button.setAttribute("aria-label", `Ver foto ${index + 1}`); button.setAttribute("aria-current", "false");
-      image.src = photo.url; image.alt = ""; image.loading = index < 5 ? "eager" : "lazy";
+      image.src = photo.url; image.alt = ""; image.loading = "lazy"; image.decoding = "async";
       button.appendChild(image); button.addEventListener("click", () => showPhoto(index)); thumbs.appendChild(button);
     });
     document.getElementById("gallery-note").textContent = `${photos.length} fotos seleccionadas para esta opción`;
@@ -209,6 +243,7 @@
     const discount = Number(cot.descuento_web_pct || 0);
     const deposit = Math.round(total * .5);
     document.getElementById("price-total").textContent = fmtMoney(total);
+    document.getElementById("sticky-total").textContent = fmtMoney(total);
     const listEl = document.getElementById("price-list");
     if (list > total && discount > 0) { listEl.hidden = false; listEl.innerHTML = `<del>${fmtMoney(list)}</del> <strong>${discount}% de beneficio reservando online</strong>`; }
     else listEl.hidden = true;
@@ -224,6 +259,7 @@
     const button = document.getElementById("update-quote");
     button.disabled = busy;
     button.textContent = busy ? "Consultando el calendario…" : "Actualizar disponibilidad y precio";
+    document.querySelector(".tn-price-card").classList.toggle("is-updating", busy);
   }
 
   function offerUrl(groupId) {
@@ -263,6 +299,9 @@
     const price = document.querySelector(".tn-price-card");
     price.classList.add("is-error");
     document.getElementById("price-total").textContent = "—";
+    document.getElementById("sticky-total").textContent = "Ver opciones";
+    document.getElementById("sticky-reserve-link").href = "#alternatives";
+    document.getElementById("sticky-reserve-link").textContent = "Ver opciones";
     document.getElementById("price-list").hidden = true;
     document.getElementById("price-deposit").textContent = "—";
     document.getElementById("price-status").textContent = reason || "La propuesta seleccionada necesita una nueva consulta.";
@@ -275,6 +314,7 @@
       if (!initial) setToast("Revisá las fechas: la salida tiene que ser posterior al ingreso.");
       document.getElementById("price-status").textContent = "Completá las fechas para calcular tu estadía.";
       document.getElementById("price-total").textContent = "Elegí tus fechas";
+      document.getElementById("sticky-total").textContent = "Elegí tus fechas";
       return;
     }
     setBusy(true);
@@ -298,6 +338,7 @@
     } catch (error) {
       document.querySelector(".tn-price-card").classList.add("is-error");
       document.getElementById("price-total").textContent = "No disponible";
+      document.getElementById("sticky-total").textContent = "Consultar tarifa";
       document.getElementById("price-status").textContent = error instanceof Error ? error.message : "No pudimos consultar el calendario.";
       if (!initial) setToast("No pudimos actualizar la propuesta. Probá otra vez.");
     } finally { setBusy(false); }
@@ -316,6 +357,14 @@
   document.getElementById("quote-form").addEventListener("submit", (event) => { event.preventDefault(); refreshQuote(); });
   document.getElementById("photo-prev").addEventListener("click", () => showPhoto(photoIndex - 1));
   document.getElementById("photo-next").addEventListener("click", () => showPhoto(photoIndex + 1));
+  document.getElementById("lightbox-open").addEventListener("click", openLightbox);
+  document.getElementById("main-photo").addEventListener("click", openLightbox);
+  document.getElementById("lightbox-close").addEventListener("click", closeLightbox);
+  document.getElementById("lightbox-prev").addEventListener("click", () => showPhoto(photoIndex - 1));
+  document.getElementById("lightbox-next").addEventListener("click", () => showPhoto(photoIndex + 1));
+  document.getElementById("photo-lightbox").addEventListener("click", (event) => { if (event.target === event.currentTarget) closeLightbox(); });
+  document.getElementById("photo-lightbox").addEventListener("close", () => { document.documentElement.style.overflow = ""; });
+  document.getElementById("photo-lightbox").addEventListener("cancel", () => { document.documentElement.style.overflow = ""; });
   document.getElementById("fit-photo").addEventListener("click", (event) => {
     const stage = document.getElementById("gallery-stage");
     const full = stage.classList.toggle("is-full");
@@ -323,8 +372,9 @@
     event.currentTarget.textContent = full ? "Ver recorte" : "Ver foto completa";
   });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") showPhoto(photoIndex - 1);
-    if (event.key === "ArrowRight") showPhoto(photoIndex + 1);
+    if (!document.getElementById("photo-lightbox").open) return;
+    if (event.key === "ArrowLeft") { event.preventDefault(); showPhoto(photoIndex - 1); }
+    if (event.key === "ArrowRight") { event.preventDefault(); showPhoto(photoIndex + 1); }
   });
   let touchX = null;
   document.getElementById("gallery-stage").addEventListener("touchstart", (event) => { touchX = event.changedTouches[0].screenX; }, { passive: true });
@@ -334,6 +384,23 @@
     if (Math.abs(delta) > 45) showPhoto(photoIndex + (delta < 0 ? 1 : -1));
     touchX = null;
   }, { passive: true });
+  let lightboxTouchX = null;
+  document.getElementById("photo-lightbox").addEventListener("touchstart", (event) => { lightboxTouchX = event.changedTouches[0].screenX; }, { passive: true });
+  document.getElementById("photo-lightbox").addEventListener("touchend", (event) => {
+    if (lightboxTouchX === null) return;
+    const delta = event.changedTouches[0].screenX - lightboxTouchX;
+    if (Math.abs(delta) > 45) showPhoto(photoIndex + (delta < 0 ? 1 : -1));
+    lightboxTouchX = null;
+  }, { passive: true });
+  const mobileBookingBar = document.getElementById("mobile-booking-bar");
+  const quoteObserver = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) mobileBookingBar.dataset.quoteSeen = "true";
+    const show = matchMedia("(max-width: 767px)").matches && mobileBookingBar.dataset.quoteSeen === "true" && !entry.isIntersecting;
+    mobileBookingBar.classList.toggle("is-visible", show);
+    mobileBookingBar.setAttribute("aria-hidden", String(!show));
+    mobileBookingBar.inert = !show;
+  }, { threshold: .12 });
+  quoteObserver.observe(document.getElementById("booking-card"));
   window.addEventListener("resize", () => { const image = photos[photoIndex]; if (image) document.getElementById("main-photo").style.objectPosition = positionFor(image); });
 
   if (inputCheckin.value && document.getElementById("checkout").value) refreshQuote({ initial: true });
