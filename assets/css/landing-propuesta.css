@@ -124,3 +124,30 @@ button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{o
 .tn-reviews__empty{grid-column:1/-1;padding:1.2rem;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--muted);font-size:.75rem}
 @media(max-width:980px){.tn-nearby-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:767px){.tn-conversion-section{margin:0 0 3.6rem;padding:0 1.15rem}.tn-conversion-section .tn-section-head{display:block}.tn-conversion-section .tn-section-head h2{font-size:2.5rem}.tn-nearby-grid{grid-template-columns:repeat(4,minmax(235px,78vw));gap:.6rem;margin-right:-1.15rem;padding:0 1.15rem .7rem 0;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none}.tn-nearby-grid::-webkit-scrollbar,.tn-reviews-grid::-webkit-scrollbar{display:none}.tn-nearby-card{min-height:190px;padding:1rem;scroll-snap-align:start}.tn-nearby-card h3{font-size:1.35rem}.tn-nearby-card p{font-size:.63rem}.tn-nearby-card__icon{margin-bottom:1.15rem}.tn-reviews__badge{font-size:.6rem}.tn-reviews-grid{display:flex;gap:.65rem;margin-right:-1.15rem;padding:0 1.15rem .7rem 0;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none}.tn-review-card{min-width:min(84vw,350px);min-height:235px;padding:1.1rem;scroll-snap-align:start}.tn-review-card blockquote{font-size:.71rem}}
+
+/* Galería pareja: mismo marco por foto, imagen completa y sin sombras. */
+.tn-gallery{border-radius:18px;box-shadow:none}
+.tn-gallery__stage{height:clamp(420px,46vw,650px);min-height:0;max-height:none;aspect-ratio:auto;border-radius:inherit;background:#f0eee7}
+.tn-gallery__stage img.tn-gallery__ambient{display:none!important}
+.tn-gallery__stage img#main-photo{inset:0;width:100%;height:100%;max-width:none;object-fit:contain!important;object-position:var(--photo-origin,50% 50%);border-radius:inherit;background:transparent;transform:scale(var(--photo-zoom,1));}
+.tn-gallery__stage:hover img#main-photo{transform:scale(var(--photo-zoom,1))}
+.tn-gallery__stage.is-full img#main-photo{transform:none}
+.tn-gallery__caption{max-width:min(620px,56%);text-shadow:none}
+.tn-gallery__caption h1{max-width:620px;font-size:clamp(2.35rem,4vw,4.25rem);line-height:.98;letter-spacing:-.025em}
+.tn-gallery__caption p{max-width:420px;text-shadow:0 1px 4px rgba(0,0,0,.38)}
+.tn-gallery__thumbs{gap:.55rem;padding:.7rem .8rem;background:#f7f5f0}
+.tn-gallery__thumb{flex:0 0 112px;height:70px;border-radius:10px;background:#efede5;box-shadow:none;transform:none!important}
+.tn-gallery__thumb img{object-fit:contain;background:#efede5}
+.tn-gallery__thumb[aria-current="true"]:after{border-radius:9px}
+.tn-nearby-card{padding:0;overflow:hidden;box-shadow:none}
+.tn-nearby-card:hover{transform:none;box-shadow:none}
+.tn-nearby-card__photo,.tn-nearby-card__photo-placeholder{display:block;width:100%;aspect-ratio:16/10;object-fit:contain;border-radius:15px 15px 0 0;background:#eeece4}
+.tn-nearby-card__photo-placeholder{display:grid;place-items:center;color:#687d6c}
+.tn-nearby-card__photo-placeholder svg{width:31px;height:31px;stroke-width:1.5}
+.tn-nearby-card__body{position:relative;min-height:132px;padding:1rem 1rem 1.1rem}
+.tn-nearby-card__time{top:1rem;right:1rem}
+.tn-nearby-card h3{padding-right:3.5rem}
+.tn-review-card{box-shadow:none}
+.tn-review-card:hover{transform:none;box-shadow:none}
+@media(max-width:980px){.tn-gallery__caption{max-width:66%}}
+@media(max-width:767px){.tn-gallery{border-radius:15px;box-shadow:none}.tn-gallery__stage{height:clamp(360px,108vw,560px);max-height:76vh;aspect-ratio:auto;min-height:0}.tn-gallery__caption{left:1rem;bottom:1.2rem;max-width:74%}.tn-gallery__caption h1{max-width:440px;font-size:clamp(2.05rem,8vw,3.05rem);line-height:1}.tn-gallery__caption p{max-width:310px;font-size:.72rem}.tn-gallery__thumb{flex-basis:96px;height:60px}.tn-nearby-card{min-height:0;padding:0}.tn-nearby-card__photo,.tn-nearby-card__photo-placeholder{aspect-ratio:16/10}.tn-nearby-card__body{min-height:126px;padding:.9rem}.tn-nearby-card__time{top:.9rem;right:.9rem}.tn-nearby-card h3{padding-right:3.2rem;font-size:1.22rem}.tn-nearby-card p{font-size:.62rem}}

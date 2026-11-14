@@ -11,10 +11,10 @@
     lugares_titulo: "Explorá las Sierras · Todo cerca tuyo",
     lugares_bajada: "Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.",
     lugares: [
-      { id: "rios", titulo: "Balnearios y Ríos", tiempo: "A 5 min", descripcion: "Acceso rápido a playas del Río Cosquín y el Lago San Roque.", icono: "pool" },
-      { id: "miradores", titulo: "Paseos y Miradores", tiempo: "A 8 min", descripcion: "Naturaleza serrana, senderos y puntos panorámicos históricos.", icono: "mountain" },
-      { id: "gastronomia", titulo: "Gastronomía Regional", tiempo: "A 5 min", descripcion: "Parrillas, casas de té y opciones gastronómicas locales.", icono: "kitchen" },
-      { id: "ciudades", titulo: "Carlos Paz y Cosquín", tiempo: "A 15 min", descripcion: "Teatros, paseos nocturnos y festivales por ruta.", icono: "sun" },
+      { id: "rios", titulo: "Balnearios y Ríos", tiempo: "A 5 min", descripcion: "Acceso rápido a playas del Río Cosquín y el Lago San Roque.", icono: "pool", foto: "media/atracciones/labios-del-indio-v2.png" },
+      { id: "miradores", titulo: "Paseos y Miradores", tiempo: "A 8 min", descripcion: "Naturaleza serrana, senderos y puntos panorámicos históricos.", icono: "mountain", foto: "media/atracciones/plaza-federal-atardecer.jpg" },
+      { id: "gastronomia", titulo: "Gastronomía Regional", tiempo: "A 5 min", descripcion: "Parrillas, casas de té y opciones gastronómicas locales.", icono: "kitchen", foto: "media/atracciones/peatonal-carlos-paz-v2.png" },
+      { id: "ciudades", titulo: "Carlos Paz y Cosquín", tiempo: "A 15 min", descripcion: "Teatros, paseos nocturnos y festivales por ruta.", icono: "sun", foto: "media/atracciones/puente-carlos-paz-noche-v2.png" },
     ],
   };
   const q = new URLSearchParams(location.search);
@@ -182,10 +182,12 @@
     setText("nearby-title", cfg.lugares_titulo);
     setText("nearby-subtitle", cfg.lugares_bajada);
 
-    const places = Array.isArray(cfg.lugares) ? cfg.lugares.filter((place) => place && place.titulo && place.descripcion).slice(0, 8) : conversionDefaults.lugares;
+    const places = Array.isArray(cfg.lugares) ? conversionDefaults.lugares.map((base) => ({ ...base, ...(cfg.lugares.find((place) => place?.id === base.id) || {}) })) : conversionDefaults.lugares;
     document.getElementById("nearby-grid").innerHTML = places.map((place) => {
       const symbol = icons[place.icono] ? place.icono : "pin";
-      return `<article class="tn-nearby-card"><span class="tn-nearby-card__icon">${icon(symbol)}</span><span class="tn-nearby-card__time">${escapeHtml(place.tiempo || "")}</span><h3>${escapeHtml(place.titulo)}</h3><p>${escapeHtml(place.descripcion)}</p></article>`;
+      const imagePath = String(place.foto || "").trim();
+      const imageUrl = /^https?:\/\//i.test(imagePath) ? imagePath : `./${imagePath.replace(/^\.?\//, "")}`;
+      return `<article class="tn-nearby-card">${imagePath ? `<img class="tn-nearby-card__photo" src="${escapeHtml(imageUrl)}" alt="${escapeHtml(place.titulo)}" loading="lazy" decoding="async" onerror="this.hidden=true" />` : `<div class="tn-nearby-card__photo-placeholder">${icon(symbol)}</div>`}<div class="tn-nearby-card__body"><span class="tn-nearby-card__time">${escapeHtml(place.tiempo || "")}</span><h3>${escapeHtml(place.titulo)}</h3><p>${escapeHtml(place.descripcion)}</p></div></article>`;
     }).join("");
 
     const reviews = Array.isArray(home.resenas) ? home.resenas.filter((review) => review && typeof review.texto === "string" && review.texto.trim()).slice(0, 6) : [];
@@ -196,7 +198,7 @@
     }
     grid.innerHTML = reviews.map((review) => {
       const score = Number(String(review.puntaje || "").replace(",", "."));
-      const stars = Number.isFinite(score) && score >= 9 ? 5 : Number.isFinite(score) && score >= 4.5 ? 5 : 5;
+      const stars = Number.isFinite(score) && score > 0 ? Math.min(5, Math.max(1, Math.round(score > 5 ? score / 2 : score))) : 5;
       const trip = Array.isArray(review.etiquetas) ? review.etiquetas.find((tag) => typeof tag === "string" && tag.trim()) : "";
       const guest = review.nombre || "Huésped verificado";
       const provenance = [trip, review.pie || review.fuente].filter(Boolean).join(" · ");
@@ -237,10 +239,6 @@
     img.alt = `${units[group].title}, foto ${photoIndex + 1} de ${photos.length}`;
     img.style.objectPosition = positionFor(photo);
     document.getElementById("photo-backdrop").src = photo.url;
-    img.onload = () => {
-      const stage = document.getElementById("gallery-stage");
-      if (img.naturalWidth && img.naturalHeight) stage.style.setProperty("--photo-ratio", `${img.naturalWidth} / ${img.naturalHeight}`);
-    };
     document.getElementById("photo-counter").textContent = `${String(photoIndex + 1).padStart(2, "0")} / ${String(photos.length).padStart(2, "0")}`;
     Array.from(document.getElementById("photo-thumbs").children).forEach((el, i) => el.setAttribute("aria-current", String(i === photoIndex)));
     if (document.getElementById("photo-lightbox").open) syncLightboxPhoto();
