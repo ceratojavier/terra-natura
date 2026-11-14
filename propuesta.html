@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#123b2a" />
+  <meta name="description" content="Una propuesta personalizada para tu estadía en Cabañas Alpinas Terra Natura, Bialet Massé." />
+  <meta property="og:site_name" content="Cabañas Alpinas Terra Natura" />
+  <meta property="og:title" content="Tu propuesta · Terra Natura" />
+  <meta property="og:description" content="Fotos, servicios y cotización personalizada en Bialet Massé." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="./assets/branding/logo-terra-natura.png" />
+  <link rel="apple-touch-icon" href="./assets/branding/logo-terra-natura.png" />
+  <link rel="stylesheet" href="./assets/css/landing-propuesta.css?v=20261114-landing" />
+  <title>Tu propuesta · Cabañas Alpinas Terra Natura</title>
+</head>
+<body>
+  <header class="tn-header">
+    <a class="tn-brand" href="./index.html" aria-label="Cabañas Alpinas Terra Natura, inicio">
+      <svg class="tn-brand__mark" viewBox="0 0 64 64" role="img" aria-label="Terra Natura">
+        <path d="M6 43 22 23l9 10 9-13 18 23M17 43l10-13 5 6 7-9 12 16M10 48h45" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
+        <circle cx="48" cy="14" r="2" fill="currentColor" />
+        <text x="32" y="58" text-anchor="middle">TERRA NATURA</text>
+      </svg>
+      <span class="tn-brand__copy"><strong>Tu refugio en las Sierras</strong><small>Bialet Massé · Sierras de Cba</small></span>
+    </a>
+    <a class="tn-header__link" id="header-whatsapp" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer">Hablemos por WhatsApp</a>
+  </header>
+
+  <main class="tn-page">
+    <p class="tn-kicker"><span class="tn-kicker__dot"></span> Una propuesta preparada para vos</p>
+    <section class="tn-proposal" aria-labelledby="offer-title">
+      <div class="tn-gallery" id="gallery" aria-label="Fotos de la propuesta">
+        <div class="tn-gallery__stage" id="gallery-stage">
+          <img id="main-photo" alt="" fetchpriority="high" />
+          <div class="tn-gallery__shade"></div>
+          <div class="tn-gallery__brand"><span>Terra Natura</span><small>Bialet Massé · Córdoba</small></div>
+          <button class="tn-gallery__fit" id="fit-photo" type="button" aria-pressed="false">Ver foto completa</button>
+          <button class="tn-gallery__arrow tn-gallery__arrow--left" id="photo-prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg></button>
+          <button class="tn-gallery__arrow tn-gallery__arrow--right" id="photo-next" type="button" aria-label="Foto siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></button>
+          <span class="tn-gallery__counter" id="photo-counter"></span>
+        </div>
+        <div class="tn-gallery__thumbs" id="photo-thumbs" aria-label="Elegir foto"></div>
+        <p class="tn-gallery__note" id="gallery-note">Fotos reales de la opción que te propusimos</p>
+      </div>
+
+      <div class="tn-offer">
+        <p class="tn-offer__eyebrow" id="offer-label">Tu estadía en Terra Natura</p>
+        <h1 id="offer-title">Cabaña Alpina</h1>
+        <p class="tn-offer__lead" id="offer-tagline"></p>
+        <div class="tn-stay-summary" id="stay-summary" aria-live="polite"></div>
+
+        <section class="tn-price-card" aria-label="Cotización de la estadía">
+          <div class="tn-price-card__top"><span>Tu cotización online</span><span class="tn-price-card__live"><i></i> Tarifa actualizada</span></div>
+          <p class="tn-price-card__total" id="price-total">Consultando…</p>
+          <p class="tn-price-card__list" id="price-list" hidden></p>
+          <div class="tn-price-card__details"><span id="price-nights"></span><span id="price-night"></span></div>
+          <div class="tn-price-card__deposit"><span>Seña para iniciar la reserva <small>50 % del total · saldo al llegar</small></span><strong id="price-deposit">—</strong></div>
+          <p class="tn-price-card__note" id="price-status" role="status">Verificando fechas y tarifa…</p>
+        </section>
+
+        <div class="tn-offer__actions">
+          <a class="tn-button tn-button--primary" id="reserve-link" href="#editar">Continuar con esta opción <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+          <a class="tn-button tn-button--secondary" id="whatsapp-link" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+        </div>
+
+        <form class="tn-edit" id="quote-form">
+          <div class="tn-edit__heading"><div><p class="tn-edit__eyebrow">¿Querés hacer un cambio?</p><h2>Ajustá tu propuesta</h2></div><span class="tn-edit__edit-icon" aria-hidden="true">↗</span></div>
+          <div class="tn-edit__fields">
+            <label>Ingreso<input id="checkin" name="checkin" type="date" required /></label>
+            <label>Salida<input id="checkout" name="checkout" type="date" required /></label>
+            <label>Adultos<input id="adults" name="adultos" type="number" min="1" max="20" required /></label>
+            <label>Niños<input id="children" name="ninos" type="number" min="0" max="20" required /></label>
+          </div>
+          <button class="tn-button tn-button--update" id="update-quote" type="submit">Actualizar disponibilidad y precio</button>
+          <p class="tn-edit__hint">Si cambiás fechas o pasajeros, volvemos a consultar el calendario y las tarifas vigentes.</p>
+        </form>
+        <div class="tn-alternatives" id="alternatives" hidden></div>
+      </div>
+    </section>
+
+    <section class="tn-section tn-services" aria-labelledby="services-title">
+      <div class="tn-section__intro"><p class="tn-section__eyebrow">Lo que incluye</p><h2 id="services-title">Comodidad y detalles para disfrutar</h2><p>Todo lo necesario para descansar, cocinar y compartir, con la atención cercana de nuestros anfitriones.</p></div>
+      <div class="tn-service-grid" id="service-grid"></div>
+    </section>
+
+    <section class="tn-location" aria-labelledby="location-title">
+      <div class="tn-location__copy"><p class="tn-section__eyebrow">Una ubicación para aprovechar</p><h2 id="location-title">Entre el lago y las sierras</h2><p class="tn-location__address"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Los Talas 759 · Barrio Mirador del Lago<br />Bialet Massé, Córdoba</p>
+        <div class="tn-location__points" id="location-points"></div>
+        <a class="tn-button tn-button--map" id="map-link" href="https://maps.app.goo.gl/enAUK1opv8mQmuYq9" target="_blank" rel="noopener noreferrer">Ver ubicación en Google Maps <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4 10 14"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a>
+      </div>
+      <div class="tn-location__art" aria-hidden="true"><div class="tn-location__sun"></div><svg viewBox="0 0 600 400"><path d="M0 324 124 170l74 88 112-151 148 194 82-87 60 75v111H0Z"/><path d="m94 324 79-101 47 56 87-117 111 162M301 206l-57 73 39 45m133-21 38-51 60 57"/><path d="M0 329c104-42 181-40 277 0s190 45 323-4"/></svg><div class="tn-location__art-label"><span>VALLE DE PUNILLA</span><strong>Un lugar para bajar el ritmo</strong></div></div>
+    </section>
+
+    <section class="tn-final-cta"><div><p class="tn-section__eyebrow">Tu próximo descanso empieza acá</p><h2 id="final-title">¿Te imaginás acá?</h2><p>Revisá la cotización y, si te cierra, avanzá con la reserva directa.</p></div><a class="tn-button tn-button--primary" id="final-reserve-link" href="#editar">Quiero esta opción <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></section>
+  </main>
+  <footer class="tn-footer"><a class="tn-footer__brand" href="./index.html"><strong>Terra Natura</strong><span>Tu refugio en las Sierras</span></a><span>Los Talas 759 · Bialet Massé, Córdoba</span></footer>
+  <div class="tn-toast" id="toast" role="status" aria-live="polite"></div>
+  <script defer src="./assets/js/propuesta.js?v=20261114-landing-venta"></script>
+</body>
+</html>
