@@ -180,6 +180,11 @@
     img.src = photo.url;
     img.alt = `${units[group].title}, foto ${photoIndex + 1} de ${photos.length}`;
     img.style.objectPosition = positionFor(photo);
+    document.getElementById("photo-backdrop").src = photo.url;
+    img.onload = () => {
+      const stage = document.getElementById("gallery-stage");
+      if (img.naturalWidth && img.naturalHeight) stage.style.setProperty("--photo-ratio", `${img.naturalWidth} / ${img.naturalHeight}`);
+    };
     document.getElementById("photo-counter").textContent = `${String(photoIndex + 1).padStart(2, "0")} / ${String(photos.length).padStart(2, "0")}`;
     Array.from(document.getElementById("photo-thumbs").children).forEach((el, i) => el.setAttribute("aria-current", String(i === photoIndex)));
     if (document.getElementById("photo-lightbox").open) syncLightboxPhoto();
@@ -286,6 +291,7 @@
 
   function showAlternatives(options, reason) {
     const section = document.getElementById("alternatives");
+    document.getElementById("stay-editor").open = true;
     const usable = (options || []).filter((o) => o.disponible && o.cotizacion && validGroups.has(o.grupo_id));
     const names = { "grupo-alpinas": "Cabaña Alpina", "suite-4": "Suite en planta baja", "suite-5": "Suite en planta alta" };
     section.hidden = false;
@@ -367,9 +373,9 @@
   document.getElementById("photo-lightbox").addEventListener("cancel", () => { document.documentElement.style.overflow = ""; });
   document.getElementById("fit-photo").addEventListener("click", (event) => {
     const stage = document.getElementById("gallery-stage");
-    const full = stage.classList.toggle("is-full");
-    event.currentTarget.setAttribute("aria-pressed", String(full));
-    event.currentTarget.textContent = full ? "Ver recorte" : "Ver foto completa";
+    const cropped = stage.classList.toggle("is-cropped");
+    event.currentTarget.setAttribute("aria-pressed", String(cropped));
+    event.currentTarget.textContent = cropped ? "Ver foto completa" : "Ver recorte";
   });
   document.addEventListener("keydown", (event) => {
     if (!document.getElementById("photo-lightbox").open) return;
