@@ -1,0 +1,21 @@
+{
+  "id": "/app/",
+  "name": "Terra Natura · Conversaciones",
+  "short_name": "Terra Natura",
+  "description": "Centro móvil de conversaciones y operación de Cabañas Alpinas Terra Natura.",
+  "start_url": "/app/admin/pms/bandeja?utm_source=homescreen",
+  "scope": "/app/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f1f18",
+  "theme_color": "#0f1f18",
+  "lang": "es-AR",
+  "categories": ["business", "travel"],
+  "icons": [
+    { "src": "/app/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Conversaciones", "short_name": "Chats", "url": "/app/admin/pms/bandeja", "icons": [{ "src": "/app/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml" }] },
+    { "name": "Disponibilidad", "short_name": "Calendario", "url": "/app/admin/pms/calendario", "icons": [{ "src": "/app/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml" }] }
+  ]
+}
