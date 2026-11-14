@@ -663,7 +663,13 @@
 
     const { adultos, ninos } = leerAdultosNinos(fromHero);
     const grupo = leerGrupo(fromHero);
-    const grupoFiltro = grupo === "todas" ? null : grupo;
+    let grupoFiltro = grupo === "todas" ? null : grupo;
+    const capacidadPorGrupo = { "grupo-alpinas": 4, "suite-4": 3, "suite-5": 3 };
+    if (grupoFiltro && adultos + ninos > (capacidadPorGrupo[grupoFiltro] || Infinity)) {
+      // Una propuesta compartida por WhatsApp se puede editar. Si cambia el grupo
+      // y supera su capacidad, volver a mostrar automáticamente las alternativas válidas.
+      grupoFiltro = null;
+    }
     const quien = leerNombre(fromHero);
     const codigoPromo = leerCodigoPromo(fromHero);
     const edadesMenores = leerEdadesMenores(fromHero);
