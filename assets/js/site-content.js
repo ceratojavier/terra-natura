@@ -494,7 +494,13 @@
             card.appendChild(quote);
             const footer = document.createElement("footer");
             footer.className = "resena-pie";
-            footer.textContent = String(item.pie || "");
+            const guestName = document.createElement("strong");
+            guestName.dataset.siteEditorKey = `home.resenas.${index}.nombre`;
+            guestName.textContent = String(item.nombre || "Huésped verificado");
+            const guestProvenance = document.createElement("span");
+            guestProvenance.dataset.siteEditorKey = `home.resenas.${index}.pie`;
+            guestProvenance.textContent = String(item.pie || "");
+            footer.append(guestName, guestProvenance);
             card.appendChild(footer);
             fragment.appendChild(card);
           });

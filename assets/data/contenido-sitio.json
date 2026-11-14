@@ -170,6 +170,19 @@
     }
   ],
   "home": {
+    "propuesta_conversion": {
+      "opiniones_titulo": "Lo que dicen nuestros huéspedes",
+      "opiniones_bajada": "Historias de huéspedes publicadas en el sitio de Terra Natura.",
+      "opiniones_insignia": "★ 4.9 · Basado en reseñas verificadas",
+      "lugares_titulo": "Explorá las Sierras · Todo cerca tuyo",
+      "lugares_bajada": "Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.",
+      "lugares": [
+        { "id": "rios", "titulo": "Balnearios y Ríos", "tiempo": "A 5 min", "descripcion": "Acceso rápido a playas del Río Cosquín y el Lago San Roque.", "icono": "pool" },
+        { "id": "miradores", "titulo": "Paseos y Miradores", "tiempo": "A 8 min", "descripcion": "Naturaleza serrana, senderos y puntos panorámicos históricos.", "icono": "mountain" },
+        { "id": "gastronomia", "titulo": "Gastronomía Regional", "tiempo": "A 5 min", "descripcion": "Parrillas, casas de té y opciones gastronómicas locales.", "icono": "kitchen" },
+        { "id": "ciudades", "titulo": "Carlos Paz y Cosquín", "tiempo": "A 15 min", "descripcion": "Teatros, paseos nocturnos y festivales por ruta.", "icono": "sun" }
+      ]
+    },
     "unidades_editoriales": {
       "eyebrow": "Terra Natura · Bialet Massé",
       "titulo": "Cabañas alpinas y cabañas suites",

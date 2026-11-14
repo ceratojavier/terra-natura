@@ -4,6 +4,19 @@
   const API = "https://api.alpinasterranatura.com.ar";
   const SITE = "https://alpinasterranatura.com.ar";
   const WA = "5493541571190";
+  const conversionDefaults = {
+    opiniones_titulo: "Lo que dicen nuestros huéspedes",
+    opiniones_bajada: "Historias de huéspedes publicadas en el sitio de Terra Natura.",
+    opiniones_insignia: "★ 4.9 · Basado en reseñas verificadas",
+    lugares_titulo: "Explorá las Sierras · Todo cerca tuyo",
+    lugares_bajada: "Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.",
+    lugares: [
+      { id: "rios", titulo: "Balnearios y Ríos", tiempo: "A 5 min", descripcion: "Acceso rápido a playas del Río Cosquín y el Lago San Roque.", icono: "pool" },
+      { id: "miradores", titulo: "Paseos y Miradores", tiempo: "A 8 min", descripcion: "Naturaleza serrana, senderos y puntos panorámicos históricos.", icono: "mountain" },
+      { id: "gastronomia", titulo: "Gastronomía Regional", tiempo: "A 5 min", descripcion: "Parrillas, casas de té y opciones gastronómicas locales.", icono: "kitchen" },
+      { id: "ciudades", titulo: "Carlos Paz y Cosquín", tiempo: "A 15 min", descripcion: "Teatros, paseos nocturnos y festivales por ruta.", icono: "sun" },
+    ],
+  };
   const q = new URLSearchParams(location.search);
   const validGroups = new Set(["grupo-alpinas", "suite-4", "suite-5"]);
   let group = validGroups.has(q.get("grupo")) ? q.get("grupo") : "grupo-alpinas";
@@ -153,14 +166,54 @@
     document.getElementById("services-title").textContent = `Todo lo que incluye ${item.title}`;
     document.getElementById("final-title").textContent = `¿Te imaginás en ${item.title}?`;
     document.getElementById("service-grid").innerHTML = item.services.map(([symbol, name, desc]) => `<article class="tn-service"><span class="tn-service__icon">${icon(symbol)}</span><strong>${name}</strong><p>${desc}</p></article>`).join("");
-    document.getElementById("location-points").innerHTML = [
-      `<div class="tn-location__point">${icon("pin")}<span><strong>A 600 m del lago San Roque</strong><br />Cerca del agua y de la rotonda de acceso a la autovía.</span></div>`,
-      `<div class="tn-location__point">${icon("pin")}<span><strong>A unos 2 km del centro de Bialet Massé</strong><br />También cerca de Barrancas Bermejas y el arroyo Las Mojarras.</span></div>`,
-      `<div class="tn-location__point">${icon("mountain")}<span><strong>En el corazón del Valle de Punilla</strong><br />Cosquín y Villa Carlos Paz, aproximadamente a 10 minutos; Córdoba capital, a unos 30.</span></div>`,
-      `<div class="tn-location__point">${icon("family")}<span><strong>Anfitriones en el predio</strong><br />Los dueños viven en el complejo y pueden darte una mano durante la estadía.</span></div>`,
-    ].join("");
     const whats = document.getElementById("whatsapp-link");
     whats.href = `https://wa.me/${WA}`;
+  }
+
+  const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+
+  function renderConversionContent(content) {
+    const home = content?.home || {};
+    const cfg = { ...conversionDefaults, ...(home.propuesta_conversion || {}) };
+    const setText = (id, value) => { const element = document.getElementById(id); if (element && value) element.textContent = value; };
+    setText("reviews-title", cfg.opiniones_titulo);
+    setText("reviews-subtitle", cfg.opiniones_bajada);
+    setText("reviews-badge", cfg.opiniones_insignia);
+    setText("nearby-title", cfg.lugares_titulo);
+    setText("nearby-subtitle", cfg.lugares_bajada);
+
+    const places = Array.isArray(cfg.lugares) ? cfg.lugares.filter((place) => place && place.titulo && place.descripcion).slice(0, 8) : conversionDefaults.lugares;
+    document.getElementById("nearby-grid").innerHTML = places.map((place) => {
+      const symbol = icons[place.icono] ? place.icono : "pin";
+      return `<article class="tn-nearby-card"><span class="tn-nearby-card__icon">${icon(symbol)}</span><span class="tn-nearby-card__time">${escapeHtml(place.tiempo || "")}</span><h3>${escapeHtml(place.titulo)}</h3><p>${escapeHtml(place.descripcion)}</p></article>`;
+    }).join("");
+
+    const reviews = Array.isArray(home.resenas) ? home.resenas.filter((review) => review && typeof review.texto === "string" && review.texto.trim()).slice(0, 6) : [];
+    const grid = document.getElementById("reviews-grid");
+    if (!reviews.length) {
+      grid.innerHTML = '<p class="tn-reviews__empty">Las opiniones de huéspedes se mostrarán aquí cuando estén cargadas en el editor del sitio.</p>';
+      return;
+    }
+    grid.innerHTML = reviews.map((review) => {
+      const score = Number(String(review.puntaje || "").replace(",", "."));
+      const stars = Number.isFinite(score) && score >= 9 ? 5 : Number.isFinite(score) && score >= 4.5 ? 5 : 5;
+      const trip = Array.isArray(review.etiquetas) ? review.etiquetas.find((tag) => typeof tag === "string" && tag.trim()) : "";
+      const guest = review.nombre || "Huésped verificado";
+      const provenance = [trip, review.pie || review.fuente].filter(Boolean).join(" · ");
+      return `<article class="tn-review-card"><div class="tn-review-card__stars" aria-label="${stars} estrellas">${"★".repeat(stars)}</div>${review.titulo ? `<h3>${escapeHtml(review.titulo)}</h3>` : ""}<blockquote>“${escapeHtml(review.texto)}”</blockquote><footer><strong>${escapeHtml(guest)}</strong><span>${escapeHtml(provenance)}</span></footer></article>`;
+    }).join("");
+  }
+
+  async function loadConversionContent() {
+    let content;
+    try {
+      const response = await fetch(`${API}/api/public/contenido-sitio`, { headers: { Accept: "application/json" }, cache: "no-store" });
+      if (!response.ok) throw new Error("CMS");
+      content = await response.json();
+    } catch (_) {
+      try { content = await fetch("./assets/data/contenido-sitio.json", { cache: "no-store" }).then((response) => response.ok ? response.json() : null); } catch (_) { content = null; }
+    }
+    renderConversionContent(content || {});
   }
 
   function positionFor(photo) {
@@ -361,6 +414,7 @@
   document.getElementById("children").value = String(Math.max(0, Number(q.get("ninos") || 0)));
 
   configureUnit();
+  loadConversionContent();
   paintStay();
   loadPhotos();
   document.getElementById("quote-form").addEventListener("submit", (event) => { event.preventDefault(); refreshQuote(); });

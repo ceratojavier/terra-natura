@@ -1534,9 +1534,12 @@ select:focus-visible {
 }
 
 .resena-pie {
+  display: grid;
+  gap: 0.18rem;
   font-size: 0.78rem;
   color: var(--muted);
 }
+.resena-pie strong { color: var(--text); font-weight: 650; }
 
 .resenas-links {
   margin-top: 1.25rem;
