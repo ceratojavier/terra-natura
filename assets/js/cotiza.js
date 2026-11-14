@@ -477,9 +477,12 @@
       '<h2 id="cotiza-modal-title">Confirmá tu reserva</h2>' +
       '<p class="muted" id="cotiza-modal-sub"></p>' +
       '<form id="cotiza-modal-form">' +
-      '<label>Tu nombre<input type="text" name="nombre" required minlength="2" autocomplete="given-name" placeholder="¿Cómo te llamás?" /></label>' +
-      '<label>WhatsApp para enviarte la confirmación<input type="tel" name="telefono" required minlength="8" autocomplete="tel" inputmode="tel" /></label>' +
-      '<label>Email <span class="muted">(opcional)</span><input type="email" name="email" autocomplete="email" /></label>' +
+      '<div class="checkout-grid">' +
+      '<label>Nombre<input type="text" name="nombre" required minlength="2" autocomplete="given-name" /></label>' +
+      '<label>Apellido<input type="text" name="apellido" required minlength="2" autocomplete="family-name" /></label>' +
+      '<label class="checkout-grid-wide">Teléfono / WhatsApp<input type="tel" name="telefono" required minlength="8" autocomplete="tel" inputmode="tel" /></label>' +
+      '</div>' +
+      '<p class="checkout-privacy">Con estos datos abrimos una pre-reserva por unas horas. Vos confirmás la reserva cuando revisemos el pago.</p>' +
       '<div id="cotiza-modal-titulares"></div>' +
       '<button type="submit" class="btn-reservar-web">Confirmar reserva y ver datos de transferencia</button>' +
       "</form>" +
@@ -511,7 +514,6 @@
       fmt(Number(opcion.cotizacion.total));
     const f = modal.querySelector("#cotiza-modal-form");
     f.nombre.value = ctx.nombre || "";
-    f.email.value = ctx.email || "";
     f.telefono.value = ctx.telefono || "";
     const holders = f.querySelector("#cotiza-modal-titulares");
     const multi = Array.isArray(opcion.unidad_ids) && opcion.unidad_ids.length > 1;
@@ -541,7 +543,8 @@
           check_in: ctx.check_in,
           check_out: ctx.check_out,
           huesped_nombre: f.nombre.value.trim(),
-          huesped_email: f.email.value.trim() || null,
+          huesped_apellido: f.apellido.value.trim(),
+          huesped_email: null,
           huesped_telefono: f.telefono.value.trim(),
           personas: ctx.adultos + ctx.ninos,
           adultos: ctx.adultos,
@@ -572,6 +575,8 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
+        res.telefono = payload.huesped_telefono;
+        res.personas = payload.personas;
         reservaWebCreada = true;
         formularioReservaAbierto = false;
         try {

@@ -169,6 +169,9 @@
     const x = mobile ? (p.posicion_celular_x ?? 50) : (p.posicion_pc_x ?? 50);
     const oldY = mobile ? p.posicion_celular : p.posicion_pc;
     const y = mobile ? (p.posicion_celular_y ?? oldY ?? 50) : (p.posicion_pc_y ?? oldY ?? 50);
+    const zoom = mobile ? (p.zoom_celular ?? 100) : (p.zoom_pc ?? 100);
+    document.getElementById("main-photo")?.style.setProperty("--photo-zoom", String(Math.max(50, Math.min(160, Number(zoom) || 100)) / 100));
+    document.getElementById("main-photo")?.style.setProperty("--photo-origin", `${x}% ${y}%`);
     return `${x}% ${y}%`;
   }
 
@@ -371,12 +374,6 @@
   document.getElementById("photo-lightbox").addEventListener("click", (event) => { if (event.target === event.currentTarget) closeLightbox(); });
   document.getElementById("photo-lightbox").addEventListener("close", () => { document.documentElement.style.overflow = ""; });
   document.getElementById("photo-lightbox").addEventListener("cancel", () => { document.documentElement.style.overflow = ""; });
-  document.getElementById("fit-photo").addEventListener("click", (event) => {
-    const stage = document.getElementById("gallery-stage");
-    const cropped = stage.classList.toggle("is-cropped");
-    event.currentTarget.setAttribute("aria-pressed", String(cropped));
-    event.currentTarget.textContent = cropped ? "Ver foto completa" : "Ver recorte";
-  });
   document.addEventListener("keydown", (event) => {
     if (!document.getElementById("photo-lightbox").open) return;
     if (event.key === "ArrowLeft") { event.preventDefault(); showPhoto(photoIndex - 1); }
