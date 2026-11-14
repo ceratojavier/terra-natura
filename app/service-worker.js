@@ -1,4 +1,4 @@
-const APP_CACHE = "terra-natura-app-shell-v1";
+const APP_CACHE = "terra-natura-app-shell-v2";
 const APP_HOME = "/app/";
 
 self.addEventListener("install", (event) => {
