@@ -31,10 +31,12 @@ self.addEventListener("push", (event) => {
     else if (self.navigator?.clearAppBadge) await self.navigator.clearAppBadge().catch(() => undefined);
     await self.registration.showNotification(title, {
       body: data.body || "Te llegó un mensaje por WhatsApp.",
-      icon: "/app/pwa-icon.svg",
-      badge: "/app/pwa-icon.svg",
+      icon: "/app/logo-terra-natura.png",
+      badge: "/app/logo-terra-natura.png",
       tag: data.tag || "terra-natura-chat",
       renotify: true,
+      silent: false,
+      vibrate: [250, 120, 250, 120, 450],
       data: { url: data.url || "/app/admin/pms/bandeja" },
     });
   })());

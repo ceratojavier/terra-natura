@@ -1,8 +1,8 @@
 {
   "id": "/app/",
-  "name": "Terra Natura · Conversaciones",
+  "name": "Terra Natura · Administración",
   "short_name": "Terra Natura",
-  "description": "Centro móvil de conversaciones y operación de Cabañas Alpinas Terra Natura.",
+  "description": "Aplicación de administración, conversaciones y operación de Cabañas Alpinas Terra Natura.",
   "start_url": "/app/admin/pms/bandeja?utm_source=homescreen",
   "scope": "/app/",
   "display": "standalone",
@@ -12,10 +12,10 @@
   "lang": "es-AR",
   "categories": ["business", "travel"],
   "icons": [
-    { "src": "/app/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+    { "src": "/app/logo-terra-natura.png", "type": "image/png", "purpose": "any" }
   ],
   "shortcuts": [
-    { "name": "Conversaciones", "short_name": "Chats", "url": "/app/admin/pms/bandeja", "icons": [{ "src": "/app/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml" }] },
-    { "name": "Disponibilidad", "short_name": "Calendario", "url": "/app/admin/pms/calendario", "icons": [{ "src": "/app/pwa-icon.svg", "sizes": "any", "type": "image/svg+xml" }] }
+    { "name": "Conversaciones", "short_name": "Chats", "url": "/app/admin/pms/bandeja", "icons": [{ "src": "/app/logo-terra-natura.png", "type": "image/png" }] },
+    { "name": "Disponibilidad", "short_name": "Calendario", "url": "/app/admin/pms/calendario", "icons": [{ "src": "/app/logo-terra-natura.png", "type": "image/png" }] }
   ]
 }
