@@ -42,17 +42,24 @@
     return out;
   }
 
-  function buildCarouselHtml(fotos, nombre) {
+  function buildCarouselHtml(fotos, nombre, presentaciones) {
     var slides = fotos
       .map(function (src, i) {
         var full = assetUrl(src);
+        var pathKey = String(src || "").replace(/^https?:\/\/[^/]+/i, "").replace(/^\.\.\//, "").replace(/^\.\//, "").replace(/^\//, "");
+        var p = (presentaciones || {})[pathKey] || {};
+        var mobile = window.matchMedia("(max-width: 720px)").matches;
+        var x = Number(mobile ? (p.posicion_celular_x ?? 50) : (p.posicion_pc_x ?? 50));
+        var y = Number(mobile ? (p.posicion_celular_y ?? p.posicion_celular ?? 50) : (p.posicion_pc_y ?? p.posicion_pc ?? 50));
+        var zoom = Math.max(100, Math.min(200, Number(mobile ? (p.zoom_celular ?? 100) : (p.zoom_pc ?? 100))));
+        var style = ' style="object-position:' + x + '% ' + y + '%;transform:scale(' + (zoom / 100) + ');transform-origin:' + x + '% ' + y + '%"';
         return (
           '<figure class="gallery-slide' +
           (i === 0 ? " is-active" : "") +
           '">' +
           '<img src="' +
           escapeHtml(full) +
-          '" alt="' +
+          '"' + style + ' alt="' +
           escapeHtml(nombre) +
           " — foto " +
           (i + 1) +
@@ -195,13 +202,18 @@
     });
   }
 
+  var sectionForPresentations = String(params.get("tipo") || id).indexOf("suite") === 0 ? "suite" : "alpina";
   Promise.all([
     fetch(assetBase + "assets/data/unidades.json", { cache: "no-cache" }).then(function (r) { return r.json(); }),
     fetch(API + (preview && apiHeaders["X-Clave"] ? "/api/sitio/contenido" : "/api/sitio/contenido-publico"), { headers: apiHeaders, cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+    fetch(API + "/api/public/coleccion-consulta/" + sectionForPresentations, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
   ])
     .then(function (responses) {
       var data = responses[0];
       var cms = responses[1];
+      var presentationRows = responses[2] && Array.isArray(responses[2].fotos) ? responses[2].fotos : [];
+      var presentationMap = {};
+      presentationRows.forEach(function (photo) { if (photo && photo.ruta && photo.presentacion) presentationMap[String(photo.ruta).replace(/^\//, "")] = photo.presentacion; });
       var tipo = params.get("tipo");
       var u = tipo
         ? unidadPorTipo(data.unidades || [], tipo)
@@ -239,7 +251,7 @@
       var fotos = ordenarFotos(u);
       var carousel =
         fotos.length > 0
-          ? buildCarouselHtml(fotos, u.nombre)
+          ? buildCarouselHtml(fotos, u.nombre, presentationMap)
           : "<p class='muted'>Fotos en preparación.</p>";
       var thumbs = fotos.length > 1 ? buildThumbsHtml(fotos, u.nombre) : "";
 

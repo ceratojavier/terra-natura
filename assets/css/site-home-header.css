@@ -1,0 +1,156 @@
+/* Encabezado transparente con cotizador compacto integrado al primer plano. */
+.site-header--home {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 60;
+  padding: .55rem max(.75rem, calc((100vw - 1360px) / 2));
+  background: transparent;
+}
+
+.header-inner--home {
+  display: grid;
+  grid-template-columns: minmax(205px, 1.05fr) minmax(360px, 1.7fr) minmax(480px, 2.2fr);
+  gap: clamp(.4rem, 1vw, 1rem);
+  align-items: center;
+  width: min(1440px, 100%);
+  min-height: 74px;
+  margin: 0 auto;
+  padding: .25rem .25rem .25rem .65rem;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(180deg, rgb(5 22 15 / 44%), rgb(5 22 15 / 5%));
+  box-shadow: none;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.header-inner--home .brand {
+  min-width: 0;
+  gap: .58rem;
+  color: #fffdf5;
+  text-shadow: 0 1px 12px rgb(0 0 0 / 45%);
+}
+
+.header-inner--home .brand-logo-img {
+  width: 64px;
+  height: 48px;
+  max-width: none;
+  object-fit: contain;
+}
+
+.brand-caption { display: grid; gap: .14rem; min-width: 0; }
+.brand-caption strong { font-family: var(--tn-display, Georgia, serif); font-size: clamp(1rem, 1.35vw, 1.35rem); font-weight: 500; line-height: 1; white-space: nowrap; }
+.brand-caption small { color: rgb(255 255 255 / 82%); font-family: inherit; font-size: .57rem; font-weight: 650; letter-spacing: .09em; line-height: 1.2; text-transform: uppercase; white-space: nowrap; }
+
+.header-inner--home .nav-links { justify-content: center; gap: 0; flex-wrap: nowrap; }
+.header-inner--home .nav-links a { padding: .52rem .48rem; border-radius: 5px; color: #fff; font-size: clamp(.65rem, .74vw, .76rem); font-weight: 550; text-shadow: 0 1px 9px rgb(0 0 0 / 55%); }
+.header-inner--home .nav-links a:hover,
+.header-inner--home .nav-links a:focus-visible { color: #fff; background: rgb(255 255 255 / 12%); }
+
+.header-cotizador {
+  display: grid;
+  grid-template-columns: minmax(108px, 1.15fr) minmax(108px, 1.15fr) minmax(54px, .55fr) minmax(54px, .55fr) minmax(108px, 1fr);
+  gap: .36rem;
+  align-items: end;
+  min-width: 0;
+  padding: .28rem .34rem .22rem;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 12px;
+  background: rgb(9 31 22 / 38%);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+}
+
+.header-cotizador > label { display: grid; min-width: 0; gap: .15rem; color: rgb(255 255 255 / 88%); font-size: .57rem; font-weight: 650; line-height: 1; }
+.header-cotizador input { box-sizing: border-box; width: 100%; min-width: 0; height: 34px; padding: 0 .42rem; border: 1px solid rgb(255 255 255 / 70%); border-radius: 7px; color: #26342b; background: rgb(255 255 255 / 94%); font-family: inherit; font-size: .68rem; font-weight: 500; line-height: 1; }
+.header-cotizador button { align-self: end; min-width: 0; height: 34px; min-height: 34px; padding: 0 .55rem; border: 1px solid rgb(255 239 211 / 80%); border-radius: 7px; color: #26372b; background: #dfbd91; font-family: inherit; font-size: .65rem; font-weight: 650; line-height: 1.1; white-space: nowrap; }
+.header-cotizador button:hover { color: #1d3025; background: #f1d3a8; }
+.header-cotizador-help { grid-column: 1 / -1; margin: .12rem .12rem 0; color: rgb(255 255 255 / 86%); font-size: .59rem; line-height: 1.2; text-align: right; }
+.header-cotizador-ages { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .3rem; }
+.header-cotizador-ages[hidden] { display: none; }
+.header-cotizador-ages label { display: grid; gap: .12rem; color: #fff; font-size: .54rem; }
+.header-cotizador-ages input { height: 29px; }
+.hero-cotiza-result { position: relative; z-index: 5; scroll-margin-top: 1.5rem; }
+.hero-cotiza-result[hidden] { display: none; }
+.hero-seo-title { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (min-width: 860px) {
+  .page-home .hero { width: 100%; height: 100vh !important; min-height: 100svh !important; max-height: none; padding-bottom: 0 !important; }
+}
+
+@media (max-width: 1190px) and (min-width: 860px) {
+  .header-inner--home { grid-template-columns: minmax(180px, .8fr) minmax(280px, 1.2fr) minmax(420px, 1.8fr); }
+  .header-inner--home .brand-logo-img { width: 64px; }
+  .brand-caption strong { font-size: 1rem; }
+  .header-inner--home .nav-links a { padding-inline: .3rem; font-size: .65rem; }
+  .header-cotizador { grid-template-columns: minmax(94px,1.1fr) minmax(94px,1.1fr) minmax(46px,.5fr) minmax(46px,.5fr) minmax(100px,1fr); gap: .26rem; }
+}
+
+@media (min-width: 860px) {
+  .header-inner--home .nav-links a[href="#atracciones"],
+  .header-inner--home .nav-links a[href="#ubicacion"] { display: none; }
+}
+
+@media (max-width: 1190px) and (min-width: 860px) {
+  .header-inner--home .nav-links a[href="#nosotros"] { display: none; }
+}
+
+@media (max-width: 859px) {
+  .site-header--home { padding: calc(.25rem + env(safe-area-inset-top)) .45rem 0; }
+  .header-inner--home {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: .2rem .35rem;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 0;
+    margin: 0;
+    padding: .25rem .32rem .35rem;
+    border: 0;
+    border-radius: 0;
+    background: linear-gradient(180deg, rgb(5 22 15 / 45%), rgb(5 22 15 / 10%));
+  }
+  .header-inner--home .brand { gap: .4rem; }
+  .header-inner--home .brand-logo-img { width: 50px; height: 36px; }
+  .brand-caption strong { font-size: 1rem; }
+  .brand-caption small { font-size: .48rem; letter-spacing: .06em; }
+  .header-inner--home .nav-toggle { grid-column: 2; grid-row: 1; min-height: 34px; padding: 0 .68rem; border: 1px solid rgb(255 255 255 / 48%); border-radius: 999px; color: #fff; background: rgb(10 35 25 / 32%); font-size: .7rem; }
+  .header-inner--home .nav-links { top: 3.15rem; right: .35rem; width: min(88vw, 320px); padding: .5rem; border: 1px solid rgb(255 255 255 / 35%); border-radius: 12px; background: rgb(7 29 20 / 94%); }
+  .header-inner--home .nav-links a { min-height: 36px; padding: .45rem .55rem; font-size: .78rem; }
+  .header-cotizador {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) 36px 36px 76px !important;
+    gap: .24rem;
+    padding: .34rem .3rem .28rem;
+    border-radius: 9px;
+    background: rgb(7 29 20 / 43%);
+  }
+  .header-cotizador > label { width: 100%; min-width: 0 !important; max-width: 100%; box-sizing: border-box; gap: .12rem; font-size: .5rem; }
+  .header-cotizador > label:nth-of-type(3),
+  .header-cotizador > label:nth-of-type(4) { min-width: 0 !important; }
+  .header-cotizador input { width: 100% !important; min-width: 0 !important; max-width: 100% !important; box-sizing: border-box; height: 31px; padding: 0 .12rem; border-radius: 6px; font-size: .49rem; }
+  .header-cotizador input[type="date"] { appearance: none; -webkit-appearance: none; overflow: hidden; }
+  .header-cotizador button { grid-column: 5; grid-row: 1; width: 76px !important; max-width: 76px; height: 31px; min-height: 31px; padding: 0 .15rem; border-radius: 6px; font-size: .52rem; white-space: normal; }
+  .header-cotizador-help { grid-column: 1 / -1; margin-top: .12rem; font-size: .55rem; text-align: center; }
+  .header-cotizador-ages { grid-column: 1 / -1; }
+  .header-cotizador-ages { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .header-cotizador-ages label { font-size: .49rem; }
+  .page-home .hero-video:not(.hero-video-backdrop) { object-fit: cover !important; object-position: center !important; }
+  .page-home .hero-brand-mark { display: none !important; }
+}
+
+@media (max-width: 360px) {
+  .header-inner--home .brand-logo-img { width: 46px; }
+  .brand-caption strong { font-size: .9rem; }
+  .brand-caption small { font-size: .42rem; }
+  .header-cotizador { grid-template-columns: minmax(0,1fr) minmax(0,1fr) 30px 30px 68px !important; gap: .15rem; }
+  .header-cotizador button { grid-column: 5; width: 68px !important; }
+  .header-cotizador > label { font-size: .46rem; }
+  .header-cotizador input { font-size: .53rem; }
+  .header-cotizador button { font-size: .51rem; }
+}

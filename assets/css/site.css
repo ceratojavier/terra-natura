@@ -874,8 +874,8 @@ h3 {
 .gallery-slide img {
   width: 100%;
   height: 100%;
-  /* Foto entera: sin recortar pileta ni paisaje */
-  object-fit: contain;
+  /* Marco uniforme del carrusel; el encuadre individual se ajusta en el editor de fotos. */
+  object-fit: cover;
   object-position: center;
   display: block;
 }
@@ -1265,7 +1265,7 @@ select:focus-visible {
 .cabana-unit-carousel .gallery-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
   cursor: zoom-in;

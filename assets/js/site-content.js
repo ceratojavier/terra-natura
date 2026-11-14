@@ -204,6 +204,20 @@
         if (response.ok) data = mergeContent(data, await response.json());
       } catch { /* El sitio conserva el contenido público local como respaldo. */ }
       if (!Object.keys(data).length) return;
+      const presentaciones = new Map();
+      const normalizarRuta = (value) => String(value || "").replace(/^https?:\/\/[^/]+/i, "").split("?")[0].replace(/^\.\//, "").replace(/^\//, "");
+      const [albumAlpina, albumSuite] = await Promise.all(["alpina", "suite"].map((tipo) => fetch(`${API}/api/public/coleccion-consulta/${tipo}`, { cache: "no-store" }).then((r) => r.ok ? r.json() : null).catch(() => null)));
+      [albumAlpina, albumSuite].forEach((album) => (album?.fotos || []).forEach((photo) => { if (photo?.presentacion) presentaciones.set(normalizarRuta(photo.ruta), photo.presentacion); }));
+      const aplicarEncuadre = (element, ruta, esFondo = false) => {
+        const p = presentaciones.get(normalizarRuta(ruta));
+        if (!p || !element) return;
+        const mobile = matchMedia("(max-width: 720px)").matches;
+        const x = Number(mobile ? (p.posicion_celular_x ?? 50) : (p.posicion_pc_x ?? 50));
+        const y = Number(mobile ? (p.posicion_celular_y ?? p.posicion_celular ?? 50) : (p.posicion_pc_y ?? p.posicion_pc ?? 50));
+        const zoom = Math.max(100, Math.min(200, Number(mobile ? (p.zoom_celular ?? 100) : (p.zoom_pc ?? 100))));
+        if (esFondo) { element.style.backgroundPosition = `${x}% ${y}%`; element.style.backgroundSize = zoom > 100 ? `${zoom}% auto` : "cover"; }
+        else { element.style.objectPosition = `${x}% ${y}%`; element.style.transform = `scale(${zoom / 100})`; element.style.transformOrigin = `${x}% ${y}%`; }
+      };
       const seo = data.home?.seo || {};
       const setMeta = (selector, value) => {
         if (typeof value !== "string" || !value.trim()) return;
@@ -280,6 +294,7 @@
             image.alt = typeof photo.alt === "string" ? photo.alt : "Foto de Terra Natura";
             image.loading = index === 0 ? "eager" : "lazy";
             image.decoding = "async";
+            aplicarEncuadre(image, photo.imagen);
             figure.appendChild(image);
             const caption = document.createElement("span");
             caption.textContent = photo.alt || "Ver foto";
@@ -310,6 +325,7 @@
             slide.setAttribute("role", "img");
             slide.setAttribute("aria-label", typeof item.alt === "string" ? item.alt : "Cabañas Alpinas Terra Natura");
             slide.style.backgroundImage = `url("${mediaUrl(item.imagen.trim())}")`;
+            aplicarEncuadre(slide, item.imagen, true);
             fragment.appendChild(slide);
           });
           if (fragment.childNodes.length) {
@@ -337,6 +353,7 @@
             image.alt = unit.nombre;
             image.loading = "lazy";
             image.decoding = "async";
+            aplicarEncuadre(image, unit.foto_portada);
             imageLink.appendChild(image);
             card.appendChild(imageLink);
             const heading = document.createElement("h3");
@@ -446,67 +463,7 @@
           });
         }
       }
-      if (Array.isArray(data.home?.resenas)) {
-        const grid = document.querySelector("#resenas .resenas-grid");
-        if (grid) {
-          const fragment = document.createDocumentFragment();
-          data.home.resenas.forEach((item, index) => {
-            if (!item || typeof item.texto !== "string" || typeof item.titulo !== "string") return;
-            const card = document.createElement("article");
-            card.className = "resena-card";
-            const head = document.createElement("div");
-            head.className = "resena-card-head";
-            const score = document.createElement("span");
-            score.className = "resena-score";
-            score.textContent = String(item.puntaje || "");
-            score.setAttribute("aria-label", `Puntuación ${score.textContent}`);
-            const meta = document.createElement("div");
-            const label = document.createElement("p");
-            label.className = "resena-label";
-            label.textContent = String(item.etiqueta || "");
-            const source = document.createElement("p");
-            source.className = "resena-fuente";
-            source.textContent = String(item.fuente || "");
-            meta.append(label, source);
-            head.append(score, meta);
-            card.appendChild(head);
-            const title = document.createElement("h3");
-            title.dataset.siteEditorKey = `home.resenas.${index}.titulo`;
-            title.className = "resena-titulo";
-            title.textContent = item.titulo;
-            card.appendChild(title);
-            const tags = Array.isArray(item.etiquetas) ? item.etiquetas.filter((tag) => typeof tag === "string" && tag.trim()) : [];
-            if (tags.length) {
-              const tagList = document.createElement("div");
-              tagList.className = "resena-tags";
-              tags.forEach((tag) => {
-                const pill = document.createElement("span");
-                pill.className = "resena-tag";
-                pill.textContent = tag;
-                tagList.appendChild(pill);
-              });
-              card.appendChild(tagList);
-            }
-            const quote = document.createElement("blockquote");
-            quote.dataset.siteEditorKey = `home.resenas.${index}.texto`;
-            quote.className = "resena-texto";
-            quote.textContent = `“${item.texto}”`;
-            card.appendChild(quote);
-            const footer = document.createElement("footer");
-            footer.className = "resena-pie";
-            const guestName = document.createElement("strong");
-            guestName.dataset.siteEditorKey = `home.resenas.${index}.nombre`;
-            guestName.textContent = String(item.nombre || "Huésped verificado");
-            const guestProvenance = document.createElement("span");
-            guestProvenance.dataset.siteEditorKey = `home.resenas.${index}.pie`;
-            guestProvenance.textContent = String(item.pie || "");
-            footer.append(guestName, guestProvenance);
-            card.appendChild(footer);
-            fragment.appendChild(card);
-          });
-          grid.replaceChildren(fragment);
-        }
-      }
+      // Los testimonios se cargan únicamente desde reseñas verificadas por reputacion.js.
       const video = document.querySelector("[data-site-hero-video]");
       const videoBackdrop = document.querySelector("[data-site-hero-video-backdrop]");
       if (video) {

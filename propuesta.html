@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="./assets/branding/logo-terra-natura.png" />
   <link rel="apple-touch-icon" href="./assets/branding/logo-terra-natura.png" />
-  <link rel="stylesheet" href="./assets/css/landing-propuesta.css?v=20261114-quiet-luxury-ux5" />
+  <link rel="stylesheet" href="./assets/css/landing-propuesta.css?v=20261115-composicion-encuadre" />
   <title>Tu propuesta · Cabañas Alpinas Terra Natura</title>
 </head>
 <body>
@@ -32,7 +32,7 @@
       </svg>
       <span class="tn-brand__copy"><strong>Tu refugio en las Sierras</strong><small>Bialet Massé · Sierras de Cba</small></span>
     </a>
-    <a class="tn-header__link" id="header-whatsapp" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer">Hablemos por WhatsApp</a>
+    <a class="tn-header__link" id="header-whatsapp" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer"><span id="header-whatsapp-label">Hablemos por WhatsApp</span></a>
   </header>
 
   <main class="tn-page">
@@ -43,9 +43,9 @@
           <img id="main-photo" alt="" fetchpriority="high" decoding="async" />
           <div class="tn-gallery__shade"></div>
           <div class="tn-gallery__caption">
-            <span class="tn-gallery__eyebrow"><i></i> Terra Natura · Bialet Massé</span>
+            <span class="tn-gallery__eyebrow"><i></i> <span id="hero-eyebrow">Terra Natura · Bialet Massé</span></span>
             <h1 id="hero-title">Tu cabaña alpina en Terra Natura</h1>
-            <p>Un refugio sereno entre el lago y las sierras de Córdoba.</p>
+            <p id="hero-subtitle">Un refugio sereno entre el lago y las sierras de Córdoba.</p>
           </div>
           <div class="tn-gallery__controls">
             <button class="tn-gallery__expand" id="lightbox-open" type="button" aria-label="Ampliar foto actual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4M8 12 4 8m16 0-4 4M4 16l4-4m8 4 4-4" /></svg><span>Ver galería</span></button>
@@ -56,7 +56,7 @@
         </div>
         <div class="tn-gallery__thumbs" id="photo-thumbs" aria-label="Elegir foto"></div>
       </div>
-      <div class="tn-hero__foot"><span class="tn-hero__foot-mark">✳</span><p id="gallery-note">Una estadía pensada para bajar el ritmo y disfrutar Punilla.</p><span class="tn-hero__location">Los Talas 759 · Bialet Massé, Córdoba</span></div>
+      <div class="tn-hero__foot"><span class="tn-hero__foot-mark">✳</span><p id="gallery-note">Una estadía pensada para bajar el ritmo y disfrutar Punilla.</p><span class="tn-hero__location" id="hero-location">Los Talas 759 · Bialet Massé, Córdoba</span></div>
     </section>
 
     <section class="tn-booking-layout" aria-label="Detalles de la propuesta y cotización">
@@ -70,24 +70,24 @@
       </div>
 
       <aside class="tn-booking-card" id="booking-card" aria-label="Cotización personalizada">
-        <div class="tn-booking-card__top"><div><p class="tn-eyebrow">Tu estadía, a tu manera</p><h2>Una pausa en las sierras</h2></div><span class="tn-booking-card__seal" aria-hidden="true">TN</span></div>
+        <div class="tn-booking-card__top"><div><p class="tn-eyebrow" id="booking-eyebrow">Tu estadía, a tu manera</p><h2 id="booking-title">Una pausa en las sierras</h2></div><span class="tn-booking-card__seal" aria-hidden="true">TN</span></div>
         <div class="tn-booking-card__summary"><span id="price-nights">Fechas de tu estadía</span><span id="price-night"></span></div>
         <section class="tn-price-card" aria-label="Cotización de la estadía">
-          <div class="tn-price-card__top"><span>Tarifa online</span><span class="tn-price-card__live"><i></i> Actualizada</span></div>
+          <div class="tn-price-card__top"><span id="tariff-label">Tarifa online</span><span class="tn-price-card__live"><i></i> Actualizada</span></div>
           <p class="tn-price-card__total" id="price-total">Consultando…</p>
           <p class="tn-price-card__list" id="price-list" hidden></p>
-          <div class="tn-price-card__deposit"><span>Seña para reservar <small>50 % · saldo al llegar</small></span><strong id="price-deposit">—</strong></div>
+          <div class="tn-price-card__deposit"><span><span id="deposit-label">Seña para reservar</span> <small>50 % · saldo al llegar</small></span><strong id="price-deposit">—</strong></div>
           <p class="tn-price-card__note" id="price-status" role="status">Verificando fechas y tarifa…</p>
         </section>
         <div class="tn-booking-card__actions">
-          <a class="tn-button tn-button--primary" id="reserve-link" href="./reservar.html">Continuar con esta opción <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
-          <a class="tn-button tn-button--secondary" id="whatsapp-link" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          <a class="tn-button tn-button--primary" id="reserve-link" href="./reservar.html"><span id="reserve-label">Continuar con esta opción</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+          <a class="tn-button tn-button--secondary" id="whatsapp-link" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer"><span id="whatsapp-label">Consultar por WhatsApp</span></a>
         </div>
-        <p class="tn-booking-card__assurance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/><path d="m9 12 2 2 4-4"/></svg>La reserva se confirma al completar los datos y la seña.</p>
+        <p class="tn-booking-card__assurance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/><path d="m9 12 2 2 4-4"/></svg><span id="booking-assurance">La reserva se confirma al completar los datos y la seña.</span></p>
         <details class="tn-change-stay" id="stay-editor">
-          <summary><span><small>¿Querés hacer un cambio?</small>Ajustar fechas o pasajeros</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary>
+          <summary><span><small id="stay-edit-label">¿Querés hacer un cambio?</small><span id="stay-edit-title">Ajustar fechas o pasajeros</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary>
           <div class="tn-change-stay__body">
-            <p class="tn-change-stay__intro">Probá otras fechas o cambiá la cantidad de pasajeros. Actualizamos disponibilidad y tarifa sin salir de esta página.</p>
+            <p class="tn-change-stay__intro" id="stay-edit-intro">Probá otras fechas o cambiá la cantidad de pasajeros. Actualizamos disponibilidad y tarifa sin salir de esta página.</p>
             <form id="quote-form">
               <div class="tn-edit__fields">
                 <label>Ingreso<input id="checkin" name="checkin" type="date" required /></label>
@@ -104,41 +104,47 @@
       </aside>
     </section>
 
+    <section class="tn-options" id="opciones-estadia" aria-labelledby="options-title">
+      <div class="tn-section-head"><div><p class="tn-eyebrow" id="options-eyebrow">Elegí cómo querés vivir tu estadía</p><h2 id="options-title">Descubrí tu espacio ideal</h2></div><p id="options-lead">Compará opciones disponibles para las mismas fechas y pasajeros.</p></div>
+      <div class="tn-options-grid" id="unit-option-cards" aria-live="polite"><p class="tn-options-empty">Consultando opciones para tu estadía…</p></div>
+    </section>
+
     <section class="tn-services" id="equipamiento" aria-labelledby="services-title">
-      <div class="tn-section-head"><div><p class="tn-eyebrow">Pensado para descansar</p><h2 id="services-title">El confort de sentirte en casa</h2></div><p>Detalles simples, espacios cuidados y todo lo necesario para disfrutar cada momento en las sierras.</p></div>
+      <div class="tn-section-head"><div><p class="tn-eyebrow" id="services-eyebrow">Pensado para descansar</p><h2 id="services-title">El confort de sentirte en casa</h2></div><p id="services-lead">Detalles simples, espacios cuidados y todo lo necesario para disfrutar cada momento en las sierras.</p></div>
       <div class="tn-service-grid" id="service-grid"></div>
     </section>
 
     <section class="tn-conversion-section tn-reviews" aria-labelledby="reviews-title">
-      <div class="tn-section-head"><div><p class="tn-eyebrow">Experiencias compartidas</p><h2 id="reviews-title">Lo que dicen nuestros huéspedes</h2></div><p id="reviews-subtitle">Historias de huéspedes publicadas en el sitio de Terra Natura.</p></div>
-      <div class="tn-reviews__badge" id="reviews-badge">★ 4.9 · Basado en reseñas verificadas</div>
+      <div class="tn-section-head"><div><p class="tn-eyebrow" id="reviews-eyebrow">Experiencias compartidas</p><h2 id="reviews-title">Lo que dicen nuestros huéspedes</h2></div><p id="reviews-subtitle">Historias de huéspedes publicadas en el sitio de Terra Natura.</p></div>
+      <div class="tn-reviews__badge" id="reviews-badge">Puntajes actuales de Google y Booking</div>
       <div class="tn-reviews-grid" id="reviews-grid" aria-live="polite"></div>
+      <p class="tn-reviews__updated" id="reviews-updated"></p>
     </section>
 
     <section class="tn-conversion-section tn-nearby" aria-labelledby="nearby-title">
-      <div class="tn-section-head"><div><p class="tn-eyebrow">Bialet Massé · Valle de Punilla</p><h2 id="nearby-title">Explorá las Sierras · Todo cerca tuyo</h2></div><p id="nearby-subtitle">Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.</p></div>
+      <div class="tn-section-head"><div><p class="tn-eyebrow" id="nearby-eyebrow">Bialet Massé · Valle de Punilla</p><h2 id="nearby-title">Explorá las Sierras · Todo cerca tuyo</h2></div><p id="nearby-subtitle">Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.</p></div>
       <div class="tn-nearby-grid" id="nearby-grid" aria-live="polite"></div>
     </section>
 
     <section class="tn-location" aria-labelledby="location-title">
-      <div class="tn-location__copy"><p class="tn-eyebrow">Una ubicación para disfrutar</p><h2 id="location-title">Entre el lago y las sierras</h2><p class="tn-location__address"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Los Talas 759 · Barrio Mirador del Lago<br />Bialet Massé, Córdoba</p>
-        <div class="tn-location__points"><div class="tn-location__point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><strong>A 600 m del lago San Roque</strong><br />A pasos del agua y de la rotonda de acceso a la autovía.</span></div><div class="tn-location__point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 6 3-4 4 10H3Z"/><path d="M8 19l4-6 4 6"/></svg><span><strong>A unos 2 km del centro de Bialet Massé</strong><br />Cerca también de Barrancas Bermejas y el arroyo Las Mojarras.</span></div><div class="tn-location__point"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m2-9a3 3 0 1 0 0-6m0 9a5 5 0 0 1 4 5"/></svg><span><strong>Anfitriones en el predio</strong><br />Los dueños viven en el complejo para darte asistencia cercana durante la estadía.</span></div></div>
+      <div class="tn-location__copy"><p class="tn-eyebrow" id="location-eyebrow">Una ubicación para disfrutar</p><h2 id="location-title">Entre el lago y las sierras</h2><p class="tn-location__address"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="location-address">Los Talas 759 · Barrio Mirador del Lago · Bialet Massé, Córdoba</span></p>
+        <p id="location-lead" hidden></p><div class="tn-location__points" id="location-points"><div class="tn-location__point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><strong>A 600 m del lago San Roque</strong><br />A pasos del agua y de la rotonda de acceso a la autovía.</span></div><div class="tn-location__point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 6 3-4 4 10H3Z"/><path d="M8 19l4-6 4 6"/></svg><span><strong>A unos 2 km del centro de Bialet Massé</strong><br />Cerca también de Barrancas Bermejas y el arroyo Las Mojarras.</span></div><div class="tn-location__point"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m2-9a3 3 0 1 0 0-6m0 9a5 5 0 0 1 4 5"/></svg><span><strong>Anfitriones en el predio</strong><br />Los dueños viven en el complejo para darte asistencia cercana durante la estadía.</span></div></div>
       </div>
       <div class="tn-map-card">
-        <iframe title="Mapa de Cabañas Alpinas Terra Natura en Bialet Massé" src="https://maps.google.com/maps?q=Los%20Talas%20759%2C%20Bialet%20Mass%C3%A9%2C%20C%C3%B3rdoba%2C%20Argentina&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        <a class="tn-map-card__link" id="map-link" href="https://maps.app.goo.gl/enAUK1opv8mQmuYq9" target="_blank" rel="noopener noreferrer"><span><small>Cómo llegar</small>Ver ubicación en Google Maps</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4 10 14"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a>
+        <iframe id="map-embed" title="Mapa de Cabañas Alpinas Terra Natura en Bialet Massé" src="https://maps.google.com/maps?q=Los%20Talas%20759%2C%20Bialet%20Mass%C3%A9%2C%20C%C3%B3rdoba%2C%20Argentina&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="tn-map-card__link" id="map-link" href="https://maps.app.goo.gl/enAUK1opv8mQmuYq9" target="_blank" rel="noopener noreferrer"><span><small>Cómo llegar</small><span id="map-cta">Ver ubicación en Google Maps</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4 10 14"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a>
       </div>
     </section>
 
-    <section class="tn-policies" aria-labelledby="policies-title"><div class="tn-section-head"><div><p class="tn-eyebrow">Antes de viajar</p><h2 id="policies-title">Información para una estadía tranquila</h2></div><p>Lo esencial, claro y a mano. Si necesitás coordinar algo, estamos cerca.</p></div>
-      <div class="tn-policy-list">
+    <section class="tn-policies" aria-labelledby="policies-title"><div class="tn-section-head"><div><p class="tn-eyebrow" id="policies-eyebrow">Antes de viajar</p><h2 id="policies-title">Información para una estadía tranquila</h2></div><p id="policies-lead">Lo esencial, claro y a mano. Si necesitás coordinar algo, estamos cerca.</p></div>
+      <div class="tn-policy-list" id="policy-list">
         <details class="tn-policy"><summary><span>Horarios y llegada</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div><p>Check-in desde las 11:30 y check-out hasta las 10:00. La llegada flexible queda sujeta a disponibilidad; coordinála por WhatsApp con recepción.</p></div></details>
         <details class="tn-policy"><summary><span>Seña y cancelaciones</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div><p>La reserva se confirma con una seña del 50 %. Cancelando con más de 15 días se reintegra completa. Entre 8 y 15 días se retiene la mitad de la seña; con 7 días o menos, la seña no es reembolsable.</p></div></details>
         <details class="tn-policy"><summary><span>Convivencia y espacios comunes</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div><p>La pileta y el parque son espacios compartidos. Cuidamos el descanso de todos: el silencio nocturno comienza a las 23:00. Se admiten mascotas pequeñas; avisános al reservar y no las dejes solas en la cabaña.</p></div></details>
       </div>
     </section>
 
-    <section class="tn-final-cta"><div><p class="tn-eyebrow">Tu próximo descanso empieza acá</p><h2 id="final-title">¿Te imaginás en Terra Natura?</h2><p>Revisá tus fechas y avanzá con la reserva cuando quieras.</p></div><a class="tn-button tn-button--primary" id="final-reserve-link" href="./reservar.html">Quiero esta opción <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></section>
+    <section class="tn-final-cta"><div><p class="tn-eyebrow" id="final-eyebrow">Tu próximo descanso empieza acá</p><h2 id="final-title">¿Te imaginás en Terra Natura?</h2><p id="final-lead">Revisá tus fechas y avanzá con la reserva cuando quieras.</p></div><a class="tn-button tn-button--primary" id="final-reserve-link" href="./reservar.html"><span id="final-button">Quiero esta opción</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></section>
   </main>
   <footer class="tn-footer"><a class="tn-footer__brand" href="./index.html"><strong>Terra Natura</strong><span>Tu refugio en las Sierras</span></a><span>Los Talas 759 · Bialet Massé, Córdoba</span></footer>
 
@@ -153,6 +159,6 @@
     <a class="tn-button tn-button--primary" id="sticky-reserve-link" href="#booking-card">Ver cotización</a>
   </aside>
   <div class="tn-toast" id="toast" role="status" aria-live="polite"></div>
-  <script defer src="./assets/js/propuesta.js?v=20261114-quiet-luxury-ux5"></script>
+  <script defer src="./assets/js/propuesta.js?v=20261115-composicion-encuadre"></script>
 </body>
 </html>

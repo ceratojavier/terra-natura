@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="./media/galeria/02-piscina.webp" type="image/webp" fetchpriority="high" />
-  <link rel="stylesheet" href="./assets/css/site.css?v=20261114-resena-autoria" />
+  <link rel="stylesheet" href="./assets/css/site.css?v=20261115-foto-frame" />
   <link rel="stylesheet" href="./assets/css/site-responsive.css?v=20260917" />
   <link rel="stylesheet" href="./assets/css/site-seo.css?v=20261026" />
   <link rel="stylesheet" href="./assets/css/site-cotiza.css?v=20261107-noches-precio" />
@@ -150,12 +150,12 @@
   <script defer src="./assets/js/tn-atribucion.js?v=20261105"></script>
   <script defer src="./assets/js/cotiza.js?v=20261114-cotizador-editable"></script>
   <script defer src="./assets/js/site-ux.js"></script>
-  <script defer src="./assets/js/site-content.js?v=20261114-resena-autoria-v18"></script>
+  <script defer src="./assets/js/site-content.js?v=20261115-carousel-encuadre"></script>
   <script defer src="./assets/js/site-unidades-home.js?v=20261026"></script>
   <script defer src="./assets/js/utm.js?v=20261026"></script>
-  <script defer src="./assets/js/reputacion.js?v=20261027"></script>
+  <script defer src="./assets/js/reputacion.js?v=20261115-real-reviews"></script>
   <link rel="stylesheet" href="assets/css/site-modern.css?v=20261109-cotizacion-fondo" />
-  <link rel="stylesheet" href="assets/css/site-experience.css?v=20261106" />
+  <link rel="stylesheet" href="assets/css/site-experience.css?v=20261115-foto-frame" />
   <link rel="stylesheet" href="assets/css/site-header-mirador.css?v=20261109-full-height-4" />
   <link rel="stylesheet" href="assets/css/site-editorial-sections.css?v=20261111-simetria" />
 </head>
@@ -235,77 +235,11 @@
       <h2 data-site-text="home.secciones.resenas">Lo que dicen quienes se quedaron</h2>
       <p class="muted section-lead-short" data-site-text="home.textos.resenas_bajada">Opiniones reales en Booking y Google Maps — parejas y familias que valoraron la pileta, el parque y el trato de los dueños.</p>
       <div class="resenas-resumen">
-        <div class="resenas-score-card" data-rep="booking">
-          <span class="resenas-score-num">8,9</span>
-          <span class="resenas-score-meta"><strong data-rep-etiqueta>Fabuloso</strong> en Booking.com<br /><span class="muted" data-rep-cantidad>23 opiniones</span></span>
-        </div>
-        <div class="resenas-score-card resenas-score-card--google" data-rep="google">
-          <span class="resenas-score-num resenas-score-num--google">4,1</span>
-          <span class="resenas-score-meta"><strong data-rep-etiqueta>Muy bueno</strong> en Google Maps<br /><span class="resenas-stars" aria-hidden="true">★★★★☆</span> <span class="muted" data-rep-cantidad>124 opiniones</span></span>
-        </div>
+        <div class="resenas-score-card" data-rep="booking" hidden><span class="resenas-score-num"></span><span class="resenas-score-meta"><strong data-rep-etiqueta></strong> en Booking.com<br /><span class="muted" data-rep-cantidad></span></span></div>
+        <div class="resenas-score-card resenas-score-card--google" data-rep="google" hidden><span class="resenas-score-num resenas-score-num--google"></span><span class="resenas-score-meta"><strong data-rep-etiqueta></strong> en Google Maps<br /><span class="resenas-stars" aria-hidden="true"></span> <span class="muted" data-rep-cantidad></span></span></div>
       </div>
-      <div class="resenas-grid">
-        <article class="resena-card">
-          <div class="resena-card-head">
-            <span class="resena-score" aria-label="Puntuación 10 de 10">10</span>
-            <div><p class="resena-label">Excepcional</p><p class="resena-fuente">Booking.com</p></div>
-          </div>
-          <h3 class="resena-titulo">Hermoso lugar</h3>
-          <div class="resena-tags"><span class="resena-tag">Viaje en pareja</span><span class="resena-tag">3 noches</span></div>
-          <blockquote class="resena-texto">“El complejo es hermoso: pileta, parque muy cuidado y cabañas cómodas. Javier y Patricia siempre cerca, sin invadir. Ideal para desconectar en Bialet.”</blockquote>
-          <footer class="resena-pie">Huésped verificado · Argentina</footer>
-        </article>
-        <article class="resena-card">
-          <div class="resena-card-head">
-            <span class="resena-score" aria-label="Puntuación 10 de 10">10</span>
-            <div><p class="resena-label">Excepcional</p><p class="resena-fuente">Booking.com</p></div>
-          </div>
-          <h3 class="resena-titulo">Tranquilidad y buen trato</h3>
-          <div class="resena-tags"><span class="resena-tag">Viaje en familia</span><span class="resena-tag">2 noches</span></div>
-          <blockquote class="resena-texto">“Muy limpio, ordenado y tranquilo. Los dueños están en el predio y eso se nota: cualquier consulta la resolvés al toque. La pileta y el parque son un plus enorme para ir en familia.”</blockquote>
-          <footer class="resena-pie">Huésped verificado · Argentina</footer>
-        </article>
-        <article class="resena-card">
-          <div class="resena-card-head">
-            <span class="resena-score" aria-label="Puntuación 9.2 de 10">9.2</span>
-            <div><p class="resena-label">Fantástico</p><p class="resena-fuente">Booking.com</p></div>
-          </div>
-          <h3 class="resena-titulo">Vistas y comodidad</h3>
-          <div class="resena-tags"><span class="resena-tag">Viaje en pareja</span><span class="resena-tag">2 noches</span></div>
-          <blockquote class="resena-texto">“Cabaña amplia, cocina completa y dormitorio arriba con buena vista a las sierras. Cerca del lago y del centro de Bialet. Volveríamos sin dudarlo.”</blockquote>
-          <footer class="resena-pie">Huésped verificado · Argentina</footer>
-        </article>
-        <article class="resena-card">
-          <div class="resena-card-head">
-            <span class="resena-score" aria-label="Puntuación 9 de 10">9</span>
-            <div><p class="resena-label">Fantástico</p><p class="resena-fuente">Booking.com</p></div>
-          </div>
-          <h3 class="resena-titulo">Recomendable</h3>
-          <div class="resena-tags"><span class="resena-tag">Viaje con amigos</span><span class="resena-tag">3 noches</span></div>
-          <blockquote class="resena-texto">“Excelente relación lugar-precio para las sierras de Córdoba. Parrilla, estacionamiento y pileta privada del complejo. Javier nos recomendó paseos por la zona — muy buena onda.”</blockquote>
-          <footer class="resena-pie">Huésped verificado · Argentina</footer>
-        </article>
-        <article class="resena-card">
-          <div class="resena-card-head">
-            <span class="resena-score" aria-label="Puntuación 10 de 10">10</span>
-            <div><p class="resena-label">Excepcional</p><p class="resena-fuente">Booking.com</p></div>
-          </div>
-          <h3 class="resena-titulo">Atención de los dueños</h3>
-          <div class="resena-tags"><span class="resena-tag">Viaje en pareja</span><span class="resena-tag">4 noches</span></div>
-          <blockquote class="resena-texto">“Lo mejor fue el trato personalizado: te reciben, te explican todo y están cerca si necesitás algo. El parque está impecable y las cabañas tienen todo lo necesario.”</blockquote>
-          <footer class="resena-pie">Huésped verificado · Argentina</footer>
-        </article>
-        <article class="resena-card">
-          <div class="resena-card-head">
-            <span class="resena-score" aria-label="Puntuación 5 de 5">5</span>
-            <div><p class="resena-label">5 estrellas</p><p class="resena-fuente">Google Maps</p></div>
-          </div>
-          <h3 class="resena-titulo">Escapada perfecta</h3>
-          <div class="resena-tags"><span class="resena-tag">Fin de semana</span></div>
-          <blockquote class="resena-texto">“Pileta, silencio y dueños en el lugar. A minutos del lago San Roque. Reservamos directo y la experiencia fue mucho mejor que por intermediarios.”</blockquote>
-          <footer class="resena-pie">Huésped en Google · Córdoba</footer>
-        </article>
-      </div>
+      <div class="resenas-grid" data-resenas-grid></div>
+      <p class="resenas-actualizadas" data-resenas-updated></p>
       <p class="resenas-links">
         <a href="https://www.booking.com/reviews/ar/hotel/cabanas-alpinas-terra-natura-bialet-masse.es-ar.html" target="_blank" rel="noopener noreferrer">Ver todas en Booking</a>
         ·

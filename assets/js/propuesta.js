@@ -7,7 +7,7 @@
   const conversionDefaults = {
     opiniones_titulo: "Lo que dicen nuestros huéspedes",
     opiniones_bajada: "Historias de huéspedes publicadas en el sitio de Terra Natura.",
-    opiniones_insignia: "★ 4.9 · Basado en reseñas verificadas",
+    opiniones_insignia: "Puntajes actuales de Google y Booking",
     lugares_titulo: "Explorá las Sierras · Todo cerca tuyo",
     lugares_bajada: "Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.",
     lugares: [
@@ -20,9 +20,16 @@
   const q = new URLSearchParams(location.search);
   const validGroups = new Set(["grupo-alpinas", "suite-4", "suite-5"]);
   let group = validGroups.has(q.get("grupo")) ? q.get("grupo") : "grupo-alpinas";
+  let compositionId = q.get("composicion") || "";
+  let requestedUnits = Number(q.get("unidades") || 0);
+  let activeComposition = null;
+  let lastCombinations = [];
   let photos = [];
   let photoIndex = 0;
   let toastTimer = 0;
+  let proposalContent = {};
+  let lastOptions = [];
+  let photoLoadToken = 0;
 
   const units = {
     "grupo-alpinas": {
@@ -30,6 +37,8 @@
       tagline: "Un refugio de dos plantas: dormitorio con balcón arriba y living amplio abajo. Ideal para parejas, con espacio para familias con niños.",
       publicType: "alpina",
       whatsappName: "la Cabaña Alpina",
+      capacidad: "Hasta 4 personas · ideal para parejas y familias con niños",
+      foto_portada: "media/unidades/alpina-1/01.jpg",
       services: [
         ["stairs", "Dos plantas", "Dormitorio privado arriba y living-comedor en planta baja."],
         ["bed", "Dormitorio matrimonial", "En planta alta, para descansar con privacidad."],
@@ -50,6 +59,8 @@
       tagline: "Un loft cómodo y práctico, todo en planta baja y con entrada independiente. Ideal para una pareja o pareja con un niño.",
       publicType: "suite",
       whatsappName: "la Suite en planta baja",
+      capacidad: "Hasta 3 personas · acceso en planta baja",
+      foto_portada: "media/unidades/suite-4/01.jpg",
       services: [
         ["bed", "Cama matrimonial", "Más una cama de una plaza en el mismo loft."],
         ["stairs", "Todo en planta baja", "Acceso cómodo, sin subir escaleras."],
@@ -69,6 +80,8 @@
       tagline: "Un loft con aire frío-calor y balcón con vista a las sierras. Ideal para una pareja o pareja con un niño.",
       publicType: "suite",
       whatsappName: "la Suite en planta alta",
+      capacidad: "Hasta 3 personas · balcón y aire frío-calor",
+      foto_portada: "media/unidades/suite-5/01.jpg",
       services: [
         ["bed", "Cama matrimonial", "Más una cama de una plaza en el mismo loft."],
         ["snow", "Aire frío-calor", "Confort durante todo el año."],
@@ -130,13 +143,18 @@
     const ci = getVal("checkin"), co = getVal("checkout");
     const adults = Number(getVal("adults") || 1), children = Number(getVal("children") || 0);
     const url = quoteUrl(ci, co, adults, children, group);
-    const text = `Hola, vi la propuesta de ${units[group].whatsappName} en Terra Natura para el ${fmtDate(ci)} al ${fmtDate(co)}. Somos ${adults + children}. ${total ? `La cotización que vi es ${fmtMoney(total)}. ` : ""}¿Me ayudás a avanzar?`;
+    const offer = new URL(url);
+    if (compositionId) { offer.searchParams.set("composicion", compositionId); offer.searchParams.set("unidades", String(compositionId.split("+").length)); }
+    const text = `Hola, vi la propuesta de ${activeComposition?.etiqueta || units[group].whatsappName} en Terra Natura para el ${fmtDate(ci)} al ${fmtDate(co)}. Somos ${adults + children}. ${total ? `La cotización que vi es ${fmtMoney(total)}. ` : ""}¿Me ayudás a avanzar?`;
     const wa = `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
-    for (const id of ["reserve-link", "final-reserve-link", "sticky-reserve-link"]) document.getElementById(id).href = url;
-    document.getElementById("sticky-reserve-link").textContent = total ? "Reservar" : "Ver cotización";
+    const multiUnit = Boolean(activeComposition && (activeComposition.unidades_ids || []).length > 1);
+    for (const id of ["reserve-link", "final-reserve-link", "sticky-reserve-link"]) document.getElementById(id).href = multiUnit ? wa : offer.toString();
+    document.getElementById("reserve-link").textContent = multiUnit ? "Consultar esta combinación por WhatsApp" : "Continuar con esta opción";
+    document.getElementById("final-reserve-link").textContent = multiUnit ? "Consultar esta combinación por WhatsApp" : (proposalContent.final_button || "Quiero esta opción");
+    document.getElementById("sticky-reserve-link").textContent = multiUnit ? "Consultar" : (total ? "Reservar" : "Ver cotización");
     for (const id of ["whatsapp-link", "header-whatsapp"]) document.getElementById(id).href = wa;
     const next = new URL(location.href);
-    next.search = new URLSearchParams({ checkin: ci, checkout: co, adultos: String(adults), ninos: String(children), grupo: group }).toString();
+    next.search = new URLSearchParams({ checkin: ci, checkout: co, adultos: String(adults), ninos: String(children), grupo: group, ...(compositionId ? { composicion: compositionId, ...(requestedUnits ? { unidades: String(requestedUnits) } : {}) } : {}) }).toString();
     history.replaceState(null, "", next);
   }
 
@@ -159,13 +177,19 @@
 
   function configureUnit() {
     const item = units[group];
-    document.getElementById("hero-title").textContent = group === "grupo-alpinas" ? "Tu cabaña alpina en Terra Natura" : `Tu ${item.title.toLowerCase()} en Terra Natura`;
-    document.getElementById("offer-title").textContent = item.title;
-    document.getElementById("offer-label").textContent = "Tu propuesta personalizada · Terra Natura";
-    document.getElementById("offer-tagline").textContent = item.tagline;
-    document.getElementById("services-title").textContent = `Todo lo que incluye ${item.title}`;
-    document.getElementById("final-title").textContent = `¿Te imaginás en ${item.title}?`;
-    document.getElementById("service-grid").innerHTML = item.services.map(([symbol, name, desc]) => `<article class="tn-service"><span class="tn-service__icon">${icon(symbol)}</span><strong>${name}</strong><p>${desc}</p></article>`).join("");
+    const editorial = proposalContent.unidades?.[group] || {};
+    const title = activeComposition?.etiqueta || editorial.titulo || item.title;
+    document.getElementById("hero-title").textContent = activeComposition ? `${title} para tu estadía en Terra Natura` : (editorial.titulo_hero || (group === "grupo-alpinas" ? "Tu cabaña alpina en Terra Natura" : `Tu ${title.toLowerCase()} en Terra Natura`));
+    document.getElementById("offer-title").textContent = title;
+    document.getElementById("offer-label").textContent = proposalContent.offer_label || "Tu propuesta personalizada · Terra Natura";
+    document.getElementById("offer-tagline").textContent = activeComposition ? `Propuesta para ${activeComposition.personas || Number(getVal("adults")) + Number(getVal("children"))} pasajeros en ${activeComposition.unidades_ids.length} unidades. La combinación incluye únicamente unidades disponibles para estas fechas.` : (editorial.descripcion || item.tagline);
+    document.getElementById("services-title").textContent = activeComposition ? `Servicios de la propuesta · ${title}` : (proposalContent.services_title || "Todo lo que incluye {unidad}").replaceAll("{unidad}", title);
+    const services = Array.isArray(editorial.servicios) ? editorial.servicios : item.services;
+    document.getElementById("service-grid").innerHTML = services.map((service) => {
+      const [symbol, name, desc] = Array.isArray(service) ? service : [service.icono, service.nombre, service.descripcion];
+      return `<article class="tn-service"><span class="tn-service__icon">${icon(symbol)}</span><strong>${escapeHtml(name)}</strong><p>${escapeHtml(desc)}</p></article>`;
+    }).join("");
+    document.getElementById("final-title").textContent = (proposalContent.final_title || "¿Te imaginás en {unidad}?").replaceAll("{unidad}", title);
     const whats = document.getElementById("whatsapp-link");
     whats.href = `https://wa.me/${WA}`;
   }
@@ -174,13 +198,57 @@
 
   function renderConversionContent(content) {
     const home = content?.home || {};
+    proposalContent = { ...(home.propuesta_landing || {}), galeria_por_unidad: home.reserva_web?.grupos_cotizador || {} };
     const cfg = { ...conversionDefaults, ...(home.propuesta_conversion || {}) };
     const setText = (id, value) => { const element = document.getElementById(id); if (element && value) element.textContent = value; };
     setText("reviews-title", cfg.opiniones_titulo);
     setText("reviews-subtitle", cfg.opiniones_bajada);
-    setText("reviews-badge", cfg.opiniones_insignia);
     setText("nearby-title", cfg.lugares_titulo);
     setText("nearby-subtitle", cfg.lugares_bajada);
+
+    const landingText = {
+      "hero-eyebrow": proposalContent.hero_eyebrow,
+      "hero-subtitle": proposalContent.hero_subtitle,
+      "gallery-note": proposalContent.hero_note,
+      "hero-location": proposalContent.hero_location,
+      "header-whatsapp-label": proposalContent.header_whatsapp_label,
+      "booking-eyebrow": proposalContent.booking_eyebrow,
+      "booking-title": proposalContent.booking_title,
+      "tariff-label": proposalContent.tariff_label,
+      "deposit-label": proposalContent.deposit_label,
+      "reserve-label": proposalContent.reserve_label,
+      "whatsapp-label": proposalContent.whatsapp_label,
+      "booking-assurance": proposalContent.booking_assurance,
+      "stay-edit-label": proposalContent.stay_edit_label,
+      "stay-edit-title": proposalContent.stay_edit_title,
+      "stay-edit-intro": proposalContent.stay_edit_intro,
+      "services-eyebrow": proposalContent.services_eyebrow,
+      "services-lead": proposalContent.services_lead,
+      "options-eyebrow": proposalContent.options_eyebrow,
+      "options-title": proposalContent.options_title,
+      "options-lead": proposalContent.options_lead,
+      "reviews-eyebrow": proposalContent.reviews_eyebrow,
+      "nearby-eyebrow": proposalContent.nearby_eyebrow,
+      "location-eyebrow": proposalContent.location_eyebrow,
+      "location-title": proposalContent.location_title,
+      "location-address": proposalContent.location_address,
+      "location-lead": proposalContent.location_lead,
+      "map-cta": proposalContent.map_cta,
+      "policies-eyebrow": proposalContent.policies_eyebrow,
+      "policies-title": proposalContent.policies_title,
+      "policies-lead": proposalContent.policies_lead,
+      "final-eyebrow": proposalContent.final_eyebrow,
+      "final-lead": proposalContent.final_lead,
+      "final-button": proposalContent.final_button,
+    };
+    Object.entries(landingText).forEach(([id, value]) => setText(id, value));
+    if (proposalContent.location_lead) document.getElementById("location-lead").hidden = false;
+    if (proposalContent.map_url && /^https:\/\//i.test(proposalContent.map_url)) document.getElementById("map-link").href = proposalContent.map_url;
+    if (proposalContent.map_embed_url && /^https:\/\//i.test(proposalContent.map_embed_url)) document.getElementById("map-embed").src = proposalContent.map_embed_url;
+    const policyItems = Array.isArray(proposalContent.policies) ? proposalContent.policies : [];
+    if (policyItems.length) document.getElementById("policy-list").innerHTML = policyItems.map((item) => `<details class="tn-policy"><summary><span>${escapeHtml(item.titulo || "")}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div><p>${escapeHtml(item.descripcion || "")}</p></div></details>`).join("");
+    if (proposalContent.ubicacion_puntos?.length) document.getElementById("location-points").innerHTML = proposalContent.ubicacion_puntos.map((point) => `<div class="tn-location__point"><span aria-hidden="true">${icon(point.icono || "pin")}</span><span><strong>${escapeHtml(point.titulo || "")}</strong><br />${escapeHtml(point.descripcion || "")}</span></div>`).join("");
+    configureUnit();
 
     const places = Array.isArray(cfg.lugares) ? conversionDefaults.lugares.map((base) => ({ ...base, ...(cfg.lugares.find((place) => place?.id === base.id) || {}) })) : conversionDefaults.lugares;
     document.getElementById("nearby-grid").innerHTML = places.map((place) => {
@@ -190,31 +258,45 @@
       return `<article class="tn-nearby-card">${imagePath ? `<img class="tn-nearby-card__photo" src="${escapeHtml(imageUrl)}" alt="${escapeHtml(place.titulo)}" loading="lazy" decoding="async" onerror="this.hidden=true" />` : `<div class="tn-nearby-card__photo-placeholder">${icon(symbol)}</div>`}<div class="tn-nearby-card__body"><span class="tn-nearby-card__time">${escapeHtml(place.tiempo || "")}</span><h3>${escapeHtml(place.titulo)}</h3><p>${escapeHtml(place.descripcion)}</p></div></article>`;
     }).join("");
 
-    const reviews = Array.isArray(home.resenas) ? home.resenas.filter((review) => review && typeof review.texto === "string" && review.texto.trim()).slice(0, 6) : [];
     const grid = document.getElementById("reviews-grid");
-    if (!reviews.length) {
-      grid.innerHTML = '<p class="tn-reviews__empty">Las opiniones de huéspedes se mostrarán aquí cuando estén cargadas en el editor del sitio.</p>';
-      return;
-    }
-    grid.innerHTML = reviews.map((review) => {
-      const score = Number(String(review.puntaje || "").replace(",", "."));
-      const stars = Number.isFinite(score) && score > 0 ? Math.min(5, Math.max(1, Math.round(score > 5 ? score / 2 : score))) : 5;
-      const trip = Array.isArray(review.etiquetas) ? review.etiquetas.find((tag) => typeof tag === "string" && tag.trim()) : "";
-      const guest = review.nombre || "Huésped verificado";
-      const provenance = [trip, review.pie || review.fuente].filter(Boolean).join(" · ");
-      return `<article class="tn-review-card"><div class="tn-review-card__stars" aria-label="${stars} estrellas">${"★".repeat(stars)}</div>${review.titulo ? `<h3>${escapeHtml(review.titulo)}</h3>` : ""}<blockquote>“${escapeHtml(review.texto)}”</blockquote><footer><strong>${escapeHtml(guest)}</strong><span>${escapeHtml(provenance)}</span></footer></article>`;
-    }).join("");
+    grid.innerHTML = '<p class="tn-reviews__empty">Consultando reseñas recientes de Google y Booking…</p>';
+    fetch(`${API}/api/public/resenas`, { headers: { Accept: "application/json" }, cache: "no-store" }).then((response) => response.ok ? response.json() : null).then((data) => {
+      const reviews = Array.isArray(data?.resenas) ? data.resenas : [];
+      grid.innerHTML = reviews.length ? reviews.map((review) => {
+        const score = Number(review.puntaje || 0), max = Number(review.maximo || 5);
+        const stars = Math.max(1, Math.min(5, Math.round(score * 5 / max)));
+        const source = review.fuente === "booking" ? "Booking.com" : "Google";
+        const date = review.fecha ? new Intl.DateTimeFormat("es-AR", { month: "long", year: "numeric" }).format(new Date(`${review.fecha.slice(0, 10)}T12:00:00`)) : "";
+        return `<article class="tn-review-card"><div class="tn-review-card__stars" aria-label="${stars} estrellas">${"★".repeat(stars)}</div><blockquote>“${escapeHtml(review.texto)}”</blockquote><footer><strong>${escapeHtml(review.autor || "Huésped verificado")}</strong><span>${source}${date ? ` · ${escapeHtml(date)}` : ""}</span></footer><a class="tn-review-source" href="${escapeHtml(review.url || (review.fuente === "booking" ? "https://www.booking.com/reviews/ar/hotel/cabanas-alpinas-terra-natura-bialet-masse.es-ar.html" : "https://www.google.com/maps/search/?api=1&query=Caba%C3%B1as+Alpinas+Terra+Natura+Bialet+Mass%C3%A9"))}" target="_blank" rel="noopener noreferrer">Ver en ${source} ↗</a></article>`;
+      }).join("") : '<p class="tn-reviews__empty">No hay reseñas recientes disponibles ahora. Consultá las opiniones publicadas en <a href="https://www.google.com/maps/search/?api=1&amp;query=Caba%C3%B1as+Alpinas+Terra+Natura+Bialet+Mass%C3%A9" target="_blank" rel="noopener noreferrer">Google</a> o <a href="https://www.booking.com/reviews/ar/hotel/cabanas-alpinas-terra-natura-bialet-masse.es-ar.html" target="_blank" rel="noopener noreferrer">Booking</a>.</p>';
+      const scores = [];
+      if (data?.google?.puntuacion) scores.push(`Google ${String(data.google.puntuacion).replace(".", ",")}/5`);
+      if (data?.booking?.puntuacion) scores.push(`Booking ${String(data.booking.puntuacion).replace(".", ",")}/10`);
+      document.getElementById("reviews-badge").textContent = scores.length ? `${scores.join(" · ")} · valores actuales` : "Puntajes actuales de Google y Booking";
+      const synced = document.getElementById("reviews-updated");
+      if (synced && data?.actualizado) synced.textContent = `Última actualización automática: ${new Intl.DateTimeFormat("es-AR", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${data.actualizado}T12:00:00`))}.`;
+    }).catch(() => { grid.innerHTML = '<p class="tn-reviews__empty">Consultá las opiniones directamente en Google y Booking.</p>'; });
   }
 
   async function loadConversionContent() {
-    let content;
+    let publishedContent = null, editableContent = null;
+    try { publishedContent = await fetch("./assets/data/contenido-sitio.json", { cache: "no-store" }).then((response) => response.ok ? response.json() : null); } catch (_) {}
     try {
       const response = await fetch(`${API}/api/public/contenido-sitio`, { headers: { Accept: "application/json" }, cache: "no-store" });
       if (!response.ok) throw new Error("CMS");
-      content = await response.json();
+      editableContent = await response.json();
     } catch (_) {
-      try { content = await fetch("./assets/data/contenido-sitio.json", { cache: "no-store" }).then((response) => response.ok ? response.json() : null); } catch (_) { content = null; }
+      editableContent = null;
     }
+    const defaultHome = publishedContent?.home || {}, serverHome = editableContent?.home || {};
+    const defaultLanding = defaultHome.propuesta_landing || {}, serverLanding = serverHome.propuesta_landing || {};
+    const defaultUnits = defaultLanding.unidades || {}, serverUnits = serverLanding.unidades || {};
+    const defaultReserva = defaultHome.reserva_web || {}, serverReserva = serverHome.reserva_web || {};
+    const content = { ...(publishedContent || {}), ...(editableContent || {}), home: {
+      ...defaultHome, ...serverHome,
+      propuesta_landing: { ...defaultLanding, ...serverLanding, unidades: Object.fromEntries(Object.keys({ ...defaultUnits, ...serverUnits }).map((id) => [id, { ...(defaultUnits[id] || {}), ...(serverUnits[id] || {}) }])) },
+      reserva_web: { ...defaultReserva, ...serverReserva, grupos_cotizador: { ...(defaultReserva.grupos_cotizador || {}), ...(serverReserva.grupos_cotizador || {}) } },
+    } };
     renderConversionContent(content || {});
   }
 
@@ -225,7 +307,7 @@
     const oldY = mobile ? p.posicion_celular : p.posicion_pc;
     const y = mobile ? (p.posicion_celular_y ?? oldY ?? 50) : (p.posicion_pc_y ?? oldY ?? 50);
     const zoom = mobile ? (p.zoom_celular ?? 100) : (p.zoom_pc ?? 100);
-    document.getElementById("main-photo")?.style.setProperty("--photo-zoom", String(Math.max(50, Math.min(160, Number(zoom) || 100)) / 100));
+    document.getElementById("main-photo")?.style.setProperty("--photo-zoom", String(Math.max(100, Math.min(200, Number(zoom) || 100)) / 100));
     document.getElementById("main-photo")?.style.setProperty("--photo-origin", `${x}% ${y}%`);
     return `${x}% ${y}%`;
   }
@@ -273,7 +355,24 @@
     const defaultPhotos = group === "grupo-alpinas"
       ? ["media/galeria/09-alpina-frente-pileta.jpg", "media/galeria/05-alpina-living.jpg", "media/unidades/alpina-1/03.jpg"]
       : group === "suite-4" ? ["media/unidades/suite-4/01.jpg", "media/unidades/suite-4/04.jpg"] : ["media/unidades/suite-5/01.jpg", "media/unidades/suite-5/05.jpg"];
-    photos = (data?.fotos || []).filter((f) => f?.url);
+    const editorial = proposalContent.unidades?.[group] || {};
+    const configuredPaths = Array.isArray(editorial.fotos) ? editorial.fotos : proposalContent.galeria_por_unidad?.[group]?.fotos;
+    if (Array.isArray(configuredPaths) && configuredPaths.length) {
+      const metadata = new Map((data?.fotos || []).map((photo) => [String(photo.ruta || "").replace(/^\//, ""), photo]));
+      photos = configuredPaths.filter(Boolean).map((entry) => {
+        const path = typeof entry === "string" ? entry : entry.ruta || entry.imagen || "";
+        const fromAlbum = metadata.get(String(path).replace(/^\//, "")) || {};
+        return { ...fromAlbum, ...(typeof entry === "object" ? entry : {}), ruta: path, url: /^https?:\/\//i.test(path) ? path : `${SITE}/${String(path).replace(/^\.?\//, "")}` };
+      });
+    } else {
+      const folder = group === "suite-4" ? "/suite-4/" : group === "suite-5" ? "/suite-5/" : null;
+      photos = (data?.fotos || []).filter((f) => f?.url && (!folder || String(f.ruta || f.url).includes(folder))).filter((f) => !f.presentacion?.solo_celular || matchMedia("(max-width: 720px)").matches);
+    }
+    const cover = editorial.foto_portada || units[group].foto_portada;
+    if (cover) {
+      const coverUrl = /^https?:\/\//i.test(cover) ? cover : `${SITE}/${String(cover).replace(/^\.?\//, "")}`;
+      photos = [{ ruta: cover, url: coverUrl }, ...photos.filter((photo) => photo.url !== coverUrl && photo.ruta !== cover)];
+    }
     if (!photos.length) photos = defaultPhotos.map((path) => ({ ruta: path, url: `${SITE}/${path}` }));
     const thumbs = document.getElementById("photo-thumbs");
     thumbs.replaceChildren();
@@ -284,15 +383,63 @@
       image.src = photo.url; image.alt = ""; image.loading = "lazy"; image.decoding = "async";
       button.appendChild(image); button.addEventListener("click", () => showPhoto(index)); thumbs.appendChild(button);
     });
-    document.getElementById("gallery-note").textContent = `${photos.length} fotos seleccionadas para esta opción`;
+    document.getElementById("gallery-note").textContent = `${photos.length} fotos · ${proposalContent.hero_note || "una estadía para disfrutar Punilla"}`;
     showPhoto(0);
   }
 
   async function loadPhotos() {
+    const token = ++photoLoadToken;
     try {
       const data = await fetch(`${API}/api/public/coleccion-consulta/${units[group].publicType}`, { headers: { Accept: "application/json" } }).then((r) => { if (!r.ok) throw new Error("album"); return r.json(); });
+      if (token !== photoLoadToken) return;
       renderPhotos(data);
-    } catch (_) { renderPhotos(null); }
+    } catch (_) { if (token === photoLoadToken) renderPhotos(null); }
+  }
+
+  function renderOptionCards(options, nights) {
+    const box = document.getElementById("unit-option-cards");
+    const multiUnitRows = lastCombinations.some((o) => (o.unidades_ids || []).length > 1);
+    const rows = multiUnitRows || compositionId ? lastCombinations : (options || []);
+    box.innerHTML = rows.map((option) => {
+      const ids = option.unidades_ids || [option.unidad_id].filter(Boolean);
+      const composition = option.composicion_id || "";
+      const id = option.grupo_id;
+      const item = units[id] || units["grupo-alpinas"];
+      const editorial = proposalContent.unidades?.[id] || {};
+      const available = !!(option.disponible && option.cotizacion);
+      const total = Number(option.cotizacion?.total || 0);
+      const image = editorial.foto_portada || item.foto_portada;
+      const imageUrl = /^https?:\/\//i.test(image || "") ? image : `${SITE}/${String(image || "").replace(/^\.?\//, "")}`;
+      const capacity = `${ids.length} ${ids.length === 1 ? "unidad" : "unidades"} · hasta ${option.capacidad_max || item.capacidad}`;
+      const label = option.etiqueta || editorial.titulo || item.title;
+      const selected = composition ? composition === compositionId : id === group && !compositionId;
+      return `<button type="button" class="tn-option-card" data-composition="${escapeHtml(composition)}" data-group="${escapeHtml(id)}" aria-pressed="${String(selected)}" ${available ? "" : "disabled"}>
+        <img class="tn-option-card__photo" src="${escapeHtml(imageUrl)}" alt="${escapeHtml(label)}" loading="lazy" decoding="async" onerror="this.hidden=true" />
+        <span class="tn-option-card__body"><small class="tn-option-card__eyebrow">${ids.length > 1 ? "Propuesta para el grupo completo" : (id === "grupo-alpinas" ? "Dos plantas" : "Suite tipo loft")}</small><strong>${escapeHtml(label)}</strong><span class="tn-option-card__capacity">${escapeHtml(capacity)}</span>
+          ${available ? `<span class="tn-option-card__price">${fmtMoney(total)} total</span><span class="tn-option-card__night">${fmtMoney(total / Math.max(nights, 1))} por noche</span>` : `<span class="tn-option-card__status">${escapeHtml(option?.motivo || "No disponible para estas fechas")}</span>`}
+        </span></button>`;
+    }).join("");
+    box.querySelectorAll(".tn-option-card:not(:disabled)").forEach((button) => button.addEventListener("click", () => {
+      const nextComposition = button.dataset.composition || "";
+      const nextGroup = button.dataset.group;
+      if (nextComposition === compositionId && nextGroup === group) return;
+      const selected = rows.find((o) => (o.composicion_id || "") === nextComposition && o.grupo_id === nextGroup);
+      if (!selected?.disponible || !selected.cotizacion) return;
+      compositionId = nextComposition;
+      requestedUnits = selected.unidades_ids?.length > 1 ? selected.unidades_ids.length : 0;
+      activeComposition = selected.composicion_id ? selected : null;
+      group = nextGroup;
+      document.querySelector(".tn-hero").classList.add("is-switching");
+      document.querySelector(".tn-booking-layout").classList.add("is-switching");
+      document.querySelector(".tn-services").classList.add("is-switching");
+      configureUnit();
+      loadPhotos();
+      paintStay();
+      showPrice(selected, nights);
+      renderOptionCards(lastOptions, nights);
+      setTimeout(() => document.querySelectorAll(".is-switching").forEach((el) => el.classList.remove("is-switching")), 260);
+      setToast(`Ahora estás viendo ${selected.etiqueta || proposalContent.unidades?.[group]?.titulo || units[group].title}.`);
+    }));
   }
 
   function showPrice(option, nights) {
@@ -321,8 +468,9 @@
     document.querySelector(".tn-price-card").classList.toggle("is-updating", busy);
   }
 
-  function offerUrl(groupId) {
+  function offerUrl(groupId, composition = "") {
     const p = new URLSearchParams({ checkin: getVal("checkin"), checkout: getVal("checkout"), adultos: getVal("adults"), ninos: getVal("children"), grupo: groupId });
+    if (composition) { p.set("composicion", composition); p.set("unidades", String(composition.split("+").length)); }
     return `${SITE}/propuesta.html?${p.toString()}`;
   }
 
@@ -331,6 +479,7 @@
       check_in: getVal("checkin"), check_out: getVal("checkout"),
       adultos: Math.max(1, Number(getVal("adults") || 1)), ninos: Math.max(0, Number(getVal("children") || 0)),
       grupo_filtro: groupFilter,
+      ...((requestedUnits || (compositionId ? compositionId.split("+").length : 0)) ? { unidades_solicitadas: requestedUnits || compositionId.split("+").length } : {}),
     };
     const response = await fetch(`${API}/api/public/cotizar-opciones`, {
       method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload),
@@ -346,14 +495,15 @@
   function showAlternatives(options, reason) {
     const section = document.getElementById("alternatives");
     document.getElementById("stay-editor").open = true;
-    const usable = (options || []).filter((o) => o.disponible && o.cotizacion && validGroups.has(o.grupo_id));
+    const source = lastCombinations.some((o) => (o.unidades_ids || []).length > 1) || compositionId ? lastCombinations : (options || []);
+    const usable = source.filter((o) => o.disponible && o.cotizacion && validGroups.has(o.grupo_id));
     const names = { "grupo-alpinas": "Cabaña Alpina", "suite-4": "Suite en planta baja", "suite-5": "Suite en planta alta" };
     section.hidden = false;
     section.innerHTML = `<h3>${usable.length ? "Mirá estas opciones disponibles" : "No encontramos lugar en estas fechas"}</h3><p>${reason || (usable.length ? "Cambiaron las fechas o los pasajeros; estas son las propuestas que sí coinciden." : "Probá otras fechas o escribinos y buscamos una alternativa.")}</p>`;
     usable.forEach((o) => {
       const card = document.createElement("div"); card.className = "tn-alternative-card";
-      const info = document.createElement("span"); info.innerHTML = `<strong>${names[o.grupo_id] || o.etiqueta}</strong><br><small>${fmtMoney(o.cotizacion.total)} total</small>`;
-      const link = document.createElement("a"); link.href = offerUrl(o.grupo_id); link.textContent = "Ver propuesta →";
+      const info = document.createElement("span"); info.innerHTML = `<strong>${o.etiqueta || names[o.grupo_id] || "Alojamiento"}</strong><br><small>${fmtMoney(o.cotizacion.total)} total</small>`;
+      const link = document.createElement("a"); link.href = offerUrl(o.grupo_id, o.composicion_id || ""); link.textContent = "Ver propuesta →";
       card.append(info, link); section.appendChild(card);
     });
     const price = document.querySelector(".tn-price-card");
@@ -382,18 +532,31 @@
     const nights = Math.round((new Date(`${co}T12:00:00`) - new Date(`${ci}T12:00:00`)) / 86400000);
     paintStay();
     try {
-      const selectedData = await fetchOptions(group);
-      const selected = (selectedData.opciones || []).find((o) => o.grupo_id === group && o.disponible && o.cotizacion);
+      const allData = await fetchOptions(null);
+      lastOptions = allData.opciones || [];
+      lastCombinations = allData.combinaciones || [];
+      renderOptionCards(lastOptions, nights);
+      const hasMultiUnitRows = lastCombinations.some((o) => (o.unidades_ids || []).length > 1);
+      const selected = compositionId
+        ? lastCombinations.find((o) => o.composicion_id === compositionId && o.disponible && o.cotizacion)
+        : (hasMultiUnitRows ? lastCombinations.find((o) => o.disponible && o.cotizacion) : lastOptions.find((o) => o.grupo_id === group && o.disponible && o.cotizacion));
+      if (selected?.composicion_id) { compositionId = selected.composicion_id; activeComposition = selected; group = selected.grupo_id; configureUnit(); loadPhotos(); }
       if (selected) {
         showPrice(selected, nights);
         if (!initial) setToast("Listo: actualizamos disponibilidad y tarifa para esta propuesta.");
       } else {
-        const allData = await fetchOptions(null);
         const cap = units[group].title;
         const reason = Number(getVal("adults")) + Number(getVal("children")) > (group === "grupo-alpinas" ? 4 : 3)
           ? `${cap} no admite esa cantidad de pasajeros. Estas son las opciones válidas.`
           : "Esta opción no está disponible para esas fechas. Estas son las alternativas con lugar.";
-        showAlternatives(allData.opciones || [], reason);
+        document.querySelector(".tn-price-card").classList.add("is-error");
+        document.getElementById("price-total").textContent = "No disponible";
+        document.getElementById("sticky-total").textContent = "Ver opciones";
+        document.getElementById("sticky-reserve-link").href = "#opciones-estadia";
+        document.getElementById("sticky-reserve-link").textContent = "Ver opciones";
+        document.getElementById("price-list").hidden = true;
+        document.getElementById("price-deposit").textContent = "—";
+        document.getElementById("price-status").textContent = reason;
       }
     } catch (error) {
       document.querySelector(".tn-price-card").classList.add("is-error");
@@ -415,7 +578,7 @@
   loadConversionContent();
   paintStay();
   loadPhotos();
-  document.getElementById("quote-form").addEventListener("submit", (event) => { event.preventDefault(); refreshQuote(); });
+  document.getElementById("quote-form").addEventListener("submit", (event) => { event.preventDefault(); if (!requestedUnits) { compositionId = ""; activeComposition = null; group = "grupo-alpinas"; configureUnit(); loadPhotos(); } refreshQuote(); });
   document.getElementById("photo-prev").addEventListener("click", () => showPhoto(photoIndex - 1));
   document.getElementById("photo-next").addEventListener("click", () => showPhoto(photoIndex + 1));
   document.getElementById("lightbox-open").addEventListener("click", openLightbox);

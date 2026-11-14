@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/assets/branding/logo-terra-natura.png" />
-    <link rel="apple-touch-icon" href="/app/logo-terra-natura.png" />
-    <link rel="manifest" href="/app/manifest.webmanifest" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Terra Natura" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="theme-color" content="#0f1f18" />
+    <link rel="apple-touch-icon" href="/assets/branding/logo-terra-natura.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Cabañas Alpinas Terra Natura — Programa</title>
@@ -16,14 +11,10 @@
       (function () {
         var params = new URLSearchParams(window.location.search);
         var r = params.get("_r");
-        var forceRefresh = params.has("_tn_refresh");
-        if (!r && !forceRefresh) return;
+        if (!r) return;
         params.delete("_r");
-        params.delete("_tn_refresh");
         var rest = params.toString();
-        var path = r
-          ? "/app" + (r.charAt(0) === "/" ? r : "/" + r)
-          : window.location.pathname;
+        var path = "/app" + (r.charAt(0) === "/" ? r : "/" + r);
         window.history.replaceState(
           null,
           "",
@@ -37,7 +28,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/app/assets/index-C_RL0Icu.js"></script>
+    <script type="module" crossorigin src="/app/assets/index-Bdge0ZBO.js"></script>
     <link rel="modulepreload" crossorigin href="/app/assets/jsx-runtime-D8nDyRPw.js">
     <link rel="modulepreload" crossorigin href="/app/assets/useQuery-OFjrLxyp.js">
     <link rel="modulepreload" crossorigin href="/app/assets/useMutation-3D5PuaxD.js">

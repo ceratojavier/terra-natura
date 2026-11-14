@@ -47,9 +47,9 @@ button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{o
 /* Ajustes UX: foto completa, mapa real y cotizador unificado. */
 .tn-gallery__stage{background:#26332a}
 .tn-gallery__stage img.tn-gallery__ambient{display:none}
-.tn-gallery__stage img#main-photo{z-index:1;object-fit:contain;background:transparent;transform:scale(var(--photo-zoom,1));transform-origin:var(--photo-origin,50% 50%);filter:none}
+.tn-gallery__stage img#main-photo{z-index:1;object-fit:cover;background:transparent;transform:scale(var(--photo-zoom,1));transform-origin:var(--photo-origin,50% 50%);filter:none}
 .tn-gallery__stage:hover img#main-photo{transform:scale(var(--photo-zoom,1))}
-.tn-gallery__stage.is-cropped img#main-photo{object-fit:contain;filter:none}
+.tn-gallery__stage.is-cropped img#main-photo{object-fit:cover;filter:none}
 .tn-gallery__stage.is-full img#main-photo{object-fit:contain;transform:none}
 .tn-gallery__shade{z-index:2;inset:48% 0 0;background:linear-gradient(0deg,rgba(13,25,17,.76),rgba(13,25,17,.3) 54%,transparent)}
 .tn-gallery__caption{z-index:3}
@@ -82,6 +82,28 @@ button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{o
 .tn-service{padding:1.25rem 1.15rem}
 .tn-service p{line-height:1.65}
 .tn-header__link,.tn-gallery__fit,.tn-gallery__expand,.tn-gallery__arrow,.tn-gallery__thumb,.tn-button,.tn-service,.tn-map-card__link{transition:transform .25s var(--ease),opacity .25s var(--ease)}
+
+/* Alternativas comparables para la misma consulta. */
+.tn-options{margin:0 0 4.5rem;padding:0 .35rem}
+.tn-options-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.tn-option-card{display:grid;grid-template-columns:minmax(120px,.78fr) minmax(0,1.22fr);gap:1rem;min-width:0;padding:.85rem;border:1px solid var(--line);border-radius:16px;background:var(--surface);cursor:pointer;text-align:left;transition:border-color .25s var(--ease),background .25s var(--ease),opacity .25s var(--ease)}
+.tn-option-card:hover,.tn-option-card[aria-pressed="true"]{border-color:rgba(27,67,50,.55);background:#fff}
+.tn-option-card:disabled{cursor:not-allowed;opacity:.62}
+.tn-option-card__photo{width:100%;height:100%;min-height:145px;max-height:190px;object-fit:contain;border-radius:10px;background:#e9e7df}
+.tn-option-card__body{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:.2rem 0}
+.tn-option-card__eyebrow{color:#788176;font-size:.57rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.tn-option-card__body strong{margin:.35rem 0;color:var(--ink);font:600 1.75rem/1 var(--serif)}
+.tn-option-card__capacity{color:var(--muted);font-size:.65rem;line-height:1.45}
+.tn-option-card__price{margin-top:auto;padding-top:.7rem;color:var(--forest);font-size:1rem;font-weight:750;font-variant-numeric:tabular-nums}
+.tn-option-card__night{margin-top:.18rem;color:var(--muted);font-size:.62rem;font-variant-numeric:tabular-nums}
+.tn-option-card__status{margin-top:.5rem;color:#8b4b38;font-size:.62rem;line-height:1.4}
+.tn-location__point>span:first-child svg{width:20px;height:20px;color:var(--forest)}
+.tn-location__lead{max-width:56ch;color:var(--muted);font-size:.8rem;line-height:1.7}
+.tn-options-empty{grid-column:1/-1;color:var(--muted);font-size:.75rem}
+.tn-reviews__updated{margin:.7rem 0 0;color:#788176;font-size:.62rem}
+.tn-hero.is-switching #main-photo,.tn-booking-layout.is-switching,.tn-services.is-switching{opacity:.35;transition:opacity .22s var(--ease)}
+@media(max-width:980px){.tn-options-grid{grid-template-columns:1fr}.tn-option-card{grid-template-columns:minmax(130px,.52fr) minmax(0,1fr)}.tn-option-card__photo{max-height:170px}}
+@media(max-width:767px){.tn-options{margin:0 0 3.6rem;padding:0 1.15rem}.tn-options-grid{display:flex;gap:.7rem;overflow-x:auto;margin:0 -1.15rem;padding:.1rem 1.15rem .65rem;scroll-snap-type:x mandatory}.tn-option-card{grid-template-columns:92px minmax(190px,1fr);gap:.7rem;flex:0 0 min(88vw,360px);padding:.65rem;border-radius:13px;scroll-snap-align:start}.tn-option-card__photo{min-height:122px;max-height:140px;border-radius:8px}.tn-option-card__body strong{font-size:1.5rem}.tn-option-card__price{font-size:.9rem}}
 .tn-gallery__stage img{transition:opacity .28s var(--ease),transform .55s var(--ease)}
 .tn-text-link svg,.tn-policy summary svg,.tn-change-stay summary>svg{transition:transform .28s var(--ease)}
 .tn-lightbox__close,.tn-lightbox__arrow{transition:transform .25s var(--ease),opacity .25s var(--ease)}
@@ -129,7 +151,7 @@ button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{o
 .tn-gallery{border-radius:18px;box-shadow:none}
 .tn-gallery__stage{height:clamp(420px,46vw,650px);min-height:0;max-height:none;aspect-ratio:auto;border-radius:inherit;background:#f0eee7}
 .tn-gallery__stage img.tn-gallery__ambient{display:none!important}
-.tn-gallery__stage img#main-photo{inset:0;width:100%;height:100%;max-width:none;object-fit:contain!important;object-position:var(--photo-origin,50% 50%);border-radius:inherit;background:transparent;transform:scale(var(--photo-zoom,1));}
+.tn-gallery__stage img#main-photo{inset:0;width:100%;height:100%;max-width:none;object-fit:cover!important;object-position:var(--photo-origin,50% 50%);border-radius:inherit;background:transparent;transform:scale(var(--photo-zoom,1));}
 .tn-gallery__stage:hover img#main-photo{transform:scale(var(--photo-zoom,1))}
 .tn-gallery__stage.is-full img#main-photo{transform:none}
 .tn-gallery__caption{max-width:min(620px,56%);text-shadow:none}
