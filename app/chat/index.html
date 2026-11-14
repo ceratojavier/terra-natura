@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cabañas Alpinas Terra Natura — Programa</title>
+  <script>
+    // GitHub Pages entrega los HTML con max-age=600. Agregamos una clave única
+    // al shell para que una ruta profunda no vuelva a abrir un index.html viejo.
+    var params = new URLSearchParams(location.search);
+    params.set("_r", "/chat");
+    params.set("_tn_refresh", String(Date.now()));
+    // El shell normal puede quedar cacheado hasta 10 minutos en el CDN.
+    // Usamos una ruta inmutable por versión para que los accesos directos
+    // siempre arranquen el bundle recién publicado, incluso con la URL normal.
+    location.replace("/app/releases/BRccst0T/index.html?" + params.toString() + location.hash);
+  </script>
+</head>
+<body>
+  <p style="font-family:system-ui,sans-serif;padding:2rem">
+    Abriendo el programa… <a href="/app/">Entrar</a>
+  </p>
+</body>
+</html>
