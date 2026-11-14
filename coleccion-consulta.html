@@ -1,93 +1,227 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-AR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fotos — Terra Natura</title>
+    <meta name="theme-color" content="#f5f2eb" />
+    <meta name="description" content="Conocé los espacios y el entorno de Cabañas Alpinas Terra Natura en Bialet Massé, Valle de Punilla." />
+    <title>Galería — Terra Natura</title>
     <style>
+      :root {
+        color-scheme: light;
+        --ink: #1c3027;
+        --muted: #637068;
+        --forest: #1e4839;
+        --forest-deep: #15372c;
+        --gold: #c6a76b;
+        --paper: #f5f2eb;
+        --white: #fffefa;
+        --line: #e5dfd2;
+      }
+      * { box-sizing: border-box; }
       body {
-        font-family: system-ui, sans-serif;
         margin: 0;
-        background: #0f172a;
-        color: #e2e8f0;
+        min-height: 100vh;
+        color: var(--ink);
+        background: radial-gradient(ellipse at top, #fffefa 0, var(--paper) 55%, #ede8dc 100%);
+        font-family: "Aptos", "Segoe UI", system-ui, sans-serif;
       }
-      header {
-        padding: 1rem 1.25rem;
-        background: #1e293b;
-        border-bottom: 1px solid #334155;
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem clamp(1rem, 4vw, 3rem);
+        border-bottom: 1px solid rgba(28, 48, 39, .1);
       }
-      h1 {
-        font-size: 1.25rem;
-        margin: 0;
+      .brand { color: var(--forest); text-decoration: none; letter-spacing: .17em; font-family: Georgia, serif; font-size: .94rem; font-weight: 700; }
+      .brand small { display: block; margin-top: .28rem; color: var(--muted); letter-spacing: .23em; font: 600 .58rem/1.2 system-ui, sans-serif; }
+      .location { color: var(--muted); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; }
+      main { width: min(1120px, calc(100% - 2rem)); margin: clamp(2rem, 5vw, 4rem) auto 3rem; }
+      .intro { max-width: 730px; margin: 0 auto 1.6rem; text-align: center; }
+      .eyebrow { margin: 0 0 .7rem; color: #8b7041; font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+      h1 { margin: 0; color: var(--forest-deep); font: 500 clamp(2rem, 5vw, 3.2rem)/1.08 Georgia, "Times New Roman", serif; }
+      .subtitle { margin: .8rem auto 0; color: var(--muted); font-size: .95rem; line-height: 1.6; }
+      .gallery-card { overflow: hidden; border: 1px solid rgba(28, 48, 39, .12); border-radius: 22px; background: var(--white); box-shadow: 0 22px 60px rgba(33, 48, 39, .12); }
+      .hero { position: relative; display: grid; min-height: 280px; place-items: center; overflow: hidden; background: #d9d7ce; }
+      .hero img { display: block; width: 100%; height: min(68vh, 690px); min-height: 280px; object-fit: cover; }
+      .hero::after { position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(13, 27, 22, .36)); content: ""; pointer-events: none; }
+      .nav-btn { position: absolute; z-index: 2; top: 50%; display: grid; width: 48px; height: 48px; place-items: center; transform: translateY(-50%); border: 1px solid rgba(255,255,255,.65); border-radius: 50%; color: white; background: rgba(21, 55, 44, .68); box-shadow: 0 4px 20px rgba(0,0,0,.2); cursor: pointer; transition: background .2s, transform .2s; }
+      .nav-btn:hover { transform: translateY(-50%) scale(1.06); background: var(--forest-deep); }
+      .nav-btn:focus-visible, .thumb:focus-visible, .cta:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+      .nav-btn svg { width: 21px; height: 21px; }
+      .prev { left: clamp(.65rem, 2vw, 1.25rem); }
+      .next { right: clamp(.65rem, 2vw, 1.25rem); }
+      .counter { position: absolute; z-index: 2; right: 1rem; bottom: 1rem; padding: .45rem .75rem; border: 1px solid rgba(255,255,255,.38); border-radius: 99px; color: #fff; background: rgba(17, 38, 30, .62); font-size: .78rem; font-variant-numeric: tabular-nums; backdrop-filter: blur(8px); }
+      .caption { position: absolute; z-index: 2; bottom: 1rem; left: 1rem; max-width: 70%; color: white; font: 500 1.05rem/1.35 Georgia, serif; text-shadow: 0 2px 8px rgba(0,0,0,.4); }
+      .thumbs-wrap { padding: 1rem 1rem .8rem; border-bottom: 1px solid var(--line); }
+      .thumbs { display: flex; gap: .65rem; overflow-x: auto; padding: .15rem .1rem .45rem; scrollbar-color: #b7aa92 transparent; scrollbar-width: thin; }
+      .thumb { position: relative; flex: 0 0 112px; width: 112px; height: 76px; overflow: hidden; padding: 0; border: 2px solid transparent; border-radius: 10px; background: #e3e0d7; cursor: pointer; opacity: .77; transition: border-color .2s, opacity .2s, transform .2s; }
+      .thumb:hover { transform: translateY(-2px); opacity: 1; }
+      .thumb[aria-current="true"] { border-color: var(--gold); opacity: 1; box-shadow: 0 0 0 2px rgba(198,167,107,.18); }
+      .thumb img { width: 100%; height: 100%; object-fit: cover; }
+      .bottom-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; }
+      .gallery-note { color: var(--muted); font-size: .78rem; }
+      .cta { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 44px; padding: .7rem 1.1rem; border: 1px solid var(--forest); border-radius: 999px; color: white; background: var(--forest); font-size: .82rem; font-weight: 650; text-decoration: none; transition: background .2s, transform .2s; }
+      .cta:hover { transform: translateY(-1px); background: var(--forest-deep); }
+      .cta svg { width: 17px; height: 17px; }
+      .loading, .message { display: grid; min-height: 280px; place-items: center; padding: 2rem; color: var(--muted); text-align: center; }
+      .spinner { width: 28px; height: 28px; margin: 0 auto .8rem; border: 3px solid #e3ddcf; border-top-color: var(--forest); border-radius: 50%; animation: spin .9s linear infinite; }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .message.error { color: #9e453c; }
+      footer { padding: 0 1rem 2rem; color: #7c847e; font-size: .72rem; text-align: center; letter-spacing: .05em; }
+      [hidden] { display: none !important; }
+      @media (max-width: 640px) {
+        .topbar { padding: .85rem 1rem; }
+        .location { max-width: 110px; font-size: .6rem; text-align: right; }
+        main { width: min(100% - 1rem, 720px); margin-top: 1.8rem; }
+        .intro { margin-bottom: 1rem; }
+        .subtitle { max-width: 32rem; font-size: .85rem; }
+        .gallery-card { border-radius: 16px; }
+        .hero img { height: 54vh; min-height: 310px; max-height: 560px; }
+        .thumb { flex-basis: 84px; width: 84px; height: 60px; }
+        .thumbs-wrap { padding: .75rem .65rem .6rem; }
+        .bottom-row { align-items: stretch; flex-direction: column; padding: .85rem; }
+        .gallery-note { text-align: center; }
+        .cta { width: 100%; }
+        .nav-btn { width: 42px; height: 42px; }
       }
-      p {
-        margin: 0.35rem 0 0;
-        font-size: 0.9rem;
-        color: #94a3b8;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 0.75rem;
-        padding: 1rem;
-      }
-      .grid img {
-        width: 100%;
-        aspect-ratio: 4/3;
-        object-fit: cover;
-        border-radius: 12px;
-        border: 1px solid #334155;
-      }
-      .err {
-        padding: 2rem;
-        text-align: center;
-        color: #fca5a5;
-      }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
     </style>
   </head>
   <body>
-    <header>
-      <h1 id="titulo">Fotos Terra Natura</h1>
-      <p id="sub">Cargando álbum…</p>
+    <header class="topbar">
+      <a class="brand" href="/">TERRA NATURA<small>CABAÑAS · VALLE DE PUNILLA</small></a>
+      <span class="location">Bialet Massé · Córdoba</span>
     </header>
-    <div id="grid" class="grid"></div>
-    <p id="err" class="err" hidden></p>
+    <main>
+      <section class="intro">
+        <p class="eyebrow" id="seccion">Galería Terra Natura</p>
+        <h1 id="titulo">Conocé el espacio</h1>
+        <p class="subtitle">Un recorrido en imágenes para que empieces a imaginar tu próxima estadía en Punilla.</p>
+      </section>
+      <section id="gallery" class="gallery-card" hidden aria-label="Carrusel de fotos">
+        <div class="hero" id="hero">
+          <img id="foto-principal" alt="" fetchpriority="high" />
+          <button class="nav-btn prev" id="anterior" type="button" aria-label="Foto anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+          <button class="nav-btn next" id="siguiente" type="button" aria-label="Foto siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+          <span class="caption" id="caption"></span>
+          <span class="counter" id="counter" aria-live="polite"></span>
+        </div>
+        <div class="thumbs-wrap"><div class="thumbs" id="thumbs" aria-label="Elegir foto"></div></div>
+        <div class="bottom-row">
+          <span class="gallery-note" id="cantidad"></span>
+          <a class="cta" id="whatsapp" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20l.9-4.7a8.5 8.5 0 1 1 16.6-3.6Z"/><path d="M8.8 8.2c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4-.1.6.5.9 1.2 1.6 2.1 2.1.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.7-.1l1.5.7c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.4-1.1.6-1.8.5-1-.1-2.2-.6-3.3-1.6-1.1-.9-1.8-2-2.1-2.9-.4-1-.1-2.2.2-2.9Z"/></svg>
+            Consultar disponibilidad
+          </a>
+        </div>
+      </section>
+      <section class="gallery-card loading" id="loading" aria-live="polite"><div><div class="spinner"></div>Cargando álbum…</div></section>
+      <section class="gallery-card message error" id="message" role="status" hidden></section>
+    </main>
+    <footer>Cabañas Alpinas Terra Natura · Los Talas 759 · Bialet Massé, Córdoba</footer>
     <script>
       (function () {
         const params = new URLSearchParams(location.search);
-        const s = (params.get("s") || "alpina").toLowerCase();
-        const API =
-          location.hostname === "alpinasterranatura.com.ar" || location.hostname === "www.alpinasterranatura.com.ar"
+        const sectionId = (params.get("s") || "alpina").toLowerCase();
+        const isLocalPreview = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+        const apiOrigin = isLocalPreview
+          ? "http://127.0.0.1:8000"
+          : (location.hostname === "alpinasterranatura.com.ar" || location.hostname === "www.alpinasterranatura.com.ar"
             ? "https://api.alpinasterranatura.com.ar"
-            : location.origin;
-        fetch(API + "/api/public/coleccion-consulta/" + encodeURIComponent(s))
-          .then(function (r) {
-            if (!r.ok) throw new Error("No se pudo cargar el álbum");
-            return r.json();
-          })
-          .then(function (data) {
-            document.getElementById("titulo").textContent = data.titulo || "Fotos Terra Natura";
-            document.getElementById("sub").textContent =
-              (data.fotos && data.fotos.length) + " foto" + (data.fotos.length === 1 ? "" : "s");
-            const grid = document.getElementById("grid");
-            (data.fotos || []).forEach(function (f) {
-              const img = document.createElement("img");
-              img.src = f.url;
-              img.alt = f.nombre || "Foto";
-              img.loading = "lazy";
-              grid.appendChild(img);
-            });
-            if (!data.fotos || !data.fotos.length) {
-              document.getElementById("err").hidden = false;
-              document.getElementById("err").textContent = "Todavía no hay fotos configuradas para esta colección.";
-            }
-          })
-          .catch(function (e) {
-            document.getElementById("err").hidden = false;
-            document.getElementById("err").textContent = e.message || "Error al cargar";
+            : location.origin);
+        const loading = document.getElementById("loading");
+        const message = document.getElementById("message");
+        const gallery = document.getElementById("gallery");
+        const heroImage = document.getElementById("foto-principal");
+        const caption = document.getElementById("caption");
+        const counter = document.getElementById("counter");
+        const thumbs = document.getElementById("thumbs");
+        let photos = [];
+        let current = 0;
+
+        function show(index) {
+          if (!photos.length) return;
+          current = (index + photos.length) % photos.length;
+          const photo = photos[current];
+          heroImage.src = photo.url;
+          heroImage.alt = "Foto " + (current + 1) + " de " + (document.getElementById("seccion").textContent || "Terra Natura");
+          caption.textContent = "Terra Natura · Valle de Punilla";
+          counter.textContent = (current + 1) + " / " + photos.length;
+          Array.from(thumbs.children).forEach(function (button, i) {
+            button.setAttribute("aria-current", i === current ? "true" : "false");
+          });
+          const activeThumb = thumbs.children[current];
+          if (activeThumb) activeThumb.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+        }
+
+        function render(data) {
+          const sectionName = data.seccion || data.titulo || "Galería Terra Natura";
+          const title = data.titulo || sectionName;
+          document.getElementById("seccion").textContent = sectionName + " · Bialet Massé";
+          document.getElementById("titulo").textContent = title;
+          document.title = title + " — Terra Natura";
+          photos = data.fotos || [];
+          document.getElementById("anterior").hidden = photos.length < 2;
+          document.getElementById("siguiente").hidden = photos.length < 2;
+          document.getElementById("cantidad").textContent = photos.length + (photos.length === 1 ? " foto seleccionada" : " fotos seleccionadas") + " para este álbum";
+          if (!photos.length) {
+            loading.hidden = true;
+            message.hidden = false;
+            message.textContent = "Estamos preparando las fotos de esta sección. Consultanos por WhatsApp y te ayudamos con las fechas.";
+            return;
+          }
+          photos.forEach(function (photo, index) {
+            const button = document.createElement("button");
+            const image = document.createElement("img");
+            button.type = "button";
+            button.className = "thumb";
+            button.setAttribute("aria-label", "Ver foto " + (index + 1));
+            button.setAttribute("aria-current", "false");
+            image.src = photo.url;
+            image.alt = "";
+            image.loading = "lazy";
+            button.appendChild(image);
+            button.addEventListener("click", function () { show(index); });
+            thumbs.appendChild(button);
+          });
+          const text = "Hola, vi el álbum de " + sectionName + " de Terra Natura y quisiera consultar disponibilidad.";
+          document.getElementById("whatsapp").href = "https://wa.me/5493541571190?text=" + encodeURIComponent(text);
+          loading.hidden = true;
+          gallery.hidden = false;
+          show(0);
+        }
+
+        document.getElementById("anterior").addEventListener("click", function () { show(current - 1); });
+        document.getElementById("siguiente").addEventListener("click", function () { show(current + 1); });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "ArrowLeft") show(current - 1);
+          if (event.key === "ArrowRight") show(current + 1);
+        });
+        let touchStartX = null;
+        document.getElementById("hero").addEventListener("touchstart", function (event) { touchStartX = event.changedTouches[0].screenX; }, { passive: true });
+        document.getElementById("hero").addEventListener("touchend", function (event) {
+          if (touchStartX === null) return;
+          const delta = event.changedTouches[0].screenX - touchStartX;
+          if (Math.abs(delta) > 45) show(current + (delta < 0 ? 1 : -1));
+          touchStartX = null;
+        }, { passive: true });
+
+        fetch(apiOrigin + "/api/public/coleccion-consulta/" + encodeURIComponent(sectionId))
+          .then(function (response) { if (!response.ok) throw new Error("No se pudo cargar el álbum"); return response.json(); })
+          .then(render)
+          .catch(function () {
+            loading.hidden = true;
+            message.hidden = false;
+            message.textContent = "No pudimos cargar las fotos ahora. Volvé a intentar en un momento o consultanos por WhatsApp.";
           });
       })();
     </script>
     <script defer src="./assets/js/utm.js?v=20261106"></script>
-</body>
+  </body>
 </html>
