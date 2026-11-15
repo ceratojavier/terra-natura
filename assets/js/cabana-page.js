@@ -198,7 +198,7 @@
     return Object.assign({}, base, {
       id: base.id,
       nombre: NOMBRE_TIPO[tipo] || base.nombre.replace(/\s*\d+$/, ""),
-      fotos: fotos.slice(0, 14),
+      fotos: fotos,
     });
   }
 

@@ -3,6 +3,14 @@
   const params = new URLSearchParams(location.search);
   const preview = params.get("tn-preview") === "1";
   const editorPreview = params.has("tn-editor-preview");
+  let editorContentOverride = null;
+  if (editorPreview && window.parent !== window) {
+    window.addEventListener("message", (event) => {
+      if (event.source !== window.parent || event.data?.type !== "tn-editor-content-preview" || !event.data.content || typeof event.data.content !== "object") return;
+      editorContentOverride = event.data.content;
+      loadContent();
+    });
+  }
   const key = (() => { try { return localStorage.getItem("tn_clave") || ""; } catch { return ""; } })();
   const headers = key ? { "X-Clave": key } : {};
   const mediaUrl = (value) => String(value || "").startsWith("media/cms/") ? `${API}/api/sitio/archivo-media?ruta=${encodeURIComponent(value)}` : value;
@@ -203,6 +211,7 @@
         const response = await fetch(`${API}${endpoint}`, { headers, cache: "no-store" });
         if (response.ok) data = mergeContent(data, await response.json());
       } catch { /* El sitio conserva el contenido público local como respaldo. */ }
+      if (editorPreview && editorContentOverride) data = mergeContent(data, editorContentOverride);
       if (!Object.keys(data).length) return;
       const presentaciones = new Map();
       const normalizarRuta = (value) => String(value || "").replace(/^https?:\/\/[^/]+/i, "").split("?")[0].replace(/^\.\//, "").replace(/^\//, "");

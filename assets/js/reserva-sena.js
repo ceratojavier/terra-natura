@@ -75,7 +75,8 @@
   function renderSummary(data, cache) {
     const total = data?.precio_total ?? cache?.total;
     const sena = data?.senia_referencia ?? cache?.senia;
-    document.getElementById("checkout-unit").textContent = "Cabaña Alpina";
+    const unidadLabel = data?.unidad_nombre || ({ "alpina-1": "Alpina 1", "alpina-2": "Alpina 2", "alpina-3": "Alpina 3", "suite-4": "Suite 4 · Planta baja", "suite-5": "Suite 5 · Planta alta" })[data?.unidad_id] || "Alojamiento Terra Natura";
+    document.getElementById("checkout-unit").textContent = unidadLabel;
     document.getElementById("checkout-dates").innerHTML = `<div class="checkout-date"><span>Ingreso</span><strong>${esc(dateAr(data?.check_in))}</strong></div><div class="checkout-date"><span>Salida</span><strong>${esc(dateAr(data?.check_out))}</strong></div>`;
     document.getElementById("checkout-summary-extra").textContent = `${cache?.personas ? `${cache.personas} huésped${cache.personas === 1 ? "" : "es"} · ` : ""}Código ${codigo}`;
     document.getElementById("checkout-total").textContent = money(total);

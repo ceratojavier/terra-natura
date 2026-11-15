@@ -175,39 +175,47 @@
       "opiniones_bajada": "Historias de huéspedes publicadas en el sitio de Terra Natura.",
       "opiniones_insignia": "Puntajes actuales de Google y Booking",
       "lugares_titulo": "Lugares y paseos para disfrutar cerca",
-      "lugares_bajada": "Todos los destinos quedan a pocos minutos por la Autovía Punilla, con acceso rápido desde el complejo.",
+      "lugares_bajada": "Desde el complejo tenés salida rápida a la Autovía Punilla para recorrer el valle. Cosquín queda hacia el norte, por RN 38.",
       "lugares": [
         {
-          "id": "rios",
-          "titulo": "Balnearios y Ríos",
-          "tiempo": "A 5 min · por Autovía Punilla",
-          "descripcion": "Playas del Río Cosquín y el Lago San Roque, con acceso rápido por Autovía Punilla.",
+          "id": "barrancas",
+          "titulo": "Balneario Barrancas Bermejas",
+          "tiempo": "Aprox. 2 km · Bialet Massé",
+          "descripcion": "Playas y rincones del Río Cosquín para pasar el día junto al agua.",
           "icono": "pool",
           "foto": "media/atracciones/labios-del-indio-v2.png"
         },
         {
-          "id": "miradores",
-          "titulo": "Paseos y Miradores",
-          "tiempo": "A 8 min · por Autovía Punilla",
-          "descripcion": "Paseos serranos y puntos panorámicos; recorridos cortos desde la Autovía Punilla.",
+          "id": "lago",
+          "titulo": "Lago San Roque y Las Mojarras",
+          "tiempo": "A 600 m · acceso rápido",
+          "descripcion": "El lago y el arroyo están cerca del complejo para disfrutar el paisaje y el aire serrano.",
           "icono": "mountain",
-          "foto": "media/atracciones/plaza-federal-atardecer.jpg"
+          "foto": "media/atracciones/lago-san-roque-atardecer.webp"
         },
         {
-          "id": "gastronomia",
-          "titulo": "Gastronomía Regional",
-          "tiempo": "A 5 min · por Autovía Punilla",
-          "descripcion": "Parrillas, casas de té y sabores regionales en Bialet Massé y localidades cercanas.",
-          "icono": "kitchen",
-          "foto": "media/atracciones/peatonal-carlos-paz-v2.png"
+          "id": "pekos",
+          "titulo": "Peko’s Multiparque",
+          "tiempo": "Villa Santa Cruz del Lago",
+          "descripcion": "Juegos y actividades para compartir en familia, con acceso desde la Autovía Punilla.",
+          "icono": "family",
+          "foto": "media/atracciones/pekos-vuelta.webp"
         },
         {
-          "id": "ciudades",
-          "titulo": "Carlos Paz y Cosquín",
-          "tiempo": "A 15 min · por Autovía Punilla",
-          "descripcion": "Carlos Paz y Cosquín para teatros, paseos y festivales, conectados por Autovía Punilla.",
+          "id": "cosquin",
+          "titulo": "Cosquín y Plaza Próspero Molina",
+          "tiempo": "Aprox. 8 km · RN 38",
+          "descripcion": "Paseos, peñas y festivales en la capital nacional del folklore.",
           "icono": "sun",
-          "foto": "media/atracciones/puente-carlos-paz-noche-v2.png"
+          "foto": "media/atracciones/plaza-federal-atardecer.webp"
+        },
+        {
+          "id": "carlos-paz",
+          "titulo": "Villa Carlos Paz",
+          "tiempo": "Aprox. 20 km · por Autovía Punilla",
+          "descripcion": "Teatros, costanera, gastronomía y paseos para disfrutar de día o de noche.",
+          "icono": "sun",
+          "foto": "media/atracciones/puente-carlos-paz-noche-v2.webp"
         }
       ]
     },

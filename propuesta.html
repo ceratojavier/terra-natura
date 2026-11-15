@@ -80,7 +80,7 @@
           <p class="tn-price-card__note" id="price-status" role="status">Verificando fechas y tarifa…</p>
         </section>
         <div class="tn-booking-card__actions">
-          <a class="tn-button tn-button--primary" id="reserve-link" href="./reservar.html"><span id="reserve-label">Continuar con esta opción</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+          <a class="tn-button tn-button--primary" id="reserve-link" href="#checkout-dialog"><span id="reserve-label">Continuar con esta opción</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
           <a class="tn-button tn-button--secondary" id="whatsapp-link" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer"><span id="whatsapp-label">Consultar por WhatsApp</span></a>
         </div>
         <p class="tn-booking-card__assurance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/><path d="m9 12 2 2 4-4"/></svg><span id="booking-assurance">La reserva se confirma al completar los datos y la seña.</span></p>
@@ -144,7 +144,25 @@
       </div>
     </section>
 
-    <section class="tn-final-cta"><div><p class="tn-eyebrow" id="final-eyebrow">Tu próximo descanso empieza acá</p><h2 id="final-title">¿Te imaginás en Terra Natura?</h2><p id="final-lead">Revisá tus fechas y avanzá con la reserva cuando quieras.</p></div><a class="tn-button tn-button--primary" id="final-reserve-link" href="./reservar.html"><span id="final-button">Quiero esta opción</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></section>
+    <section class="tn-final-cta"><div><p class="tn-eyebrow" id="final-eyebrow">Tu próximo descanso empieza acá</p><h2 id="final-title">¿Te imaginás en Terra Natura?</h2><p id="final-lead">Revisá tus fechas y avanzá con la reserva cuando quieras.</p></div><a class="tn-button tn-button--primary" id="final-reserve-link" href="#checkout-dialog"><span id="final-button">Quiero esta opción</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></section>
+    <dialog class="tn-checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-dialog-title">
+      <button type="button" class="tn-checkout-dialog__close" id="checkout-dialog-close" aria-label="Cerrar">×</button>
+      <p class="tn-eyebrow">Pre-reserva · Terra Natura</p>
+      <h2 id="checkout-dialog-title">Continuá con tu estadía</h2>
+      <p id="checkout-dialog-summary" class="tn-checkout-dialog__summary"></p>
+      <p>Dejanos los datos del titular para validar las fechas y prepararte el pago de la seña. La reserva queda pendiente hasta que revisemos el comprobante.</p>
+      <form id="checkout-dialog-form">
+        <div class="tn-checkout-dialog__fields">
+          <label>Nombre<input name="nombre" required minlength="2" autocomplete="given-name" /></label>
+          <label>Apellido<input name="apellido" required minlength="2" autocomplete="family-name" /></label>
+          <label>WhatsApp / teléfono<input name="telefono" type="tel" required minlength="8" autocomplete="tel" /></label>
+          <label>Email <small>(opcional)</small><input name="email" type="email" autocomplete="email" /></label>
+        </div>
+        <p id="checkout-dialog-error" class="tn-checkout-dialog__error" role="alert" hidden></p>
+        <button class="tn-button tn-button--primary" type="submit">Continuar a los datos de transferencia</button>
+      </form>
+      <small>El pago se revisa manualmente. Completar estos datos crea una pre-reserva temporal, no confirma la reserva.</small>
+    </dialog>
   </main>
   <footer class="tn-footer"><a class="tn-footer__brand" href="./index.html"><strong>Terra Natura</strong><span>Tu refugio en las Sierras</span></a><span>Los Talas 759 · Bialet Massé, Córdoba</span></footer>
 

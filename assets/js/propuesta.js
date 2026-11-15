@@ -11,10 +11,11 @@
     lugares_titulo: "Explorá las Sierras · Todo cerca tuyo",
     lugares_bajada: "Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.",
     lugares: [
-      { id: "rios", titulo: "Balnearios y Ríos", tiempo: "A 5 min", descripcion: "Acceso rápido a playas del Río Cosquín y el Lago San Roque.", icono: "pool", foto: "media/atracciones/labios-del-indio-v2.png" },
-      { id: "miradores", titulo: "Paseos y Miradores", tiempo: "A 8 min", descripcion: "Naturaleza serrana, senderos y puntos panorámicos históricos.", icono: "mountain", foto: "media/atracciones/plaza-federal-atardecer.jpg" },
-      { id: "gastronomia", titulo: "Gastronomía Regional", tiempo: "A 5 min", descripcion: "Parrillas, casas de té y opciones gastronómicas locales.", icono: "kitchen", foto: "media/atracciones/peatonal-carlos-paz-v2.png" },
-      { id: "ciudades", titulo: "Carlos Paz y Cosquín", tiempo: "A 15 min", descripcion: "Teatros, paseos nocturnos y festivales por ruta.", icono: "sun", foto: "media/atracciones/puente-carlos-paz-noche-v2.png" },
+      { id: "barrancas", titulo: "Balneario Barrancas Bermejas", tiempo: "Aprox. 2 km · Bialet Massé", descripcion: "Playas y rincones del Río Cosquín para pasar el día junto al agua.", icono: "pool", foto: "media/atracciones/labios-del-indio-v2.png" },
+      { id: "lago", titulo: "Lago San Roque y Las Mojarras", tiempo: "A 600 m · acceso rápido", descripcion: "El lago y el arroyo están cerca del complejo para disfrutar el paisaje y el aire serrano.", icono: "mountain", foto: "media/atracciones/lago-san-roque-atardecer.webp" },
+      { id: "pekos", titulo: "Peko’s Multiparque", tiempo: "Villa Santa Cruz del Lago", descripcion: "Juegos y actividades para compartir en familia, con acceso desde la Autovía Punilla.", icono: "family", foto: "media/atracciones/pekos-vuelta.webp" },
+      { id: "cosquin", titulo: "Cosquín y Plaza Próspero Molina", tiempo: "Aprox. 8 km · RN 38", descripcion: "Paseos, peñas y festivales en la capital nacional del folklore.", icono: "sun", foto: "media/atracciones/plaza-federal-atardecer.webp" },
+      { id: "carlos-paz", titulo: "Villa Carlos Paz", tiempo: "Aprox. 20 km · por Autovía Punilla", descripcion: "Teatros, costanera, gastronomía y paseos para disfrutar de día o de noche.", icono: "sun", foto: "media/atracciones/puente-carlos-paz-noche-v2.webp" },
     ],
   };
   const q = new URLSearchParams(location.search);
@@ -30,6 +31,8 @@
   let proposalContent = {};
   let lastOptions = [];
   let photoLoadToken = 0;
+  let selectedReservationOption = null;
+  let selectedQuoteTotal = 0;
 
   const units = {
     "grupo-alpinas": {
@@ -134,24 +137,16 @@
     toastTimer = setTimeout(() => el.classList.remove("is-visible"), 3500);
   };
 
-  function quoteUrl(checkin, checkout, adults, children, groupId) {
-    const params = new URLSearchParams({ checkin, checkout, adultos: String(adults), ninos: String(children), cotizar: "1", grupo: groupId });
-    return `${SITE}/reservar.html?${params.toString()}`;
-  }
-
   function updateLinks(total) {
     const ci = getVal("checkin"), co = getVal("checkout");
     const adults = Number(getVal("adults") || 1), children = Number(getVal("children") || 0);
-    const url = quoteUrl(ci, co, adults, children, group);
-    const offer = new URL(url);
-    if (compositionId) { offer.searchParams.set("composicion", compositionId); offer.searchParams.set("unidades", String(compositionId.split("+").length)); }
     const text = `Hola, vi la propuesta de ${activeComposition?.etiqueta || units[group].whatsappName} en Terra Natura para el ${fmtDate(ci)} al ${fmtDate(co)}. Somos ${adults + children}. ${total ? `La cotización que vi es ${fmtMoney(total)}. ` : ""}¿Me ayudás a avanzar?`;
     const wa = `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;
     const multiUnit = Boolean(activeComposition && (activeComposition.unidades_ids || []).length > 1);
-    for (const id of ["reserve-link", "final-reserve-link", "sticky-reserve-link"]) document.getElementById(id).href = multiUnit ? wa : offer.toString();
-    document.getElementById("reserve-link").textContent = multiUnit ? "Consultar esta combinación por WhatsApp" : "Continuar con esta opción";
-    document.getElementById("final-reserve-link").textContent = multiUnit ? "Consultar esta combinación por WhatsApp" : (proposalContent.final_button || "Quiero esta opción");
-    document.getElementById("sticky-reserve-link").textContent = multiUnit ? "Consultar" : (total ? "Reservar" : "Ver cotización");
+    for (const id of ["reserve-link", "final-reserve-link", "sticky-reserve-link"]) document.getElementById(id).href = "#checkout-dialog";
+    document.getElementById("reserve-link").textContent = multiUnit ? "Continuar con esta combinación" : "Continuar con esta opción";
+    document.getElementById("final-reserve-link").textContent = multiUnit ? "Continuar con esta combinación" : (proposalContent.final_button || "Quiero esta opción");
+    document.getElementById("sticky-reserve-link").textContent = total ? "Reservar" : "Ver cotización";
     for (const id of ["whatsapp-link", "header-whatsapp"]) document.getElementById(id).href = wa;
     const next = new URL(location.href);
     next.search = new URLSearchParams({ checkin: ci, checkout: co, adultos: String(adults), ninos: String(children), grupo: group, ...(compositionId ? { composicion: compositionId, ...(requestedUnits ? { unidades: String(requestedUnits) } : {}) } : {}) }).toString();
@@ -278,6 +273,15 @@
     }).catch(() => { grid.innerHTML = '<p class="tn-reviews__empty">Consultá las opiniones directamente en Google y Booking.</p>'; });
   }
 
+  let editorContentOverride = null;
+  if (new URLSearchParams(location.search).has("tn-editor-preview") && window.parent !== window) {
+    window.addEventListener("message", (event) => {
+      if (event.source !== window.parent || event.data?.type !== "tn-editor-content-preview" || !event.data.content || typeof event.data.content !== "object") return;
+      editorContentOverride = event.data.content;
+      renderConversionContent(editorContentOverride);
+    });
+  }
+
   async function loadConversionContent() {
     let publishedContent = null, editableContent = null;
     try { publishedContent = await fetch("./assets/data/contenido-sitio.json", { cache: "no-store" }).then((response) => response.ok ? response.json() : null); } catch (_) {}
@@ -297,7 +301,7 @@
       propuesta_landing: { ...defaultLanding, ...serverLanding, unidades: Object.fromEntries(Object.keys({ ...defaultUnits, ...serverUnits }).map((id) => [id, { ...(defaultUnits[id] || {}), ...(serverUnits[id] || {}) }])) },
       reserva_web: { ...defaultReserva, ...serverReserva, grupos_cotizador: { ...(defaultReserva.grupos_cotizador || {}), ...(serverReserva.grupos_cotizador || {}) } },
     } };
-    renderConversionContent(content || {});
+    renderConversionContent(editorContentOverride ? { ...content, ...editorContentOverride, home: { ...(content.home || {}), ...(editorContentOverride.home || {}) } } : content || {});
   }
 
   function positionFor(photo) {
@@ -443,8 +447,10 @@
   }
 
   function showPrice(option, nights) {
+    selectedReservationOption = option;
     const cot = option.cotizacion || {};
     const total = Number(cot.total || 0);
+    selectedQuoteTotal = total;
     const list = Number(cot.total_lista || total);
     const discount = Number(cot.descuento_web_pct || 0);
     const deposit = Math.round(total * .5);
@@ -459,6 +465,66 @@
     status.textContent = "Disponibilidad consultada ahora. Se confirma al avanzar con la reserva.";
     document.querySelector(".tn-price-card").classList.remove("is-error");
     updateLinks(total);
+  }
+
+  function openCheckout() {
+    if (new URLSearchParams(location.search).has("tn-editor-preview")) {
+      setToast("Esta es una vista previa: no crea pre-reservas ni bloquea fechas.");
+      return;
+    }
+    if (!selectedReservationOption || !selectedQuoteTotal || !getVal("checkin") || !getVal("checkout")) {
+      setToast("Primero elegí fechas y una opción disponible.");
+      document.getElementById("stay-editor").open = true;
+      return;
+    }
+    const adults = Number(getVal("adults") || 1), children = Number(getVal("children") || 0);
+    document.getElementById("checkout-dialog-summary").textContent = `${selectedReservationOption.etiqueta || units[group].title} · ${fmtDate(getVal("checkin"))} → ${fmtDate(getVal("checkout"))} · ${adults + children} pasajeros · ${fmtMoney(selectedQuoteTotal)}`;
+    document.getElementById("checkout-dialog-error").hidden = true;
+    document.getElementById("checkout-dialog").showModal();
+  }
+
+  async function submitCheckout(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const button = form.querySelector('[type="submit"]');
+    const error = document.getElementById("checkout-dialog-error");
+    const firstName = String(form.elements.nombre.value || "").trim();
+    const lastName = String(form.elements.apellido.value || "").trim();
+    button.disabled = true;
+    button.textContent = "Preparando pre-reserva…";
+    error.hidden = true;
+    try {
+      const option = selectedReservationOption;
+      const payload = {
+        unidad_id: option.unidad_id,
+        check_in: getVal("checkin"), check_out: getVal("checkout"),
+        huesped_nombre: firstName, huesped_apellido: lastName,
+        huesped_email: String(form.elements.email.value || "").trim() || null,
+        huesped_telefono: String(form.elements.telefono.value || "").trim(),
+        personas: Number(getVal("adults")) + Number(getVal("children")),
+        adultos: Number(getVal("adults")), ninos: Number(getVal("children")),
+        edades_menores: [], codigo_promocional: null,
+        ...(Array.isArray(option.unidad_ids) && option.unidad_ids.length > 1 ? {
+          unidad_ids: option.unidad_ids,
+          asignaciones: (option.asignaciones || []).map((item) => ({ ...item, titular: `${firstName} ${lastName}`.trim() })),
+        } : {}),
+      };
+      const response = await fetch(`${API}/api/public/reservar-senia`, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload) });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.detail || "No pudimos validar la disponibilidad. Revisá las fechas o consultanos por WhatsApp.");
+      result.telefono = payload.huesped_telefono;
+      result.personas = payload.personas;
+      try {
+        if (result.grupo_estadia_id) sessionStorage.setItem("tn_reserva_grupo", JSON.stringify(result));
+        else sessionStorage.setItem("tn_reserva_ok", JSON.stringify(result));
+      } catch (_) {}
+      location.href = result.pagina_seña || `./reserva-sena.html?id=${encodeURIComponent(result.reserva_id)}&codigo=${encodeURIComponent(result.codigo)}`;
+    } catch (err) {
+      error.textContent = err instanceof Error ? err.message : "No se pudo crear la pre-reserva.";
+      error.hidden = false;
+      button.disabled = false;
+      button.textContent = "Continuar a los datos de transferencia";
+    }
   }
 
   function setBusy(busy) {
@@ -519,6 +585,8 @@
   }
 
   async function refreshQuote({ initial = false } = {}) {
+    selectedReservationOption = null;
+    selectedQuoteTotal = 0;
     const ci = getVal("checkin"), co = getVal("checkout");
     if (!ci || !co || co <= ci) {
       if (!initial) setToast("Revisá las fechas: la salida tiene que ser posterior al ingreso.");
@@ -579,6 +647,9 @@
   paintStay();
   loadPhotos();
   document.getElementById("quote-form").addEventListener("submit", (event) => { event.preventDefault(); if (!requestedUnits) { compositionId = ""; activeComposition = null; group = "grupo-alpinas"; configureUnit(); loadPhotos(); } refreshQuote(); });
+  for (const id of ["reserve-link", "final-reserve-link", "sticky-reserve-link"]) document.getElementById(id).addEventListener("click", (event) => { if (selectedReservationOption) { event.preventDefault(); openCheckout(); } });
+  document.getElementById("checkout-dialog-close").addEventListener("click", () => document.getElementById("checkout-dialog").close());
+  document.getElementById("checkout-dialog-form").addEventListener("submit", submitCheckout);
   document.getElementById("photo-prev").addEventListener("click", () => showPhoto(photoIndex - 1));
   document.getElementById("photo-next").addEventListener("click", () => showPhoto(photoIndex + 1));
   document.getElementById("lightbox-open").addEventListener("click", openLightbox);
