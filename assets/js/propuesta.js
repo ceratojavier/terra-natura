@@ -36,6 +36,9 @@
   let photoAutoplayTimer = 0;
   let photoAutoplayEnabled = true;
   let photoTransitionToken = 0;
+  const signedQuoteToken = q.get("cotizacion_token") || "";
+  const signedQuoteContext = { checkin: q.get("checkin") || q.get("check_in") || "", checkout: q.get("checkout") || q.get("check_out") || "", adults: String(Math.max(1, Number(q.get("adultos") || 2))), children: String(Math.max(0, Number(q.get("ninos") || 0)))};
+  const signedQuoteStillMatches = () => signedQuoteToken && getVal("checkin") === signedQuoteContext.checkin && getVal("checkout") === signedQuoteContext.checkout && String(Number(getVal("adults") || 1)) === signedQuoteContext.adults && String(Number(getVal("children") || 0)) === signedQuoteContext.children;
 
   const units = {
     "grupo-alpinas": {
@@ -487,7 +490,7 @@
     document.getElementById("price-deposit").textContent = fmtMoney(deposit);
     document.getElementById("price-night").textContent = nights > 0 ? `${fmtMoney(total / nights)} por noche` : "";
     const status = document.getElementById("price-status");
-    status.textContent = "Disponibilidad consultada ahora. Se confirma al avanzar con la reserva.";
+    status.textContent = cot.precio_acordado ? (discount > 0 ? "Precio acordado en la conversación; se aplicó el descuento que elegiste." : "Precio acordado en la conversación; sin descuento web.") : "Disponibilidad consultada ahora. Se confirma al avanzar con la reserva.";
     document.querySelector(".tn-price-card").classList.remove("is-error");
     updateLinks(total);
   }
@@ -528,7 +531,7 @@
         huesped_telefono: String(form.elements.telefono.value || "").trim(),
         personas: Number(getVal("adults")) + Number(getVal("children")),
         adultos: Number(getVal("adults")), ninos: Number(getVal("children")),
-        edades_menores: [], codigo_promocional: null,
+        edades_menores: [], codigo_promocional: null, cotizacion_token: option.cotizacion_token || null,
         ...(Array.isArray(option.unidad_ids) && option.unidad_ids.length > 1 ? {
           unidad_ids: option.unidad_ids,
           asignaciones: (option.asignaciones || []).map((item) => ({ ...item, titular: `${firstName} ${lastName}`.trim() })),
@@ -570,6 +573,7 @@
       check_in: getVal("checkin"), check_out: getVal("checkout"),
       adultos: Math.max(1, Number(getVal("adults") || 1)), ninos: Math.max(0, Number(getVal("children") || 0)),
       grupo_filtro: groupFilter,
+      ...(signedQuoteStillMatches() ? { cotizacion_token: signedQuoteToken } : {}),
       ...((requestedUnits || (compositionId ? compositionId.split("+").length : 0)) ? { unidades_solicitadas: requestedUnits || compositionId.split("+").length } : {}),
     };
     const response = await fetch(`${API}/api/public/cotizar-opciones`, {
