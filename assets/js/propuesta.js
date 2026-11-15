@@ -9,13 +9,13 @@
     opiniones_bajada: "Historias de huéspedes publicadas en el sitio de Terra Natura.",
     opiniones_insignia: "Puntajes actuales de Google y Booking",
     lugares_titulo: "Explorá las Sierras · Todo cerca tuyo",
-    lugares_bajada: "Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.",
+    lugares_bajada: "Desde Terra Natura tenés acceso rápido a la Autovía Punilla para llegar en auto a los paseos y localidades del valle.",
     lugares: [
-      { id: "barrancas", titulo: "Balneario Barrancas Bermejas", tiempo: "Aprox. 2 km · Bialet Massé", descripcion: "Playas y rincones del Río Cosquín para pasar el día junto al agua.", icono: "pool", foto: "media/atracciones/labios-del-indio-v2.png" },
-      { id: "lago", titulo: "Lago San Roque y Las Mojarras", tiempo: "A 600 m · acceso rápido", descripcion: "El lago y el arroyo están cerca del complejo para disfrutar el paisaje y el aire serrano.", icono: "mountain", foto: "media/atracciones/lago-san-roque-atardecer.webp" },
-      { id: "pekos", titulo: "Peko’s Multiparque", tiempo: "Villa Santa Cruz del Lago", descripcion: "Juegos y actividades para compartir en familia, con acceso desde la Autovía Punilla.", icono: "family", foto: "media/atracciones/pekos-vuelta.webp" },
-      { id: "cosquin", titulo: "Cosquín y Plaza Próspero Molina", tiempo: "Aprox. 8 km · RN 38", descripcion: "Paseos, peñas y festivales en la capital nacional del folklore.", icono: "sun", foto: "media/atracciones/plaza-federal-atardecer.webp" },
-      { id: "carlos-paz", titulo: "Villa Carlos Paz", tiempo: "Aprox. 20 km · por Autovía Punilla", descripcion: "Teatros, costanera, gastronomía y paseos para disfrutar de día o de noche.", icono: "sun", foto: "media/atracciones/puente-carlos-paz-noche-v2.webp" },
+      {"id": "barrancas", "titulo": "Balneario Barrancas Bermejas", "tiempo": "Aprox. 2 km · Bialet Massé", "descripcion": "Playas y rincones del Río Cosquín para pasar el día junto al agua.", "icono": "pool", "foto": "media/atracciones/labios-del-indio-v2.png"},
+      {"id": "lago", "titulo": "Lago San Roque y arroyo Las Mojarras", "tiempo": "A 600 m · acceso al lago", "descripcion": "El lago y el arroyo están muy cerca del complejo, con vistas abiertas al valle.", "icono": "mountain", "foto": "media/atracciones/lago-san-roque-atardecer.webp"},
+      {"id": "pekos", "titulo": "Peko’s Multiparque", "tiempo": "Aprox. 10 km · 12 min en auto", "descripcion": "Parque de juegos y actividades para compartir en familia, en Villa Santa Cruz del Lago.", "icono": "family", "foto": "media/atracciones/pekos-vuelta.webp"},
+      {"id": "mallin", "titulo": "Cascada de Mallín · Bialet Massé", "tiempo": "Acceso por Av. Cassaffousth", "descripcion": "Un paseo serrano entre la vegetación y el agua, junto a la Capilla San Cayetano.", "icono": "mountain", "foto": "media/atracciones/tanti-cascada.webp"},
+      {"id": "carlos-paz", "titulo": "Villa Carlos Paz", "tiempo": "Aprox. 19 km · 17 min en auto", "descripcion": "Teatros, costanera, gastronomía y paseos para disfrutar de día o de noche.", "icono": "sun", "foto": "media/atracciones/teatros-carlos-paz-v2.png"}
     ],
   };
   const q = new URLSearchParams(location.search);
@@ -194,7 +194,9 @@
   function renderConversionContent(content) {
     const home = content?.home || {};
     proposalContent = { ...(home.propuesta_landing || {}), galeria_por_unidad: home.reserva_web?.grupos_cotizador || {} };
-    const cfg = { ...conversionDefaults, ...(home.propuesta_conversion || {}) };
+    const savedConversion = home.propuesta_conversion || {};
+    const cfg = { ...conversionDefaults, ...savedConversion };
+    if (!savedConversion.lugares_bajada || savedConversion.lugares_bajada === "Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.") cfg.lugares_bajada = conversionDefaults.lugares_bajada;
     const setText = (id, value) => { const element = document.getElementById(id); if (element && value) element.textContent = value; };
     setText("reviews-title", cfg.opiniones_titulo);
     setText("reviews-subtitle", cfg.opiniones_bajada);
