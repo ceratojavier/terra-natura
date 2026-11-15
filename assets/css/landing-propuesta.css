@@ -186,3 +186,51 @@ button:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{o
 .tn-checkout-dialog__close{float:right;width:2rem;height:2rem;border:1px solid #dce3d9;border-radius:50%;background:white;color:#1c241e;font-size:1.2rem;cursor:pointer}
 .tn-checkout-dialog__error{padding:.65rem;border:1px solid #dfb7b7;border-radius:9px;background:#fff3f3;color:#8a2424;font-size:.8rem}
 @media(max-width:520px){.tn-checkout-dialog__fields{grid-template-columns:1fr}.tn-checkout-dialog{padding:1.2rem}}
+
+
+/* Cotización visible desde el primer pantallazo; mismas alternativas junto al precio. */
+@media(min-width:1100px){
+  .tn-page{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(390px,.92fr);column-gap:clamp(1rem,2vw,2rem);align-items:start}
+  .tn-hero{grid-column:1;grid-row:1;position:sticky;top:1rem;min-width:0}
+  .tn-gallery__stage{height:clamp(420px,64vh,620px);min-height:0;aspect-ratio:auto}
+  .tn-booking-layout{display:block;grid-column:2;grid-row:1;min-width:0;padding:0 .25rem}
+  .tn-intro{padding:.1rem .3rem .7rem}
+  .tn-intro h2{margin:.35rem 0;font-size:clamp(1.8rem,2.35vw,2.55rem)}
+  .tn-intro__lead{font-size:clamp(.95rem,1.1vw,1.12rem);line-height:1.4}
+  .tn-proof{margin-top:.7rem;font-size:.62rem}
+  .tn-stay-summary{gap:.38rem;margin-top:.7rem}
+  .tn-stay-chip{min-height:31px;padding:.4rem .58rem;font-size:.64rem}
+  .tn-text-link{margin-top:.65rem;font-size:.67rem}
+  .tn-booking-card{position:static;top:auto;margin:0;padding:1rem;border-radius:15px}
+  .tn-booking-card__top h2{font-size:1.45rem}
+  .tn-price-card__total{font-size:2.2rem}
+  .tn-booking-card__summary,.tn-price-card__note,.tn-booking-card__assurance{font-size:.65rem}
+  .tn-booking-card__actions .tn-button{min-height:45px;font-size:.67rem}
+  .tn-change-stay summary{min-height:50px;font-size:1rem}
+  .tn-options{margin:.9rem 0 0;padding:0}
+  .tn-options__heading{margin-bottom:.55rem}
+  .tn-options__heading .tn-eyebrow{font-size:.56rem}
+  .tn-options__heading h2{margin:.2rem 0;font:600 1.45rem/1.05 var(--serif);color:var(--ink)}
+  .tn-options__heading>p:last-child{margin:0;color:var(--muted);font-size:.62rem;line-height:1.4}
+  .tn-options-grid{grid-template-columns:1fr;gap:.45rem}
+  .tn-option-card{grid-template-columns:78px minmax(0,1fr);gap:.65rem;padding:.55rem;border-radius:12px}
+  .tn-option-card__photo{min-height:85px;max-height:90px;border-radius:8px}
+  .tn-option-card__body strong{margin:.12rem 0;font-size:1.23rem}
+  .tn-option-card__eyebrow{font-size:.49rem}
+  .tn-option-card__capacity,.tn-option-card__night{font-size:.57rem}
+  .tn-option-card__price{padding-top:.25rem;font-size:.78rem}
+  .tn-option-card__choose{display:inline-flex;margin-top:.25rem;padding:.22rem .42rem;border-radius:999px;background:#f1f3ee;color:#405c49;font-size:.55rem;font-weight:750}
+  .tn-option-card[aria-pressed="true"]{border:2px solid var(--forest);background:#f5f8f4}
+  .tn-option-card[aria-pressed="true"] .tn-option-card__choose{background:var(--forest);color:#fff}
+  .tn-services,.tn-conversion-section,.tn-nearby,.tn-location,.tn-policies,.tn-final-cta,.tn-footer{grid-column:1/-1}
+  .tn-gallery__caption{max-width:68%}
+  .tn-gallery__caption h1{font-size:clamp(2rem,3vw,3.2rem)}
+}
+@media(max-width:1099px){.tn-options{margin-top:.75rem}.tn-options__heading{margin-bottom:.65rem}.tn-options__heading h2{margin:.25rem 0;font:600 clamp(1.55rem,3vw,2rem)/1.1 var(--serif);color:var(--ink)}.tn-options__heading>p:last-child{margin:0;color:var(--muted);font-size:.7rem;line-height:1.45}}
+@media(max-width:767px){.tn-page{display:block}.tn-hero{position:static}.tn-gallery__stage{height:clamp(310px,88vw,440px);max-height:60vh;aspect-ratio:auto}.tn-gallery__caption{max-width:70%}.tn-gallery__caption h1{font-size:clamp(1.8rem,7.3vw,2.65rem)}.tn-gallery__caption p{font-size:.68rem}.tn-gallery__controls{left:.65rem;right:.65rem;bottom:.65rem;justify-content:space-between}.tn-gallery__autoplay{max-width:110px;min-height:32px;padding:0 .5rem;font-size:.54rem}.tn-booking-layout{gap:.6rem;padding:1rem .9rem 1.15rem}.tn-intro h2{font-size:2rem}.tn-intro__lead{font-size:.98rem}.tn-proof{margin-top:.6rem}.tn-stay-summary{margin-top:.6rem}.tn-text-link{margin-top:.55rem}.tn-booking-card{padding:.9rem}.tn-booking-card__top h2{font-size:1.35rem}.tn-price-card__total{font-size:2rem}.tn-options{margin:.8rem 0 0;padding:0}.tn-option-card{grid-template-columns:84px minmax(0,1fr);flex-basis:min(88vw,360px)}.tn-option-card__body strong{font-size:1.28rem}.tn-option-card__choose{display:inline-flex;margin-top:.2rem;padding:.2rem .4rem;border-radius:999px;background:#f1f3ee;color:#405c49;font-size:.53rem;font-weight:750}.tn-option-card[aria-pressed="true"]{border:2px solid var(--forest);background:#f5f8f4}.tn-option-card[aria-pressed="true"] .tn-option-card__choose{background:var(--forest);color:#fff}}
+.tn-gallery__controls{display:flex;align-items:center;gap:.45rem}
+.tn-gallery__autoplay{min-height:36px;padding:0 .7rem;border:1px solid rgba(255,255,255,.65);border-radius:999px;background:rgba(20,33,25,.78);color:#fff;font:650 .62rem var(--sans);cursor:pointer;backdrop-filter:blur(5px)}
+.tn-gallery__autoplay:hover{background:rgba(20,33,25,.95)}
+.tn-gallery__stage img#main-photo{object-fit:contain!important;background:rgba(28,36,30,.08)}
+#main-photo{opacity:1;transition:opacity .28s cubic-bezier(.22,1,.36,1)}#main-photo.is-transitioning{opacity:.45}
+@media(prefers-reduced-motion:reduce){#main-photo{transition:none!important}}

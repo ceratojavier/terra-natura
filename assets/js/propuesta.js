@@ -33,6 +33,9 @@
   let photoLoadToken = 0;
   let selectedReservationOption = null;
   let selectedQuoteTotal = 0;
+  let photoAutoplayTimer = 0;
+  let photoAutoplayEnabled = true;
+  let photoTransitionToken = 0;
 
   const units = {
     "grupo-alpinas": {
@@ -191,9 +194,24 @@
 
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 
+  function syncPhotoAutoplay() {
+    window.clearInterval(photoAutoplayTimer);
+    const button = document.getElementById("photo-autoplay-toggle");
+    const interval = Math.max(3, Math.min(15, Number(proposalContent.autoplay_intervalo_segundos) || 5)) * 1000;
+    const paused = !photoAutoplayEnabled || document.hidden || document.getElementById("photo-lightbox").open || matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (button) {
+      button.setAttribute("aria-pressed", String(photoAutoplayEnabled));
+      button.textContent = photoAutoplayEnabled ? "Pausar fotos" : "Reanudar fotos";
+      button.setAttribute("aria-label", photoAutoplayEnabled ? "Pausar cambio automático de fotos" : "Reanudar cambio automático de fotos");
+    }
+    if (photoAutoplayEnabled && !paused && photos.length > 1) photoAutoplayTimer = window.setInterval(() => showPhoto(photoIndex + 1), interval);
+  }
+
   function renderConversionContent(content) {
     const home = content?.home || {};
     proposalContent = { ...(home.propuesta_landing || {}), galeria_por_unidad: home.reserva_web?.grupos_cotizador || {} };
+    photoAutoplayEnabled = proposalContent.autoplay_fotos !== false;
+    syncPhotoAutoplay();
     const savedConversion = home.propuesta_conversion || {};
     const cfg = { ...conversionDefaults, ...savedConversion };
     if (!savedConversion.lugares_bajada || savedConversion.lugares_bajada === "Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.") cfg.lugares_bajada = conversionDefaults.lugares_bajada;
@@ -323,7 +341,9 @@
     photoIndex = (index + photos.length) % photos.length;
     const photo = photos[photoIndex];
     const img = document.getElementById("main-photo");
-    img.src = photo.url;
+    const transitionToken = ++photoTransitionToken;
+    img.classList.add("is-transitioning");
+    window.setTimeout(() => { if (transitionToken !== photoTransitionToken) return; img.src = photo.url; requestAnimationFrame(() => img.classList.remove("is-transitioning")); }, 140);
     img.alt = `${units[group].title}, foto ${photoIndex + 1} de ${photos.length}`;
     img.style.objectPosition = positionFor(photo);
     document.getElementById("photo-backdrop").src = photo.url;
@@ -349,6 +369,7 @@
     syncLightboxPhoto();
     if (!lightbox.open) lightbox.showModal();
     document.documentElement.style.overflow = "hidden";
+    syncPhotoAutoplay();
   }
 
   function closeLightbox() {
@@ -391,6 +412,7 @@
     });
     document.getElementById("gallery-note").textContent = `${photos.length} fotos · ${proposalContent.hero_note || "una estadía para disfrutar Punilla"}`;
     showPhoto(0);
+    syncPhotoAutoplay();
   }
 
   async function loadPhotos() {
@@ -419,9 +441,10 @@
       const capacity = `${ids.length} ${ids.length === 1 ? "unidad" : "unidades"} · hasta ${option.capacidad_max || item.capacidad}`;
       const label = option.etiqueta || editorial.titulo || item.title;
       const selected = composition ? composition === compositionId : id === group && !compositionId;
+      const choiceLabel = selected ? "✓ Opción seleccionada" : "Ver esta opción";
       return `<button type="button" class="tn-option-card" data-composition="${escapeHtml(composition)}" data-group="${escapeHtml(id)}" aria-pressed="${String(selected)}" ${available ? "" : "disabled"}>
         <img class="tn-option-card__photo" src="${escapeHtml(imageUrl)}" alt="${escapeHtml(label)}" loading="lazy" decoding="async" onerror="this.hidden=true" />
-        <span class="tn-option-card__body"><small class="tn-option-card__eyebrow">${ids.length > 1 ? "Propuesta para el grupo completo" : (id === "grupo-alpinas" ? "Dos plantas" : "Suite tipo loft")}</small><strong>${escapeHtml(label)}</strong><span class="tn-option-card__capacity">${escapeHtml(capacity)}</span>
+        <span class="tn-option-card__body"><small class="tn-option-card__eyebrow">${ids.length > 1 ? "Propuesta para el grupo completo" : (id === "grupo-alpinas" ? "Dos plantas" : "Suite tipo loft")}</small><strong>${escapeHtml(label)}</strong><span class="tn-option-card__capacity">${escapeHtml(capacity)}</span><span class="tn-option-card__choose">${choiceLabel}</span>
           ${available ? `<span class="tn-option-card__price">${fmtMoney(total)} total</span><span class="tn-option-card__night">${fmtMoney(total / Math.max(nights, 1))} por noche</span>` : `<span class="tn-option-card__status">${escapeHtml(option?.motivo || "No disponible para estas fechas")}</span>`}
         </span></button>`;
     }).join("");
@@ -652,6 +675,8 @@
   for (const id of ["reserve-link", "final-reserve-link", "sticky-reserve-link"]) document.getElementById(id).addEventListener("click", (event) => { if (selectedReservationOption) { event.preventDefault(); openCheckout(); } });
   document.getElementById("checkout-dialog-close").addEventListener("click", () => document.getElementById("checkout-dialog").close());
   document.getElementById("checkout-dialog-form").addEventListener("submit", submitCheckout);
+  document.getElementById("photo-autoplay-toggle").addEventListener("click", () => { photoAutoplayEnabled = !photoAutoplayEnabled; syncPhotoAutoplay(); });
+  document.addEventListener("visibilitychange", syncPhotoAutoplay);
   document.getElementById("photo-prev").addEventListener("click", () => showPhoto(photoIndex - 1));
   document.getElementById("photo-next").addEventListener("click", () => showPhoto(photoIndex + 1));
   document.getElementById("lightbox-open").addEventListener("click", openLightbox);
@@ -660,8 +685,8 @@
   document.getElementById("lightbox-prev").addEventListener("click", () => showPhoto(photoIndex - 1));
   document.getElementById("lightbox-next").addEventListener("click", () => showPhoto(photoIndex + 1));
   document.getElementById("photo-lightbox").addEventListener("click", (event) => { if (event.target === event.currentTarget) closeLightbox(); });
-  document.getElementById("photo-lightbox").addEventListener("close", () => { document.documentElement.style.overflow = ""; });
-  document.getElementById("photo-lightbox").addEventListener("cancel", () => { document.documentElement.style.overflow = ""; });
+  document.getElementById("photo-lightbox").addEventListener("close", () => { document.documentElement.style.overflow = ""; syncPhotoAutoplay(); });
+  document.getElementById("photo-lightbox").addEventListener("cancel", () => { document.documentElement.style.overflow = ""; window.setTimeout(syncPhotoAutoplay, 0); });
   document.addEventListener("keydown", (event) => {
     if (!document.getElementById("photo-lightbox").open) return;
     if (event.key === "ArrowLeft") { event.preventDefault(); showPhoto(photoIndex - 1); }

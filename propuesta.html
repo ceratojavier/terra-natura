@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="./assets/branding/logo-terra-natura.png" />
   <link rel="apple-touch-icon" href="./assets/branding/logo-terra-natura.png" />
-  <link rel="stylesheet" href="./assets/css/landing-propuesta.css?v=20261115-composicion-encuadre" />
+  <link rel="stylesheet" href="./assets/css/landing-propuesta.css?v=20261115-cotizador-rapido-autoplay" />
   <title>Tu propuesta · Cabañas Alpinas Terra Natura</title>
 </head>
 <body>
@@ -48,6 +48,7 @@
             <p id="hero-subtitle">Un refugio sereno entre el lago y las sierras de Córdoba.</p>
           </div>
           <div class="tn-gallery__controls">
+            <button class="tn-gallery__autoplay" id="photo-autoplay-toggle" type="button" aria-pressed="true" aria-label="Pausar cambio automático de fotos">Pausar fotos</button>
             <button class="tn-gallery__expand" id="lightbox-open" type="button" aria-label="Ampliar foto actual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4M8 12 4 8m16 0-4 4M4 16l4-4m8 4 4-4" /></svg><span>Ver galería</span></button>
           </div>
           <button class="tn-gallery__arrow tn-gallery__arrow--left" id="photo-prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg></button>
@@ -101,12 +102,11 @@
             <div class="tn-alternatives" id="alternatives" hidden></div>
           </div>
         </details>
+        <section class="tn-options" id="opciones-estadia" aria-labelledby="options-title">
+          <div class="tn-options__heading"><p class="tn-eyebrow" id="options-eyebrow">Elegí cómo querés vivir tu estadía</p><h2 id="options-title">Descubrí tu espacio ideal</h2><p id="options-lead">Compará opciones disponibles para las mismas fechas y pasajeros.</p></div>
+          <div class="tn-options-grid" id="unit-option-cards" aria-live="polite"><p class="tn-options-empty">Consultando opciones para tu estadía…</p></div>
+        </section>
       </aside>
-    </section>
-
-    <section class="tn-options" id="opciones-estadia" aria-labelledby="options-title">
-      <div class="tn-section-head"><div><p class="tn-eyebrow" id="options-eyebrow">Elegí cómo querés vivir tu estadía</p><h2 id="options-title">Descubrí tu espacio ideal</h2></div><p id="options-lead">Compará opciones disponibles para las mismas fechas y pasajeros.</p></div>
-      <div class="tn-options-grid" id="unit-option-cards" aria-live="polite"><p class="tn-options-empty">Consultando opciones para tu estadía…</p></div>
     </section>
 
     <section class="tn-services" id="equipamiento" aria-labelledby="services-title">
