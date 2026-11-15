@@ -8,19 +8,22 @@
   <link rel="stylesheet" href="./assets/css/site-responsive.css?v=20261031" />
   <link rel="stylesheet" href="./assets/css/site-cotiza.css?v=20261107-noches-precio" />
   <link rel="stylesheet" href="./assets/css/site-modern.css?v=20261106" />
+  <link rel="stylesheet" href="./assets/css/checkout-reserva.css?v=20261114-v1" />
   <link rel="stylesheet" href="./assets/css/site-experience.css?v=20261106" />
 </head>
-<body class="page-reserva">
-  <main class="section">
-    <div class="wrap" style="max-width: 54rem">
-      <h1>Tu estadía en Terra Natura</h1>
-      <p id="grupo-plazo" class="muted">Tus cabañas quedaron pre-reservadas. Transferí las señas indicadas dentro del plazo para mantener las fechas.</p>
-      <section id="grupo-resumen" class="senia-exito-box" hidden></section>
-      <section id="grupo-banco" class="senia-exito-box" hidden></section>
-      <div id="grupo-unidades" class="grid" style="gap:1rem"></div>
-      <p id="grupo-error" class="result err" hidden></p>
-      <a class="btn btn-outline" href="./reservar.html">Volver a cotizar</a>
-    </div>
+<body class="page-reserva checkout-page">
+  <header class="checkout-header"><a href="./index.html" aria-label="Terra Natura, inicio"><img src="./assets/branding/logo-terra-natura.png" width="180" height="72" alt="Caba&ntilde;as Alpinas Terra Natura" /></a><span>Reserva directa &middot; Bialet Mass&eacute;</span></header>
+  <main class="checkout-main">
+    <div class="checkout-heading"><p class="checkout-eyebrow">Tu escapada empieza ac&aacute;</p><h1>Tu estad&iacute;a en Terra Natura</h1><p id="grupo-plazo">Tus caba&ntilde;as quedaron pre-reservadas. Transfer&iacute; las se&ntilde;as indicadas dentro del plazo para mantener las fechas.</p></div>
+    <div class="checkout-layout"><section class="checkout-content">
+      <section id="grupo-resumen" class="checkout-panel" hidden></section>
+      <section id="grupo-banco" class="checkout-panel" hidden></section>
+      <div id="grupo-unidades" class="checkout-group-units"></div>
+      <section id="grupo-datos-finales" class="checkout-success" hidden></section>
+      <section id="grupo-confirmacion" class="checkout-success" hidden><span class="checkout-success-icon" aria-hidden="true">&#10003;</span><p class="checkout-eyebrow">Comprobante recibido</p><h2>&iexcl;Reserva en proceso de verificaci&oacute;n!</h2><p>Guardamos los datos del titular en las pre-reservas. Te enviaremos el voucher por WhatsApp o correo cuando verifiquemos el pago.</p><p id="grupo-codigos" class="checkout-code"></p></section>
+      <p id="grupo-error" class="checkout-error" hidden role="alert"></p>
+      <a class="checkout-back" href="./reservar.html">&larr; Volver a cotizar</a>
+    </section><aside id="grupo-total" class="checkout-summary" hidden aria-label="Resumen de la estad&iacute;a"></aside></div>
   </main>
   <script defer src="./assets/js/reserva-sena-grupo.js?v=20261108-grupo"></script>
 </body>
