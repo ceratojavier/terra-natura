@@ -105,7 +105,20 @@
     appendBankItem(bankGrid, "Alias", dp.alias || data.alias || data.alias_transferencia);
     appendBankItem(bankGrid, "CBU / CVU", dp.cbu || dp.cbu_cvu || data.cbu);
     appendBankItem(bankGrid, "Banco / billetera", dp.banco || dp.medio || data.banco);
+    let qrFigure = null;
+    const qrPath = typeof dp.qr_transferencia === "string" ? dp.qr_transferencia : "";
+    if (qrPath.startsWith("media/cms/")) {
+      const figure = el("figure", null, "checkout-transfer-qr");
+      const image = document.createElement("img");
+      image.src = `${apiBase()}/api/sitio/archivo-media?ruta=${encodeURIComponent(qrPath)}`;
+      image.alt = "QR de transferencia bancaria";
+      image.loading = "lazy";
+      image.decoding = "async";
+      figure.append(image, el("figcaption", "Escaneá el QR desde tu banco o billetera y verificá titular e importe antes de transferir."));
+      qrFigure = figure;
+    }
     if (bankGrid.childElementCount) bank.append(bankGrid); else bank.append(el("p", "Los datos bancarios no est\u00e1n cargados. Escribinos por WhatsApp antes de transferir.", "checkout-bank-note"));
+    if (qrFigure) bank.append(qrFigure);
     bank.hidden = false; root.replaceChildren();
     data.reservas.forEach((r) => {
       const card = el("article", null, "checkout-panel checkout-group-unit");

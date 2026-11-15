@@ -47,12 +47,27 @@
   function renderBank(cache) {
     const dp = cache?.datos_pago || {};
     const alias = dp.alias || cache?.alias || cache?.alias_transferencia || "";
-    const cuit = dp.cuit || dp.cuil || "20-28421347-6";
+    const cuit = dp.cuit || dp.cuil || cache?.cuit || "";
     const cbu = dp.cbu || dp.cbu_cvu || "";
     const banco = dp.banco || dp.medio || "";
-    const titular = dp.titular || cache?.titular || "Cerato Carlos Javier";
+    const titular = dp.titular || cache?.titular || "";
     const concepto = dp.concepto || `Seña reserva web · ${codigo}`;
     bankBox.innerHTML = bankItem("Titular", titular, false) + bankItem("CUIT", cuit, false) + bankItem("Alias", alias, true) + bankItem("CBU / CVU", cbu, true) + bankItem("Banco / billetera", banco, false) + bankItem("Concepto", concepto, false);
+    const qrPath = dp.qr_transferencia || cache?.qr_transferencia || "";
+    if (typeof qrPath === "string" && qrPath.startsWith("media/cms/")) {
+      const figure = document.createElement("figure");
+      figure.className = "checkout-transfer-qr";
+      const image = document.createElement("img");
+      image.src = `${apiBase()}/api/sitio/archivo-media?ruta=${encodeURIComponent(qrPath)}`;
+      image.alt = "QR de transferencia bancaria";
+      image.loading = "lazy";
+      image.decoding = "async";
+      figure.append(image);
+      const caption = document.createElement("figcaption");
+      caption.textContent = "Escaneá el QR desde tu banco o billetera y verificá titular e importe antes de transferir.";
+      figure.append(caption);
+      bankBox.append(figure);
+    }
     if (!cbu || !banco) {
       bankNote.hidden = false;
       bankNote.textContent = "El CBU y/o banco no están cargados en la configuración de reservas. Escribinos por WhatsApp y te pasamos los datos vigentes antes de transferir.";
@@ -91,7 +106,7 @@
   renderBank(cache);
   fetch(`${apiBase()}/api/public/reserva/${encodeURIComponent(reservaId)}/estado`)
     .then((r) => r.ok ? r.json() : Promise.reject(new Error("No pudimos cargar los datos de la reserva.")))
-    .then((data) => { reservation = data; renderSummary(data, cache); payment.hidden = false; })
+    .then((data) => { reservation = data; renderSummary(data, cache); renderBank({ ...(cache || {}), datos_pago: data.datos_pago || cache?.datos_pago }); payment.hidden = false; })
     .catch((err) => { payment.hidden = false; showError(err.message + " Revisá el código de reserva antes de pagar."); });
 
   function validateFile(file) {
