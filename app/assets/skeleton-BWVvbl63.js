@@ -1,0 +1,1 @@
+import{n as e}from"./createLucideIcon-BMrBRcTc.js";import{X as t}from"./index-CskZu1PA.js";var n=e();function r({className:e,...r}){return(0,n.jsx)(`div`,{className:t(`animate-pulse rounded-md bg-app-surface-2`,e),...r})}export{r as t};
