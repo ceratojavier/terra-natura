@@ -1,108 +1,17 @@
 <!doctype html>
 <html lang="es-AR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#f7f5f0" />
-  <title>Finalizá tu reserva | Cabañas Alpinas Terra Natura</title>
-  <meta name="description" content="Revisá tu estadía, elegí cómo pagar la seña y enviá tu comprobante de transferencia." />
-  <link rel="stylesheet" href="./assets/css/site.css?v=20261031" />
-  <link rel="stylesheet" href="./assets/css/site-responsive.css?v=20261031" />
-  <link rel="stylesheet" href="./assets/css/site-modern.css?v=20261115-foto-frame" />
-  <link rel="stylesheet" href="./assets/css/site-experience.css?v=20261115-foto-frame" />
-  <link rel="stylesheet" href="./assets/css/checkout-reserva.css?v=20261115-qr" />
-</head>
-<body class="page-reserva checkout-page">
-  <header class="checkout-header">
-    <a href="./index.html" aria-label="Terra Natura, inicio">
-      <img src="./assets/branding/logo-terra-natura.png" width="180" height="72" alt="Cabañas Alpinas Terra Natura" />
-    </a>
-    <span>Reserva directa · Bialet Massé</span>
-  </header>
-  <main class="checkout-main">
-    <div class="checkout-heading">
-      <p class="checkout-eyebrow">Tu escapada empieza acá</p>
-      <h1>Unos últimos detalles</h1>
-      <p>Revisá los datos de tu estadía y elegí cómo completar la seña.</p>
-    </div>
-    <div class="checkout-layout">
-      <section class="checkout-content" aria-label="Opciones de pago">
-        <section id="checkout-success" class="checkout-success" hidden aria-live="polite">
-          <span class="checkout-success-icon" aria-hidden="true">✓</span>
-          <p class="checkout-eyebrow">Comprobante recibido</p>
-          <h2 id="checkout-success-title">Un último paso para completar la pre-reserva</h2>
-          <p id="checkout-success-description">Ya recibimos el comprobante. Completá los datos del pasajero; la reserva quedará pendiente hasta que Javier confirme el pago.</p>
-          <form id="checkout-profile-form" class="checkout-profile-form">
-            <div class="checkout-grid">
-              <label>DNI<input name="dni" required inputmode="numeric" autocomplete="off" minlength="7" maxlength="12" pattern="[0-9]{7,12}" /></label>
-              <label class="checkout-grid-wide">Domicilio<input name="domicilio" required minlength="5" maxlength="160" autocomplete="street-address" placeholder="Calle y número" /></label>
-              <label>Localidad<input name="localidad" required minlength="2" maxlength="100" autocomplete="address-level2" /></label>
-              <label>Provincia<input name="provincia" required minlength="2" maxlength="100" autocomplete="address-level1" value="Córdoba" /></label>
-              <label class="checkout-grid-wide">Email para recibir el voucher <span class="checkout-optional">(opcional)</span><input name="email" type="email" maxlength="120" autocomplete="email" /></label>
-            </div>
-            <button type="submit" class="checkout-submit">Guardar datos y finalizar <span aria-hidden="true">→</span></button>
-            <p id="checkout-profile-error" class="checkout-upload-error" hidden></p>
-          </form>
-          <div id="checkout-final-state" hidden>
-            <h2>¡Reserva en proceso de verificación!</h2>
-            <p>Te enviaremos el voucher por WhatsApp o correo cuando verifiquemos el pago.</p>
-            <p id="checkout-success-code" class="checkout-code"></p>
-          </div>
-        </section>
-
-        <section id="checkout-payment" class="checkout-panel" hidden>
-          <div class="checkout-panel-title">
-            <span class="checkout-step">01</span>
-            <div><h2>Elegí cómo pagar la seña</h2><p>La seña es el 50 % del total de tu estadía.</p></div>
-          </div>
-          <div class="checkout-methods">
-            <a id="senia-mp-btn" class="checkout-method checkout-method-primary" href="#" rel="noopener noreferrer" hidden>
-              <span class="checkout-method-icon" aria-hidden="true">↗</span>
-              <span><strong>Pagar online con Mercado Pago</strong><small>Pago seguro · la confirmación llega automáticamente</small></span>
-              <span aria-hidden="true">›</span>
-            </a>
-            <details id="transferencia-alternativa" class="checkout-transfer" open>
-              <summary><span class="checkout-method-icon" aria-hidden="true">⇄</span><span><strong>Transferencia bancaria</strong><small>Adjuntá el comprobante para verificar el pago</small></span><span class="checkout-summary-chevron" aria-hidden="true">⌄</span></summary>
-              <div class="checkout-transfer-body">
-                <h3>Datos de la cuenta</h3>
-                <div id="senia-datos-banco" class="checkout-bank-grid"></div>
-                <p id="checkout-bank-note" class="checkout-bank-note" hidden></p>
-                <div class="checkout-upload-heading"><span class="checkout-step">02</span><div><h3>Adjuntá el comprobante</h3><p>Imagen o PDF, hasta 8 MB.</p></div></div>
-                <form id="form-comprobante" novalidate>
-                  <label id="checkout-drop" class="checkout-drop" for="archivo" tabindex="0">
-                    <input type="file" id="archivo" accept="image/jpeg,image/png,image/webp,application/pdf,.jpg,.jpeg,.png,.webp,.pdf" required />
-                    <span class="checkout-upload-icon" aria-hidden="true">↑</span>
-                    <strong id="checkout-file-title">Arrastrá el archivo o <u>elegilo desde tu dispositivo</u></strong>
-                    <small id="checkout-file-meta">JPG, PNG, WebP o PDF · máximo 8 MB</small>
-                  </label>
-                  <p id="checkout-upload-error" class="checkout-upload-error" hidden></p>
-                  <button type="submit" class="checkout-submit">Confirmar pago y enviar comprobante <span aria-hidden="true">→</span></button>
-                </form>
-                <p class="checkout-review-note">La reserva queda pendiente hasta que verifiquemos el ingreso del pago.</p>
-              </div>
-            </details>
-          </div>
-        </section>
-        <section id="checkout-error" class="checkout-error" hidden role="alert"></section>
-        <a class="checkout-back" href="./reservar.html">← Volver a consultar disponibilidad</a>
-      </section>
-      <aside id="senia-resumen" class="checkout-summary" hidden aria-label="Resumen de tu reserva">
-        <p class="checkout-eyebrow">Tu estadía</p>
-        <h2 id="checkout-unit">Cabaña Alpina</h2>
-        <p id="checkout-location" class="checkout-location">Los Talas 759 · Bialet Massé, Córdoba</p>
-        <div id="checkout-dates" class="checkout-dates"></div>
-        <div id="checkout-summary-extra" class="checkout-summary-extra"></div>
-        <div class="checkout-price-lines">
-          <p><span>Total de la estadía</span><strong id="checkout-total">—</strong></p>
-          <p class="checkout-deposit"><span>Seña para reservar · 50 %</span><strong id="checkout-deposit">—</strong></p>
-        </div>
-        <p id="senia-plazo" class="checkout-deadline">La pre-reserva mantiene las fechas por el plazo indicado.</p>
-        <div class="checkout-secure"><span aria-hidden="true">⌑</span><span>Pago revisado por nuestro equipo. La reserva se confirma al verificar la seña.</span></div>
-        <a id="senia-wa-btn" class="checkout-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
-      </aside>
-    </div>
-  </main>
-  <script defer src="./assets/js/reserva-sena.js?v=20261115-qr"></script>
-  <script defer src="./assets/js/utm.js?v=20261106"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5f7f6" />
+    <title>Finalizá tu reserva · Terra Natura</title>
+    <meta name="description" content="Pagá la seña y enviá tu comprobante para confirmar tu estadía." />
+    <link rel="icon" type="image/png" href="/assets/branding/logo-terra-natura.png" />
+    <script type="module" crossorigin src="./assets/sitio-vercel/reserva-sena-B1JWoZCl.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/sitio-vercel/SitioShell-qw5cFzuQ.js">
+    <link rel="stylesheet" crossorigin href="./assets/sitio-vercel/SitioShell-mguNOMA-.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>

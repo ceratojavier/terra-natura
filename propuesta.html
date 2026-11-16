@@ -1,182 +1,19 @@
 <!doctype html>
 <html lang="es-AR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#F7F5F0" />
-  <meta name="description" content="Una propuesta personalizada para tu estadía en Cabañas Alpinas Terra Natura, Bialet Massé. Conocé las fotos, servicios, ubicación y tarifa online." />
-  <meta property="og:site_name" content="Cabañas Alpinas Terra Natura" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Tu refugio en las Sierras · Terra Natura" />
-  <meta property="og:description" content="Tu propuesta personalizada en Bialet Massé: fotos reales, servicios, ubicación y cotización online." />
-  <meta property="og:image" content="https://alpinasterranatura.com.ar/media/galeria/09-alpina-frente-pileta.jpg" />
-  <meta property="og:image:alt" content="Cabaña Alpina Terra Natura, rodeada de parque en Bialet Massé" />
-  <meta property="og:url" content="https://alpinasterranatura.com.ar/propuesta.html" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://alpinasterranatura.com.ar/propuesta.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="./assets/branding/logo-terra-natura.png" />
-  <link rel="apple-touch-icon" href="./assets/branding/logo-terra-natura.png" />
-  <link rel="stylesheet" href="./assets/css/landing-propuesta.css?v=20261115-cotizador-rapido-autoplay" />
-  <title>Tu propuesta · Cabañas Alpinas Terra Natura</title>
-</head>
-<body>
-  <header class="tn-header">
-    <a class="tn-brand" href="./index.html" aria-label="Cabañas Alpinas Terra Natura, inicio">
-      <svg class="tn-brand__mark" viewBox="0 0 64 64" role="img" aria-label="Terra Natura">
-        <path d="M6 43 22 23l9 10 9-13 18 23M17 43l10-13 5 6 7-9 12 16M10 48h45" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" />
-        <circle cx="48" cy="14" r="2" fill="currentColor" />
-        <text x="32" y="58" text-anchor="middle">TERRA NATURA</text>
-      </svg>
-      <span class="tn-brand__copy"><strong>Tu refugio en las Sierras</strong><small>Bialet Massé · Sierras de Cba</small></span>
-    </a>
-    <a class="tn-header__link" id="header-whatsapp" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer"><span id="header-whatsapp-label">Hablemos por WhatsApp</span></a>
-  </header>
-
-  <main class="tn-page">
-    <section class="tn-hero" aria-labelledby="hero-title">
-      <div class="tn-gallery" id="gallery" aria-label="Galería de fotos de la propuesta">
-        <div class="tn-gallery__stage" id="gallery-stage">
-          <img class="tn-gallery__ambient" id="photo-backdrop" alt="" aria-hidden="true" fetchpriority="low" decoding="async" />
-          <img id="main-photo" alt="" fetchpriority="high" decoding="async" />
-          <div class="tn-gallery__shade"></div>
-          <div class="tn-gallery__caption">
-            <span class="tn-gallery__eyebrow"><i></i> <span id="hero-eyebrow">Terra Natura · Bialet Massé</span></span>
-            <h1 id="hero-title">Tu cabaña alpina en Terra Natura</h1>
-            <p id="hero-subtitle">Un refugio sereno entre el lago y las sierras de Córdoba.</p>
-          </div>
-          <div class="tn-gallery__controls">
-            <button class="tn-gallery__autoplay" id="photo-autoplay-toggle" type="button" aria-pressed="true" aria-label="Pausar cambio automático de fotos">Pausar fotos</button>
-            <button class="tn-gallery__expand" id="lightbox-open" type="button" aria-label="Ampliar foto actual"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4M8 12 4 8m16 0-4 4M4 16l4-4m8 4 4-4" /></svg><span>Ver galería</span></button>
-          </div>
-          <button class="tn-gallery__arrow tn-gallery__arrow--left" id="photo-prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg></button>
-          <button class="tn-gallery__arrow tn-gallery__arrow--right" id="photo-next" type="button" aria-label="Foto siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></button>
-          <span class="tn-gallery__counter" id="photo-counter"></span>
-        </div>
-        <div class="tn-gallery__thumbs" id="photo-thumbs" aria-label="Elegir foto"></div>
-      </div>
-      <div class="tn-hero__foot"><span class="tn-hero__foot-mark">✳</span><p id="gallery-note">Una estadía pensada para bajar el ritmo y disfrutar Punilla.</p><span class="tn-hero__location" id="hero-location">Los Talas 759 · Bialet Massé, Córdoba</span></div>
-    </section>
-
-    <section class="tn-booking-layout" aria-label="Detalles de la propuesta y cotización">
-      <div class="tn-intro">
-        <p class="tn-eyebrow" id="offer-label">Una propuesta preparada para vos</p>
-        <h2 id="offer-title">Cabaña Alpina</h2>
-        <p class="tn-intro__lead" id="offer-tagline"></p>
-        <div class="tn-proof"><span class="tn-proof__stars" aria-label="Calificación de huéspedes: 4.9 de 5">★★★★★</span><strong>4.9</strong><span>experiencias de huéspedes</span><i></i><span>anfitriones en el predio</span></div>
-        <div class="tn-stay-summary" id="stay-summary" aria-live="polite"></div>
-        <a class="tn-text-link" href="#equipamiento">Conocé lo que incluye <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-7-7 7 7 7-7" /></svg></a>
-      </div>
-
-      <aside class="tn-booking-card" id="booking-card" aria-label="Cotización personalizada">
-        <div class="tn-booking-card__top"><div><p class="tn-eyebrow" id="booking-eyebrow">Tu estadía, a tu manera</p><h2 id="booking-title">Una pausa en las sierras</h2></div><span class="tn-booking-card__seal" aria-hidden="true">TN</span></div>
-        <div class="tn-booking-card__summary"><span id="price-nights">Fechas de tu estadía</span><span id="price-night"></span></div>
-        <section class="tn-price-card" aria-label="Cotización de la estadía">
-          <div class="tn-price-card__top"><span id="tariff-label">Tarifa online</span><span class="tn-price-card__live"><i></i> Actualizada</span></div>
-          <p class="tn-price-card__total" id="price-total">Consultando…</p>
-          <p class="tn-price-card__list" id="price-list" hidden></p>
-          <div class="tn-price-card__deposit"><span><span id="deposit-label">Seña para reservar</span> <small>50 % · saldo al llegar</small></span><strong id="price-deposit">—</strong></div>
-          <p class="tn-price-card__note" id="price-status" role="status">Verificando fechas y tarifa…</p>
-        </section>
-        <div class="tn-booking-card__actions">
-          <a class="tn-button tn-button--primary" id="reserve-link" href="#checkout-dialog"><span id="reserve-label">Continuar con esta opción</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
-          <a class="tn-button tn-button--secondary" id="whatsapp-link" href="https://wa.me/5493541571190" target="_blank" rel="noopener noreferrer"><span id="whatsapp-label">Consultar por WhatsApp</span></a>
-        </div>
-        <p class="tn-booking-card__assurance"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/><path d="m9 12 2 2 4-4"/></svg><span id="booking-assurance">La reserva se confirma al completar los datos y la seña.</span></p>
-        <details class="tn-change-stay" id="stay-editor">
-          <summary><span><small id="stay-edit-label">¿Querés hacer un cambio?</small><span id="stay-edit-title">Ajustar fechas o pasajeros</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary>
-          <div class="tn-change-stay__body">
-            <p class="tn-change-stay__intro" id="stay-edit-intro">Probá otras fechas o cambiá la cantidad de pasajeros. Actualizamos disponibilidad y tarifa sin salir de esta página.</p>
-            <form id="quote-form">
-              <div class="tn-edit__fields">
-                <label>Ingreso<input id="checkin" name="checkin" type="date" required /></label>
-                <label>Salida<input id="checkout" name="checkout" type="date" required /></label>
-                <label>Adultos<input id="adults" name="adultos" type="number" min="1" max="20" required /></label>
-                <label>Niños<input id="children" name="ninos" type="number" min="0" max="20" required /></label>
-              </div>
-              <button class="tn-button tn-button--update" id="update-quote" type="submit">Actualizar precio</button>
-            </form>
-            <p class="tn-edit__hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v4l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>La consulta no reserva ni modifica ninguna estadía.</p>
-            <div class="tn-alternatives" id="alternatives" hidden></div>
-          </div>
-        </details>
-        <section class="tn-options" id="opciones-estadia" aria-labelledby="options-title">
-          <div class="tn-options__heading"><p class="tn-eyebrow" id="options-eyebrow">Elegí cómo querés vivir tu estadía</p><h2 id="options-title">Descubrí tu espacio ideal</h2><p id="options-lead">Compará opciones disponibles para las mismas fechas y pasajeros.</p></div>
-          <div class="tn-options-grid" id="unit-option-cards" aria-live="polite"><p class="tn-options-empty">Consultando opciones para tu estadía…</p></div>
-        </section>
-      </aside>
-    </section>
-
-    <section class="tn-services" id="equipamiento" aria-labelledby="services-title">
-      <div class="tn-section-head"><div><p class="tn-eyebrow" id="services-eyebrow">Pensado para descansar</p><h2 id="services-title">El confort de sentirte en casa</h2></div><p id="services-lead">Detalles simples, espacios cuidados y todo lo necesario para disfrutar cada momento en las sierras.</p></div>
-      <div class="tn-service-grid" id="service-grid"></div>
-    </section>
-
-    <section class="tn-conversion-section tn-reviews" aria-labelledby="reviews-title">
-      <div class="tn-section-head"><div><p class="tn-eyebrow" id="reviews-eyebrow">Experiencias compartidas</p><h2 id="reviews-title">Lo que dicen nuestros huéspedes</h2></div><p id="reviews-subtitle">Historias de huéspedes publicadas en el sitio de Terra Natura.</p></div>
-      <div class="tn-reviews__badge" id="reviews-badge">Puntajes actuales de Google y Booking</div>
-      <div class="tn-reviews-grid" id="reviews-grid" aria-live="polite"></div>
-      <p class="tn-reviews__updated" id="reviews-updated"></p>
-    </section>
-
-    <section class="tn-conversion-section tn-nearby" aria-labelledby="nearby-title">
-      <div class="tn-section-head"><div><p class="tn-eyebrow" id="nearby-eyebrow">Bialet Massé · Valle de Punilla</p><h2 id="nearby-title">Explorá las Sierras · Todo cerca tuyo</h2></div><p id="nearby-subtitle">Una ubicación estratégica para disfrutar el lago, los ríos y los paseos serranos.</p></div>
-      <div class="tn-nearby-grid" id="nearby-grid" aria-live="polite"></div>
-    </section>
-
-    <section class="tn-location" aria-labelledby="location-title">
-      <div class="tn-location__copy"><p class="tn-eyebrow" id="location-eyebrow">Una ubicación para disfrutar</p><h2 id="location-title">Entre el lago y las sierras</h2><p class="tn-location__address"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="location-address">Los Talas 759 · Barrio Mirador del Lago · Bialet Massé, Córdoba</span></p>
-        <p id="location-lead" hidden></p><div class="tn-location__points" id="location-points"><div class="tn-location__point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><strong>A 600 m del lago San Roque</strong><br />A pasos del agua y de la rotonda de acceso a la autovía.</span></div><div class="tn-location__point"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 19 10 7l4 6 3-4 4 10H3Z"/><path d="M8 19l4-6 4 6"/></svg><span><strong>A unos 2 km del centro de Bialet Massé</strong><br />Cerca también de Barrancas Bermejas y el arroyo Las Mojarras.</span></div><div class="tn-location__point"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2m2-9a3 3 0 1 0 0-6m0 9a5 5 0 0 1 4 5"/></svg><span><strong>Anfitriones en el predio</strong><br />Los dueños viven en el complejo para darte asistencia cercana durante la estadía.</span></div></div>
-      </div>
-      <div class="tn-map-card">
-        <iframe id="map-embed" title="Mapa de Cabañas Alpinas Terra Natura en Bialet Massé" src="https://maps.google.com/maps?q=Los%20Talas%20759%2C%20Bialet%20Mass%C3%A9%2C%20C%C3%B3rdoba%2C%20Argentina&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        <a class="tn-map-card__link" id="map-link" href="https://maps.app.goo.gl/enAUK1opv8mQmuYq9" target="_blank" rel="noopener noreferrer"><span><small>Cómo llegar</small><span id="map-cta">Ver ubicación en Google Maps</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4 10 14"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg></a>
-      </div>
-    </section>
-
-    <section class="tn-policies" aria-labelledby="policies-title"><div class="tn-section-head"><div><p class="tn-eyebrow" id="policies-eyebrow">Antes de viajar</p><h2 id="policies-title">Información para una estadía tranquila</h2></div><p id="policies-lead">Lo esencial, claro y a mano. Si necesitás coordinar algo, estamos cerca.</p></div>
-      <div class="tn-policy-list" id="policy-list">
-        <details class="tn-policy"><summary><span>Horarios y llegada</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div><p>Check-in desde las 11:30 y check-out hasta las 10:00. La llegada flexible queda sujeta a disponibilidad; coordinála por WhatsApp con recepción.</p></div></details>
-        <details class="tn-policy"><summary><span>Seña y cancelaciones</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div><p>La reserva se confirma con una seña del 50 %. Cancelando con más de 15 días se reintegra completa. Entre 8 y 15 días se retiene la mitad de la seña; con 7 días o menos, la seña no es reembolsable.</p></div></details>
-        <details class="tn-policy"><summary><span>Convivencia y espacios comunes</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></summary><div><p>La pileta y el parque son espacios compartidos. Cuidamos el descanso de todos: el silencio nocturno comienza a las 23:00. Se admiten mascotas pequeñas; avisános al reservar y no las dejes solas en la cabaña.</p></div></details>
-      </div>
-    </section>
-
-    <section class="tn-final-cta"><div><p class="tn-eyebrow" id="final-eyebrow">Tu próximo descanso empieza acá</p><h2 id="final-title">¿Te imaginás en Terra Natura?</h2><p id="final-lead">Revisá tus fechas y avanzá con la reserva cuando quieras.</p></div><a class="tn-button tn-button--primary" id="final-reserve-link" href="#checkout-dialog"><span id="final-button">Quiero esta opción</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a></section>
-    <dialog class="tn-checkout-dialog" id="checkout-dialog" aria-labelledby="checkout-dialog-title">
-      <button type="button" class="tn-checkout-dialog__close" id="checkout-dialog-close" aria-label="Cerrar">×</button>
-      <p class="tn-eyebrow">Pre-reserva · Terra Natura</p>
-      <h2 id="checkout-dialog-title">Continuá con tu estadía</h2>
-      <p id="checkout-dialog-summary" class="tn-checkout-dialog__summary"></p>
-      <p>Dejanos los datos del titular para validar las fechas y prepararte el pago de la seña. La reserva queda pendiente hasta que revisemos el comprobante.</p>
-      <form id="checkout-dialog-form">
-        <div class="tn-checkout-dialog__fields">
-          <label>Nombre<input name="nombre" required minlength="2" autocomplete="given-name" /></label>
-          <label>Apellido<input name="apellido" required minlength="2" autocomplete="family-name" /></label>
-          <label>WhatsApp / teléfono<input name="telefono" type="tel" required minlength="8" autocomplete="tel" /></label>
-          <label>Email <small>(opcional)</small><input name="email" type="email" autocomplete="email" /></label>
-        </div>
-        <p id="checkout-dialog-error" class="tn-checkout-dialog__error" role="alert" hidden></p>
-        <button class="tn-button tn-button--primary" type="submit">Continuar a los datos de transferencia</button>
-      </form>
-      <small>El pago se revisa manualmente. Completar estos datos crea una pre-reserva temporal, no confirma la reserva.</small>
-    </dialog>
-  </main>
-  <footer class="tn-footer"><a class="tn-footer__brand" href="./index.html"><strong>Terra Natura</strong><span>Tu refugio en las Sierras</span></a><span>Los Talas 759 · Bialet Massé, Córdoba</span></footer>
-
-  <dialog class="tn-lightbox" id="photo-lightbox" aria-label="Galería ampliada de Terra Natura">
-    <button class="tn-lightbox__close" id="lightbox-close" type="button" aria-label="Cerrar galería"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
-    <button class="tn-lightbox__arrow tn-lightbox__arrow--left" id="lightbox-prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg></button>
-    <figure><img id="lightbox-photo" alt="" /><figcaption><span id="lightbox-caption">Terra Natura · Bialet Massé</span><span id="lightbox-counter"></span></figcaption></figure>
-    <button class="tn-lightbox__arrow tn-lightbox__arrow--right" id="lightbox-next" type="button" aria-label="Foto siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></button>
-  </dialog>
-  <aside class="tn-mobile-bar" id="mobile-booking-bar" aria-label="Resumen y acceso a la cotización" aria-hidden="true">
-    <div class="tn-mobile-bar__price"><span id="sticky-total">Consultando…</span><small id="sticky-stay">Tu estadía</small></div>
-    <a class="tn-button tn-button--primary" id="sticky-reserve-link" href="#booking-card">Ver cotización</a>
-  </aside>
-  <div class="tn-toast" id="toast" role="status" aria-live="polite"></div>
-  <script defer src="./assets/js/propuesta.js?v=20261115-cotizador-rapido-autoplay"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5f7f6" />
+    <meta name="description" content="Tu propuesta personalizada para estadía en Cabañas Alpinas Terra Natura, Bialet Massé." />
+    <link rel="icon" type="image/png" href="./assets/branding/logo-terra-natura.png" />
+    <link rel="canonical" href="https://alpinasterranatura.com.ar/propuesta.html" />
+    <title>Tu propuesta · Cabañas Alpinas Terra Natura</title>
+    <script type="module" crossorigin src="./assets/sitio-vercel/propuesta-Mv_exPcV.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/sitio-vercel/SitioShell-qw5cFzuQ.js">
+    <link rel="modulepreload" crossorigin href="./assets/sitio-vercel/users-Br69gm4Z.js">
+    <link rel="stylesheet" crossorigin href="./assets/sitio-vercel/SitioShell-mguNOMA-.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
