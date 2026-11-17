@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#075e46">
+  <link rel="manifest" href="/app/chat.webmanifest">
+  <link rel="apple-touch-icon" href="/app/logo-terra-natura.png">
+  <title>Instalar TN Chats · Terra Natura</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100dvh;background:linear-gradient(145deg,#062f26,#0c211c 60%,#132d25);color:#f4f8f5;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;display:grid;place-items:center;padding:24px}.card{width:min(100%,440px);padding:30px;border:1px solid #ffffff25;border-radius:24px;background:#ffffff0c;box-shadow:0 24px 80px #0005;text-align:center}.logo{width:132px;height:100px;object-fit:contain;background:#fff;border-radius:16px;padding:8px}.eyebrow{margin:20px 0 4px;color:#9ee8c3;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}h1{margin:0;font-size:30px}p{color:#d0ded6}.primary,.secondary{display:block;width:100%;margin-top:14px;padding:14px;border:0;border-radius:12px;font-weight:750;text-decoration:none;cursor:pointer}.primary{background:#10a66b;color:white}.secondary{background:#ffffff12;color:#fff;border:1px solid #ffffff2c}.hint{min-height:3em;font-size:13px;color:#b5c6bd}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="logo" src="/app/logo-terra-natura.png" alt="Terra Natura">
+    <p class="eyebrow">Cabañas Alpinas Terra Natura</p>
+    <h1>TN Chats</h1>
+    <p>Tu bandeja de WhatsApp, como una app independiente. Se abre directamente en la lista de conversaciones.</p>
+    <button id="install" class="primary" type="button">Instalar TN Chats</button>
+    <p id="hint" class="hint" role="status">Preparando la instalación…</p>
+    <a class="secondary" href="/app/chat/">Abrir TN Chats</a>
+  </main>
+  <script>
+    let installPrompt;
+    const button=document.getElementById('install'),hint=document.getElementById('hint');
+    const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+    if(standalone){location.replace('/app/chat/');}
+    if('serviceWorker'in navigator)navigator.serviceWorker.register('/app/service-worker.js',{scope:'/app/'}).catch(()=>{});
+    window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;button.disabled=false;hint.textContent='Instalala y vas a tener el ícono TN Chats en el escritorio.';});
+    button.addEventListener('click',async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;return;}hint.textContent=/iPhone|iPad|iPod/.test(navigator.userAgent)?'En Safari: tocá Compartir y elegí “Agregar a pantalla de inicio”.':'Usá el menú del navegador y elegí “Instalar aplicación” o “Agregar a pantalla de inicio”.';});
+    window.addEventListener('appinstalled',()=>{hint.textContent='TN Chats quedó instalada. Ya podés abrirla desde el escritorio.';});
+    if(/iPhone|iPad|iPod/.test(navigator.userAgent))hint.textContent='En Safari, tocá Compartir y elegí “Agregar a pantalla de inicio”.';
+  </script>
+</body>
+</html>

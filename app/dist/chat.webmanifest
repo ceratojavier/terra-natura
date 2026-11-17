@@ -1,0 +1,15 @@
+{
+  "id": "/app/chat-app",
+  "name": "Terra Natura · Chats",
+  "short_name": "TN Chats",
+  "description": "Bandeja de WhatsApp de Cabañas Alpinas Terra Natura.",
+  "start_url": "/app/chat/",
+  "scope": "/app/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f1f18",
+  "theme_color": "#0f1f18",
+  "lang": "es-AR",
+  "categories": ["business", "travel"],
+  "icons": [{ "src": "/app/logo-terra-natura.png", "type": "image/png", "purpose": "any" }]
+}
