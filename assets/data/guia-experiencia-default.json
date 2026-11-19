@@ -271,7 +271,9 @@
       "kind": "recs",
       "rec_categories": [
         "naturaleza",
-        "escapada"
+        "escapada",
+        "lluvia",
+        "familia"
       ]
     },
     {
@@ -294,7 +296,8 @@
         "servicios"
       ],
       "rec_tags": [
-        "Farmacia"
+        "Farmacia",
+        "Salud"
       ]
     },
     {
@@ -431,5 +434,10 @@
     "banner_subtitulo": "Seguinos en Instagram y activá un voucher transferible para amigos y familia",
     "validar_reserva_telefono": false
   },
-  "custom_bodies": {}
+  "custom_bodies": {
+    "emergencias": {
+      "title": "Emergencias",
+      "body": "Emergencias — Bialet Massé y Valle de Punilla\n\nPolicía / Comisaría Local Bialet Massé\n• Emergencias: 101\n• Tel. local: (03541) 448130\n• Defensa Civil: 103\n\nBomberos Voluntarios de Bialet Massé\n• Emergencias: 100\n• Independencia y Juana Azurduy\n• Tel.: (03541) 440124 / (03541) 440520\n\nHospitales públicos de referencia\n• Hospital Domingo Funes (Santa María de Punilla / Villa Caeiro) — (03541) 488900 / turnos 0800-555-4141\n• Hospital Municipal Dr. Gumersindo Sayago (Villa Carlos Paz) — (03541) 436447\n• Hospital Dr. Armando Cima (Cosquín) — (03541) 451566\n\nEn el predio: escribinos por WhatsApp. En la guía también están las fichas con Maps."
+    }
+  }
 }
