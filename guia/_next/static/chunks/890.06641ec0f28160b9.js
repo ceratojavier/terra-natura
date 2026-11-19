@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[890],{2890:(_,e,s)=>{s.d(e,{supabase:()=>a});var E=s(168),U=s(5704);let u=U.env.NEXT_PUBLIC_SUPABASE_URL,N=U.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,a=u&&N?(0,E.UU)(u,N):null}}]);

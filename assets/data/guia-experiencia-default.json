@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "sections": [
     {
       "section_key": "hero",
@@ -132,5 +132,239 @@
     ],
     "welcome_title": "¡Qué alegría recibirte!",
     "welcome_text": "Preparamos esta guía para que aproveches cada momento en Terra Natura."
-  }
+  },
+  "brand": {
+    "titulo": "Guía de bienvenida",
+    "bajada": "Cabañas Alpinas Terra Natura",
+    "ubicacion": "Bialet Massé · Valle de Punilla",
+    "hero_image": "https://alpinasterranatura.com.ar/media/galeria/hero.webp",
+    "firma": "Javier y Patricia",
+    "whatsapp": "5493541573050",
+    "instagram": "alpinasterranatura",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Los+Talas+759+Bialet+Mass%C3%A9",
+    "checkin": "14:00",
+    "checkout": "10:00"
+  },
+  "menu": [
+    {
+      "id": "anfitriones",
+      "label": "Anfitriones",
+      "icon": "hosts",
+      "enabled": true,
+      "kind": "custom"
+    },
+    {
+      "id": "alojamiento",
+      "label": "Alojamiento",
+      "icon": "home",
+      "enabled": true,
+      "kind": "stay"
+    },
+    {
+      "id": "como-llegar",
+      "label": "Cómo llegar",
+      "icon": "map",
+      "enabled": true,
+      "kind": "action",
+      "action": "maps"
+    },
+    {
+      "id": "entrada-salida",
+      "label": "Entrada y salida",
+      "icon": "key",
+      "enabled": true,
+      "kind": "custom"
+    },
+    {
+      "id": "wifi",
+      "label": "WiFi",
+      "icon": "wifi",
+      "enabled": true,
+      "kind": "custom"
+    },
+    {
+      "id": "reglas",
+      "label": "Reglas",
+      "icon": "rules",
+      "enabled": true,
+      "kind": "custom"
+    },
+    {
+      "id": "como-funciona",
+      "label": "Cómo funciona",
+      "icon": "bulb",
+      "enabled": true,
+      "kind": "custom"
+    },
+    {
+      "id": "beneficios",
+      "label": "Beneficios y Regalos",
+      "icon": "gift",
+      "enabled": true,
+      "kind": "action",
+      "action": "fidelizacion"
+    },
+    {
+      "id": "donde-comer",
+      "label": "Dónde comer",
+      "icon": "food",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "gastronomia"
+      ]
+    },
+    {
+      "id": "desayuno",
+      "label": "Desayuno y café",
+      "icon": "coffee",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "cerca",
+        "gastronomia"
+      ]
+    },
+    {
+      "id": "bares",
+      "label": "Bares y noche",
+      "icon": "beer",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "noche"
+      ]
+    },
+    {
+      "id": "super",
+      "label": "Supermercados",
+      "icon": "cart",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "cerca"
+      ]
+    },
+    {
+      "id": "naturaleza",
+      "label": "Naturaleza y aventura",
+      "icon": "mountain",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "naturaleza",
+        "escapada"
+      ]
+    },
+    {
+      "id": "playas",
+      "label": "Playas y lagos",
+      "icon": "waves",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "balnearios"
+      ]
+    },
+    {
+      "id": "farmacias",
+      "label": "Farmacias",
+      "icon": "cross",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "servicios"
+      ]
+    },
+    {
+      "id": "transporte",
+      "label": "Transporte",
+      "icon": "car",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "servicios",
+        "cerca"
+      ]
+    },
+    {
+      "id": "preguntas",
+      "label": "Preguntas",
+      "icon": "help",
+      "enabled": true,
+      "kind": "custom"
+    },
+    {
+      "id": "salida",
+      "label": "Salida",
+      "icon": "exit",
+      "enabled": true,
+      "kind": "custom"
+    },
+    {
+      "id": "emergencias",
+      "label": "Emergencias",
+      "icon": "phone",
+      "enabled": true,
+      "kind": "custom"
+    },
+    {
+      "id": "whatsapp",
+      "label": "WhatsApp",
+      "icon": "whatsapp",
+      "enabled": true,
+      "kind": "action",
+      "action": "whatsapp"
+    }
+  ],
+  "unidades": [
+    {
+      "id": "alpina-1",
+      "nombre": "Cabaña Alpina 1",
+      "wifi_ssid": "",
+      "wifi_password": "",
+      "notas": ""
+    },
+    {
+      "id": "alpina-2",
+      "nombre": "Cabaña Alpina 2",
+      "wifi_ssid": "",
+      "wifi_password": "",
+      "notas": ""
+    },
+    {
+      "id": "alpina-3",
+      "nombre": "Cabaña Alpina 3",
+      "wifi_ssid": "",
+      "wifi_password": "",
+      "notas": ""
+    },
+    {
+      "id": "suite-4",
+      "nombre": "Suite Planta Baja",
+      "wifi_ssid": "",
+      "wifi_password": "",
+      "notas": ""
+    },
+    {
+      "id": "suite-5",
+      "nombre": "Suite Planta Alta",
+      "wifi_ssid": "",
+      "wifi_password": "",
+      "notas": ""
+    }
+  ],
+  "fidelizacion": {
+    "activo": true,
+    "descuento_pct": 15,
+    "solo_finde_comun": true,
+    "min_noches": 2,
+    "meses_vigencia": 6,
+    "cupo_mes": 40,
+    "instagram": "alpinasterranatura",
+    "hashtag": "#TerraNaturaBialet",
+    "mensaje_share": "Te regalo este voucher de descuento para que conozcas Cabañas Alpinas Terra Natura en Bialet Massé.",
+    "incentivo_doble": true
+  },
+  "custom_bodies": {}
 }
