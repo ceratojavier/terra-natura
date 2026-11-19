@@ -1,5 +1,4 @@
 {
-  "version": 1,
   "recommendations": [
     {
       "id": "almacen-talas",
@@ -18,7 +17,10 @@
       "image_url": "",
       "tags": [
         "A pie",
-        "Compras rápidas"
+        "Compras rápidas",
+        "Supermercado",
+        "Compras",
+        "Cerca"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -73,7 +75,8 @@
       "tags": [
         "Café",
         "Merienda",
-        "Cerca"
+        "Cerca",
+        "Desayuno"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -101,7 +104,8 @@
       "tags": [
         "Lomitos",
         "Pizzas",
-        "Comida casera"
+        "Comida casera",
+        "Restaurante"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -129,7 +133,8 @@
       "tags": [
         "Parrilla",
         "Carnes",
-        "RN 38"
+        "RN 38",
+        "Restaurante"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -157,7 +162,8 @@
       "tags": [
         "Merienda",
         "Café",
-        "Ambientación"
+        "Ambientación",
+        "Restaurante"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -185,7 +191,8 @@
       "tags": [
         "Reservar",
         "Cabrito",
-        "Regionales"
+        "Regionales",
+        "Restaurante"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -213,7 +220,8 @@
       "tags": [
         "Vista al lago",
         "Merienda",
-        "Restaurante"
+        "Restaurante",
+        "Lago"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -1226,6 +1234,223 @@
       "distance_km": 30,
       "drive_minutes": 40,
       "reach_tier": "medio"
+    },
+    {
+      "id": "farmacia-bialet-centro",
+      "name": "Farmacia Bialet Massé (centro)",
+      "category": "servicios",
+      "locality": "Bialet Massé",
+      "short_description": "Farmacia de cercanía para remedios y botiquín.",
+      "description": "Consultá horario y stock antes de salir. En urgencias, escribinos por WhatsApp.",
+      "address": "Centro de Bialet Massé",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Farmacia+Bialet+Masse",
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "tags": [
+        "Farmacia",
+        "Cerca"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 2,
+      "drive_minutes": 5,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "farmacia-carlos-paz",
+      "name": "Farmacias Villa Carlos Paz",
+      "category": "servicios",
+      "locality": "Villa Carlos Paz",
+      "short_description": "Mayor oferta de farmacias y turnos en Carlos Paz.",
+      "description": "Si necesitás algo específico o turnos de guardia, Carlos Paz concentra más opciones.",
+      "address": "Villa Carlos Paz",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Farmacia+Villa+Carlos+Paz",
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "tags": [
+        "Farmacia",
+        "Guardia"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 15,
+      "drive_minutes": 20,
+      "reach_tier": "medio"
+    },
+    {
+      "id": "super-dia-bialet",
+      "name": "Supermercado / autoservicio Bialet",
+      "category": "cerca",
+      "locality": "Bialet Massé",
+      "short_description": "Compras del día a pocos minutos del complejo.",
+      "description": "Para stockear la cabaña (agua mineral, hielo, carne, verduras).",
+      "address": "Bialet Massé",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=supermercado+Bialet+Masse",
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "tags": [
+        "Supermercado",
+        "Compras"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 3,
+      "drive_minutes": 7,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "super-vea-carlos-paz",
+      "name": "Hipermercado Carlos Paz",
+      "category": "cerca",
+      "locality": "Villa Carlos Paz",
+      "short_description": "Compra grande / marcas: mejor en Carlos Paz.",
+      "description": "Si vas a stockear para varios días, conviene un hipermercado en Carlos Paz.",
+      "address": "Villa Carlos Paz",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=hipermercado+Villa+Carlos+Paz",
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "tags": [
+        "Supermercado",
+        "Compras"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 16,
+      "drive_minutes": 22,
+      "reach_tier": "medio"
+    },
+    {
+      "id": "bar-costanera-cp",
+      "name": "Bares y cervecerías Carlos Paz",
+      "category": "noche",
+      "locality": "Villa Carlos Paz",
+      "short_description": "Cerveza artesanal, bares y salidas nocturnas.",
+      "description": "Carlos Paz concentra la vida nocturna de la zona. Confirmá horarios en temporada.",
+      "address": "Costanera / centro Villa Carlos Paz",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=bares+Villa+Carlos+Paz",
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "tags": [
+        "Bar",
+        "Cerveza",
+        "Noche"
+      ],
+      "indoor": true,
+      "kids_friendly": false,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 15,
+      "drive_minutes": 20,
+      "reach_tier": "medio"
+    },
+    {
+      "id": "bar-terraza-serrana",
+      "name": "Terraza / after en Bialet",
+      "category": "noche",
+      "locality": "Bialet Massé",
+      "short_description": "Opciones tranquilas cercanas para un after.",
+      "description": "Preguntanos por WhatsApp qué está abierto esa noche.",
+      "address": "Bialet Massé",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=bar+Bialet+Masse",
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "tags": [
+        "Bar",
+        "Cerca"
+      ],
+      "indoor": true,
+      "kids_friendly": false,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 3,
+      "drive_minutes": 8,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "taxi-remis-bialet",
+      "name": "Taxi / remís Bialet Massé",
+      "category": "servicios",
+      "locality": "Bialet Massé",
+      "short_description": "Movilidad local sin auto propio.",
+      "description": "Te pasamos contactos de remisería por WhatsApp.",
+      "address": "Bialet Massé",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=remis+Bialet+Masse",
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "tags": [
+        "Transporte",
+        "Remis"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 1,
+      "drive_minutes": 5,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "colectivo-rn38",
+      "name": "Colectivos RN 38",
+      "category": "servicios",
+      "locality": "Bialet Massé",
+      "short_description": "Líneas interurbanas por Ruta 38.",
+      "description": "Paradas sobre RN 38 hacia Carlos Paz y Punilla.",
+      "address": "RN 38, Bialet Massé",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=parada+colectivo+Bialet+Masse+Ruta+38",
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "tags": [
+        "Transporte",
+        "Colectivo"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 2,
+      "drive_minutes": 5,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "estacionamiento-complejo",
+      "name": "Estacionamiento en el complejo",
+      "category": "servicios",
+      "locality": "Terra Natura",
+      "short_description": "Cochera techada incluida en tu estadía.",
+      "description": "Cada unidad tiene lugar de estacionamiento en el predio.",
+      "address": "Los Talas 759, Bialet Massé",
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Los+Talas+759+Bialet+Masse",
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "tags": [
+        "Transporte",
+        "Estacionamiento"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 0,
+      "drive_minutes": 0,
+      "reach_tier": "cerca"
     }
   ]
 }

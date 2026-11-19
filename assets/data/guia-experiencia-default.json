@@ -198,7 +198,7 @@
     },
     {
       "id": "beneficios",
-      "label": "Beneficios y Regalos",
+      "label": "Servicios extras",
       "icon": "gift",
       "enabled": true,
       "kind": "action",
@@ -212,6 +212,11 @@
       "kind": "recs",
       "rec_categories": [
         "gastronomia"
+      ],
+      "rec_tags": [
+        "Restaurante",
+        "Parrilla",
+        "Lomitos"
       ]
     },
     {
@@ -221,8 +226,12 @@
       "enabled": true,
       "kind": "recs",
       "rec_categories": [
-        "cerca",
-        "gastronomia"
+        "gastronomia",
+        "cerca"
+      ],
+      "rec_tags": [
+        "Café",
+        "Desayuno"
       ]
     },
     {
@@ -233,6 +242,11 @@
       "kind": "recs",
       "rec_categories": [
         "noche"
+      ],
+      "rec_tags": [
+        "Bar",
+        "Cerveza",
+        "Noche"
       ]
     },
     {
@@ -243,6 +257,10 @@
       "kind": "recs",
       "rec_categories": [
         "cerca"
+      ],
+      "rec_tags": [
+        "Supermercado",
+        "Compras"
       ]
     },
     {
@@ -274,6 +292,9 @@
       "kind": "recs",
       "rec_categories": [
         "servicios"
+      ],
+      "rec_tags": [
+        "Farmacia"
       ]
     },
     {
@@ -285,6 +306,12 @@
       "rec_categories": [
         "servicios",
         "cerca"
+      ],
+      "rec_tags": [
+        "Transporte",
+        "Remis",
+        "Colectivo",
+        "Estacionamiento"
       ]
     },
     {
@@ -323,35 +350,70 @@
       "nombre": "Cabaña Alpina 1",
       "wifi_ssid": "",
       "wifi_password": "",
-      "notas": ""
+      "notas": "",
+      "equipamiento": {
+        "termotanque": "gas",
+        "climatizacion": "Estufa / calefacción (sin aire acondicionado)",
+        "cocina": "Cocina completa con heladera y freezer",
+        "pileta": "Pileta compartida del complejo (temporada)",
+        "notas_como_funciona": "• Termotanque a gas: si no hay agua caliente, verificá que la perilla esté abierta y esperá 1–2 minutos.\n• Calefacción: usá la estufa con ventilación."
+      }
     },
     {
       "id": "alpina-2",
       "nombre": "Cabaña Alpina 2",
       "wifi_ssid": "",
       "wifi_password": "",
-      "notas": ""
+      "notas": "",
+      "equipamiento": {
+        "termotanque": "gas",
+        "climatizacion": "Estufa / calefacción (sin aire acondicionado)",
+        "cocina": "Cocina completa con heladera y freezer",
+        "pileta": "Pileta compartida del complejo (temporada)",
+        "notas_como_funciona": "• Termotanque a gas: si no hay agua caliente, verificá que la perilla esté abierta y esperá 1–2 minutos.\n• Calefacción: usá la estufa con ventilación."
+      }
     },
     {
       "id": "alpina-3",
       "nombre": "Cabaña Alpina 3",
       "wifi_ssid": "",
       "wifi_password": "",
-      "notas": ""
+      "notas": "",
+      "equipamiento": {
+        "termotanque": "gas",
+        "climatizacion": "Estufa / calefacción (sin aire acondicionado)",
+        "cocina": "Cocina completa con heladera y freezer",
+        "pileta": "Pileta compartida del complejo (temporada)",
+        "notas_como_funciona": "• Termotanque a gas: si no hay agua caliente, verificá que la perilla esté abierta y esperá 1–2 minutos.\n• Calefacción: usá la estufa con ventilación."
+      }
     },
     {
       "id": "suite-4",
-      "nombre": "Suite Planta Baja",
+      "nombre": "Suite 4",
       "wifi_ssid": "",
       "wifi_password": "",
-      "notas": ""
+      "notas": "",
+      "equipamiento": {
+        "termotanque": "eléctrico",
+        "climatizacion": "Calefacción (planta baja)",
+        "cocina": "Kitchenette / cocina equipada",
+        "pileta": "Pileta compartida del complejo (temporada)",
+        "notas_como_funciona": "• Termotanque eléctrico: el agua caliente puede demorar un poco al principio."
+      }
     },
     {
       "id": "suite-5",
-      "nombre": "Suite Planta Alta",
+      "nombre": "Suite 5",
       "wifi_ssid": "",
       "wifi_password": "",
-      "notas": ""
+      "notas": "",
+      "equipamiento": {
+        "termotanque": "eléctrico",
+        "climatizacion": "Aire acondicionado frío/calor",
+        "cocina": "Kitchenette / cocina equipada",
+        "pileta": "Pileta compartida del complejo (temporada)",
+        "notas_como_funciona": "• Esta suite tiene aire acondicionado.\n• Termotanque eléctrico: si el agua sale fría, esperá unos minutos."
+      }
     }
   ],
   "fidelizacion": {
@@ -364,7 +426,10 @@
     "instagram": "alpinasterranatura",
     "hashtag": "#TerraNaturaBialet",
     "mensaje_share": "Te regalo este voucher de descuento para que conozcas Cabañas Alpinas Terra Natura en Bialet Massé.",
-    "incentivo_doble": true
+    "incentivo_doble": true,
+    "banner_titulo": "Regalá un finde en las sierras",
+    "banner_subtitulo": "Seguinos en Instagram y activá un voucher transferible para amigos y familia",
+    "validar_reserva_telefono": false
   },
   "custom_bodies": {}
 }
