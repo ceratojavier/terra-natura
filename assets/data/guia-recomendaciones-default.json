@@ -333,7 +333,10 @@
       "tags": [
         "Cascada",
         "Caminata",
-        "Naturaleza"
+        "Naturaleza",
+        "Shopping",
+        "Compras",
+        "Indoor"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -668,7 +671,8 @@
       "tags": [
         "Parque",
         "Chicos",
-        "Día completo"
+        "Día completo",
+        "Diversión"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -696,7 +700,9 @@
       "tags": [
         "Piscina",
         "Juegos",
-        "Familias"
+        "Familias",
+        "Parque",
+        "Diversión"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -808,7 +814,8 @@
       "tags": [
         "Teatro",
         "Noche",
-        "Shows"
+        "Shows",
+        "Cartelera"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -836,7 +843,9 @@
       "tags": [
         "Cine",
         "Lluvia",
-        "Familias"
+        "Familias",
+        "Cartelera",
+        "Indoor"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -865,7 +874,9 @@
         "Lluvia",
         "Shopping",
         "Cine",
-        "Familia"
+        "Familia",
+        "Compras",
+        "Indoor"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -921,7 +932,8 @@
       "tags": [
         "Escapada",
         "Gastronomía",
-        "Pueblos"
+        "Pueblos",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -949,7 +961,9 @@
       "tags": [
         "Pueblo peatonal",
         "Bosque",
-        "Trekking"
+        "Trekking",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -977,7 +991,8 @@
       "tags": [
         "Río",
         "Naturaleza",
-        "Escapada"
+        "Escapada",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -1005,7 +1020,9 @@
       "tags": [
         "Ruta panorámica",
         "Montaña",
-        "Miradores"
+        "Miradores",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -1033,7 +1050,8 @@
       "tags": [
         "Río",
         "Cascadas",
-        "Día completo"
+        "Día completo",
+        "Escapada"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -1061,7 +1079,9 @@
       "tags": [
         "Museo",
         "Ríos",
-        "Pueblo"
+        "Pueblo",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -1089,7 +1109,9 @@
       "tags": [
         "Historia",
         "Cultura",
-        "Paseo"
+        "Paseo",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -1145,7 +1167,8 @@
       "tags": [
         "Pueblo",
         "Artesanías",
-        "Día completo"
+        "Día completo",
+        "Escapada"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -1998,7 +2021,10 @@
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
       "tags": [
         "Cascada",
-        "Huerta Grande"
+        "Huerta Grande",
+        "Shopping",
+        "Compras",
+        "Indoor"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -2742,7 +2768,8 @@
         "Lluvia",
         "Museo",
         "Familia",
-        "Cultura"
+        "Cultura",
+        "Indoor"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -2799,7 +2826,9 @@
         "Lluvia",
         "Shopping",
         "Cine",
-        "Familia"
+        "Familia",
+        "Compras",
+        "Indoor"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -2828,7 +2857,9 @@
         "Lluvia",
         "Shopping",
         "Cine",
-        "Bowling"
+        "Bowling",
+        "Compras",
+        "Indoor"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -2856,7 +2887,9 @@
       "tags": [
         "Lluvia",
         "Shopping",
-        "Familia"
+        "Familia",
+        "Compras",
+        "Indoor"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -2913,7 +2946,8 @@
       "tags": [
         "Parque",
         "Familia",
-        "Aventura"
+        "Aventura",
+        "Diversión"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -2970,7 +3004,9 @@
         "Parque",
         "Laberinto",
         "Traslasierra",
-        "Familia"
+        "Familia",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -2998,7 +3034,8 @@
       "tags": [
         "Parque",
         "Familia",
-        "Ruta 38"
+        "Ruta 38",
+        "Diversión"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -3026,7 +3063,8 @@
       "tags": [
         "Parque",
         "Aventura",
-        "Familia"
+        "Familia",
+        "Diversión"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -3082,7 +3120,9 @@
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/02-piscina.webp",
       "tags": [
         "Acuático",
-        "Familia"
+        "Familia",
+        "Parque",
+        "Diversión"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -3193,7 +3233,9 @@
       "tags": [
         "Acuático",
         "Traslasierra",
-        "Familia"
+        "Familia",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -3249,7 +3291,9 @@
       "tags": [
         "Acuático",
         "Traslasierra",
-        "Familia"
+        "Familia",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": true,
@@ -3584,7 +3628,9 @@
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
         "Cervecería",
-        "VGB"
+        "VGB",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -3612,7 +3658,9 @@
       "tags": [
         "Café",
         "Chocolate",
-        "VGB"
+        "VGB",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -3639,7 +3687,9 @@
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
         "Café",
-        "Té"
+        "Té",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -3666,7 +3716,9 @@
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
         "Restaurante",
-        "Traslasierra"
+        "Traslasierra",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -3693,7 +3745,9 @@
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
         "Restaurante",
-        "Traslasierra"
+        "Traslasierra",
+        "Escapada",
+        "Día completo"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -3898,6 +3952,261 @@
       "distance_km": 40,
       "drive_minutes": 50,
       "reach_tier": "medio"
+    },
+    {
+      "slug": "los-tuneles-traslasierra",
+      "address": "Ruta a Traslasierra, Córdoba",
+      "latitude": null,
+      "longitude": null,
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": null,
+      "drive_minutes": 150,
+      "reach_tier": "dia_completo",
+      "rating_value": null,
+      "rating_count": null,
+      "rating_source": null,
+      "source_url": null,
+      "last_checked_at": null,
+      "seasonal": false,
+      "rating_note": null,
+      "id": "los-tuneles-traslasierra",
+      "name": "Los Túneles (camino a Traslasierra)",
+      "category": "escapada",
+      "locality": "Traslasierra",
+      "short_description": "Tramo de ruta con túneles de montaña camino a Traslasierra. Ideal para un día de ruta panorámica.",
+      "description": "Los Túneles son un clásico del camino a Traslasierra. Salí temprano, cargá nafta y llevá agua. Confirmá el estado de la ruta antes de ir, sobre todo con lluvia o niebla.",
+      "tags": [
+        "Escapada",
+        "Ruta",
+        "Traslasierra",
+        "Día completo"
+      ],
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Los%20T%C3%BAneles%20%28camino%20a%20Traslasierra%29%20Ruta%20a%20Traslasierra%2C%20C%C3%B3rdoba%20Traslasierra%20C%C3%B3rdoba%20Argentina"
+    },
+    {
+      "slug": "villa-las-rosas",
+      "address": "Villa Las Rosas, Traslasierra, Córdoba",
+      "latitude": null,
+      "longitude": null,
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": null,
+      "drive_minutes": 160,
+      "reach_tier": "dia_completo",
+      "rating_value": null,
+      "rating_count": null,
+      "rating_source": null,
+      "source_url": null,
+      "last_checked_at": null,
+      "seasonal": false,
+      "rating_note": null,
+      "id": "villa-las-rosas",
+      "name": "Villa Las Rosas",
+      "category": "escapada",
+      "locality": "Villa Las Rosas",
+      "short_description": "Pueblo de Traslasierra para pasear, comer y mirar cerros. Combina bien con Nono o Mina Clavero.",
+      "description": "Villa Las Rosas es una parada tranquila en Traslasierra. Armá el día con pueblo + almuerzo y, si da el tiempo, sumá Nono o Mina Clavero. Confirmá horarios de locales en temporada baja.",
+      "tags": [
+        "Escapada",
+        "Traslasierra",
+        "Pueblo",
+        "Día completo"
+      ],
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Villa%20Las%20Rosas%20Villa%20Las%20Rosas%2C%20Traslasierra%2C%20C%C3%B3rdoba%20Villa%20Las%20Rosas%20C%C3%B3rdoba%20Argentina"
+    },
+    {
+      "slug": "nono-pueblo",
+      "address": "Nono, Traslasierra, Córdoba",
+      "latitude": null,
+      "longitude": null,
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": null,
+      "drive_minutes": 155,
+      "reach_tier": "dia_completo",
+      "rating_value": null,
+      "rating_count": null,
+      "rating_source": null,
+      "source_url": null,
+      "last_checked_at": null,
+      "seasonal": false,
+      "rating_note": null,
+      "id": "nono-pueblo",
+      "name": "Nono y Dique La Viña",
+      "category": "escapada",
+      "locality": "Nono",
+      "short_description": "Pueblo serrano y el dique La Viña: buena escapada de día completo por Traslasierra.",
+      "description": "Nono combina pueblo, gastronomía y cercanía al dique La Viña. Es una salida de día completo desde Bialet Massé. Llevá protector solar y consultá el clima de montaña.",
+      "tags": [
+        "Escapada",
+        "Traslasierra",
+        "Dique",
+        "Día completo"
+      ],
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Nono%20y%20Dique%20La%20Vi%C3%B1a%20Nono%2C%20Traslasierra%2C%20C%C3%B3rdoba%20Nono%20C%C3%B3rdoba%20Argentina"
+    },
+    {
+      "slug": "aquasplash-carlos-paz",
+      "address": "Villa Carlos Paz, Córdoba",
+      "latitude": null,
+      "longitude": null,
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": null,
+      "drive_minutes": 20,
+      "reach_tier": "cerca",
+      "rating_value": null,
+      "rating_count": null,
+      "rating_source": null,
+      "source_url": null,
+      "last_checked_at": null,
+      "seasonal": true,
+      "rating_note": null,
+      "id": "aquasplash-carlos-paz",
+      "name": "Parques acuáticos — Villa Carlos Paz",
+      "category": "familia",
+      "locality": "Villa Carlos Paz",
+      "short_description": "Opciones de parques acuáticos en temporada (confirmar apertura). Ideal con chicos en verano.",
+      "description": "En Carlos Paz hay propuestas acuáticas de temporada. Antes de salir confirmá si está abierto, precios y si hace falta reserva. Llevá protector, toalla y efectivo/tarjeta según el predio.",
+      "tags": [
+        "Parque acuático",
+        "Familia",
+        "Verano",
+        "Diversión",
+        "Parque"
+      ],
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Parques%20acu%C3%A1ticos%20%E2%80%94%20Villa%20Carlos%20Paz%20Villa%20Carlos%20Paz%2C%20C%C3%B3rdoba%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20Argentina"
+    },
+    {
+      "slug": "lluvia-museos-juegos",
+      "address": "Villa Carlos Paz / Córdoba",
+      "latitude": null,
+      "longitude": null,
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": null,
+      "drive_minutes": 25,
+      "reach_tier": "medio",
+      "rating_value": null,
+      "rating_count": null,
+      "rating_source": null,
+      "source_url": null,
+      "last_checked_at": null,
+      "seasonal": false,
+      "rating_note": null,
+      "id": "lluvia-museos-juegos",
+      "name": "Planes con chicos si llueve",
+      "category": "lluvia",
+      "locality": "Villa Carlos Paz",
+      "short_description": "Ideas indoor: museos, shopping, cine y espacios techados cerca cuando el clima no acompaña.",
+      "description": "Si llueve, priorizá planes techados: cine en Carlos Paz o Córdoba, shoppings, museos y cervecerías/cafés amplios. Preguntanos por WhatsApp y te armamos un plan corto según la edad de los chicos.",
+      "tags": [
+        "Lluvia",
+        "Familia",
+        "Indoor",
+        "Chicos",
+        "Plan B"
+      ],
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Planes%20con%20chicos%20si%20llueve%20Villa%20Carlos%20Paz%20/%20C%C3%B3rdoba%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20Argentina"
+    },
+    {
+      "slug": "cartelera-cine-cba",
+      "address": "Córdoba / Villa Carlos Paz",
+      "latitude": null,
+      "longitude": null,
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": null,
+      "drive_minutes": 60,
+      "reach_tier": "dia_completo",
+      "rating_value": null,
+      "rating_count": null,
+      "rating_source": null,
+      "source_url": null,
+      "last_checked_at": null,
+      "seasonal": false,
+      "rating_note": null,
+      "id": "cartelera-cine-cba",
+      "name": "Cartelera de cine — Córdoba y Carlos Paz",
+      "category": "cultura",
+      "locality": "Córdoba",
+      "short_description": "Cines en Carlos Paz y en shoppings de Córdoba. Revisá cartelera del día antes de salir.",
+      "description": "Para cartelera actualizada mirá la app o web del cine (Hoyts, Showcase, Village u otros según el shopping). Combiná con merienda o cena. Confirmá horarios y si hay 2D/3D.",
+      "tags": [
+        "Cine",
+        "Cartelera",
+        "Cultura",
+        "Lluvia",
+        "Indoor"
+      ],
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Cartelera%20de%20cine%20%E2%80%94%20C%C3%B3rdoba%20y%20Carlos%20Paz%20C%C3%B3rdoba%20/%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20C%C3%B3rdoba%20Argentina"
+    },
+    {
+      "slug": "cartelera-teatro-cba",
+      "address": "Villa Carlos Paz / Córdoba",
+      "latitude": null,
+      "longitude": null,
+      "phone": "",
+      "website": "",
+      "image_url": "",
+      "indoor": true,
+      "kids_friendly": false,
+      "verified_at": null,
+      "published": true,
+      "distance_km": null,
+      "drive_minutes": 25,
+      "reach_tier": "medio",
+      "rating_value": null,
+      "rating_count": null,
+      "rating_source": null,
+      "source_url": null,
+      "last_checked_at": null,
+      "seasonal": false,
+      "rating_note": null,
+      "id": "cartelera-teatro-cba",
+      "name": "Cartelera de teatro — Carlos Paz y Córdoba",
+      "category": "cultura",
+      "locality": "Villa Carlos Paz",
+      "short_description": "Teatro de revista y salas en Carlos Paz, más propuestas en Córdoba Capital. Consultá cartelera de la semana.",
+      "description": "Carlos Paz tiene tradición teatral (especialmente en temporada). En Córdoba hay salas todo el año. Buscá la obra del día, reservá si hace falta y calculá traslado y estacionamiento.",
+      "tags": [
+        "Teatro",
+        "Cartelera",
+        "Cultura",
+        "Espectáculo"
+      ],
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Cartelera%20de%20teatro%20%E2%80%94%20Carlos%20Paz%20y%20C%C3%B3rdoba%20Villa%20Carlos%20Paz%20/%20C%C3%B3rdoba%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20Argentina"
     }
   ]
 }

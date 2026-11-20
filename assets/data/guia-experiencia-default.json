@@ -151,7 +151,8 @@
       "label": "Anfitriones",
       "icon": "hosts",
       "enabled": true,
-      "kind": "custom"
+      "kind": "custom",
+      "title": "Javier y Patricia"
     },
     {
       "id": "alojamiento",
@@ -221,8 +222,8 @@
     },
     {
       "id": "desayuno",
-      "label": "Desayuno y café",
-      "icon": "coffee",
+      "label": "Merendemos algo rico",
+      "icon": "pastry",
       "enabled": true,
       "kind": "recs",
       "rec_categories": [
@@ -231,7 +232,8 @@
       ],
       "rec_tags": [
         "Café",
-        "Desayuno"
+        "Desayuno",
+        "Merienda"
       ]
     },
     {
@@ -264,16 +266,45 @@
       ]
     },
     {
-      "id": "naturaleza",
-      "label": "Naturaleza y aventura",
+      "id": "naturaleza-cerca",
+      "label": "Naturaleza cerquita",
+      "icon": "tree",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "naturaleza"
+      ],
+      "rec_tags": [
+        "Cerca"
+      ]
+    },
+    {
+      "id": "naturaleza-dia",
+      "label": "Naturaleza día completo",
       "icon": "mountain",
       "enabled": true,
       "kind": "recs",
       "rec_categories": [
         "naturaleza",
-        "escapada",
-        "lluvia",
-        "familia"
+        "escapada"
+      ],
+      "rec_tags": [
+        "Día completo"
+      ]
+    },
+    {
+      "id": "escapadas-valles",
+      "label": "Escapadas de 1 día",
+      "icon": "compass",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "escapada"
+      ],
+      "rec_tags": [
+        "Escapada",
+        "Calamuchita",
+        "Traslasierra"
       ]
     },
     {
@@ -287,6 +318,83 @@
       ]
     },
     {
+      "id": "parques",
+      "label": "Parques y diversión",
+      "icon": "roller",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "familia"
+      ],
+      "rec_tags": [
+        "Parque",
+        "Temático",
+        "Acuático",
+        "Diversión"
+      ]
+    },
+    {
+      "id": "lluvia-chicos",
+      "label": "Con chicos si llueve",
+      "icon": "umbrella",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "lluvia",
+        "familia"
+      ],
+      "rec_tags": [
+        "Lluvia",
+        "Indoor",
+        "Chicos"
+      ]
+    },
+    {
+      "id": "shoppings",
+      "label": "Shoppings",
+      "icon": "shopping",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "lluvia",
+        "cultura",
+        "cerca"
+      ],
+      "rec_tags": [
+        "Shopping",
+        "Mall"
+      ]
+    },
+    {
+      "id": "cine",
+      "label": "Cartelera de cine",
+      "icon": "film",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "cultura",
+        "lluvia"
+      ],
+      "rec_tags": [
+        "Cine",
+        "Cartelera"
+      ]
+    },
+    {
+      "id": "teatro",
+      "label": "Cartelera de teatro",
+      "icon": "theater",
+      "enabled": true,
+      "kind": "recs",
+      "rec_categories": [
+        "cultura"
+      ],
+      "rec_tags": [
+        "Teatro",
+        "Cartelera"
+      ]
+    },
+    {
       "id": "farmacias",
       "label": "Farmacias",
       "icon": "cross",
@@ -296,8 +404,7 @@
         "servicios"
       ],
       "rec_tags": [
-        "Farmacia",
-        "Salud"
+        "Farmacia"
       ]
     },
     {
