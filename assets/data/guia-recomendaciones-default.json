@@ -410,7 +410,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Balnearios de Mayu Sumaj Balnearios de Mayu Sumaj, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/11-lago-plaza.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/mayu-sumaj.jpg",
       "tags": [
         "Río San Antonio",
         "Playas",
@@ -422,7 +422,10 @@
       "published": true,
       "distance_km": 35,
       "drive_minutes": 50,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/mayu-sumaj.jpg"
+      ]
     },
     {
       "id": "icho-cruz",
@@ -438,7 +441,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Balnearios de Icho Cruz Balnearios de Icho Cruz, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/11-lago-plaza.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/icho-cruz.jpg",
       "tags": [
         "Río",
         "Playa",
@@ -450,7 +453,10 @@
       "published": true,
       "distance_km": 40,
       "drive_minutes": 55,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/icho-cruz.jpg"
+      ]
     },
     {
       "id": "cuesta-blanca",
@@ -494,7 +500,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Tala Huasi Tala Huasi, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/11-lago-plaza.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/tala-huasi.jpg",
       "tags": [
         "Río",
         "Pueblo serrano"
@@ -505,7 +511,10 @@
       "published": true,
       "distance_km": 42,
       "drive_minutes": 58,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/tala-huasi.jpg"
+      ]
     },
     {
       "id": "rio-yuspe",
@@ -549,7 +558,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Reserva Natural Cascada Los Chorrillos Reserva Natural Cascada Los Chorrillos, Tanti, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/los-chorrillos.jpg",
       "tags": [
         "Cascada",
         "Trekking",
@@ -561,7 +570,10 @@
       "published": true,
       "distance_km": 40,
       "drive_minutes": 55,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/los-chorrillos.jpg"
+      ]
     },
     {
       "id": "cosquin",
@@ -577,7 +589,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Cosquín y paseo junto al río Centro de Cosquín, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/cosquin.jpg",
       "tags": [
         "Folklore",
         "Costanera",
@@ -589,7 +601,10 @@
       "published": true,
       "distance_km": 18,
       "drive_minutes": 25,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/cosquin.jpg"
+      ]
     },
     {
       "id": "la-falda",
@@ -605,7 +620,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=La Falda y Hotel Edén Hotel Edén, La Falda, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/13-parque-relax.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png",
       "tags": [
         "Historia",
         "Visita guiada",
@@ -617,7 +632,10 @@
       "published": true,
       "distance_km": 35,
       "drive_minutes": 45,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png"
+      ]
     },
     {
       "id": "valle-hermoso",
@@ -633,7 +651,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Valle Hermoso y Camino del Cuadrado Centro de Valle Hermoso, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/valle-hermoso.jpg",
       "tags": [
         "Pueblo",
         "Gastronomía",
@@ -645,7 +663,10 @@
       "published": true,
       "distance_km": 22,
       "drive_minutes": 30,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/valle-hermoso.jpg"
+      ]
     },
     {
       "id": "capilla-monte",
@@ -661,7 +682,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Capilla del Monte y Cerro Uritorco Capilla del Monte, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/capilla-monte.jpg",
       "tags": [
         "Montaña",
         "Trekking",
@@ -673,7 +694,10 @@
       "published": true,
       "distance_km": 95,
       "drive_minutes": 90,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/capilla-monte.jpg"
+      ]
     },
     {
       "id": "pekos",
@@ -1052,7 +1076,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Camino de las Altas Cumbres RP 34 Camino de las Altas Cumbres, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/traslasierra.jpg",
       "tags": [
         "Ruta panorámica",
         "Montaña",
@@ -1066,7 +1090,10 @@
       "published": true,
       "distance_km": 100,
       "drive_minutes": 130,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/traslasierra.jpg"
+      ]
     },
     {
       "id": "mina-clavero",
@@ -1082,7 +1109,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Mina Clavero y sus balnearios Balnearios de Mina Clavero, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/mina-clavero.jpg",
       "tags": [
         "Río",
         "Cascadas",
@@ -1095,7 +1122,10 @@
       "published": true,
       "distance_km": 120,
       "drive_minutes": 150,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/mina-clavero.jpg"
+      ]
     },
     {
       "id": "nono",
@@ -1111,7 +1141,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Nono y Museo Rocsen Nono, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/nono.jpg",
       "tags": [
         "Museo",
         "Ríos",
@@ -1125,7 +1155,10 @@
       "published": true,
       "distance_km": 115,
       "drive_minutes": 140,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/nono.jpg"
+      ]
     },
     {
       "id": "cura-brochero",
@@ -1141,7 +1174,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Villa Cura Brochero Villa Cura Brochero, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/cura-brochero.jpg",
       "tags": [
         "Historia",
         "Cultura",
@@ -1155,7 +1188,10 @@
       "published": true,
       "distance_km": 118,
       "drive_minutes": 145,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/cura-brochero.jpg"
+      ]
     },
     {
       "id": "sierras-chicas",
@@ -1171,7 +1207,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Sierras Chicas: Río Ceballos y Unquillo Río Ceballos y Unquillo, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/sierras-chicas.jpg",
       "tags": [
         "Escapada",
         "Naturaleza",
@@ -1183,7 +1219,10 @@
       "published": true,
       "distance_km": 60,
       "drive_minutes": 75,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/sierras-chicas.jpg"
+      ]
     },
     {
       "id": "san-marcos-sierras",
@@ -2171,7 +2210,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=La%20Falda%20%E2%80%94%20circuitos%20serranos%2C%20miradores%20y%20cerros%20La%20Falda%2C%20C%C3%B3rdoba%20La%20Falda%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png",
       "tags": [
         "La Falda",
         "Mirador",
@@ -2183,7 +2222,10 @@
       "published": true,
       "distance_km": 50,
       "drive_minutes": 55,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png"
+      ]
     },
     {
       "id": "hotel-eden-la-falda",
@@ -2504,7 +2546,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Cerro%20Cuchi%20Corral%20Cerro%20Cuchi%20Corral%2C%20La%20Cumbre%20La%20Cumbre%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-cuchi-corral-la-cumbre.jpg",
       "tags": [
         "Mirador",
         "Parapente",
@@ -2516,7 +2558,10 @@
       "published": true,
       "distance_km": 60,
       "drive_minutes": 70,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-cuchi-corral-la-cumbre.jpg"
+      ]
     },
     {
       "id": "cristo-redentor-la-cumbre-la-cumbre",
@@ -2614,7 +2659,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Cerro%20Uritorco%20Cerro%20Uritorco%2C%20Capilla%20del%20Monte%20Capilla%20del%20Monte%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-uritorco-capilla-del-monte.jpg",
       "tags": [
         "Cerro",
         "Senderismo",
@@ -2626,7 +2671,10 @@
       "published": true,
       "distance_km": 75,
       "drive_minutes": 85,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-uritorco-capilla-del-monte.jpg"
+      ]
     },
     {
       "id": "parque-los-terrones-capilla-del-monte",
@@ -3280,7 +3328,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Acqualandia%20Park%20Acqualandia%20Park%2C%20Mina%20Clavero%20Mina%20Clavero%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/02-piscina.webp",
+      "image_url": "",
       "tags": [
         "Acuático",
         "Traslasierra",
@@ -3294,7 +3342,8 @@
       "published": true,
       "distance_km": 140,
       "drive_minutes": 160,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": []
     },
     {
       "id": "valle-encantado-las-rabonas",
@@ -3428,7 +3477,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Camino%20de%20las%20Altas%20Cumbres%20y%20Los%20T%C3%BAneles%20%28Taninga%29%20Camino%20de%20las%20Altas%20Cumbres%20/%20T%C3%BAneles%20de%20Taninga%2C%20C%C3%B3rdoba%20Traslasierra%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/salida-altas-cumbres.jpg",
       "tags": [
         "Escapada",
         "Mirador",
@@ -3441,7 +3490,10 @@
       "published": true,
       "distance_km": 100,
       "drive_minutes": 120,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/salida-altas-cumbres.jpg"
+      ]
     },
     {
       "id": "salida-mina-clavero",
@@ -3457,7 +3509,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Mina%20Clavero%20%E2%80%94%20qu%C3%A9%20hacer%20en%20el%20d%C3%ADa%20Mina%20Clavero%2C%20C%C3%B3rdoba%20Mina%20Clavero%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/salida-mina-clavero.jpg",
       "tags": [
         "Escapada",
         "Balneario",
@@ -3470,7 +3522,10 @@
       "published": true,
       "distance_km": 140,
       "drive_minutes": 160,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/salida-mina-clavero.jpg"
+      ]
     },
     {
       "id": "salida-nono",
@@ -3486,7 +3541,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Nono%20%E2%80%94%20qu%C3%A9%20hacer%20en%20el%20d%C3%ADa%20Nono%2C%20C%C3%B3rdoba%20Nono%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/salida-nono.jpg",
       "tags": [
         "Escapada",
         "Traslasierra",
@@ -3498,7 +3553,10 @@
       "published": true,
       "distance_km": 145,
       "drive_minutes": 165,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/salida-nono.jpg"
+      ]
     },
     {
       "id": "salida-brochero",
@@ -3514,7 +3572,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Villa%20Cura%20Brochero%20%E2%80%94%20qu%C3%A9%20hacer%20en%20el%20d%C3%ADa%20Villa%20Cura%20Brochero%2C%20C%C3%B3rdoba%20Villa%20Cura%20Brochero%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/salida-brochero.jpg",
       "tags": [
         "Escapada",
         "Cultura",
@@ -3527,7 +3585,10 @@
       "published": true,
       "distance_km": 145,
       "drive_minutes": 165,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/salida-brochero.jpg"
+      ]
     },
     {
       "id": "escondido-cafeteria-bialet-masse",
@@ -4026,7 +4087,7 @@
       "longitude": null,
       "phone": "",
       "website": "",
-      "image_url": "",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/los-tuneles-traslasierra.jpg",
       "indoor": false,
       "kids_friendly": true,
       "verified_at": null,
@@ -4053,7 +4114,10 @@
         "Traslasierra",
         "Día completo"
       ],
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Los%20T%C3%BAneles%20%28camino%20a%20Traslasierra%29%20Ruta%20a%20Traslasierra%2C%20C%C3%B3rdoba%20Traslasierra%20C%C3%B3rdoba%20Argentina"
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Los%20T%C3%BAneles%20%28camino%20a%20Traslasierra%29%20Ruta%20a%20Traslasierra%2C%20C%C3%B3rdoba%20Traslasierra%20C%C3%B3rdoba%20Argentina",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/los-tuneles-traslasierra.jpg"
+      ]
     },
     {
       "slug": "villa-las-rosas",
