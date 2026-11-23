@@ -4477,6 +4477,38 @@
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/los-gigantes.jpg"
       ]
+    },
+    {
+      "id": "reserva-cerro-blanco",
+      "slug": "reserva-cerro-blanco",
+      "name": "Reserva Natural Cerro Blanco",
+      "category": "naturaleza",
+      "locality": "Tanti",
+      "short_description": "Senderos y ollas del río Yuspe, saliendo de Tanti.",
+      "description": "Queda sobre el ripio que sale de Tanti hacia Los Gigantes, a unos 10 km del pueblo. Es una reserva privada: hay senderos cortos hasta el río y otros más largos. Abren todos los días a las 9. El último ingreso a los senderos es a las 16, y hay que estar de vuelta en el estacionamiento antes de que se ponga el sol. Si el sendero no está señalizado, hace falta guía o la app del lugar. Si llovió, consultá el camino antes de salir.",
+      "address": "Camino de Tanti a Los Gigantes, a unos 10 km de Tanti",
+      "latitude": null,
+      "longitude": null,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Reserva%20Cerro%20Blanco%2C%20Tanti%2C%20C%C3%B3rdoba",
+      "phone": "3541581954",
+      "website": "https://estanciacerroblanco.com.ar/senderos/",
+      "instagram": "estanciacerroblanco",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-blanco.jpg",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-blanco.jpg"
+      ],
+      "tags": [
+        "Reserva",
+        "Senderismo",
+        "Día completo"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "distance_km": 45,
+      "drive_minutes": 70,
+      "reach_tier": "dia_completo"
     }
   ]
 }
