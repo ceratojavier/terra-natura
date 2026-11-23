@@ -2656,15 +2656,15 @@
       "name": "Cerro Uritorco",
       "category": "naturaleza",
       "locality": "Capilla del Monte",
-      "short_description": "Caminata desde la base, en Capilla del Monte.",
-      "description": "La base está en avenida Amadeo Sabattini, barrio La Toma, a unos 3 km del centro, después del puente del río Calabalumba. El ingreso suele ser de 7 a 11 (el último es a las 11) y el descenso desde las 15: confirmá horario y precio, cambian según la temporada. Menores de 8 años no suben.",
+      "short_description": "Caminata de día entero desde la base, en Capilla del Monte.",
+      "description": "La base está en avenida Amadeo Sabattini, barrio La Toma, a unos 3 km del centro, después del puente del río Calabalumba. La subida lleva unas 4 horas y la bajada unas 3. El ingreso es de 7 a 11 (el último para hacer cumbre es a las 11) y hay que empezar a bajar a las 15. Arriba no hay agua: cargala en la base. Menores de 8 años no suben. Confirmá horario y precio, cambian según la temporada.",
       "address": "Av. Amadeo Sabattini s/n, barrio La Toma, Capilla del Monte",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Base%20del%20Cerro%20Uritorco%2C%20Av.%20Amadeo%20Sabattini%2C%20Capilla%20del%20Monte%2C%20C%C3%B3rdoba",
+      "latitude": -30.86218,
+      "longitude": -64.49574,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-30.86218,-64.49574",
       "phone": "3548608093",
-      "website": "https://cerrouritorcoficial.com.ar/",
-      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-uritorco-capilla-del-monte.jpg",
+      "website": "https://cerrouritorcoam.com.ar/",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/uritorco-sendero.jpg",
       "tags": [
         "Cerro",
         "Senderismo",
@@ -2672,13 +2672,13 @@
       ],
       "indoor": false,
       "kids_friendly": true,
-      "verified_at": "2026-11-19",
+      "verified_at": "2026-11-23",
       "published": true,
       "distance_km": 75,
       "drive_minutes": 85,
       "reach_tier": "dia_completo",
       "image_urls": [
-        "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-uritorco-capilla-del-monte.jpg"
+        "https://alpinasterranatura.com.ar/media/guia/lugares/uritorco-sendero.jpg"
       ],
       "instagram": "cerrouritorco"
     },
