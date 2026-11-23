@@ -519,30 +519,33 @@
     {
       "id": "rio-yuspe",
       "slug": "rio-yuspe",
-      "name": "Río Yuspe y camino a Los Gigantes",
+      "name": "Parador Puente Río Yuspe",
       "category": "naturaleza",
-      "locality": "Zona de Tanti / Los Gigantes",
-      "short_description": "Escapada aventurera de montaña: paisaje agreste y caminos serranos.",
-      "description": "Propuesta para viajeros con experiencia y vehículo adecuado. No es un balneario urbano: hay tramos de camino de montaña, sectores aislados y condiciones que cambian por lluvia. Consultá a la comuna/guías locales, estado del camino y pronóstico; no ingreses a vados ni cruces con crecida. Para trekking, salí con guía habilitado y avisá tu recorrido.",
-      "address": "Río Yuspe, acceso por zona Tanti - Los Gigantes, Córdoba",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Río Yuspe y camino a Los Gigantes Río Yuspe, acceso por zona Tanti - Los Gigantes, Córdoba",
-      "phone": "",
-      "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "locality": "Los Gigantes",
+      "short_description": "Parada para comer y estacionar, en el puente del Yuspe.",
+      "description": "Sobre el camino de ripio que sale de Tanti hacia Los Gigantes, a unos 36 km, está el puente del río Yuspe. El parador queda a unos 1.700 m de altura: hay comidas, alojamiento y estacionamiento. Si llovió, consultá el camino en Turismo de Tanti antes de salir. El teléfono es el que publica Córdoba Turismo para el parador.",
+      "address": "Puente del río Yuspe, camino de Tanti a Los Gigantes",
+      "latitude": -31.376661,
+      "longitude": -64.770725,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.376661%2C-64.770725",
+      "phone": "3513547028",
+      "website": "https://cordobaturismo.gov.ar/experiencias/los-gigantes-un-viaje-a-cielo-abierto/",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/yuspe.jpg",
       "tags": [
-        "Aventura",
-        "Montaña",
-        "Consultar acceso"
+        "Parador",
+        "Río",
+        "Día completo"
       ],
       "indoor": false,
-      "kids_friendly": false,
+      "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 50,
-      "drive_minutes": 65,
-      "reach_tier": "medio"
+      "distance_km": 60,
+      "drive_minutes": 90,
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/yuspe.jpg"
+      ]
     },
     {
       "id": "los-chorrillos",
@@ -2652,14 +2655,14 @@
       "name": "Cerro Uritorco",
       "category": "naturaleza",
       "locality": "Capilla del Monte",
-      "short_description": "Cerro emblemático de Capilla del Monte.",
-      "description": "Cerro Uritorco: ascenso y leyendas; consultá clima, exigencia y operadores/guías.",
-      "address": "Cerro Uritorco, Capilla del Monte",
+      "short_description": "Caminata desde la base, en Capilla del Monte.",
+      "description": "La base está en avenida Amadeo Sabattini, barrio La Toma, a unos 3 km del centro, después del puente del río Calabalumba. El ingreso suele ser de 7 a 11 (el último es a las 11) y el descenso desde las 15: confirmá horario y precio, cambian según la temporada. Menores de 8 años no suben.",
+      "address": "Av. Amadeo Sabattini s/n, barrio La Toma, Capilla del Monte",
       "latitude": null,
       "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Cerro%20Uritorco%20Cerro%20Uritorco%2C%20Capilla%20del%20Monte%20Capilla%20del%20Monte%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Base%20del%20Cerro%20Uritorco%2C%20Av.%20Amadeo%20Sabattini%2C%20Capilla%20del%20Monte%2C%20C%C3%B3rdoba",
+      "phone": "3548608093",
+      "website": "https://cerrouritorcoficial.com.ar/",
       "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-uritorco-capilla-del-monte.jpg",
       "tags": [
         "Cerro",
@@ -2675,7 +2678,8 @@
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-uritorco-capilla-del-monte.jpg"
-      ]
+      ],
+      "instagram": "cerrouritorco"
     },
     {
       "id": "parque-los-terrones-capilla-del-monte",
@@ -4345,6 +4349,134 @@
         "Espectáculo"
       ],
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Cartelera%20de%20teatro%20%E2%80%94%20Carlos%20Paz%20y%20C%C3%B3rdoba%20Villa%20Carlos%20Paz%20/%20C%C3%B3rdoba%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20Argentina"
+    },
+    {
+      "latitude": null,
+      "longitude": null,
+      "phone": "3541608445",
+      "website": "https://www.cosquinturismo.gob.ar/aerosilla-cerro-pan-de-azucar/",
+      "instagram": "",
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "category": "naturaleza",
+      "id": "cerro-pan-de-azucar",
+      "slug": "cerro-pan-de-azucar",
+      "name": "Cerro Pan de Azúcar",
+      "locality": "Cosquín",
+      "short_description": "Aerosilla o caminata hasta la cruz, en Cosquín.",
+      "description": "Queda a unos 7 km del centro de Cosquín, por calle María Eloísa: primero asfalto y después ripio. Podés subir en la aerosilla, que llega cerca de los 1.090 m, o caminar unos 40 minutos. Arriba hay una cruz de 14 m y un mirador. El horario cambia según el día: confirmalo antes de salir.",
+      "address": "Calle María Eloísa, Cosquín",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Cerro%20Pan%20de%20Az%C3%BAcar%2C%20Cosqu%C3%ADn%2C%20C%C3%B3rdoba",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/pan-de-azucar.png",
+      "tags": [
+        "Cerro",
+        "Senderismo",
+        "Cosquín"
+      ],
+      "distance_km": 30,
+      "drive_minutes": 40,
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/pan-de-azucar.png"
+      ]
+    },
+    {
+      "latitude": -31.12005,
+      "longitude": -64.456931,
+      "phone": "3516610015",
+      "website": "https://vaquerias.unc.edu.ar/",
+      "instagram": "",
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "category": "naturaleza",
+      "id": "reserva-vaquerias",
+      "slug": "reserva-vaquerias",
+      "name": "Reserva Natural Vaquerías",
+      "locality": "Valle Hermoso",
+      "short_description": "Bosque y cascadas de la Universidad, en Valle Hermoso.",
+      "description": "Es de la Universidad Nacional de Córdoba, a unos 5 km al este de Valle Hermoso. El último tramo es de tierra, unos 3 km desde la ruta 38. Hay senderos a las cascadas de los Helechos y del Ángel; si llovió, el del arroyo no se hace. Abre todos los días. En 2026 el ingreso fue de 9:30 a 16, con permanencia hasta las 17:30: confirmá horario y entrada, porque cambian. El WhatsApp es el de la reserva, para consultas y contingentes.",
+      "address": "Camino a la Reserva Natural Vaquerías, Valle Hermoso",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.12005%2C-64.456931",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/vaquerias.jpg",
+      "tags": [
+        "Reserva",
+        "Senderismo",
+        "Valle Hermoso"
+      ],
+      "distance_km": 40,
+      "drive_minutes": 50,
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/vaquerias.jpg"
+      ]
+    },
+    {
+      "latitude": null,
+      "longitude": null,
+      "phone": "",
+      "website": "https://www.argentina.gob.ar/parquesnacionales/centro/parque-nacional-quebrada-del-condorito",
+      "instagram": "",
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "category": "naturaleza",
+      "id": "quebrada-del-condorito",
+      "slug": "quebrada-del-condorito",
+      "name": "Parque Nacional Quebrada del Condorito",
+      "locality": "Pampa de Achala",
+      "short_description": "Mirador del cóndor, sobre la ruta de las Altas Cumbres.",
+      "description": "El ingreso es por el Paraje La Pampilla, en el km 59,5 de la ruta provincial 34. Si venís desde Córdoba y pasás el Hotel El Cóndor, te pasaste unos 6 km. Adentro hay 2,5 km de ripio hasta el centro de visitantes. La tranquera abre de 8 a 20 entre octubre y marzo, y de 9 a 18 de abril a septiembre. Para el Balcón Norte hay que entrar antes de las 15 en verano y de las 11 en invierno, y registrarse online si vas sin guía. Con hielo o niebla la ruta se cierra: mirá el pronóstico antes de salir.",
+      "address": "Paraje La Pampilla, km 59,5, Ruta Provincial 34",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Parque%20Nacional%20Quebrada%20del%20Condorito%2C%20Paraje%20La%20Pampilla%2C%20C%C3%B3rdoba",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/quebrada-condorito.jpg",
+      "tags": [
+        "Cerro",
+        "Senderismo",
+        "Día completo"
+      ],
+      "distance_km": 90,
+      "drive_minutes": 100,
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/quebrada-condorito.jpg"
+      ]
+    },
+    {
+      "latitude": null,
+      "longitude": null,
+      "phone": "351708291",
+      "website": "https://cordobaturismo.gov.ar/experiencias/los-gigantes-un-viaje-a-cielo-abierto/",
+      "instagram": "",
+      "indoor": false,
+      "kids_friendly": false,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "category": "naturaleza",
+      "id": "cerro-los-gigantes",
+      "slug": "cerro-los-gigantes",
+      "name": "Cerro Los Gigantes",
+      "locality": "Los Gigantes",
+      "short_description": "Caminata de altura. El ingreso para subir es por Casas Nuevas.",
+      "description": "Para subir al cerro se entra por Casas Nuevas: te registran y el ingreso es gratuito. El camino es de ripio. Si no tenés experiencia, hace falta un guía habilitado porque hay campos privados. La cumbre del Mogote está cerca de los 2.370 m. Consultá el clima y, si llovió, el estado del camino en Turismo de Tanti. El teléfono es el del ingreso de Casas Nuevas.",
+      "address": "Ingreso Casas Nuevas, camino a Los Gigantes",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Cerro%20Los%20Gigantes%2C%20Casas%20Nuevas%2C%20C%C3%B3rdoba",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/los-gigantes.jpg",
+      "tags": [
+        "Cerro",
+        "Senderismo",
+        "Día completo"
+      ],
+      "distance_km": 70,
+      "drive_minutes": 100,
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/los-gigantes.jpg"
+      ]
     }
   ]
 }
