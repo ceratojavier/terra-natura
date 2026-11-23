@@ -550,33 +550,34 @@
     {
       "id": "los-chorrillos",
       "slug": "los-chorrillos",
-      "name": "Reserva Natural Cascada Los Chorrillos",
+      "name": "Cascada de los Chorrillos",
       "category": "naturaleza",
       "locality": "Tanti",
-      "short_description": "Caminata serrana hacia una cascada de gran belleza.",
-      "description": "Una excursión de naturaleza en la zona de Tanti. El acceso suele requerir caminata y puede estar sujeto a horarios, cupos o condiciones del sendero. Consultá con la reserva antes de ir y llevá calzado adecuado.",
-      "address": "Reserva Natural Cascada Los Chorrillos, Tanti, Córdoba",
+      "short_description": "Caminata de día entero hasta la cascada, en Tanti.",
+      "description": "La reserva está en Villa Flor Serrana, a unos 4 km de tierra desde el centro de Tanti: se pasa el cuartel de bomberos y se dobla hacia Flor Serrana. Hasta la cascada hay unos 7 km de sendero, cerca de 2 horas y media de ida y otro tanto de vuelta. El municipio la cuenta entre las más altas de Córdoba. En temporada baja el ingreso es de jueves a domingo, de 9 a 13. En temporada alta abre todos los días y se entra de 8 a 13. Confirmá el día antes, porque cambia. Llevá agua, comida y calzado cerrado. El teléfono y el Instagram son los de la reserva.",
+      "address": "Camino Flor Serrana km 4, Tanti",
       "latitude": null,
       "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Reserva Natural Cascada Los Chorrillos Reserva Natural Cascada Los Chorrillos, Tanti, Córdoba",
-      "phone": "",
-      "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/los-chorrillos.jpg",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Reserva%20Los%20Chorrillos%2C%20Flor%20Serrana%2C%20Tanti%2C%20C%C3%B3rdoba",
+      "phone": "3516547009",
+      "website": "https://www.tanti.gob.ar/circuitoturistico/cascada-los-chorrillos/",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/los-chorrillos-cascada.jpg",
       "tags": [
         "Cascada",
-        "Trekking",
-        "Reserva"
+        "Senderismo",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": false,
-      "verified_at": null,
+      "verified_at": "2026-11-23",
       "published": true,
       "distance_km": 40,
-      "drive_minutes": 55,
-      "reach_tier": "medio",
+      "drive_minutes": 65,
+      "reach_tier": "dia_completo",
       "image_urls": [
-        "https://alpinasterranatura.com.ar/media/guia/lugares/los-chorrillos.jpg"
-      ]
+        "https://alpinasterranatura.com.ar/media/guia/lugares/los-chorrillos-cascada.jpg"
+      ],
+      "instagram": "reservaloschorrillos"
     },
     {
       "id": "cosquin",
