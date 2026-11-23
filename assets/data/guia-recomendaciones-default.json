@@ -66,10 +66,10 @@
       "short_description": "Cafetería y repostería local; referencia Google 4,7/5 (293 reseñas).",
       "description": "Buena alternativa cercana para desayunos o meriendas, con café, panificados y cosas dulces. La puntuación es una referencia consultada en noviembre de 2026; puede cambiar. Confirmá horarios antes de salir.",
       "address": "Belgrano 21, Bialet Massé, Córdoba",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Escondido Cafetería Belgrano 21, Bialet Massé, Córdoba",
-      "phone": "",
+      "latitude": -31.298948,
+      "longitude": -64.464748,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.298948,-64.464748",
+      "phone": "3541615875",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
@@ -84,7 +84,8 @@
       "published": true,
       "distance_km": 1.5,
       "drive_minutes": 5,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "instagram": "escondidocafeteria"
     },
     {
       "id": "carrito-abilu",
@@ -98,7 +99,7 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Carrito Abilú Av. Belgrano 2238, Mirador del Lago, Bialet Massé",
-      "phone": "",
+      "phone": "3541392990",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
@@ -113,7 +114,8 @@
       "published": true,
       "distance_km": 2,
       "drive_minutes": 6,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "instagram": "carritoabilu.ok"
     },
     {
       "id": "parrilla-bialet",
@@ -124,10 +126,10 @@
       "short_description": "Parrilla clásica sobre RN 38; Google 4,4/5 (aprox. 2.600 reseñas).",
       "description": "La recomendación parrillera que nos señalaron los anfitriones. Figura con una valoración alta y muchas reseñas en Google. Está sobre Ruta Nacional 38. Consultá disponibilidad y horarios, especialmente en temporada.",
       "address": "RN 38 573, Bialet Massé, Córdoba",
-      "latitude": null,
-      "longitude": null,
+      "latitude": -31.311022,
+      "longitude": -64.462699,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=La Parrilla de Bialet RN 38 573, Bialet Massé, Córdoba",
-      "phone": "",
+      "phone": "3541624535",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
@@ -156,9 +158,9 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Terra Firma Bv. Sarmiento 248, Villa Carlos Paz, Córdoba",
-      "phone": "",
-      "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
+      "phone": "3541741621",
+      "website": "https://terrafirma.com.ar/",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/terra-firma.jpg",
       "tags": [
         "Merienda",
         "Café",
@@ -171,7 +173,11 @@
       "published": true,
       "distance_km": 28,
       "drive_minutes": 40,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/terra-firma.jpg"
+      ],
+      "instagram": "terrafirma.ar"
     },
     {
       "id": "nono-chichin",
@@ -182,12 +188,12 @@
       "short_description": "Restaurante serrano y almacén de regionales; Google 4,4/5 (88 reseñas).",
       "description": "Una salida gastronómica hacia Valle Hermoso. Se destacan cabrito/chivito, parrilla, tablas de fiambres y quesos y productos regionales para llevar. Los anfitriones recomiendan ir con turno: reservá antes de salir y confirmá días de apertura.",
       "address": "Av. Amadeo Sabattini 922, Valle Hermoso, Córdoba",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Nono Chichin Restó Av. Amadeo Sabattini 922, Valle Hermoso, Córdoba",
-      "phone": "",
-      "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
+      "latitude": -31.116514,
+      "longitude": -64.474937,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.116514,-64.474937",
+      "phone": "3512692714",
+      "website": "https://nonochichin.com/",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/nono-chichin.jpg",
       "tags": [
         "Reservar",
         "Cabrito",
@@ -200,7 +206,11 @@
       "published": true,
       "distance_km": 25,
       "drive_minutes": 35,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/nono-chichin.jpg"
+      ],
+      "instagram": "nonochichinresto"
     },
     {
       "id": "village-lake",
@@ -211,10 +221,10 @@
       "short_description": "Restaurante frente al lago; Google 3,9/5 (cerca de 600 reseñas).",
       "description": "Opción para comer o tomar algo con vista al lago San Roque. La ubicación y el paisaje son su principal atractivo; las opiniones sobre servicio y consistencia son variadas. Lo incluimos como alternativa escénica, no como una de las puntuaciones más altas. Confirmá horarios.",
       "address": "San Martín 350, Villa Parque Síquiman, Córdoba",
-      "latitude": null,
-      "longitude": null,
+      "latitude": -31.345668,
+      "longitude": -64.471626,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Village Lake - Resto Grill San Martín 350, Villa Parque Síquiman, Córdoba",
-      "phone": "",
+      "phone": "3541686724",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
@@ -245,7 +255,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Labios del Indio / Barrancas Bermejas Barrancas Bermejas, Bialet Massé, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/11-lago-plaza.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/labios-del-indio-v2.png",
       "tags": [
         "Paisaje",
         "Atardecer",
@@ -257,7 +267,10 @@
       "published": true,
       "distance_km": 2,
       "drive_minutes": 6,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/labios-del-indio-v2.png"
+      ]
     },
     {
       "id": "balneario-municipal",
@@ -301,7 +314,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Costanera Villa Liliana Barrio Villa Liliana, Bialet Massé, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/puente-carlos-paz-noche.webp",
       "tags": [
         "Paseo",
         "Mate",
@@ -313,7 +326,10 @@
       "published": true,
       "distance_km": 3,
       "drive_minutes": 8,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/puente-carlos-paz-noche.webp"
+      ]
     },
     {
       "id": "cascada-mallin",
@@ -329,7 +345,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Cascada del Mallín Cascada del Mallín, Bialet Massé, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/tanti-cascada.webp",
       "tags": [
         "Cascada",
         "Caminata",
@@ -344,7 +360,10 @@
       "published": true,
       "distance_km": 8,
       "drive_minutes": 15,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/tanti-cascada.webp"
+      ]
     },
     {
       "id": "cabalango",
@@ -360,7 +379,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Balneario de Cabalango Balneario Municipal, Cabalango, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/11-lago-plaza.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/cabalango-rio.webp",
       "tags": [
         "Río Los Chorrillos",
         "Familias",
@@ -372,7 +391,10 @@
       "published": true,
       "distance_km": 12,
       "drive_minutes": 20,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/cabalango-rio.webp"
+      ]
     },
     {
       "id": "mayu-sumaj",
@@ -662,12 +684,12 @@
       "short_description": "Parque temático y propuesta familiar en el corredor de Ruta 38.",
       "description": "Una de las opciones clásicas para ir con chicos cerca de Carlos Paz. Las atracciones, días de apertura y entradas pueden variar por temporada; revisá canales oficiales antes de organizar la visita.",
       "address": "Ruta 38, Villa Santa Cruz del Lago, Córdoba",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Peko's Parque Temático Ruta 38, Villa Santa Cruz del Lago, Córdoba",
-      "phone": "",
-      "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/15-pileta-frutillas.webp",
+      "latitude": -31.372701,
+      "longitude": -64.513826,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.372701,-64.513826",
+      "phone": "3541637404",
+      "website": "https://www.pekosmultiparque.com/",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp",
       "tags": [
         "Parque",
         "Chicos",
@@ -680,7 +702,11 @@
       "published": true,
       "distance_km": 25,
       "drive_minutes": 35,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp"
+      ],
+      "instagram": "pekosmultiparque"
     },
     {
       "id": "complejo-siquiman",
@@ -780,9 +806,9 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Wave Zone Ruta 38, zona Villa Carlos Paz, Córdoba",
-      "phone": "",
+      "phone": "3541637404",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/15-pileta-frutillas.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp",
       "tags": [
         "Agua",
         "Verano",
@@ -794,7 +820,11 @@
       "published": true,
       "distance_km": 30,
       "drive_minutes": 42,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "instagram": "pekosmultiparque",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp"
+      ]
     },
     {
       "id": "teatros-vcp",
@@ -810,7 +840,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Teatros de Villa Carlos Paz Centro de Villa Carlos Paz, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/08-suites-exterior.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/teatros-carlos-paz-v2.png",
       "tags": [
         "Teatro",
         "Noche",
@@ -823,7 +853,10 @@
       "published": true,
       "distance_km": 28,
       "drive_minutes": 40,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/teatros-carlos-paz-v2.png"
+      ]
     },
     {
       "id": "cine-vcp",
@@ -928,7 +961,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Escapada a Calamuchita: Villa General Belgrano y Santa Rosa Villa General Belgrano y Santa Rosa de Calamuchita, Córdoba",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg",
       "tags": [
         "Escapada",
         "Gastronomía",
@@ -941,7 +974,10 @@
       "published": true,
       "distance_km": 105,
       "drive_minutes": 115,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg"
+      ]
     },
     {
       "id": "lacumbrecita",
@@ -1192,7 +1228,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Hotel+Eden+La+Falda",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png",
       "tags": [
         "Historia",
         "Visita guiada"
@@ -1203,7 +1239,10 @@
       "published": true,
       "distance_km": 35,
       "drive_minutes": 45,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png"
+      ]
     },
     {
       "id": "siete-cascadas",
@@ -1625,11 +1664,11 @@
       "short_description": "Supermercado en A. Del Viso 750, Bialet Massé — compras del día cerca del complejo.",
       "description": "Supermercados Almacor.\nDirección: A. Del Viso 750, Bialet Massé.\nIdeal para stockear la cabaña: agua mineral, hielo, carne, verduras y productos de almacén.\nConfirmá horario de apertura según el día.",
       "address": "A. Del Viso 750, Bialet Massé",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Supermercados%20Almacor%20A.%20Del%20Viso%20750%2C%20Bialet%20Mass%C3%A9%20Bialet%20Mass%C3%A9%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "latitude": -31.31628,
+      "longitude": -64.461231,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.31628,-64.461231",
+      "phone": "3541441114",
+      "website": "https://www.almacor.com.ar/",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
         "Supermercado",
@@ -1642,7 +1681,8 @@
       "published": true,
       "distance_km": 3,
       "drive_minutes": 8,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "instagram": "almacor.supermercado"
     },
     {
       "id": "farmacia-noya-bialet",
@@ -2159,7 +2199,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Hotel%20Ed%C3%A9n%20%28La%20Falda%29%20Hotel%20Ed%C3%A9n%2C%20La%20Falda%20La%20Falda%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/13-parque-relax.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png",
       "tags": [
         "La Falda",
         "Historia",
@@ -2171,7 +2211,10 @@
       "published": true,
       "distance_km": 50,
       "drive_minutes": 55,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png"
+      ]
     },
     {
       "id": "slot-la-falda-dique",
@@ -3025,12 +3068,12 @@
       "short_description": "5 hectáreas: juegos, mini zoo/acuario/serpentario, laberintos, cinema 5D y espectáculos.",
       "description": "Peko's Multiparque (Villa Santa Cruz del Lago / Ruta 38): parque recreativo y educativo de 5 hectáreas con juegos, jardines, mini zoo/acuario/serpentario, laberintos, cinema 5D y espectáculos. También Wave Zone (sector acuático) dentro del complejo.",
       "address": "Peko's Multiparque, Villa Santa Cruz del Lago",
-      "latitude": null,
-      "longitude": null,
+      "latitude": -31.372701,
+      "longitude": -64.513826,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Peko%27s%20Multiparque%20Peko%27s%20Multiparque%2C%20Villa%20Santa%20Cruz%20del%20Lago%20Villa%20Santa%20Cruz%20del%20Lago%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/03-pileta-alpina.webp",
+      "phone": "3541637404",
+      "website": "https://www.pekosmultiparque.com/",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp",
       "tags": [
         "Parque",
         "Familia",
@@ -3043,7 +3086,11 @@
       "published": true,
       "distance_km": 25,
       "drive_minutes": 35,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp"
+      ],
+      "instagram": "pekosmultiparque"
     },
     {
       "id": "arca-de-noe-multiparque-cordoba",
@@ -3112,12 +3159,12 @@
       "short_description": "Sector acuático dentro de Peko's Multiparque.",
       "description": "Wave Zone en Peko's: propuesta acuática dentro del multiparque. Confirmá temporada y horarios.",
       "address": "Wave Zone (Peko's), Villa Santa Cruz del Lago",
-      "latitude": null,
-      "longitude": null,
+      "latitude": -31.372701,
+      "longitude": -64.513826,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Wave%20Zone%20%28Peko%27s%29%20Wave%20Zone%20%28Peko%27s%29%2C%20Villa%20Santa%20Cruz%20del%20Lago%20Villa%20Santa%20Cruz%20del%20Lago%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "phone": "3541637404",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/02-piscina.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp",
       "tags": [
         "Acuático",
         "Familia",
@@ -3130,7 +3177,11 @@
       "published": true,
       "distance_km": 25,
       "drive_minutes": 35,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "instagram": "pekosmultiparque",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp"
+      ]
     },
     {
       "id": "aquaventure-villa-carlos-paz",
@@ -3317,7 +3368,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Villa%20General%20Belgrano%20%E2%80%94%20qu%C3%A9%20hacer%20en%20el%20d%C3%ADa%20Villa%20General%20Belgrano%2C%20C%C3%B3rdoba%20Villa%20General%20Belgrano%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg",
       "tags": [
         "Escapada",
         "Gastronomía",
@@ -3330,7 +3381,10 @@
       "published": true,
       "distance_km": 110,
       "drive_minutes": 130,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg"
+      ]
     },
     {
       "id": "salida-cumbrecita",
@@ -3484,10 +3538,10 @@
       "short_description": "Cafetería y repostería local — desayuno/merienda cerca.",
       "description": "Cafetería y repostería local — desayuno/merienda cerca.\nDirección de referencia: Belgrano 21, Bialet Massé.\nConfirmá horario y disponibilidad el día de la visita.",
       "address": "Belgrano 21, Bialet Massé",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Escondido%20Cafeter%C3%ADa%20Belgrano%2021%2C%20Bialet%20Mass%C3%A9%20Bialet%20Mass%C3%A9%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "latitude": -31.298948,
+      "longitude": -64.464748,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.298948,-64.464748",
+      "phone": "3541615875",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
@@ -3501,7 +3555,8 @@
       "published": true,
       "distance_km": 2,
       "drive_minutes": 6,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "instagram": "escondidocafeteria"
     },
     {
       "id": "carrito-abilu-bialet-masse",
@@ -3515,7 +3570,7 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Carrito%20Abil%C3%BA%20Av.%20Belgrano%202238%2C%20Mirador%20del%20Lago%2C%20Bialet%20Mass%C3%A9%20Bialet%20Mass%C3%A9%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "phone": "3541392990",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
@@ -3528,7 +3583,8 @@
       "published": true,
       "distance_km": 4,
       "drive_minutes": 10,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "instagram": "carritoabilu.ok"
     },
     {
       "id": "la-parrilla-de-bialet-bialet-masse",
@@ -3539,10 +3595,10 @@
       "short_description": "Parrilla clásica sobre RN 38.",
       "description": "Parrilla clásica sobre RN 38.\nDirección de referencia: RN 38 573, Bialet Massé.\nConfirmá horario y disponibilidad el día de la visita.",
       "address": "RN 38 573, Bialet Massé",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=La%20Parrilla%20de%20Bialet%20RN%2038%20573%2C%20Bialet%20Mass%C3%A9%20Bialet%20Mass%C3%A9%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "latitude": -31.311022,
+      "longitude": -64.462699,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.311022,-64.462699",
+      "phone": "3541624535",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
@@ -3569,9 +3625,9 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Terra%20Firma%20Villa%20Carlos%20Paz%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
+      "phone": "3541741621",
+      "website": "https://terrafirma.com.ar/",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/terra-firma.jpg",
       "tags": [
         "Café",
         "Restaurante"
@@ -3582,7 +3638,11 @@
       "published": true,
       "distance_km": 16,
       "drive_minutes": 22,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/terra-firma.jpg"
+      ],
+      "instagram": "terrafirma.ar"
     },
     {
       "id": "village-lake-resto-grill-villa-carlos-paz",
@@ -3593,10 +3653,10 @@
       "short_description": "Restaurante frente al lago.",
       "description": "Restaurante frente al lago.\nDirección de referencia: Villa Carlos Paz.\nConfirmá horario y disponibilidad el día de la visita.",
       "address": "Villa Carlos Paz",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Village%20Lake%20-%20Resto%20Grill%20Villa%20Carlos%20Paz%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "latitude": -31.345668,
+      "longitude": -64.471626,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.345668,-64.471626",
+      "phone": "3541686724",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
       "tags": [
@@ -3625,7 +3685,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Cervecer%C3%ADas%20artesanales%20%E2%80%94%20Villa%20General%20Belgrano%20Centro%2C%20Villa%20General%20Belgrano%20Villa%20General%20Belgrano%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg",
       "tags": [
         "Cervecería",
         "VGB",
@@ -3638,7 +3698,10 @@
       "published": true,
       "distance_km": 110,
       "drive_minutes": 130,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg"
+      ]
     },
     {
       "id": "chocolaterias-y-casas-de-te-villa-general-belgrano-villa",
@@ -3654,7 +3717,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Chocolater%C3%ADas%20y%20casas%20de%20t%C3%A9%20%E2%80%94%20Villa%20General%20Belgrano%20Centro%2C%20Villa%20General%20Belgrano%20Villa%20General%20Belgrano%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg",
       "tags": [
         "Café",
         "Chocolate",
@@ -3668,7 +3731,10 @@
       "published": true,
       "distance_km": 110,
       "drive_minutes": 130,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg"
+      ]
     },
     {
       "id": "casas-de-te-la-cumbrecita-la-cumbrecita",
