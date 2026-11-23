@@ -4719,7 +4719,7 @@
       "category": "naturaleza",
       "locality": "Bialet Massé",
       "short_description": "A unos 600 metros por Belgrano, a media cuadra de Los Talas.",
-      "description": "Belgrano está a media cuadra de Los Talas. Caminando por esa calle, a unos 600 metros del complejo, se abre el mirador del lago San Roque. En auto, Google Maps marca 1 minuto y 550 metros desde la cabaña.",
+      "description": "Belgrano está a media cuadra de Los Talas. Caminando por esa calle, a unos 600 metros del complejo, se abre el mirador del lago San Roque. En auto, desde la cabaña, Google Maps marca 1 minuto.",
       "address": "Belgrano, barrio Mirador del Lago, Bialet Massé, Córdoba",
       "latitude": -31.33335,
       "longitude": -64.47248,
@@ -4745,7 +4745,7 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 0.5,
+      "distance_km": 0.6,
       "drive_minutes": 1,
       "reach_tier": "cerca"
     },
@@ -4823,6 +4823,81 @@
       "published": true,
       "distance_km": 2.7,
       "drive_minutes": 5,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "embudo-cola-de-la-novia",
+      "slug": "embudo-cola-de-la-novia",
+      "name": "Embudo y Cola de la Novia",
+      "category": "naturaleza",
+      "locality": "Dique San Roque",
+      "short_description": "El clásico del murallón: el embudo, y la cola de la novia cuando el lago está alto.",
+      "description": "En el murallón del dique San Roque está el embudo, por donde el lago larga el agua de más. Cuando el nivel está alto, esa caída se ve como la cola de la novia; en auto son 11 minutos y 9,8 km. Foto: J3D3 y Darío Alpern, Wikimedia Commons (CC BY-SA).",
+      "address": "RP 73, murallón del Dique San Roque, Córdoba",
+      "latitude": -31.37385,
+      "longitude": -64.43234,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Los%20Talas%20759%2C%20Bialet%20Mass%C3%A9%2C%20C%C3%B3rdoba&destination=-31.37385%2C-64.43234&travelmode=driving",
+      "phone": "",
+      "website": "",
+      "instagram": "",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/embudo-dique-san-roque.jpg",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/embudo-dique-san-roque.jpg",
+        "https://alpinasterranatura.com.ar/media/atracciones/embudo-dique-san-roque-seco.jpg"
+      ],
+      "tags": [
+        "Caminata desde el complejo",
+        "Lago",
+        "Mirador"
+      ],
+      "hidden_menus": [
+        "naturaleza-cerca",
+        "naturaleza-dia"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 9.8,
+      "drive_minutes": 11,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "mirador-puente-de-la-sota",
+      "slug": "mirador-puente-de-la-sota",
+      "name": "Mirador del puente de la Sota",
+      "category": "naturaleza",
+      "locality": "Lago San Roque",
+      "short_description": "El puente en arco sobre el lago. Se estaciona al lado y se camina la vereda.",
+      "description": "El puente Gobernador José Manuel de la Sota cruza el lago y funciona como mirador: hay vereda para caminarlo y estacionamiento al lado. Desde arriba se ven el lago, las sierras y el murallón; en auto, desde la cabaña, son 10 minutos y 9,1 km. Foto: Jmmuguerza y Caro dilo, Wikimedia Commons (CC BY-SA).",
+      "address": "Puente Gobernador José Manuel de la Sota, Variante Costa Azul, Córdoba",
+      "latitude": -31.37417,
+      "longitude": -64.44136,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Los%20Talas%20759%2C%20Bialet%20Mass%C3%A9%2C%20C%C3%B3rdoba&destination=-31.37417%2C-64.44136&travelmode=driving",
+      "phone": "",
+      "website": "",
+      "instagram": "",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/mirador-puente-de-la-sota.jpg",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/mirador-puente-de-la-sota.jpg",
+        "https://alpinasterranatura.com.ar/media/atracciones/puente-de-la-sota.jpg"
+      ],
+      "tags": [
+        "Caminata desde el complejo",
+        "Lago",
+        "Mirador",
+        "Puente"
+      ],
+      "hidden_menus": [
+        "naturaleza-cerca",
+        "naturaleza-dia"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 9.1,
+      "drive_minutes": 10,
       "reach_tier": "cerca"
     }
   ]
