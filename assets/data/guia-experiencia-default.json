@@ -266,6 +266,16 @@
       ]
     },
     {
+      "id": "caminatas-complejo",
+      "label": "Caminatas desde el complejo",
+      "icon": "mountain",
+      "enabled": true,
+      "kind": "recs",
+      "rec_tags": [
+        "Caminata desde el complejo"
+      ]
+    },
+    {
       "id": "naturaleza-cerca",
       "label": "Naturaleza cerquita",
       "icon": "tree",
