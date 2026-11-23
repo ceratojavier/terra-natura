@@ -252,6 +252,16 @@
       ]
     },
     {
+      "id": "almacen-los-talas",
+      "label": "Almacén Los Talas",
+      "icon": "cart",
+      "enabled": true,
+      "kind": "recs",
+      "rec_tags": [
+        "Almacén Los Talas"
+      ]
+    },
+    {
       "id": "super",
       "label": "Supermercados",
       "icon": "cart",
@@ -263,6 +273,26 @@
       "rec_tags": [
         "Supermercado",
         "Compras"
+      ]
+    },
+    {
+      "id": "comercios-cerca",
+      "label": "Comercios de cercanía",
+      "icon": "cart",
+      "enabled": true,
+      "kind": "recs",
+      "rec_tags": [
+        "Comercio de cerca"
+      ]
+    },
+    {
+      "id": "estaciones",
+      "label": "Estaciones de servicio",
+      "icon": "car",
+      "enabled": true,
+      "kind": "recs",
+      "rec_tags": [
+        "Estación de servicio"
       ]
     },
     {
