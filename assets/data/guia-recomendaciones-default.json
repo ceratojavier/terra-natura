@@ -4899,6 +4899,41 @@
       "distance_km": 9.1,
       "drive_minutes": 10,
       "reach_tier": "cerca"
+    },
+    {
+      "id": "tren-de-las-sierras-bialet",
+      "slug": "tren-de-las-sierras-bialet",
+      "name": "Tren de las Sierras",
+      "category": "naturaleza",
+      "locality": "Bialet Massé",
+      "short_description": "Subite en la estación del pueblo. El tren que para en Bialet llega a Cosquín o baja a Córdoba.",
+      "description": "La estación está en Bialet y en auto son 9 minutos (4,7 km); el tren que para ahí llega hasta Cosquín, y para seguir a La Falda o Capilla se combina en Cosquín. De lunes a viernes, hacia Cosquín a las 9:34 y a las 14:47, y hacia Córdoba a las 15:46 (hay otro a las 4:57). Sábados y domingos, hacia Cosquín a las 10:10 y a las 15:26, y hacia Córdoba a las 7:21 y a las 16:29; el pasaje se saca en la boletería o en la web de Trenes Argentinos (horario vigente desde el 7 de septiembre de 2026), conviene confirmar el día porque a veces cambian, y la foto es de Cultrevolutionertraveler (Wikimedia Commons, CC BY-SA).",
+      "address": "Estación Bialet Massé, Tren de las Sierras, Bialet Massé, Córdoba",
+      "latitude": -31.3079069,
+      "longitude": -64.4630174,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Los%20Talas%20759%2C%20Bialet%20Mass%C3%A9%2C%20C%C3%B3rdoba&destination=-31.3079069%2C-64.4630174&travelmode=driving",
+      "phone": "",
+      "website": "https://www.argentina.gob.ar/transporte/trenes-argentinos",
+      "instagram": "",
+      "image_url": "https://alpinasterranatura.com.ar/media/atracciones/tren-sierras-bialet.jpg",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/atracciones/tren-sierras-bialet.jpg"
+      ],
+      "tags": [
+        "Caminata desde el complejo",
+        "Tren",
+        "Paseo"
+      ],
+      "hidden_menus": [
+        "naturaleza-dia"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "verified_at": null,
+      "published": true,
+      "distance_km": 4.7,
+      "drive_minutes": 9,
+      "reach_tier": "cerca"
     }
   ]
 }
