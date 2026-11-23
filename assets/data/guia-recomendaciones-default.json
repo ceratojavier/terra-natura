@@ -185,7 +185,7 @@
       "name": "Nono Chichin Restó",
       "category": "gastronomia",
       "locality": "Valle Hermoso",
-      "short_description": "Restaurante serrano y almacén de regionales; Google 4,4/5 (88 reseñas).",
+      "short_description": "Restaurante serrano y almacén de regionales; Google 4,4/5 (88 reseñas). Reservá antes de ir.",
       "description": "Una salida gastronómica hacia Valle Hermoso. Se destacan cabrito/chivito, parrilla, tablas de fiambres y quesos y productos regionales para llevar. Los anfitriones recomiendan ir con turno: reservá antes de salir y confirmá días de apertura.",
       "address": "Av. Amadeo Sabattini 922, Valle Hermoso, Córdoba",
       "latitude": -31.116514,
@@ -2678,7 +2678,7 @@
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/uritorco-sendero.jpg"
       ],
-      "instagram": "cerrouritorco"
+      "instagram": ""
     },
     {
       "id": "parque-los-terrones-capilla-del-monte",
@@ -3867,7 +3867,7 @@
       "distance_km": 134.0,
       "drive_minutes": 107,
       "reach_tier": "dia_completo",
-      "instagram": "mi_lugar_cocina_y_parrilla",
+      "instagram": "",
       "image_urls": []
     },
     {
@@ -4517,6 +4517,38 @@
       "distance_km": 26.3,
       "drive_minutes": 38,
       "reach_tier": "medio"
+    },
+    {
+      "id": "jaque-mate-carlos-paz",
+      "slug": "jaque-mate-carlos-paz",
+      "name": "Jaque Mate",
+      "category": "gastronomia",
+      "locality": "Villa Carlos Paz",
+      "short_description": "Ideal para merendar con chicos chicos: tienen juegos y seños de recreación, y los chicos juegan mientras los grandes meriendan.",
+      "description": "Jaque Mate es una cafetería y restaurante en Leandro N. Alem 20, Local D, en Carlos Paz. Tiene un espacio con juegos y seños de recreación: los chicos se entretienen y los adultos meriendan tranquilos. Conviene ir con tiempo el fin de semana.",
+      "address": "Leandro N. Alem 20, Local D, Villa Carlos Paz",
+      "latitude": -31.4208466,
+      "longitude": -64.5011176,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Jaque%20Mate%2C%20Leandro%20N.%20Alem%2020%20Local%20D%2C%20Villa%20Carlos%20Paz",
+      "phone": "3541375869",
+      "website": "https://linktr.ee/jaquematevcp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/jaque-mate.jpg",
+      "tags": [
+        "Merienda",
+        "Café",
+        "Chicos"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "distance_km": 14.0,
+      "drive_minutes": 20,
+      "reach_tier": "cerca",
+      "instagram": "jaquematecarlospaz",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/jaque-mate.jpg"
+      ]
     }
   ]
 }
