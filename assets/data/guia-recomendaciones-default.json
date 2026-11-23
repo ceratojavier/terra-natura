@@ -2907,15 +2907,15 @@
       "name": "Nuevocentro Shopping",
       "category": "lluvia",
       "locality": "Córdoba",
-      "short_description": "Cines Hoyts, juegos, locales y patio de comidas — Av. Duarte Quirós 1400.",
-      "description": "Nuevocentro Shopping (Av. Duarte Quirós 1400, Córdoba).\nCines Hoyts, juegos, locales y patio de comidas.\nSalida de día completo bajo techo si llueve.",
+      "short_description": "Cines Hoyts, juegos, locales y patio de comidas — Av. Duarte Quirós 1400. Horario: todos los días de 10 a 22 h.",
+      "description": "Nuevocentro Shopping (Av. Duarte Quirós 1400, Córdoba).\nCines Hoyts, juegos, locales y patio de comidas.\nSalida de día completo bajo techo si llueve.\nHorario: todos los días de 10 a 22 h.",
       "address": "Av. Duarte Quirós 1400, Córdoba",
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Nuevocentro%20Shopping%20Av.%20Duarte%20Quir%C3%B3s%201400%2C%20C%C3%B3rdoba%20C%C3%B3rdoba%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/05-alpina-living.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/nuevocentro-interior.jpg",
       "tags": [
         "Lluvia",
         "Shopping",
@@ -2930,7 +2930,10 @@
       "published": true,
       "distance_km": 42.6,
       "drive_minutes": 45,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/nuevocentro-interior.jpg"
+      ]
     },
     {
       "id": "patio-olmos-cba",
@@ -2938,15 +2941,15 @@
       "name": "Patio Olmos",
       "category": "lluvia",
       "locality": "Córdoba",
-      "short_description": "Cines Hoyts, bowling y patio de comidas — Bv. San Juan y Av. Vélez Sarsfield.",
-      "description": "Patio Olmos (Bv. San Juan y Av. Vélez Sarsfield, Córdoba).\nCines Hoyts, bowling, patio de comidas y locales.\nOpción techada clásica en el centro de Córdoba.",
+      "short_description": "Cines Hoyts, bowling y patio de comidas — Bv. San Juan y Av. Vélez Sarsfield. Horario: todos los días de 10 a 22 h.",
+      "description": "Patio Olmos (Bv. San Juan y Av. Vélez Sarsfield, Córdoba).\nCines Hoyts, bowling, patio de comidas y locales.\nOpción techada clásica en el centro de Córdoba.\nHorario: todos los días de 10 a 22 h.",
       "address": "Bv. San Juan y Av. Vélez Sarsfield, Córdoba",
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Patio%20Olmos%20Bv.%20San%20Juan%20y%20Av.%20V%C3%A9lez%20Sarsfield%2C%20C%C3%B3rdoba%20C%C3%B3rdoba%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/05-alpina-living.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/patio-olmos-fachada.jpg",
       "tags": [
         "Lluvia",
         "Shopping",
@@ -2961,7 +2964,10 @@
       "published": true,
       "distance_km": 49.7,
       "drive_minutes": 49,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/patio-olmos-fachada.jpg"
+      ]
     },
     {
       "id": "dinosaurio-mall",
@@ -2969,15 +2975,15 @@
       "name": "Dinosaurio Mall",
       "category": "lluvia",
       "locality": "Córdoba",
-      "short_description": "Centro comercial techado — Rodríguez del Busto 4086.",
-      "description": "Dinosaurio Mall (Rodríguez del Busto 4086, Córdoba): locales, patio de comidas y plan bajo techo.",
+      "short_description": "Centro comercial techado — Rodríguez del Busto 4086. Locales: todos los días de 10 a 22 h. El patio de comidas, viernes y sábados, hasta las 23.",
+      "description": "Dinosaurio Mall (Rodríguez del Busto 4086, Alto Verde): locales, patio de comidas y plan bajo techo.\nLocales: todos los días de 10 a 22 h.\nPatio de comidas: lunes a jueves de 10 a 22 h; viernes, sábados y vísperas de feriado hasta las 23.",
       "address": "Rodríguez del Busto 4086, Córdoba",
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Dinosaurio%20Mall%20Rodr%C3%ADguez%20del%20Busto%204086%2C%20C%C3%B3rdoba%20C%C3%B3rdoba%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/05-alpina-living.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/dinosaurio-mall-fachada.jpg",
       "tags": [
         "Lluvia",
         "Shopping",
@@ -2991,7 +2997,10 @@
       "published": true,
       "distance_km": 40.0,
       "drive_minutes": 38,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/dinosaurio-mall-fachada.jpg"
+      ]
     },
     {
       "id": "plan-lluvia-cabana",
