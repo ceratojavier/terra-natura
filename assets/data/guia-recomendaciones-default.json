@@ -193,7 +193,7 @@
       "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.116514,-64.474937",
       "phone": "3512692714",
       "website": "https://nonochichin.com/",
-      "image_url": "https://alpinasterranatura.com.ar/media/guia/nono-chichin.jpg",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/nono-chichin.webp",
       "tags": [
         "Reservar",
         "Cabrito",
@@ -208,7 +208,7 @@
       "drive_minutes": 35,
       "reach_tier": "medio",
       "image_urls": [
-        "https://alpinasterranatura.com.ar/media/guia/nono-chichin.jpg"
+        "https://alpinasterranatura.com.ar/media/guia/nono-chichin.webp"
       ],
       "instagram": "nonochichinresto"
     },
@@ -1098,23 +1098,23 @@
     {
       "id": "mina-clavero",
       "slug": "mina-clavero",
-      "name": "Mina Clavero y sus balnearios",
+      "name": "Balneario Nido del Águila",
       "category": "escapada",
-      "locality": "Valle de Traslasierra",
-      "short_description": "Río Mina Clavero, ollas, cascadas y playas; excursión de día completo.",
-      "description": "El río Mina Clavero fue reconocido como una de las Siete Maravillas Naturales de Argentina. Se puede combinar con el río Panaholma y el centro. Es un viaje largo desde Bialet Massé: salí temprano y consultá estado de Altas Cumbres.",
-      "address": "Balnearios de Mina Clavero, Córdoba",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Mina Clavero y sus balnearios Balnearios de Mina Clavero, Córdoba",
-      "phone": "",
-      "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/mina-clavero.jpg",
+      "locality": "Mina Clavero",
+      "short_description": "Pileta natural del río, a unos 1.500 metros del centro.",
+      "description": "El Nido del Águila es el balneario donde el río Mina Clavero se encajona entre piedras. Se llega por calle Urquiza, a unos 1.500 metros del centro. El municipio avisó que el parador y el estacionamiento pueden estar cerrados y que el paso a pie sigue. Confirmá antes de ir.",
+      "address": "Calle Urquiza, Mina Clavero",
+      "latitude": -31.725949,
+      "longitude": -64.992878,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Balneario%20Nido%20del%20%C3%81guila%2C%20Mina%20Clavero%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "phone": "3544625166",
+      "website": "https://minaclaveroturismo.com.ar/es/balnearios/nido-del-aguila/",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/nido-aguila.webp",
       "tags": [
+        "Balneario",
         "Río",
-        "Cascadas",
-        "Día completo",
-        "Escapada"
+        "Escapada",
+        "Día completo"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -1124,30 +1124,30 @@
       "drive_minutes": 150,
       "reach_tier": "dia_completo",
       "image_urls": [
-        "https://alpinasterranatura.com.ar/media/guia/lugares/mina-clavero.jpg"
-      ]
+        "https://alpinasterranatura.com.ar/media/guia/lugares/nido-aguila.webp"
+      ],
+      "instagram": ""
     },
     {
       "id": "nono",
       "slug": "nono",
-      "name": "Nono y Museo Rocsen",
+      "name": "Museo Rocsen",
       "category": "escapada",
-      "locality": "Valle de Traslasierra",
-      "short_description": "Pueblo serrano, juntura de ríos y museo de colecciones singulares.",
-      "description": "Una escapada para combinar naturaleza y cultura. En Nono se encuentran el río Chico y el río de Los Sauces; el Museo Rocsen es una visita bajo techo ideal para sumar al recorrido. Confirmá horarios de apertura.",
-      "address": "Nono, Córdoba",
+      "locality": "Nono",
+      "short_description": "Museo enorme a unos 5 km de Nono. Conviene ir con tiempo.",
+      "description": "El Museo Rocsen está en Nono, sobre la avenida Los Porteños, a unos 5 km del pueblo. Abre todos los días: de marzo a diciembre de 10 a 18 (último ingreso 17:30) y en enero y febrero hasta las 19. Calculá unas dos horas.",
+      "address": "Av. Los Porteños km 5, Nono",
       "latitude": null,
       "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Nono y Museo Rocsen Nono, Córdoba",
-      "phone": "",
-      "website": "",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Museo%20Rocsen%2C%20Av.%20Los%20Porte%C3%B1os%20km%205%2C%20Nono%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "phone": "3544648487",
+      "website": "https://www.museorocsen.org/",
       "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/nono.jpg",
       "tags": [
         "Museo",
-        "Ríos",
-        "Pueblo",
         "Escapada",
-        "Día completo"
+        "Día completo",
+        "Traslasierra"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -1158,7 +1158,8 @@
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/nono.jpg"
-      ]
+      ],
+      "instagram": "museorocsen"
     },
     {
       "id": "cura-brochero",
@@ -1444,7 +1445,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=bares+Villa+Carlos+Paz",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/08-suites-exterior.webp",
+      "image_url": "",
       "tags": [
         "Bar",
         "Cerveza",
@@ -1453,7 +1454,7 @@
       "indoor": true,
       "kids_friendly": false,
       "verified_at": null,
-      "published": true,
+      "published": false,
       "distance_km": 15,
       "drive_minutes": 20,
       "reach_tier": "medio"
@@ -2631,7 +2632,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Senderos%2C%20cabalgatas%20y%20casas%20de%20t%C3%A9%20%E2%80%94%20La%20Cumbre%20Senderos%2C%20cabalgatas%20y%20casas%20de%20t%C3%A9%20%E2%80%94%20La%20Cumbre%2C%20La%20Cumbre%20La%20Cumbre%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
+      "image_url": "",
       "tags": [
         "Café",
         "Cabalgatas",
@@ -2640,7 +2641,7 @@
       "indoor": true,
       "kids_friendly": true,
       "verified_at": "2026-11-19",
-      "published": true,
+      "published": false,
       "distance_km": 60,
       "drive_minutes": 70,
       "reach_tier": "medio"
@@ -3417,7 +3418,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Villa%20General%20Belgrano%20%E2%80%94%20qu%C3%A9%20hacer%20en%20el%20d%C3%ADa%20Villa%20General%20Belgrano%2C%20C%C3%B3rdoba%20Villa%20General%20Belgrano%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg",
+      "image_url": "",
       "tags": [
         "Escapada",
         "Gastronomía",
@@ -3427,13 +3428,11 @@
       "indoor": false,
       "kids_friendly": true,
       "verified_at": "2026-11-19",
-      "published": true,
+      "published": false,
       "distance_km": 110,
       "drive_minutes": 130,
       "reach_tier": "dia_completo",
-      "image_urls": [
-        "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg"
-      ]
+      "image_urls": []
     },
     {
       "id": "salida-cumbrecita",
@@ -3449,7 +3448,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=La%20Cumbrecita%20%E2%80%94%20qu%C3%A9%20hacer%20en%20el%20d%C3%ADa%20La%20Cumbrecita%2C%20C%C3%B3rdoba%20La%20Cumbrecita%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "",
       "tags": [
         "Escapada",
         "Peatonal",
@@ -3458,10 +3457,11 @@
       "indoor": false,
       "kids_friendly": true,
       "verified_at": "2026-11-19",
-      "published": true,
+      "published": false,
       "distance_km": 120,
       "drive_minutes": 140,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "image_urls": []
     },
     {
       "id": "salida-altas-cumbres",
@@ -3509,7 +3509,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Mina%20Clavero%20%E2%80%94%20qu%C3%A9%20hacer%20en%20el%20d%C3%ADa%20Mina%20Clavero%2C%20C%C3%B3rdoba%20Mina%20Clavero%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/salida-mina-clavero.jpg",
+      "image_url": "",
       "tags": [
         "Escapada",
         "Balneario",
@@ -3519,13 +3519,11 @@
       "indoor": false,
       "kids_friendly": true,
       "verified_at": "2026-11-19",
-      "published": true,
+      "published": false,
       "distance_km": 140,
       "drive_minutes": 160,
       "reach_tier": "dia_completo",
-      "image_urls": [
-        "https://alpinasterranatura.com.ar/media/guia/lugares/salida-mina-clavero.jpg"
-      ]
+      "image_urls": []
     },
     {
       "id": "salida-nono",
@@ -3541,7 +3539,7 @@
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Nono%20%E2%80%94%20qu%C3%A9%20hacer%20en%20el%20d%C3%ADa%20Nono%2C%20C%C3%B3rdoba%20Nono%20C%C3%B3rdoba%20Argentina",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/salida-nono.jpg",
+      "image_url": "",
       "tags": [
         "Escapada",
         "Traslasierra",
@@ -3550,13 +3548,11 @@
       "indoor": false,
       "kids_friendly": true,
       "verified_at": "2026-11-19",
-      "published": true,
+      "published": false,
       "distance_km": 145,
       "drive_minutes": 165,
       "reach_tier": "dia_completo",
-      "image_urls": [
-        "https://alpinasterranatura.com.ar/media/guia/lugares/salida-nono.jpg"
-      ]
+      "image_urls": []
     },
     {
       "id": "salida-brochero",
@@ -3735,21 +3731,21 @@
     {
       "id": "cervecerias-artesanales-villa-general-belgrano-villa-gen",
       "slug": "cervecerias-artesanales-villa-general-belgrano-villa-gen",
-      "name": "Cervecerías artesanales — Villa General Belgrano",
+      "name": "Cervecería Ottilia",
       "category": "gastronomia",
       "locality": "Villa General Belgrano",
-      "short_description": "Degustación de cerveza artesanal en el centro.",
-      "description": "Degustación de cerveza artesanal en el centro.\nDirección de referencia: Centro, Villa General Belgrano.\nConfirmá horario y disponibilidad el día de la visita.",
-      "address": "Centro, Villa General Belgrano",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Cervecer%C3%ADas%20artesanales%20%E2%80%94%20Villa%20General%20Belgrano%20Centro%2C%20Villa%20General%20Belgrano%20Villa%20General%20Belgrano%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "short_description": "Cervecería artesanal para sentarte a comer y tomar, sobre avenida Roca.",
+      "description": "Cervecería Ottilia queda en avenida Julio Argentino Roca 277. Es un lugar para sentarse, no un listado de cervecerías. Confirmá si está abierto el día que vayas.",
+      "address": "Av. Julio Argentino Roca 277, Villa General Belgrano",
+      "latitude": -31.98159,
+      "longitude": -64.56049,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Cervecer%C3%ADa%20Ottilia%2C%20Av.%20Julio%20Argentino%20Roca%20277%2C%20Villa%20General%20Belgrano%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "phone": "3546462242",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/ottilia.jpg",
       "tags": [
         "Cervecería",
-        "VGB",
+        "Bar",
         "Escapada",
         "Día completo"
       ],
@@ -3761,28 +3757,28 @@
       "drive_minutes": 130,
       "reach_tier": "dia_completo",
       "image_urls": [
-        "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg"
-      ]
+        "https://alpinasterranatura.com.ar/media/guia/lugares/ottilia.jpg"
+      ],
+      "instagram": "ottiliacerveza"
     },
     {
       "id": "chocolaterias-y-casas-de-te-villa-general-belgrano-villa",
       "slug": "chocolaterias-y-casas-de-te-villa-general-belgrano-villa",
-      "name": "Chocolaterías y casas de té — Villa General Belgrano",
+      "name": "Capilla Vieja",
       "category": "gastronomia",
       "locality": "Villa General Belgrano",
-      "short_description": "Dulces, chocolate y casas de té tipicas.",
-      "description": "Dulces, chocolate y casas de té tipicas.\nDirección de referencia: Centro, Villa General Belgrano.\nConfirmá horario y disponibilidad el día de la visita.",
-      "address": "Centro, Villa General Belgrano",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Chocolater%C3%ADas%20y%20casas%20de%20t%C3%A9%20%E2%80%94%20Villa%20General%20Belgrano%20Centro%2C%20Villa%20General%20Belgrano%20Villa%20General%20Belgrano%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "short_description": "Chocolatería del centro, con mostrador de chocolates y dulces.",
+      "description": "Capilla Vieja es una chocolatería de Villa General Belgrano, en avenida Roca 176. Sirve para llevar chocolate o parar a merendar. Confirmá el horario.",
+      "address": "Av. Julio A. Roca 176, Villa General Belgrano",
+      "latitude": -31.97973,
+      "longitude": -64.56018,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Capilla%20Vieja%2C%20Av.%20Julio%20A.%20Roca%20176%2C%20Villa%20General%20Belgrano%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "phone": "3546462608",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/capilla-vieja.jpg",
       "tags": [
         "Café",
         "Chocolate",
-        "VGB",
         "Escapada",
         "Día completo"
       ],
@@ -3794,24 +3790,25 @@
       "drive_minutes": 130,
       "reach_tier": "dia_completo",
       "image_urls": [
-        "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg"
-      ]
+        "https://alpinasterranatura.com.ar/media/guia/lugares/capilla-vieja.jpg"
+      ],
+      "instagram": ""
     },
     {
       "id": "casas-de-te-la-cumbrecita-la-cumbrecita",
       "slug": "casas-de-te-la-cumbrecita-la-cumbrecita",
-      "name": "Casas de té — La Cumbrecita",
+      "name": "Edelweiss",
       "category": "gastronomia",
       "locality": "La Cumbrecita",
-      "short_description": "Parada dulce/salada en el pueblo peatonal.",
-      "description": "Parada dulce/salada en el pueblo peatonal.\nDirección de referencia: La Cumbrecita.\nConfirmá horario y disponibilidad el día de la visita.",
-      "address": "La Cumbrecita",
+      "short_description": "Casa de té y restaurante junto al Lago de los Patos.",
+      "description": "Edelweiss es una casa de té y restaurante en La Cumbrecita, cruzando el puentecito del Lago de los Patos. Tiene cocina centroeuropea y tortas. La municipalidad lo anuncia de miércoles a domingo; a veces el horario del local es de jueves a domingo. Confirmá antes de ir.",
+      "address": "Lago de los Patos, La Cumbrecita",
       "latitude": null,
       "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Casas%20de%20t%C3%A9%20%E2%80%94%20La%20Cumbrecita%20La%20Cumbrecita%20La%20Cumbrecita%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Edelweiss%20casa%20de%20t%C3%A9%2C%20Lago%20de%20los%20Patos%2C%20La%20Cumbrecita%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "phone": "3546416110",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/edelweiss.jpg",
       "tags": [
         "Café",
         "Té",
@@ -3824,23 +3821,27 @@
       "published": true,
       "distance_km": 120,
       "drive_minutes": 140,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "instagram": "edelweisslacumbrecita",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/edelweiss.jpg"
+      ]
     },
     {
       "id": "gastronomia-serrana-mina-clavero-mina-clavero",
       "slug": "gastronomia-serrana-mina-clavero-mina-clavero",
-      "name": "Gastronomía serrana — Mina Clavero",
+      "name": "Mi Lugar",
       "category": "gastronomia",
       "locality": "Mina Clavero",
-      "short_description": "Almuerzo o cena regional en Traslasierra.",
-      "description": "Almuerzo o cena regional en Traslasierra.\nDirección de referencia: Mina Clavero.\nConfirmá horario y disponibilidad el día de la visita.",
-      "address": "Mina Clavero",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Gastronom%C3%ADa%20serrana%20%E2%80%94%20Mina%20Clavero%20Mina%20Clavero%20Mina%20Clavero%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "short_description": "Parrilla a la leña en Olmos Sur.",
+      "description": "Mi Lugar es una parrilla a la leña en Olmos Sur 2260, Mina Clavero. Conviene llegar con tiempo el fin de semana. Suele cerrar lunes y martes: confirmá el día.",
+      "address": "Olmos Sur 2260, Mina Clavero",
+      "latitude": -31.726758,
+      "longitude": -65.000286,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Mi%20Lugar%20parrilla%2C%20Olmos%20Sur%202260%2C%20Mina%20Clavero%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "phone": "3544401441",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
+      "image_url": "",
       "tags": [
         "Restaurante",
         "Traslasierra",
@@ -3853,23 +3854,25 @@
       "published": true,
       "distance_km": 140,
       "drive_minutes": 160,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "instagram": "mi_lugar_cocina_y_parrilla",
+      "image_urls": []
     },
     {
       "id": "pulperias-y-regionales-nono-nono",
       "slug": "pulperias-y-regionales-nono-nono",
-      "name": "Pulperías y regionales — Nono",
+      "name": "Las Pircas",
       "category": "gastronomia",
       "locality": "Nono",
-      "short_description": "Locales regionales y pulperías del pueblo.",
-      "description": "Locales regionales y pulperías del pueblo.\nDirección de referencia: Nono.\nConfirmá horario y disponibilidad el día de la visita.",
-      "address": "Nono",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Pulper%C3%ADas%20y%20regionales%20%E2%80%94%20Nono%20Nono%20Nono%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "short_description": "Cocina serrana en Paso de las Tropas. Reservá antes de ir.",
+      "description": "Las Pircas es un restaurante familiar en Paso de las Tropas, cerca de Nono. El cabrito al horno es el plato que la gente pide. Abren al mediodía y a la noche, con reserva. Confirmá el turno antes de salir.",
+      "address": "Paso de las Tropas, Nono",
+      "latitude": -31.809068,
+      "longitude": -64.951972,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Las%20Pircas%2C%20Paso%20de%20las%20Tropas%2C%20Nono%2C%20C%C3%B3rdoba%2C%20Argentina",
+      "phone": "3544657950",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/10-parque-mate.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/las-pircas.jpg",
       "tags": [
         "Restaurante",
         "Traslasierra",
@@ -3882,7 +3885,11 @@
       "published": true,
       "distance_km": 145,
       "drive_minutes": 165,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "instagram": "laspircasrest",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/las-pircas.jpg"
+      ]
     },
     {
       "id": "slot-gastro-huerta-grande",
@@ -4202,7 +4209,7 @@
       "indoor": false,
       "kids_friendly": true,
       "verified_at": null,
-      "published": true,
+      "published": false,
       "distance_km": null,
       "drive_minutes": 20,
       "reach_tier": "cerca",
@@ -4226,7 +4233,8 @@
         "Diversión",
         "Parque"
       ],
-      "maps_url": "https://www.google.com/maps/search/?api=1&query=Parques%20acu%C3%A1ticos%20%E2%80%94%20Villa%20Carlos%20Paz%20Villa%20Carlos%20Paz%2C%20C%C3%B3rdoba%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20Argentina"
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Parques%20acu%C3%A1ticos%20%E2%80%94%20Villa%20Carlos%20Paz%20Villa%20Carlos%20Paz%2C%20C%C3%B3rdoba%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20Argentina",
+      "image_urls": []
     },
     {
       "slug": "lluvia-museos-juegos",
