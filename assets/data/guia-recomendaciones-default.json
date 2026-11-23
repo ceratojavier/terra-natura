@@ -165,7 +165,8 @@
         "Merienda",
         "Café",
         "Ambientación",
-        "Restaurante"
+        "Restaurante",
+        "Comer"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -198,7 +199,8 @@
         "Reservar",
         "Cabrito",
         "Regionales",
-        "Restaurante"
+        "Restaurante",
+        "Comer"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -247,8 +249,8 @@
       "name": "Labios del Indio / Barrancas Bermejas",
       "category": "balnearios",
       "locality": "Bialet Massé",
-      "short_description": "Formaciones rojizas junto al lago San Roque, con costa para disfrutar el paisaje.",
-      "description": "Uno de los paseos emblemáticos de Bialet Massé. Ideal para contemplar las barrancas y el atardecer. La Municipalidad menciona actividades recreativas junto al agua; respetá cartelería, sectores habilitados y condiciones del lago.",
+      "short_description": "Barrancas junto al lago, con asadores y mesas al lado del río.",
+      "description": "Uno de los paseos emblemáticos de Bialet Massé. Ideal para contemplar las barrancas y el atardecer. La Municipalidad menciona actividades recreativas junto al agua; respetá cartelería, sectores habilitados y condiciones del lago. Hay asadores y mesas junto al río para pasar el día.",
       "address": "Barrancas Bermejas, Bialet Massé, Córdoba",
       "latitude": null,
       "longitude": null,
@@ -295,7 +297,7 @@
       "indoor": false,
       "kids_friendly": true,
       "verified_at": null,
-      "published": true,
+      "published": false,
       "distance_km": 3.6,
       "drive_minutes": 7,
       "reach_tier": "cerca"
@@ -334,11 +336,11 @@
     {
       "id": "cascada-mallin",
       "slug": "cascada-mallin",
-      "name": "Cascada del Mallín",
+      "name": "Arroyo y Cascada del Mallín",
       "category": "naturaleza",
       "locality": "Bialet Massé",
-      "short_description": "Cascada y arroyo en entorno serrano, a unos 8 km del centro.",
-      "description": "Paseo natural municipal en el entorno del arroyo Mallín. Puede requerir caminata y el estado del sendero cambia con lluvias. Llevá calzado adecuado, agua potable y consultá el estado del acceso localmente.",
+      "short_description": "Camping junto al arroyo para pasar el día y conocer la cascada del Mallín.",
+      "description": "En el arroyo del Mallín hay un camping para pasar el día, y desde ahí se conoce la cascada. Está a unos 8 km del centro de Bialet Massé. Llevá lo que necesites: en el lugar no hay proveeduría. El camino es de tierra y conviene preguntar cómo está si llovió.",
       "address": "Cascada del Mallín, Bialet Massé, Córdoba",
       "latitude": null,
       "longitude": null,
@@ -349,7 +351,9 @@
       "tags": [
         "Cascada",
         "Caminata",
-        "Naturaleza"
+        "Naturaleza",
+        "Camping",
+        "Día de campo"
       ],
       "indoor": false,
       "kids_friendly": false,
@@ -619,8 +623,8 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=La Falda y Hotel Edén Hotel Edén, La Falda, Córdoba",
-      "phone": "",
-      "website": "",
+      "phone": "3548630636",
+      "website": "https://edenhotel.com.ar/",
       "image_url": "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png",
       "tags": [
         "Historia",
@@ -636,7 +640,8 @@
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png"
-      ]
+      ],
+      "instagram": "edenhotel_lafalda"
     },
     {
       "id": "valle-hermoso",
@@ -745,7 +750,7 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Complejo / Parque Recreativo Siquiman Villa Parque Síquiman, Córdoba",
-      "phone": "",
+      "phone": "3541401068",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/15-pileta-frutillas.webp",
       "tags": [
@@ -761,7 +766,8 @@
       "published": true,
       "distance_km": 3.2,
       "drive_minutes": 6,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "instagram": "siquimancomplejo"
     },
     {
       "id": "serranita",
@@ -799,12 +805,12 @@
       "locality": "Villa Carlos Paz",
       "short_description": "Vistas panorámicas del lago y las sierras desde las alturas.",
       "description": "Un clásico de Carlos Paz, con paseo aéreo y actividades complementarias según temporada. Consultá funcionamiento por viento/lluvia, accesibilidad y entradas.",
-      "address": "Complejo Aerosilla, Villa Carlos Paz, Córdoba",
+      "address": "Florencio Sánchez s/n, Villa Carlos Paz",
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Complejo Aerosilla de Carlos Paz Complejo Aerosilla, Villa Carlos Paz, Córdoba",
-      "phone": "",
-      "website": "",
+      "phone": "3541332792",
+      "website": "https://aerosilla.com/",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/15-pileta-frutillas.webp",
       "tags": [
         "Vistas",
@@ -817,7 +823,8 @@
       "published": true,
       "distance_km": 19.6,
       "drive_minutes": 24,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "instagram": "complejoaerosilla"
     },
     {
       "id": "wave-zone",
@@ -1264,12 +1271,12 @@
       "locality": "La Falda",
       "short_description": "Visita histórica y jardines — ~35 km.",
       "description": "Clásico paseo en La Falda. Confirmá visitas guiadas, horarios y entradas en temporada.",
-      "address": "La Falda, Córdoba",
+      "address": "Av. Edén 1400, La Falda",
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Hotel+Eden+La+Falda",
-      "phone": "",
-      "website": "",
+      "phone": "3548630636",
+      "website": "https://edenhotel.com.ar/",
       "image_url": "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png",
       "tags": [
         "Historia",
@@ -1284,7 +1291,8 @@
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png"
-      ]
+      ],
+      "instagram": "edenhotel_lafalda"
     },
     {
       "id": "siete-cascadas",
@@ -2623,17 +2631,17 @@
     {
       "id": "senderos-cabalgatas-y-casas-de-te-la-cumbre-la-cumbre",
       "slug": "senderos-cabalgatas-y-casas-de-te-la-cumbre-la-cumbre",
-      "name": "Senderos, cabalgatas y casas de té — La Cumbre",
+      "name": "Casa de té El Bosque",
       "category": "gastronomia",
       "locality": "La Cumbre",
       "short_description": "Senderos, cabalgatas y casas de té típicas de La Cumbre.",
       "description": "En La Cumbre combiná senderos o cabalgatas con una parada en casas de té (confirmá horarios).",
-      "address": "Senderos, cabalgatas y casas de té — La Cumbre, La Cumbre",
+      "address": "Camino de los Artesanos, Villa Giardino",
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Senderos%2C%20cabalgatas%20y%20casas%20de%20t%C3%A9%20%E2%80%94%20La%20Cumbre%20Senderos%2C%20cabalgatas%20y%20casas%20de%20t%C3%A9%20%E2%80%94%20La%20Cumbre%2C%20La%20Cumbre%20La%20Cumbre%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "phone": "3548491663",
+      "website": "https://www.elbosqueconfiteria.com/",
       "image_url": "",
       "tags": [
         "Café",
@@ -2692,8 +2700,8 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Parque%20Los%20Terrones%20Parque%20Los%20Terrones%2C%20Capilla%20del%20Monte%20Capilla%20del%20Monte%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "phone": "3548418914",
+      "website": "https://losterrones.com.ar/",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/12-arroyo-cercano.webp",
       "tags": [
         "Parque",
@@ -2705,7 +2713,8 @@
       "published": true,
       "distance_km": 60.8,
       "drive_minutes": 69,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "instagram": "losterronesoficial"
     },
     {
       "id": "complejo-el-zapato-capilla-del-monte",
@@ -3073,8 +3082,8 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Los%20Cocos%20Park%20Los%20Cocos%20Park%2C%20Los%20Cocos%20Los%20Cocos%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "phone": "3548581689",
+      "website": "http://www.loscocospark.com.ar/",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/03-pileta-alpina.webp",
       "tags": [
         "Parque",
@@ -3102,7 +3111,7 @@
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=El%20Laberinto%20de%20Nono%20El%20Laberinto%20de%20Nono%2C%20Nono%20Nono%20C%C3%B3rdoba%20Argentina",
       "phone": "",
-      "website": "",
+      "website": "http://www.laberintodenono.com.ar/",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/03-pileta-alpina.webp",
       "tags": [
         "Parque",
@@ -3165,8 +3174,8 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Arca%20de%20No%C3%A9%20Multiparque%20Arca%20de%20No%C3%A9%20Multiparque%2C%20C%C3%B3rdoba%20C%C3%B3rdoba%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "phone": "3546534039",
+      "website": "https://multiparquearcadenoe.com/",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/03-pileta-alpina.webp",
       "tags": [
         "Parque",
@@ -3180,7 +3189,8 @@
       "published": true,
       "distance_km": 101.0,
       "drive_minutes": 88,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "instagram": "arcadenoemultiparque"
     },
     {
       "id": "infinito-water-park-infinito-open-cordoba",
@@ -3194,8 +3204,8 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Infinito%20Water%20Park%20%28Infinito%20Open%29%20Infinito%20Water%20Park%20%28Infinito%20Open%29%2C%20C%C3%B3rdoba%20C%C3%B3rdoba%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "phone": "3518923202",
+      "website": "https://infinitowaterpark.com/",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/02-piscina.webp",
       "tags": [
         "Acuático",
@@ -3209,7 +3219,8 @@
       "published": true,
       "distance_km": 57.8,
       "drive_minutes": 45,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "instagram": "infinitowaterpark"
     },
     {
       "id": "wave-zone-peko-s-villa-santa-cruz-del-lago",
@@ -3256,7 +3267,7 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Aquaventure%20Aquaventure%2C%20Villa%20Carlos%20Paz%20Villa%20Carlos%20Paz%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "phone": "3541381807",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/02-piscina.webp",
       "tags": [
@@ -3280,12 +3291,12 @@
       "locality": "San Antonio de Arredondo",
       "short_description": "Complejo acuático en San Antonio de Arredondo.",
       "description": "Complejo Vértigo Acuático en San Antonio de Arredondo. Verificá temporada y acceso.",
-      "address": "Complejo Vértigo Acuático, San Antonio de Arredondo",
+      "address": "Av. Cura Brochero 745, San Antonio de Arredondo",
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Complejo%20V%C3%A9rtigo%20Acu%C3%A1tico%20Complejo%20V%C3%A9rtigo%20Acu%C3%A1tico%2C%20San%20Antonio%20de%20Arredondo%20San%20Antonio%20de%20Arredondo%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "phone": "3541615345",
+      "website": "https://vertigoacuatico.com.ar/",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/02-piscina.webp",
       "tags": [
         "Acuático",
@@ -3297,7 +3308,8 @@
       "published": true,
       "distance_km": 26.8,
       "drive_minutes": 35,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "instagram": "vertigoacuatico"
     },
     {
       "id": "crazy-donkey-cabalango",
@@ -3339,8 +3351,8 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Acqualandia%20Park%20Acqualandia%20Park%2C%20Mina%20Clavero%20Mina%20Clavero%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "phone": "3544571254",
+      "website": "https://acqualandiapark.com.ar/",
       "image_url": "",
       "tags": [
         "Acuático",
@@ -3356,7 +3368,8 @@
       "distance_km": 135.0,
       "drive_minutes": 110,
       "reach_tier": "dia_completo",
-      "image_urls": []
+      "image_urls": [],
+      "instagram": "acqualandiapark"
     },
     {
       "id": "valle-encantado-las-rabonas",
@@ -3370,8 +3383,8 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Valle%20Encantado%20Valle%20Encantado%2C%20Las%20Rabonas%20Las%20Rabonas%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
-      "website": "",
+      "phone": "3544556631",
+      "website": "https://www.valleencantado.com.ar/",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/02-piscina.webp",
       "tags": [
         "Acuático",
@@ -3398,7 +3411,7 @@
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/search/?api=1&query=Complejo%20Vicentino%20Don%20Zamora%20Complejo%20Vicentino%20Don%20Zamora%2C%20Traslasierra%20Traslasierra%20C%C3%B3rdoba%20Argentina",
-      "phone": "",
+      "phone": "3544485771",
       "website": "",
       "image_url": "https://alpinasterranatura.com.ar/media/galeria/02-piscina.webp",
       "tags": [
@@ -3699,7 +3712,8 @@
       "image_url": "https://alpinasterranatura.com.ar/media/guia/terra-firma.jpg",
       "tags": [
         "Café",
-        "Restaurante"
+        "Restaurante",
+        "Comer"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -3759,7 +3773,8 @@
         "Cervecería",
         "Bar",
         "Escapada",
-        "Día completo"
+        "Día completo",
+        "Comer"
       ],
       "indoor": true,
       "kids_friendly": true,
@@ -4549,6 +4564,153 @@
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/jaque-mate.jpg"
       ]
+    },
+    {
+      "id": "serena-resto-bar",
+      "slug": "serena-resto-bar",
+      "name": "Serena Resto Bar",
+      "category": "gastronomia",
+      "locality": "San Antonio de Arredondo",
+      "short_description": "Los domingos tienen un buffet de merienda muy recomendable. También se almuerza muy bien.",
+      "description": "Serena Resto Bar está en San Antonio de Arredondo, sobre la ruta provincial 48. Los domingos la merienda es un buffet y vale la pena. Para almorzar también se come muy bien. Confirmá el día.",
+      "address": "Ruta Provincial 48 km 1, San Antonio de Arredondo",
+      "latitude": -31.493488,
+      "longitude": -64.527966,
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Serena%20Resto%20Bar%20Ruta%20Provincial%2048%20km%201%20San%20Antonio%20de%20Arredondo%20C%C3%B3rdoba",
+      "phone": "3541237316",
+      "website": "",
+      "instagram": "",
+      "image_url": "",
+      "image_urls": [],
+      "tags": [
+        "Comer",
+        "Restaurante",
+        "Merienda"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "distance_km": 25,
+      "drive_minutes": 28,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "gloria-dike-resto-bar",
+      "slug": "gloria-dike-resto-bar",
+      "name": "Gloria Dike Resto Bar",
+      "category": "gastronomia",
+      "locality": "Tanti",
+      "short_description": "Para almorzar en el balneario El Diquecito, con vista al arroyo. De ahí se puede seguir a la cascada de Tanti.",
+      "description": "Gloria Dike es el resto del balneario El Diquecito, en General Paz 839, Tanti. Sirve para almorzar con vista al arroyo. Después se puede conocer la cascada de Tanti. Confirmá el horario.",
+      "address": "General Paz 839, Balneario El Diquecito, Tanti",
+      "latitude": null,
+      "longitude": null,
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Gloria%20Dike%20Resto%20Bar%20General%20Paz%20839%20Tanti%20C%C3%B3rdoba",
+      "phone": "3541329240",
+      "website": "https://www.tanti.gob.ar/restaurantes/gloria-dike-resto-bar/",
+      "instagram": "",
+      "image_url": "",
+      "image_urls": [],
+      "tags": [
+        "Comer",
+        "Restaurante"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "distance_km": 20,
+      "drive_minutes": 32,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "parrilla-de-daniel",
+      "slug": "parrilla-de-daniel",
+      "name": "La Parrilla de Daniel",
+      "category": "gastronomia",
+      "locality": "Tanti",
+      "short_description": "La parrilla del cabrito cordobés, en el camino a Tanti.",
+      "description": "La Parrilla de Daniel queda sobre la ruta provincial 28, en Santa Cruz del Lago, camino a Tanti. Es conocida por el cabrito a las brasas. Conviene ir con tiempo el fin de semana.",
+      "address": "Ruta Provincial 28 km 154, Santa Cruz del Lago, camino a Tanti",
+      "latitude": null,
+      "longitude": null,
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=La%20Parrilla%20de%20Daniel%20Ruta%20Provincial%2028%20km%20154%20Santa%20Cruz%20del%20Lago%20C%C3%B3rdoba",
+      "phone": "3541577246",
+      "website": "",
+      "instagram": "",
+      "image_url": "",
+      "image_urls": [],
+      "tags": [
+        "Comer",
+        "Parrilla",
+        "Restaurante"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "distance_km": 18,
+      "drive_minutes": 30,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "dolce-angelina",
+      "slug": "dolce-angelina",
+      "name": "Dolce Angelina",
+      "category": "gastronomia",
+      "locality": "Cosquín",
+      "short_description": "Cafetería para merendar en Cosquín, en Italia y Guido Spano.",
+      "description": "Dolce Angelina es una cafetería en Italia y Guido Spano, Cosquín. Sirve para merendar. Confirmá el horario.",
+      "address": "Italia y Guido Spano, Cosquín",
+      "latitude": -31.236705,
+      "longitude": -64.455962,
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Dolce%20Angelina%20Italia%20y%20Guido%20Spano%20Cosqu%C3%ADn%20C%C3%B3rdoba",
+      "phone": "3541377825",
+      "website": "",
+      "instagram": "",
+      "image_url": "",
+      "image_urls": [],
+      "tags": [
+        "Merienda",
+        "Café"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "distance_km": 14,
+      "drive_minutes": 20,
+      "reach_tier": "cerca"
+    },
+    {
+      "id": "auridia-pasteleria",
+      "slug": "auridia-pasteleria",
+      "name": "Auridia Pastelería y Cafetería",
+      "category": "gastronomia",
+      "locality": "Cosquín",
+      "short_description": "Pastelería y cafetería para merendar en Cosquín, barrio Molinari.",
+      "description": "Auridia es una pastelería y cafetería en Santiago 94, barrio Molinari, Cosquín. Confirmá el horario.",
+      "address": "Santiago 94, Molinari, Cosquín",
+      "latitude": null,
+      "longitude": null,
+      "maps_url": "https://www.google.com/maps/search/?api=1&query=Auridia%20Pasteler%C3%ADa%20Santiago%2094%20Molinari%20Cosqu%C3%ADn%20C%C3%B3rdoba",
+      "phone": "3541682731",
+      "website": "",
+      "instagram": "",
+      "image_url": "",
+      "image_urls": [],
+      "tags": [
+        "Merienda",
+        "Café"
+      ],
+      "indoor": true,
+      "kids_friendly": true,
+      "verified_at": "2026-11-23",
+      "published": true,
+      "distance_km": 14,
+      "drive_minutes": 22,
+      "reach_tier": "cerca"
     }
   ]
 }
