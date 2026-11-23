@@ -3,18 +3,18 @@
     {
       "id": "almacen-talas",
       "slug": "almacen-talas",
-      "name": "Almacén Los Talas",
+      "name": "Proveeduría Los Talas",
       "category": "cerca",
       "locality": "Bialet Massé",
-      "short_description": "El almacén de la esquina, a media cuadra del complejo.",
-      "description": "El almacén de la esquina se llama Almacén Los Talas y queda a media cuadra, sobre Los Talas. Sirve para una compra chica sin mover el auto. El horario preguntáselo en el local.",
-      "address": "A media cuadra de Los Talas 759, Bialet Massé",
-      "latitude": null,
-      "longitude": null,
-      "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Los%20Talas%20759%2C%20Bialet%20Mass%C3%A9%2C%20C%C3%B3rdoba&destination=Los%20Talas%20759%2C%20Bialet%20Mass%C3%A9%2C%20C%C3%B3rdoba&travelmode=driving",
-      "phone": "",
+      "short_description": "En Los Talas y Alameda, a 2 minutos a pie. Almacén, bebidas y compra chica.",
+      "description": "Proveeduría Los Talas está en la esquina de Los Talas y Alameda, a unos 2 minutos a pie. De lunes a viernes abre de 9 a 22, el sábado de 10 a 22, y el domingo de 10 a 14 y de 18 a 22. Si es feriado, el horario puede cambiar: confirmalo en el local.",
+      "address": "Los Talas y Alameda, Bialet Massé",
+      "latitude": -31.3309999,
+      "longitude": -64.4802639,
+      "maps_url": "https://www.google.com/maps/dir/?api=1&origin=Los%20Talas%20759%2C%20Bialet%20Mass%C3%A9%2C%20C%C3%B3rdoba&destination=-31.3309999%2C-64.4802639&travelmode=walking",
+      "phone": "3541220890",
       "website": "",
-      "image_url": "",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/proveeduria-los-talas.jpg",
       "tags": [
         "Almacén Los Talas",
         "A pie",
@@ -25,9 +25,17 @@
       "kids_friendly": false,
       "verified_at": "2026-11-23",
       "published": true,
-      "distance_km": null,
+      "distance_km": 0.12,
       "drive_minutes": null,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/proveeduria-los-talas.jpg"
+      ],
+      "walk_minutes": 2,
+      "rating_value": 4.9,
+      "rating_count": 16,
+      "rating_source": "Google",
+      "last_checked_at": "2026-11-23"
     },
     {
       "id": "agua-no-potable",

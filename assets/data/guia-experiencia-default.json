@@ -253,7 +253,7 @@
     },
     {
       "id": "almacen-los-talas",
-      "label": "Almacén Los Talas",
+      "label": "Proveeduría Los Talas",
       "icon": "cart",
       "enabled": true,
       "kind": "recs",
