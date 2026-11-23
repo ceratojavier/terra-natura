@@ -112,8 +112,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 2,
-      "drive_minutes": 6,
+      "distance_km": 3.5,
+      "drive_minutes": 7,
       "reach_tier": "cerca",
       "instagram": "carritoabilu.ok"
     },
@@ -142,8 +142,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 1,
-      "drive_minutes": 4,
+      "distance_km": 3.8,
+      "drive_minutes": 8,
       "reach_tier": "cerca"
     },
     {
@@ -171,9 +171,9 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 28,
-      "drive_minutes": 40,
-      "reach_tier": "medio",
+      "distance_km": 13.7,
+      "drive_minutes": 20,
+      "reach_tier": "cerca",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/terra-firma.jpg"
       ],
@@ -204,8 +204,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 25,
-      "drive_minutes": 35,
+      "distance_km": 30.2,
+      "drive_minutes": 30,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/nono-chichin.webp"
@@ -237,9 +237,9 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 30,
-      "drive_minutes": 42,
-      "reach_tier": "medio"
+      "distance_km": 3.1,
+      "drive_minutes": 7,
+      "reach_tier": "cerca"
     },
     {
       "id": "labios-indio",
@@ -265,8 +265,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 2,
-      "drive_minutes": 6,
+      "distance_km": 4.8,
+      "drive_minutes": 12,
       "reach_tier": "cerca",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/labios-del-indio-v2.png"
@@ -296,8 +296,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 4,
-      "drive_minutes": 10,
+      "distance_km": 3.6,
+      "drive_minutes": 7,
       "reach_tier": "cerca"
     },
     {
@@ -324,8 +324,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 3,
-      "drive_minutes": 8,
+      "distance_km": 5.4,
+      "drive_minutes": 12,
       "reach_tier": "cerca",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/puente-carlos-paz-noche.webp"
@@ -389,8 +389,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 12,
-      "drive_minutes": 20,
+      "distance_km": 18.0,
+      "drive_minutes": 25,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/cabalango-rio.webp"
@@ -420,8 +420,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 35,
-      "drive_minutes": 50,
+      "distance_km": 28.9,
+      "drive_minutes": 38,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/mayu-sumaj.jpg"
@@ -451,8 +451,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 40,
-      "drive_minutes": 55,
+      "distance_km": 30.8,
+      "drive_minutes": 38,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/icho-cruz.jpg"
@@ -482,8 +482,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 60,
+      "distance_km": 32.9,
+      "drive_minutes": 44,
       "reach_tier": "medio"
     },
     {
@@ -509,8 +509,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 42,
-      "drive_minutes": 58,
+      "distance_km": 32.3,
+      "drive_minutes": 43,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/tala-huasi.jpg"
@@ -540,8 +540,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 60,
-      "drive_minutes": 90,
+      "distance_km": 45.8,
+      "drive_minutes": 76,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/yuspe.jpg"
@@ -571,9 +571,9 @@
       "kids_friendly": false,
       "verified_at": "2026-11-23",
       "published": true,
-      "distance_km": 40,
-      "drive_minutes": 65,
-      "reach_tier": "dia_completo",
+      "distance_km": 22.2,
+      "drive_minutes": 38,
+      "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/los-chorrillos-cascada.jpg"
       ],
@@ -603,9 +603,9 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 18,
-      "drive_minutes": 25,
-      "reach_tier": "medio",
+      "distance_km": 13.4,
+      "drive_minutes": 19,
+      "reach_tier": "cerca",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/cosquin.jpg"
       ]
@@ -634,8 +634,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 35,
-      "drive_minutes": 45,
+      "distance_km": 33.3,
+      "drive_minutes": 38,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png"
@@ -665,8 +665,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 22,
-      "drive_minutes": 30,
+      "distance_km": 29.4,
+      "drive_minutes": 28,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/valle-hermoso.jpg"
@@ -696,8 +696,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 95,
-      "drive_minutes": 90,
+      "distance_km": 61.5,
+      "drive_minutes": 67,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/capilla-monte.jpg"
@@ -728,9 +728,9 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 25,
-      "drive_minutes": 35,
-      "reach_tier": "medio",
+      "distance_km": 9.0,
+      "drive_minutes": 14,
+      "reach_tier": "cerca",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp"
       ],
@@ -762,9 +762,9 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 32,
-      "drive_minutes": 45,
-      "reach_tier": "medio"
+      "distance_km": 3.2,
+      "drive_minutes": 6,
+      "reach_tier": "cerca"
     },
     {
       "id": "serranita",
@@ -790,8 +790,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 70,
-      "drive_minutes": 85,
+      "distance_km": 62.2,
+      "drive_minutes": 50,
       "reach_tier": "dia_completo"
     },
     {
@@ -818,8 +818,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 28,
-      "drive_minutes": 40,
+      "distance_km": 19.6,
+      "drive_minutes": 24,
       "reach_tier": "medio"
     },
     {
@@ -846,9 +846,9 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 30,
-      "drive_minutes": 42,
-      "reach_tier": "medio",
+      "distance_km": 9.0,
+      "drive_minutes": 14,
+      "reach_tier": "cerca",
       "instagram": "pekosmultiparque",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp"
@@ -879,9 +879,9 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 28,
-      "drive_minutes": 40,
-      "reach_tier": "medio",
+      "distance_km": 18.1,
+      "drive_minutes": 20,
+      "reach_tier": "cerca",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/teatros-carlos-paz-v2.png"
       ]
@@ -912,9 +912,9 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 28,
-      "drive_minutes": 40,
-      "reach_tier": "medio"
+      "distance_km": 18.1,
+      "drive_minutes": 20,
+      "reach_tier": "cerca"
     },
     {
       "id": "cordoba-shopping",
@@ -943,9 +943,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 70,
-      "reach_tier": "dia_completo"
+      "distance_km": 42.4,
+      "drive_minutes": 43,
+      "reach_tier": "medio"
     },
     {
       "id": "cordoba-cultura",
@@ -971,8 +971,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 70,
+      "distance_km": 49.6,
+      "drive_minutes": 48,
       "reach_tier": "medio"
     },
     {
@@ -1000,8 +1000,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 105,
-      "drive_minutes": 115,
+      "distance_km": 96.6,
+      "drive_minutes": 87,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg"
@@ -1033,8 +1033,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 110,
-      "drive_minutes": 120,
+      "distance_km": 129.0,
+      "drive_minutes": 119,
       "reach_tier": "dia_completo"
     },
     {
@@ -1062,8 +1062,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 100,
-      "drive_minutes": 110,
+      "distance_km": 139.0,
+      "drive_minutes": 137,
       "reach_tier": "dia_completo"
     },
     {
@@ -1092,9 +1092,9 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 100,
-      "drive_minutes": 130,
-      "reach_tier": "dia_completo",
+      "distance_km": 59.6,
+      "drive_minutes": 52,
+      "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/traslasierra.jpg"
       ]
@@ -1124,8 +1124,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 120,
-      "drive_minutes": 150,
+      "distance_km": 135.0,
+      "drive_minutes": 109,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/nido-aguila.webp"
@@ -1157,8 +1157,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 115,
-      "drive_minutes": 140,
+      "distance_km": 139.0,
+      "drive_minutes": 111,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/nono.jpg"
@@ -1191,8 +1191,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 118,
-      "drive_minutes": 145,
+      "distance_km": 137.0,
+      "drive_minutes": 114,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/cura-brochero.jpg"
@@ -1222,9 +1222,9 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 60,
-      "drive_minutes": 75,
-      "reach_tier": "medio",
+      "distance_km": 65.8,
+      "drive_minutes": 58,
+      "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/sierras-chicas.jpg"
       ]
@@ -1254,8 +1254,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 130,
-      "drive_minutes": 160,
+      "distance_km": 102.0,
+      "drive_minutes": 98,
       "reach_tier": "dia_completo"
     },
     {
@@ -1281,8 +1281,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 35,
-      "drive_minutes": 45,
+      "distance_km": 32.2,
+      "drive_minutes": 35,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png"
@@ -1311,8 +1311,8 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 38,
-      "drive_minutes": 50,
+      "distance_km": 32.2,
+      "drive_minutes": 35,
       "reach_tier": "medio"
     },
     {
@@ -1338,9 +1338,9 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 30,
-      "drive_minutes": 40,
-      "reach_tier": "medio"
+      "distance_km": 44.3,
+      "drive_minutes": 63,
+      "reach_tier": "dia_completo"
     },
     {
       "id": "farmacia-bialet-centro",
@@ -1362,8 +1362,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 2,
-      "drive_minutes": 5,
+      "distance_km": 4.2,
+      "drive_minutes": 8,
       "reach_tier": "cerca"
     },
     {
@@ -1386,9 +1386,9 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 15,
+      "distance_km": 18.1,
       "drive_minutes": 20,
-      "reach_tier": "medio"
+      "reach_tier": "cerca"
     },
     {
       "id": "super-dia-bialet",
@@ -1410,8 +1410,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 3,
-      "drive_minutes": 7,
+      "distance_km": 3.6,
+      "drive_minutes": 8,
       "reach_tier": "cerca"
     },
     {
@@ -1434,9 +1434,9 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 16,
-      "drive_minutes": 22,
-      "reach_tier": "medio"
+      "distance_km": 18.1,
+      "drive_minutes": 20,
+      "reach_tier": "cerca"
     },
     {
       "id": "bar-costanera-cp",
@@ -1483,7 +1483,7 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": 3,
+      "distance_km": 3.6,
       "drive_minutes": 8,
       "reach_tier": "cerca"
     },
@@ -1507,8 +1507,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 1,
-      "drive_minutes": 5,
+      "distance_km": 3.6,
+      "drive_minutes": 8,
       "reach_tier": "cerca"
     },
     {
@@ -1531,8 +1531,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": 2,
-      "drive_minutes": 5,
+      "distance_km": 1.2,
+      "drive_minutes": 4,
       "reach_tier": "cerca"
     },
     {
@@ -1583,7 +1583,7 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 3,
+      "distance_km": 3.6,
       "drive_minutes": 8,
       "reach_tier": "cerca"
     },
@@ -1611,8 +1611,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 4,
-      "drive_minutes": 10,
+      "distance_km": 3.6,
+      "drive_minutes": 8,
       "reach_tier": "cerca"
     },
     {
@@ -1639,8 +1639,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 12,
-      "drive_minutes": 18,
+      "distance_km": 7.8,
+      "drive_minutes": 14,
       "reach_tier": "cerca"
     },
     {
@@ -1667,9 +1667,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 16,
-      "drive_minutes": 22,
-      "reach_tier": "medio"
+      "distance_km": 18.1,
+      "drive_minutes": 20,
+      "reach_tier": "cerca"
     },
     {
       "id": "hospital-cima-cosquin",
@@ -1695,9 +1695,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 22,
-      "drive_minutes": 30,
-      "reach_tier": "medio"
+      "distance_km": 14.8,
+      "drive_minutes": 19,
+      "reach_tier": "cerca"
     },
     {
       "id": "super-almacor-bialet",
@@ -1723,8 +1723,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 3,
-      "drive_minutes": 8,
+      "distance_km": 3.3,
+      "drive_minutes": 7,
       "reach_tier": "cerca",
       "instagram": "almacor.supermercado"
     },
@@ -1752,7 +1752,7 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 3,
+      "distance_km": 3.6,
       "drive_minutes": 8,
       "reach_tier": "cerca"
     },
@@ -1779,9 +1779,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 22,
-      "drive_minutes": 30,
-      "reach_tier": "medio"
+      "distance_km": 14.8,
+      "drive_minutes": 19,
+      "reach_tier": "cerca"
     },
     {
       "id": "farmacia-noya-smp",
@@ -1806,8 +1806,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 12,
-      "drive_minutes": 18,
+      "distance_km": 7.8,
+      "drive_minutes": 14,
       "reach_tier": "cerca"
     },
     {
@@ -1833,8 +1833,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 10,
-      "drive_minutes": 15,
+      "distance_km": 3.2,
+      "drive_minutes": 6,
       "reach_tier": "cerca"
     },
     {
@@ -1973,8 +1973,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 50,
+      "distance_km": 34.5,
+      "drive_minutes": 41,
       "reach_tier": "medio"
     },
     {
@@ -2001,8 +2001,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 50,
+      "distance_km": 34.5,
+      "drive_minutes": 41,
       "reach_tier": "medio"
     },
     {
@@ -2029,8 +2029,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 50,
+      "distance_km": 34.5,
+      "drive_minutes": 41,
       "reach_tier": "medio"
     },
     {
@@ -2056,8 +2056,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 50,
+      "distance_km": 34.5,
+      "drive_minutes": 41,
       "reach_tier": "medio"
     },
     {
@@ -2084,8 +2084,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 50,
+      "distance_km": 34.5,
+      "drive_minutes": 41,
       "reach_tier": "medio"
     },
     {
@@ -2114,8 +2114,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 50,
+      "distance_km": 36.6,
+      "drive_minutes": 48,
       "reach_tier": "medio"
     },
     {
@@ -2141,8 +2141,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 50,
+      "distance_km": 34.5,
+      "drive_minutes": 41,
       "reach_tier": "medio"
     },
     {
@@ -2169,8 +2169,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 50,
+      "distance_km": 39.2,
+      "drive_minutes": 51,
       "reach_tier": "medio"
     },
     {
@@ -2197,8 +2197,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 50,
+      "distance_km": 34.5,
+      "drive_minutes": 41,
       "reach_tier": "medio"
     },
     {
@@ -2225,8 +2225,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 50,
-      "drive_minutes": 55,
+      "distance_km": 32.2,
+      "drive_minutes": 35,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/eden-hotel-v2.png"
@@ -2341,8 +2341,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 60,
+      "distance_km": 38.0,
+      "drive_minutes": 48,
       "reach_tier": "medio"
     },
     {
@@ -2369,8 +2369,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 60,
+      "distance_km": 38.3,
+      "drive_minutes": 46,
       "reach_tier": "medio"
     },
     {
@@ -2396,8 +2396,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 60,
+      "distance_km": 41.8,
+      "drive_minutes": 53,
       "reach_tier": "medio"
     },
     {
@@ -2451,8 +2451,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 60,
+      "distance_km": 38.1,
+      "drive_minutes": 48,
       "reach_tier": "medio"
     },
     {
@@ -2478,8 +2478,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 60,
+      "distance_km": 38.3,
+      "drive_minutes": 46,
       "reach_tier": "medio"
     },
     {
@@ -2505,8 +2505,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 60,
+      "distance_km": 38.3,
+      "drive_minutes": 46,
       "reach_tier": "medio"
     },
     {
@@ -2533,8 +2533,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 60,
+      "distance_km": 40.4,
+      "drive_minutes": 52,
       "reach_tier": "medio"
     },
     {
@@ -2561,8 +2561,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 60,
-      "drive_minutes": 70,
+      "distance_km": 46.3,
+      "drive_minutes": 54,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/cerro-cuchi-corral-la-cumbre.jpg"
@@ -2591,9 +2591,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 60,
-      "drive_minutes": 70,
-      "reach_tier": "medio"
+      "distance_km": 47.9,
+      "drive_minutes": 59,
+      "reach_tier": "dia_completo"
     },
     {
       "id": "cruz-grande-la-cumbre",
@@ -2618,9 +2618,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 60,
-      "drive_minutes": 70,
-      "reach_tier": "medio"
+      "distance_km": 51.2,
+      "drive_minutes": 62,
+      "reach_tier": "dia_completo"
     },
     {
       "id": "senderos-cabalgatas-y-casas-de-te-la-cumbre-la-cumbre",
@@ -2646,8 +2646,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": false,
-      "distance_km": 60,
-      "drive_minutes": 70,
+      "distance_km": 46.3,
+      "drive_minutes": 54,
       "reach_tier": "medio"
     },
     {
@@ -2674,8 +2674,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-23",
       "published": true,
-      "distance_km": 75,
-      "drive_minutes": 85,
+      "distance_km": 64.5,
+      "drive_minutes": 77,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/uritorco-sendero.jpg"
@@ -2705,8 +2705,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 75,
-      "drive_minutes": 85,
+      "distance_km": 60.8,
+      "drive_minutes": 69,
       "reach_tier": "dia_completo"
     },
     {
@@ -2731,8 +2731,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 75,
-      "drive_minutes": 85,
+      "distance_km": 61.6,
+      "drive_minutes": 68,
       "reach_tier": "dia_completo"
     },
     {
@@ -2758,8 +2758,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 75,
-      "drive_minutes": 85,
+      "distance_km": 61.5,
+      "drive_minutes": 67,
       "reach_tier": "dia_completo"
     },
     {
@@ -2784,8 +2784,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 75,
-      "drive_minutes": 85,
+      "distance_km": 61.5,
+      "drive_minutes": 67,
       "reach_tier": "dia_completo"
     },
     {
@@ -2813,8 +2813,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 75,
-      "drive_minutes": 85,
+      "distance_km": 85.8,
+      "drive_minutes": 105,
       "reach_tier": "dia_completo"
     },
     {
@@ -2842,8 +2842,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 16,
-      "drive_minutes": 22,
+      "distance_km": 19.6,
+      "drive_minutes": 24,
       "reach_tier": "medio"
     },
     {
@@ -2872,9 +2872,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 16,
-      "drive_minutes": 22,
-      "reach_tier": "medio"
+      "distance_km": 18.1,
+      "drive_minutes": 20,
+      "reach_tier": "cerca"
     },
     {
       "id": "escape-room-vcp",
@@ -2900,9 +2900,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 16,
-      "drive_minutes": 22,
-      "reach_tier": "medio"
+      "distance_km": 15.4,
+      "drive_minutes": 15,
+      "reach_tier": "cerca"
     },
     {
       "id": "nuevocentro-cba",
@@ -2931,8 +2931,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 70,
+      "distance_km": 42.6,
+      "drive_minutes": 45,
       "reach_tier": "dia_completo"
     },
     {
@@ -2962,9 +2962,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 70,
-      "reach_tier": "dia_completo"
+      "distance_km": 49.7,
+      "drive_minutes": 49,
+      "reach_tier": "medio"
     },
     {
       "id": "dinosaurio-mall",
@@ -2992,8 +2992,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 70,
+      "distance_km": 40.0,
+      "drive_minutes": 38,
       "reach_tier": "dia_completo"
     },
     {
@@ -3078,8 +3078,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 80,
-      "drive_minutes": 95,
+      "distance_km": 58.2,
+      "drive_minutes": 67,
       "reach_tier": "dia_completo"
     },
     {
@@ -3109,8 +3109,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 140,
-      "drive_minutes": 160,
+      "distance_km": 139.0,
+      "drive_minutes": 111,
       "reach_tier": "dia_completo"
     },
     {
@@ -3138,9 +3138,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 25,
-      "drive_minutes": 35,
-      "reach_tier": "medio",
+      "distance_km": 9.0,
+      "drive_minutes": 14,
+      "reach_tier": "cerca",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp"
       ],
@@ -3171,9 +3171,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 60,
-      "drive_minutes": 75,
-      "reach_tier": "medio"
+      "distance_km": 101.0,
+      "drive_minutes": 88,
+      "reach_tier": "dia_completo"
     },
     {
       "id": "infinito-water-park-infinito-open-cordoba",
@@ -3200,8 +3200,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 55,
-      "drive_minutes": 70,
+      "distance_km": 57.8,
+      "drive_minutes": 45,
       "reach_tier": "medio"
     },
     {
@@ -3229,9 +3229,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 25,
-      "drive_minutes": 35,
-      "reach_tier": "medio",
+      "distance_km": 9.0,
+      "drive_minutes": 14,
+      "reach_tier": "cerca",
       "instagram": "pekosmultiparque",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/atracciones/pekos-vuelta.webp"
@@ -3261,9 +3261,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 16,
-      "drive_minutes": 22,
-      "reach_tier": "medio"
+      "distance_km": 18.1,
+      "drive_minutes": 20,
+      "reach_tier": "cerca"
     },
     {
       "id": "complejo-vertigo-acuatico-san-antonio-de-arredondo",
@@ -3288,8 +3288,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 30,
-      "drive_minutes": 40,
+      "distance_km": 26.8,
+      "drive_minutes": 35,
       "reach_tier": "medio"
     },
     {
@@ -3316,8 +3316,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 35,
-      "drive_minutes": 45,
+      "distance_km": 14.0,
+      "drive_minutes": 22,
       "reach_tier": "medio"
     },
     {
@@ -3346,8 +3346,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 140,
-      "drive_minutes": 160,
+      "distance_km": 135.0,
+      "drive_minutes": 110,
       "reach_tier": "dia_completo",
       "image_urls": []
     },
@@ -3375,8 +3375,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 145,
-      "drive_minutes": 170,
+      "distance_km": 148.0,
+      "drive_minutes": 124,
       "reach_tier": "dia_completo"
     },
     {
@@ -3405,8 +3405,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 150,
-      "drive_minutes": 175,
+      "distance_km": 135.0,
+      "drive_minutes": 110,
       "reach_tier": "dia_completo"
     },
     {
@@ -3493,8 +3493,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 100,
-      "drive_minutes": 120,
+      "distance_km": 185.0,
+      "drive_minutes": 149,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/salida-altas-cumbres.jpg"
@@ -3584,8 +3584,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 145,
-      "drive_minutes": 165,
+      "distance_km": 137.0,
+      "drive_minutes": 114,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/salida-brochero.jpg"
@@ -3758,8 +3758,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 110,
-      "drive_minutes": 130,
+      "distance_km": 97.3,
+      "drive_minutes": 86,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/ottilia.jpg"
@@ -3791,8 +3791,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 110,
-      "drive_minutes": 130,
+      "distance_km": 97.5,
+      "drive_minutes": 87,
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/capilla-vieja.jpg"
@@ -3824,8 +3824,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 120,
-      "drive_minutes": 140,
+      "distance_km": 130.0,
+      "drive_minutes": 127,
       "reach_tier": "dia_completo",
       "instagram": "edelweisslacumbrecita",
       "image_urls": [
@@ -3857,8 +3857,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 140,
-      "drive_minutes": 160,
+      "distance_km": 134.0,
+      "drive_minutes": 107,
       "reach_tier": "dia_completo",
       "instagram": "mi_lugar_cocina_y_parrilla",
       "image_urls": []
@@ -3888,8 +3888,8 @@
       "kids_friendly": true,
       "verified_at": "2026-11-19",
       "published": true,
-      "distance_km": 145,
-      "drive_minutes": 165,
+      "distance_km": 146.0,
+      "drive_minutes": 127,
       "reach_tier": "dia_completo",
       "instagram": "laspircasrest",
       "image_urls": [
@@ -4104,8 +4104,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": null,
-      "drive_minutes": 150,
+      "distance_km": 185.0,
+      "drive_minutes": 149,
       "reach_tier": "dia_completo",
       "rating_value": null,
       "rating_count": null,
@@ -4143,8 +4143,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": null,
-      "drive_minutes": 160,
+      "distance_km": 162.0,
+      "drive_minutes": 136,
       "reach_tier": "dia_completo",
       "rating_value": null,
       "rating_count": null,
@@ -4179,8 +4179,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": null,
-      "drive_minutes": 155,
+      "distance_km": 139.0,
+      "drive_minutes": 111,
       "reach_tier": "dia_completo",
       "rating_value": null,
       "rating_count": null,
@@ -4253,9 +4253,9 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": null,
-      "drive_minutes": 25,
-      "reach_tier": "medio",
+      "distance_km": 18.1,
+      "drive_minutes": 20,
+      "reach_tier": "cerca",
       "rating_value": null,
       "rating_count": null,
       "rating_source": null,
@@ -4290,8 +4290,8 @@
       "kids_friendly": true,
       "verified_at": null,
       "published": true,
-      "distance_km": null,
-      "drive_minutes": 60,
+      "distance_km": 18.1,
+      "drive_minutes": 20,
       "reach_tier": "dia_completo",
       "rating_value": null,
       "rating_count": null,
@@ -4327,9 +4327,9 @@
       "kids_friendly": false,
       "verified_at": null,
       "published": true,
-      "distance_km": null,
-      "drive_minutes": 25,
-      "reach_tier": "medio",
+      "distance_km": 18.1,
+      "drive_minutes": 20,
+      "reach_tier": "cerca",
       "rating_value": null,
       "rating_count": null,
       "rating_source": null,
@@ -4408,8 +4408,8 @@
         "Senderismo",
         "Valle Hermoso"
       ],
-      "distance_km": 40,
-      "drive_minutes": 50,
+      "distance_km": 30.1,
+      "drive_minutes": 34,
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/vaquerias.jpg"
@@ -4507,9 +4507,9 @@
       "kids_friendly": true,
       "verified_at": "2026-11-23",
       "published": true,
-      "distance_km": 45,
-      "drive_minutes": 70,
-      "reach_tier": "dia_completo"
+      "distance_km": 26.3,
+      "drive_minutes": 38,
+      "reach_tier": "medio"
     }
   ]
 }
