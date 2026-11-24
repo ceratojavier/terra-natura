@@ -29,6 +29,7 @@
   const grupoParam = urlParams.get("grupo") || urlParams.get("unidad");
   const nombreParam = urlParams.get("nombre");
   const autoCotizar = urlParams.get("cotizar") === "1";
+  const codigoParam = urlParams.get("codigo") || urlParams.get("cupon") || "";
 
   const GRUPOS_SELECT = [
     { value: "todas", label: "Ver las 3 opciones de cabaña" },
@@ -441,12 +442,18 @@
     html += `<span class="cotiza-card-beneficio">${escapeHtml(cfg.beneficio_badge)}</span>`;
     if (cfg.beneficio_extra) html += `<p class="muted" style="font-size:0.72rem;margin:0 0 0.35rem">${escapeHtml(cfg.beneficio_extra)}</p>`;
     html += `<div class="cotiza-precios">`;
-    if (lista > total) {
+    if (cot.beneficio_cupon) {
+      html += `<div class="lista-tachada">Precio de lista: ${fmt(lista)}</div>`;
+      html += `<div class="total-web">${escapeHtml(cot.beneficio_cupon)}</div>`;
+      html += `<div class="total-web">Total a abonar: ${fmt(total)}</div>`;
+      if (cot.late_checkout) html += `<p class="muted">${escapeHtml(cot.late_checkout)}</p>`;
+    } else if (lista > total) {
       html += `<div class="lista-tachada">Precio lista: ${fmt(lista)}</div>`;
       html += `<div class="total-web">Total web (−${descPct}%): ${fmt(total)}</div>`;
     } else {
       html += `<div class="total-web">Total estadía: ${fmt(total)}</div>`;
     }
+    if (cot.cupon_aviso) html += `<p class="muted">${escapeHtml(cot.cupon_aviso)}</p>`;
     const noches = Number(ctx.noches) || 0;
     if (noches > 0) {
       const nochesTexto = `${noches} noche${noches === 1 ? "" : "s"}`;
@@ -739,6 +746,10 @@
       html += `<button type="button" class="btn btn-secondary cotiza-btn-min-otras">Elegir otras fechas</button>`;
       html += `</div></div>`;
     }
+    const avisoCupon = (data.opciones || []).map((o) => o && o.cotizacion && o.cotizacion.cupon_aviso).find(Boolean);
+    const errorCupon = (data.opciones || []).map((o) => o && o.codigo_error).find(Boolean);
+    if (errorCupon) html += `<p class="muted">${escapeHtml(errorCupon)}</p>`;
+    else if (avisoCupon && !data.disponible_alguna) html += `<p class="muted">${escapeHtml(avisoCupon)}</p>`;
     html += `<p class="cotiza-beneficio-banner">${escapeHtml(cfg.beneficio_badge)}</p>`;
 
     if (data.disponible_alguna) {
@@ -782,6 +793,10 @@
     if (unidad) poblarSelectGrupos(unidad);
     configurarFechasMinimas(checkIn, checkOut);
     aplicarFechasDesdeUrl(checkIn, checkOut);
+    if (codigoParam) {
+      const caja = form.querySelector('[name="codigo_promo"]');
+      if (caja && !caja.value) caja.value = codigoParam;
+    }
     if (adultosParam && adultosEl) adultosEl.value = adultosParam;
     if (ninosParam && ninosEl) ninosEl.value = ninosParam;
     if (personasParam && !adultosParam && adultosEl) adultosEl.value = personasParam;
