@@ -553,7 +553,19 @@
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/yuspe.jpg"
-      ]
+      ],
+      "salida": {
+        "id": "dia-taninga",
+        "titulo": "Día por los Túneles de Taninga",
+        "bajada": "Es un solo día: de ida agarrás la ruta 28 y a la vuelta volvés por las Altas Cumbres. Solo si el día está totalmente despejado. Si está nublado, la niebla en ese camino sinuoso es peligrosa. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 3,
+        "texto": "Pasás por el puente del río Yuspe.",
+        "momento": ""
+      }
     },
     {
       "id": "los-chorrillos",
@@ -1015,6 +1027,9 @@
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/villa-general-belgrano.jpg"
+      ],
+      "hidden_menus": [
+        "escapadas-valles"
       ]
     },
     {
@@ -1024,14 +1039,14 @@
       "category": "escapada",
       "locality": "Valle de Calamuchita",
       "short_description": "Pueblo peatonal de montaña, bosques, arroyos y senderos.",
-      "description": "Una excursión de día completo o para pasar la noche. El pueblo tiene sectores peatonales y senderos; informate sobre estacionamiento, normas de ingreso, calzado y condiciones climáticas.",
+      "description": "Una excursión de día completo o para pasar la noche. El pueblo tiene sectores peatonales y senderos; informate sobre estacionamiento, normas de ingreso, calzado y condiciones climáticas. Foto: Wikimedia Commons (CC BY-SA).",
       "address": "La Cumbrecita, Córdoba",
       "latitude": null,
       "longitude": null,
       "maps_url": "https://www.google.com/maps/dir/?api=1&destination=La%20Cumbrecita%2C%20La%20Cumbrecita%2C%20C%C3%B3rdoba%2C%20Valle%20de%20Calamuchita%2C%20C%C3%B3rdoba%2C%20Argentina&travelmode=driving",
       "phone": "",
       "website": "",
-      "image_url": "https://alpinasterranatura.com.ar/media/galeria/01-complejo-panoramica.webp",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/la-cumbrecita.jpg",
       "tags": [
         "Pueblo peatonal",
         "Bosque",
@@ -1045,7 +1060,22 @@
       "published": true,
       "distance_km": 128.9,
       "drive_minutes": 120,
-      "reach_tier": "dia_completo"
+      "reach_tier": "dia_completo",
+      "salida": {
+        "id": "dia-calamuchita",
+        "titulo": "Día por Calamuchita",
+        "bajada": "Es un solo día. Salís temprano hacia Villa General Belgrano y estas son las paradas, en este orden. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 4,
+        "texto": "Seguís hasta La Cumbrecita para caminar y merendar algo rico. A la nochecita, el regreso.",
+        "momento": "A la tarde"
+      },
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/la-cumbrecita.jpg"
+      ]
     },
     {
       "id": "el-durazno",
@@ -1107,7 +1137,19 @@
       "reach_tier": "medio",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/traslasierra.jpg"
-      ]
+      ],
+      "salida": {
+        "id": "dia-taninga",
+        "titulo": "Día por los Túneles de Taninga",
+        "bajada": "Es un solo día: de ida agarrás la ruta 28 y a la vuelta volvés por las Altas Cumbres. Solo si el día está totalmente despejado. Si está nublado, la niebla en ese camino sinuoso es peligrosa. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 8,
+        "texto": "Emprendés el regreso por las Altas Cumbres. Solo si el día está totalmente despejado: si está nublado, la niebla en ese camino sinuoso es peligrosa.",
+        "momento": "La vuelta"
+      }
     },
     {
       "id": "mina-clavero",
@@ -1140,7 +1182,19 @@
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/nido-aguila.webp"
       ],
-      "instagram": ""
+      "instagram": "",
+      "salida": {
+        "id": "dia-taninga",
+        "titulo": "Día por los Túneles de Taninga",
+        "bajada": "Es un solo día: de ida agarrás la ruta 28 y a la vuelta volvés por las Altas Cumbres. Solo si el día está totalmente despejado. Si está nublado, la niebla en ese camino sinuoso es peligrosa. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 7,
+        "texto": "Después, el Nido del Águila y sus ollas, para pasar un rato en el río.",
+        "momento": ""
+      }
     },
     {
       "id": "nono",
@@ -1206,7 +1260,19 @@
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/cura-brochero.jpg"
-      ]
+      ],
+      "salida": {
+        "id": "dia-taninga",
+        "titulo": "Día por los Túneles de Taninga",
+        "bajada": "Es un solo día: de ida agarrás la ruta 28 y a la vuelta volvés por las Altas Cumbres. Solo si el día está totalmente despejado. Si está nublado, la niebla en ese camino sinuoso es peligrosa. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 6,
+        "texto": "A la tarde volvés hacia Cura Brochero y conocés la iglesia del cura gaucho.",
+        "momento": "A la tarde"
+      }
     },
     {
       "id": "sierras-chicas",
@@ -3463,7 +3529,10 @@
       "distance_km": 110,
       "drive_minutes": 130,
       "reach_tier": "dia_completo",
-      "image_urls": []
+      "image_urls": [],
+      "hidden_menus": [
+        "escapadas-valles"
+      ]
     },
     {
       "id": "salida-cumbrecita",
@@ -3492,7 +3561,10 @@
       "distance_km": 120,
       "drive_minutes": 140,
       "reach_tier": "dia_completo",
-      "image_urls": []
+      "image_urls": [],
+      "hidden_menus": [
+        "escapadas-valles"
+      ]
     },
     {
       "id": "salida-altas-cumbres",
@@ -3524,6 +3596,9 @@
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/salida-altas-cumbres.jpg"
+      ],
+      "hidden_menus": [
+        "escapadas-valles"
       ]
     },
     {
@@ -4157,7 +4232,19 @@
       "maps_url": "https://www.google.com/maps/dir/?api=1&destination=Los%20T%C3%BAneles%20%28camino%20a%20Traslasierra%29%2C%20Ruta%20a%20Traslasierra%2C%20C%C3%B3rdoba%2C%20C%C3%B3rdoba%2C%20Argentina&travelmode=driving",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/los-tuneles-traslasierra.jpg"
-      ]
+      ],
+      "salida": {
+        "id": "dia-taninga",
+        "titulo": "Día por los Túneles de Taninga",
+        "bajada": "Es un solo día: de ida agarrás la ruta 28 y a la vuelta volvés por las Altas Cumbres. Solo si el día está totalmente despejado. Si está nublado, la niebla en ese camino sinuoso es peligrosa. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 5,
+        "texto": "Los Túneles están sobre el borde de la quebrada. Parás, mirás y seguís.",
+        "momento": "Al mediodía"
+      }
     },
     {
       "slug": "villa-las-rosas",
@@ -4505,7 +4592,19 @@
       "reach_tier": "dia_completo",
       "image_urls": [
         "https://alpinasterranatura.com.ar/media/guia/lugares/los-gigantes.jpg"
-      ]
+      ],
+      "salida": {
+        "id": "dia-taninga",
+        "titulo": "Día por los Túneles de Taninga",
+        "bajada": "Es un solo día: de ida agarrás la ruta 28 y a la vuelta volvés por las Altas Cumbres. Solo si el día está totalmente despejado. Si está nublado, la niebla en ese camino sinuoso es peligrosa. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 2,
+        "texto": "Seguís y conocés la base del cerro Los Gigantes. Subir a la cumbre es otra salida: en este día alcanza con verlo desde abajo.",
+        "momento": ""
+      }
     },
     {
       "id": "reserva-cerro-blanco",
@@ -4537,7 +4636,19 @@
       "published": true,
       "distance_km": 26.2,
       "drive_minutes": 38,
-      "reach_tier": "medio"
+      "reach_tier": "medio",
+      "salida": {
+        "id": "dia-taninga",
+        "titulo": "Día por los Túneles de Taninga",
+        "bajada": "Es un solo día: de ida agarrás la ruta 28 y a la vuelta volvés por las Altas Cumbres. Solo si el día está totalmente despejado. Si está nublado, la niebla en ese camino sinuoso es peligrosa. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 1,
+        "texto": "Agarrás la ruta 28. La primera parada es Cerro Blanco.",
+        "momento": "Primera parada"
+      }
     },
     {
       "id": "jaque-mate-carlos-paz",
@@ -4753,7 +4864,19 @@
       "published": true,
       "distance_km": 0.6,
       "drive_minutes": 1,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "salida": {
+        "id": "caminata-lago",
+        "titulo": "Caminata por el lago",
+        "bajada": "Es una sola caminata, saliendo del complejo. Estas paradas van una detrás de la otra.",
+        "etiqueta": "",
+        "secciones": [
+          "caminatas-complejo"
+        ],
+        "orden": 1,
+        "texto": "Salís del complejo por Belgrano. A unos 600 metros se abre el mirador del lago San Roque.",
+        "momento": "Arranque"
+      }
     },
     {
       "id": "puente-viejo-las-mojarras",
@@ -4792,7 +4915,19 @@
       "distance_km": 1.3,
       "drive_minutes": 3,
       "walk_minutes": 16,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "salida": {
+        "id": "caminata-lago",
+        "titulo": "Caminata por el lago",
+        "bajada": "Es una sola caminata, saliendo del complejo. Estas paradas van una detrás de la otra.",
+        "etiqueta": "",
+        "secciones": [
+          "caminatas-complejo"
+        ],
+        "orden": 2,
+        "texto": "Seguís hasta el puente viejo de los pescadores, el de Las Mojarras. Cruzás la ruta y lo tenés enfrente, peatonal, sobre el lago.",
+        "momento": ""
+      }
     },
     {
       "id": "plaza-federal-san-roque",
@@ -4829,7 +4964,19 @@
       "published": true,
       "distance_km": 2.7,
       "drive_minutes": 5,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "salida": {
+        "id": "caminata-lago",
+        "titulo": "Caminata por el lago",
+        "bajada": "Es una sola caminata, saliendo del complejo. Estas paradas van una detrás de la otra.",
+        "etiqueta": "",
+        "secciones": [
+          "caminatas-complejo"
+        ],
+        "orden": 4,
+        "texto": "Seguís la senda del lago y llegás a Plaza Federal, en San Roque. Es un lindo lugar para ver caer el sol.",
+        "momento": "Al final"
+      }
     },
     {
       "id": "embudo-cola-de-la-novia",
@@ -4904,7 +5051,20 @@
       "published": true,
       "distance_km": 9.1,
       "drive_minutes": 10,
-      "reach_tier": "cerca"
+      "reach_tier": "cerca",
+      "salida": {
+        "id": "caminata-lago",
+        "titulo": "Caminata por el lago",
+        "bajada": "Es una sola caminata, saliendo del complejo. Estas paradas van una detrás de la otra.",
+        "etiqueta": "",
+        "secciones": [
+          "caminatas-complejo"
+        ],
+        "orden": 3,
+        "texto": "La parada de la foto es el puente del dique San Roque. Hay vereda para caminarlo y desde arriba se ven el lago y las sierras.",
+        "momento": "La foto",
+        "nombre": "Foto en el puente del dique"
+      }
     },
     {
       "id": "tren-de-las-sierras-bialet",
@@ -5528,6 +5688,294 @@
       "drive_minutes": 23,
       "reach_tier": "cerca",
       "instagram": ""
+    },
+    {
+      "phone": "",
+      "instagram": "",
+      "website": "",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/reloj-cucu-carlos-paz.jpg"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "published": true,
+      "hidden_menus": [],
+      "seasonal": false,
+      "latitude": -31.4152968,
+      "longitude": -64.5030763,
+      "verified_at": null,
+      "id": "reloj-cucu",
+      "name": "El Cucu de Villa Carlos Paz",
+      "category": "cultura",
+      "locality": "Villa Carlos Paz",
+      "address": "Reloj Cucú, Avenida Sarmiento, Villa Carlos Paz",
+      "short_description": "El reloj del centro de Carlos Paz, el de la música y los muñecos.",
+      "description": "Es el Reloj Cucú, en avenida Sarmiento, en el centro de Villa Carlos Paz. Cada hora suena y salen los muñecos: conviene llegar unos minutos antes. En auto, desde la cabaña, son 21 minutos y 14,4 km. Foto: Ezarate, Wikimedia Commons (CC BY-SA).",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/reloj-cucu-carlos-paz.jpg",
+      "tags": [
+        "Excursión clásica",
+        "Historia"
+      ],
+      "distance_km": 14.4,
+      "drive_minutes": 21,
+      "reach_tier": "cerca",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.4152968,-64.5030763&travelmode=driving",
+      "slug": "reloj-cucu",
+      "salida": null
+    },
+    {
+      "phone": "",
+      "instagram": "",
+      "website": "",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/estancia-jesuitica-alta-gracia.jpg"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "published": true,
+      "hidden_menus": [],
+      "seasonal": false,
+      "latitude": -31.6576795,
+      "longitude": -64.4350098,
+      "verified_at": null,
+      "id": "estancia-jesuitica-alta-gracia",
+      "name": "Estancia Jesuítica de Alta Gracia",
+      "category": "cultura",
+      "locality": "Alta Gracia",
+      "address": "Avenida Padre Viera 41, Alta Gracia",
+      "short_description": "La estancia de los jesuitas, con la iglesia y el patio.",
+      "description": "Es el Museo Nacional de la Estancia Jesuítica de Alta Gracia, en avenida Padre Viera 41. Se recorre la iglesia, el patio y las habitaciones. Confirmá el horario antes de ir. En auto son 37 minutos y 41,6 km. Foto: Silber98, Wikimedia Commons (CC BY-SA).",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/estancia-jesuitica-alta-gracia.jpg",
+      "tags": [
+        "Excursión clásica",
+        "Historia"
+      ],
+      "distance_km": 41.6,
+      "drive_minutes": 37,
+      "reach_tier": "medio",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.6576795,-64.4350098&travelmode=driving",
+      "slug": "estancia-jesuitica-alta-gracia",
+      "salida": null
+    },
+    {
+      "phone": "",
+      "instagram": "",
+      "website": "",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/museo-che-alta-gracia.jpg"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "published": true,
+      "hidden_menus": [],
+      "seasonal": false,
+      "latitude": -31.6488181,
+      "longitude": -64.4415439,
+      "verified_at": null,
+      "id": "museo-che-alta-gracia",
+      "name": "Museo Casa del Che Guevara",
+      "category": "cultura",
+      "locality": "Alta Gracia",
+      "address": "Nicolás Avellaneda 501, Alta Gracia",
+      "short_description": "La casa donde vivió el Che de chico, hoy museo.",
+      "description": "El Museo Casa del Che está en Nicolás Avellaneda 501, Alta Gracia. Era la casa de la familia Guevara. Confirmá el horario antes de ir. En auto son 35 minutos y 41,1 km. Foto: Wikimedia Commons (CC BY-SA).",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/museo-che-alta-gracia.jpg",
+      "tags": [
+        "Excursión clásica",
+        "Historia"
+      ],
+      "distance_km": 41.1,
+      "drive_minutes": 35,
+      "reach_tier": "medio",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.6488181,-64.4415439&travelmode=driving",
+      "slug": "museo-che-alta-gracia",
+      "salida": null
+    },
+    {
+      "phone": "",
+      "instagram": "",
+      "website": "",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/dique-los-molinos.jpg"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "published": true,
+      "hidden_menus": [],
+      "seasonal": false,
+      "latitude": -31.8187343,
+      "longitude": -64.5025296,
+      "verified_at": null,
+      "id": "dique-los-molinos",
+      "name": "Dique Los Molinos",
+      "category": "escapada",
+      "locality": "Calamuchita",
+      "address": "Dique Los Molinos, Villa Ciudad de América, Córdoba",
+      "short_description": "El dique que se cruza de camino a Villa General Belgrano. Parada para la foto.",
+      "description": "De camino a Villa General Belgrano se pasa el dique Los Molinos. Vale parar en un mirador y sacarse una foto. En auto, desde la cabaña, son 63 minutos y 75 km. Foto: Fscotta, Wikimedia Commons (CC BY-SA).",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/dique-los-molinos.jpg",
+      "tags": [
+        "Escapada",
+        "Calamuchita",
+        "Mirador",
+        "Día completo"
+      ],
+      "distance_km": 75.0,
+      "drive_minutes": 63,
+      "reach_tier": "dia_completo",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.8187343,-64.5025296&travelmode=driving",
+      "slug": "dique-los-molinos",
+      "salida": {
+        "id": "dia-calamuchita",
+        "titulo": "Día por Calamuchita",
+        "bajada": "Es un solo día. Salís temprano hacia Villa General Belgrano y estas son las paradas, en este orden. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 1,
+        "texto": "De camino a Villa General Belgrano vas a pasar por el dique Los Molinos. Parada obligada en un mirador para sacarte una foto.",
+        "momento": "De camino"
+      }
+    },
+    {
+      "phone": "",
+      "instagram": "",
+      "website": "",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/villa-general-belgrano-centro.jpg"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "published": true,
+      "hidden_menus": [],
+      "seasonal": false,
+      "latitude": -31.9764896,
+      "longitude": -64.5590227,
+      "verified_at": null,
+      "id": "villa-general-belgrano",
+      "name": "Villa General Belgrano",
+      "category": "escapada",
+      "locality": "Villa General Belgrano",
+      "address": "Centro de Villa General Belgrano, Córdoba",
+      "short_description": "El centro ambientado, para caminar, comer y probar una cerveza artesanal.",
+      "description": "El centro está ambientado al estilo de los pueblos centroeuropeos. Se camina, se come algo rico y se prueba una cerveza artesanal. En auto, desde la cabaña, son 86 minutos y 96,9 km. Foto: Calella79, Wikimedia Commons (CC0).",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/villa-general-belgrano-centro.jpg",
+      "tags": [
+        "Escapada",
+        "Calamuchita",
+        "Día completo"
+      ],
+      "distance_km": 96.9,
+      "drive_minutes": 86,
+      "reach_tier": "dia_completo",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.9764896,-64.5590227&travelmode=driving",
+      "slug": "villa-general-belgrano",
+      "salida": {
+        "id": "dia-calamuchita",
+        "titulo": "Día por Calamuchita",
+        "bajada": "Es un solo día. Salís temprano hacia Villa General Belgrano y estas son las paradas, en este orden. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 2,
+        "texto": "Llegás al centro, todo ambientado. Caminá, comé algo rico y probá una cerveza artesanal.",
+        "momento": "A la mañana"
+      }
+    },
+    {
+      "phone": "",
+      "instagram": "",
+      "website": "",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/los-reartes.jpg"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "published": true,
+      "hidden_menus": [],
+      "seasonal": false,
+      "latitude": -31.9207483,
+      "longitude": -64.5769489,
+      "verified_at": null,
+      "id": "los-reartes",
+      "name": "Los Reartes",
+      "category": "escapada",
+      "locality": "Los Reartes",
+      "address": "Los Reartes, Calamuchita, Córdoba",
+      "short_description": "El pueblo y su balneario, después de Villa General Belgrano.",
+      "description": "Los Reartes queda al lado de Villa General Belgrano. Después del mediodía se pasa por el pueblo y por el balneario. En auto, desde la cabaña, son 83 minutos y 97,1 km. Foto: Fernando Marcos, Wikimedia Commons (CC BY-SA).",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/los-reartes.jpg",
+      "tags": [
+        "Escapada",
+        "Calamuchita",
+        "Balneario",
+        "Día completo"
+      ],
+      "distance_km": 97.1,
+      "drive_minutes": 83,
+      "reach_tier": "dia_completo",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.9207483,-64.5769489&travelmode=driving",
+      "slug": "los-reartes",
+      "salida": {
+        "id": "dia-calamuchita",
+        "titulo": "Día por Calamuchita",
+        "bajada": "Es un solo día. Salís temprano hacia Villa General Belgrano y estas son las paradas, en este orden. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 3,
+        "texto": "Después del mediodía pasás por Los Reartes y su balneario.",
+        "momento": "Después del mediodía"
+      }
+    },
+    {
+      "phone": "",
+      "instagram": "",
+      "website": "",
+      "image_urls": [
+        "https://alpinasterranatura.com.ar/media/guia/lugares/taninga.jpg"
+      ],
+      "indoor": false,
+      "kids_friendly": true,
+      "published": true,
+      "hidden_menus": [],
+      "seasonal": false,
+      "latitude": -31.3458821,
+      "longitude": -65.0799079,
+      "verified_at": null,
+      "id": "taninga",
+      "name": "Taninga",
+      "category": "escapada",
+      "locality": "Taninga",
+      "address": "Taninga, ruta 28, Córdoba",
+      "short_description": "El pueblo de la ruta 28, antes de los túneles.",
+      "description": "Taninga está sobre la ruta 28, de camino a Los Túneles. Se llega, se mira y se sigue. En auto, desde la cabaña, son 149 minutos y 185 km. Foto: AsterixCBA, Wikimedia Commons (CC BY-SA).",
+      "image_url": "https://alpinasterranatura.com.ar/media/guia/lugares/taninga.jpg",
+      "tags": [
+        "Escapada",
+        "Traslasierra",
+        "Día completo"
+      ],
+      "distance_km": 185.0,
+      "drive_minutes": 149,
+      "reach_tier": "dia_completo",
+      "maps_url": "https://www.google.com/maps/dir/?api=1&destination=-31.3458821,-65.0799079&travelmode=driving",
+      "slug": "taninga",
+      "salida": {
+        "id": "dia-taninga",
+        "titulo": "Día por los Túneles de Taninga",
+        "bajada": "Es un solo día: de ida agarrás la ruta 28 y a la vuelta volvés por las Altas Cumbres. Solo si el día está totalmente despejado. Si está nublado, la niebla en ese camino sinuoso es peligrosa. Los minutos son desde la cabaña.",
+        "etiqueta": "Salir bien temprano",
+        "secciones": [
+          "escapadas-valles"
+        ],
+        "orden": 4,
+        "texto": "Llegás a Taninga y seguís de largo hacia los túneles.",
+        "momento": ""
+      }
     }
   ]
 }
